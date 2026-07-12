@@ -144,6 +144,20 @@ test("renders the grouped footer information architecture", async () => {
   assert.match(html, /好房子，光健康。/);
 });
 
+test("server-renders the accessible about brand carousel", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /role="region"[^>]+aria-roledescription="carousel"[^>]+aria-label="钜豪品牌场景轮播"/i);
+  for (const title of ["先理解人，再设计光", "让每一种空间，有自己的光", "把长期使用，放进设计里"]) {
+    assert.match(html, new RegExp(title), title);
+  }
+  assert.match(html, /aria-label="暂停自动播放"/i);
+  assert.match(html, /aria-label="上一张"/i);
+  assert.match(html, /aria-label="下一张"/i);
+});
+
 test("keeps incomplete and utility pages out of the index", async () => {
   const worker = await createWorker();
   const noindexRoutes = [

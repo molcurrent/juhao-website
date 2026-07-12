@@ -352,6 +352,154 @@
   transform: rotate(90deg);
 }
 
+.brandCarouselSection {
+  margin: auto;
+  max-width: var(--content-max);
+  padding: 150px var(--page-gutter) 110px;
+}
+
+.brandCarouselSection > header {
+  align-items: end;
+  display: grid;
+  gap: clamp(40px, 8vw, 130px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+  margin-bottom: 72px;
+}
+
+.brandCarouselSection h2 {
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5.4vw, 84px);
+  letter-spacing: -.06em;
+  line-height: 1.04;
+  margin: 24px 0 0;
+}
+
+.brandCarouselSection > header > p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin: 0 0 8px;
+}
+
+.brandCarousel {
+  --carousel-line: #c7c3ba;
+}
+
+.brandSlide {
+  align-items: center;
+  display: grid;
+  gap: clamp(45px, 7vw, 110px);
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  min-height: 650px;
+  padding: 30px 34px 38px 18px;
+}
+
+.brandSlideVisual {
+  aspect-ratio: 16 / 11;
+  margin: 0;
+  position: relative;
+}
+
+.brandSlideVisual::before,
+.brandSlideVisual::after {
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.brandSlideVisual::before {
+  background: var(--brand-orange-soft);
+  transform: translate(30px, -30px);
+}
+
+.brandSlideVisual::after {
+  border: 1px solid var(--brand-orange);
+  transform: translate(16px, -16px);
+}
+
+.brandSlideImage {
+  object-fit: cover;
+  transform: scale(1.055);
+  transition: transform 1s var(--ease-enter);
+  z-index: 1;
+}
+
+.brandCarousel :global([aria-hidden="false"]) .brandSlideImage {
+  transform: scale(1);
+}
+
+.brandSlideVisual figcaption {
+  bottom: 22px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  left: 24px;
+  letter-spacing: .18em;
+  position: absolute;
+  z-index: 2;
+}
+
+.brandSlideVisual figcaption::before {
+  background: var(--brand-orange-bright);
+  content: "";
+  display: inline-block;
+  height: 2px;
+  margin: 0 12px 3px 0;
+  width: 28px;
+}
+
+.brandSlideCopy {
+  opacity: .3;
+  transform: translateX(28px);
+  transition: opacity .7s var(--ease-enter), transform .9s var(--ease-enter);
+}
+
+.brandCarousel :global([aria-hidden="false"]) .brandSlideCopy {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.brandSlideCopy small {
+  color: var(--brand-orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.brandSlideCopy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.2vw, 64px);
+  letter-spacing: -.055em;
+  line-height: 1.08;
+  margin: 26px 0 24px;
+}
+
+.brandSlideCopy p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.brandSlideCopy a {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+  justify-content: space-between;
+  margin-top: 42px;
+  padding-top: 18px;
+}
+
+.brandSlideCopy a span {
+  color: var(--brand-orange);
+  transition: transform var(--duration-fast) ease;
+}
+
+.brandSlideCopy a:hover span {
+  transform: translateX(5px);
+}
+
 .aboutDetail {
   align-items: center;
   display: grid;
@@ -989,6 +1137,42 @@
     padding: 90px 24px;
   }
 
+  .brandCarouselSection {
+    padding: 90px 24px 70px;
+  }
+
+  .brandCarouselSection > header,
+  .brandSlide {
+    grid-template-columns: 1fr;
+  }
+
+  .brandCarouselSection > header {
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  .brandSlide {
+    gap: 48px;
+    min-height: auto;
+    padding: 26px 14px 32px 0;
+  }
+
+  .brandSlideVisual {
+    aspect-ratio: 4 / 3;
+  }
+
+  .brandSlideVisual::before {
+    transform: translate(14px, -14px);
+  }
+
+  .brandSlideVisual::after {
+    transform: translate(7px, -7px);
+  }
+
+  .brandSlideCopy {
+    padding: 0 10px;
+  }
+
   .capabilityGrid,
   .talentGrid,
   .relatedGrid {
@@ -1109,8 +1293,14 @@
   }
 
   .aboutHeroVisual:hover img,
+  .brandSlideImage,
+  .brandSlideCopy,
   .relatedGrid a:hover,
   .careersClosing > a:hover span {
     transform: none;
+  }
+
+  .brandSlideCopy {
+    opacity: 1;
   }
 }

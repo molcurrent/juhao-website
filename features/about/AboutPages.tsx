@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { PageData } from "@/app/_data/pages";
+import { AccessibleCarousel } from "@/components/ui/AccessibleCarousel";
 
 import styles from "./AboutPages.module.css";
 
@@ -14,6 +15,36 @@ const ownedImages = new Set([
   "/images/juhao-industrial.webp",
   "/images/juhao-commercial.webp",
 ]);
+
+const brandStories = [
+  {
+    eyebrow: "HUMAN FIRST",
+    title: "先理解人，再设计光",
+    text: "从阅读、休息、交流与通行等真实活动出发，让亮度、层次与控制方式服务于人的感受。",
+    image: "/images/juhao-home.webp",
+    alt: "温暖有层次的钜豪家居照明空间",
+    href: "/healthy-light",
+    linkLabel: "了解健康光环境",
+  },
+  {
+    eyebrow: "SPACE IN CONTEXT",
+    title: "让每一种空间，有自己的光",
+    text: "住宅、酒店、商业与公共空间承担不同任务，方案需要回应尺度、材质、动线与使用节奏。",
+    image: "/images/juhao-commercial.webp",
+    alt: "强调材质和动线的钜豪商业照明空间",
+    href: "/solutions",
+    linkLabel: "查看空间解决方案",
+  },
+  {
+    eyebrow: "BUILT TO LAST",
+    title: "把长期使用，放进设计里",
+    text: "从维护条件、控制分区到运行效率，在方案阶段就考虑安装之后的稳定使用与持续调整。",
+    image: "/images/juhao-industrial.webp",
+    alt: "面向长期运行的钜豪工业照明空间",
+    href: "/solutions/industrial",
+    linkLabel: "了解工业照明",
+  },
+] as const;
 
 function safeImage(page: PageData, fallback: string) {
   return ownedImages.has(page.image) ? page.image : fallback;
@@ -135,6 +166,44 @@ export function AboutPage({ page }: PageProps) {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className={styles.brandCarouselSection} aria-labelledby="brand-carousel-title">
+        <header data-reveal>
+          <div>
+            <p className={styles.kicker}>LIGHT IN REAL LIFE</p>
+            <h2 id="brand-carousel-title">让品牌观点，进入真实场景</h2>
+          </div>
+          <p>用三组空间叙事说明钜豪如何理解人、空间与长期使用。可使用方向键、触摸滑动或下方按钮浏览。</p>
+        </header>
+        <AccessibleCarousel
+          ariaLabel="钜豪品牌场景轮播"
+          className={styles.brandCarousel}
+          autoPlay
+          autoPlayInterval={6000}
+        >
+          {brandStories.map((story, index) => (
+            <article className={styles.brandSlide} key={story.title}>
+              <figure className={styles.brandSlideVisual}>
+                <Image
+                  className={styles.brandSlideImage}
+                  src={story.image}
+                  alt={story.alt}
+                  fill
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 62vw"
+                />
+                <figcaption>{String(index + 1).padStart(2, "0")} / {story.eyebrow}</figcaption>
+              </figure>
+              <div className={styles.brandSlideCopy}>
+                <small>{story.eyebrow}</small>
+                <h3>{story.title}</h3>
+                <p>{story.text}</p>
+                <Link href={story.href}>{story.linkLabel}<span aria-hidden="true">→</span></Link>
+              </div>
+            </article>
+          ))}
+        </AccessibleCarousel>
       </section>
 
       {page.sections.slice(1).map((section, index) => (
