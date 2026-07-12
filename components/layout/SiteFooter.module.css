@@ -1,56 +1,223 @@
 .footer {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
-  align-items: start;
-  gap: 36px;
-  padding: 54px var(--page-gutter);
-  color: #91948e;
+  padding: clamp(78px, 9vw, 144px) var(--page-gutter) 34px;
+  overflow: hidden;
+  color: #a6aaa3;
   background: var(--night);
-  font-size: 11px;
+  border-top: 1px solid #ffffff1f;
 }
 
-.brand {
+.top {
+  display: grid;
+  grid-template-columns: minmax(280px, .7fr) minmax(600px, 1.3fr);
+  gap: clamp(70px, 9vw, 150px);
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+}
+
+.brand > a:first-child {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
+  width: fit-content;
 }
 
 .brand b {
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 24px;
-  letter-spacing: -0.05em;
+  font-size: clamp(45px, 5vw, 74px);
+  line-height: .8;
+  letter-spacing: -.08em;
 }
 
-.links {
+.brand > a:first-child span {
+  padding-left: 18px;
+  color: #d2d5cf;
+  border-left: 1px solid #ffffff3b;
+  font-size: 10px;
+  letter-spacing: .26em;
+}
+
+.brand p {
+  max-width: 410px;
+  margin: 42px 0 0;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.contact {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px 24px;
-}
-
-.links a:hover,
-.links a:focus-visible {
+  justify-content: space-between;
+  gap: 24px;
+  width: min(100%, 360px);
+  margin-top: 42px;
+  padding: 18px 0;
   color: var(--white);
+  border-top: 1px solid #ffffff42;
+  border-bottom: 1px solid #ffffff42;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.meta {
+.contact span {
+  color: var(--brand-orange-bright);
+  font-size: 18px;
+}
+
+.navigation {
   display: grid;
-  justify-items: end;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 62px);
+}
+
+.navigation nav {
+  min-width: 0;
+}
+
+.navigation h2 {
+  min-height: 34px;
+  margin: 0 0 26px;
+  color: #6f736d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.navigation a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
+  align-items: center;
+  min-height: 42px;
+  color: #d2d5cf;
+  border-bottom: 1px solid #ffffff17;
+  font-size: 12px;
+}
+
+.navigation a span {
+  color: var(--brand-orange-bright);
+  opacity: 0;
+  transform: translate(-5px, 5px);
+}
+
+.statement {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  width: min(100%, var(--content-max));
+  margin: clamp(80px, 10vw, 158px) auto 34px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #ffffff24;
+}
+
+.statement span {
+  color: var(--brand-orange-bright);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.statement strong {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6.8vw, 108px);
+  line-height: .9;
+  letter-spacing: -.075em;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 28px;
+  align-items: center;
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+  color: #6f736d;
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.bottom p {
   margin: 0;
 }
 
-.meta nav {
-  display: flex;
-  gap: 16px;
+.bottom p:last-child {
+  text-align: right;
 }
 
-@media (max-width: 900px) {
+.bottom nav {
+  display: flex;
+  gap: 22px;
+}
+
+@media (hover: hover) {
+  .contact,
+  .navigation a,
+  .navigation a span,
+  .bottom a {
+    transition: color var(--duration-fast) ease, transform var(--duration-ui) var(--ease-enter), opacity var(--duration-fast) ease;
+  }
+
+  .contact:hover,
+  .contact:focus-visible,
+  .navigation a:hover,
+  .navigation a:focus-visible,
+  .bottom a:hover,
+  .bottom a:focus-visible {
+    color: var(--white);
+  }
+
+  .contact:hover,
+  .contact:focus-visible {
+    transform: translateX(6px);
+  }
+
+  .navigation a:hover span,
+  .navigation a:focus-visible span {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
   .footer {
+    padding-inline: 24px;
+  }
+
+  .navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 50px;
+  }
+
+  .statement {
+    display: grid;
+    margin-top: 88px;
+  }
+
+  .statement strong {
+    max-width: 320px;
+  }
+
+  .bottom {
     grid-template-columns: 1fr;
   }
 
-  .meta {
-    justify-items: start;
+  .bottom p:last-child {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact,
+  .navigation a,
+  .navigation a span,
+  .bottom a {
+    transition: none;
   }
 }

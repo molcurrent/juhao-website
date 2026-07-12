@@ -129,6 +129,21 @@ test("renders search entry points in desktop and mobile navigation", async () =>
   assert.match(html, /<nav[^>]+aria-label="移动端导航"[\s\S]*?<a[^>]+href="\/search"[^>]*>[\s\S]*?站内搜索[\s\S]*?<\/a>/i);
 });
 
+test("renders the grouped footer information architecture", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  for (const label of ["品牌导航", "照明解决方案导航", "服务与合作导航", "内容与联系导航", "法律信息"]) {
+    assert.match(html, new RegExp(`<nav[^>]+aria-label="${label}"`, "i"), label);
+  }
+  for (const path of ["/solutions/residential", "/solutions/hospitality", "/smart-home", "/downloads", "/news", "/search", "/contact", "/legal", "/privacy"]) {
+    assert.match(html, new RegExp(`href="${path}"`), path);
+  }
+  assert.match(html, /开始方案咨询/);
+  assert.match(html, /好房子，光健康。/);
+});
+
 test("keeps incomplete and utility pages out of the index", async () => {
   const worker = await createWorker();
   const noindexRoutes = [
