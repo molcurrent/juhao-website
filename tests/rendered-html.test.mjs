@@ -239,7 +239,6 @@ test("keeps incomplete and utility pages out of the index", async () => {
     "/partners",
     "/downloads",
     "/search",
-    "/contact",
     "/legal",
     "/privacy",
   ];
@@ -254,7 +253,8 @@ test("keeps incomplete and utility pages out of the index", async () => {
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
   assert.match(xml, /https:\/\/juhao\.com\/solutions\/residential/);
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|service|partners|downloads|search|contact|legal|privacy)/);
+  assert.match(xml, /https:\/\/juhao\.com\/contact/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|service|partners|downloads|search|legal|privacy)/);
 });
 
 test("serves indexable news pagination with independent canonicals", async () => {

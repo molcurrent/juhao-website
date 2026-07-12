@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context":"https://schema.org", "@graph":[
-    {"@type":"Organization","@id":`${SITE_URL}/#organization`,name:"钜豪照明",alternateName:"JUHAO LIGHTING",url:SITE_URL},
+    {"@type":"Organization","@id":`${SITE_URL}/#organization`,name:"钜豪照明",alternateName:"JUHAO LIGHTING",url:SITE_URL,telephone:"400-0760-888",email:"export@juhaolamp.com",address:{"@type":"PostalAddress",streetAddress:"横栏镇富庆一路8号钜豪工业园",addressLocality:"中山市",addressRegion:"广东省",addressCountry:"CN"}},
     {"@type":"WebSite","@id":`${SITE_URL}/#website`,url:SITE_URL,name:"钜豪照明官网",publisher:{"@id":`${SITE_URL}/#organization`},inLanguage:"zh-CN"}
   ]
 };

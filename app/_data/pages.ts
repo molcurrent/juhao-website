@@ -158,7 +158,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"工业照明解决方案",href:"/solutions/industrial",text:"查看工业空间的方案重点。"},{label:"公共照明解决方案",href:"/solutions/public",text:"了解长期运行空间的规划思路。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
   },
   "contact": {
-    path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/juhao-public.webp",noindex:true,
+    path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/juhao-public.webp",
     description:"按家庭健康光、工程项目与渠道合作三类方向整理咨询需求，说明场景、阶段和希望解决的问题。",
     intro:"选择与你最接近的咨询方向，说明空间或业务类型、当前阶段和核心目标，让沟通从真实需求开始。",
     highlights:[{title:"照明方案",text:"住宅、商业、公共或工业空间的照明需求。"},{title:"智能家居",text:"灯光、窗帘、环境与安防的场景联动需求。"},{title:"商城合作",text:"照明选品、门店经营与渠道协作需求。"},{title:"品牌合作",text:"项目、内容与其他业务合作方向。"}],
