@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "./_data/pages";
+import { FloatingActions } from "@/components/layout/FloatingActions";
 import { SiteMotion } from "@/components/motion/SiteMotion";
 import "./globals.css";
 
@@ -24,5 +25,5 @@ const organizationSchema = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<SiteMotion/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
+  return <html lang="zh-CN"><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<FloatingActions/><SiteMotion/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
 }

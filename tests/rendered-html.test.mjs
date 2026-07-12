@@ -109,6 +109,17 @@ test("renders independent feature structures instead of the generic fallback", a
   assert.match(articleHtml, /"publisher":\{"@id":"https:\/\/juhao\.com\/#organization"\}/);
 });
 
+test("renders the global visitor action layer", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<aside[^>]+aria-label="页面快捷操作"/i);
+  assert.match(html, /<a[^>]+href="\/contact"[^>]*>[^<]*<span>方案咨询<\/span>/i);
+  assert.match(html, /<button(?=[^>]*aria-label="返回页面顶部")(?=[^>]*aria-hidden="true")(?=[^>]*tabindex="-1")[^>]*>/i);
+  assert.match(html, /data-route-curtain="true"/i);
+});
+
 test("keeps incomplete and utility pages out of the index", async () => {
   const worker = await createWorker();
   const noindexRoutes = [

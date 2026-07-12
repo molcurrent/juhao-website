@@ -20,6 +20,7 @@ npm test
 - `app/`：路由入口、metadata、sitemap、robots 与 404。
 - `components/layout/`：桌面/移动导航和页脚。
 - `components/motion/`：Loader、全站 reveal 与 WebGL 首屏转场。
+- 全站提供方案咨询快捷入口、滚动后返回顶部，以及带 reduced-motion 降级的 JUHAO 路由过场。
 - `components/ui/`：可访问 Carousel。
 - `features/`：首页、关于、解决方案、智能家居、服务、合作、新闻、搜索、商城、联系、可持续、下载与法律页面。
 - `lib/api/`：统一 `SiteApi` 接口与本地 Mock；页面不调用原 NVC 接口。

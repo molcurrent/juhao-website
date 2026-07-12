@@ -1,0 +1,135 @@
+.actions {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: var(--z-floating);
+  display: grid;
+  gap: 8px;
+  width: 58px;
+}
+
+.contact,
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 58px;
+  padding: 13px 8px;
+  border: 1px solid #ffffff38;
+  box-shadow: 0 16px 44px #0003;
+  backdrop-filter: blur(14px);
+}
+
+.contact {
+  min-height: 126px;
+  color: var(--white);
+  background: #0b0d0ce8;
+}
+
+.contact span {
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.contact b,
+.top b {
+  color: var(--brand-orange-bright);
+  font-size: 16px;
+}
+
+.top {
+  height: 58px;
+  color: var(--ink);
+  background: #fbf9f4e8;
+  border-color: var(--line);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--duration-fast) ease, transform var(--duration-ui) var(--ease-enter);
+}
+
+.top span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.top b {
+  line-height: .7;
+}
+
+.topVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (hover: hover) {
+  .contact,
+  .top {
+    transition: color var(--duration-fast) ease, background-color var(--duration-ui) var(--ease-enter), border-color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-ui) var(--ease-enter);
+  }
+
+  .contact:hover,
+  .contact:focus-visible,
+  .top:hover,
+  .top:focus-visible {
+    color: var(--white);
+    background: var(--brand-orange);
+    border-color: var(--brand-orange);
+    transform: translateY(-3px);
+  }
+
+  .contact:hover b,
+  .contact:focus-visible b,
+  .top:hover b,
+  .top:focus-visible b {
+    color: var(--white);
+  }
+}
+
+@media (max-width: 900px) {
+  .actions {
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    display: flex;
+    width: auto;
+  }
+
+  .contact,
+  .top {
+    width: 50px;
+    height: 50px;
+    min-height: 0;
+    padding: 8px;
+  }
+
+  .contact span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .contact b,
+  .top b {
+    font-size: 18px;
+  }
+
+  .top span {
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact,
+  .top {
+    transition: none;
+  }
+}

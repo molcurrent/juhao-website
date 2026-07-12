@@ -27,7 +27,9 @@
 
   --z-header: 60;
   --z-drawer: 70;
+  --z-transition: 90;
   --z-loader: 100;
+  --z-floating: 50;
 }
 
 @media (max-width: 900px) {
