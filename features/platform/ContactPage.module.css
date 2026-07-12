@@ -445,6 +445,81 @@
   line-height: 1.75;
 }
 
+.submitPanel {
+  margin-top: 28px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.submitHeading small {
+  color: var(--brand-orange);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.submitHeading h3 {
+  margin: 12px 0 8px;
+  font-size: 24px;
+}
+
+.submitHeading p,
+.consent {
+  color: var(--ink-soft);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.submitHeading p {
+  margin: 0 0 24px;
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 0 20px;
+}
+
+.consent input {
+  margin-top: 4px;
+}
+
+.consent a {
+  margin: 0 3px;
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.submitButton {
+  min-height: 52px;
+  padding: 0 22px;
+  color: var(--white);
+  background: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.submitStatus {
+  min-height: 40px;
+  margin-top: 14px;
+}
+
+.submitStatus p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
 .nextSteps {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;

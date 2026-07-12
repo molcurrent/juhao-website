@@ -61,10 +61,22 @@ export const mockSiteApi: SiteApi = {
       `${page.title} ${page.description}`.toLocaleLowerCase("zh-CN").includes(normalized),
     );
   },
-  async getNewsArticles() {
-    return news;
+  async getNewsArticles(query = {}) {
+    const page = Math.max(1, Math.trunc(query.page ?? 1));
+    const pageSize = Math.min(24, Math.max(1, Math.trunc(query.pageSize ?? 6)));
+    const start = (page - 1) * pageSize;
+    return {
+      items: news.slice(start, start + pageSize),
+      page,
+      pageSize,
+      total: news.length,
+      totalPages: Math.ceil(news.length / pageSize),
+    };
   },
   async getDownloads() {
     return downloads;
+  },
+  async submitContact() {
+    throw new Error("正式咨询接口尚未配置");
   },
 };

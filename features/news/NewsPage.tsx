@@ -3,45 +3,45 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { PageData } from "@/app/_data/pages";
-import { siteApi, type NewsItem } from "@/lib/api";
+import { siteApi, type NewsPageResult } from "@/lib/api";
 import styles from "./NewsPage.module.css";
 
 type NewsLoadState = "loading" | "success" | "error";
 
 type NewsResult = {
   requestKey: number;
-  articles: NewsItem[];
+  page: NewsPageResult;
   status: NewsLoadState;
 };
 
 export function NewsPage({
   page,
-  initialArticles,
+  initialPage,
 }: {
   page: PageData;
-  initialArticles: NewsItem[];
+  initialPage: NewsPageResult;
 }) {
   const [retryKey, setRetryKey] = useState(0);
   const [result, setResult] = useState<NewsResult>({
     requestKey: 0,
-    articles: initialArticles,
+    page: initialPage,
     status: "loading",
   });
   const status: NewsLoadState = result.requestKey === retryKey ? result.status : "loading";
-  const articles = result.articles;
+  const articles = result.page.items;
   const [featured, ...rest] = articles;
 
   useEffect(() => {
     let active = true;
 
     siteApi.getNewsArticles().then(
-      (nextArticles) => {
+      (nextPage) => {
         if (!active) return;
-        setResult({ requestKey: retryKey, articles: nextArticles, status: "success" });
+        setResult({ requestKey: retryKey, page: nextPage, status: "success" });
       },
       () => {
         if (!active) return;
-        setResult((current) => ({ requestKey: retryKey, articles: current.articles, status: "error" }));
+        setResult((current) => ({ requestKey: retryKey, page: current.page, status: "error" }));
       },
     );
 
@@ -99,7 +99,7 @@ export function NewsPage({
           )}
 
           {status === "success" && articles.length > 0 && (
-            <p className={styles.screenReader}>已加载 {articles.length} 条资讯。</p>
+            <p className={styles.screenReader}>已加载 {articles.length} 条资讯，共 {result.page.total} 条。</p>
           )}
         </div>
 

@@ -15,7 +15,7 @@ import { SmartHomePage } from "@/features/smart-home";
 import { HealthyLightPage, SolutionsOverviewPage } from "@/features/solutions";
 import { SustainabilityPage } from "@/features/sustainability/SustainabilityPage";
 import { DownloadsPage, LegalPage } from "@/features/utility/UtilityPages";
-import { siteApi, type NewsItem } from "@/lib/api";
+import { siteApi, type NewsPageResult } from "@/lib/api";
 
 type Props = { params: Promise<{ slug: string[] }> };
 
@@ -70,7 +70,7 @@ function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { nam
   </main>;
 }
 
-function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsItem[] }) {
+function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult }) {
   if (routeKey === "about") return <AboutPage page={page} />;
   if (routeKey === "about/history") return <HistoryPage page={page} />;
   if (routeKey === "about/join") return <CareersPage page={page} />;
@@ -88,7 +88,7 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: s
   if (routeKey === "downloads") return <DownloadsPage page={page} />;
   if (routeKey === "legal" || routeKey === "privacy") return <LegalPage page={page} />;
   if (routeKey === "news") {
-    return <NewsPage page={page} initialArticles={initialNews} />;
+    return <NewsPage page={page} initialPage={initialNews} />;
   }
   if (page.type === "article") return <NewsArticlePage page={page} />;
   return <GenericPage page={page} breadcrumbs={breadcrumbs} />;
@@ -99,7 +99,9 @@ export default async function SeoPage({ params }: Props) {
   const routeKey = slug.join("/");
   const page = getPage(slug);
   if (!page) notFound();
-  const initialNews = routeKey === "news" ? await siteApi.getNewsArticles().catch(() => []) : [];
+  const initialNews = routeKey === "news"
+    ? await siteApi.getNewsArticles().catch(() => ({ items: [], page: 1, pageSize: 6, total: 0, totalPages: 0 }))
+    : { items: [], page: 1, pageSize: 6, total: 0, totalPages: 0 };
   const breadcrumbs = [{ name: "首页", url: SITE_URL }, ...(page.path.split("/").filter(Boolean).map((segment, index, parts) => {
     const path = `/${parts.slice(0, index + 1).join("/")}`;
     return { name: pages[parts.slice(0, index + 1).join("/")]?.label || segment, url: `${SITE_URL}${path}` };
