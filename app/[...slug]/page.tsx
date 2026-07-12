@@ -19,6 +19,8 @@ import { DownloadsPage, LegalPage } from "@/features/utility/UtilityPages";
 import { siteApi, type NewsPageResult } from "@/lib/api";
 import { resolveConsultationContext, type ConsultationContext } from "@/lib/consultation";
 import { NEWS_PAGE_SIZE, newsPagePath, parseNewsPageNumber } from "@/lib/news-pagination";
+import { caseStudies, catalogPageData, productTopics } from "@/content/catalog";
+import { CasesPage, ProductsPage } from "@/features/catalog/CatalogPages";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 type Props = { params: Promise<{ slug: string[] }>; searchParams?: Promise<SearchParams> };
@@ -35,6 +37,10 @@ type RouteContext = {
 function resolveRoute(slug: string[]): RouteContext | null {
   const directPage = getPage(slug);
   if (directPage) return { routeKey: slug.join("/"), page: directPage, canonicalPath: directPage.path, newsPageNumber: null };
+
+  const routeKey = slug.join("/");
+  const catalogPage = catalogPageData(routeKey);
+  if (catalogPage) return { routeKey, page: catalogPage, canonicalPath: catalogPage.path, newsPageNumber: null };
 
   const newsPageNumber = parseNewsPageNumber(slug);
   if (newsPageNumber && newsPageNumber >= 2) {
@@ -55,9 +61,13 @@ const businessScenes: Record<string, BusinessSceneId> = {
 
 export function generateStaticParams() {
   const pageParams = Object.keys(pages).map((key) => ({ slug: key.split("/") }));
+  const catalogParams = [
+    ...productTopics.map((item) => ({ slug: ["products", item.slug] })),
+    ...caseStudies.map((item) => ({ slug: ["cases", item.slug] })),
+  ];
   const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
   const newsParams = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({ slug: ["news", "page", String(index + 2)] }));
-  return [...pageParams, ...newsParams];
+  return [...pageParams, ...catalogParams, ...newsParams];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -101,6 +111,8 @@ function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { nam
 }
 
 function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationContext }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult; consultationContext: ConsultationContext | null }) {
+  if (routeKey === "products") return <ProductsPage page={page} />;
+  if (routeKey === "cases") return <CasesPage page={page} />;
   if (routeKey === "about") return <AboutPage page={page} />;
   if (routeKey === "about/history") return <HistoryPage page={page} />;
   if (routeKey === "about/join") return <CareersPage page={page} />;

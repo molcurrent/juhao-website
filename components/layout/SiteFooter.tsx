@@ -8,6 +8,8 @@ const footerGroups = [
     label: "品牌导航",
     links: [
       ["关于钜豪", "/about"],
+      ["产品中心", "/products"],
+      ["工程案例", "/cases"],
       ["发展历程", "/about/history"],
       ["加入钜豪", "/about/join"],
       ["健康光", "/healthy-light"],
@@ -40,7 +42,7 @@ const footerGroups = [
     title: "内容与联系",
     label: "内容与联系导航",
     links: [
-      ["新闻资讯", "/news"],
+      ["新闻知识", "/news"],
       ["站内搜索", "/search"],
       ["联系钜豪", "/contact"],
     ],

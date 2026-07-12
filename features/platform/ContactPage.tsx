@@ -308,6 +308,16 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
         </form>
       </section>
 
+      <section className={styles.officialContacts} aria-labelledby="official-contact-title">
+        <div><p>04 / VERIFIED CONTACT</p><h2 id="official-contact-title">官网公开联系信息</h2><span>以下信息已按现有 juhao.com 公开页面核对，不使用知识库中的第三方联系方式。</span></div>
+        <address>
+          <a href="tel:4000760888"><small>服务热线</small><strong>400-0760-888</strong></a>
+          <a href="tel:+8676089855555"><small>联系电话</small><strong>+86 0760 8985 5555</strong></a>
+          <a href="mailto:export@juhaolamp.com"><small>电子邮箱</small><strong>export@juhaolamp.com</strong></a>
+          <div><small>企业地址</small><strong>广东省中山市横栏镇富庆一路 8 号<br/>钜豪工业园</strong></div>
+        </address>
+      </section>
+
       <section className={styles.nextSteps} aria-labelledby="contact-next-title" data-reveal>
         <div>
           <p>NEXT STEP</p>

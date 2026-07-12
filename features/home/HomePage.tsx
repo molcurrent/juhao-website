@@ -31,6 +31,13 @@ const newsItems = [
   ["方案导航", "持续更新", "按空间浏览全屋、酒店、商业、公共与工业照明方案", "/solutions"],
 ];
 
+const businessPlatforms = [
+  { title: "产品中心", description: "从 10 个首批专题进入产品内容与选型路径。", href: "/products" },
+  { title: "工程案例", description: "按项目阶段浏览酒店、户外与智慧道路项目资料。", href: "/cases" },
+  { title: "商城采购", description: "交易、采购和订单继续由独立钜豪商城承接。", href: "https://mall.juhao.com" },
+  { title: "经销商登录", description: "保留原有经销商业务入口，避免重复建设交易系统。", href: "https://mall.juhao.com/login.html" },
+];
+
 export function HomePage() {
   const [activeScene, setActiveScene] = useState(0);
   const [activeHero, setActiveHero] = useState(0);
@@ -94,8 +101,8 @@ export function HomePage() {
       </section>
 
       <section className="platform" id="platform">
-        <div className="platformHead" data-reveal><div><p className="eyebrow"><span /> START A CONVERSATION</p><h2>从真实需求出发<br/>进入对应咨询</h2></div><p>家庭、工程与渠道需求分别进入对应路径，减少重复说明，让沟通从场景、阶段和目标开始。</p></div>
-        <div className="strengthGrid" data-reveal>{consultationOptions.map((item,i)=><article key={item.kind}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item.label}</h3><p>{item.description}</p><Link href={consultationHref(item.kind, "home-platform")} aria-label={item.cta}>↗</Link></article>)}</div>
+        <div className="platformHead" data-reveal><div><p className="eyebrow"><span /> CONTENT & COMMERCE</p><h2>内容与交易<br/>各自做好一件事</h2></div><p>新版官网负责品牌、产品、方案、案例与获客；独立商城继续承接采购、订单和经销商业务，不重复开发成熟交易能力。</p></div>
+        <div className="strengthGrid" data-reveal>{businessPlatforms.map((item,i)=><article key={item.title}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href} aria-label={`进入${item.title}`}>↗</Link></article>)}</div>
       </section>
 
       <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> LIGHTING INSIGHTS</p><h2>照明知识</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明知识" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item[3]} key={item[2]}><div><span>{item[0]}</span><time dateTime={item[1] === "持续更新" ? undefined : item[1]}>{item[1]}</time></div><h3>{item[2]}</h3><p>阅读完整内容，了解对应场景的照明规划重点。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>

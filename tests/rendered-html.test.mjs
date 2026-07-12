@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 async function createWorker() {
@@ -129,8 +130,50 @@ test("renders three tracked consultation paths without demo copy", async () => {
   const html = await response.text();
   assert.match(html, /<meta[^>]+name="viewport"[^>]+viewport-fit=cover/i);
   for (const marker of ["获取户型 / 空间建议", "提交项目需求", "了解合作条件"]) assert.match(html, new RegExp(marker));
-  for (const source of ["home-hero", "home-platform", "home-contact"]) assert.match(html, new RegExp(`source=${source}`));
+  for (const source of ["home-hero", "home-contact"]) assert.match(html, new RegExp(`source=${source}`));
+  for (const marker of ["产品中心", "工程案例", "商城采购", "经销商登录"]) assert.match(html, new RegExp(marker));
+  assert.match(html, /https:\/\/mall\.juhao\.com/);
   assert.doesNotMatch(html, /正式能力与开放范围|商品、订单、客户与服务边界以企业确认为准|后续确认的信息为准/);
+});
+
+test("publishes indexable product topics and stage-labelled project pages", async () => {
+  const worker = await createWorker();
+  const routes = [
+    ["/products", "底层全量管理", "照明产品中心"],
+    ["/products/spotlights", "射灯与轨道照明", "产品专题"],
+    ["/cases", "把项目阶段", "工程案例与项目动态"],
+    ["/cases/jw-marriott-shenzhen-huafa-snow-world", "签约 / 中标项目", "深圳华发冰雪世界 JW 万豪酒店"],
+    ["/cases/yangzhou-riverfront-lighting", "尚不表述为完工案例", "扬州经开区"],
+  ];
+  for (const [path, marker, title] of routes) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, new RegExp(marker), path);
+    assert.match(html, new RegExp(title), path);
+    assert.doesNotMatch(html, /content="noindex, follow"/i, path);
+    assert.match(html, /<link[^>]+rel="canonical"/i, path);
+  }
+
+  const sitemap = await render(worker, "/sitemap.xml", "application/xml");
+  const xml = await sitemap.text();
+  assert.match(xml, /https:\/\/juhao\.com\/products\/spotlights/);
+  assert.match(xml, /https:\/\/juhao\.com\/cases\/jw-marriott-shenzhen-huafa-snow-world/);
+});
+
+test("content ledger blocks pending products from public SEO routes", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const pendingProducts = ledger.filter((item) => item.content_type === "产品" && item.review_status === "待审核");
+  const approvedCases = ledger.filter((item) => item.content_type === "案例" && item.review_status === "已审核" && item.fact_status === "已核实" && item.image_status === "完整");
+  assert.equal(pendingProducts.length, 100);
+  assert.equal(new Set(pendingProducts.map((item) => item.source_id)).size, 100);
+  assert.equal(approvedCases.length, 6);
+
+  const sitemap = await render(worker, "/sitemap.xml", "application/xml");
+  const xml = await sitemap.text();
+  for (const item of approvedCases) assert.match(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+  for (const item of pendingProducts) assert.doesNotMatch(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
 });
 
 test("server-presets and records consultation context", async () => {

@@ -21,6 +21,22 @@ export type PageData = {
 };
 
 export const pages: Record<string, PageData> = {
+  "products": {
+    path: "/products", label: "产品中心", eyebrow: "PRODUCT CENTER", title: "产品中心", seoTitle: "照明产品中心｜产品专题与选型入口｜钜豪照明", image: "/images/juhao-commercial.webp", type: "page",
+    description: "浏览钜豪照明射灯、家居顶灯、新中式、艺术灯、水晶吊灯、线性照明、开关电工、户外照明、工程定制与智能设备专题。",
+    intro: "以专题组织产品，以审核控制发布。先从空间和使用任务进入，再核对型号、参数、安装条件与资料。",
+    highlights: [{ title: "10 个首批专题", text: "覆盖家居、商照、工程、户外与智能设备。" }, { title: "精选发布", text: "不把内容贫弱或资料未确认的商品批量生成页面。" }],
+    sections: [{ title: "产品内容中心", text: "产品页面承担内容展示、参数理解、方案关联与咨询承接；复杂交易、订单与经销商能力继续由独立商城承担。" }],
+    related: [{ label: "照明方案", href: "/solutions", text: "按空间找到对应选型方法。" }, { label: "工程案例", href: "/cases", text: "从真实项目理解应用场景。" }, { label: "进入商城", href: "/mall", text: "前往独立交易与经销商系统。" }],
+  },
+  "cases": {
+    path: "/cases", label: "工程案例", eyebrow: "PROJECTS & CASES", title: "工程案例与项目动态", seoTitle: "工程案例与项目动态｜酒店·商业·户外照明｜钜豪照明", image: "/images/juhao-public.webp", type: "page",
+    description: "浏览钜豪照明酒店、户外亮化与智慧道路项目动态，明确区分签约中标、实施中与已完成案例。",
+    intro: "案例中心不复制新闻稿，而是按项目背景、空间任务、照明策略与当前阶段重构内容。",
+    highlights: [{ title: "阶段透明", text: "签约或中标项目不会包装成已落地案例。" }, { title: "结构化呈现", text: "围绕空间、需求、策略、产品与服务组织项目资料。" }],
+    sections: [{ title: "从项目事实开始", text: "首批内容覆盖酒店、户外亮化与智慧道路方向；实施图片、产品清单和成果数据将在资料核验后补充。" }],
+    related: [{ label: "酒店照明方案", href: "/solutions/hospitality", text: "了解酒店空间照明方法。" }, { label: "公共照明方案", href: "/solutions/public", text: "了解公共与城市空间照明。" }, { label: "工程项目咨询", href: "/contact?source=cases&scene=project&intent=project-brief", text: "提交项目类型、阶段与需求。" }],
+  },
   "about": {
     path: "/about", label: "关于钜豪", eyebrow: "ABOUT JUHAO", title: "关于钜豪照明", seoTitle: "关于钜豪｜钜豪照明品牌介绍", image: "/images/juhao-home.webp",
     description: "了解钜豪照明的品牌理念、业务方向与服务价值，认识品牌围绕健康照明、智能家居与渠道服务的持续探索。",

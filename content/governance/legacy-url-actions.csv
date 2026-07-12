@@ -1,0 +1,9 @@
+legacy_url,classification,http_action,destination,evidence_status,owner_status
+https://www.juhao.com/,legitimate,200,,已核实,保留并迁移至品牌官网
+https://www.juhao.com/login.html,legitimate,200,https://mall.juhao.com/login.html,已核实,商城拆分时迁移
+https://www.juhao.com/static/news/9062.html,spam,410,,搜索结果已核实,待旧站管理员执行
+https://www.juhao.com/static/news/1689.html,spam,410,,搜索结果已核实,待旧站管理员执行
+https://www.juhao.com/static/news/1022.html,spam,410,,搜索结果已核实,待旧站管理员执行
+https://www.juhao.com/static/news/3649.html,spam,410,,搜索结果已核实,待旧站管理员执行
+https://www.juhao.com/static/news/5795.html,spam,410,,搜索结果已核实,待旧站管理员执行
+https://www.juhao.com/static/news/8058.html,spam,410,,搜索结果已核实,待旧站管理员执行

@@ -6,7 +6,7 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 /* Conversion paths and mobile safe-area treatment */
-.strengthGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.strengthGrid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .contactPaths{display:grid;border-top:1px solid #1115}
 .contactPaths a{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;padding:22px 48px 22px 0;border-bottom:1px solid #1115}
 .contactPaths a>span{font-size:11px;font-weight:800;letter-spacing:.08em}
