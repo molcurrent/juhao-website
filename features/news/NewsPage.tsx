@@ -4,15 +4,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { PageData } from "@/app/_data/pages";
 import { siteApi, type NewsPageResult } from "@/lib/api";
+import { newsPagePath } from "@/lib/news-pagination";
 import styles from "./NewsPage.module.css";
 
 type NewsLoadState = "loading" | "success" | "error";
 
 type NewsResult = {
-  requestKey: number;
+  requestKey: string;
   page: NewsPageResult;
   status: NewsLoadState;
 };
+
+function paginationItems(current: number, total: number) {
+  if (total <= 7) return Array.from({ length: total }, (_, index) => index + 1);
+  const pages = [...new Set([1, total, current - 1, current, current + 1].filter((page) => page >= 1 && page <= total))].sort((a, b) => a - b);
+  return pages.flatMap((page, index) => index > 0 && page - pages[index - 1] > 1 ? [-1, page] : [page]);
+}
 
 export function NewsPage({
   page,
@@ -23,30 +30,32 @@ export function NewsPage({
 }) {
   const [retryKey, setRetryKey] = useState(0);
   const [result, setResult] = useState<NewsResult>({
-    requestKey: 0,
+    requestKey: "server",
     page: initialPage,
     status: "loading",
   });
-  const status: NewsLoadState = result.requestKey === retryKey ? result.status : "loading";
-  const articles = result.page.items;
+  const requestKey = `${initialPage.page}:${retryKey}`;
+  const status: NewsLoadState = result.requestKey === requestKey ? result.status : "loading";
+  const pageResult = result.page.page === initialPage.page ? result.page : initialPage;
+  const articles = pageResult.items;
   const [featured, ...rest] = articles;
 
   useEffect(() => {
     let active = true;
 
-    siteApi.getNewsArticles().then(
+    siteApi.getNewsArticles({ page: initialPage.page, pageSize: initialPage.pageSize }).then(
       (nextPage) => {
         if (!active) return;
-        setResult({ requestKey: retryKey, page: nextPage, status: "success" });
+        setResult({ requestKey, page: nextPage, status: "success" });
       },
       () => {
         if (!active) return;
-        setResult((current) => ({ requestKey: retryKey, page: current.page, status: "error" }));
+        setResult((current) => ({ requestKey, page: current.page.page === initialPage.page ? current.page : initialPage, status: "error" }));
       },
     );
 
     return () => { active = false; };
-  }, [retryKey]);
+  }, [initialPage, requestKey]);
 
   return (
     <main id="main-content" className={styles.page}>
@@ -99,7 +108,7 @@ export function NewsPage({
           )}
 
           {status === "success" && articles.length > 0 && (
-            <p className={styles.screenReader}>已加载 {articles.length} 条资讯，共 {result.page.total} 条。</p>
+            <p className={styles.screenReader}>已加载第 {pageResult.page} 页的 {articles.length} 条资讯，共 {pageResult.total} 条。</p>
           )}
         </div>
 
@@ -126,6 +135,24 @@ export function NewsPage({
               </div>
             )}
           </div>
+        )}
+
+        {pageResult.totalPages > 1 && (
+          <nav className={styles.pagination} aria-label="资讯分页">
+            {pageResult.page > 1
+              ? <Link className={styles.pageDirection} href={newsPagePath(pageResult.page - 1)} rel="prev">← 上一页</Link>
+              : <span className={`${styles.pageDirection} ${styles.pageDisabled}`} aria-disabled="true">← 上一页</span>}
+            <div className={styles.pageNumbers}>
+              {paginationItems(pageResult.page, pageResult.totalPages).map((item, index) => item === -1
+                ? <span className={styles.pageEllipsis} aria-hidden="true" key={`ellipsis-${index}`}>…</span>
+                : item === pageResult.page
+                  ? <span className={styles.pageCurrent} aria-current="page" key={item}>{String(item).padStart(2, "0")}</span>
+                  : <Link href={newsPagePath(item)} key={item}>{String(item).padStart(2, "0")}</Link>)}
+            </div>
+            {pageResult.page < pageResult.totalPages
+              ? <Link className={styles.pageDirection} href={newsPagePath(pageResult.page + 1)} rel="next">下一页 →</Link>
+              : <span className={`${styles.pageDirection} ${styles.pageDisabled}`} aria-disabled="true">下一页 →</span>}
+          </nav>
         )}
       </section>
     </main>

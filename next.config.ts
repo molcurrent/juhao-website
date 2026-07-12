@@ -17,8 +17,6 @@ const nextConfig: NextConfig = {
       { source: "/download", destination: "/downloads", permanent: true },
       { source: "/law", destination: "/legal", permanent: true },
       { source: "/news/page/1", destination: "/news", permanent: true },
-      { source: "/news/page/2", destination: "/news", permanent: true },
-      { source: "/news/page/3", destination: "/news", permanent: true },
       { source: "/news/:id(\\d+)", destination: "/news", permanent: true },
     ];
   },

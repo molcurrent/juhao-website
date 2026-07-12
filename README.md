@@ -31,6 +31,7 @@ npm test
 - 目标规范域为 `https://juhao.com`。
 - 每个正式页面独立输出 title、description、canonical、Open Graph 和 SSR 正文。
 - 文章页输出 Article JSON-LD；可见 FAQ 与 FAQPage 数据使用同一来源。
+- 资讯列表使用 `/news`、`/news/page/2`、`/news/page/3` 独立 SSR 页面；第一页别名重定向到 `/news`，越界页码返回 404。
 - 待企业核验的页面保持 `noindex, follow`，不进入 sitemap，也不输出页面级结构化数据。
 - 原 `/brand/**`、`/healthy`、`/esg`、`/investment`、`/download`、`/law` 和旧数字新闻路径使用 308 迁移。
 

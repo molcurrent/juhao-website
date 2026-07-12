@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { cache } from "react";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteHeader } from "../_components/SiteHeader";
 import { pages, SITE_URL, type PageData } from "../_data/pages";
@@ -16,10 +17,31 @@ import { HealthyLightPage, SolutionsOverviewPage } from "@/features/solutions";
 import { SustainabilityPage } from "@/features/sustainability/SustainabilityPage";
 import { DownloadsPage, LegalPage } from "@/features/utility/UtilityPages";
 import { siteApi, type NewsPageResult } from "@/lib/api";
+import { NEWS_PAGE_SIZE, newsPagePath, parseNewsPageNumber } from "@/lib/news-pagination";
 
 type Props = { params: Promise<{ slug: string[] }> };
 
 function getPage(slug: string[]) { return pages[slug.join("/")]; }
+
+type RouteContext = {
+  routeKey: string;
+  page: PageData;
+  canonicalPath: string;
+  newsPageNumber: number | null;
+};
+
+function resolveRoute(slug: string[]): RouteContext | null {
+  const directPage = getPage(slug);
+  if (directPage) return { routeKey: slug.join("/"), page: directPage, canonicalPath: directPage.path, newsPageNumber: null };
+
+  const newsPageNumber = parseNewsPageNumber(slug);
+  if (newsPageNumber && newsPageNumber >= 2) {
+    return { routeKey: "news", page: pages.news, canonicalPath: newsPagePath(newsPageNumber), newsPageNumber };
+  }
+  return null;
+}
+
+const loadNewsPage = cache((page: number) => siteApi.getNewsArticles({ page, pageSize: NEWS_PAGE_SIZE }));
 
 const businessScenes: Record<string, BusinessSceneId> = {
   "solutions/residential": "residential",
@@ -30,30 +52,36 @@ const businessScenes: Record<string, BusinessSceneId> = {
 };
 
 export function generateStaticParams() {
-  return Object.keys(pages).map((key) => ({ slug: key.split("/") }));
+  const pageParams = Object.keys(pages).map((key) => ({ slug: key.split("/") }));
+  const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
+  const newsParams = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({ slug: ["news", "page", String(index + 2)] }));
+  return [...pageParams, ...newsParams];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page = getPage((await params).slug);
-  if (!page) return {};
+  const route = resolveRoute((await params).slug);
+  if (!route) return {};
+  const { page, canonicalPath, newsPageNumber } = route;
+  const title = newsPageNumber ? `${page.seoTitle}｜第 ${newsPageNumber} 页` : page.seoTitle;
+  const description = newsPageNumber ? `${page.description} 当前为第 ${newsPageNumber} 页。` : page.description;
   const socialImage = { url: "/og.png", width: 1733, height: 909, alt: "JUHAO 钜豪照明｜好房子，光健康" };
   const socialMetadata = {
-    title: page.seoTitle,
-    description: page.description,
-    url: page.path,
+    title,
+    description,
+    url: canonicalPath,
     siteName: "钜豪照明 JUHAO",
     locale: "zh_CN",
     images: [socialImage],
   };
   return {
-    title: page.seoTitle,
-    description: page.description,
-    alternates: { canonical: page.path },
+    title,
+    description,
+    alternates: { canonical: canonicalPath },
     robots: page.noindex ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: page.type === "article"
       ? { ...socialMetadata, type: "article", ...(page.published ? { publishedTime: page.published } : {}) }
       : { ...socialMetadata, type: "website" },
-    twitter: { card: "summary_large_image", title: page.seoTitle, description: page.description, images: ["/og.png"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
   };
 }
 
@@ -96,23 +124,41 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: s
 
 export default async function SeoPage({ params }: Props) {
   const slug = (await params).slug;
-  const routeKey = slug.join("/");
-  const page = getPage(slug);
-  if (!page) notFound();
-  const initialNews = routeKey === "news"
-    ? await siteApi.getNewsArticles().catch(() => ({ items: [], page: 1, pageSize: 6, total: 0, totalPages: 0 }))
-    : { items: [], page: 1, pageSize: 6, total: 0, totalPages: 0 };
-  const breadcrumbs = [{ name: "首页", url: SITE_URL }, ...(page.path.split("/").filter(Boolean).map((segment, index, parts) => {
-    const path = `/${parts.slice(0, index + 1).join("/")}`;
-    return { name: pages[parts.slice(0, index + 1).join("/")]?.label || segment, url: `${SITE_URL}${path}` };
-  }))];
+  const route = resolveRoute(slug);
+  if (!route) notFound();
+  const { routeKey, page, canonicalPath, newsPageNumber } = route;
+  const requestedNewsPage = newsPageNumber ?? 1;
+  let newsLoadFailed = false;
+  let initialNews: NewsPageResult = { items: [], page: requestedNewsPage, pageSize: NEWS_PAGE_SIZE, total: 0, totalPages: requestedNewsPage };
+  if (routeKey === "news") {
+    try {
+      initialNews = await loadNewsPage(requestedNewsPage);
+    } catch {
+      newsLoadFailed = true;
+    }
+  }
+  if (newsPageNumber && !newsLoadFailed && (initialNews.page !== newsPageNumber || newsPageNumber > initialNews.totalPages || initialNews.items.length === 0)) notFound();
+
+  const breadcrumbs = newsPageNumber
+    ? [
+        { name: "首页", url: SITE_URL },
+        { name: pages.news.label, url: `${SITE_URL}/news` },
+        { name: `第 ${newsPageNumber} 页`, url: `${SITE_URL}${canonicalPath}` },
+      ]
+    : [{ name: "首页", url: SITE_URL }, ...(page.path.split("/").filter(Boolean).map((segment, index, parts) => {
+        const path = `/${parts.slice(0, index + 1).join("/")}`;
+        return { name: pages[parts.slice(0, index + 1).join("/")]?.label || segment, url: `${SITE_URL}${path}` };
+      }))];
+  const schemaName = newsPageNumber ? `${page.title}｜第 ${newsPageNumber} 页` : page.title;
   const schema = page.noindex ? [] : [
     { "@context":"https://schema.org", "@type":"BreadcrumbList", itemListElement:breadcrumbs.map((item,index)=>({"@type":"ListItem",position:index+1,name:item.name,item:item.url})) },
-    page.type === "article"
+    newsPageNumber
+      ? { "@context":"https://schema.org", "@type":"CollectionPage", name:schemaName, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${canonicalPath}` }
+      : page.type === "article"
       ? { "@context":"https://schema.org", "@type":"Article", headline:page.title, description:page.description, image:`${SITE_URL}/og.png`, inLanguage:"zh-CN", datePublished:page.published, dateModified:page.published, mainEntityOfPage:`${SITE_URL}${page.path}`, author:{"@id":`${SITE_URL}/#organization`}, publisher:{"@id":`${SITE_URL}/#organization`} }
       : page.type === "service"
         ? { "@context":"https://schema.org", "@type":"Service", name:page.title, description:page.description, provider:{"@id":`${SITE_URL}/#organization`}, areaServed:"CN" }
-        : { "@context":"https://schema.org", "@type":"WebPage", name:page.title, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${page.path}` }
+        : { "@context":"https://schema.org", "@type":"WebPage", name:page.title, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${canonicalPath}` }
   ];
   const faqSchema = !page.noindex && page.faqs?.length ? { "@context":"https://schema.org", "@type":"FAQPage", mainEntity:page.faqs.map((faq)=>({"@type":"Question",name:faq.question,acceptedAnswer:{"@type":"Answer",text:faq.answer}})) } : null;
   const structuredData = [...schema, ...(faqSchema ? [faqSchema] : [])];

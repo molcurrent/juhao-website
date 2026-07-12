@@ -138,6 +138,43 @@ test("keeps incomplete and utility pages out of the index", async () => {
   assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|service|partners|downloads|search|contact|legal|privacy)/);
 });
 
+test("serves indexable news pagination with independent canonicals", async () => {
+  const worker = await createWorker();
+  const pages = [
+    ["/news/page/2", "第 2 页", "零售空间照明", "酒店照明"],
+    ["/news/page/3", "第 3 页", "眩光控制基础", "工业照明规划"],
+  ];
+
+  for (const [path, pageTitle, firstArticle, secondArticle] of pages) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, new RegExp(pageTitle), path);
+    assert.match(html, new RegExp(firstArticle), path);
+    assert.match(html, new RegExp(secondArticle), path);
+    assert.match(html, new RegExp(`<link(?=[^>]*rel="canonical")(?=[^>]*href="https://juhao\\.com${path}")[^>]*>`, "i"), path);
+    assert.match(html, /"@type":"CollectionPage"/, path);
+    assert.match(html, /aria-label="资讯分页"/, path);
+    assert.doesNotMatch(html, /content="noindex, follow"/i, path);
+  }
+
+  const firstPageAlias = await render(worker, "/news/page/1");
+  assert.equal(firstPageAlias.status, 308);
+  assert.equal(new URL(firstPageAlias.headers.get("location"), "http://localhost").pathname, "/news");
+
+  const outOfRange = await render(worker, "/news/page/4");
+  assert.equal(outOfRange.status, 404);
+  const outOfRangeHtml = await outOfRange.text();
+  assert.match(outOfRangeHtml, /<meta(?=[^>]*name="robots")(?=[^>]*content="noindex")[^>]*>/i);
+  assert.doesNotMatch(outOfRangeHtml, /<link[^>]+rel="canonical"/i);
+
+  const sitemap = await render(worker, "/sitemap.xml", "application/xml");
+  const xml = await sitemap.text();
+  assert.match(xml, /https:\/\/juhao\.com\/news\/page\/2/);
+  assert.match(xml, /https:\/\/juhao\.com\/news\/page\/3/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/4/);
+});
+
 test("redirects legacy NVC route families to JUHAO canonicals", async () => {
   const worker = await createWorker();
   const redirects = [
@@ -149,8 +186,6 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
     ["/download", "/downloads"],
     ["/law", "/legal"],
     ["/news/page/1", "/news"],
-    ["/news/page/2", "/news"],
-    ["/news/page/3", "/news"],
     ["/news/132", "/news"],
   ];
 
@@ -160,8 +195,6 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
     assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, destination, source);
   }
 
-  const unknownPage = await render(worker, "/news/page/4");
-  assert.equal(unknownPage.status, 404, "/news/page/4");
 });
 
 test("serves discovery files and a branded 404", async () => {

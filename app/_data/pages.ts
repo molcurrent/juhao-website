@@ -109,6 +109,38 @@ export const pages: Record<string, PageData> = {
     sections:[{title:"先写下生活的一天",text:"从起床、离家、回家、用餐到休息，记录家庭最常发生的活动。哪些动作值得一键完成，哪些状态适合自动触发，会因此变得清晰。"},{title:"再确定灯光分区",text:"灯光分区应对应空间功能，而不是机械地按灯具类型划分。阅读区、餐桌、电视背景和通道可以拥有独立且容易理解的控制。"},{title:"最后选择控制方式",text:"墙面按键、传感器、语音和手机各有适合的场景。组合时应优先保证稳定和直观，再增加自动化与远程能力。"}],
     related:[{label:"智能家居照明解决方案",href:"/smart-home",text:"了解常见智能生活场景。"},{label:"全屋照明解决方案",href:"/solutions/residential",text:"建立家庭光环境基础。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
   },
+  "news/retail-lighting-layering": {
+    path:"/news/retail-lighting-layering",label:"零售照明层次",eyebrow:"RETAIL LIGHTING INSIGHT",title:"零售空间照明：用明暗层次引导浏览与停留",seoTitle:"零售空间照明层次怎么规划｜钜豪照明资讯",image:"/images/juhao-commercial.webp",type:"article",published:"2026-07-12",
+    description:"从顾客动线、商品重点、材质呈现和陈列变化出发，了解零售空间基础光与重点光的规划方法。",
+    intro:"零售照明不是把空间整体照得更亮，而是让顾客容易辨认入口、理解动线，并在合适的位置注意到商品与品牌信息。",
+    highlights:[{title:"入口识别",text:"用亮度关系建立清晰的第一视觉焦点。"},{title:"商品重点",text:"根据陈列层级分配基础光与重点光。"},{title:"材质呈现",text:"结合商品颜色和表面特征考虑显色与反射。"},{title:"灵活调整",text:"为换季和陈列变化保留调整能力。"}],
+    sections:[{title:"先画出顾客动线",text:"入口、主通道、重点展台与收银区域承担不同任务。先梳理顾客如何进入、浏览和停留，再决定哪些区域需要连续引导，哪些位置适合形成亮度对比。"},{title:"让重点光服务于商品",text:"重点照明应回应商品大小、材质与观看距离。光束过窄可能造成割裂，过宽又会削弱层次，需要结合陈列密度和背景亮度调整。"},{title:"为运营变化留空间",text:"零售陈列会持续变化。轨道、回路与控制场景应便于重新瞄准和分组，避免每次调整都依赖大规模改造。"}],
+    related:[{label:"商业照明解决方案",href:"/solutions/commercial",text:"查看商业空间的方案重点。"},{label:"酒店照明旅程",href:"/news/hospitality-lighting-journey",text:"了解连续空间中的光环境衔接。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
+  },
+  "news/hospitality-lighting-journey": {
+    path:"/news/hospitality-lighting-journey",label:"酒店照明旅程",eyebrow:"HOSPITALITY INSIGHT",title:"酒店照明：沿着宾客旅程组织光环境",seoTitle:"酒店照明如何按宾客旅程规划｜钜豪照明资讯",image:"/images/juhao-home.webp",type:"article",published:"2026-07-12",
+    description:"从抵达、登记、通行、停留到客房休息，理解酒店不同空间之间的照明衔接与场景控制思路。",
+    intro:"酒店包含连续而不同的空间体验。照明既要帮助识别和通行，也要在公共区域与客房之间建立自然的情绪过渡。",
+    highlights:[{title:"抵达",text:"让入口、门廊与前台容易识别。"},{title:"通行",text:"保证路径清楚，同时控制不必要的高亮。"},{title:"停留",text:"用局部层次支持交流、等候与餐饮。"},{title:"休息",text:"在客房中兼顾阅读、起居与夜间活动。"}],
+    sections:[{title:"把空间串成一段旅程",text:"从室外抵达到进入大堂，人的视觉会经历亮度和尺度变化。入口识别、前台焦点与通行区域应形成连续关系，避免突兀的明暗跳变。"},{title:"公共区域需要多种状态",text:"大堂、走廊、餐饮和会议空间在不同时段承担不同活动。分区控制和预设场景能帮助运营人员快速切换，同时保留必要的手动调整。"},{title:"客房控制要简单直观",text:"入住者不应先学习复杂系统。床头、阅读、洗漱和夜间起居等高频需求应有容易理解的控制，并避免高亮光源直接进入视线。"}],
+    related:[{label:"酒店照明解决方案",href:"/solutions/hospitality",text:"查看酒店空间的方案框架。"},{label:"眩光控制基础",href:"/news/glare-control-basics",text:"了解视觉舒适的常见影响因素。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
+  },
+  "news/glare-control-basics": {
+    path:"/news/glare-control-basics",label:"眩光控制基础",eyebrow:"VISUAL COMFORT",title:"眩光控制基础：不只看灯具亮不亮",seoTitle:"照明眩光怎么控制｜视觉舒适基础｜钜豪照明资讯",image:"/images/juhao-public.webp",type:"article",published:"2026-07-12",
+    description:"从光源位置、观察方向、背景亮度和表面反射四个方面，理解空间照明中常见的眩光问题。",
+    intro:"同一盏灯在不同位置和视线方向下，可能带来完全不同的感受。控制眩光需要同时观察灯具、空间和人的活动。",
+    highlights:[{title:"光源位置",text:"避免高亮发光面长期处于主要视线。"},{title:"观察方向",text:"站立、坐姿与行走时的视线并不相同。"},{title:"背景亮度",text:"过强的明暗反差可能增加不适。"},{title:"表面反射",text:"玻璃、金属与屏幕会改变光的方向。"}],
+    sections:[{title:"先找到真实视线",text:"办公桌、餐桌、沙发和通道上的观察方向各不相同。检查灯具是否落入高频视线，比只看平面布灯图更接近真实使用。"},{title:"遮光只是其中一步",text:"合适的遮光角、配光与安装位置可以减少直视高亮，但墙面、桌面和显示屏的反射同样需要现场判断。"},{title:"用环境亮度缓和反差",text:"当任务区域很亮而周围过暗时，视觉需要频繁适应。通过基础光和立面亮度建立适度的环境层次，往往比单纯降低某一盏灯更有效。"}],
+    related:[{label:"健康光环境",href:"/healthy-light",text:"了解以人为中心的照明原则。"},{label:"家庭健康光",href:"/news/healthy-home-lighting",text:"把视觉舒适应用到家庭场景。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
+  },
+  "news/industrial-lighting-maintenance": {
+    path:"/news/industrial-lighting-maintenance",label:"工业照明维护",eyebrow:"INDUSTRIAL INSIGHT",title:"工业照明规划：把维护条件放进方案里",seoTitle:"工业照明维护怎么规划｜钜豪照明资讯",image:"/images/juhao-industrial.webp",type:"article",published:"2026-07-12",
+    description:"从安装高度、环境条件、设备布局和运行时段出发，了解工业照明方案中的维护与长期使用问题。",
+    intro:"工业空间中的灯具往往安装更高、运行更久，也可能面对粉尘、潮湿或设备遮挡。维护条件应在选型和布置阶段同步考虑。",
+    highlights:[{title:"安装高度",text:"影响检修方式、配光选择与作业安排。"},{title:"环境条件",text:"温度、粉尘和潮湿需要对应设备适配。"},{title:"设备遮挡",text:"结合产线与货架减少阴影和暗区。"},{title:"运行策略",text:"按班次、区域和任务设置合理控制。"}],
+    sections:[{title:"先确认如何到达灯具",text:"高空作业平台、停线窗口和安全隔离都会影响维护成本。布灯时应同时确认检修通道与更换条件，而不是只满足初始照度。"},{title:"把现场环境写进需求",text:"温度、粉尘、潮湿、振动和清洁方式会影响设备选择。具体防护与性能要求必须以现场条件、产品资料和适用标准为依据。"},{title:"用分区减少不必要运行",text:"产线、仓储通道和辅助区域的使用节奏不同。清晰的分区与控制策略既方便运营，也有助于在检修时缩小受影响范围。"}],
+    related:[{label:"工业照明解决方案",href:"/solutions/industrial",text:"查看工业空间的方案重点。"},{label:"公共照明解决方案",href:"/solutions/public",text:"了解长期运行空间的规划思路。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
+  },
   "contact": {
     path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/juhao-public.webp",noindex:true,
     description:"查看照明方案、智能家居与渠道合作的咨询准备说明；正式联系方式将在企业确认后发布。",
