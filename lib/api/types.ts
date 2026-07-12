@@ -63,7 +63,10 @@ export type NewsPageResult = NewsQuery & {
 };
 
 export type ContactRequest = {
-  direction: "lighting" | "smart" | "channel";
+  direction: "home" | "project" | "channel";
+  source: "home-hero" | "home-platform" | "home-contact" | "floating" | "footer" | "header" | "mobile-nav" | "direct";
+  scene: "home-health" | "project" | "channel";
+  intent: "space-advice" | "project-brief" | "partnership";
   project: string;
   stage: "understanding" | "planning" | "delivery" | "operation";
   need: string;

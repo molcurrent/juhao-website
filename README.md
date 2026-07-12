@@ -22,7 +22,7 @@ npm test
 - Footer 按品牌、照明方案、服务合作、内容联系与法律信息分组，并避免发布未经企业核验的备案和联系方式。
 - 桌面与移动导航均提供站内搜索入口；移动抽屉包含首焦点、Tab 循环、Esc 关闭、背景 inert 和焦点回送。
 - `components/motion/`：Loader、全站 reveal 与 WebGL 首屏转场。
-- 全站提供方案咨询快捷入口、滚动后返回顶部，以及带 reduced-motion 降级的 JUHAO 路由过场。
+- 全站提供家庭健康光、工程项目和渠道合作三类咨询快捷入口，记录来源、场景与意图；同时保留滚动后返回顶部和 reduced-motion 路由过场降级。
 - `components/ui/`：可访问 Carousel；首页资讯与关于页品牌场景共用键盘、触摸、自动播放、暂停和 reduced-motion 行为。
 - `features/`：首页、关于、解决方案、智能家居、服务、合作、新闻、搜索、商城、联系、可持续、下载与法律页面。
 - `lib/api/`：统一 `SiteApi` 接口与本地 Mock；页面不调用原 NVC 接口。

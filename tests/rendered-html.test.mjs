@@ -115,9 +115,35 @@ test("renders the global visitor action layer", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /<aside[^>]+aria-label="页面快捷操作"/i);
-  assert.match(html, /<a[^>]+href="\/contact"[^>]*>[^<]*<span>方案咨询<\/span>/i);
+  assert.match(html, /<summary[^>]+aria-label="选择咨询方向"/i);
+  assert.match(html, /<nav[^>]+aria-label="快捷咨询路径"/i);
+  for (const label of ["家庭健康光", "工程项目", "渠道合作"]) assert.match(html, new RegExp(label));
   assert.match(html, /<button(?=[^>]*aria-label="返回页面顶部")(?=[^>]*aria-hidden="true")(?=[^>]*tabindex="-1")[^>]*>/i);
   assert.match(html, /data-route-curtain="true"/i);
+});
+
+test("renders three tracked consultation paths without demo copy", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<meta[^>]+name="viewport"[^>]+viewport-fit=cover/i);
+  for (const marker of ["获取户型 / 空间建议", "提交项目需求", "了解合作条件"]) assert.match(html, new RegExp(marker));
+  for (const source of ["home-hero", "home-platform", "home-contact"]) assert.match(html, new RegExp(`source=${source}`));
+  assert.doesNotMatch(html, /正式能力与开放范围|商品、订单、客户与服务边界以企业确认为准|后续确认的信息为准/);
+});
+
+test("server-presets and records consultation context", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/contact?source=home-hero&scene=home-health&intent=space-advice");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /已匹配：家庭健康光/);
+  assert.match(html, /<input(?=[^>]*name="source")(?=[^>]*value="home-hero")[^>]*>/i);
+  assert.match(html, /<input(?=[^>]*name="scene")(?=[^>]*value="home-health")[^>]*>/i);
+  assert.match(html, /<input(?=[^>]*name="intent")(?=[^>]*value="space-advice")[^>]*>/i);
+  assert.match(html, /<input(?=[^>]*name="direction")(?=[^>]*value="home")(?=[^>]*checked)[^>]*>/i);
+  assert.match(html, /80㎡三居，准备改造客餐厅照明/);
 });
 
 test("renders search entry points in desktop and mobile navigation", async () => {
@@ -140,7 +166,8 @@ test("renders the grouped footer information architecture", async () => {
   for (const path of ["/solutions/residential", "/solutions/hospitality", "/smart-home", "/downloads", "/news", "/search", "/contact", "/legal", "/privacy"]) {
     assert.match(html, new RegExp(`href="${path}"`), path);
   }
-  assert.match(html, /开始方案咨询/);
+  assert.match(html, /<nav[^>]+aria-label="咨询路径"/i);
+  for (const label of ["家庭健康光", "工程项目", "渠道合作"]) assert.match(html, new RegExp(label));
   assert.match(html, /好房子，光健康。/);
 });
 

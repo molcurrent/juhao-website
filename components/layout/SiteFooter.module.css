@@ -44,21 +44,25 @@
   line-height: 1.95;
 }
 
-.contact {
+.consultationPaths {
+  display: grid;
+  width: min(100%, 360px);
+  margin-top: 42px;
+  border-top: 1px solid #ffffff42;
+}
+
+.consultationPaths a {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  width: min(100%, 360px);
-  margin-top: 42px;
-  padding: 18px 0;
+  padding: 14px 0;
   color: var(--white);
-  border-top: 1px solid #ffffff42;
   border-bottom: 1px solid #ffffff42;
   font-size: 12px;
   font-weight: 700;
 }
 
-.contact span {
+.consultationPaths span {
   color: var(--brand-orange-bright);
   font-size: 18px;
 }
@@ -151,15 +155,15 @@
 }
 
 @media (hover: hover) {
-  .contact,
+  .consultationPaths a,
   .navigation a,
   .navigation a span,
   .bottom a {
     transition: color var(--duration-fast) ease, transform var(--duration-ui) var(--ease-enter), opacity var(--duration-fast) ease;
   }
 
-  .contact:hover,
-  .contact:focus-visible,
+  .consultationPaths a:hover,
+  .consultationPaths a:focus-visible,
   .navigation a:hover,
   .navigation a:focus-visible,
   .bottom a:hover,
@@ -167,8 +171,8 @@
     color: var(--white);
   }
 
-  .contact:hover,
-  .contact:focus-visible {
+  .consultationPaths a:hover,
+  .consultationPaths a:focus-visible {
     transform: translateX(6px);
   }
 
@@ -214,7 +218,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contact,
+  .consultationPaths a,
   .navigation a,
   .navigation a span,
   .bottom a {

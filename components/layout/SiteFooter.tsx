@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { consultationHref, consultationOptions } from "@/lib/consultation";
 import styles from "./SiteFooter.module.css";
 
 const footerGroups = [
@@ -30,7 +31,6 @@ const footerGroups = [
     label: "服务与合作导航",
     links: [
       ["智能家居", "/smart-home"],
-      ["钜豪商城", "/mall"],
       ["服务支持", "/service"],
       ["合作共创", "/partners"],
       ["资料下载", "/downloads"],
@@ -54,7 +54,9 @@ export function SiteFooter() {
         <div className={styles.brand}>
           <Link href="/" aria-label="钜豪照明首页"><b>JUHAO</b><span>钜豪照明</span></Link>
           <p>从人的活动、空间功能与长期使用出发，让光更适合真实生活。</p>
-          <Link className={styles.contact} href="/contact">开始方案咨询 <span aria-hidden="true">↗</span></Link>
+          <nav className={styles.consultationPaths} aria-label="咨询路径">
+            {consultationOptions.map((item) => <Link href={consultationHref(item.kind, "footer")} key={item.kind}>{item.label}<span aria-hidden="true">↗</span></Link>)}
+          </nav>
         </div>
 
         <div className={styles.navigation}>
@@ -75,7 +77,7 @@ export function SiteFooter() {
       <div className={styles.bottom}>
         <p>© 2026 JUHAO LIGHTING</p>
         <nav aria-label="法律信息"><Link href="/legal">法律声明</Link><Link href="/privacy">隐私政策</Link></nav>
-        <p>公开信息以企业最终核验版本为准</p>
+        <p>照明与智能空间解决方案</p>
       </div>
     </footer>
   );

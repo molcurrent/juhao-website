@@ -5,7 +5,7 @@ import { SiteMotion } from "@/components/motion/SiteMotion";
 import "./globals.css";
 
 const title = "钜豪照明官网｜健康照明与智能家居解决方案";
-const description = "钜豪照明官网，浏览全屋、商业、公共与工业照明解决方案，了解智能家居、钜豪商城、照明资讯及合作咨询。";
+const description = "钜豪照明官网，浏览全屋、商业、公共与工业照明解决方案，了解智能家居、照明资讯及家庭、工程与渠道合作咨询。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,5 +25,5 @@ const organizationSchema = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<FloatingActions/><SiteMotion/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
+  return <html lang="zh-CN"><head><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="theme-color" content="#0b0d0c"/></head><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<FloatingActions/><SiteMotion/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
 }

@@ -55,7 +55,10 @@ NEXT_PUBLIC_JUHAO_CONTACT_ENABLED=false
 
 ```json
 {
-  "direction": "lighting",
+  "direction": "home",
+  "source": "home-hero",
+  "scene": "home-health",
+  "intent": "space-advice",
   "project": "80㎡住宅，正在规划照明",
   "stage": "planning",
   "need": "希望改善客餐厅不同活动下的照明层次",
@@ -66,7 +69,10 @@ NEXT_PUBLIC_JUHAO_CONTACT_ENABLED=false
 
 枚举范围：
 
-- `direction`：`lighting`、`smart`、`channel`
+- `direction`：`home`、`project`、`channel`
+- `source`：`home-hero`、`home-platform`、`home-contact`、`floating`、`footer`、`header`、`mobile-nav`、`direct`
+- `scene`：`home-health`、`project`、`channel`
+- `intent`：`space-advice`、`project-brief`、`partnership`
 - `stage`：`understanding`、`planning`、`delivery`、`operation`
 
 成功响应：

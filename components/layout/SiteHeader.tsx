@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/content/navigation";
 import { gsap, useGSAP } from "@/lib/motion/gsap";
+import { consultationHref } from "@/lib/consultation";
 import styles from "./SiteHeader.module.css";
 
 export function SiteHeader({ home = false }: { home?: boolean }) {
@@ -101,7 +102,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
           })}
         </nav>
         <Link className={styles.searchLink} href="/search" onClick={closeNavigation} aria-label="搜索钜豪网站"><i aria-hidden="true" /></Link>
-        <Link className={styles.cta} href="/contact" onClick={closeNavigation}>方案咨询 <span>↗</span></Link>
+        <Link className={styles.cta} href={consultationHref("project", "header")} onClick={closeNavigation}>提交项目需求 <span>↗</span></Link>
         <button ref={menuButton} className={`${styles.menuButton} ${menuOpen ? styles.menuOpen : ""}`} type="button" onClick={() => menuOpen ? closeNavigation() : setMenuOpen(true)} aria-controls="mobile-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? "关闭导航" : "打开导航"}><i /><i /></button>
       </header>
       <button ref={backdrop} className={`${styles.backdrop} ${menuOpen ? styles.backdropOpen : ""}`} type="button" onClick={closeNavigation} aria-label="关闭导航遮罩" aria-hidden="true" tabIndex={-1} />
@@ -111,7 +112,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
           {item.children && <div className={`${styles.mobileChildren} ${mobileOpen === item.href ? styles.mobileChildrenOpen : ""}`} inert={mobileOpen !== item.href}><div>{item.children.map((child) => <Link href={child.href} key={child.href} onClick={closeNavigation}>{child.label}</Link>)}</div></div>}
         </div>)}
         <Link className={styles.drawerSearch} href="/search" onClick={closeNavigation}><span>站内搜索</span><b aria-hidden="true">⌕</b></Link>
-        <Link className={styles.drawerCta} href="/contact" onClick={closeNavigation}>联系方案顾问 <span>↗</span></Link>
+        <Link className={styles.drawerCta} href={consultationHref("project", "mobile-nav")} onClick={closeNavigation}>提交工程项目需求 <span>↗</span></Link>
       </nav>
     </>
   );

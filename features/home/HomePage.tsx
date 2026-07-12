@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { PageLoader } from "@/components/motion/PageLoader";
 import { HeroDisplacementCanvas } from "@/components/motion/HeroDisplacementCanvas";
 import { AccessibleCarousel } from "@/components/ui/AccessibleCarousel";
+import { consultationHref, consultationOptions } from "@/lib/consultation";
 
 const scenes = [
   { no: "01", slug: "residential", title: "全屋照明", en: "Residential", image: "/images/juhao-home.webp", copy: "让每一种生活，都拥有恰到好处的光。" },
@@ -23,13 +24,6 @@ const heroSlides = [
 ];
 
 const heroImages = heroSlides.map((slide) => slide.image);
-
-const strengths = [
-  ["照明选品", "按品类与空间场景组织已核验的产品资料"],
-  ["智能场景", "从真实生活出发，规划灯光与空间的控制逻辑"],
-  ["渠道协作", "商品、订单、客户与服务边界以企业确认为准"],
-  ["合作共创", "按区域、项目与服务能力评估合作方向"],
-];
 
 const newsItems = [
   ["健康光", "2026.07.12", "家庭健康光环境：从看得见到住得舒适", "/news/healthy-home-lighting"],
@@ -72,7 +66,7 @@ export function HomePage() {
           <p className="eyebrow"><span /> {hero.eyebrow}</p>
           <h1>{hero.title}<br/><em>{hero.accent}</em></h1>
           <p className="heroCopy">{hero.copy}<br/>好房子，光健康，用钜豪照明。</p>
-          <div className="actions"><Link className="primary" href="/solutions">探索光的方案 <b>→</b></Link><Link className="ghost" href="/smart-home">了解智能家居</Link></div>
+          <div className="actions"><Link className="primary" href={consultationHref("home-health", "home-hero")}>获取空间建议 <b>→</b></Link><Link className="ghost" href={consultationHref("project", "home-hero")}>提交工程需求</Link><Link className="ghost" href={consultationHref("channel", "home-hero")}>渠道合作</Link></div>
         </div>
         <nav className="heroPager" aria-label="首页首屏内容">{heroSlides.map((slide, index) => <button type="button" aria-current={activeHero === index ? "true" : undefined} aria-label={`显示第 ${index + 1} 幅：${slide.title}${slide.accent}`} onClick={() => { setActiveHero(index); setHeroPaused(true); }} key={slide.image}>{String(index + 1).padStart(2, "0")}</button>)}{!reduceMotion && <button className="heroPause" type="button" onClick={() => setHeroPaused((paused) => !paused)} aria-label={heroPaused ? "继续首屏自动播放" : "暂停首屏自动播放"}>{heroPaused ? "▶" : "Ⅱ"}</button>}</nav>
         <div className="heroSide"><b>SPACE</b><span>{hero.side}</span></div>
@@ -100,13 +94,13 @@ export function HomePage() {
       </section>
 
       <section className="platform" id="platform">
-        <div className="platformHead" data-reveal><div><p className="eyebrow"><span /> BUSINESS PLATFORM</p><h2>不止照明<br/>连接协作与服务</h2></div><p>商城与渠道平台按选品、采购、客户和服务协作进行规划；正式能力与开放范围，以钜豪后续确认的信息为准。</p></div>
-        <div className="strengthGrid" data-reveal>{strengths.map((item,i)=><article key={item[0]}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item[0]}</h3><p>{item[1]}</p><Link href={i === 1 ? "/smart-home" : "/mall"} aria-label={`了解${item[0]}`}>↗</Link></article>)}</div>
+        <div className="platformHead" data-reveal><div><p className="eyebrow"><span /> START A CONVERSATION</p><h2>从真实需求出发<br/>进入对应咨询</h2></div><p>家庭、工程与渠道需求分别进入对应路径，减少重复说明，让沟通从场景、阶段和目标开始。</p></div>
+        <div className="strengthGrid" data-reveal>{consultationOptions.map((item,i)=><article key={item.kind}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item.label}</h3><p>{item.description}</p><Link href={consultationHref(item.kind, "home-platform")} aria-label={item.cta}>↗</Link></article>)}</div>
       </section>
 
       <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> LIGHTING INSIGHTS</p><h2>照明知识</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明知识" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item[3]} key={item[2]}><div><span>{item[0]}</span><time dateTime={item[1] === "持续更新" ? undefined : item[1]}>{item[1]}</time></div><h3>{item[2]}</h3><p>阅读完整内容，了解对应场景的照明规划重点。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>
 
-      <section className="contact" id="contact"><div data-reveal><p className="eyebrow"><span /> CREATE WITH LIGHT</p><h2>一起，把好光<br/>带进更多家庭</h2></div><div className="contactBox" data-reveal><p>无论是家庭照明、工程项目，还是渠道合作，我们都期待与你共创。</p><Link href="/contact">查看咨询方式 <span>→</span></Link></div></section>
+      <section className="contact" id="contact"><div data-reveal><p className="eyebrow"><span /> CREATE WITH LIGHT</p><h2>选择你的<br/>咨询方向</h2></div><nav className="contactPaths" aria-label="首页咨询路径" data-reveal>{consultationOptions.map((item) => <Link href={consultationHref(item.kind, "home-contact")} key={item.kind}><span>{item.label}</span><strong>{item.cta}</strong><b aria-hidden="true">→</b></Link>)}</nav></section>
     </main><SiteFooter /></>
   );
 }

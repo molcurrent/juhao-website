@@ -17,9 +17,11 @@ import { HealthyLightPage, SolutionsOverviewPage } from "@/features/solutions";
 import { SustainabilityPage } from "@/features/sustainability/SustainabilityPage";
 import { DownloadsPage, LegalPage } from "@/features/utility/UtilityPages";
 import { siteApi, type NewsPageResult } from "@/lib/api";
+import { resolveConsultationContext, type ConsultationContext } from "@/lib/consultation";
 import { NEWS_PAGE_SIZE, newsPagePath, parseNewsPageNumber } from "@/lib/news-pagination";
 
-type Props = { params: Promise<{ slug: string[] }> };
+type SearchParams = Record<string, string | string[] | undefined>;
+type Props = { params: Promise<{ slug: string[] }>; searchParams?: Promise<SearchParams> };
 
 function getPage(slug: string[]) { return pages[slug.join("/")]; }
 
@@ -98,7 +100,7 @@ function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { nam
   </main>;
 }
 
-function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult }) {
+function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationContext }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult; consultationContext: ConsultationContext | null }) {
   if (routeKey === "about") return <AboutPage page={page} />;
   if (routeKey === "about/history") return <HistoryPage page={page} />;
   if (routeKey === "about/join") return <CareersPage page={page} />;
@@ -106,7 +108,7 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: s
   if (routeKey === "healthy-light") return <HealthyLightPage page={page} />;
   if (routeKey === "smart-home") return <SmartHomePage page={page} />;
   if (routeKey === "mall") return <MallPage page={page} />;
-  if (routeKey === "contact") return <ContactPage page={page} />;
+  if (routeKey === "contact") return <ContactPage page={page} initialContext={consultationContext} />;
   const sceneId = businessScenes[routeKey];
   if (sceneId) return <BusinessScenePage page={page} sceneId={sceneId} />;
   if (routeKey === "service") return <ServicePage page={page} />;
@@ -122,12 +124,13 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews }: { routeKey: s
   return <GenericPage page={page} breadcrumbs={breadcrumbs} />;
 }
 
-export default async function SeoPage({ params }: Props) {
+export default async function SeoPage({ params, searchParams }: Props) {
   const slug = (await params).slug;
   const route = resolveRoute(slug);
   if (!route) notFound();
   const { routeKey, page, canonicalPath, newsPageNumber } = route;
   const requestedNewsPage = newsPageNumber ?? 1;
+  const consultationContext = routeKey === "contact" ? resolveConsultationContext((await searchParams) ?? {}) : null;
   let newsLoadFailed = false;
   let initialNews: NewsPageResult = { items: [], page: requestedNewsPage, pageSize: NEWS_PAGE_SIZE, total: 0, totalPages: requestedNewsPage };
   if (routeKey === "news") {
@@ -165,7 +168,7 @@ export default async function SeoPage({ params }: Props) {
 
   return <>
     <SiteHeader />
-    <PageFeature routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} initialNews={initialNews} />
+    <PageFeature routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} initialNews={initialNews} consultationContext={consultationContext} />
     <SiteFooter />
     {structuredData.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g,"\\u003c")}} />}
   </>;

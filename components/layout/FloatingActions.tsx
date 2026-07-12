@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { consultationHref, consultationOptions } from "@/lib/consultation";
 import styles from "./FloatingActions.module.css";
 
 export function FloatingActions() {
@@ -24,10 +25,21 @@ export function FloatingActions() {
   return (
     <aside className={styles.actions} aria-label="页面快捷操作">
       {pathname !== "/contact" && (
-        <Link className={styles.contact} href="/contact">
-          <span>方案咨询</span>
-          <b aria-hidden="true">↗</b>
-        </Link>
+        <details className={styles.consultation}>
+          <summary className={styles.contact} aria-label="选择咨询方向">
+            <span>咨询方向</span>
+            <b aria-hidden="true">＋</b>
+          </summary>
+          <nav className={styles.consultationMenu} aria-label="快捷咨询路径">
+            {consultationOptions.map((item) => (
+              <Link href={consultationHref(item.kind, "floating")} key={item.kind}>
+                <span>{item.label}</span>
+                <strong>{item.cta}</strong>
+                <b aria-hidden="true">↗</b>
+              </Link>
+            ))}
+          </nav>
+        </details>
       )}
       <button
         className={`${styles.top} ${showTop ? styles.topVisible : ""}`}

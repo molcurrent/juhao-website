@@ -236,6 +236,7 @@
   grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr);
   gap: clamp(55px, 8vw, 130px);
   padding: clamp(88px, 10vw, 150px) 0;
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 .checkerIntro h2 {
@@ -264,6 +265,33 @@
   padding: clamp(28px, 4vw, 52px);
   background: var(--paper-raised);
   border: 1px solid var(--line);
+}
+
+.contextBanner {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: #fff0e6;
+  border-left: 3px solid var(--brand-orange);
+}
+
+.contextBanner small {
+  color: var(--brand-orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.contextBanner strong {
+  font-size: 22px;
+}
+
+.contextBanner p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.75;
 }
 
 .directionFieldset {

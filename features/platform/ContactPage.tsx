@@ -5,12 +5,13 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import type { PageData } from "@/app/_data/pages";
 import { contactSubmissionEnabled, siteApi, type ContactRequest, type ContactReceipt } from "@/lib/api";
+import { consultationContextForDirection, type ConsultationContext } from "@/lib/consultation";
 import styles from "./ContactPage.module.css";
 
 const directions = [
-  { id: "lighting", code: "01", title: "照明方案", text: "住宅、商业、公共或工业空间的光环境规划。" },
-  { id: "smart", code: "02", title: "智能家居", text: "灯光与窗帘、环境或安防设备的场景协同。" },
-  { id: "channel", code: "03", title: "渠道与商城", text: "门店经营、选品协作或数字化渠道需求。" },
+  { id: "home", code: "01", title: "家庭健康光", text: "围绕户型、家庭活动和真实光环境梳理空间建议。" },
+  { id: "project", code: "02", title: "工程项目", text: "住宅、商业、公共或工业项目的方案与协作需求。" },
+  { id: "channel", code: "03", title: "渠道合作", text: "结合所在区域、业务基础与合作方向展开沟通。" },
 ] as const;
 
 const preparation = [
@@ -28,10 +29,11 @@ type CheckResult = {
 
 export type ContactPageProps = {
   page: PageData;
+  initialContext?: ConsultationContext | null;
 };
 
-export function ContactPage({ page }: ContactPageProps) {
-  const [direction, setDirection] = useState<ContactRequest["direction"] | "">("");
+export function ContactPage({ page, initialContext = null }: ContactPageProps) {
+  const [direction, setDirection] = useState<ContactRequest["direction"] | "">(initialContext?.direction ?? "");
   const [project, setProject] = useState("");
   const [stage, setStage] = useState<ContactRequest["stage"] | "">("");
   const [need, setNeed] = useState("");
@@ -42,6 +44,11 @@ export function ContactPage({ page }: ContactPageProps) {
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [receipt, setReceipt] = useState<ContactReceipt | null>(null);
   const resultId = useId().replaceAll(":", "");
+  const activeContext = direction
+    ? initialContext?.direction === direction
+      ? initialContext
+      : consultationContextForDirection(direction, initialContext?.source ?? "direct")
+    : initialContext;
 
   function clearResult() {
     if (result) setResult(null);
@@ -73,7 +80,7 @@ export function ContactPage({ page }: ContactPageProps) {
       title: "咨询信息已基本准备好",
       text: contactSubmissionEnabled
         ? "正式咨询通道已启用。请继续填写联系人信息并确认隐私说明，提交后系统会返回受理编号。"
-        : "你可以保留这份思路，待企业确认正式联系方式或表单后再提交。当前页面没有接入后端，也不会发送或保存内容。",
+        : "需求摘要已经整理完成。你可以继续查看对应方案，并在后续沟通时直接使用这份场景、阶段与目标说明。",
     });
   }
 
@@ -89,6 +96,9 @@ export function ContactPage({ page }: ContactPageProps) {
     try {
       const nextReceipt = await siteApi.submitContact({
         direction,
+        source: activeContext?.source ?? "direct",
+        scene: activeContext?.scene ?? consultationContextForDirection(direction).scene,
+        intent: activeContext?.intent ?? consultationContextForDirection(direction).intent,
         project: project.trim(),
         stage,
         need: need.trim(),
@@ -103,7 +113,7 @@ export function ContactPage({ page }: ContactPageProps) {
   }
 
   function handleReset() {
-    setDirection("");
+    setDirection(initialContext?.direction ?? "");
     setProject("");
     setStage("");
     setNeed("");
@@ -127,10 +137,10 @@ export function ContactPage({ page }: ContactPageProps) {
         <div className={styles.heroInner} data-reveal="fade">
           <p className={styles.eyebrow}><span aria-hidden="true" />{page.eyebrow}</p>
           <h1>{page.title}</h1>
-          <p className={styles.heroText}>{contactSubmissionEnabled ? "先把需求说清楚，再通过已配置的正式接口提交咨询。电话、邮箱与地址仍需企业确认后再公开。" : "先把需求说清楚，再找到合适的沟通方向。正式电话、邮箱、地址与在线提交入口尚未获得企业确认，因此当前页面不展示或虚构联系信息。"}</p>
+          <p className={styles.heroText}>家庭健康光、工程项目与渠道合作分别进入对应表单，先说明场景、阶段与核心目标。</p>
           <div className={styles.channelStatus} role="note">
             <span aria-hidden="true" />
-            <div><strong>{contactSubmissionEnabled ? "正式咨询通道已启用" : "咨询通道暂未开放"}</strong><p>{contactSubmissionEnabled ? "完成信息预检后，可通过已配置的接口创建咨询记录。" : "下方工具只帮助整理信息，不会连接网络、发送数据或创建咨询记录。"}</p></div>
+            <div><strong>{initialContext ? `已匹配：${initialContext.label}` : "三类需求，三条咨询路径"}</strong><p>{initialContext ? initialContext.description : "选择最接近的方向，表单会匹配对应的问题与填写提示。"}</p></div>
           </div>
         </div>
       </section>
@@ -140,7 +150,7 @@ export function ContactPage({ page }: ContactPageProps) {
           <p>01 / DIRECTION</p>
           <div>
             <h2 id="contact-directions-title">先选择咨询方向</h2>
-            <p>三个方向用于帮助归类需求，不代表相关服务范围、响应时效或受理渠道已经正式确认。</p>
+            <p>家庭、工程与渠道需求分别记录场景和沟通意图，减少后续重复说明。</p>
           </div>
         </header>
         <div className={styles.directionGrid}>
@@ -172,18 +182,28 @@ export function ContactPage({ page }: ContactPageProps) {
         </div>
       </section>
 
-      <section className={styles.checkerSection} aria-labelledby="contact-checker-title">
-        <div className={styles.checkerIntro} data-reveal>
+      <section className={styles.checkerSection} id="consultation-form" aria-labelledby="contact-checker-title">
+        <div className={styles.checkerIntro}>
           <p>03 / OFFLINE CHECK</p>
-          <h2 id="contact-checker-title">检查咨询信息是否完整</h2>
-          <p>{contactSubmissionEnabled ? "第一步只做本地预检；通过后再单独填写联系人信息并正式提交。" : "这是无网络的本地预检。请勿填写姓名、电话、邮箱、详细地址或其他个人信息。"}</p>
+          <h2 id="contact-checker-title">{activeContext ? activeContext.cta : "检查咨询信息是否完整"}</h2>
+          <p>{contactSubmissionEnabled ? "第一步只核对需求信息；通过后再单独填写联系人信息并正式提交。" : "先整理空间、阶段和目标；本步骤不需要填写姓名、电话、邮箱或详细地址。"}</p>
           <div className={styles.privacyNote}>
             <strong>当前状态</strong>
-            <p>{contactSubmissionEnabled ? "已接入正式咨询接口；仅在你主动提交并确认隐私说明后发送。" : "未接入咨询后端，不提交、不保存，也不承诺回复。"}</p>
+            <p>{contactSubmissionEnabled ? "仅在你主动提交并确认隐私说明后发送。" : "这里只核对需求摘要，不采集联系人资料。"}</p>
           </div>
         </div>
 
         <form className={styles.checkerForm} onSubmit={handleCheck} onReset={handleReset} aria-describedby={`${resultId}-notice`} noValidate>
+          {activeContext && (
+            <div className={styles.contextBanner} role="status">
+              <small>CONSULTATION PATH</small>
+              <strong>{activeContext.label}</strong>
+              <p>{activeContext.description}</p>
+              <input type="hidden" name="source" value={activeContext.source} />
+              <input type="hidden" name="scene" value={activeContext.scene} />
+              <input type="hidden" name="intent" value={activeContext.intent} />
+            </div>
+          )}
           <fieldset className={styles.directionFieldset}>
             <legend>咨询方向</legend>
             <div className={styles.radioGrid}>
@@ -207,16 +227,17 @@ export function ContactPage({ page }: ContactPageProps) {
             <label className={styles.field}>
               <span>项目或业务概况</span>
               <input
+                name="project"
                 value={project}
                 onChange={(event) => { setProject(event.target.value); clearResult(); }}
-                placeholder="例如：80㎡住宅，正在规划照明"
+                placeholder={activeContext?.projectPlaceholder ?? "例如：80㎡住宅，正在规划照明"}
                 maxLength={80}
               />
               <small>不要填写具体门牌或个人联系方式。</small>
             </label>
             <label className={styles.field}>
               <span>当前阶段</span>
-              <select value={stage} onChange={(event) => { setStage(event.target.value as ContactRequest["stage"] | ""); clearResult(); }}>
+              <select name="stage" value={stage} onChange={(event) => { setStage(event.target.value as ContactRequest["stage"] | ""); clearResult(); }}>
                 <option value="">请选择</option>
                 <option value="understanding">初步了解</option>
                 <option value="planning">筹备或设计</option>
@@ -229,9 +250,10 @@ export function ContactPage({ page }: ContactPageProps) {
           <label className={styles.field}>
             <span>希望解决的问题</span>
             <textarea
+              name="need"
               value={need}
               onChange={(event) => { setNeed(event.target.value); clearResult(); }}
-              placeholder="说明主要场景、现状和期待结果；无需提供个人信息。"
+              placeholder={activeContext?.needPlaceholder ?? "说明主要场景、现状和期待结果；无需提供个人信息。"}
               rows={5}
               maxLength={360}
             />
@@ -243,7 +265,7 @@ export function ContactPage({ page }: ContactPageProps) {
             <button type="reset">清空</button>
           </div>
 
-          <p className={styles.formNotice} id={`${resultId}-notice`}>“检查准备情况”只执行当前页面内的规则判断，不会发送信息。{contactSubmissionEnabled ? "只有点击下方正式提交按钮后才会联网。" : ""}</p>
+          <p className={styles.formNotice} id={`${resultId}-notice`}>“检查准备情况”只核对场景、阶段和目标是否完整。{contactSubmissionEnabled ? "只有点击下方正式提交按钮后才会发送。" : "本步骤不需要联系人资料。"}</p>
           <div className={styles.result} aria-live="polite" aria-atomic="true">
             {result && (
               <div className={result.tone === "ready" ? styles.resultReady : styles.resultNeedsWork}>
@@ -289,13 +311,14 @@ export function ContactPage({ page }: ContactPageProps) {
       <section className={styles.nextSteps} aria-labelledby="contact-next-title" data-reveal>
         <div>
           <p>NEXT STEP</p>
-          <h2 id="contact-next-title">正式入口经确认后再发布</h2>
+          <h2 id="contact-next-title">继续了解对应方案</h2>
         </div>
         <div>
-          <p>在此之前，可以先浏览对应解决方案，或了解商城能力的确认边界。本页面不会以示例信息代替企业真实联系方式。</p>
+          <p>在沟通前先浏览对应场景，有助于更准确地说明空间、阶段与希望解决的问题。</p>
           <div className={styles.links}>
-            <Link href="/solutions">查看照明解决方案 <span aria-hidden="true">↗</span></Link>
-            <Link href="/mall">了解商城能力框架 <span aria-hidden="true">↗</span></Link>
+            <Link href="/solutions/residential">家庭健康光方案 <span aria-hidden="true">↗</span></Link>
+            <Link href="/solutions">工程照明方案 <span aria-hidden="true">↗</span></Link>
+            <Link href="/partners">渠道合作方向 <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
       </section>
