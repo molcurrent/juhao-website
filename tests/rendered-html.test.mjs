@@ -120,6 +120,15 @@ test("renders the global visitor action layer", async () => {
   assert.match(html, /data-route-curtain="true"/i);
 });
 
+test("renders search entry points in desktop and mobile navigation", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<a(?=[^>]*href="\/search")(?=[^>]*aria-label="搜索钜豪网站")[^>]*>/i);
+  assert.match(html, /<nav[^>]+aria-label="移动端导航"[\s\S]*?<a[^>]+href="\/search"[^>]*>[\s\S]*?站内搜索[\s\S]*?<\/a>/i);
+});
+
 test("keeps incomplete and utility pages out of the index", async () => {
   const worker = await createWorker();
   const noindexRoutes = [

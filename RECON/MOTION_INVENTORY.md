@@ -5,7 +5,7 @@
 | 页面域 | 状态 / 动效 | 当前证据 | 证据级别 | 新工程承接 |
 |---|---|---|---|---|
 | 全站 | 91 帧 Canvas loading、百分比、遮罩退出 | 实时首页 `#load`；首次交互探针被 `.frame__load` 拦截，进度从 0% 到 100% | SOURCE | `PageLoader`，自有轻量帧/遮罩；等待关键资源，超时可跳过 |
-| 全站 | PC 一级/二级导航 hover；滚动状态；移动端抽屉与二级展开 | 实时 PC/app nav DOM；`initFn.app_nav` | SOURCE | 独立导航状态机 + GSAP timeline + focus/scroll lock |
+| 全站 | PC 一级/二级导航 hover；滚动状态；移动端抽屉与二级展开 | 实时 PC/app nav DOM；`initFn.app_nav` | SOURCE | `SiteHeader` 独立状态机 + GSAP timeline；已覆盖 focus trap、背景 inert、滚动锁与焦点回送 |
 | 全站 | 滚动入场、数字递增、返回顶部 | `.scroll-animate`、`data-effect/data-delay`、`init`、`run.js` | SOURCE | `SiteMotion` + ScrollTrigger；`FloatingActions` 已承接返回顶部，数字递增按真实数据页面补充 |
 | 首页 Hero | 多帧背景/标题状态、页码与主视觉切换 | `bannerSlider`、hero data-banner、3 个 1440 canvas | SOURCE | 首屏时间线 + 自有素材；复杂切换先做 baseline |
 | 首页 Hero | WebGL 噪声位移转场 | `glSlider` fragment shader，Three.js/EffectComposer/ShaderPass；实时 WebGL warning | SOURCE | 单独 `HeroDisplacement`，复用真实 shader 逻辑的自有素材版本 |

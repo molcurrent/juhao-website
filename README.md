@@ -19,6 +19,7 @@ npm test
 
 - `app/`：路由入口、metadata、sitemap、robots 与 404。
 - `components/layout/`：桌面/移动导航和页脚。
+- 桌面与移动导航均提供站内搜索入口；移动抽屉包含首焦点、Tab 循环、Esc 关闭、背景 inert 和焦点回送。
 - `components/motion/`：Loader、全站 reveal 与 WebGL 首屏转场。
 - 全站提供方案咨询快捷入口、滚动后返回顶部，以及带 reduced-motion 降级的 JUHAO 路由过场。
 - `components/ui/`：可访问 Carousel。
