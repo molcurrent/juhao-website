@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "name": "NVC Lighting live baseline",
+    "description": "2026-07-12 live visual and interaction baseline for a JUHAO content-remix implementation. Source media is evidence only and is excluded from the public product.",
+    "source_references": [
+      "https://www.nvc-lighting.com.cn/",
+      "RECON/original/original-recon.json",
+      "RECON/original/routes/original-route-map.json",
+      "RECON/MOTION_INVENTORY.md"
+    ],
+    "created_at": "2026-07-12T15:50:05+08:00",
+    "evidence_policy": "WebGL and Canvas facts require SOURCE or PARTIAL evidence; visual approximations remain GUESS until baseline comparison passes."
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "neutral monochrome foundation with page-specific accent colors",
+      "primary": { "hex": "#008755", "role": "source-site brand accent, selected text, controls and active states" },
+      "secondary": { "hex": "#111111", "role": "high-contrast headings, dark sections and overlays" },
+      "accent": { "hex": "#307fe2 / #93328e", "role": "current hero state colors; varies by campaign media" },
+      "neutral": { "scale": "#000000, #333333, #8e8e8e, #eeeeee, #ffffff", "usage": "body copy, muted copy, dividers, light and dark surfaces" },
+      "surface": { "background": "#ffffff", "card": "mostly image-led, transparent or #ffffff", "elevated": "rgba(0,0,0,0.88)" },
+      "contrast_strategy": "large white-on-image hero sections alternate with dark-on-light editorial sections",
+      "juhao_translation": "replace #008755 and campaign accents with approved JUHAO orange tokens while preserving luminance roles and section contrast"
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "responsive 0.8rem-1.6rem on a 100px rem root", "weight": "400", "line_height": "0.9-1.1", "tracking": "tight for Chinese, open for English" },
+        "heading_1": { "size": "44-100px by viewport and page", "weight": "400", "line_height": "1.05-1.25", "tracking": "-0.02em to normal" },
+        "heading_2": { "size": "32-72px", "weight": "400", "line_height": "1.15-1.35", "tracking": "normal" },
+        "heading_3": { "size": "18-28px", "weight": "400", "line_height": "1.35", "tracking": "normal" },
+        "body": { "size": "14-18px", "weight": "400", "line_height": "2", "tracking": "normal" },
+        "caption": { "size": "12-14px", "weight": "400", "line_height": "1.5", "tracking": "0.02em" },
+        "overline": { "size": "12-16px", "weight": "400", "line_height": "1.2", "tracking": "wide English labels" }
+      },
+      "font_families": {
+        "heading": "Microsoft JhengHei, Source Han Sans CN, PingFang SC, Source Han Serif SC, Microsoft YaHei, sans-serif",
+        "body": "Microsoft JhengHei, Source Han Sans CN, PingFang SC, Source Han Serif SC, Microsoft YaHei, sans-serif",
+        "latin_display": "Nexa Book / Nexa Thin / Nexa Bold",
+        "icons": "iconfont"
+      },
+      "font_style_notes": "Source uses very large light-weight English labels and regular-weight Chinese headings; iconfont and swiper-icons are not content fonts."
+    },
+    "spacing": {
+      "base_unit": "viewport-responsive rem with 100px desktop root",
+      "scale": "8, 12, 16, 24, 32, 48, 64, 96, 128px reference scale",
+      "content_density": "spacious",
+      "section_rhythm": "full-viewport hero/feature sections alternating with 96-160px editorial padding"
+    },
+    "layout": {
+      "grid_system": "84% centered content frame plus full-bleed media",
+      "max_content_width": "1600px",
+      "columns": "asymmetric 2-column editorial layouts; 3-5 card or carousel tracks",
+      "gutter": "approximately 2-3vw desktop, 20-32px mobile",
+      "breakpoints": "orientation-driven desktop/mobile split plus 700px compact type rule",
+      "alignment_tendency": "mixed: strict content frame with full-bleed cinematic sections"
+    },
+    "shape": {
+      "border_radius": { "small": "0-4px", "medium": "8-16px only where content needs it", "large": "30px during image transition masks", "pill": "1rem control fills" },
+      "border_usage": "thin low-opacity rules; image and typography carry most hierarchy",
+      "divider_style": "1px neutral or translucent white"
+    },
+    "elevation": {
+      "shadow_style": "minimal; depth is created by scale, overlay, blur and image layering",
+      "depth_cues": "overlapping media, scale transitions, dark masks and WebGL displacement"
+    },
+    "iconography": {
+      "style": "custom outline glyphs and arrow controls",
+      "stroke_weight": "1-3px",
+      "size_scale": "12-70px",
+      "preferred_set": "project-owned icon set; do not ship source iconfont"
+    },
+    "motion": {
+      "easing": "mostly cubic-bezier(0,0,0,1), ease-in-out and GSAP/TweenMax defaults",
+      "duration_scale": { "micro": "0.3-0.6s", "normal": "0.7-1.2s", "macro": "2-5s or scroll-linked" },
+      "entrance_pattern": "fade/translate/clip reveals, staggered copy, image scale and media crossfade",
+      "exit_pattern": "opacity and transform with mask or displacement transitions",
+      "philosophy": "cinematic, media-led, stateful; motion is part of information hierarchy"
+    },
+    "components": {
+      "button_style": "outlined circular/arrow controls and filled pill CTAs",
+      "input_style": "minimal underline or full-width search field",
+      "card_style": "image-first cards with overlay copy and hover reveals",
+      "navigation_pattern": "fixed transparent desktop nav with hover submenus; fixed mobile drawer with nested lists",
+      "modal_style": "full-screen dark overlay with media/product detail and explicit close",
+      "list_style": "large editorial rows, tabbed lists, carousels and progressive expansion"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["premium", "cinematic", "technical", "calm"],
+      "visual_metaphor": "light reveals space, material and value",
+      "era_influence": "late-2010s to mid-2020s Chinese corporate motion design",
+      "genre": "immersive enterprise brand site",
+      "personality_traits": ["authoritative", "precise", "aspirational", "media-rich"],
+      "adjectives": ["full-bleed", "layered", "spacious", "high-contrast"]
+    },
+    "visual_language": {
+      "complexity": "rich",
+      "ornamentation": "subtle controls over high-impact photography and motion",
+      "whitespace_usage": "large isolated headings and generous editorial gaps",
+      "visual_weight_distribution": "dominant full-screen media balanced by small precise labels",
+      "focal_strategy": "progressive reveal",
+      "contrast_level": "high",
+      "texture_usage": "photographic light, shadow, architectural materials and shader distortion"
+    },
+    "composition": {
+      "hierarchy_method": "scale contrast, spatial isolation and moving image layers",
+      "balance_type": "asymmetric",
+      "flow_direction": "vertical narrative with horizontal carousel and product excursions",
+      "grouping_strategy": "full-screen rows, split text/media blocks, tab families and overlay details",
+      "negative_space_role": "gives large headlines and isolated controls authority"
+    },
+    "imagery": {
+      "photo_treatment": "full-bleed architectural and lighting photography with dark overlays and cover cropping",
+      "illustration_style": "minimal technical diagrams where needed",
+      "graphic_elements": "grid lines, circular progress, hotspot markers, masks and media frames",
+      "pattern_usage": "rare; structure comes from media and motion",
+      "image_shape": "mostly rectangular/full-bleed, occasionally circular or scale-masked"
+    },
+    "interaction_feel": {
+      "feedback_style": "smooth state transitions with explicit arrows, counters and active labels",
+      "hover_behavior": "submenu reveals, image/copy swap, hotspot activation and cursor feedback",
+      "transition_personality": "smooth glide",
+      "loading_style": "branded frame-sequence canvas with percentage progress",
+      "microinteraction_density": "medium-high on desktop, reduced on touch devices"
+    },
+    "brand_voice_in_ui": {
+      "tone": "confident and concise",
+      "formality": "professional",
+      "cta_style": "subtle suggestion",
+      "empty_state_approach": "not sufficiently evidenced; JUHAO implementation uses clear next-step guidance",
+      "error_tone": "not evidenced on source; JUHAO implementation uses plain recovery language"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "heavy-immersive",
+      "performance_tier": "heavy",
+      "fallback_strategy": "static poster and immediate content for reduced motion, unsupported WebGL or media failure",
+      "primary_technology": "WebGL/Three.js + Canvas + TweenMax + Swiper + video/JSMpeg"
+    },
+    "loader": {
+      "enabled": true,
+      "type": "91-frame Canvas sequence with percentage and masked exit",
+      "evidence": "SOURCE: live #load DOM and interaction probe pointer interception"
+    },
+    "shader_effects": {
+      "enabled": true,
+      "type": "noise-distortion vertical image transition",
+      "technology": "Three.js fragment shader with EffectComposer/ShaderPass",
+      "params": {
+        "uniforms": "time, progress, intensity, width, scaleX, scaleY, transition, radius, swipe, texture1, texture2, displacement, resolution",
+        "noise_type": "hash-based interpolated noise",
+        "distortion": "opposed UV offsets mixed by progress",
+        "evidence": "SOURCE: live app.min.js hash-matched fragment shader"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": true,
+      "types": ["loader frame sequence", "hero frame sequence", "JSMpeg mobile video", "investment circular timeline"],
+      "responsiveness": "desktop canvases fit 1440x900; mobile switches media dimensions and control path",
+      "interaction": "loading gate, autoplay media, slide state and timeline navigation"
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": true, "description": "service/about media layers and scene rects" },
+      "scroll_triggered_animations": { "enabled": true, "animation_type": "fade, translate, clip, number and section-state reveals", "scrub_behavior": "mixed trigger and progress-driven" },
+      "scroll_morphing": { "enabled": true, "description": "healthy/ESG long-form sections and media scale masks" }
+    },
+    "image_effects": {
+      "type": "WebGL displacement, cover crop, scale reveal and media crossfade",
+      "technology": "Three.js plus transform/opacity/mask animation",
+      "hover_transform": "image/copy state swap and hotspot-driven scene change"
+    },
+    "cursor_effects": {
+      "enabled": true,
+      "type": "custom glowing circular desktop cursor",
+      "fallback": "disabled for touch and reduced motion"
+    },
+    "particles": { "enabled": false, "reason": "not observed in current runtime" },
+    "glassmorphism": { "enabled": false, "reason": "not a defining source-site language" },
+    "composite_notes": "Hero WebGL, frame sequences and investment canvas require baseline-first verification. JUHAO translation keeps layout and state rhythm but substitutes brand color, text, media and data."
+  }
+}

@@ -40,3 +40,8 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/tsconfig.tsbuildinfo
+
+# Local browser evidence: keep on disk, exclude large/copyrighted binaries.
+/RECON/**/screenshots/
+/RECON/original/

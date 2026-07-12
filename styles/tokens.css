@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light;
+
+  --brand-orange: #d95612;
+  --brand-orange-bright: #ff6b1a;
+  --brand-orange-soft: #ffc29d;
+  --ink: #101211;
+  --ink-soft: #5e615b;
+  --paper: #f4f1eb;
+  --paper-raised: #fbf9f4;
+  --line: #d7d4cd;
+  --night: #0b0d0c;
+  --white: #ffffff;
+
+  --orange: var(--brand-orange);
+  --font-sans: "Nexa", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-display: "Nexa", "Arial Black", "PingFang SC", sans-serif;
+  --content-max: 1600px;
+  --page-gutter: clamp(24px, 7vw, 112px);
+  --header-height: 80px;
+
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-source: cubic-bezier(0, 0, 0, 1);
+  --duration-fast: 180ms;
+  --duration-ui: 360ms;
+  --duration-section: 760ms;
+
+  --z-header: 60;
+  --z-drawer: 70;
+  --z-loader: 100;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-height: 70px;
+    --page-gutter: 24px;
+  }
+}
