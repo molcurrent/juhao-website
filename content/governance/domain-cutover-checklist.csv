@@ -1,6 +1,6 @@
 gate_id,area,requirement,status,evidence,owner,next_action,updated_at
 DEPLOY-01,新版部署,审核版本成功部署且线上产品页可访问,进行中,"Sites 已保存审核版本；私有生产部署状态持续为 pending",网站技术负责人,等待托管部署成功并运行线上健康检查,2026-07-13
-DOMAIN-01,正式域名,Sites 已添加 juhao.com 与 www.juhao.com 并取得验证记录,未开始,Sites 自定义域名列表为空,域名管理员,在商城迁移验收后添加域名并配置 DNS,2026-07-13
+DOMAIN-01,正式域名,Sites 已添加 juhao.com 与 www.juhao.com 并取得验证记录,部分完成,两个域名已登记且状态 pending；TXT 与切流记录已分阶段输出,域名管理员,先添加验证 TXT；商城验收后再修改 A/CNAME,2026-07-13
 MALL-01,商城分流,mall.juhao.com HTTPS 可用,未通过,当前 HTTPS 探测无法完成 TLS 连接,商城技术负责人,部署商城并配置有效证书,2026-07-13
 MALL-02,商城分流,商城登录采购订单支付与经销商业务验收通过,待验收,尚无可用的 mall.juhao.com 环境,商城业务负责人,按真实账号完成端到端验收,2026-07-13
 LEGACY-01,合法旧URL,逐条 301 映射已配置,部分完成,新站已配置 NVC 路由族与商城登录跳转；业务旧URL仍需补齐,SEO负责人,从旧站日志与搜索平台导出合法 URL 清单,2026-07-13

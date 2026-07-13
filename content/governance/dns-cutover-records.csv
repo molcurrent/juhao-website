@@ -1,0 +1,8 @@
+phase,hostname,record_type,name,value,purpose,apply_condition,status,updated_at
+预验证,www.juhao.com,TXT,_openai-site-verification.www.juhao.com,openai-site-verification=gNplWgVhT6MPsgDT5nAVKHBfaUajvztmXTTJQBgXtpI,Sites 域名所有权验证,可立即添加且不切换网站流量,待DNS管理员执行,2026-07-13
+预验证,www.juhao.com,TXT,_cf-custom-hostname.www.juhao.com,b1de1b57-f0e7-4d57-9bf1-a6927a8b35ef,Cloudflare 自定义主机名验证,可立即添加且不切换网站流量,待DNS管理员执行,2026-07-13
+预验证,juhao.com,TXT,_openai-site-verification.juhao.com,openai-site-verification=PaJZZMdR7A_tj49mwdhVUdD_Jxe4HtvEQ8ZBLjZiAd0,Sites 域名所有权验证,可立即添加且不切换网站流量,待DNS管理员执行,2026-07-13
+预验证,juhao.com,TXT,_cf-custom-hostname.juhao.com,d041acc4-317c-4128-a217-4917fc303029,Cloudflare 自定义主机名验证,可立即添加且不切换网站流量,待DNS管理员执行,2026-07-13
+切流,www.juhao.com,CNAME,www,custom-domains.chatgpt.site.,新版官网访问流量,商城子域名与新版部署全部验收通过后,禁止提前执行,2026-07-13
+切流,juhao.com,A,@,162.159.143.30,新版官网根域名流量,商城子域名与新版部署全部验收通过后,禁止提前执行,2026-07-13
+切流,juhao.com,A,@,172.66.3.26,新版官网根域名流量,商城子域名与新版部署全部验收通过后,禁止提前执行,2026-07-13

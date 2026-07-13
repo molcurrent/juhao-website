@@ -13,7 +13,8 @@
 ## 2026-07-13 实时门槛核验
 
 - Sites 审核版本已保存，但私有生产部署仍为 `pending`，线上产品详情页尚未切换到该版本。
-- Sites 自定义域名列表为空，尚未生成 `juhao.com` 或 `www.juhao.com` 的 DNS 验证记录。
+- `juhao.com` 与 `www.juhao.com` 已登记到 Sites，当前均为 `pending`，尚未修改公开 DNS。
+- 验证 TXT 与正式切流 A/CNAME 已分开记录在 `content/governance/dns-cutover-records.csv`；验证 TXT 可先添加，切流记录禁止在商城验收前执行。
 - `https://www.juhao.com/` 当前仍返回旧站 PHP 页面；`/login.html` 返回 200，尚未分流。
 - 当前环境访问 `https://mall.juhao.com/` 无法完成 TLS 连接，商城子域名不能作为正式跳转目标验收。
 - 各项门槛、责任人与下一动作记录在 `content/governance/domain-cutover-checklist.csv`。
