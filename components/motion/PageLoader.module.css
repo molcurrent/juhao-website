@@ -18,10 +18,10 @@
   text-align: center;
 }
 
-.mark strong {
-  font-family: var(--font-display);
-  font-size: clamp(42px, 7vw, 104px);
-  letter-spacing: -0.07em;
+.brandMark {
+  display: block;
+  width: clamp(220px, 34vw, 460px);
+  height: auto;
 }
 
 .mark span {

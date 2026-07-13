@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/motion/gsap";
 import styles from "./SiteMotion.module.css";
 
@@ -59,5 +60,5 @@ export function SiteMotion() {
     { dependencies: [pathname], revertOnUpdate: true },
   );
 
-  return <div className={styles.curtain} ref={curtain} data-route-curtain aria-hidden="true"><strong>JUHAO</strong></div>;
+  return <div className={styles.curtain} ref={curtain} data-route-curtain aria-hidden="true"><BrandMark className={styles.brandMark} tone="white" /></div>;
 }

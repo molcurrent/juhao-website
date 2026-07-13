@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { navigation } from "@/content/navigation";
 import { gsap, useGSAP } from "@/lib/motion/gsap";
 import { consultationHref } from "@/lib/consultation";
@@ -89,7 +90,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.solid : ""}`} onMouseLeave={() => setDesktopOpen(null)}>
-        <Link className={styles.logo} href="/" aria-label="钜豪照明首页" onClick={closeNavigation}><strong>JUHAO</strong><small>钜豪照明</small></Link>
+        <Link className={styles.logo} href="/" aria-label="钜豪照明首页" onClick={closeNavigation}><BrandMark className={styles.logoMark} priority tone="white" /></Link>
         <nav className={styles.desktopNav} aria-label="主导航">
           {navigation.map((item) => {
             const current = pathname === item.href || (item.href !== "/" && pathname.startsWith(`${item.href}/`));

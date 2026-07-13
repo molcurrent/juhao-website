@@ -218,3 +218,27 @@
     transition: none;
   }
 }
+
+.contact {
+  color: var(--ink);
+  background: var(--brand-orange-bright);
+  border-color: var(--brand-orange-bright);
+}
+
+.contact b {
+  color: var(--ink);
+}
+
+@media (hover: hover) {
+  .contact:hover,
+  .contact:focus-visible {
+    color: var(--white);
+    background: var(--night);
+    border-color: var(--brand-orange-bright);
+  }
+
+  .contact:hover b,
+  .contact:focus-visible b {
+    color: var(--brand-orange-bright);
+  }
+}

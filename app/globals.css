@@ -116,3 +116,44 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ff
   .actions .primary{grid-column:1/-1;min-width:0}
   .actions .ghost{padding:13px 10px;text-align:center;font-size:12px}
 }
+
+/* 2022 JUHAO VI: graphite fascia, orange terminal band and silver modular grid. */
+::selection{color:var(--ink);background:var(--brand-orange-soft)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--brand-orange-soft)}
+.hero{background:var(--night)}
+.heroShade{background:linear-gradient(90deg,rgb(30 25 22 / 96%) 0%,rgb(30 25 22 / 68%) 48%,rgb(30 25 22 / 18%) 100%)}
+.heroGrid,.innerGrid{background-size:12.5% 96px}
+.heroGlow{top:17%;right:-3vw;width:min(44vw,680px);height:59%;background:transparent;border-right:clamp(24px,3.1vw,50px) solid rgb(224 87 23 / 52%);border-bottom:clamp(24px,3.1vw,50px) solid rgb(224 87 23 / 52%);border-radius:0 0 78px 0;filter:none;transform:none;animation:none}
+.heroContent{left:var(--page-gutter)}
+.hero h1{letter-spacing:-.055em}
+.hero h1 em{color:var(--brand-orange-bright)}
+.hero .primary{color:var(--ink);background:var(--brand-orange-bright);border:1px solid var(--brand-orange-bright)}
+.primary,.ghost{border-radius:0}
+.section{padding-inline:var(--page-gutter)}
+.intro{background:var(--paper-raised)}
+.sectionNo{padding-left:12px;border-left:3px solid var(--brand-orange-bright);color:#716b67}
+.verifiedStats>a{position:relative;min-height:190px}
+.verifiedStats>a::before{content:"";position:absolute;inset:-1px auto auto 0;width:38px;height:3px;background:var(--brand-orange-bright)}
+.sceneTabs a.active{color:var(--ink)}
+.sceneTabs a.active small,.sceneTabs a.active span{color:var(--ink)}
+.smartVisual{background:radial-gradient(circle,rgb(224 87 23 / 18%) 0 4%,transparent 35%),linear-gradient(135deg,#332d29,var(--night));box-shadow:0 38px 100px rgb(30 25 22 / 18%)}
+.core{background:var(--brand-orange-bright);box-shadow:0 0 0 14px rgb(224 87 23 / 14%),0 0 45px rgb(224 87 23 / 24%)}
+.node i{background:var(--brand-orange-bright);box-shadow:0 0 12px rgb(224 87 23 / 38%)}
+.platform{background:var(--night)}
+.strengthGrid article::before{content:"";position:absolute;inset:-1px auto auto 0;width:46px;height:4px;background:var(--brand-orange-bright);transition:width var(--duration-ui) var(--ease-enter)}
+.strengthGrid article:hover,.strengthGrid article:focus-within{color:var(--white);background:rgb(255 255 255 / 5%);transform:none}
+.strengthGrid article:hover::before,.strengthGrid article:focus-within::before{width:100%}
+.strengthGrid article:hover p,.strengthGrid article:focus-within p{color:#c7c4c1}
+.contact,.pageCta{background:var(--brand-orange-bright)}
+.contactPaths a:hover,.contactPaths a:focus-visible{background:rgb(255 255 255 / 20%)}
+.innerHero h1,.pageCta h2,.related h2{letter-spacing:-.05em}
+.related{background:var(--night)}
+.relatedGrid a:hover{color:var(--ink);background:var(--brand-orange-bright);transform:none}
+.pageCta>a{color:var(--white);background:var(--night)}
+
+@media(max-width:900px){
+  .heroGlow{top:18%;right:-16vw;width:68vw;height:54%;border-top:0;border-left:0;border-right-width:24px;border-bottom-width:24px;border-radius:0 0 52px 0;opacity:.62}
+  .heroContent{left:var(--page-gutter);right:var(--page-gutter)}
+  .verifiedStats>a{min-height:0}
+  .sectionNo{right:24px}
+}

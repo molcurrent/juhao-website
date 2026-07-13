@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { consultationHref, consultationOptions } from "@/lib/consultation";
 import styles from "./SiteFooter.module.css";
 
@@ -54,7 +55,7 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <Link href="/" aria-label="钜豪照明首页"><b>JUHAO</b><span>钜豪照明</span></Link>
+          <Link href="/" aria-label="钜豪照明首页"><BrandMark className={styles.brandMark} tone="white" variant="stacked" /></Link>
           <p>从人的活动、空间功能与长期使用出发，让光更适合真实生活。</p>
           <nav className={styles.consultationPaths} aria-label="咨询路径">
             {consultationOptions.map((item) => <Link href={consultationHref(item.kind, "footer")} key={item.kind}>{item.label}<span aria-hidden="true">↗</span></Link>)}

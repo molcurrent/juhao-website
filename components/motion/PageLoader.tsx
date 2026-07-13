@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { gsap, useGSAP } from "@/lib/motion/gsap";
 import styles from "./PageLoader.module.css";
 
@@ -39,7 +40,7 @@ export function PageLoader() {
 
   return (
     <div className={styles.loader} ref={root} aria-hidden="true">
-      <div className={styles.mark}><strong>JUHAO</strong><span>LIGHTING FOR BETTER LIVING</span></div>
+      <div className={styles.mark}><BrandMark className={styles.brandMark} tone="white" /><span>LIGHTING FOR BETTER LIVING</span></div>
       <div className={styles.status}><span>LOADING</span><div className={styles.track}><i className={styles.progress} /></div><span>100</span></div>
     </div>
   );

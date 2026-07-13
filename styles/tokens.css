@@ -1,15 +1,22 @@
 :root {
   color-scheme: light;
 
-  --brand-orange: #d95612;
-  --brand-orange-bright: #ff6b1a;
-  --brand-orange-soft: #ffc29d;
-  --ink: #101211;
-  --ink-soft: #5e615b;
-  --paper: #f4f1eb;
-  --paper-raised: #fbf9f4;
-  --line: #d7d4cd;
-  --night: #0b0d0c;
+  /* VI screen adaptations sampled from the 2022 terminal-build manual. */
+  --vi-orange: #e05717;
+  --vi-graphite: #1e1916;
+  --vi-silver: #abaaa8;
+  --vi-silver-soft: #e1dfdd;
+  --vi-gold: #bfa162;
+
+  --brand-orange: #bc4311;
+  --brand-orange-bright: var(--vi-orange);
+  --brand-orange-soft: #f1b8a2;
+  --ink: var(--vi-graphite);
+  --ink-soft: #625d58;
+  --paper: #f3f3f2;
+  --paper-raised: #ffffff;
+  --line: #d5d1ce;
+  --night: var(--vi-graphite);
   --white: #ffffff;
 
   --orange: var(--brand-orange);

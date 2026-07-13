@@ -784,3 +784,34 @@
     transition: none;
   }
 }
+
+/* VI alignment for the conversion path. */
+.hero h1,
+.sectionHeading h2,
+.prepareIntro h2,
+.checkerIntro h2,
+.nextSteps h2 {
+  letter-spacing: -.05em;
+}
+
+.directionGrid article,
+.checkerForm {
+  position: relative;
+}
+
+.directionGrid article::before,
+.checkerForm::before {
+  content: "";
+  position: absolute;
+  inset: -1px auto auto 0;
+  width: 44px;
+  height: 3px;
+  background: var(--brand-orange-bright);
+}
+
+.radioGrid label:focus-within,
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline-color: rgb(224 87 23 / 28%);
+}

@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { page, canonicalPath, newsPageNumber } = route;
   const title = newsPageNumber ? `${page.seoTitle}｜第 ${newsPageNumber} 页` : page.seoTitle;
   const description = newsPageNumber ? `${page.description} 当前为第 ${newsPageNumber} 页。` : page.description;
-  const socialImage = { url: "/og.png", width: 1733, height: 909, alt: "JUHAO 钜豪照明｜好房子，光健康" };
+  const socialImage = { url: "/og.png", width: 1200, height: 630, alt: "JUHAO 钜豪｜好房子，光健康。" };
   const socialMetadata = {
     title,
     description,

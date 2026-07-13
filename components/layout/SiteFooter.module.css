@@ -1,9 +1,20 @@
 .footer {
+  position: relative;
   padding: clamp(78px, 9vw, 144px) var(--page-gutter) 34px;
   overflow: hidden;
   color: #a6aaa3;
   background: var(--night);
   border-top: 1px solid #ffffff1f;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: -1px auto auto 0;
+  width: min(28vw, 420px);
+  height: 5px;
+  background: var(--brand-orange-bright);
+  border-radius: 0 5px 5px 0;
 }
 
 .top {
@@ -15,26 +26,15 @@
 }
 
 .brand > a:first-child {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+  display: block;
   width: fit-content;
+  padding: 8px 0;
 }
 
-.brand b {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: clamp(45px, 5vw, 74px);
-  line-height: .8;
-  letter-spacing: -.08em;
-}
-
-.brand > a:first-child span {
-  padding-left: 18px;
-  color: #d2d5cf;
-  border-left: 1px solid #ffffff3b;
-  font-size: 10px;
-  letter-spacing: .26em;
+.brandMark {
+  display: block;
+  width: clamp(150px, 14vw, 208px);
+  height: auto;
 }
 
 .brand p {
