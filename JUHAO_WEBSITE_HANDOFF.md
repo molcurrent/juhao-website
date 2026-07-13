@@ -1,197 +1,144 @@
-# JUHAO 钜豪照明多页官网详细交接摘要
+# JUHAO 钜豪照明官网交接摘要
 
-最后核验：2026-07-13 10:09（Asia/Shanghai）  
-项目目录：`/Users/mac/Documents/Codex/2026-07-12/sites-plugin-sites-openai-bundled-3`  
-当前分支：`main`  
-代码基线提交：`41c2406 Add source evidence galleries to project pages`（交接文档自身提交以 `git log -1` 为准）  
-工作树：干净  
+- 最后核验：2026-07-13 12:29（Asia/Shanghai）
+- 项目目录：`/Users/mac/Documents/Codex/2026-07-12/sites-plugin-sites-openai-bundled-3`
+- 当前分支：`main`
+- 已部署应用提交：`783673b Deepen JUHAO content and consultation flow`
+- 交接文档自身提交：以 `git log -1` 为准
 
-> 本文档是当前项目状态的优先入口。`README.md`、`NOTES.md`、`RECON/PRE_RELEASE_ACCEPTANCE.md` 和 `RECON/DOMAIN_CUTOVER_AND_MONITORING.md` 保留了不同阶段的历史结论，其中部分数量、部署和域名状态已经过时；遇到冲突时，以本文档、当前代码、内容台账和 Sites 实时状态为准。
+> 本文档是当前项目状态的优先入口。旧版 `README.md`、`NOTES.md` 与 `RECON/**` 中的阶段数量可能过时；判断当前事实时，以代码、内容台账、Sites 实时状态和本文档为准。
 
 ## 1. 一句话结论
 
-项目已经从视觉原型发展为可运行的服务端渲染多页官网：25 个经过门禁的产品详情页已在私有线上第 14 版中可访问，6 个项目已结构化为“项目动态/案例候选”，品牌历程、荣誉、服务和合作内容已补齐；最新第 15 版增加了 6 个项目的 18 张来源标注图，但尚未部署。正式商城分流、企业完工资料、真实 CMS/API、正式咨询提交和正式域名切换仍未完成。
+第二轮已从“页面齐全”推进到“内容可信、产品可选、案例可证、咨询可提交”：31 款产品通过内容门禁，射灯与家居顶灯各有 6 款代表产品，3 个旗舰专题和 2 个旗舰项目已深化，咨询可在线写入 D1 并生成可核验线索编号；但企业内部 Webhook、失败重试、公开流量限速、企业微信和隐私法务审核仍未完成，因此只能确认“官网保存闭环”，不能宣称“企业处理闭环”已经全部打通。
 
-## 2. 当前状态总览
+## 2. 第二轮交付矩阵
 
-| 范围 | 当前状态 | 证据 |
+| 范围 | 当前状态 | 结论 |
 | --- | --- | --- |
-| 产品台账 | 已完成 | 100 款候选、25 款审核发布；台账含审核、在售、参数完整度、图片来源字段 |
-| 产品详情页 | 已完成并在私有线上第 14 版可访问 | 25 个唯一 SEO 路由；代表页 `/products/spotlights/12287` 在线返回 200 |
-| 项目中心 | 代码已完成，第 15 版未部署 | 6 个页面均有方案范围、产品方向、资料状态；第 15 版新增每页 3 张来源图 |
-| 正式完工案例 | 未完成 | 企业知识库没有完工实拍、最终型号、调试/验收记录；不得改写成已完工案例 |
-| 品牌历程与荣誉 | 已完成 | 5 条历程、5 条荣誉，均带企业资料编号 |
-| 服务网络 | 部分完成 | 已发布总部、商城、工程、经销商四类入口；真实省市服务网点未接入 |
-| 经销商合作 | 已完成内容框架 | 经销商、工程、供应商三类合作入口；正式政策和区域权益未发布 |
-| 咨询转化 | 前端闭环完成，真实提交未启用 | 家庭、工程、渠道三条路径；仅本地预检，正式 POST 开关关闭 |
-| SEO | 多页 SSR 已完成 | metadata、canonical、JSON-LD、robots、sitemap；线上 sitemap 当前 66 条 URL |
-| Sites 部署 | 第 14 版已成功，第 15 版仅保存 | 私有线上地址可访问；第 15 版项目图集尚未在线 |
-| 正式域名 | 已登记，未验证/未切流 | `juhao.com`、`www.juhao.com` 均为 `pending_validation` |
-| 独立商城 | 未完成 | `mall.juhao.com` 当前 TLS 失败，状态 000 |
+| 咨询两步流程 | 已完成并上线 | 需求检查后可电话、邮件或提交回访；企业微信待核验 |
+| 线索提交与回执 | 已完成并上线 | D1 入库、线索编号、成功页 DB 核验、同源与字段校验可用 |
+| 企业内部通知 | 部分完成 | 已有可选 HTTPS Webhook 与通知状态；生产环境未配置，无失败重试 |
+| 射灯专题 | 已深化 | 6 款审核产品、4 类场景、参数对照、知识、关联项目与 FAQ |
+| 家居顶灯专题 | 已深化 | 6 款审核产品、5 类场景、参数对照、知识、家庭应用与 FAQ |
+| 智能家居设备专题 | 方法内容已深化 | 0 款产品通过门禁；不虚构协议、安装、兼容和售后能力 |
+| 两个旗舰项目 | 已深化 | 每页 8 张资料图、4 个空间拆解、确认事实与待补资料分栏 |
+| 首页可信证据 | 已完成当前可核验范围 | 31 款产品、6 个项目、5 个发展节点、5 项荣誉均说明来源 |
+| 资讯内容 | 部分完成 | 首页有 8 个入口；独立照明知识正文仍只有 4 篇 |
+| 语义化媒体 | 部分完成 | 产品、深专题、旗舰案例已使用真实 `<img>`；首页与荣誉仍有补齐空间 |
+| 商城兜底 | 已完成官网侧处理 | 所有商城入口先进入 `/mall`；外部商城 TLS 仍未恢复 |
+| 移动端与平板 | 已完成本轮精修 | CTA 重排、露出下一屏、1012px 保留精简桌面导航 |
+| 加载过场 | 已完成 | 仅首次会话约 560ms；普通内部跳转不再强制全屏加载 |
+| 正式域名 | 未完成 | `juhao.com` 与 `www.juhao.com` 仍待 DNS/SSL 验证 |
 
-## 3. 技术架构
+## 3. 当前线上状态
 
-这是 Next.js App Router 服务端渲染官网，不是纯客户端 SPA，也不是旧 PHP/CMS 的直接迁移。
+- Sites 私有版本：第 16 版，部署成功。
+- 私有地址：`https://juhao-lighting-2026.rocky-snail-3254.chatgpt.site`
+- 访问策略：`custom`，当前仅项目所有者账号可访问；没有改成公开。
+- 应用提交：`783673b02d54f2e24245c41f6d80036f675f9be7`。
+- Sites D1 逻辑绑定：`DB`。
+- 生产环境变量：当前为空；内部 Webhook 未配置。
+- Sitemap：线上实测 72 条 URL。
+- 自定义域名：`juhao.com`、`www.juhao.com` 均为 `pending / pending_validation`。
 
-```mermaid
-flowchart LR
-  A[企业知识库 Markdown] --> C[产品目录生成脚本]
-  B[商城 SQL] --> C
-  C --> D[内容台账 CSV/JSON]
-  C --> E[已发布产品 JSON]
-  F[静态页面数据] --> G[catch-all 路由分发]
-  H[项目结构化数据] --> G
-  E --> G
-  I[Mock 或 HTTP SiteApi] --> G
-  G --> J[独立 feature 页面]
-  J --> K[SSR HTML + metadata + JSON-LD]
-  K --> L[vinext / Cloudflare Worker]
-  L --> M[Sites 私有生产环境]
-```
+线上合成验收线索：`JUHAO-20260713-8748A70A`。该记录使用“上线验收”与 `qa-no-reply@example.com`，不代表真实客户，仅用于确认生产 D1 迁移、写入、编号生成和成功页数据库核验均可用。
 
-### 3.1 运行栈
+## 4. 咨询闭环
 
-- Node.js：`>=22.13.0`
-- Next.js：16.2.6
-- React：19.2.6
-- TypeScript：5.9.3
-- 构建/运行：Vite 8 + vinext 0.0.50 + Wrangler
-- 动效：GSAP 3 + `@gsap/react`
-- 样式：CSS Modules + 全局 token
-- 数据库：Drizzle/D1 仅保留空骨架，当前业务没有使用数据库
-- 托管：OpenAI Sites，Cloudflare Worker 兼容产物
+### 4.1 用户流程
 
-### 3.2 页面解析与渲染链路
+联系页分两步：
 
-1. 首页由 `app/page.tsx` 渲染。
-2. 其余路由进入 `app/[...slug]/page.tsx`。
-3. `resolveRoute()` 依次解析固定页面、产品详情、产品专题、案例详情和新闻分页。
-4. `PageFeature()` 把路由分发给对应 `features/**` 组件。
-5. `generateMetadata()` 输出每页独立 title、description、canonical、Open Graph 和 robots。
-6. 页面末尾按类型输出 Breadcrumb、WebPage、Article、Service、FAQPage 或 Product JSON-LD。
-7. `generateStaticParams()` 注册固定页、10 个产品专题、6 个项目、25 个产品详情和新闻分页。
+1. 选择家庭、工程或渠道方向，填写项目概况、阶段和希望解决的问题。
+2. 检查通过后，选择一键电话、一键邮件、企业微信状态说明或提交回访。
 
-## 4. 目录与模块设计
+当前公开操作：
 
-### 4.1 路由、SEO 与全局布局
+- 电话：`400-0760-888`，支持 `tel:`。
+- 邮件：`export@juhaolamp.com`，支持带来源、场景和意图的 `mailto:`。
+- 企业微信：明确显示“待企业核验”，当前不可点击。
+- 回访：收集联系人称呼、电话/邮箱/微信号和隐私同意。
 
-| 文件/目录 | 用途 |
-| --- | --- |
-| `app/page.tsx` | 首页服务端入口 |
-| `app/[...slug]/page.tsx` | 多页 catch-all 路由、metadata、结构化数据、feature 分发 |
-| `app/_data/pages.ts` | 页面统一 `PageData` 类型及路由数据汇总 |
-| `app/_data/contract-pages.ts` | 固定业务页、文章和 noindex 页面定义 |
-| `app/layout.tsx` | 根 metadata、Organization JSON-LD、全局组件 |
-| `app/sitemap.ts` | sitemap 生成；包含正式页面、专题、案例、25 个产品和新闻分页 |
-| `app/robots.ts` | robots 与 sitemap 地址 |
-| `app/not-found.tsx` | 品牌化 404 |
-| `app/_components/` | 对 `components/layout` Header/Footer 的应用层重导出 |
-| `content/navigation.ts` | 桌面/移动主导航结构 |
-| `next.config.ts` | 旧路由 308、商城登录/注册/找回密码跳转 |
+所有入口继续携带：
 
-### 4.2 全局布局与动效
+- `source`
+- `sourceDetail`（仅产品专题、产品详情、案例详情和合作入口）
+- `scene`
+- `intent`
 
-| 文件/目录 | 用途 |
-| --- | --- |
-| `components/layout/SiteHeader.tsx` | 桌面导航、移动抽屉、搜索入口、工程 CTA |
-| `components/layout/SiteFooter.tsx` | 品牌、方案、服务合作、内容联系和法律分组 |
-| `components/layout/FloatingActions.tsx` | 三类悬浮咨询与返回顶部 |
-| `components/motion/PageLoader.tsx` | 首屏/路由加载动效 |
-| `components/motion/SiteMotion.tsx` | GSAP reveal、路由过场、reduced-motion 降级 |
-| `components/motion/HeroDisplacementCanvas.tsx` | 首页 WebGL 位移转场与静态兜底 |
-| `components/ui/AccessibleCarousel.tsx` | 键盘、触摸、自动播放和 reduced-motion 兼容轮播 |
-| `styles/tokens.css` | 品牌色、字号、间距、动效时长、层级变量 |
+### 4.2 服务端实现
 
-### 4.3 页面 feature
+核心文件：
 
-| 目录 | 页面职责 |
-| --- | --- |
-| `features/home/` | 首页 Hero、品牌、方案、智能、资讯和咨询入口 |
-| `features/about/` | 品牌介绍、发展历程、荣誉、加入钜豪 |
-| `features/catalog/` | 产品中心、专题、产品详情、项目列表、项目详情、资料图集 |
-| `features/solutions/` | 方案总览与健康光 |
-| `features/business/` | 全屋、酒店、商业、公共、工业场景页 |
-| `features/smart-home/` | 智能家居场景与 Tab |
-| `features/service/` | 总部/商城/工程/经销商服务入口与 FAQ |
-| `features/partners/` | 经销商、工程、供应商合作入口 |
-| `features/news/` | 新闻列表、SSR 分页和文章详情 |
-| `features/search/` | 站内搜索与状态处理 |
-| `features/platform/` | 联系咨询、商城说明页 |
-| `features/sustainability/` | 可持续披露框架，当前 noindex |
-| `features/utility/` | 下载、法律、隐私等工具页 |
+- `app/api/contact/route.ts`
+- `app/contact/success/page.tsx`
+- `db/consultation-leads.ts`
+- `db/schema.ts`
+- `drizzle/0000_brief_madame_hydra.sql`
+- `lib/api/contact.ts`
+- `lib/consultation.ts`
 
-### 4.4 数据与接口
+提交顺序：
 
-| 文件/目录 | 用途 |
-| --- | --- |
-| `content/catalog.ts` | 10 个产品专题、6 个项目的结构化数据与证据图 |
-| `content/products.ts` | 读取发布产品 JSON，提供按路由/专题查询 |
-| `content/governance/` | 产品/案例台账、发布产品、质量报告、URL 与域名迁移台账 |
-| `lib/api/types.ts` | `SiteApi`、产品卡、服务网点、搜索、新闻、下载、咨询类型 |
-| `lib/api/mock.ts` | 默认数据源；搜索和新闻可用，正式门店/合作数据只是 Mock |
-| `lib/api/http.ts` | 未来 CMS/API adapter、HTTPS 限制、10 秒超时和结构校验 |
-| `lib/api/index.ts` | 按环境变量选择 Mock 或 HTTP 模式 |
-| `lib/consultation.ts` | 家庭、工程、渠道三类咨询的 source/scene/intent 追踪 |
-| `db/schema.ts` | 当前为空；不要误认为已有业务数据库 |
-| `db/index.ts` | D1 工厂；只有真实绑定后才可调用 |
+1. 检查同源 `Origin`、JSON 类型和 16 KB 正文上限。
+2. 服务端重新校验方向、场景、来源、阶段、渠道、字段长度和隐私版本。
+3. 使用浏览器 UUID v4 做幂等键，并保存请求哈希。
+4. 先写入 D1 `consultation_leads`。
+5. 生成 `JUHAO-YYYYMMDD-XXXXXXXX` 线索编号。
+6. 若配置 Webhook，再尝试发送内部通知并记录 `sent / failed`。
+7. 成功页重新查询 D1；仅正则格式正确但数据库不存在的伪造编号不会显示“咨询已提交”。
 
-### 4.5 构建、边缘运行与测试
+已实现的边界：
 
-| 文件/目录 | 用途 |
-| --- | --- |
-| `worker/index.ts` | vinext Worker 入口、图片处理、6 条垃圾 URL 的 410/noindex |
-| `vite.config.ts` | vinext/Vite 构建配置 |
-| `.openai/hosting.json` | Sites 项目标识；当前没有 D1/R2 绑定 |
-| `scripts/build_product_catalog.py` | 从知识库 + SQL 重建候选台账和 25 个发布产品 |
-| `scripts/probe_knowledge_base.py` | 上述生成器的兼容入口 |
-| `scripts/check_launch_health.mjs` | 核心路由、410、商城跳转和 sitemap 健康检查 |
-| `tests/rendered-html.test.mjs` | SSR、SEO、产品、项目、迁移、404 等 19 项自动化测试 |
-| `RECON/` | 取证、路由契约、API 契约、安全与预发布报告 |
+- 同源检查
+- 16 KB 限制
+- 服务端字段校验
+- 蜜罐字段
+- 幂等提交与冲突检测
+- 请求哈希
+- 10 秒前端提交超时
+- HTTPS Webhook 限制
+- 可选 HMAC 请求签名
+- noindex 成功页
+- 不保存原始 IP
 
-## 5. 产品中心
+### 4.3 数据与隐私状态
 
-### 5.1 数据源
+- 隐私说明版本：`2026-07-13`。
+- 每条线索记录同意时间和隐私版本。
+- 每条记录设置 180 日 `expires_at`。
+- 当前清理方式是在新提交到达时删除过期记录，不是定时任务；不得写成“到期自动定时删除”。
+- 隐私页已按当前实现如实披露，但仍标注“企业审核状态：待确认”。
+- 查询、更正或删除入口目前依赖线索编号、电话或邮件联系企业处理。
 
-- 企业知识库：`/Users/mac/Documents/juhao数据库/企业知识库`
-- 商品说明：`/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明`
-- 商品专题：`/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品专题分类`
-- 商品部门：`/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品部门索引`
-- 商城 SQL：`/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql`
+### 4.4 尚未形成企业处理闭环的事项
 
-### 5.2 生成脚本与发布门禁
+以下事项是正式公开咨询前的 P0：
 
-入口：`scripts/build_product_catalog.py`
+1. 配置真实 `JUHAO_LEAD_WEBHOOK_URL` 和 `JUHAO_LEAD_WEBHOOK_SECRET`。
+2. 用企业接收端完成一次真实通知验收。
+3. 为 Webhook 失败增加重试队列、告警或受控内部线索查看入口。
+4. 正式公网前增加 Cloudflare Turnstile 或边缘限流；蜜罐和同源校验不能替代限速。
+5. 核验企业微信账号、链接方式与责任人。
+6. 完成企业/法务对隐私说明、保留期限和删除流程的批准。
 
-门禁条件：
+## 5. 产品治理与三个旗舰专题
 
-1. SQL 中 `isSale=1`、`goodsStatus=1`、`dataFlag=1`。
-2. 至少 4 张图片。
-3. 所有图片来自企业商城 OSS 域名。
-4. 参数完整度评分不低于 80%。
-5. 事业部不能是“未归属部门”。
-6. 标题/分类不得命中测试、饮料、食品、纸品等污染关键词。
-7. 每专题最多公开 3 款，总量控制在 20—30 款。
+### 5.1 当前产品台账
 
-注意：
-
-- `parameter_completeness` 是脚本依据参数数量、图片数量、型号和数据质量计算的发布评分，不是第三方检测结论。
-- `image_authorization=企业商城渠道素材` 表示素材来自企业商城渠道，不等于已经取得完整法律授权证明；正式公开前仍应由企业确认版权责任。
-- 库存、价格和交期只用于后台核验，不在官网承诺实时有效。
-- 重新运行脚本会重写台账、发布日期和发布产品 JSON，必须先检查知识库/SQL 是否变化，并审查 Git diff。
-
-### 5.3 当前结果
-
-- 台账总记录：106 条。
-- 产品候选：100 款。
-- 审核发布产品：25 款。
-- 案例台账：6 条。
-- 25 款参数完整度：最低 84%，平均 98.2%。
+- 候选产品：100 款。
+- 已审核发布：31 款。
+- 待审核：69 款。
+- 项目记录：6 条。
 - 产品 ID 唯一，无跨专题重复。
+
+当前分布：
 
 | 专题 | 已发布 |
 | --- | ---: |
-| 射灯 | 3 |
-| 家居顶灯 | 3 |
+| 射灯 | 6 |
+| 家居顶灯 | 6 |
 | 新中式 | 3 |
 | 艺术灯 | 3 |
 | 水晶吊灯 | 3 |
@@ -199,435 +146,282 @@ flowchart LR
 | 开关面板 | 1 |
 | 户外照明 | 3 |
 | 工程定制 | 3 |
-| 家居智能设备 | 0（结构化参数不足） |
+| 家居智能设备 | 0 |
 
-### 5.4 输出文件
+发布门禁：
 
-| 文件 | 内容 |
+1. 商城 SQL 中 `isSale=1`、`goodsStatus=1`、`dataFlag=1`。
+2. 至少 4 张企业商城 OSS 图片。
+3. 商品归属事业部明确。
+4. 台账资料评分达到门禁。
+5. 标题与分类不包含测试、食品、饮料、纸品等污染词。
+
+前台不再展示容易被误读的“参数完整度 100%”，只说明“已通过官网内容门禁”。光束角、色温、显指、光通量、配光、协议等缺失项仍单独标注，不用台账评分替代正式技术资料。
+
+### 5.2 射灯与轨道照明
+
+- 6 款审核产品。
+- 4 个典型空间：客厅墙面与陈设、餐桌与局部停留、卧室阅读与夜间、零售陈列。
+- 7 个对照字段；没有资料的光束角、色温、显指明确显示待补充。
+- 3 张有 alt、尺寸、标题与来源的语义产品图。
+- 4 个审核知识入口。
+- 2 个关联项目动态。
+- 3 个独有 FAQ。
+- 仍缺轨道系统产品、完整光学文件和企业样板记录。
+
+### 5.3 家居顶灯
+
+- 6 款审核产品。
+- 5 个典型空间：客厅、餐桌、卧室、书房、儿童房。
+- 7 个对照字段；商城“光源数量”字段保留来源提示，不擅自重新解释。
+- 3 张有 alt、尺寸、标题与来源的语义产品图。
+- 4 个审核知识入口。
+- 2 个家庭应用/知识关联入口。
+- 3 个独有 FAQ。
+- 仍缺显色、光通量、配光、检测报告和真实应用授权证据。
+
+### 5.4 智能家居设备
+
+- 当前 0 款产品通过公开门禁。
+- 10 款候选资料评分均为 65%，缺少结构化协议、供电、安装尺寸、兼容、隐私和售后资料。
+- 已补 4 个场景方法、2 张语义场景图、3 个知识入口、2 个关联方案和 3 个 FAQ。
+- 页面明确采用“审核一款、发布一款”，不会为了凑数量推断产品能力。
+
+### 5.5 数据文件
+
+- `scripts/build_product_catalog.py`
+- `content/governance/content-ledger.csv`
+- `content/governance/content-ledger.json`
+- `content/governance/published-products.json`
+- `content/governance/quality-report.md`
+- `content/products.ts`
+- `content/topic-guides.ts`
+
+重跑生成器会重写台账和发布产品，必须先核对知识库与商城 SQL，再审查 Git diff。
+
+## 6. 两个旗舰项目
+
+页面继续使用“项目动态/方案资料”口径，不把中标新闻或方案效果图写成完工案例。
+
+### 6.1 深圳华发冰雪世界 JW 万豪酒店
+
+- 来源：企业知识库文章 226。
+- 当前阶段：签约 / 中标项目。
+- 4 个空间拆解。
+- 已确认事实与暂缺资料双栏。
+- 8 张方案资料图，均有实际宽高、alt、标题、来源和“非完工实拍”标识。
+- 关联射灯、家居顶灯和工程定制专题。
+
+### 6.2 上饶广丰铂尔曼酒店
+
+- 来源：企业知识库文章 231。
+- 当前阶段：签约 / 中标项目。
+- 4 个空间拆解。
+- 已确认事实与暂缺资料双栏。
+- 8 张方案资料图，均有实际宽高、alt、标题、来源和“非完工实拍”标识。
+- 关联射灯、家居顶灯和工程定制专题。
+
+六个项目当前合计 28 张资料图。两个旗舰项目各 8 张，其余四个项目各 3 张。
+
+正式升级为完工案例仍至少需要：
+
+- 完工实拍
+- 最终产品/系统型号与数量
+- 交付或验收日期
+- 调试、控制或验收记录
+- 项目方对官网公开资料的授权
+
+## 7. 首页可信度、资讯与媒体
+
+### 7.1 首页证据
+
+首页当前展示：
+
+- 31 款已审核产品详情，来源为企业商城与内容台账。
+- 6 个阶段透明的项目档案，列出企业资料编号。
+- 2020—2026 的 5 个发展资料节点。
+- 5 项有企业资料编号的品牌荣誉。
+
+没有加入未经确认的成立年份、产能、门店数、覆盖区域或专利总数。
+
+### 7.2 资讯状态
+
+首页资讯轮播有 8 个入口，覆盖：
+
+- 企业动态
+- 项目动态
+- 品牌荣誉
+- 照明知识
+
+但当前独立照明知识正文仍只有 4 篇，尚未达到“6—9 篇真实完整文章”的目标；日期集中问题也没有完全解决。
+
+### 7.3 语义媒体状态
+
+已完成：
+
+- 产品详情主图和图库
+- 三个深专题的内容图片
+- 产品专题卡片
+- 案例列表卡片
+- 两个旗舰项目的 16 张证据图
+
+仍待补齐：
+
+- 首页 Hero 等装饰背景仍可继续使用 CSS，但关键品牌证据应增加语义图片。
+- 荣誉、认证、制造与交付证据需要审核素材后再发布。
+- AVIF/WebP 响应式 `<picture>` 和图片来源台账仍可继续完善。
+
+## 8. 商城与体验精修
+
+### 8.1 商城
+
+2026-07-13 实测：
+
+- `https://mall.juhao.com/`：TLS 失败，HTTP 状态 000。
+- 登录、注册和找回密码路径同样不可稳定访问。
+
+官网侧已完成：
+
+- 原商城直链统一先进入站内 `/mall` 状态页。
+- `/login.html`、`/register.html`、`/forget.html` 临时 307 到 `/mall`，避免继续落入旧站异常页。
+- `/mall` 明示当前连接状态，并提供电话、邮件和采购咨询兜底。
+
+不得在商城 TLS、登录、订单和经销商业务未验收前切换正式域名流量。
+
+### 8.2 移动端与平板
+
+- 390×844：主 CTA 独占一行，工程需求与渠道合作并列；首屏底部露出下一屏。
+- 修复 8 条资讯轮播导致的横向溢出，实测 `body.scrollWidth = 390`。
+- 1012×800：保留精简桌面导航；仅在 960px 及以下折叠为汉堡菜单。
+- 两个旗舰案例移动端无横向溢出。
+
+### 8.3 加载和平台标识
+
+- 首次会话加载画面约 560ms。
+- 普通内部路由不再显示全屏 JUHAO 强制过场。
+- 数据已就绪时直接显示内容。
+- 代码和本地页面没有粉色平台悬浮标识。若私有 Sites 外壳或正式域名仍出现该标识，它属于托管层而不是本项目组件，必须在正式域名环境单独复核，当前不能标记为已解决。
+
+## 9. 技术架构与关键入口
+
+- Next.js App Router + React 19 + TypeScript。
+- vinext/Vite 构建，Cloudflare Worker 兼容产物。
+- OpenAI Sites 私有托管。
+- Drizzle 迁移 + Cloudflare D1 保存咨询线索。
+- 多页 SSR、独立 metadata、canonical、JSON-LD、robots 和 sitemap。
+
+关键入口：
+
+| 文件 | 作用 |
 | --- | --- |
-| `content/governance/content-ledger.csv` | 便于人工审核的扁平台账 |
-| `content/governance/content-ledger.json` | 完整候选与案例台账 |
-| `content/governance/published-products.json` | 25 个公开产品页的唯一数据源 |
-| `content/governance/quality-report.md` | 生成日期、数量、分布和门禁摘要 |
-| `content/products.ts` | 应用读取层 |
-| `features/catalog/ProductDetailPage.tsx` | 产品详情模板 |
-
-### 5.5 产品详情页结构
-
-- 产品名称和型号
-- 所属专题、事业部、在售/资料状态
-- 结构化参数
-- 主图和详情图库
-- 安装与选型提示
-- 同专题关联产品
-- 产品咨询与商城跳转
-- Product JSON-LD
-- 独立 title、description、canonical 和 sitemap URL
-
-## 6. 项目与案例中心
-
-结构数据：`content/catalog.ts`  
-页面：`features/catalog/CatalogPages.tsx`  
-样式：`features/catalog/CatalogPages.module.css`
-
-| ID | 页面 | 当前公开阶段 | 已有内容 | 仍缺资料 |
-| --- | --- | --- | --- | --- |
-| 226 | 深圳华发冰雪世界 JW 万豪酒店 | 签约/中标 | 背景、4 类空间、产品方向、策略、3 张来源图 | 完工实拍、最终型号、调试/验收记录 |
-| 231 | 上饶广丰铂尔曼酒店 | 签约/中标 | 大堂、餐饮、宴会、客房方案，3 张来源图 | 完工实拍、最终型号和数量 |
-| 228 | 苏州金融街君悦酒店 | 签约/中标 | 公共区、餐饮、宴会、客房方案，3 张来源图 | 交付日期、完工实拍、控制场景和型号 |
-| 229 | 南通海门希尔顿逸林酒店 | 签约/中标 | 酒店空间和定制方向，3 张来源图 | 基础照明/控制清单、完工与验收资料 |
-| 220 | 扬州经开区“一河两岸” | 签约/中标 | 滨水、建筑、动线、节能方向，3 张来源图 | 夜景完工图、型号数量、控制与能耗验收 |
-| 225 | 2026 中国智慧道路照明大会 | 行业活动/荣誉 | 大会、智慧道路方向、荣誉和 3 张现场图 | 展示设备清单、演讲/方案资料；不适用工程完工验收 |
-
-重要边界：
-
-- 企业知识库当前只有原始中标新闻/活动新闻，没有后续完工文章。
-- 第 15 版代码中的 18 张图均标注为方案图、概念图或活动现场图，不作为完工证明。
-- 不得仅凭新闻中的效果图把 `stage` 改成“已完工案例”。
-- 升级为正式案例至少需要：完工实拍、最终产品/系统清单、交付或验收日期、项目方授权；有条件时再补调试记录和成果数据。
-
-## 7. 品牌、服务与合作内容
-
-### 7.1 发展历程
-
-文件：`features/about/AboutPages.tsx`
-
-- 2020：区域渠道战略，企业资料 #149
-- 2021：智慧家庭发布，企业资料 #160
-- 2024：春季优秀经销商会，企业资料 #192
-- 2025：春季新品订货会，企业资料 #205
-- 2026：优秀经销商盛典与新品品鉴，企业资料 #224
-
-当前不是完整公司成立史，只是已有可核验企业新闻形成的阶段时间线。成立年份、规模、门店数量等未经审核数据没有加入。
-
-### 7.2 品牌荣誉
-
-- 2019：行业领袖品牌，企业资料 #25
-- 2021：智能照明年度影响力品牌创新奖，企业资料 #167
-- 2026：工程照明品牌 TOP10，企业资料 #223
-- 2026：设计师推荐品牌 TOP10，企业资料 #223
-- 2026：中国智慧道路照明大会优秀合作伙伴，企业资料 #225
-
-### 7.3 服务网络
-
-文件：`features/service/ServicePage.tsx`
-
-已发布四类入口：
-
-1. 总部服务窗口
-2. 商城与订单服务
-3. 工程项目支持
-4. 经销商协作
-
-已使用的公开联系方式：
-
-- 服务热线：400-0760-888
-- 联系电话：+86 0760 8985 5555
-- 邮箱：export@juhaolamp.com
-- 地址：广东省中山市横栏镇富庆一路 8 号钜豪工业园
-
-未完成：真实省市服务网点列表、责任主体、营业时间和网点查询接口。`lib/api/mock.ts` 中的广州/上海地址是示例数据，不得公开当作真实网点。
-
-### 7.4 合作内容
-
-文件：`features/partners/PartnersPage.tsx`
-
-已拆分为：
-
-- 经销商合作
-- 工程合作
-- 供应商合作
-
-页面已说明官网负责内容和意向承接，商城保留采购、订单和经销商系统。未发布区域独家、返点、店数、发货时效等未经企业批准的政策。
-
-## 8. 咨询、API 与后端边界
-
-### 8.1 三类咨询路径
-
-定义：`lib/consultation.ts`
-
-| 方向 | scene | intent | CTA |
-| --- | --- | --- | --- |
-| 家庭健康光 | `home-health` | `space-advice` | 获取户型/空间建议 |
-| 工程项目 | `project` | `project-brief` | 提交项目需求 |
-| 渠道合作 | `channel` | `partnership` | 了解合作条件 |
-
-入口会记录 `source`、`scene` 和 `intent`，联系页服务端预选对应方向。
-
-### 8.2 当前咨询状态
-
-- 默认只在浏览器内检查需求摘要。
-- 不配置 API 时不会发送或保存联系人资料。
-- `NEXT_PUBLIC_JUHAO_CONTACT_ENABLED=false`。
-- 正式提交接口、隐私同意、受理责任和数据保留规则尚未完成。
-
-### 8.3 正式 API 预留
-
-契约：`RECON/API_CONTRACT.md`
-
-已定义产品卡、服务地区/网点、合作区域、搜索、新闻、下载和咨询提交接口。当前没有真实 `api.juhao.com` 后端，也没有 D1 表。
-
-不要在以下条件未满足时开启咨询提交：
-
-- HTTPS API 可用并通过结构校验
-- CORS/Cookie 策略明确
-- CSRF/来源校验、限流和服务端字段校验完成
-- 隐私文本、保留期限、删除机制和责任人确认
-- 提交成功后有真实受理流程
-
-## 9. SEO、旧URL与安全处理
-
-### 9.1 SEO
-
-- 目标 canonical：`https://juhao.com`
-- 在线 sitemap：66 条 URL
-- 产品、项目、品牌、方案、新闻均为 SSR HTML
-- 产品页有 Product JSON-LD
-- 正式页面有 Breadcrumb/WebPage/Service/Article/FAQPage 等结构化数据
-- `noindex` 页面不会进入 sitemap，也不会输出页面级结构化数据
-
-当前明确 noindex：
-
-- `/about/join`
-- `/sustainability`
-- `/downloads`
-- `/search`
-- `/legal`
-- `/privacy`
-
-### 9.2 旧URL迁移
-
-配置：`next.config.ts`  
-台账：`content/governance/legacy-url-actions.csv`
-
-已覆盖：
-
-- NVC 参考站旧页面族到 JUHAO canonical 的 308
-- `/index.html` 到首页
-- `/login.html`、`/register.html`、`/forget.html` 到 `mall.juhao.com`
-- 数字新闻详情到新闻中心
-
-### 9.3 垃圾URL
-
-`worker/index.ts` 对 6 条已确认垃圾路径返回：
-
-- HTTP 410
-- `X-Robots-Tag: noindex`
-
-这些规则只在新 Worker 接管域名后生效；旧 PHP 服务器仍需清理恶意文件、数据库注入、账号和定时任务。
-
-## 10. 构建、测试与验证
-
-### 10.1 常用命令
-
-```bash
-npm install
-npm run dev
-npm run build
-npm run start
-npm test
-npm run lint
-```
-
-### 10.2 产品台账重建
-
-```bash
-python3 scripts/build_product_catalog.py
-```
-
-执行后必须查看：
-
-```bash
-git diff -- content/governance
-npm test
-npm run lint
-```
-
-### 10.3 当前验证结果
-
-- production build：通过
-- ESLint：通过
-- SSR/SEO/迁移测试：19/19 通过
-- 25 个产品均满足审核、在售、参数和图片门禁
-- 130 个唯一媒体 URL 验证可访问：106 个产品媒体 + 24 个项目媒体
-- 私有线上代表路由返回 200：
-  - `/`
-  - `/products/spotlights/12287`
-  - `/cases/jw-marriott-shenzhen-huafa-snow-world`
-  - `/about/history`
-  - `/service`
-  - `/partners`
-- 私有线上 sitemap：66 条 URL
-
-完整健康检查：
-
-```bash
-BASE_URL=https://<site-host> \
-OAI_SITES_BYPASS_TOKEN=<token> \
-node scripts/check_launch_health.mjs
-```
-
-不要把旁路令牌写入文件、Git remote、日志或交接文档。
-
-## 11. Sites 托管状态
-
-### 11.1 项目
-
-- Sites project ID：`appgprj_6a533dc64d64819194e7761cf915e12d`
-- 项目 slug：`juhao-lighting-2026`
-- 访问模式：`custom`，当前为私有访问策略
-- 私有线上地址：`https://juhao-lighting-2026.rocky-snail-3254.chatgpt.site`
-- `.openai/hosting.json`：仅保存 project ID，D1/R2 均为空
-
-### 11.2 已上线与未上线版本
-
-| 状态 | 版本 | Commit | 说明 |
-| --- | ---: | --- | --- |
-| 已成功部署 | 14 | `76adf7a` | 25 产品、6 项目结构、品牌/服务/合作、旧 URL 和监控可用 |
-| 已保存未部署 | 15 | `41c2406` | 在第 14 版基础上增加 6 个项目的 18 张来源标注图 |
-
-第 15 版 Sites version ID：  
-`appgprj_6a533dc64d64819194e7761cf915e12d~appgver_c2b0db4b57d48191aa8b3e36907705c3`
-
-当前线上项目详情页没有“企业资料图集”，这是第 14 版与第 15 版最直观的区别。
-
-### 11.3 接手后的首个托管动作
-
-1. 先读取 Sites hosting 技能和 `.openai/hosting.json`。
-2. 不要重新创建 Sites 项目。
-3. 直接私有部署已保存的第 15 版。
-4. 轮询到 `succeeded` 或 `failed`。
-5. 用旁路令牌验证 25 个产品页、6 个项目页和 sitemap。
-6. 确认项目详情出现“企业资料图集”。
-7. 未经明确批准，不要把访问策略改成公开。
-
-## 12. 正式域名与商城状态
-
-### 12.1 自定义域名
-
-`juhao.com` 与 `www.juhao.com` 已登记到 Sites，但当前均为：
-
-- domain status：`pending`
-- SSL status：`pending_validation`
-- `last_error`：空
-
-DNS 记录：`content/governance/dns-cutover-records.csv`
-
-当前 4 条验证 TXT 在公开 DNS 中均不存在。可以先添加 TXT 验证记录；不要在商城验收前修改 A/CNAME 切流记录。
-
-### 12.2 当前旧站与商城
-
-2026-07-13 10:09 实测：
-
-- `https://www.juhao.com/`：200，仍是旧 PHP 站
-- `https://www.juhao.com/login.html`：200，仍是旧登录页
-- `https://mall.juhao.com/`：TLS 失败，HTTP 状态 000
-- `https://mall.juhao.com/login.html`：TLS 失败，HTTP 状态 000
-
-因此不能执行正式切流。先完成商城子域名、证书、登录、采购、订单、支付和经销商真实账号验收。
-
-详细门槛：
-
-- `content/governance/domain-cutover-checklist.csv`
-- `content/governance/dns-cutover-records.csv`
-- `RECON/DOMAIN_CUTOVER_AND_MONITORING.md`
-- `RECON/OLD_SITE_SECURITY_SEO_GATE.md`
-
-## 13. 已完成事项
-
-### 产品与内容
-
-- [x] 建立 100 款候选产品台账
-- [x] 增加审核状态、在售状态、参数完整度、图片来源字段
-- [x] 按门禁发布 25 款产品详情页
-- [x] 产品页加入参数、图库、安装提示、关联产品、咨询与商城入口
-- [x] 6 个项目增加方案范围、产品方向和资料状态
-- [x] 第 15 版为 6 个项目增加 18 张来源标注图
-- [x] 补充发展历程和荣誉
-- [x] 补充总部、商城、工程、经销商四类服务入口
-- [x] 补充经销商、工程、供应商合作内容
-- [x] 删除“待确认式演示文案”，拆分家庭/工程/渠道 CTA
-
-### 技术与SEO
-
-- [x] 服务端渲染多页路由
-- [x] 独立 metadata、canonical、Open Graph、JSON-LD
-- [x] sitemap、robots、404、新闻分页
-- [x] 旧路由 308 与垃圾 URL 410
-- [x] 移动端 Hero 安全区与深色导航
-- [x] reduced-motion 和静态内容降级
-- [x] 19 项 SSR/SEO 自动化测试
-- [x] Sites 第 14 版私有部署成功
-
-## 14. 未完成事项
-
-按优先级排序：
-
-### P0：部署第 15 版
-
-- [ ] 私有部署已保存的第 15 版
-- [ ] 在线验证 6 个项目的“企业资料图集”
-- [ ] 在线运行健康检查并记录结果
-
-### P0：补齐正式案例证据
-
-- [ ] 6 个项目的完工实拍
-- [ ] 最终产品/系统型号与数量
-- [ ] 交付或验收日期
-- [ ] 调试/控制场景/验收记录
-- [ ] 项目方公开授权
-- [ ] 有证据后才把阶段从“中标/活动”升级为“已完工案例”
-
-### P1：真实服务与咨询
-
-- [ ] 真实省市服务网点及责任主体
-- [ ] 经销商合作政策和区域状态审核
-- [ ] 正式 CMS/API
-- [ ] 咨询提交、隐私同意、受理流程、限流和安全控制
-- [ ] 下载文件、IES、安装说明和版本管理
-
-### P1：正式内容审核
-
-- [ ] 法律声明与隐私政策
-- [ ] 可持续指标、报告和案例
-- [ ] 招聘职位与完整企业历史
-- [ ] 图片版权/授权证明台账，而不只标注企业渠道来源
-- [ ] 真实检测报告与产品级健康光声明
-
-### P2：商城与域名
-
-- [ ] 部署 `mall.juhao.com` 并配置证书
-- [ ] 验证登录、注册、找回密码、订单、支付和经销商业务
-- [ ] 添加 4 条域名验证 TXT
-- [ ] 待商城验收后修改 A/CNAME
-- [ ] 合法旧 URL 逐条 301，垃圾 URL 清理和搜索平台移除
-- [ ] 提交正式 sitemap 并监控索引量、404、5xx 和搜索词
-
-## 15. 接手执行顺序
-
-### 第一天
-
-1. `git status`，确认仍在 `main` 且工作树干净。
-2. `npm install`、`npm test`、`npm run lint`。
-3. 私有部署 Sites 第 15 版。
-4. 在线验证产品代表页、全部 6 个项目页和 66 条 sitemap。
-5. 不修改公开访问策略和正式 DNS。
-
-### 收到项目资料后
-
-1. 将企业提供的文件按项目 ID 建立资料目录或 CMS 记录。
-2. 核验图片授权、拍摄时间、项目阶段和型号清单。
-3. 更新 `content/catalog.ts` 的 `stage`、`productList`、`completionEvidence` 和图集。
-4. 更新内容台账的 `review_status`、`fact_status`、`image_status` 和 `updated_at`。
-5. 增加测试，重新构建，保存并私有部署新版本。
-
-### 收到商城/DNS权限后
-
-1. 先部署并验收 `mall.juhao.com`。
-2. 只添加 TXT 验证记录，确认 Sites 域名状态变为 active。
-3. 降低 TTL，安排维护窗口。
-4. 切换 A/CNAME，运行 `CHECK_MALL=1` 健康检查。
-5. 提交搜索平台迁移和垃圾 URL 移除。
-
-## 16. 不要做的事情
-
-- 不要把 8,681 条知识库商品直接全部生成页面。
-- 不要把食品、饮料、纸品、测试文字等污染类目带入官网。
-- 不要把“企业商城渠道素材”误写成法律授权已经完备。
+| `app/page.tsx` | 首页服务端入口与产品数量注入 |
+| `app/[...slug]/page.tsx` | 多页路由、metadata 与结构化数据 |
+| `app/api/contact/route.ts` | 咨询提交接口 |
+| `app/contact/success/page.tsx` | 可核验、noindex 的线索回执 |
+| `content/catalog.ts` | 10 个专题与 6 个项目结构数据 |
+| `content/topic-guides.ts` | 三个旗舰专题独有内容 |
+| `features/catalog/CatalogPages.tsx` | 产品专题、项目列表与项目详情 |
+| `features/platform/ContactPage.tsx` | 两步咨询前端流程 |
+| `features/platform/MallPage.tsx` | 商城状态与兜底 |
+| `db/schema.ts` | D1 线索表结构 |
+| `drizzle/0000_brief_madame_hydra.sql` | 生产 D1 迁移 |
+| `.openai/hosting.json` | Sites 项目与 `DB` 逻辑绑定 |
+
+## 10. 最终验证结果
+
+自动化：
+
+- Production build：通过。
+- `npm test`：27/27 通过。
+- ESLint：通过。
+- TypeScript：通过。
+- `git diff --check`：通过。
+- 31 个发布产品详情均返回 SSR 内容并包含 Product JSON-LD。
+- 69 个待审核产品未进入 sitemap。
+
+浏览器：
+
+- 桌面 1440×900：首页与深专题无横向溢出。
+- 移动 390×844：CTA 布局、下一屏露出与轮播宽度通过。
+- 平板 1012×800：精简桌面导航通过。
+- 本地咨询 E2E：D1 写入、线索编号、真实回执通过；伪造编号被拒绝。
+
+线上第 16 版：
+
+- 首页显示 31 款产品证据。
+- 射灯专题显示 6 款审核产品。
+- 家居顶灯专题显示 6 款审核产品。
+- 智能家居专题显示 0 款并说明原因。
+- JW 万豪旗舰项目包含 8 张资料图及非完工标识。
+- 线上 D1 提交返回 201 和线索编号。
+- 成功页通过数据库记录核验线索。
+- 伪造线索编号不显示提交成功。
+- Sitemap 实测 72 条 URL。
+
+## 11. 未完成事项
+
+### P0：正式咨询处理
+
+- [ ] 企业内部 Webhook 与密钥配置
+- [ ] 内部接收端真实验收
+- [ ] Webhook 失败重试、告警或受控查看入口
+- [ ] 正式公网 Turnstile / 边缘限流
+- [ ] 企业微信账号与跳转核验
+- [ ] 隐私说明和删除流程的企业/法务批准
+
+### P0：内容证据
+
+- [ ] 智能设备逐款补协议、供电、安装、兼容、检测、隐私和售后资料
+- [ ] 旗舰项目完工实拍、最终型号/数量、交付验收和授权
+- [ ] 其余 4 个项目按同一证据链继续深化
+
+### P1：资讯与语义媒体
+
+- [ ] 再发布 2—5 篇有来源的完整文章，使独立正文达到 6—9 篇
+- [ ] 分散资讯日期，建立持续内容节奏
+- [ ] 增加荣誉、认证、制造与交付的审核图片
+- [ ] 为关键媒体补 `<picture>`、AVIF/WebP 响应式源与正式授权台账
+
+### P2：商城、域名与托管层
+
+- [ ] 恢复 `mall.juhao.com` TLS
+- [ ] 验收登录、注册、找回密码、订单、支付和经销商业务
+- [ ] 添加自定义域名验证 TXT
+- [ ] 域名验证成功且商城通过后再切换 A/CNAME
+- [ ] 正式域名复核平台悬浮标识
+- [ ] 上线后监控 404、5xx、索引和咨询失败率
+
+## 12. 建议的下一轮顺序
+
+1. 获取企业 Webhook、企业微信和隐私责任人，完成真实内部处理验收。
+2. 在公网开放前加入 Turnstile 或边缘限流及失败重试。
+3. 补齐智能家居首批审核产品；不降低现有门禁。
+4. 收集两个旗舰项目的交付、验收、型号和授权资料。
+5. 发布 2—5 篇有来源的完整资讯正文。
+6. 恢复并验收商城。
+7. 最后处理正式域名验证、切流和托管层标识。
+
+## 13. 不要做的事情
+
+- 不要把 D1 保存成功写成企业已经收到内部通知。
+- 不要把可选 Webhook 写成已经配置。
+- 不要把 `expires_at` 写成已有定时删除任务。
+- 不要为了达到数量放行智能设备候选。
+- 不要把台账评分解释为光学、检测或选型参数完整。
 - 不要把方案图、概念图或中标新闻包装成完工案例。
-- 不要在没有真实后端和隐私流程时启用咨询提交。
-- 不要恢复对 NVC 原站接口、图片、CNZZ 或压缩产物的依赖。
-- 不要在 `mall.juhao.com` 未验收时切换 `juhao.com` DNS。
+- 不要把企业商城渠道素材解释为法律授权已经完备。
+- 不要在商城未验收时切换正式域名。
 - 不要重新创建 Sites 项目，也不要把短期凭证写入仓库。
-- 不要未经用户明确批准把私有 Sites 改为公开访问。
+- 不要未经用户批准把私有 Sites 改为公开访问。
 
-## 17. 文档与事实优先级
+## 14. 事实优先级
 
-接手时按以下顺序判断当前事实：
+发生冲突时按以下顺序判断：
 
 1. 当前 Git 工作树、提交和实际文件
 2. `content/governance/**` 当前台账
-3. Sites 实时项目、版本、部署和域名状态
-4. 企业知识库与最新商城 SQL
+3. Sites 实时项目、版本、部署、D1 与域名状态
+4. 企业知识库和最新商城 SQL
 5. 本交接文档
 6. `RECON/**` 历史报告
-7. `README.md`、`NOTES.md` 中的阶段性数量
-
-已知过时项：
-
-- `RECON/PRE_RELEASE_ACCEPTANCE.md` 仍写 13/13 测试、19 个 sitemap URL、域名未登记；当前分别是 19/19、66 条、域名已登记待验证。
-- `RECON/DOMAIN_CUTOVER_AND_MONITORING.md` 仍写部署 pending；第 14 版已在 2026-07-13 成功。
-- `README.md`/`NOTES.md` 的“产品与服务仍全部使用 Mock”已不完全准确：25 个产品详情来自知识库 + 商城 SQL；但服务地区、合作区域、下载和正式提交仍是 Mock/未启用。
-
-## 18. 接手人应能从本文档回答的问题
-
-1. 当前线上究竟是哪一版，最新代码为何还没在线？
-2. 25 个产品从哪里来，什么条件允许发布？
-3. 图片授权字段代表什么、不代表什么？
-4. 6 个项目为什么不能称为已完工案例？
-5. 产品、案例、品牌、服务、合作分别修改哪些文件？
-6. 正式咨询为什么不能开启？
-7. `juhao.com` 为什么暂时不能切流？
-8. 接手后的第一个安全动作是什么？
-
-如果这些问题无法从最新代码和本文档得到一致答案，应先停下发布动作，重新核对仓库、Sites、知识库和商城状态。
+7. `README.md` 与 `NOTES.md` 的阶段性描述
