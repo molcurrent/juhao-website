@@ -50,7 +50,7 @@ export function productPageData(routeKey: string): PageData | null {
     highlights: [
       { title: "产品型号", text: product.model || product.title },
       { title: "产品专题", text: product.topic },
-      { title: "资料状态", text: `${product.sale_status} · 参数完整度 ${product.parameter_completeness}` },
+      { title: "资料状态", text: `${product.sale_status} · 已通过官网内容门禁` },
     ],
     sections: [],
     related: [],

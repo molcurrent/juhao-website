@@ -26,19 +26,24 @@ const heroSlides = [
 const heroImages = heroSlides.map((slide) => slide.image);
 
 const newsItems = [
-  ["健康光", "2026.07.12", "家庭健康光环境：从看得见到住得舒适", "/news/healthy-home-lighting"],
-  ["智能生活", "2026.07.12", "智能家居照明：先设计生活场景，再选择控制方式", "/news/smart-lighting-planning"],
-  ["方案导航", "持续更新", "按空间浏览全屋、酒店、商业、公共与工业照明方案", "/solutions"],
+  { category: "项目动态", meta: "企业资料 #226", title: "深圳华发冰雪世界 JW 万豪酒店：签约项目方案档案", href: "/cases/jw-marriott-shenzhen-huafa-snow-world" },
+  { category: "项目动态", meta: "企业资料 #231", title: "上饶广丰铂尔曼酒店：按空间拆解方案证据", href: "/cases/pullman-shangrao-guangfeng" },
+  { category: "企业动态", meta: "5 个可追溯节点", title: "从区域渠道到智慧家庭：钜豪发展资料时间线", href: "/about/history" },
+  { category: "品牌荣誉", meta: "企业资料 #25 / #167 / #223 / #225", title: "只展示有企业资料编号的品牌荣誉", href: "/about/history" },
+  { category: "照明知识", meta: "JUHAO 审核知识", title: "家庭健康光环境：从看得见到住得舒适", href: "/news/healthy-home-lighting" },
+  { category: "智能生活", meta: "JUHAO 审核知识", title: "智能照明：先设计生活场景，再选择控制方式", href: "/news/smart-lighting-planning" },
+  { category: "商业照明", meta: "JUHAO 审核知识", title: "零售空间照明：用明暗层次引导浏览与停留", href: "/news/retail-lighting-layering" },
+  { category: "视觉舒适", meta: "JUHAO 审核知识", title: "眩光控制基础：不只看灯具亮不亮", href: "/news/glare-control-basics" },
 ];
 
 const businessPlatforms = [
   { title: "产品中心", description: "从 10 个首批专题进入产品内容与选型路径。", href: "/products" },
   { title: "工程案例", description: "按项目阶段浏览酒店、户外与智慧道路项目资料。", href: "/cases" },
-  { title: "商城采购", description: "交易、采购和订单继续由独立钜豪商城承接。", href: "https://mall.juhao.com" },
-  { title: "经销商登录", description: "保留原有经销商业务入口，避免重复建设交易系统。", href: "https://mall.juhao.com/login.html" },
+  { title: "商城采购", description: "先查看外部商城连接状态；不可用时转入采购咨询。", href: "/mall" },
+  { title: "经销商入口", description: "外部登录恢复前由官网提供合作咨询兜底。", href: "/mall" },
 ];
 
-export function HomePage() {
+export function HomePage({ publishedProductCount }: { publishedProductCount: number }) {
   const [activeScene, setActiveScene] = useState(0);
   const [activeHero, setActiveHero] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
@@ -84,7 +89,12 @@ export function HomePage() {
         <div className="sectionNo">01 / BRAND</div>
         <div className="introLead" data-reveal><p className="eyebrow dark"><span /> ABOUT JUHAO</p><h2>让健康好光<br/>成为美好生活的底色</h2></div>
         <div className="introBody" data-reveal data-reveal-delay="0.08"><p>钜豪专注照明与智能家居，以人居体验为起点，连接产品、空间、服务与渠道。我们相信，真正好的光不只照亮物体，更关照人的情绪、节律与生活。</p><Link className="textLink" href="/about">了解品牌故事 <span>→</span></Link></div>
-        <div className="stats" data-reveal><div><strong>全屋</strong><span>家庭健康光环境</span></div><div><strong>商业</strong><span>体验与品牌表达</span></div><div><strong>公共</strong><span>安全与运行效率</span></div><div><strong>工业</strong><span>作业与稳定照明</span></div></div>
+        <div className="stats verifiedStats" data-reveal>
+          <Link href="/products"><strong>{publishedProductCount}</strong><span>已审核产品详情</span><small>企业商城 + 内容台账</small></Link>
+          <Link href="/cases"><strong>6</strong><span>阶段透明的项目档案</span><small>企业资料 #220 / #225 / #226 / #228 / #229 / #231</small></Link>
+          <Link href="/about/history"><strong>2020—2026</strong><span>5 个发展资料节点</span><small>企业资料 #149 / #160 / #192 / #205 / #224</small></Link>
+          <Link href="/about/history"><strong>5</strong><span>有来源的品牌荣誉</span><small>企业资料 #25 / #167 / #223 / #225</small></Link>
+        </div>
       </section>
 
       <section className="sceneSection" id="scenes">
@@ -105,7 +115,7 @@ export function HomePage() {
         <div className="strengthGrid" data-reveal>{businessPlatforms.map((item,i)=><article key={item.title}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href} aria-label={`进入${item.title}`}>↗</Link></article>)}</div>
       </section>
 
-      <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> LIGHTING INSIGHTS</p><h2>照明知识</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明知识" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item[3]} key={item[2]}><div><span>{item[0]}</span><time dateTime={item[1] === "持续更新" ? undefined : item[1]}>{item[1]}</time></div><h3>{item[2]}</h3><p>阅读完整内容，了解对应场景的照明规划重点。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>
+      <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> VERIFIED UPDATES</p><h2>资讯与项目动态</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明资讯与项目动态" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item.href} key={item.title}><div><span>{item.category}</span><small>{item.meta}</small></div><h3>{item.title}</h3><p>阅读完整内容，查看资料来源、当前阶段与内容边界。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>
 
       <section className="contact" id="contact"><div data-reveal><p className="eyebrow"><span /> CREATE WITH LIGHT</p><h2>选择你的<br/>咨询方向</h2></div><nav className="contactPaths" aria-label="首页咨询路径" data-reveal>{consultationOptions.map((item) => <Link href={consultationHref(item.kind, "home-contact")} key={item.kind}><span>{item.label}</span><strong>{item.cta}</strong><b aria-hidden="true">→</b></Link>)}</nav></section>
     </main><SiteFooter /></>

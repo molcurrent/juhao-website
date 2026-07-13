@@ -27,10 +27,10 @@ export function PageLoader() {
         onComplete: () => setVisible(false),
       });
       timeline
-        .from(`.${styles.mark}`, { autoAlpha: 0, y: 18, duration: 0.55 })
-        .to(`.${styles.progress}`, { scaleX: 1, duration: 1.05, ease: "power2.inOut" }, 0.08)
-        .from(`.${styles.status}`, { autoAlpha: 0, duration: 0.3 }, 0.1)
-        .to(root.current, { yPercent: -100, duration: 0.78, ease: "power4.inOut" }, ">-0.04");
+        .from(`.${styles.mark}`, { autoAlpha: 0, y: 12, duration: 0.2 })
+        .to(`.${styles.progress}`, { scaleX: 1, duration: 0.34, ease: "power2.inOut" }, 0.02)
+        .from(`.${styles.status}`, { autoAlpha: 0, duration: 0.14 }, 0.02)
+        .to(root.current, { autoAlpha: 0, duration: 0.2, ease: "power2.out" }, 0.36);
     },
     { scope: root, dependencies: [visible], revertOnUpdate: true },
   );

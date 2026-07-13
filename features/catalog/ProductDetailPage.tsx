@@ -14,8 +14,8 @@ export function ProductDetailPage({ product }: { product: ProductRecord }) {
       <div className={styles.summary}>
         <nav aria-label="面包屑"><Link href="/">首页</Link><span>/</span><Link href="/products">产品中心</Link><span>/</span><Link href={`/products/${product.topic_slug}`}>{product.topic}</Link></nav>
         <p>PRODUCT / {product.department}</p><h1>{product.title}</h1>
-        <dl><div><dt>产品型号</dt><dd>{product.model}</dd></div><div><dt>产品专题</dt><dd>{product.topic}</dd></div><div><dt>资料状态</dt><dd>{product.sale_status} · 参数完整度 {product.parameter_completeness}</dd></div></dl>
-        <div className={styles.actions}><Link href={consultationHref("project", `product-${product.source_id}`)}>咨询产品与方案 →</Link><a href="https://mall.juhao.com" rel="external">进入商城 ↗</a></div>
+        <dl><div><dt>产品型号</dt><dd>{product.model}</dd></div><div><dt>产品专题</dt><dd>{product.topic}</dd></div><div><dt>资料状态</dt><dd>{product.sale_status} · 已通过官网内容门禁</dd></div></dl>
+        <div className={styles.actions}><Link href={consultationHref("project", "product-detail", product.source_id)}>咨询产品与方案 →</Link><Link href="/mall">商城连接与采购兜底 ↗</Link></div>
       </div>
     </section>
     <section className={styles.parameters}><div><p>01 / SPECIFICATION</p><h2>产品参数</h2><span>参数来自企业商城商品说明，实际选型仍需结合安装环境和正式资料。</span></div><dl>{product.parameters.map((item) => <div key={`${item.name}-${item.value}`}><dt>{item.name}</dt><dd>{item.value}</dd></div>)}</dl></section>

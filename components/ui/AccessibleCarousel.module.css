@@ -155,6 +155,11 @@
 @media (max-width: 640px) {
   .toolbar {
     min-height: 58px;
+    justify-content: flex-end;
+  }
+
+  .pagination {
+    display: none;
   }
 
   .pageButton,
@@ -172,7 +177,7 @@
   }
 
   .counter {
-    display: none;
+    display: inline-flex;
   }
 }
 

@@ -40,7 +40,7 @@ npm test
 
 ## 数据与发布安全
 
-`SiteApi` 支持本地 Mock 和正式 HTTP/CMS 两种适配器，覆盖产品、服务地区、网点、合作区域、搜索、新闻、下载与咨询提交。复制 [.env.example](.env.example) 并配置接口根路径即可切换；字段、响应和服务端安全要求见 [API 契约](RECON/API_CONTRACT.md)。未配置时继续使用 Mock，且咨询提交保持关闭。
+`SiteApi` 支持本地 Mock 和正式 HTTP/CMS 两种读取适配器；咨询回访独立使用同源 `/api/contact`，先写入 Sites D1，再按可选的服务端 Webhook 通知内部接收端，不会因咨询上线而切换产品、服务、搜索或资讯数据源。字段与安全边界见 [API 契约](RECON/API_CONTRACT.md)。
 
 以下信息在企业确认前不得改成可索引正式内容：
 
@@ -50,6 +50,6 @@ npm test
 - 招商区域、联系人和合作权益；
 - ESG 指标、报告与案例；
 - 下载文件、法律声明和隐私政策；
-- 咨询表单的真实提交与存储。
+- 企业微信客服入口和内部通知接收端。
 
 阶段状态、已测范围和上线缺口见 [预发布验收报告](RECON/PRE_RELEASE_ACCEPTANCE.md)。

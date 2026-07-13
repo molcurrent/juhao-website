@@ -166,7 +166,35 @@
   display: none;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) and (min-width: 961px) {
+  .header {
+    gap: 16px;
+    padding-inline: 24px;
+  }
+
+  .logo small,
+  .searchLink {
+    display: none;
+  }
+
+  .desktopNav {
+    gap: 15px;
+  }
+
+  .topLink {
+    font-size: 12px;
+  }
+
+  .cta {
+    padding: 10px 12px;
+  }
+
+  .cta span {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 960px) {
   .header {
     height: calc(var(--header-height) + env(safe-area-inset-top));
     padding: env(safe-area-inset-top) 20px 0;

@@ -1,1 +1,1 @@
-export { ServicePage, type ServicePageProps } from "./ServicePage";
+export { ServicePage } from "./ServicePage";

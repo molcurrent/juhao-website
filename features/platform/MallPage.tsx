@@ -32,30 +32,30 @@ export function MallPage({ page }: MallPageProps) {
           <div className={styles.heroCopy} data-reveal="fade">
             <div className={styles.statusLine}>
               <span>{page.eyebrow}</span>
-              <strong>能力框架 · 待企业确认</strong>
+              <strong>外部商城连接待恢复</strong>
             </div>
             <h1>{page.title}</h1>
             <p>
-              这里展示商城与渠道协作的规划框架，不代表相关平台功能已经上线。具体商品、交易、库存、会员与分销能力，均需企业完成业务确认后才能公开。
+              2026 年 7 月 13 日复核时，mall.juhao.com、登录与注册地址均未完成 TLS 连接。恢复并通过稳定性检查前，官网不会把用户直接送往失效页面；采购、订单和渠道需求先由咨询入口承接。
             </p>
-            <Link className={styles.heroLink} href="/contact">
-              查看咨询准备信息 <span aria-hidden="true">↗</span>
+            <Link className={styles.heroLink} href="/contact?source=mall&scene=channel&intent=partnership">
+              提交采购或渠道需求 <span aria-hidden="true">↗</span>
             </Link>
           </div>
 
-          <div className={styles.platformVisual} role="img" aria-label="规划中的平台信息流示意">
+          <div className={styles.platformVisual} role="img" aria-label="商城连接恢复门禁">
             <div className={styles.visualHeader}>
-              <span>PLATFORM MAP</span>
-              <span>CONCEPT ONLY</span>
+              <span>CONNECTION GATE</span>
+              <span>CHECKED 2026-07-13</span>
             </div>
             <ol className={styles.visualFlow}>
-              <li><span>01</span><strong>商品资料</strong><small>待核验</small></li>
-              <li><span>02</span><strong>业务协同</strong><small>待确认</small></li>
-              <li><span>03</span><strong>服务记录</strong><small>待接入</small></li>
+              <li><span>01</span><strong>商城首页</strong><small>TLS 待恢复</small></li>
+              <li><span>02</span><strong>登录 / 注册</strong><small>已转官网兜底</small></li>
+              <li><span>03</span><strong>采购 / 渠道需求</strong><small>咨询入口可用</small></li>
             </ol>
             <div className={styles.visualFooter}>
               <span aria-hidden="true" />
-              <p>所有节点仅用于说明可能的信息关系，不表示真实系统状态。</p>
+              <p>域名恢复后仍需复核 TLS、登录落点、外部跳转提示和连续可用性，再重新开放直达链接。</p>
             </div>
           </div>
         </div>
@@ -120,11 +120,11 @@ export function MallPage({ page }: MallPageProps) {
       <section className={styles.confirmation} aria-labelledby="mall-confirmation-title" data-reveal>
         <div>
           <p>PUBLICATION GATE</p>
-          <h2 id="mall-confirmation-title">企业确认后再开放</h2>
+          <h2 id="mall-confirmation-title">连接验收后再开放</h2>
         </div>
         <div>
-          <p>正式发布前，至少需要核验功能清单、使用对象、交易与售后责任、数据来源、隐私规则及真实访问入口。</p>
-          <Link href="/contact">准备商城合作咨询 <span aria-hidden="true">→</span></Link>
+          <p>至少需要确认首页和登录页连续返回成功、证书链有效、外部跳转有明确提示，并保留咨询兜底入口。</p>
+          <Link href="/contact?source=mall&scene=channel&intent=partnership">提交商城或渠道需求 <span aria-hidden="true">→</span></Link>
         </div>
       </section>
     </main>

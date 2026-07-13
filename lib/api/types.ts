@@ -64,14 +64,20 @@ export type NewsPageResult = NewsQuery & {
 
 export type ContactRequest = {
   direction: "home" | "project" | "channel";
-  source: "home-hero" | "home-platform" | "home-contact" | "floating" | "footer" | "header" | "mobile-nav" | "direct";
+  source: "home-hero" | "home-platform" | "home-contact" | "floating" | "footer" | "header" | "mobile-nav" | "products" | "product-topic" | "product-detail" | "cases" | "case-detail" | "partners" | "service-network" | "mall" | "direct";
+  sourceDetail?: string;
   scene: "home-health" | "project" | "channel";
   intent: "space-advice" | "project-brief" | "partnership";
   project: string;
   stage: "understanding" | "planning" | "delivery" | "operation";
   need: string;
   contactName: string;
-  contactMethod: string;
+  contactChannel: "phone" | "email" | "wechat";
+  contactValue: string;
+  consent: true;
+  privacyVersion: string;
+  clientRequestId: string;
+  website?: string;
 };
 
 export type ContactReceipt = {

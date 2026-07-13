@@ -12,7 +12,7 @@ const serviceSteps = [
 
 const serviceNetwork = [
   { title: "总部服务窗口", text: "品牌、企业与综合服务咨询。", action: "拨打 400-0760-888", href: "tel:4000760888" },
-  { title: "商城与订单服务", text: "采购、订单、经销商登录和商城业务。", action: "进入钜豪商城", href: "https://mall.juhao.com" },
+  { title: "商城与订单服务", text: "采购、订单、经销商登录和商城业务；外部连接不可用时转咨询。", action: "查看商城连接状态", href: "/mall" },
   { title: "工程项目支持", text: "酒店、商业、公共、工业及户外项目。", action: "提交工程需求", href: consultationHref("project", "service-network") },
   { title: "经销商协作", text: "区域经营、门店服务与渠道合作沟通。", action: "提交合作信息", href: consultationHref("channel", "service-network") },
 ] as const;

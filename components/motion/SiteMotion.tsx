@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/motion/gsap";
 import styles from "./SiteMotion.module.css";
 
-const ROUTE_PATH_KEY = "juhao-route-path-v1";
-
 export function SiteMotion() {
   const pathname = usePathname();
   const curtain = useRef<HTMLDivElement>(null);
@@ -14,9 +12,7 @@ export function SiteMotion() {
   useGSAP(
     () => {
       const elements = gsap.utils.toArray<HTMLElement>("[data-reveal]");
-      const previousPath = sessionStorage.getItem(ROUTE_PATH_KEY);
-      const routeChanged = previousPath !== null && previousPath !== pathname;
-      sessionStorage.setItem(ROUTE_PATH_KEY, pathname);
+      gsap.set(curtain.current, { yPercent: -100, autoAlpha: 0 });
 
       const media = gsap.matchMedia();
       media.add("(prefers-reduced-motion: reduce)", () => {
@@ -24,12 +20,6 @@ export function SiteMotion() {
         gsap.set(curtain.current, { yPercent: -100 });
       });
       media.add("(prefers-reduced-motion: no-preference)", () => {
-        if (routeChanged && curtain.current) {
-          gsap.timeline()
-            .set(curtain.current, { yPercent: 0, autoAlpha: 1 })
-            .fromTo(curtain.current.querySelector("strong"), { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: .28, ease: "power2.out" })
-            .to(curtain.current, { yPercent: -100, duration: .72, ease: "power4.inOut" }, .18);
-        }
         elements.forEach((element) => {
           const fadeOnly = element.dataset.reveal === "fade";
           const delay = Number(element.dataset.revealDelay ?? 0);

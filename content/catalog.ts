@@ -1,4 +1,5 @@
 import type { PageData } from "@/app/_data/pages";
+import { topicGuideBySlug } from "@/content/topic-guides";
 
 export const productTopics = [
   { slug: "spotlights", title: "射灯与轨道照明", count: 10, scene: "重点照明", description: "面向住宅、酒店与商业空间的重点照明，以光束角、配光、防眩和安装条件为选型起点。", image: "/images/juhao-commercial.webp" },
@@ -23,12 +24,29 @@ export const caseStudies = [
     strategy: ["以公共区域的空间层次建立抵达体验", "为宴会与会议空间预留多场景照明", "兼顾餐饮氛围、客房休憩与阅读需求"],
     solutionScope: ["大堂与大堂吧", "宴会与会议空间", "餐饮与休闲区域", "客房照明"],
     productList: ["定制装饰灯具", "重点照明灯具", "线性与间接照明", "客房壁灯及阅读灯"],
+    confirmedFacts: ["企业知识库文章 226 记录钜豪照明中标该项目", "企业资料将项目定位为深圳华发冰雪世界综合体的酒店配套", "现有方案范围覆盖公共区域、宴会会议、餐饮休闲与客房", "本页图片均按方案效果资料呈现，不作为完工实拍"],
     completionEvidence: ["完工实景图：待项目组补充", "最终产品型号清单：待项目组确认", "调试与验收记录：待补充"],
+    spaceBreakdown: [
+      { title: "公共区域", text: "资料把大堂、大堂吧与走廊列入方案范围，方向是通过灯饰与层次组织抵达和通行体验。" },
+      { title: "宴会与会议", text: "资料提出兼顾商务会议与宴会庆典的多状态需求，具体控制场景与参数待项目最终资料确认。" },
+      { title: "餐饮与休闲", text: "西餐厅、中餐厅、泳池和 SPA 被列入方案场景，现阶段只呈现光环境方向。" },
+      { title: "客房", text: "资料提出休憩与阅读两类使用任务，最终灯具、控制和交付结果仍待补齐。" },
+    ],
+    relatedTopics: [
+      { label: "射灯与轨道照明", href: "/products/spotlights" },
+      { label: "灯带与线性照明", href: "/products/linear-lighting" },
+      { label: "工程定制", href: "/products/project-custom" },
+    ],
     evidenceLabel: "中标新闻与空间方案图，不作为完工证明",
     evidenceImages: [
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743ad43839.png", alt: "深圳华发冰雪世界 JW 万豪酒店项目资料图" },
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743db9106a.jpg", alt: "酒店公共区域方案资料图" },
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c7444d27e39.jpg", alt: "酒店客房区域方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743ad43839.png", width: 800, height: 450, alt: "深圳华发冰雪世界 JW 万豪酒店建筑方案效果图", caption: "建筑方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743db9106a.jpg", width: 800, height: 999, alt: "深圳华发冰雪世界 JW 万豪酒店公共区域方案效果图", caption: "公共区域方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743ffd2a5a.jpg", width: 800, height: 897, alt: "深圳华发冰雪世界 JW 万豪酒店大堂吧方案效果图", caption: "大堂吧方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c7442c89978.png", width: 800, height: 362, alt: "深圳华发冰雪世界 JW 万豪酒店宴会会议空间方案效果图", caption: "宴会会议空间方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c7443952e8a.jpg", width: 800, height: 400, alt: "深圳华发冰雪世界 JW 万豪酒店餐饮空间方案效果图", caption: "餐饮空间方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c744424aa21.jpg", width: 800, height: 771, alt: "深圳华发冰雪世界 JW 万豪酒店休闲空间方案效果图", caption: "休闲空间方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c7444d27e39.jpg", width: 800, height: 862, alt: "深圳华发冰雪世界 JW 万豪酒店客房方案效果图", caption: "客房方案效果图｜企业知识库文章 226｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c744570ca6f.jpg", width: 800, height: 837, alt: "深圳华发冰雪世界 JW 万豪酒店客房阅读区域方案效果图", caption: "客房阅读区域方案效果图｜企业知识库文章 226｜非完工实拍" },
     ],
   },
   {
@@ -38,12 +56,30 @@ export const caseStudies = [
     strategy: ["用线性与重点照明梳理大堂结构", "兼顾餐饮空间的社交属性与桌面体验", "以分层布光支持宴会与客房的不同状态"],
     solutionScope: ["酒店大堂", "全日餐厅", "宴会厅", "客房区域"],
     productList: ["线性格栅灯", "嵌入式重点照明", "壁灯与装饰灯具", "水晶吊灯及间接照明"],
+    confirmedFacts: ["企业知识库文章 231 记录钜豪照明中标该项目", "企业资料将项目描述为上饶广丰的五星级酒店项目", "现有方案范围覆盖大堂、餐饮、宴会与客房", "本页图片均按设计方案效果资料呈现，不作为完工实拍"],
     completionEvidence: ["现有图片为项目方案资料", "完工实景图：待项目组补充", "最终型号与数量清单：待确认"],
+    spaceBreakdown: [
+      { title: "大堂", text: "资料以线性照明、嵌入式光和壁灯组织屋顶结构、前台与公共区域层次。" },
+      { title: "餐饮", text: "全日餐厅与中餐包房分别强调自然景观、桌面体验和装饰灯饰，均为方案描述。" },
+      { title: "宴会", text: "资料提出水晶吊灯、线性灯带和不同活动状态，最终控制系统与型号清单待确认。" },
+      { title: "客房", text: "资料以间接照明、床头灯和书桌任务光组织休息与办公场景，尚无完工验收资料。" },
+    ],
+    relatedTopics: [
+      { label: "射灯与轨道照明", href: "/products/spotlights" },
+      { label: "水晶吊灯", href: "/products/crystal-chandeliers" },
+      { label: "灯带与线性照明", href: "/products/linear-lighting" },
+      { label: "工程定制", href: "/products/project-custom" },
+    ],
     evidenceLabel: "中标新闻与设计方案图，不作为完工证明",
     evidenceImages: [
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15461de56c3.jpg", alt: "上饶广丰铂尔曼酒店项目资料图" },
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15464ab6b2c.jpg", alt: "酒店大堂照明方案资料图" },
-      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546c0e62ee.jpg", alt: "酒店宴会厅照明方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15461de56c3.jpg", width: 800, height: 484, alt: "上饶广丰铂尔曼酒店建筑方案效果图", caption: "建筑方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15464ab6b2c.jpg", width: 800, height: 435, alt: "上饶广丰铂尔曼酒店大堂方案效果图", caption: "大堂方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a154689b2e77.jpg", width: 800, height: 441, alt: "上饶广丰铂尔曼酒店全日餐厅方案效果图", caption: "全日餐厅方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546a7a9670.jpg", width: 800, height: 640, alt: "上饶广丰铂尔曼酒店中餐包房方案效果图", caption: "中餐包房方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546c0e62ee.jpg", width: 800, height: 566, alt: "上饶广丰铂尔曼酒店宴会厅方案效果图", caption: "宴会厅方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546ce7a9bf.jpg", width: 800, height: 362, alt: "上饶广丰铂尔曼酒店宴会厅灯光方案效果图", caption: "宴会厅灯光方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546dccabec.jpg", width: 800, height: 474, alt: "上饶广丰铂尔曼酒店客房方案效果图", caption: "客房方案效果图｜企业知识库文章 231｜非完工实拍" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546ff9ef08.jpg", width: 800, height: 533, alt: "上饶广丰铂尔曼酒店客房阅读区域方案效果图", caption: "客房阅读区域方案效果图｜企业知识库文章 231｜非完工实拍" },
     ],
   },
   {
@@ -112,14 +148,18 @@ export type CaseStudy = (typeof caseStudies)[number];
 
 export function catalogPageData(routeKey: string): PageData | null {
   const topic = routeKey.startsWith("products/") ? productTopics.find((item) => `products/${item.slug}` === routeKey) : undefined;
-  if (topic) return {
+  if (topic) {
+    const guide = topicGuideBySlug(topic.slug);
+    return {
     path: `/${routeKey}`, label: topic.title, eyebrow: "PRODUCT TOPIC", title: topic.title,
     seoTitle: `${topic.title}｜产品专题｜钜豪照明`, description: `${topic.description} 浏览钜豪照明${topic.title}专题与相关方案入口。`, image: topic.image,
     intro: topic.description, type: "page",
     highlights: [{ title: "按场景理解", text: topic.scene }, { title: "按参数核对", text: "型号、功率、尺寸、配光与安装条件需以正式资料为准。" }],
     sections: [{ title: "专题说明", text: topic.description }, { title: "发布规则", text: "产品详情按销售状态、图片、参数、事业部和资料完整性完成审核后逐步开放。" }],
-    related: [{ label: "返回产品中心", href: "/products", text: "查看全部产品专题。" }, { label: "查看照明方案", href: "/solutions", text: "按空间场景理解选型方法。" }, { label: "咨询产品与方案", href: "/contact?source=product-topic&scene=project&intent=project-brief", text: "提交空间、阶段和需求。" }],
-  };
+    related: [{ label: "返回产品中心", href: "/products", text: "查看全部产品专题。" }, { label: "查看照明方案", href: "/solutions", text: "按空间场景理解选型方法。" }, { label: "咨询产品与方案", href: `/contact?source=product-topic&sourceDetail=${topic.slug}&scene=project&intent=project-brief`, text: "提交空间、阶段和需求。" }],
+    ...(guide ? { faqs: guide.faqs } : {}),
+    };
+  }
   const study = routeKey.startsWith("cases/") ? caseStudies.find((item) => `cases/${item.slug}` === routeKey) : undefined;
   if (study) return {
     path: `/${routeKey}`, label: study.title, eyebrow: "PROJECT UPDATE", title: study.title,
@@ -127,7 +167,7 @@ export function catalogPageData(routeKey: string): PageData | null {
     intro: study.summary, type: "page",
     highlights: [{ title: "项目类型", text: study.type }, { title: "当前阶段", text: study.stage }, { title: "资料编号", text: `企业知识库文章 ${study.sourceId}` }],
     sections: [{ title: "项目背景", text: study.background }, { title: "照明策略", text: "现有项目资料形成以下方向；具体型号、参数与实施结果以项目最终资料为准。", points: [...study.strategy] }],
-    related: [{ label: "返回工程案例", href: "/cases", text: "浏览酒店、户外与智慧道路项目动态。" }, { label: "酒店照明方案", href: "/solutions/hospitality", text: "了解酒店空间的照明方法。" }, { label: "提交工程需求", href: "/contact?source=case-detail&scene=project&intent=project-brief", text: "从项目类型与阶段开始沟通。" }],
+    related: [{ label: "返回工程案例", href: "/cases", text: "浏览酒店、户外与智慧道路项目动态。" }, { label: "酒店照明方案", href: "/solutions/hospitality", text: "了解酒店空间的照明方法。" }, { label: "提交工程需求", href: `/contact?source=case-detail&sourceDetail=${study.sourceId}&scene=project&intent=project-brief`, text: "从项目类型与阶段开始沟通。" }],
   };
   return null;
 }

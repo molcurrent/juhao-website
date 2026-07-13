@@ -2,15 +2,9 @@ import type { ContactRequest } from "@/lib/api/types";
 
 export type ConsultationKind = "home-health" | "project" | "channel";
 
-export type ConsultationSource =
-  | "home-hero"
-  | "home-platform"
-  | "home-contact"
-  | "floating"
-  | "footer"
-  | "header"
-  | "mobile-nav"
-  | "direct";
+export type ConsultationSource = ContactRequest["source"];
+
+export const CONSULTATION_PRIVACY_VERSION = "2026-07-13";
 
 export type ConsultationOption = {
   kind: ConsultationKind;
@@ -26,6 +20,7 @@ export type ConsultationOption = {
 
 export type ConsultationContext = ConsultationOption & {
   source: ConsultationSource;
+  sourceDetail?: string;
 };
 
 export const consultationOptions: readonly ConsultationOption[] = [
@@ -72,17 +67,37 @@ const sources = new Set<ConsultationSource>([
   "footer",
   "header",
   "mobile-nav",
+  "products",
+  "product-topic",
+  "product-detail",
+  "cases",
+  "case-detail",
+  "partners",
+  "service-network",
+  "mall",
   "direct",
 ]);
+
+const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "partners"]);
+
+export const consultationSourceValues = [...sources];
 
 function first(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;
 }
 
-export function consultationHref(kind: ConsultationKind, source: ConsultationSource) {
+function cleanSourceDetail(value: string | string[] | undefined) {
+  const detail = first(value);
+  return detail && /^[a-z0-9-]{1,80}$/i.test(detail) ? detail : undefined;
+}
+
+export function consultationHref(kind: ConsultationKind, source: ConsultationSource, sourceDetail?: string) {
   const option = consultationOptions.find((item) => item.kind === kind);
   if (!option) return "/contact#consultation-form";
-  return `/contact?source=${source}&scene=${option.scene}&intent=${option.intent}#consultation-form`;
+  const params = new URLSearchParams({ source, scene: option.scene, intent: option.intent });
+  const detail = detailSources.has(source) ? cleanSourceDetail(sourceDetail) : undefined;
+  if (detail) params.set("sourceDetail", detail);
+  return `/contact?${params.toString()}#consultation-form`;
 }
 
 export function resolveConsultationContext(input: Record<string, string | string[] | undefined>): ConsultationContext | null {
@@ -92,10 +107,12 @@ export function resolveConsultationContext(input: Record<string, string | string
   if (!option) return null;
   const sourceValue = first(input.source) as ConsultationSource | undefined;
   const source = sourceValue && sources.has(sourceValue) ? sourceValue : "direct";
-  return { ...option, source };
+  const sourceDetail = detailSources.has(source) ? cleanSourceDetail(input.sourceDetail) : undefined;
+  return { ...option, source, ...(sourceDetail ? { sourceDetail } : {}) };
 }
 
-export function consultationContextForDirection(direction: ContactRequest["direction"], source: ConsultationSource = "direct") {
+export function consultationContextForDirection(direction: ContactRequest["direction"], source: ConsultationSource = "direct", sourceDetail?: string) {
   const option = consultationOptions.find((item) => item.direction === direction) ?? consultationOptions[1];
-  return { ...option, source } satisfies ConsultationContext;
+  const detail = detailSources.has(source) ? cleanSourceDetail(sourceDetail) : undefined;
+  return { ...option, source, ...(detail ? { sourceDetail: detail } : {}) } satisfies ConsultationContext;
 }

@@ -3,9 +3,10 @@
 import type { FormEvent } from "react";
 import { useId, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { PageData } from "@/app/_data/pages";
-import { contactSubmissionEnabled, siteApi, type ContactRequest, type ContactReceipt } from "@/lib/api";
-import { consultationContextForDirection, type ConsultationContext } from "@/lib/consultation";
+import { submitContact, type ContactRequest } from "@/lib/api";
+import { CONSULTATION_PRIVACY_VERSION, consultationContextForDirection, type ConsultationContext } from "@/lib/consultation";
 import styles from "./ContactPage.module.css";
 
 const directions = [
@@ -33,27 +34,29 @@ export type ContactPageProps = {
 };
 
 export function ContactPage({ page, initialContext = null }: ContactPageProps) {
+  const router = useRouter();
   const [direction, setDirection] = useState<ContactRequest["direction"] | "">(initialContext?.direction ?? "");
   const [project, setProject] = useState("");
   const [stage, setStage] = useState<ContactRequest["stage"] | "">("");
   const [need, setNeed] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
   const [contactName, setContactName] = useState("");
-  const [contactMethod, setContactMethod] = useState("");
+  const [contactChannel, setContactChannel] = useState<ContactRequest["contactChannel"]>("phone");
+  const [contactValue, setContactValue] = useState("");
   const [consent, setConsent] = useState(false);
-  const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [receipt, setReceipt] = useState<ContactReceipt | null>(null);
+  const [clientRequestId, setClientRequestId] = useState("");
+  const [website, setWebsite] = useState("");
+  const [submitState, setSubmitState] = useState<"idle" | "submitting" | "error">("idle");
   const resultId = useId().replaceAll(":", "");
   const activeContext = direction
     ? initialContext?.direction === direction
       ? initialContext
-      : consultationContextForDirection(direction, initialContext?.source ?? "direct")
+      : consultationContextForDirection(direction, initialContext?.source ?? "direct", initialContext?.sourceDetail)
     : initialContext;
 
   function clearResult() {
     if (result) setResult(null);
     if (submitState !== "idle") setSubmitState("idle");
-    if (receipt) setReceipt(null);
   }
 
   function handleCheck(event: FormEvent<HTMLFormElement>) {
@@ -78,35 +81,39 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
     setResult({
       tone: "ready",
       title: "咨询信息已基本准备好",
-      text: contactSubmissionEnabled
-        ? "正式咨询通道已启用。请继续填写联系人信息并确认隐私说明，提交后系统会返回受理编号。"
-        : "需求摘要已经整理完成。你可以继续查看对应方案，并在后续沟通时直接使用这份场景、阶段与目标说明。",
+      text: "请选择电话、邮件、企业微信或提交回访。回访表单只收集本次沟通所需的最少联系信息，提交后系统会返回线索编号。",
     });
   }
 
   async function handleSubmit() {
-    if (!contactSubmissionEnabled || result?.tone !== "ready" || !direction || !stage) return;
-    if (contactName.trim().length < 2 || contactMethod.trim().length < 5 || !consent) {
+    if (result?.tone !== "ready" || !direction || !stage) return;
+    if (contactName.trim().length < 2 || contactValue.trim().length < 5 || !consent) {
       setSubmitState("error");
       return;
     }
 
     setSubmitState("submitting");
-    setReceipt(null);
     try {
-      const nextReceipt = await siteApi.submitContact({
+      const requestId = clientRequestId || crypto.randomUUID();
+      if (!clientRequestId) setClientRequestId(requestId);
+      const nextReceipt = await submitContact({
         direction,
         source: activeContext?.source ?? "direct",
+        ...(activeContext?.sourceDetail ? { sourceDetail: activeContext.sourceDetail } : {}),
         scene: activeContext?.scene ?? consultationContextForDirection(direction).scene,
         intent: activeContext?.intent ?? consultationContextForDirection(direction).intent,
         project: project.trim(),
         stage,
         need: need.trim(),
         contactName: contactName.trim(),
-        contactMethod: contactMethod.trim(),
+        contactChannel,
+        contactValue: contactValue.trim(),
+        consent: true,
+        privacyVersion: CONSULTATION_PRIVACY_VERSION,
+        clientRequestId: requestId,
+        website,
       });
-      setReceipt(nextReceipt);
-      setSubmitState("success");
+      router.push(`/contact/success?lead=${encodeURIComponent(nextReceipt.id)}`);
     } catch {
       setSubmitState("error");
     }
@@ -119,10 +126,12 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
     setNeed("");
     setResult(null);
     setContactName("");
-    setContactMethod("");
+    setContactChannel("phone");
+    setContactValue("");
     setConsent(false);
+    setClientRequestId("");
+    setWebsite("");
     setSubmitState("idle");
-    setReceipt(null);
   }
 
   return (
@@ -184,12 +193,12 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
 
       <section className={styles.checkerSection} id="consultation-form" aria-labelledby="contact-checker-title">
         <div className={styles.checkerIntro}>
-          <p>03 / OFFLINE CHECK</p>
+          <p>03 / NEED CHECK</p>
           <h2 id="contact-checker-title">{activeContext ? activeContext.cta : "检查咨询信息是否完整"}</h2>
-          <p>{contactSubmissionEnabled ? "第一步只核对需求信息；通过后再单独填写联系人信息并正式提交。" : "先整理空间、阶段和目标；本步骤不需要填写姓名、电话、邮箱或详细地址。"}</p>
+          <p>第一步只核对需求信息；通过后再选择直接联系或填写最少信息提交回访。</p>
           <div className={styles.privacyNote}>
             <strong>当前状态</strong>
-            <p>{contactSubmissionEnabled ? "仅在你主动提交并确认隐私说明后发送。" : "这里只核对需求摘要，不采集联系人资料。"}</p>
+            <p>第一步内容只保留在当前页面。只有主动点击“提交回访”并确认数据处理说明后，信息才会发送并保存。</p>
           </div>
         </div>
 
@@ -200,6 +209,7 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
               <strong>{activeContext.label}</strong>
               <p>{activeContext.description}</p>
               <input type="hidden" name="source" value={activeContext.source} />
+              {activeContext.sourceDetail && <input type="hidden" name="sourceDetail" value={activeContext.sourceDetail} />}
               <input type="hidden" name="scene" value={activeContext.scene} />
               <input type="hidden" name="intent" value={activeContext.intent} />
             </div>
@@ -265,7 +275,7 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
             <button type="reset">清空</button>
           </div>
 
-          <p className={styles.formNotice} id={`${resultId}-notice`}>“检查准备情况”只核对场景、阶段和目标是否完整。{contactSubmissionEnabled ? "只有点击下方正式提交按钮后才会发送。" : "本步骤不需要联系人资料。"}</p>
+          <p className={styles.formNotice} id={`${resultId}-notice`}>“检查准备情况”只核对场景、阶段和目标是否完整；只有点击下方“提交回访”后才会发送。</p>
           <div className={styles.result} aria-live="polite" aria-atomic="true">
             {result && (
               <div className={result.tone === "ready" ? styles.resultReady : styles.resultNeedsWork}>
@@ -275,33 +285,57 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
             )}
           </div>
 
-          {contactSubmissionEnabled && result?.tone === "ready" && (
+          {result?.tone === "ready" && (
             <div className={styles.submitPanel} aria-labelledby={`${resultId}-submit-title`}>
               <div className={styles.submitHeading}>
-                <small>FORMAL SUBMISSION</small>
-                <h3 id={`${resultId}-submit-title`}>正式提交咨询</h3>
-                <p>以下信息会发送到已配置的钜豪咨询接口。请只填写便于回复所需的最少信息。</p>
+                <small>STEP 02 / CONTACT</small>
+                <h3 id={`${resultId}-submit-title`}>选择后续联系方法</h3>
+                <p>电话和邮件可直接联系；企业微信入口尚未完成企业核验，暂不开放。需要钜豪回访时，请填写下方最少信息。</p>
+              </div>
+              <div className={styles.channelOptions} aria-label="咨询联系方式">
+                <a href="tel:4000760888"><small>电话</small><strong>400-0760-888</strong><span>一键拨打 ↗</span></a>
+                <a href={`mailto:export@juhaolamp.com?subject=${encodeURIComponent("钜豪照明官网咨询")}&body=${encodeURIComponent(`咨询来源：${activeContext?.source ?? "direct"}\n场景：${activeContext?.scene ?? ""}\n意图：${activeContext?.intent ?? ""}\n\n请在此补充需求：`)}`}><small>邮件</small><strong>export@juhaolamp.com</strong><span>新建邮件 ↗</span></a>
+                <span className={styles.channelUnavailable} aria-disabled="true"><small>企业微信</small><strong>待企业核验</strong><span>当前不可用</span></span>
+                <span className={styles.channelCallback}><small>提交回访</small><strong>填写下方表单</strong><span>系统生成线索编号</span></span>
               </div>
               <div className={styles.fieldGrid}>
                 <label className={styles.field}>
                   <span>联系人称呼</span>
-                  <input value={contactName} onChange={(event) => { setContactName(event.target.value); setSubmitState("idle"); }} maxLength={40} autoComplete="name" />
+                  <input name="contactName" value={contactName} onChange={(event) => { setContactName(event.target.value); setSubmitState("idle"); }} maxLength={40} autoComplete="name" />
                 </label>
                 <label className={styles.field}>
-                  <span>联系电话或邮箱</span>
-                  <input value={contactMethod} onChange={(event) => { setContactMethod(event.target.value); setSubmitState("idle"); }} maxLength={80} autoComplete="email" />
+                  <span>希望通过什么方式回访</span>
+                  <select name="contactChannel" value={contactChannel} onChange={(event) => { setContactChannel(event.target.value as ContactRequest["contactChannel"]); setContactValue(""); setSubmitState("idle"); }}>
+                    <option value="phone">电话</option>
+                    <option value="email">邮件</option>
+                    <option value="wechat">微信</option>
+                  </select>
                 </label>
               </div>
+              <label className={styles.field}>
+                <span>{contactChannel === "phone" ? "联系电话" : contactChannel === "email" ? "电子邮箱" : "微信号"}</span>
+                <input
+                  name="contactValue"
+                  type={contactChannel === "email" ? "email" : contactChannel === "phone" ? "tel" : "text"}
+                  value={contactValue}
+                  onChange={(event) => { setContactValue(event.target.value); setSubmitState("idle"); }}
+                  maxLength={80}
+                  autoComplete={contactChannel === "email" ? "email" : contactChannel === "phone" ? "tel" : "off"}
+                />
+              </label>
+              <label className={styles.honeypot} aria-hidden="true">
+                <span>网站</span>
+                <input name="website" value={website} onChange={(event) => setWebsite(event.target.value)} tabIndex={-1} autoComplete="off" />
+              </label>
               <label className={styles.consent}>
-                <input type="checkbox" checked={consent} onChange={(event) => { setConsent(event.target.checked); setSubmitState("idle"); }} />
-                <span>我已阅读并同意<Link href="/privacy">隐私说明</Link>，同意为本次咨询处理所提交的信息。</span>
+                <input name="consent" type="checkbox" checked={consent} onChange={(event) => { setConsent(event.target.checked); setSubmitState("idle"); }} />
+                <span>我已阅读<Link href="/privacy">咨询数据处理说明</Link>（版本 {CONSULTATION_PRIVACY_VERSION}），同意钜豪为回复本次咨询保存并使用我主动提交的信息。</span>
               </label>
               <button className={styles.submitButton} type="button" onClick={handleSubmit} disabled={submitState === "submitting"}>
-                {submitState === "submitting" ? "正在提交…" : "正式提交咨询"}
+                {submitState === "submitting" ? "正在提交…" : "提交回访"}
               </button>
               <div className={styles.submitStatus} aria-live="polite" aria-atomic="true">
                 {submitState === "error" && <p role="alert">提交未完成。请检查联系人信息和隐私确认，或稍后重试。</p>}
-                {submitState === "success" && receipt && <p role="status">咨询已受理，编号：<strong>{receipt.id}</strong>。</p>}
               </div>
             </div>
           )}

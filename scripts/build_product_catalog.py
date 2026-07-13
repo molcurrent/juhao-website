@@ -27,6 +27,11 @@ TOPICS = [
     ("家居智能设备", "smart-home-devices"),
 ]
 
+PUBLISH_LIMITS = {
+    "射灯": 6,
+    "家居顶灯": 6,
+}
+
 CASES = [
     (226, "深圳华发冰雪世界 JW 万豪酒店", "jw-marriott-shenzhen-huafa-snow-world", "酒店", "签约/中标"),
     (231, "上饶广丰铂尔曼酒店", "pullman-shangrao-guangfeng", "酒店", "签约/中标"),
@@ -217,8 +222,8 @@ def build_products(goods: dict[str, dict[str, str]], departments: dict[str, str]
                 break
     published: list[dict] = []
     for topic, _ in TOPICS:
-        published.extend([item for item in candidate_pool if item["topic"] == topic and item["publishable"]][:3])
-    published = published[:30]
+        limit = PUBLISH_LIMITS.get(topic, 3)
+        published.extend([item for item in candidate_pool if item["topic"] == topic and item["publishable"]][:limit])
     published_ids = {item["source_id"] for item in published}
     for record in candidate_pool:
         if record["source_id"] not in published_ids and record["review_status"] == "已审核":
@@ -299,6 +304,7 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
         "",
         f"- 审核台账：{len(products)} 款候选，保持每个专题 10 款。",
         f"- 首批公开：{len(published)} 款；产品 ID 唯一，无跨专题重复发布。",
+        "- 深专题发布上限：射灯、家居顶灯各 6 款；其余专题各 3 款。",
         f"- 参数完整度：最低 {min(completeness)}%，平均 {sum(completeness) / len(completeness):.1f}%。",
         "- 在售门禁：`isSale=1`、`goodsStatus=1`、`dataFlag=1`。",
         "- 图片门禁：至少 4 张，且全部来自企业商城 OSS 渠道。",

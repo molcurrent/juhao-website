@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomePage } from "@/features/home/HomePage";
+import { products } from "@/content/products";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -17,5 +18,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  return <HomePage publishedProductCount={products.length} />;
 }

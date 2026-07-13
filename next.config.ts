@@ -19,9 +19,9 @@ const nextConfig: NextConfig = {
       { source: "/news/page/1", destination: "/news", permanent: true },
       { source: "/news/:id(\\d+)", destination: "/news", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
-      { source: "/login.html", destination: "https://mall.juhao.com/login.html", permanent: true },
-      { source: "/register.html", destination: "https://mall.juhao.com/register.html", permanent: true },
-      { source: "/forget.html", destination: "https://mall.juhao.com/forget.html", permanent: true },
+      { source: "/login.html", destination: "/mall", permanent: false },
+      { source: "/register.html", destination: "/mall", permanent: false },
+      { source: "/forget.html", destination: "/mall", permanent: false },
     ];
   },
 };

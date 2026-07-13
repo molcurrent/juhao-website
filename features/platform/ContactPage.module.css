@@ -519,6 +519,57 @@
   margin: 0 0 24px;
 }
 
+.channelOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.channelOptions > * {
+  display: grid;
+  gap: 7px;
+  min-height: 112px;
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.channelOptions small {
+  color: var(--brand-orange);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.channelOptions strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.channelOptions span {
+  color: var(--ink-soft);
+  font-size: 10px;
+}
+
+.channelOptions .channelUnavailable {
+  color: var(--ink-soft);
+  background: #f1f0ec;
+}
+
+.channelOptions .channelCallback {
+  background: var(--brand-orange-soft);
+  border-color: var(--brand-orange);
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .consent {
   display: flex;
   gap: 10px;
@@ -689,7 +740,8 @@
   }
 
   .radioGrid,
-  .fieldGrid {
+  .fieldGrid,
+  .channelOptions {
     grid-template-columns: 1fr;
   }
 
