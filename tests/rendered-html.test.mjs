@@ -165,6 +165,28 @@ test("publishes indexable product topics and stage-labelled project pages", asyn
   assert.match(xml, /https:\/\/juhao\.com\/cases\/jw-marriott-shenzhen-huafa-snow-world/);
 });
 
+test("renders source-labelled evidence galleries for all six project pages", async () => {
+  const worker = await createWorker();
+  const cases = [
+    ["jw-marriott-shenzhen-huafa-snow-world", "226", "深圳华发冰雪世界 JW 万豪酒店项目资料图"],
+    ["pullman-shangrao-guangfeng", "231", "上饶广丰铂尔曼酒店项目资料图"],
+    ["grand-hyatt-suzhou-financial-street", "228", "苏州金融街君悦酒店项目资料图"],
+    ["doubletree-nantong-haimen", "229", "南通海门希尔顿逸林酒店项目资料图"],
+    ["yangzhou-riverfront-lighting", "220", "扬州经开区一河两岸项目概念资料图"],
+    ["china-smart-road-lighting-conference-2026", "225", "中国智慧道路照明大会现场资料图"],
+  ];
+
+  for (const [slug, sourceId, imageAlt] of cases) {
+    const response = await render(worker, `/cases/${slug}`);
+    assert.equal(response.status, 200, slug);
+    const html = await response.text();
+    assert.match(html, /企业资料图集/, slug);
+    assert.match(html, new RegExp(`企业知识库文章[\\s\\S]{0,40}${sourceId}`), slug);
+    assert.match(html, /不作为(?:夜景)?完工证明|不属于工程完工案例/, slug);
+    assert.match(html, new RegExp(imageAlt), slug);
+  }
+});
+
 test("content ledger blocks pending products from public SEO routes", async () => {
   const worker = await createWorker();
   const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));

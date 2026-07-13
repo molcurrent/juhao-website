@@ -24,6 +24,12 @@ export const caseStudies = [
     solutionScope: ["大堂与大堂吧", "宴会与会议空间", "餐饮与休闲区域", "客房照明"],
     productList: ["定制装饰灯具", "重点照明灯具", "线性与间接照明", "客房壁灯及阅读灯"],
     completionEvidence: ["完工实景图：待项目组补充", "最终产品型号清单：待项目组确认", "调试与验收记录：待补充"],
+    evidenceLabel: "中标新闻与空间方案图，不作为完工证明",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743ad43839.png", alt: "深圳华发冰雪世界 JW 万豪酒店项目资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c743db9106a.jpg", alt: "酒店公共区域方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c7444d27e39.jpg", alt: "酒店客房区域方案资料图" },
+    ],
   },
   {
     slug: "pullman-shangrao-guangfeng", sourceId: "231", title: "上饶广丰铂尔曼酒店", type: "酒店照明", stage: "签约 / 中标项目", image: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15460fa0817.jpg",
@@ -33,6 +39,12 @@ export const caseStudies = [
     solutionScope: ["酒店大堂", "全日餐厅", "宴会厅", "客房区域"],
     productList: ["线性格栅灯", "嵌入式重点照明", "壁灯与装饰灯具", "水晶吊灯及间接照明"],
     completionEvidence: ["现有图片为项目方案资料", "完工实景图：待项目组补充", "最终型号与数量清单：待确认"],
+    evidenceLabel: "中标新闻与设计方案图，不作为完工证明",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15461de56c3.jpg", alt: "上饶广丰铂尔曼酒店项目资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a15464ab6b2c.jpg", alt: "酒店大堂照明方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a1546c0e62ee.jpg", alt: "酒店宴会厅照明方案资料图" },
+    ],
   },
   {
     slug: "grand-hyatt-suzhou-financial-street", sourceId: "228", title: "苏州金融街君悦酒店", type: "酒店照明", stage: "签约 / 中标项目", image: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d5b8c623027.jpg",
@@ -42,6 +54,12 @@ export const caseStudies = [
     solutionScope: ["大堂与大堂吧", "全日餐厅", "大小宴会厅", "公共空间照明"],
     productList: ["非标定制灯饰", "嵌入式射灯", "线性灯带", "壁灯、台灯与落地灯"],
     completionEvidence: ["现有图片为设计与项目资料", "完工实景与交付日期：待补充", "控制场景与产品型号清单：待确认"],
+    evidenceLabel: "中标新闻与设计方案图，不作为完工证明",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d5b8e1e5c72.jpg", alt: "苏州金融街君悦酒店项目资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d5b8ffc883d.jpg", alt: "酒店大堂灯饰方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d5ba31b70dc.jpg", alt: "酒店客房照明方案资料图" },
+    ],
   },
   {
     slug: "doubletree-nantong-haimen", sourceId: "229", title: "南通海门希尔顿逸林酒店", type: "酒店照明", stage: "签约 / 中标项目", image: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d89ab58183c.jpg",
@@ -51,6 +69,12 @@ export const caseStudies = [
     solutionScope: ["酒店公共区域", "餐饮与会议空间", "客房及配套空间", "项目调试服务"],
     productList: ["定制灯饰（资料已提及）", "基础照明产品清单待项目组补充", "控制系统清单待项目组补充"],
     completionEvidence: ["当前仅确认中标与方案方向", "完工实景图：待补充", "产品与调试验收资料：待补充"],
+    evidenceLabel: "中标新闻与项目概念图，不作为完工证明",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d89ad000e0b.jpg", alt: "南通海门希尔顿逸林酒店项目资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d89b1e098b9.jpg", alt: "酒店照明项目方案资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-04/69d89b42e2509.jpg", alt: "酒店空间方案资料图" },
+    ],
   },
   {
     slug: "yangzhou-riverfront-lighting", sourceId: "220", title: "扬州经开区“一河两岸”户外亮化工程", type: "户外亮化", stage: "签约 / 中标项目", image: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/69392e5990867.png",
@@ -60,6 +84,12 @@ export const caseStudies = [
     solutionScope: ["滨水夜景界面", "建筑与街区亮化", "动线识别", "智能控制与节能管理"],
     productList: ["户外建筑照明产品", "景观与线性照明", "智能控制系统", "具体型号与数量待深化确认"],
     completionEvidence: ["当前为中标项目资料", "夜景完工实拍：待补充", "控制系统验收与能耗资料：待补充"],
+    evidenceLabel: "中标新闻与项目概念图，不作为夜景完工证明",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/69392e6d12085.png", alt: "扬州经开区一河两岸项目概念资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/69392e9e84b11.jpg", alt: "户外亮化项目企业资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/69392e93b7d52.jpg", alt: "户外照明企业资料图" },
+    ],
   },
   {
     slug: "china-smart-road-lighting-conference-2026", sourceId: "225", title: "2026 中国智慧道路照明大会", type: "智慧道路", stage: "行业活动 / 荣誉", image: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c741c8e3bc7.jpg",
@@ -69,6 +99,12 @@ export const caseStudies = [
     solutionScope: ["智慧道路照明交流", "城市照明数字化", "节能控制", "行业合作"],
     productList: ["大会展示设备清单：待活动团队补充", "智慧道路系统资料：待整理", "不作为完工工程产品清单"],
     completionEvidence: ["活动现场与获奖图片已记录", "该条为行业活动，不适用完工验收", "后续可补充展示产品和演讲资料"],
+    evidenceLabel: "大会现场与荣誉记录，不属于工程完工案例",
+    evidenceImages: [
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c741d538798.jpg", alt: "中国智慧道路照明大会现场资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c741e49dc91.jpg", alt: "大会交流现场资料图" },
+      { src: "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c741eeba42f.jpg", alt: "大会荣誉资料图" },
+    ],
   },
 ] as const;
 

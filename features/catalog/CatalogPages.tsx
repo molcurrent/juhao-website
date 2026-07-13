@@ -69,6 +69,11 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
       <article><p>03 / PRODUCT LIST</p><h2>产品方向清单</h2><ul>{study.productList.map((item) => <li key={item}>{item}</li>)}</ul></article>
       <article><p>04 / COMPLETION DATA</p><h2>完工资料状态</h2><ul>{study.completionEvidence.map((item) => <li key={item}>{item}</li>)}</ul></article>
     </section>
+    <section className={styles.caseEvidence}>
+      <header><p>05 / SOURCE EVIDENCE</p><h2>企业资料图集</h2><span>{study.evidenceLabel}</span></header>
+      <div>{study.evidenceImages.map((item) => <figure key={item.src}><div><Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 100vw, 33vw" unoptimized /></div><figcaption>{item.alt}</figcaption></figure>)}</div>
+      <small>资料来源：企业知识库文章 {study.sourceId}。页面阶段以企业后续交付、验收与授权资料为准。</small>
+    </section>
     <section className={styles.caseStrategy}><div><p>LIGHTING STRATEGY</p><h2>照明策略</h2></div><ol>{study.strategy.map((item, index) => <li key={item}><b>{String(index + 1).padStart(2, "0")}</b><span>{item}</span></li>)}</ol></section>
     <section className={styles.caseCta}><div><p>PROJECT BRIEF</p><h2>让项目资料<br/>从方案走向落地。</h2></div><Link href={consultationHref("project", `case-${study.sourceId}`)}>提交工程需求 →</Link></section>
   </main>;
