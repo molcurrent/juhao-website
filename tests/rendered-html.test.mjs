@@ -359,6 +359,17 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
   assert.equal(login.status, 308);
   assert.equal(login.headers.get("location"), "https://mall.juhao.com/login.html");
 
+  const register = await render(worker, "/register.html");
+  assert.equal(register.status, 308);
+  assert.equal(register.headers.get("location"), "https://mall.juhao.com/register.html");
+
+  const forget = await render(worker, "/forget.html");
+  assert.equal(forget.status, 308);
+  assert.equal(forget.headers.get("location"), "https://mall.juhao.com/forget.html");
+
+  const legacyHome = await render(worker, "/index.html");
+  assert.equal(legacyHome.status, 308);
+  assert.equal(new URL(legacyHome.headers.get("location"), "http://localhost").pathname, "/");
 });
 
 test("returns 410 for confirmed spam URLs", async () => {
