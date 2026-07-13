@@ -29,16 +29,16 @@ const newsItems = [
   { category: "项目动态", meta: "企业资料 #226", title: "深圳华发冰雪世界 JW 万豪酒店：签约项目方案档案", href: "/cases/jw-marriott-shenzhen-huafa-snow-world" },
   { category: "项目动态", meta: "企业资料 #231", title: "上饶广丰铂尔曼酒店：按空间拆解方案证据", href: "/cases/pullman-shangrao-guangfeng" },
   { category: "企业动态", meta: "5 个可追溯节点", title: "从区域渠道到智慧家庭：钜豪发展资料时间线", href: "/about/history" },
-  { category: "品牌荣誉", meta: "企业资料 #25 / #167 / #223 / #225", title: "只展示有企业资料编号的品牌荣誉", href: "/about/history" },
-  { category: "照明知识", meta: "JUHAO 审核知识", title: "家庭健康光环境：从看得见到住得舒适", href: "/news/healthy-home-lighting" },
-  { category: "智能生活", meta: "JUHAO 审核知识", title: "智能照明：先设计生活场景，再选择控制方式", href: "/news/smart-lighting-planning" },
-  { category: "商业照明", meta: "JUHAO 审核知识", title: "零售空间照明：用明暗层次引导浏览与停留", href: "/news/retail-lighting-layering" },
-  { category: "视觉舒适", meta: "JUHAO 审核知识", title: "眩光控制基础：不只看灯具亮不亮", href: "/news/glare-control-basics" },
+  { category: "品牌荣誉", meta: "企业资料 #167 / #184 / #223 / #225", title: "只展示有企业资料编号的品牌荣誉", href: "/about/history" },
+  { category: "照明知识", meta: "JUHAO 审核 · 2026-06-12", title: "筒灯与射灯应按配光和用途区分", href: "/news/downlight-vs-spotlight" },
+  { category: "照明知识", meta: "JUHAO 审核 · 2026-06-12", title: "相关色温的含义与家居选择", href: "/news/color-temperature-guide" },
+  { category: "企业动态", meta: "企业资料 #232 · 2026-06-11", title: "2026 广州光亚展参展来源记录", href: "/news/guangzhou-international-lighting-exhibition-2026" },
+  { category: "企业动态", meta: "企业资料 #224 · 2026-03-17", title: "2026 春季经销商会议来源记录", href: "/news/dealer-conference-spring-2026" },
 ];
 
 const businessPlatforms = [
   { title: "产品中心", description: "从 10 个首批专题进入产品内容与选型路径。", href: "/products" },
-  { title: "工程案例", description: "按项目阶段浏览酒店、户外与智慧道路项目资料。", href: "/cases" },
+  { title: "工程案例", description: "按项目阶段浏览酒店、商业与户外项目资料。", href: "/cases" },
   { title: "商城采购", description: "先查看外部商城连接状态；不可用时转入采购咨询。", href: "/mall" },
   { title: "经销商入口", description: "外部登录恢复前由官网提供合作咨询兜底。", href: "/mall" },
 ];
@@ -90,10 +90,10 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
         <div className="introLead" data-reveal><p className="eyebrow dark"><span /> ABOUT JUHAO</p><h2>让健康好光<br/>成为美好生活的底色</h2></div>
         <div className="introBody" data-reveal data-reveal-delay="0.08"><p>钜豪专注照明与智能家居，以人居体验为起点，连接产品、空间、服务与渠道。我们相信，真正好的光不只照亮物体，更关照人的情绪、节律与生活。</p><Link className="textLink" href="/about">了解品牌故事 <span>→</span></Link></div>
         <div className="stats verifiedStats" data-reveal>
-          <Link href="/products"><strong>{publishedProductCount}</strong><span>已审核产品详情</span><small>企业商城 + 内容台账</small></Link>
-          <Link href="/cases"><strong>6</strong><span>阶段透明的项目档案</span><small>企业资料 #220 / #225 / #226 / #228 / #229 / #231</small></Link>
+          <Link href="/products"><strong>{publishedProductCount}</strong><span>私有预览产品详情</span><small>企业商城 + 内容台账</small></Link>
+          <Link href="/cases"><strong>6</strong><span>阶段透明的项目档案</span><small>企业资料 #199 / #220 / #226 / #228 / #229 / #231</small></Link>
           <Link href="/about/history"><strong>2020—2026</strong><span>5 个发展资料节点</span><small>企业资料 #149 / #160 / #192 / #205 / #224</small></Link>
-          <Link href="/about/history"><strong>5</strong><span>有来源的品牌荣誉</span><small>企业资料 #25 / #167 / #223 / #225</small></Link>
+          <Link href="/about/history"><strong>5</strong><span>有来源的品牌荣誉</span><small>企业资料 #167 / #184 / #223 / #225</small></Link>
         </div>
       </section>
 

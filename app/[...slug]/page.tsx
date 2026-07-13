@@ -7,7 +7,8 @@ import { SiteHeader } from "../_components/SiteHeader";
 import { pages, SITE_URL, type PageData } from "../_data/pages";
 import { AboutPage, CareersPage, HistoryPage } from "@/features/about";
 import { BusinessScenePage, type BusinessSceneId } from "@/features/business";
-import { NewsArticlePage, NewsPage } from "@/features/news/NewsPage";
+import { NewsArticlePage } from "@/features/news/NewsArticlePage";
+import { NewsPage } from "@/features/news/NewsPage";
 import { PartnersPage } from "@/features/partners/PartnersPage";
 import { ContactPage, MallPage } from "@/features/platform";
 import { SearchPage } from "@/features/search/SearchPage";
@@ -23,6 +24,10 @@ import { caseStudies, catalogPageData, productTopics } from "@/content/catalog";
 import { productByRouteKey, productPageData, products } from "@/content/products";
 import { CaseDetailPage, CasesPage, ProductsPage, ProductTopicPage } from "@/features/catalog/CatalogPages";
 import { ProductDetailPage } from "@/features/catalog/ProductDetailPage";
+import { resourcesForScene } from "@/content/scene-resources";
+import { searchSite } from "@/content/search-index";
+import { isIndexableRoute, isPublishedRoute } from "@/content/publication-ledger";
+import type { SearchResult } from "@/lib/api";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 type Props = { params: Promise<{ slug: string[] }>; searchParams?: Promise<SearchParams> };
@@ -38,16 +43,16 @@ type RouteContext = {
 
 function resolveRoute(slug: string[]): RouteContext | null {
   const directPage = getPage(slug);
-  if (directPage) return { routeKey: slug.join("/"), page: directPage, canonicalPath: directPage.path, newsPageNumber: null };
+  if (directPage && isPublishedRoute(directPage.path)) return { routeKey: slug.join("/"), page: directPage, canonicalPath: directPage.path, newsPageNumber: null };
 
   const routeKey = slug.join("/");
   const productPage = productPageData(routeKey);
-  if (productPage) return { routeKey, page: productPage, canonicalPath: productPage.path, newsPageNumber: null };
+  if (productPage && isPublishedRoute(productPage.path)) return { routeKey, page: productPage, canonicalPath: productPage.path, newsPageNumber: null };
   const catalogPage = catalogPageData(routeKey);
-  if (catalogPage) return { routeKey, page: catalogPage, canonicalPath: catalogPage.path, newsPageNumber: null };
+  if (catalogPage && isPublishedRoute(catalogPage.path)) return { routeKey, page: catalogPage, canonicalPath: catalogPage.path, newsPageNumber: null };
 
   const newsPageNumber = parseNewsPageNumber(slug);
-  if (newsPageNumber && newsPageNumber >= 2) {
+  if (newsPageNumber && newsPageNumber >= 2 && isPublishedRoute(newsPagePath(newsPageNumber))) {
     return { routeKey: "news", page: pages.news, canonicalPath: newsPagePath(newsPageNumber), newsPageNumber };
   }
   return null;
@@ -64,14 +69,15 @@ const businessScenes: Record<string, BusinessSceneId> = {
 };
 
 export function generateStaticParams() {
-  const pageParams = Object.keys(pages).map((key) => ({ slug: key.split("/") }));
+  const pageParams = Object.keys(pages).filter((key) => isPublishedRoute(pages[key].path)).map((key) => ({ slug: key.split("/") }));
   const catalogParams = [
-    ...productTopics.map((item) => ({ slug: ["products", item.slug] })),
-    ...caseStudies.map((item) => ({ slug: ["cases", item.slug] })),
-    ...products.map((item) => ({ slug: item.seo_slug.slice(1).split("/") })),
+    ...productTopics.filter((item) => isPublishedRoute(`/products/${item.slug}`)).map((item) => ({ slug: ["products", item.slug] })),
+    ...caseStudies.filter((item) => isPublishedRoute(`/cases/${item.slug}`)).map((item) => ({ slug: ["cases", item.slug] })),
+    ...products.filter((item) => isPublishedRoute(item.seo_slug)).map((item) => ({ slug: item.seo_slug.slice(1).split("/") })),
   ];
   const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
-  const newsParams = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({ slug: ["news", "page", String(index + 2)] }));
+  const newsParams = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({ slug: ["news", "page", String(index + 2)] }))
+    .filter((item) => isPublishedRoute(`/${item.slug.join("/")}`));
   return [...pageParams, ...catalogParams, ...newsParams];
 }
 
@@ -79,9 +85,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const route = resolveRoute((await params).slug);
   if (!route) return {};
   const { page, canonicalPath, newsPageNumber } = route;
+  const indexable = isIndexableRoute(canonicalPath);
   const title = newsPageNumber ? `${page.seoTitle}｜第 ${newsPageNumber} 页` : page.seoTitle;
   const description = newsPageNumber ? `${page.description} 当前为第 ${newsPageNumber} 页。` : page.description;
-  const socialImage = { url: "/og.png", width: 1200, height: 630, alt: "JUHAO 钜豪｜好房子，光健康。" };
+  const representativeMedia = page.articleEvidence?.representativeMedia ?? page.companyNewsEvidence?.local_representative_media;
+  const localPageMedia = page.image.startsWith("/images/")
+    ? { url: page.image, width: 1672, height: 941, alt: page.imageAlt ?? `${page.title}主题场景代表图` }
+    : null;
+  const socialImage = representativeMedia
+    ? { url: representativeMedia.src, width: representativeMedia.width, height: representativeMedia.height, alt: representativeMedia.alt }
+    : localPageMedia ?? { url: "/og.png", width: 1200, height: 630, alt: "JUHAO 钜豪｜好房子，光健康。" };
   const socialMetadata = {
     title,
     description,
@@ -94,11 +107,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: canonicalPath },
-    robots: page.noindex ? { index: false, follow: true } : { index: true, follow: true },
+    robots: indexable ? { index: true, follow: true } : { index: false, follow: true },
     openGraph: page.type === "article"
-      ? { ...socialMetadata, type: "article", ...(page.published ? { publishedTime: page.published } : {}) }
+      ? { ...socialMetadata, type: "article", ...(page.published ? { publishedTime: page.published } : {}), ...(page.articleEvidence ? { modifiedTime: page.articleEvidence.reviewedAt } : {}) }
       : { ...socialMetadata, type: "website" },
-    twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
+    twitter: { card: "summary_large_image", title, description, images: [socialImage.url] },
   };
 }
 
@@ -115,7 +128,7 @@ function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { nam
   </main>;
 }
 
-function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationContext }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult; consultationContext: ConsultationContext | null }) {
+function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationContext, initialSearchQuery, initialSearchResults }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult; consultationContext: ConsultationContext | null; initialSearchQuery: string; initialSearchResults: SearchResult[] }) {
   if (routeKey === "products") return <ProductsPage page={page} />;
   const product = productByRouteKey(routeKey);
   if (product) return <ProductDetailPage product={product} />;
@@ -133,11 +146,11 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationCon
   if (routeKey === "mall") return <MallPage page={page} />;
   if (routeKey === "contact") return <ContactPage page={page} initialContext={consultationContext} />;
   const sceneId = businessScenes[routeKey];
-  if (sceneId) return <BusinessScenePage page={page} sceneId={sceneId} />;
+  if (sceneId) return <BusinessScenePage page={page} sceneId={sceneId} resources={resourcesForScene(sceneId)} />;
   if (routeKey === "service") return <ServicePage page={page} />;
   if (routeKey === "sustainability") return <SustainabilityPage page={page} />;
   if (routeKey === "partners") return <PartnersPage page={page} />;
-  if (routeKey === "search") return <SearchPage page={page} />;
+  if (routeKey === "search") return <SearchPage page={page} initialQuery={initialSearchQuery} initialResults={initialSearchResults} />;
   if (routeKey === "downloads") return <DownloadsPage page={page} />;
   if (routeKey === "legal" || routeKey === "privacy") return <LegalPage page={page} />;
   if (routeKey === "news") {
@@ -147,13 +160,36 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationCon
   return <GenericPage page={page} breadcrumbs={breadcrumbs} />;
 }
 
+function routeBreadcrumbs(page: PageData, canonicalPath: string) {
+  const parts = canonicalPath.split("/").filter(Boolean);
+  return [
+    { name: "首页", url: SITE_URL },
+    ...parts.map((segment, index) => {
+      const pathParts = parts.slice(0, index + 1);
+      const routeKey = pathParts.join("/");
+      const path = `/${routeKey}`;
+      const topic = routeKey.startsWith("products/")
+        ? productTopics.find((item) => `products/${item.slug}` === routeKey)
+        : undefined;
+      const name = pages[routeKey]?.label ?? topic?.title ?? (index === parts.length - 1 ? page.title : segment);
+      return { name, url: `${SITE_URL}${path}` };
+    }),
+  ];
+}
+
 export default async function SeoPage({ params, searchParams }: Props) {
   const slug = (await params).slug;
   const route = resolveRoute(slug);
   if (!route) notFound();
   const { routeKey, page, canonicalPath, newsPageNumber } = route;
+  const indexable = isIndexableRoute(canonicalPath);
   const requestedNewsPage = newsPageNumber ?? 1;
-  const consultationContext = routeKey === "contact" ? resolveConsultationContext((await searchParams) ?? {}) : null;
+  const resolvedSearchParams: SearchParams = routeKey === "contact" || routeKey === "search" ? (await searchParams) ?? {} : {};
+  const consultationContext = routeKey === "contact" ? resolveConsultationContext(resolvedSearchParams) : null;
+  const initialSearchQuery = routeKey === "search"
+    ? (Array.isArray(resolvedSearchParams.keywords) ? resolvedSearchParams.keywords[0] : resolvedSearchParams.keywords)?.trim() ?? ""
+    : "";
+  const initialSearchResults = initialSearchQuery ? searchSite(initialSearchQuery) : [];
   let newsLoadFailed = false;
   let initialNews: NewsPageResult = { items: [], page: requestedNewsPage, pageSize: NEWS_PAGE_SIZE, total: 0, totalPages: requestedNewsPage };
   if (routeKey === "news") {
@@ -171,27 +207,37 @@ export default async function SeoPage({ params, searchParams }: Props) {
         { name: pages.news.label, url: `${SITE_URL}/news` },
         { name: `第 ${newsPageNumber} 页`, url: `${SITE_URL}${canonicalPath}` },
       ]
-    : [{ name: "首页", url: SITE_URL }, ...(page.path.split("/").filter(Boolean).map((segment, index, parts) => {
-        const path = `/${parts.slice(0, index + 1).join("/")}`;
-        return { name: pages[parts.slice(0, index + 1).join("/")]?.label || segment, url: `${SITE_URL}${path}` };
-      }))];
+    : routeBreadcrumbs(page, canonicalPath);
   const schemaName = newsPageNumber ? `${page.title}｜第 ${newsPageNumber} 页` : page.title;
-  const schema = page.noindex ? [] : [
+  const schema = indexable ? [
     { "@context":"https://schema.org", "@type":"BreadcrumbList", itemListElement:breadcrumbs.map((item,index)=>({"@type":"ListItem",position:index+1,name:item.name,item:item.url})) },
     newsPageNumber
       ? { "@context":"https://schema.org", "@type":"CollectionPage", name:schemaName, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${canonicalPath}` }
       : page.type === "article"
-      ? { "@context":"https://schema.org", "@type":"Article", headline:page.title, description:page.description, image:`${SITE_URL}/og.png`, inLanguage:"zh-CN", datePublished:page.published, dateModified:page.published, mainEntityOfPage:`${SITE_URL}${page.path}`, author:{"@id":`${SITE_URL}/#organization`}, publisher:{"@id":`${SITE_URL}/#organization`} }
+      ? {
+          "@context":"https://schema.org",
+          "@type":"Article",
+          headline:page.title,
+          description:page.description,
+          image:`${SITE_URL}${page.articleEvidence?.representativeMedia.src ?? page.companyNewsEvidence?.local_representative_media.src ?? "/og.png"}`,
+          inLanguage:"zh-CN",
+          ...(page.published ? { datePublished:page.published } : {}),
+          dateModified:page.articleEvidence?.reviewedAt ?? page.published,
+          mainEntityOfPage:`${SITE_URL}${page.path}`,
+          author:{"@id":`${SITE_URL}/#organization`},
+          publisher:{"@id":`${SITE_URL}/#organization`},
+          ...(page.articleEvidence ? { citation:page.articleEvidence.sourceUrls, reviewedBy:{"@type":"Organization",name:page.articleEvidence.reviewer} } : {}),
+        }
       : page.type === "service"
         ? { "@context":"https://schema.org", "@type":"Service", name:page.title, description:page.description, provider:{"@id":`${SITE_URL}/#organization`}, areaServed:"CN" }
         : { "@context":"https://schema.org", "@type":"WebPage", name:page.title, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${canonicalPath}` }
-  ];
-  const faqSchema = !page.noindex && page.faqs?.length ? { "@context":"https://schema.org", "@type":"FAQPage", mainEntity:page.faqs.map((faq)=>({"@type":"Question",name:faq.question,acceptedAnswer:{"@type":"Answer",text:faq.answer}})) } : null;
+  ] : [];
+  const faqSchema = indexable && page.faqs?.length ? { "@context":"https://schema.org", "@type":"FAQPage", mainEntity:page.faqs.map((faq)=>({"@type":"Question",name:faq.question,acceptedAnswer:{"@type":"Answer",text:faq.answer}})) } : null;
   const structuredData = [...schema, ...(faqSchema ? [faqSchema] : [])];
 
   return <>
     <SiteHeader />
-    <PageFeature routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} initialNews={initialNews} consultationContext={consultationContext} />
+    <PageFeature routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} initialNews={initialNews} consultationContext={consultationContext} initialSearchQuery={initialSearchQuery} initialSearchResults={initialSearchResults} />
     <SiteFooter />
     {structuredData.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g,"\\u003c")}} />}
   </>;

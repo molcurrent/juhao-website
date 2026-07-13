@@ -1,6 +1,30 @@
 import { contractPages } from "./contract-pages";
+import { companyNewsPages, type CompanyNewsArticle } from "@/content/company-news";
+import { knowledgeArticlePages } from "@/content/knowledge-articles";
 
 export const SITE_URL = "https://juhao.com";
+
+export type ArticleEvidence = {
+  sourcePath: string;
+  sourceKey: string;
+  sourceLabel: string;
+  sourceUrls: string[];
+  reviewState: "approved_by_juhao";
+  reviewer: "JUHAO";
+  reviewedAt: string;
+  sourceCheckedAt: string;
+  coreConclusions: string[];
+  doNotSay: string[];
+  representativeMedia: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption: string;
+    provenancePath: "RECON/JUHAO_ASSET_PROVENANCE.md";
+    role: "representative_not_evidence";
+  };
+};
 
 export type PageData = {
   path: string;
@@ -10,6 +34,7 @@ export type PageData = {
   seoTitle: string;
   description: string;
   image: string;
+  imageAlt?: string;
   intro: string;
   type?: "page" | "service" | "article";
   published?: string;
@@ -18,6 +43,8 @@ export type PageData = {
   sections: { title: string; text: string; points?: string[] }[];
   related: { label: string; href: string; text: string }[];
   faqs?: { question: string; answer: string }[];
+  articleEvidence?: ArticleEvidence;
+  companyNewsEvidence?: CompanyNewsArticle;
 };
 
 export const pages: Record<string, PageData> = {
@@ -78,7 +105,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"商业照明解决方案",href:"/solutions/commercial",text:"了解商业空间光环境。"},{label:"工业照明解决方案",href:"/solutions/industrial",text:"查看生产空间照明思路。"},{label:"咨询公共照明方案",href:"/contact",text:"提交项目场景与需求。"}]
   },
   "solutions/industrial": {
-    path:"/solutions/industrial",label:"工业照明",eyebrow:"INDUSTRIAL LIGHTING",title:"工业照明解决方案",seoTitle:"工业照明解决方案｜工业空间光环境｜钜豪照明",image:"/images/juhao-industrial.webp",type:"service",
+    path:"/solutions/industrial",label:"工业照明",eyebrow:"INDUSTRIAL LIGHTING",title:"工业照明解决方案",seoTitle:"工业照明解决方案｜工业空间光环境｜钜豪照明",image:"/images/juhao-industrial.webp",type:"service",noindex:true,
     description:"了解工业照明的空间需求、方案重点与项目咨询入口，按具体使用环境获取进一步信息。",
     intro:"工业照明围绕作业可见度、运行稳定和维护效率展开。不同高度、环境条件与精细作业，对照明有不同要求。",
     highlights:[{title:"生产车间",text:"匹配作业精度与设备布局，减少视觉疲劳。"},{title:"仓储物流",text:"关注货架垂直照度、通道识别与运行效率。"},{title:"高大空间",text:"结合安装高度与维护条件选择合理配光。"},{title:"特殊环境",text:"根据温度、粉尘、潮湿等条件评估设备适配。"}],
@@ -86,7 +113,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"公共照明解决方案",href:"/solutions/public",text:"查看公共空间照明思路。"},{label:"全部照明解决方案",href:"/solutions",text:"浏览其他空间类型。"},{label:"咨询工业照明方案",href:"/contact",text:"提交现场条件与作业需求。"}]
   },
   "smart-home": {
-    path:"/smart-home",label:"智能家居",eyebrow:"SMART HOME LIGHTING",title:"智能家居照明解决方案",seoTitle:"智能家居照明解决方案｜钜豪智能",image:"/images/juhao-home.webp",type:"service",
+    path:"/smart-home",label:"智能家居",eyebrow:"SMART HOME LIGHTING",title:"智能家居照明解决方案",seoTitle:"智能家居照明解决方案｜钜豪智能",image:"/images/juhao-home.webp",type:"service",noindex:true,
     description:"了解智能灯光与空间设备联动的使用场景、系统组成和方案咨询入口，探索自然便捷的智能家居体验。",
     intro:"真正自然的智能体验，不需要频繁操作。灯光、窗帘、环境和安防可以根据时间、活动与空间状态协同工作。",
     highlights:[{title:"回家场景",text:"灯光与窗帘协同响应，让空间自然进入欢迎状态。"},{title:"观影场景",text:"一键调整亮度与遮光，减少重复操作。"},{title:"睡眠场景",text:"逐步降低环境亮度，为休息建立柔和过渡。"},{title:"离家场景",text:"统一关闭或检查设备状态，简化日常管理。"}],
@@ -106,56 +133,8 @@ export const pages: Record<string, PageData> = {
     description:"查看钜豪照明品牌动态、解决方案资讯与照明知识文章，进入详情页阅读完整内容。",
     intro:"持续分享健康光环境、空间照明和智能家居相关知识，帮助用户在真实需求中理解光、选择光、使用光。",
     highlights:[{title:"照明知识",text:"理解照度、色温、显色与眩光等关键概念。"},{title:"空间方案",text:"从家庭、商业与公共空间拆解照明思路。"},{title:"智能生活",text:"探索灯光和空间设备的自然协同。"}],
-    sections:[{title:"最新内容",text:"以下内容为钜豪照明围绕健康光与智能生活整理的专题文章。",points:["《家庭健康光环境：从看得见到住得舒适》","《智能家居照明：先设计生活场景，再选择控制方式》"]}],
-    related:[{label:"家庭健康光环境",href:"/news/healthy-home-lighting",text:"了解家庭照明规划的四个关键维度。"},{label:"智能家居照明怎么规划",href:"/news/smart-lighting-planning",text:"从真实生活场景建立控制逻辑。"},{label:"全部照明解决方案",href:"/solutions",text:"进入对应空间的方案页面。"}]
-  },
-  "news/healthy-home-lighting": {
-    path:"/news/healthy-home-lighting",label:"家庭健康光环境",eyebrow:"LIGHTING INSIGHT",title:"家庭健康光环境：从看得见到住得舒适",seoTitle:"家庭健康光环境怎么规划｜钜豪照明资讯",image:"/images/juhao-home.webp",type:"article",published:"2026-07-12",
-    description:"从视觉舒适、空间层次、生活节律和控制方式四个维度，了解家庭健康光环境的基础规划思路。",
-    intro:"健康光环境不是一个孤立参数，而是人与空间、时间和活动共同作用的结果。家庭照明规划可以从四个容易理解的维度开始。",
-    highlights:[{title:"视觉舒适",text:"看得清，同时避免高亮光源直接进入视线。"},{title:"空间层次",text:"基础光、重点光和氛围光各有职责。"},{title:"生活节律",text:"不同时间与活动需要不同亮度和色温感受。"},{title:"控制方式",text:"让常用场景容易触达，不增加操作负担。"}],
-    sections:[{title:"一、先看活动，再看灯具",text:"客厅可能同时承载交流、阅读、观影和清洁。先列出主要活动，再判断哪些区域需要基础照明、哪些位置需要重点补光，比直接从灯具款式开始更有效。"},{title:"二、控制眩光与明暗反差",text:"过亮的裸露光源、屏幕周围过暗的环境、桌面与背景强烈反差，都可能影响舒适感。合理的遮光、配光和环境亮度能改善体验。"},{title:"三、让控制服务于生活",text:"好的控制方式应该让回家、用餐、观影、阅读和睡前等高频场景简单可用，同时保留直观的基础开关。"}],
-    related:[{label:"全屋照明解决方案",href:"/solutions/residential",text:"查看家庭不同空间的照明重点。"},{label:"智能家居照明",href:"/smart-home",text:"了解场景联动与控制规划。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
-  },
-  "news/smart-lighting-planning": {
-    path:"/news/smart-lighting-planning",label:"智能照明规划",eyebrow:"SMART LIGHTING INSIGHT",title:"智能家居照明：先设计生活场景，再选择控制方式",seoTitle:"智能家居照明怎么规划｜钜豪照明资讯",image:"/images/juhao-commercial.webp",type:"article",published:"2026-07-12",
-    description:"了解智能家居照明的规划顺序：先梳理高频生活场景，再确定分区、回路、控制方式与联动逻辑。",
-    intro:"智能照明的核心不是设备数量，而是空间能否在合适的时刻给出合适的光。清晰的场景比复杂的功能列表更重要。",
-    highlights:[{title:"场景优先",text:"先确定回家、用餐、观影和睡眠等高频需求。"},{title:"分区清晰",text:"让每个回路和灯组的职责容易理解。"},{title:"保留手动",text:"自动化之外仍应有直观可靠的基础控制。"},{title:"持续调整",text:"入住后根据真实习惯逐步优化场景。"}],
-    sections:[{title:"先写下生活的一天",text:"从起床、离家、回家、用餐到休息，记录家庭最常发生的活动。哪些动作值得一键完成，哪些状态适合自动触发，会因此变得清晰。"},{title:"再确定灯光分区",text:"灯光分区应对应空间功能，而不是机械地按灯具类型划分。阅读区、餐桌、电视背景和通道可以拥有独立且容易理解的控制。"},{title:"最后选择控制方式",text:"墙面按键、传感器、语音和手机各有适合的场景。组合时应优先保证稳定和直观，再增加自动化与远程能力。"}],
-    related:[{label:"智能家居照明解决方案",href:"/smart-home",text:"了解常见智能生活场景。"},{label:"全屋照明解决方案",href:"/solutions/residential",text:"建立家庭光环境基础。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
-  },
-  "news/retail-lighting-layering": {
-    path:"/news/retail-lighting-layering",label:"零售照明层次",eyebrow:"RETAIL LIGHTING INSIGHT",title:"零售空间照明：用明暗层次引导浏览与停留",seoTitle:"零售空间照明层次怎么规划｜钜豪照明资讯",image:"/images/juhao-commercial.webp",type:"article",published:"2026-07-12",
-    description:"从顾客动线、商品重点、材质呈现和陈列变化出发，了解零售空间基础光与重点光的规划方法。",
-    intro:"零售照明不是把空间整体照得更亮，而是让顾客容易辨认入口、理解动线，并在合适的位置注意到商品与品牌信息。",
-    highlights:[{title:"入口识别",text:"用亮度关系建立清晰的第一视觉焦点。"},{title:"商品重点",text:"根据陈列层级分配基础光与重点光。"},{title:"材质呈现",text:"结合商品颜色和表面特征考虑显色与反射。"},{title:"灵活调整",text:"为换季和陈列变化保留调整能力。"}],
-    sections:[{title:"先画出顾客动线",text:"入口、主通道、重点展台与收银区域承担不同任务。先梳理顾客如何进入、浏览和停留，再决定哪些区域需要连续引导，哪些位置适合形成亮度对比。"},{title:"让重点光服务于商品",text:"重点照明应回应商品大小、材质与观看距离。光束过窄可能造成割裂，过宽又会削弱层次，需要结合陈列密度和背景亮度调整。"},{title:"为运营变化留空间",text:"零售陈列会持续变化。轨道、回路与控制场景应便于重新瞄准和分组，避免每次调整都依赖大规模改造。"}],
-    related:[{label:"商业照明解决方案",href:"/solutions/commercial",text:"查看商业空间的方案重点。"},{label:"酒店照明旅程",href:"/news/hospitality-lighting-journey",text:"了解连续空间中的光环境衔接。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
-  },
-  "news/hospitality-lighting-journey": {
-    path:"/news/hospitality-lighting-journey",label:"酒店照明旅程",eyebrow:"HOSPITALITY INSIGHT",title:"酒店照明：沿着宾客旅程组织光环境",seoTitle:"酒店照明如何按宾客旅程规划｜钜豪照明资讯",image:"/images/juhao-home.webp",type:"article",published:"2026-07-12",
-    description:"从抵达、登记、通行、停留到客房休息，理解酒店不同空间之间的照明衔接与场景控制思路。",
-    intro:"酒店包含连续而不同的空间体验。照明既要帮助识别和通行，也要在公共区域与客房之间建立自然的情绪过渡。",
-    highlights:[{title:"抵达",text:"让入口、门廊与前台容易识别。"},{title:"通行",text:"保证路径清楚，同时控制不必要的高亮。"},{title:"停留",text:"用局部层次支持交流、等候与餐饮。"},{title:"休息",text:"在客房中兼顾阅读、起居与夜间活动。"}],
-    sections:[{title:"把空间串成一段旅程",text:"从室外抵达到进入大堂，人的视觉会经历亮度和尺度变化。入口识别、前台焦点与通行区域应形成连续关系，避免突兀的明暗跳变。"},{title:"公共区域需要多种状态",text:"大堂、走廊、餐饮和会议空间在不同时段承担不同活动。分区控制和预设场景能帮助运营人员快速切换，同时保留必要的手动调整。"},{title:"客房控制要简单直观",text:"入住者不应先学习复杂系统。床头、阅读、洗漱和夜间起居等高频需求应有容易理解的控制，并避免高亮光源直接进入视线。"}],
-    related:[{label:"酒店照明解决方案",href:"/solutions/hospitality",text:"查看酒店空间的方案框架。"},{label:"眩光控制基础",href:"/news/glare-control-basics",text:"了解视觉舒适的常见影响因素。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
-  },
-  "news/glare-control-basics": {
-    path:"/news/glare-control-basics",label:"眩光控制基础",eyebrow:"VISUAL COMFORT",title:"眩光控制基础：不只看灯具亮不亮",seoTitle:"照明眩光怎么控制｜视觉舒适基础｜钜豪照明资讯",image:"/images/juhao-public.webp",type:"article",published:"2026-07-12",
-    description:"从光源位置、观察方向、背景亮度和表面反射四个方面，理解空间照明中常见的眩光问题。",
-    intro:"同一盏灯在不同位置和视线方向下，可能带来完全不同的感受。控制眩光需要同时观察灯具、空间和人的活动。",
-    highlights:[{title:"光源位置",text:"避免高亮发光面长期处于主要视线。"},{title:"观察方向",text:"站立、坐姿与行走时的视线并不相同。"},{title:"背景亮度",text:"过强的明暗反差可能增加不适。"},{title:"表面反射",text:"玻璃、金属与屏幕会改变光的方向。"}],
-    sections:[{title:"先找到真实视线",text:"办公桌、餐桌、沙发和通道上的观察方向各不相同。检查灯具是否落入高频视线，比只看平面布灯图更接近真实使用。"},{title:"遮光只是其中一步",text:"合适的遮光角、配光与安装位置可以减少直视高亮，但墙面、桌面和显示屏的反射同样需要现场判断。"},{title:"用环境亮度缓和反差",text:"当任务区域很亮而周围过暗时，视觉需要频繁适应。通过基础光和立面亮度建立适度的环境层次，往往比单纯降低某一盏灯更有效。"}],
-    related:[{label:"健康光环境",href:"/healthy-light",text:"了解以人为中心的照明原则。"},{label:"家庭健康光",href:"/news/healthy-home-lighting",text:"把视觉舒适应用到家庭场景。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
-  },
-  "news/industrial-lighting-maintenance": {
-    path:"/news/industrial-lighting-maintenance",label:"工业照明维护",eyebrow:"INDUSTRIAL INSIGHT",title:"工业照明规划：把维护条件放进方案里",seoTitle:"工业照明维护怎么规划｜钜豪照明资讯",image:"/images/juhao-industrial.webp",type:"article",published:"2026-07-12",
-    description:"从安装高度、环境条件、设备布局和运行时段出发，了解工业照明方案中的维护与长期使用问题。",
-    intro:"工业空间中的灯具往往安装更高、运行更久，也可能面对粉尘、潮湿或设备遮挡。维护条件应在选型和布置阶段同步考虑。",
-    highlights:[{title:"安装高度",text:"影响检修方式、配光选择与作业安排。"},{title:"环境条件",text:"温度、粉尘和潮湿需要对应设备适配。"},{title:"设备遮挡",text:"结合产线与货架减少阴影和暗区。"},{title:"运行策略",text:"按班次、区域和任务设置合理控制。"}],
-    sections:[{title:"先确认如何到达灯具",text:"高空作业平台、停线窗口和安全隔离都会影响维护成本。布灯时应同时确认检修通道与更换条件，而不是只满足初始照度。"},{title:"把现场环境写进需求",text:"温度、粉尘、潮湿、振动和清洁方式会影响设备选择。具体防护与性能要求必须以现场条件、产品资料和适用标准为依据。"},{title:"用分区减少不必要运行",text:"产线、仓储通道和辅助区域的使用节奏不同。清晰的分区与控制策略既方便运营，也有助于在检修时缩小受影响范围。"}],
-    related:[{label:"工业照明解决方案",href:"/solutions/industrial",text:"查看工业空间的方案重点。"},{label:"公共照明解决方案",href:"/solutions/public",text:"了解长期运行空间的规划思路。"},{label:"返回照明资讯",href:"/news",text:"阅读更多光环境内容。"}]
+    sections:[{title:"内容来源",text:"资讯区只发布企业知识库中可追溯的公司动态，以及已由 JUHAO 审核的专业照明知识。",points:["企业与项目动态保留真实来源日期和阶段","专业知识保留审核人、核验日期和外部资料来源","未经核验的宣传性数字、完工状态和媒体授权不作为结论"]}],
+    related:[{label:"筒灯与射灯怎么区分",href:"/news/downlight-vs-spotlight",text:"从配光和用途理解两类灯具。"},{label:"家庭色温怎么选择",href:"/news/color-temperature-guide",text:"理解相关色温的含义与选择边界。"},{label:"全部照明解决方案",href:"/solutions",text:"进入对应空间的方案页面。"}]
   },
   "contact": {
     path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/juhao-public.webp",
@@ -167,4 +146,4 @@ export const pages: Record<string, PageData> = {
   }
 };
 
-Object.assign(pages, contractPages);
+Object.assign(pages, contractPages, knowledgeArticlePages, companyNewsPages);

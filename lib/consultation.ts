@@ -54,7 +54,7 @@ export const consultationOptions: readonly ConsultationOption[] = [
     direction: "channel",
     scene: "channel",
     intent: "partnership",
-    projectPlaceholder: "例如：佛山照明门店，关注全屋与智能产品合作",
+    projectPlaceholder: "例如：佛山灯饰门店，关注全屋与智能产品合作",
     needPlaceholder: "说明所在区域、现有业务、目标客户和希望了解的合作方向。",
   },
 ] as const;
@@ -72,13 +72,14 @@ const sources = new Set<ConsultationSource>([
   "product-detail",
   "cases",
   "case-detail",
+  "solutions",
   "partners",
   "service-network",
   "mall",
   "direct",
 ]);
 
-const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "partners"]);
+const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 
 export const consultationSourceValues = [...sources];
 

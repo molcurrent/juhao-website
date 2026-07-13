@@ -1,0 +1,2411 @@
+// Generated from work/content-source-packets/news_8.json.
+// Page-facing copy is intentionally limited to each record's conservative phase summary.
+// Remote source media remains blocked until a separate rights review approves publication.
+
+import type { PageData } from "@/app/_data/pages";
+
+export type CompanyNewsSection = {
+  title: string;
+  text: string;
+  points: readonly string[];
+};
+
+export type CompanyNewsRelatedLink = {
+  label: string;
+  href: string;
+  text: string;
+};
+
+export type CompanyNewsRemoteMedia = {
+  role: "cover" | "body";
+  order: number;
+  source_field: string;
+  raw_src: string;
+  src: string;
+  publication_gate: string;
+  rights_status: "needs_review";
+  publish_allowed: false;
+  evidence_role: "candidate_not_published";
+};
+
+export type CompanyNewsArticle = {
+  slug: string;
+  path: `/news/${string}`;
+  title: string;
+  description: string;
+  intro: string;
+  sections: readonly CompanyNewsSection[];
+  published: string;
+  create_time: string;
+  source_type: "mall_sql_jh_articles";
+  source_id: number;
+  source_path: string;
+  source_locator: string;
+  source_sql_sha256: string;
+  source_status: {
+    is_show: string;
+    data_flag: string;
+    interpretation: "active_in_source";
+  };
+  phase_conservative_summary: {
+    stage: string;
+    statement: string;
+    source_basis: readonly string[];
+    publication_boundary: string;
+  };
+  publication_boundary: string;
+  project_stage: {
+    confirmed: "中标报道";
+    implementation: "后续实施待证";
+  } | null;
+  local_representative_media: {
+    src: "/images/juhao-public.webp" | "/images/juhao-commercial.webp" | "/images/juhao-home.webp";
+    alt: string;
+    width: 1672;
+    height: 941;
+    role: "section_illustration";
+    evidence_role: "representative_not_evidence";
+    caption: string;
+    rights_status: "approved";
+    provenance_path: "RECON/JUHAO_ASSET_PROVENANCE.md";
+  };
+  remote_media: readonly CompanyNewsRemoteMedia[];
+  related: readonly CompanyNewsRelatedLink[];
+  governance: {
+    page_copy_basis: "phase_conservative_summary_only";
+    source_title: string;
+    source_description: string;
+    excluded_unverified_claims: readonly {
+      source_field: string;
+      text: string;
+      matched_terms: readonly string[];
+      reason: string;
+      publication_gate: string;
+    }[];
+  };
+};
+
+type CompanyNewsSeed = Omit<CompanyNewsArticle, "remote_media"> & {
+  remote_media_sources: readonly Omit<CompanyNewsRemoteMedia, "rights_status" | "publish_allowed" | "evidence_role">[];
+};
+
+const seeds = [
+  {
+    "slug": "guangzhou-international-lighting-exhibition-2026",
+    "path": "/news/guangzhou-international-lighting-exhibition-2026",
+    "title": "2026 广州光亚展 · 展会参展报道",
+    "description": "来源记录为 2026 广州光亚展参展报道，并提及 8.1-D18 展位；展位、客流、洽谈量与渠道效果未独立核验。",
+    "intro": "来源记录为 2026 广州光亚展参展报道，并提及 8.1-D18 展位；展位、客流、洽谈量与渠道效果未独立核验。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录为 2026 广州光亚展参展报道，并提及 8.1-D18 展位。",
+        "points": [
+          "来源所述活动：2026 广州光亚展",
+          "来源所述展位：8.1-D18"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未独立核验展位、客流、洽谈量或渠道效果。",
+        "points": []
+      }
+    ],
+    "published": "2026-06-11",
+    "create_time": "2026-06-11 16:30:57",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 232,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=232",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "展会参展报道",
+      "statement": "来源正文写明“2026广州光亚展火热开展”并注明“8.1-D18展位”；仅保留参展报道阶段，不采用客流、渠道效果或市场地位表述。",
+      "source_basis": [
+        "2026广州光亚展火热开展",
+        "8.1-D18展位"
+      ],
+      "publication_boundary": "未独立核验展位、客流、洽谈量或渠道效果。"
+    },
+    "publication_boundary": "未独立核验展位、客流、洽谈量或渠道效果。",
+    "project_stage": null,
+    "local_representative_media": {
+      "src": "/images/juhao-public.webp",
+      "alt": "原创公共空间照明场景栏目示意图，不作为光亚展现场、展位或参展成效证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创公共空间照明场景栏目示意图，不作为光亚展现场、展位或参展成效证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2026-06/6a2a71c2e9cb3_thumb.JPG",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-06/6a2a71c2e9cb3_thumb.JPG",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a84f9d4821.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a84f9d4821.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a850a9b581.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a850a9b581.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8515bfbef.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8515bfbef.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a852dae2da.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a852dae2da.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8538afb6c.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8538afb6c.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85667aff4.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85667aff4.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8573dddc6.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8573dddc6.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8580c2af2.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a8580c2af2.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a858d24e1a.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a858d24e1a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85986a36f.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85986a36f.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 11,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85a811063.gif",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85a811063.gif",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 12,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85bc27c0c.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85bc27c0c.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 13,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85c6b672b.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a85c6b672b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "品牌发展记录",
+        "href": "/about/history",
+        "text": "查看品牌时间线中已经过来源分级的记录。"
+      },
+      {
+        "label": "渠道合作",
+        "href": "/partners",
+        "text": "了解渠道合作入口；合作政策与活动成效需另行确认。"
+      },
+      {
+        "label": "提交渠道咨询",
+        "href": "/contact?source=news&scene=channel&intent=channel-cooperation&sourceDetail=guangzhou-international-lighting-exhibition-2026#consultation-form",
+        "text": "携带本篇来源标识进入咨询表单。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "专卖为基，双线助飞 | 钜豪照明光亚展放大招！",
+      "source_description": "专卖为基、双线助飞、移动店铺领跑！",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleDesc",
+          "text": "专卖为基、双线助飞、移动店铺领跑！",
+          "matched_terms": [],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "2026广州光亚展火热开展，钜豪照明强势登陆8.1-D18展位，全线亮出硬核实力，现场人流络绎不绝，大批国内经销商、创业者以及海外采购客商纷纷驻足洽谈、实地体验。",
+          "matched_terms": [
+            "硬核",
+            "强势",
+            "络绎不绝",
+            "实力"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[5]",
+          "text": "面对行业整体承压，经销商门店展示空间有限等普遍痛点，钜豪重磅推出创新“移动店铺”模式，搭配便携展示箱、商城直播一体机一体化配套设备。",
+          "matched_terms": [
+            "重磅"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[11]",
+          "text": "依托品牌自有线上商城体系，实现仅100㎡实体店面即可承载上万平方体量的产品展示，高效化解终端陈列空间不足的经营桎梏。",
+          "matched_terms": [
+            "上万平方"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "dealer-conference-spring-2026",
+    "path": "/news/dealer-conference-spring-2026",
+    "title": "2026 经销商盛典暨春季新品品鉴会 · 活动召开报道",
+    "description": "来源记录显示活动时间为 2026 年 3 月 12 日至 13 日；仅保留活动召开口径，参会规模、合作成果与新品市场表现未独立核验。",
+    "intro": "来源记录显示活动时间为 2026 年 3 月 12 日至 13 日；仅保留活动召开口径，参会规模、合作成果与新品市场表现未独立核验。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录显示 2026 经销商盛典暨春季新品品鉴会于 2026 年 3 月 12 日至 13 日召开。",
+        "points": [
+          "来源所述日期：2026 年 3 月 12 日至 13 日",
+          "来源所述活动：2026 经销商盛典暨春季新品品鉴会"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未独立核验参会规模、合作成果或新品市场表现。",
+        "points": []
+      }
+    ],
+    "published": "2026-03-17",
+    "create_time": "2026-03-17 10:06:09",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 224,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=224",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "活动召开报道",
+      "statement": "来源正文写明活动日期为“2026年3月12日—3月13日”，并称活动启幕；仅保留活动召开口径，不外推活动成效。",
+      "source_basis": [
+        "2026年3月12日—3月13日",
+        "2026钜豪照明优秀经销商盛典暨春季新品品鉴会"
+      ],
+      "publication_boundary": "未独立核验参会规模、合作成果或新品市场表现。"
+    },
+    "publication_boundary": "未独立核验参会规模、合作成果或新品市场表现。",
+    "project_stage": null,
+    "local_representative_media": {
+      "src": "/images/juhao-commercial.webp",
+      "alt": "原创精品零售空间重点照明栏目示意图，不作为经销商活动现场、参会规模或活动成效证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创精品零售空间重点照明栏目示意图，不作为经销商活动现场、参会规模或活动成效证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2026-03/69b8b706cb14e_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-03/69b8b706cb14e_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4711bc1e.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4711bc1e.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b47d84fbb.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b47d84fbb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b48d3b014.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b48d3b014.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b49b73d24.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b49b73d24.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4a81e6b7.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4a81e6b7.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4bfe306d.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4bfe306d.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4cfc1d9a.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4cfc1d9a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4fb478fe.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b4fb478fe.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b50d6f498.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b50d6f498.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b51a3e25e.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b51a3e25e.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 11,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b52686a51.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b52686a51.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 12,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b535d56d7.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b535d56d7.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 13,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b54e7cc2d.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b54e7cc2d.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 14,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b55a8d8cb.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b55a8d8cb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 15,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b563d3eea.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b563d3eea.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 16,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b572d2349.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b572d2349.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 17,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b57c444c2.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b57c444c2.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 18,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b59c8c74a.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b59c8c74a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 19,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5ba63c0b.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5ba63c0b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 20,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5ca652dd.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5ca652dd.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 21,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5f82e91e.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b5f82e91e.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 22,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b60820607.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b60820607.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 23,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b61b9dc7a.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b61b9dc7a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 24,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b62503c4b.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b62503c4b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 25,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b630a19b5.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b630a19b5.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 26,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b63a70cd6.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b63a70cd6.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 27,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b6471b01b.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b6471b01b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 28,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b653bd657.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b653bd657.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 29,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b65ddc609.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b65ddc609.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 30,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b669c4f81.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b669c4f81.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 31,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b6d622e18.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69b8b6d622e18.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "渠道合作",
+        "href": "/partners",
+        "text": "了解当前可公开的渠道合作入口。"
+      },
+      {
+        "label": "品牌发展记录",
+        "href": "/about/history",
+        "text": "查看品牌时间线中已经过来源分级的记录。"
+      },
+      {
+        "label": "提交渠道咨询",
+        "href": "/contact?source=news&scene=channel&intent=channel-cooperation&sourceDetail=dealer-conference-spring-2026#consultation-form",
+        "text": "携带本篇来源标识进入咨询表单。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "“聚势拓界，达愿赴远”2026钜豪照明优秀经销商盛典暨春季新品品鉴会圆满召开！",
+      "source_description": "以聚势之能、拓界之勇，共赴远方、共筑辉煌！",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleTitle",
+          "text": "“聚势拓界，达愿赴远”2026钜豪照明优秀经销商盛典暨春季新品品鉴会圆满召开！",
+          "matched_terms": [
+            "圆满"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleDesc",
+          "text": "以聚势之能、拓界之勇，共赴远方、共筑辉煌！",
+          "matched_terms": [
+            "辉煌"
+          ],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "2026年3月12日—3月13日，备受瞩目的“聚势拓界，达愿赴远”2026钜豪照明优秀经销商盛典暨春季新品品鉴会，在钜豪照明文化中心广场盛大启幕。",
+          "matched_terms": [
+            "备受瞩目"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[18]",
+          "text": "面对行业变革，钜豪照明重磅推出“两线一实体”核心战略，构建全渠道赋能体系，全方位助力经销商伙伴抢占市场、实现盈利。",
+          "matched_terms": [
+            "重磅"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[31]",
+          "text": "钜豪始终以经销商核心利益为中心，2026年，将以“两线一实体”为核心，以数字化、智能化为支撑，与经销商携手，共赴照明行业新辉煌。",
+          "matched_terms": [
+            "辉煌"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[58]",
+          "text": "一场承载着感恩与期许的颁奖盛典圆满落幕。",
+          "matched_terms": [
+            "圆满"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[58]",
+          "text": "我们齐聚一堂，为一路相伴、携手共进的合作伙伴们加冕，致敬每一份坚守与付出，共赴下一段璀璨征程。",
+          "matched_terms": [
+            "加冕",
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[65]",
+          "text": "感谢每一位合作伙伴的一路坚守与鼎力支持，是你们的信任与付出，成就了品牌今日的成长与辉煌。",
+          "matched_terms": [
+            "辉煌"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[74]",
+          "text": "[销冠标杆奖]",
+          "matched_terms": [
+            "标杆"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[117]",
+          "text": "钜豪全品类照明灯饰产品璀璨亮相，全面覆盖商照、家居、智能、电工、酒店、教育、户外亮化等各细分领域，既延续了品牌一贯的匠心品质，又融入了当下前沿的设计理念与智能科技，全方位展现了钜豪强大的研发实力与创新能力。",
+          "matched_terms": [
+            "实力",
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[122]",
+          "text": "现场，多款2026春季新品重磅首发，涵盖全光谱护眼系列、智能无主灯系列、现代时尚系列、简约轻奢系列、宋代美学系列等热门品类。",
+          "matched_terms": [
+            "重磅"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[132]",
+          "text": "为助力经销商伙伴抢占市场先机，本次新品品鉴会推出了多项重磅优惠订货政策，从供货支持、返利福利到终端赋能，全方位为经销商减负增效、赋能增收。",
+          "matched_terms": [
+            "重磅"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[138]",
+          "text": "清晰的发展规划、明确的战略指引、硬核的产品实力、丰厚的赋能政策，不仅为经销商伙伴们指明了未来的发展方向，更极大地鼓舞了大家的信心与士气。",
+          "matched_terms": [
+            "硬核",
+            "实力"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[140]",
+          "text": "为期两天的2026钜豪照明“聚势拓界，达愿赴远”优秀经销商盛典暨春季新品品鉴会，在欢声笑语中圆满落幕。",
+          "matched_terms": [
+            "圆满"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[144]",
+          "text": "未来，钜豪照明将始终坚守匠心、深耕品质，持续加大研发投入、完善产品矩阵、强化终端赋能，以更优质的产品、更贴心的服务、更有力的支持，与全国经销商伙伴们继续携手，以聚势之能、拓界之勇，共赴远方、共筑辉煌！",
+          "matched_terms": [
+            "辉煌"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "lighting-industry-top10-source-record-2026",
+    "path": "/news/lighting-industry-top10-source-record-2026",
+    "title": "工程照明品牌 TOP10、设计师推荐品牌 TOP10 · 获奖来源记录",
+    "description": "来源记录称在 2026 中国照明灯饰行业品牌盛典获得两项 TOP10；证书、主办方公告或其他原始材料仍待审核。",
+    "intro": "来源记录称在 2026 中国照明灯饰行业品牌盛典获得两项 TOP10；证书、主办方公告或其他原始材料仍待审核。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称在 2026 中国照明灯饰行业品牌盛典获得两项 TOP10。",
+        "points": [
+          "来源所述奖项：工程照明品牌 TOP10",
+          "来源所述奖项：设计师推荐品牌 TOP10"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "证书、主办方公告或其他原始材料仍需另行审核。",
+        "points": []
+      }
+    ],
+    "published": "2026-01-20",
+    "create_time": "2026-01-20 11:10:26",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 223,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=223",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "获奖报道",
+      "statement": "来源正文称在“2026中国照明灯饰行业品牌盛典”获得两项 TOP10；仅保留来源所述获奖事件。",
+      "source_basis": [
+        "工程照明品牌TOP10",
+        "设计师推荐品牌TOP10"
+      ],
+      "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。"
+    },
+    "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。",
+    "project_stage": null,
+    "local_representative_media": {
+      "src": "/images/juhao-public.webp",
+      "alt": "原创公共空间照明场景栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创公共空间照明场景栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2026-01/696ef14c785bd_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-01/696ef14c785bd_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1630ffc9.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1630ffc9.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1f018cfc.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1f018cfc.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1fa71d21.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef1fa71d21.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef20c0c135.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef20c0c135.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "品牌发展记录",
+        "href": "/about/history",
+        "text": "查看品牌时间线及荣誉资料的审核边界。"
+      },
+      {
+        "label": "工程案例",
+        "href": "/cases",
+        "text": "按项目阶段查看当前可公开的工程记录。"
+      },
+      {
+        "label": "提交工程咨询",
+        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=lighting-industry-top10-source-record-2026#consultation-form",
+        "text": "携带本篇来源标识进入工程咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "双奖加冕，感恩同行！",
+      "source_description": "荣获“工程照明品牌TOP10”、“设计师推荐品牌TOP10”",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleTitle",
+          "text": "双奖加冕，感恩同行！",
+          "matched_terms": [
+            "加冕"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleDesc",
+          "text": "荣获“工程照明品牌TOP10”、“设计师推荐品牌TOP10”",
+          "matched_terms": [
+            "荣获"
+          ],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[3]",
+          "text": "1月16日，由中国（五金）交电渠道联盟、大照明全平台联合主办的2026中国照明灯饰行业品牌盛典中，钜豪照明荣获“工程照明品牌TOP10”、“设计师推荐品牌TOP10”双殊荣。",
+          "matched_terms": [
+            "荣获"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "home-lighting-brand-source-record-2025",
+    "path": "/news/home-lighting-brand-source-record-2025",
+    "title": "2025 年度“十大家居照明品牌” · 获奖来源记录",
+    "description": "来源记录称获得 2025 年度“十大家居照明品牌”；证书、主办方公告或其他原始材料仍待审核。",
+    "intro": "来源记录称获得 2025 年度“十大家居照明品牌”；证书、主办方公告或其他原始材料仍待审核。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称获得 2025 年度“十大家居照明品牌”。",
+        "points": [
+          "来源所述奖项：2025 年度“十大家居照明品牌”"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "证书、主办方公告或其他原始材料仍需另行审核。",
+        "points": []
+      }
+    ],
+    "published": "2026-01-20",
+    "create_time": "2026-01-20 11:05:11",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 222,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=222",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "获奖报道",
+      "statement": "来源标题及正文称获得“十大家居照明品牌”；仅保留来源所述获奖事件。",
+      "source_basis": [
+        "2025年度中国照明灯饰行业“十大家居照明品牌”称号"
+      ],
+      "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。"
+    },
+    "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。",
+    "project_stage": null,
+    "local_representative_media": {
+      "src": "/images/juhao-home.webp",
+      "alt": "原创家庭空间照明栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创家庭空间照明栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2026-01/696ef09fa3fe8_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-01/696ef09fa3fe8_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0b52b39f.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0b52b39f.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0c228696.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0c228696.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0d27480d.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-01/696ef0d27480d.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "品牌发展记录",
+        "href": "/about/history",
+        "text": "查看品牌时间线及荣誉资料的审核边界。"
+      },
+      {
+        "label": "家居照明解决方案",
+        "href": "/solutions/residential",
+        "text": "从空间任务了解家居照明规划。"
+      },
+      {
+        "label": "提交空间咨询",
+        "href": "/contact?source=news&scene=home-health&intent=space-advice&sourceDetail=home-lighting-brand-source-record-2025#consultation-form",
+        "text": "携带本篇来源标识进入空间咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "钜豪照明荣获“十大家居照明品牌”",
+      "source_description": "钜豪将为千家万户创造更加美好的生活体验",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleTitle",
+          "text": "钜豪照明荣获“十大家居照明品牌”",
+          "matched_terms": [
+            "荣获"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleDesc",
+          "text": "钜豪将为千家万户创造更加美好的生活体验",
+          "matched_terms": [],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[3]",
+          "text": "近日，钜豪照明在2025年度行业评选中，凭借卓越的产品设计、技术创新与市场表现，荣获2025年度中国照明灯饰行业“十大家居照明品牌”称号。",
+          "matched_terms": [
+            "卓越",
+            "荣获"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "yichang-shouhang-hotel-bid",
+    "path": "/news/yichang-shouhang-hotel-bid",
+    "title": "宜昌首航国际大酒店 · 中标报道",
+    "description": "来源记录称中标宜昌首航国际大酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "intro": "来源记录称中标宜昌首航国际大酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称中标宜昌首航国际大酒店；后续实施待证。",
+        "points": [
+          "来源所述阶段：中标",
+          "施工、供货、交付和完工状态待证"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未确认施工、供货、交付或完工状态。",
+        "points": []
+      }
+    ],
+    "published": "2025-12-11",
+    "create_time": "2025-12-11 09:58:13",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 221,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=221",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "中标",
+      "statement": "来源标题明确写“中标宜昌首航国际大酒店”；只可表述中标，不可升级为施工、交付或完工。",
+      "source_basis": [
+        "中标宜昌首航国际大酒店"
+      ],
+      "publication_boundary": "未确认施工、供货、交付或完工状态。"
+    },
+    "publication_boundary": "未确认施工、供货、交付或完工状态。",
+    "project_stage": {
+      "confirmed": "中标报道",
+      "implementation": "后续实施待证"
+    },
+    "local_representative_media": {
+      "src": "/images/juhao-commercial.webp",
+      "alt": "原创精品零售空间重点照明栏目示意图，不作为宜昌首航国际大酒店中标、施工、供货、交付或完工证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创精品零售空间重点照明栏目示意图，不作为宜昌首航国际大酒店中标、施工、供货、交付或完工证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2025-12/693a2527c5f54_thumb.png",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-12/693a2527c5f54_thumb.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21a46b3f7.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21a46b3f7.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21be036c3.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21be036c3.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21e038862.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a21e038862.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2229261e2.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2229261e2.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a223a4dd2b.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a223a4dd2b.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2254a5502.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2254a5502.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a226e5f0d7.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a226e5f0d7.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a229a6ad7b.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a229a6ad7b.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22ab660d7.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22ab660d7.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22bcdf1dc.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22bcdf1dc.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 11,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22e85cd80.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a22e85cd80.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 12,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23005c7f2.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23005c7f2.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 13,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a231953e0e.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a231953e0e.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 14,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a232c31061.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a232c31061.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 15,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a233d48ef5.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a233d48ef5.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 16,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a234e55667.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a234e55667.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 17,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2384b3cbf.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2384b3cbf.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 18,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23a5a932e.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23a5a932e.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 19,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23c1292df.png",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a23c1292df.png",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 20,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a24332648d.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a24332648d.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 21,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2456aaf94.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2456aaf94.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 22,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2466f1d40.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-12/693a2466f1d40.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "酒店照明解决方案",
+        "href": "/solutions/hospitality",
+        "text": "查看酒店空间的照明规划方法，不代表本项目实施内容。"
+      },
+      {
+        "label": "工程案例",
+        "href": "/cases",
+        "text": "按项目阶段查看当前可公开的工程记录。"
+      },
+      {
+        "label": "提交工程咨询",
+        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=yichang-shouhang-hotel-bid#consultation-form",
+        "text": "携带本篇来源标识进入工程咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "喜讯 | 钜豪照明中标宜昌首航国际大酒店！",
+      "source_description": "助力打造鄂西地区的地标性酒店",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleDesc",
+          "text": "助力打造鄂西地区的地标性酒店",
+          "matched_terms": [],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "近日，我们凭借领先的技术方案与深厚的工程实力，继成功中标扬州经开区“一河两岸”户外亮化工程，又荣幸中标宜昌首航国际大酒店照明项目，我们将以专业的灯光方案，助力打造鄂西地区的地标性酒店。",
+          "matched_terms": [
+            "领先",
+            "实力"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[49]",
+          "text": "大面积的艺术吊灯占据宴会厅顶部核心区域，以通透材质+漫射光效营造出“悬浮、轻盈”的视觉效果，既提升了空间的精致度，也契合高端宴会婚宴、商务宴对仪式感和品质感的需求。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[57]",
+          "text": "宴会厅的灯具设计，本质是以“长江文化”为内核，用现代设计语言诠释高端宴会空间的需求，以奢华质感匹配酒店的高端定位。",
+          "matched_terms": [
+            "高端",
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[76]",
+          "text": "壁灯选用金属+柔光罩的简约造型，色调与墙面木饰面、硬包材质一致，既作为墙面装饰元素强化轻奢感，又符合少而精的高端设计原则。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[78]",
+          "text": "所有灯具均以用餐体验为核心（显色性、防眩光、场景适配），同时通过灯光层次（主灯+辅灯）塑造空间的轻奢感，以精致的造型和质感传递酒店高端商务和舒适休闲的定位。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[85]",
+          "text": "会客厅的灯光设计理念，是围绕“现代新中式+奢华商务”的空间定位，结合宜昌本土文化与功能需求展开的。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[89]",
+          "text": "吊灯的格栅/金属框架，呼应了中式窗棂的通透感，同时用现代金属替代传统木材，既保留文化意境，又符合酒店的奢华质感。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[100]",
+          "text": "客房灯光设计的核心理念是“功能适配+氛围营造”，通过融合前沿智能照明科技，既满足客房的实用需求，又塑造高端、舒适的体验感。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[114]",
+          "text": "所有客房灯具均采用暖白光，符合高端酒店客房的温馨标准，避免冷光的疏离感，让灯光本身成为空间温度的载体。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[120]",
+          "text": "接连中标的背后，是市场对钜豪照明品牌实力、产品品质与设计服务能力的高度信赖与一致认可。",
+          "matched_terms": [
+            "实力"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[126]",
+          "text": "钜豪照明凭借高端的照明产品和专业的照明解决方案，在国内外照明界、装饰设计界、酒店业界享有极高的品牌知名度。",
+          "matched_terms": [
+            "极高",
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[130]",
+          "text": "钜豪照明被业内专家称为世界豪华星级酒店照明首选品牌，谌称光明事业的典范。",
+          "matched_terms": [
+            "首选",
+            "典范"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kunming-guandu-wyndham-hotel-bid",
+    "path": "/news/kunming-guandu-wyndham-hotel-bid",
+    "title": "昆明官渡温德姆酒店 · 中标报道",
+    "description": "来源记录称中标昆明官渡温德姆酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "intro": "来源记录称中标昆明官渡温德姆酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称中标昆明官渡温德姆酒店；后续实施待证。",
+        "points": [
+          "来源所述阶段：中标",
+          "施工、供货、交付和完工状态待证"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未确认施工、供货、交付或完工状态。",
+        "points": []
+      }
+    ],
+    "published": "2025-11-21",
+    "create_time": "2025-11-21 09:30:41",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 219,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=219",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "中标",
+      "statement": "来源标题明确写“中标昆明官渡温德姆酒店”；只可表述中标，不可升级为施工、交付或完工。",
+      "source_basis": [
+        "中标昆明官渡温德姆酒店"
+      ],
+      "publication_boundary": "未确认施工、供货、交付或完工状态。"
+    },
+    "publication_boundary": "未确认施工、供货、交付或完工状态。",
+    "project_stage": {
+      "confirmed": "中标报道",
+      "implementation": "后续实施待证"
+    },
+    "local_representative_media": {
+      "src": "/images/juhao-commercial.webp",
+      "alt": "原创精品零售空间重点照明栏目示意图，不作为昆明官渡温德姆酒店中标、施工、供货、交付或完工证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创精品零售空间重点照明栏目示意图，不作为昆明官渡温德姆酒店中标、施工、供货、交付或完工证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2025-11/691fc2539ef2b_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-11/691fc2539ef2b_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf0e8588b.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf0e8588b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf884b815.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf884b815.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf9923325.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbf9923325.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfa7581f2.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfa7581f2.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfb79bb81.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfb79bb81.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfcd91571.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfcd91571.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfea5ff7e.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fbfea5ff7e.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc004b5263.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc004b5263.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc014831cf.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc014831cf.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc02986988.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc02986988.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 11,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc0375e6d4.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc0375e6d4.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 12,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc051e791f.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc051e791f.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 13,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc06019a22.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc06019a22.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 14,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc06f59de0.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/691fc06f59de0.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "酒店照明解决方案",
+        "href": "/solutions/hospitality",
+        "text": "查看酒店空间的照明规划方法，不代表本项目实施内容。"
+      },
+      {
+        "label": "工程案例",
+        "href": "/cases",
+        "text": "按项目阶段查看当前可公开的工程记录。"
+      },
+      {
+        "label": "提交工程咨询",
+        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=kunming-guandu-wyndham-hotel-bid#consultation-form",
+        "text": "携带本篇来源标识进入工程咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "喜讯 | 钜豪照明中标昆明官渡温德姆酒店！",
+      "source_description": "钜豪照明在高端酒店照明领域的领军实力与全球视野",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleDesc",
+          "text": "钜豪照明在高端酒店照明领域的领军实力与全球视野",
+          "matched_terms": [
+            "领军",
+            "实力",
+            "高端"
+          ],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "这一合作不仅为昆明的城市地标矩阵增添了璀璨一笔，更凸显了钜豪在照明行业的综合实力与品牌影响力。",
+          "matched_terms": [
+            "实力",
+            "品牌影响力",
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[14]",
+          "text": "大堂的灯光设计以“层次化叙事+地域文化共鸣”为核心理念，通过灯光的精妙布局，既展现了国际高端酒店的奢华质感，又融入了昆明本土的人文与自然韵味。",
+          "matched_terms": [
+            "高端",
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[16]",
+          "text": "灯光采用高位（天花灯带）、中位（柱体洗墙灯）、低位（地面氛围灯）的多层级布光逻辑，奢华中见松弛，现代里藏时尚，符合温德姆五星高端酒店“舒适至上”的体验感。",
+          "matched_terms": [
+            "高端",
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[24]",
+          "text": "大堂吧的灯光设计，以“雅致社交+当地文化意境”为核心，在光影间平衡了奢华质感与松弛氛围，打造出一处适合多元社交的“春城会客厅”。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[28]",
+          "text": "大堂吧为“社交场景”量身定制的灯光效果，分层照明塑造空间的“呼吸感”，采用“天花基础光+区域重点光+装饰氛围光”的三层逻辑，既有奢华里的松弛感，现代中的东方意，还呼应昆明“翡翠之乡”的地域符号。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[36]",
+          "text": "全日制餐厅的灯光设计，是“国际化餐饮场景”与“滇式文化意境”的融合，以光影为笔，在奢华与烟火、现代与传统的平衡中，打造出一处能承载全时段、多场景用餐需求的“滇式美学食堂”。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[64]",
+          "text": "婚宴厅的灯光设计，以昆明“翡翠文化”为内核，通过高饱和色彩与金属质感的光影碰撞，构建“奢华婚礼殿堂”的视觉符号。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[74]",
+          "text": "多功能厅的灯光设计，以“场景化适配+品质感营造”为核心理念，通过光影的精细布局，实现了会议与宴会场景的灵活切换，同时传递出高端商务空间的雅致韵味。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[104]",
+          "text": "钜豪照明中标昆明官渡温德姆酒店项目，不仅是一次商业合作的成功，更是其行业影响力的集中展现，彰显出钜豪照明在高端酒店照明领域的领军实力与全球视野。",
+          "matched_terms": [
+            "领军",
+            "实力",
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[106]",
+          "text": "凭借高端的照明产品和专业的照明解决方案，在国内外照明界、装饰设计界、酒店业界享有极高的品牌知名度。",
+          "matched_terms": [
+            "极高",
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[109]",
+          "text": "钜豪照明被业内专家称为世界豪华星级酒店照明首选品牌，谌称光明事业的典范。",
+          "matched_terms": [
+            "首选",
+            "典范"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "dalian-jinzhou-crowne-plaza-hotel-bid",
+    "path": "/news/dalian-jinzhou-crowne-plaza-hotel-bid",
+    "title": "大连金州皇冠假日酒店 · 中标报道",
+    "description": "来源记录称中标大连金州皇冠假日酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "intro": "来源记录称中标大连金州皇冠假日酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称中标大连金州皇冠假日酒店；后续实施待证。",
+        "points": [
+          "来源所述阶段：中标",
+          "施工、供货、交付和完工状态待证"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未确认施工、供货、交付或完工状态。",
+        "points": []
+      }
+    ],
+    "published": "2025-08-12",
+    "create_time": "2025-08-12 09:27:23",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 218,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=218",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "中标",
+      "statement": "来源标题明确写“中标大连金州皇冠假日酒店”；只可表述中标，不可升级为施工、交付或完工。",
+      "source_basis": [
+        "中标大连金州皇冠假日酒店"
+      ],
+      "publication_boundary": "未确认施工、供货、交付或完工状态。"
+    },
+    "publication_boundary": "未确认施工、供货、交付或完工状态。",
+    "project_stage": {
+      "confirmed": "中标报道",
+      "implementation": "后续实施待证"
+    },
+    "local_representative_media": {
+      "src": "/images/juhao-commercial.webp",
+      "alt": "原创精品零售空间重点照明栏目示意图，不作为大连金州皇冠假日酒店中标、施工、供货、交付或完工证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创精品零售空间重点照明栏目示意图，不作为大连金州皇冠假日酒店中标、施工、供货、交付或完工证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2025-08/689a970ca7678_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-08/689a970ca7678_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a9747ce941.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a9747ce941.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a977062298.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a977062298.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a977daadf3.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a977daadf3.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97ae08023.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97ae08023.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97bc68872.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97bc68872.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97d2a28f8.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97d2a28f8.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97dcd240a.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97dcd240a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97ed720f9.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97ed720f9.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97f6b6404.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a97f6b6404.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a9835c4f65.jpg",
+        "src": "http://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689a9835c4f65.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "酒店照明解决方案",
+        "href": "/solutions/hospitality",
+        "text": "查看酒店空间的照明规划方法，不代表本项目实施内容。"
+      },
+      {
+        "label": "工程案例",
+        "href": "/cases",
+        "text": "按项目阶段查看当前可公开的工程记录。"
+      },
+      {
+        "label": "提交工程咨询",
+        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=dalian-jinzhou-crowne-plaza-hotel-bid#consultation-form",
+        "text": "携带本篇来源标识进入工程咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "喜讯 | 钜豪照明中标大连金州皇冠假日酒店！",
+      "source_description": "光的使命重塑商旅地标",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleDesc",
+          "text": "光的使命重塑商旅地标",
+          "matched_terms": [],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "对钜豪而言，则标志着公司在高端酒店照明领域再次获得的重要认可和又一战略性突破。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[7]",
+          "text": "这里，曾是大连金普新区的涉外商务标杆——大连凯伦饭店（1993）。",
+          "matched_terms": [
+            "标杆"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[7]",
+          "text": "2024年，她破茧成蝶，携手洲际酒店集团，跃升为国际五星“皇冠假日”，填补区域高端酒店版图的留白。",
+          "matched_terms": [
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[7]",
+          "text": "钜豪之光，正是这华丽转身的璀璨见证。",
+          "matched_terms": [
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[31]",
+          "text": "中标即实力：光影重构价值的典范之作",
+          "matched_terms": [
+            "典范",
+            "实力"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[33]",
+          "text": "它是钜豪“高端酒店光环境全案服务商”综合实力的又一次璀璨实证，更是我们以光影重构空间价值的典范之作。",
+          "matched_terms": [
+            "典范",
+            "实力",
+            "高端",
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[41]",
+          "text": "钜豪照明凭借高端的照明产品和专业的照明解决方案，在国内外照明界、装饰设计界、酒店业界享有极高的品牌知名度。",
+          "matched_terms": [
+            "极高",
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[45]",
+          "text": "钜豪照明被业内专家称为世界豪华星级酒店照明首选品牌，谌称光明事业的典范。",
+          "matched_terms": [
+            "首选",
+            "典范"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "nanyandangshan-binyue-resort-hotel-bid",
+    "path": "/news/nanyandangshan-binyue-resort-hotel-bid",
+    "title": "南雁荡山宾月花园度假酒店 · 中标报道",
+    "description": "来源记录称中标南雁荡山宾月花园度假酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "intro": "来源记录称中标南雁荡山宾月花园度假酒店；仅保留中标报道阶段，施工、供货、交付和完工状态待证。",
+    "sections": [
+      {
+        "title": "来源记录的阶段",
+        "text": "来源记录称中标南雁荡山宾月花园度假酒店；后续实施待证。",
+        "points": [
+          "来源所述阶段：中标",
+          "施工、供货、交付和完工状态待证"
+        ]
+      },
+      {
+        "title": "公开发布边界",
+        "text": "未确认施工、供货、交付或完工状态。",
+        "points": []
+      }
+    ],
+    "published": "2025-08-11",
+    "create_time": "2025-08-11 10:53:37",
+    "source_type": "mall_sql_jh_articles",
+    "source_id": 217,
+    "source_path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
+    "source_locator": "jh_articles.articleId=217",
+    "source_sql_sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8",
+    "source_status": {
+      "is_show": "1",
+      "data_flag": "1",
+      "interpretation": "active_in_source"
+    },
+    "phase_conservative_summary": {
+      "stage": "中标",
+      "statement": "来源标题明确写“中标南雁荡山宾月花园度假酒店”；只可表述中标，不可升级为施工、交付或完工。",
+      "source_basis": [
+        "中标南雁荡山宾月花园度假酒店"
+      ],
+      "publication_boundary": "未确认施工、供货、交付或完工状态。"
+    },
+    "publication_boundary": "未确认施工、供货、交付或完工状态。",
+    "project_stage": {
+      "confirmed": "中标报道",
+      "implementation": "后续实施待证"
+    },
+    "local_representative_media": {
+      "src": "/images/juhao-commercial.webp",
+      "alt": "原创精品零售空间重点照明栏目示意图，不作为南雁荡山宾月花园度假酒店中标、施工、供货、交付或完工证据",
+      "width": 1672,
+      "height": 941,
+      "role": "section_illustration",
+      "evidence_role": "representative_not_evidence",
+      "caption": "原创精品零售空间重点照明栏目示意图，不作为南雁荡山宾月花园度假酒店中标、施工、供货、交付或完工证据。",
+      "rights_status": "approved",
+      "provenance_path": "RECON/JUHAO_ASSET_PROVENANCE.md"
+    },
+    "remote_media_sources": [
+      {
+        "role": "cover",
+        "order": 1,
+        "source_field": "coverImg",
+        "raw_src": "upload/articles/2025-08/68995ae41e0d1_thumb.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-08/68995ae41e0d1_thumb.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 1,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995933a02fa.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995933a02fa.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 2,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/6899593f1d98c.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/6899593f1d98c.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 3,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959985158a.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959985158a.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 4,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959a4c3bbc.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959a4c3bbc.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 5,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959b13a2d2.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959b13a2d2.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 6,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959c0dcd16.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959c0dcd16.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 7,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959ce5b50b.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959ce5b50b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 8,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959dcb752d.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959dcb752d.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 9,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959e7c625c.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959e7c625c.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 10,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959f4cdd9c.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/689959f4cdd9c.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 11,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a0038e8b.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a0038e8b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 12,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a1012c1f.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a1012c1f.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 13,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a1a03d62.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a1a03d62.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 14,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a26cd1cf.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a26cd1cf.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 15,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a3282124.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a3282124.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 16,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a41c96ea.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a41c96ea.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 17,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a50ddb79.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a50ddb79.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 18,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a60695ed.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a60695ed.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 19,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a6f7f30b.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a6f7f30b.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      },
+      {
+        "role": "body",
+        "order": 20,
+        "source_field": "articleContent",
+        "raw_src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a971e8cf.jpg",
+        "src": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-08/68995a971e8cf.jpg",
+        "publication_gate": "public_media_authorization_not_verified"
+      }
+    ],
+    "related": [
+      {
+        "label": "酒店照明解决方案",
+        "href": "/solutions/hospitality",
+        "text": "查看酒店空间的照明规划方法，不代表本项目实施内容。"
+      },
+      {
+        "label": "工程案例",
+        "href": "/cases",
+        "text": "按项目阶段查看当前可公开的工程记录。"
+      },
+      {
+        "label": "提交工程咨询",
+        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=nanyandangshan-binyue-resort-hotel-bid#consultation-form",
+        "text": "携带本篇来源标识进入工程咨询。"
+      }
+    ],
+    "governance": {
+      "page_copy_basis": "phase_conservative_summary_only",
+      "source_title": "喜讯 | 钜豪照明中标南雁荡山宾月花园度假酒店！",
+      "source_description": "钜豪照明将以光为笔绘就酒店新图景",
+      "excluded_unverified_claims": [
+        {
+          "source_field": "articleDesc",
+          "text": "钜豪照明将以光为笔绘就酒店新图景",
+          "matched_terms": [],
+          "reason": "source_article_description_requires_review",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[1]",
+          "text": "近日，钜豪照明凭借卓越的品牌优势与匠心品质，成功中标省级“千项万亿”重点项目——南雁荡山宾月花园度假酒店项目，钜豪照明将以光为笔，绘就南雁荡山宾月花园度假酒店新图景。",
+          "matched_terms": [
+            "卓越"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[79]",
+          "text": "阵列式小吊灯如星河璀璨，银辉漫染珍馐，壁灯延续宋风雅韵元素；",
+          "matched_terms": [
+            "璀璨"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[93]",
+          "text": "壁灯嵌入墙面如一幅立体“小景画”，强调空间层次与艺术感，灯带巧妙划分区域，营造奢华舒适的度假体验。",
+          "matched_terms": [
+            "奢华"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[103]",
+          "text": "钜豪照明凭借高端的照明产品和专业的照明解决方案，在国内外照明界、装饰设计界、酒店业界享有极高的品牌知名度。",
+          "matched_terms": [
+            "极高",
+            "高端"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        },
+        {
+          "source_field": "articleContent.block[107]",
+          "text": "钜豪照明被业内专家称为世界豪华星级酒店照明首选品牌，谌称光明事业的典范。",
+          "matched_terms": [
+            "首选",
+            "典范"
+          ],
+          "reason": "promotional_language_detected",
+          "publication_gate": "requires_independent_verification_or_removal"
+        }
+      ]
+    }
+  }
+] as const satisfies readonly CompanyNewsSeed[];
+
+export const companyNewsArticles: readonly CompanyNewsArticle[] = seeds.map((seed) => {
+  const { remote_media_sources, ...article } = seed;
+  return {
+    ...article,
+    remote_media: remote_media_sources.map((media) => ({
+      ...media,
+      rights_status: "needs_review" as const,
+      publish_allowed: false as const,
+      evidence_role: "candidate_not_published" as const,
+    })),
+  };
+});
+
+export const companyNewsByPath: ReadonlyMap<string, CompanyNewsArticle> = new Map(
+  companyNewsArticles.map((article) => [article.path, article]),
+);
+
+export function companyNewsArticleByPath(path: string) {
+  return companyNewsByPath.get(path);
+}
+
+export const companyNewsPages = Object.fromEntries(
+  companyNewsArticles.map((article) => [article.path.slice(1), {
+    path: article.path,
+    label: article.title,
+    eyebrow: `COMPANY NEWS · ${article.phase_conservative_summary.stage}`,
+    title: article.title,
+    seoTitle: `${article.title}｜钜豪照明企业动态`,
+    description: article.description,
+    image: article.local_representative_media.src,
+    imageAlt: article.local_representative_media.alt,
+    intro: article.intro,
+    type: "article",
+    published: article.published,
+    noindex: true,
+    highlights: [
+      { title: "来源阶段", text: article.phase_conservative_summary.stage },
+      { title: "事实边界", text: article.publication_boundary },
+      { title: "媒体状态", text: "来源图片尚未完成公开使用授权核验，当前仅使用原创栏目示意图。" },
+    ],
+    sections: article.sections.map((section) => ({
+      title: section.title,
+      text: section.text,
+      points: [...section.points],
+    })),
+    related: article.related.map((item) => ({ ...item })),
+    companyNewsEvidence: article,
+  } satisfies PageData]),
+) as Record<string, PageData>;
+
+export const companyNewsRoutes = companyNewsArticles.map((article) => article.path);

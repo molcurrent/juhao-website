@@ -290,11 +290,11 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
               <div className={styles.submitHeading}>
                 <small>STEP 02 / CONTACT</small>
                 <h3 id={`${resultId}-submit-title`}>选择后续联系方法</h3>
-                <p>电话和邮件可直接联系；企业微信入口尚未完成企业核验，暂不开放。需要钜豪回访时，请填写下方最少信息。</p>
+                <p>电话、邮件和企业微信入口尚未完成企业核验，暂不作为公开联系渠道。需要钜豪回访时，请填写下方最少信息。</p>
               </div>
               <div className={styles.channelOptions} aria-label="咨询联系方式">
-                <a href="tel:4000760888"><small>电话</small><strong>400-0760-888</strong><span>一键拨打 ↗</span></a>
-                <a href={`mailto:export@juhaolamp.com?subject=${encodeURIComponent("钜豪照明官网咨询")}&body=${encodeURIComponent(`咨询来源：${activeContext?.source ?? "direct"}\n场景：${activeContext?.scene ?? ""}\n意图：${activeContext?.intent ?? ""}\n\n请在此补充需求：`)}`}><small>邮件</small><strong>export@juhaolamp.com</strong><span>新建邮件 ↗</span></a>
+                <span className={styles.channelUnavailable} aria-disabled="true"><small>电话</small><strong>待企业核验</strong><span>当前不可用</span></span>
+                <span className={styles.channelUnavailable} aria-disabled="true"><small>邮件</small><strong>待企业核验</strong><span>当前不可用</span></span>
                 <span className={styles.channelUnavailable} aria-disabled="true"><small>企业微信</small><strong>待企业核验</strong><span>当前不可用</span></span>
                 <span className={styles.channelCallback}><small>提交回访</small><strong>填写下方表单</strong><span>系统生成线索编号</span></span>
               </div>
@@ -343,12 +343,12 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
       </section>
 
       <section className={styles.officialContacts} aria-labelledby="official-contact-title">
-        <div><p>04 / VERIFIED CONTACT</p><h2 id="official-contact-title">官网公开联系信息</h2><span>以下信息已按现有 juhao.com 公开页面核对，不使用知识库中的第三方联系方式。</span></div>
+        <div><p>04 / CONTACT REVIEW</p><h2 id="official-contact-title">联系信息签核状态</h2><span>本地知识库没有可作为正式主体证明的联系方式；以下渠道完成企业负责人签核前不公开具体值。</span></div>
         <address>
-          <a href="tel:4000760888"><small>服务热线</small><strong>400-0760-888</strong></a>
-          <a href="tel:+8676089855555"><small>联系电话</small><strong>+86 0760 8985 5555</strong></a>
-          <a href="mailto:export@juhaolamp.com"><small>电子邮箱</small><strong>export@juhaolamp.com</strong></a>
-          <div><small>企业地址</small><strong>广东省中山市横栏镇富庆一路 8 号<br/>钜豪工业园</strong></div>
+          <div><small>服务热线</small><strong>待企业签核</strong></div>
+          <div><small>联系电话</small><strong>待企业签核</strong></div>
+          <div><small>电子邮箱</small><strong>待企业签核</strong></div>
+          <div><small>企业地址</small><strong>待企业签核</strong></div>
         </address>
       </section>
 

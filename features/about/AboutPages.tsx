@@ -49,14 +49,18 @@ const brandStories = [
 const historyEvents = [
   { year: "2020", title: "区域渠道战略持续推进", text: "钜豪照明召开华东地区优秀经销商会议，围绕区域协同与后续发展战略展开沟通。", source: "企业资料 #149" },
   { year: "2021", title: "钜豪智慧家庭正式发布", text: "钜豪在集团总部举行智慧家庭发布会，公开面向全屋智能与照明协同的发展方向。", source: "企业资料 #160" },
+  { year: "2022", title: "行业品牌荣誉报道", text: "企业新闻记录钜豪照明获得行业领袖品牌相关荣誉；证书原件与官网公开授权仍待品牌负责人确认。", source: "企业资料 #184" },
+  { year: "2022", title: "知识产权保护工作室报道", text: "企业新闻记录中山市企业知识产权保护流动工作室落户钜豪照明。", source: "企业资料 #185" },
+  { year: "2023", title: "春季新品订货会", text: "企业新闻记录钜豪与经销商围绕年度产品和渠道方向开展交流。", source: "企业资料 #188" },
   { year: "2024", title: "春季优秀经销商会", text: "全国经销商伙伴在钜豪工业园交流年度战略、产品与渠道协同。", source: "企业资料 #192" },
   { year: "2025", title: "春季新品订货会", text: "钜豪发布年度产品与发展方向，并与全国经销商共同讨论照明行业趋势。", source: "企业资料 #205" },
   { year: "2026", title: "优秀经销商盛典与新品品鉴", text: "钜豪与全国经销商伙伴继续推进新品、工程与渠道合作。", source: "企业资料 #224" },
+  { year: "2026", title: "广州光亚展参展报道", text: "企业新闻记录钜豪参加 2026 广州光亚展；展位、客流和渠道效果不在本页作独立结论。", source: "企业资料 #232" },
 ] as const;
 
 const brandHonors = [
-  { year: "2019", title: "行业领袖品牌", source: "企业资料 #25" },
   { year: "2021", title: "智能照明年度影响力品牌创新奖", source: "企业资料 #167" },
+  { year: "2022", title: "行业领袖品牌相关报道", source: "企业资料 #184" },
   { year: "2026", title: "工程照明品牌 TOP10", source: "企业资料 #223" },
   { year: "2026", title: "设计师推荐品牌 TOP10", source: "企业资料 #223" },
   { year: "2026", title: "中国智慧道路照明大会优秀合作伙伴", source: "企业资料 #225" },
@@ -272,7 +276,7 @@ export function HistoryPage({ page }: PageProps) {
           <p>{page.intro}</p>
           <div className={styles.verificationBadge} role="status">
             <span aria-hidden="true" />
-            企业知识库公司新闻已核验
+            企业知识库公司新闻来源已核对
           </div>
         </div>
       </section>
@@ -287,7 +291,7 @@ export function HistoryPage({ page }: PageProps) {
         </header>
         <ol className={styles.timeline}>
           {historyEvents.map((item, index) => (
-            <li key={item.year} data-reveal data-reveal-delay={String(index * 0.08)}>
+            <li key={`${item.year}-${item.source}`} data-reveal data-reveal-delay={String(index * 0.08)}>
               <div className={styles.timelineRail} aria-hidden="true"><span /></div>
               <div className={styles.timelineWhen}>{item.year}</div>
               <article>
@@ -302,7 +306,7 @@ export function HistoryPage({ page }: PageProps) {
       </section>
 
       <section className={styles.honorsSection} aria-labelledby="honors-title">
-        <header><p className={styles.kicker}>BRAND HONORS</p><h2 id="honors-title">品牌荣誉</h2><span>仅列出已有企业新闻记录的荣誉，不延伸未核实的行业排名或宣传口径。</span></header>
+        <header><p className={styles.kicker}>BRAND HONORS</p><h2 id="honors-title">荣誉资料线索</h2><span>仅列出企业新闻已有记录的荣誉线索；证书原件、授予主体和图片公开授权仍需品牌负责人签核。</span></header>
         <div>{brandHonors.map((honor) => <article key={`${honor.year}-${honor.title}`}><small>{honor.year}</small><h3>{honor.title}</h3><p>{honor.source}</p></article>)}</div>
       </section>
 

@@ -1,41 +1,25 @@
 import type { MetadataRoute } from "next";
-import { pages, SITE_URL } from "./_data/pages";
-import { NEWS_PAGE_SIZE, newsPagePath } from "@/lib/news-pagination";
-import { caseStudies, productTopics } from "@/content/catalog";
-import { products } from "@/content/products";
+import { SITE_URL } from "./_data/pages";
+import { lastModifiedForPublication, publishedIndexableRecords } from "@/content/publication-ledger";
+
+function routePriority(contentType: string, route: string) {
+  if (route === "/") return 1;
+  if (route === "/solutions") return 0.9;
+  if (["文章", "内容分页"].includes(contentType)) return 0.65;
+  if (["产品", "案例", "产品专题"].includes(contentType)) return 0.75;
+  return 0.8;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
-  const newsPagination = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({
-    url: `${SITE_URL}${newsPagePath(index + 2)}`,
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
-
-  return [
-    { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
-    ...Object.values(pages).filter((page) => !page.noindex).map((page) => ({
-      url: `${SITE_URL}${page.path}`,
-      ...(page.published ? { lastModified: page.published } : {}),
-      changeFrequency: page.type === "article" ? "monthly" as const : "weekly" as const,
-      priority: page.path === "/solutions" ? 0.9 : page.type === "article" ? 0.65 : 0.8,
-    })),
-    ...productTopics.map((topic) => ({
-      url: `${SITE_URL}/products/${topic.slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    })),
-    ...caseStudies.map((study) => ({
-      url: `${SITE_URL}/cases/${study.slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    })),
-    ...products.map((product) => ({
-      url: `${SITE_URL}${product.seo_slug}`,
-      lastModified: product.publish_date,
-      changeFrequency: "monthly" as const,
-      priority: 0.72,
-    })),
-    ...newsPagination,
-  ];
+  return publishedIndexableRecords.map((record) => {
+    const lastModified = lastModifiedForPublication(record);
+    return {
+      url: record.canonical_slug === "/" ? SITE_URL : `${SITE_URL}${record.canonical_slug}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: ["文章", "案例", "产品", "产品专题"].includes(record.content_type)
+        ? "monthly" as const
+        : "weekly" as const,
+      priority: routePriority(record.content_type, record.canonical_slug),
+    };
+  });
 }

@@ -1,5 +1,7 @@
 import { pages } from "@/app/_data/pages";
-import type { DownloadItem, NewsItem, ProductCard, SearchResult, ServiceLocation, ServiceRegion, SiteApi } from "./types";
+import { isPublishedRoute } from "@/content/publication-ledger";
+import { searchSite } from "@/content/search-index";
+import type { DownloadItem, NewsItem, ProductCard, ServiceLocation, ServiceRegion, SiteApi } from "./types";
 
 const products: ProductCard[] = [
   { id: "linear-01", name: "线性照明组合", category: "基础照明", summary: "用于连续、均匀的空间基础光。", image: "/images/juhao-home.webp", sceneIds: ["residential", "commercial"] },
@@ -17,24 +19,19 @@ const locations: ServiceLocation[] = [
   { id: "sh-demo", name: "上海服务示例点", city: "上海", address: "正式地址待企业确认" },
 ];
 
-const searchablePages: SearchResult[] = Object.values(pages)
-  .filter((page) => !["/search", "/legal", "/privacy"].includes(page.path))
-  .map((page) => ({
-    path: page.path,
-    title: page.title,
-    description: page.description,
-    type: page.type ?? "page",
-  }));
-
 const news: NewsItem[] = Object.values(pages)
-  .filter((page) => page.type === "article")
+  .filter((page) => page.type === "article" && isPublishedRoute(page.path))
   .map((page) => ({
     path: page.path,
     title: page.title,
     description: page.description,
     image: page.image,
     published: page.published,
-  }));
+  }))
+  .sort((left, right) => {
+    const dateOrder = (right.published ?? "").localeCompare(left.published ?? "");
+    return dateOrder || left.path.localeCompare(right.path);
+  });
 
 const downloads: DownloadItem[] = [];
 
@@ -55,11 +52,7 @@ export const mockSiteApi: SiteApi = {
     ];
   },
   async search(query) {
-    const normalized = query.trim().toLocaleLowerCase("zh-CN");
-    if (!normalized) return [];
-    return searchablePages.filter((page) =>
-      `${page.title} ${page.description}`.toLocaleLowerCase("zh-CN").includes(normalized),
-    );
+    return searchSite(query);
   },
   async getNewsArticles(query = {}) {
     const page = Math.max(1, Math.trunc(query.page ?? 1));

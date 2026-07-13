@@ -33,7 +33,9 @@
 切换后运行：
 
 ```bash
-BASE_URL=https://www.juhao.com node scripts/check_launch_health.mjs
+BASE_URL=https://www.juhao.com \
+PUBLIC_INDEXING_ENABLED=1 \
+node scripts/check_launch_health.mjs
 ```
 
 私有 Sites 版本验收可传入已有旁路令牌；脚本不会输出令牌：
@@ -44,21 +46,26 @@ OAI_SITES_BYPASS_TOKEN=<token> \
 node scripts/check_launch_health.mjs
 ```
 
+脚本默认按私有预览模式验收：核心页面必须带 `robots noindex`，sitemap 必须保持 0 条 URL。只有内容人工签核、图片权利确认并准备公开收录后，才可显式设置 `PUBLIC_INDEXING_ENABLED=1`；公开模式要求核心页面不带 `noindex`，且 sitemap 至少包含 60 条 URL。
+
 切换窗口必须同时检查商城：
 
 ```bash
 BASE_URL=https://www.juhao.com \
 MALL_BASE_URL=https://mall.juhao.com \
 CHECK_MALL=1 \
+PUBLIC_INDEXING_ENABLED=1 \
 node scripts/check_launch_health.mjs
 ```
 
 脚本检查：
 
 - 8 条核心路由返回 200、存在 canonical、无 NVC/雷士/CNZZ 残留；
+- 私有预览模式下核心路由带 `noindex` 且 sitemap 为空；
+- 显式开启公开模式后核心路由可索引且 sitemap 至少包含 60 条 URL；
 - 6 条已确认垃圾 URL 返回 410 且带 `noindex`；
 - `/login.html` 跳转到独立商城；
-- sitemap 可访问且至少包含 60 条 URL。
+- sitemap 可访问。
 
 ## 持续监控
 

@@ -1,4 +1,4 @@
-export const NEWS_PAGE_SIZE = 2;
+export const NEWS_PAGE_SIZE = 6;
 
 export function newsPagePath(page: number) {
   return page <= 1 ? "/news" : `/news/page/${page}`;

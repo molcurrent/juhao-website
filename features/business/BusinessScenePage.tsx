@@ -2,30 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import type { PageData } from "@/app/_data/pages";
-import { siteApi, type ProductCard } from "@/lib/api";
+import type { BusinessSceneId, SceneResource } from "@/content/scene-resources";
+import { consultationHref } from "@/lib/consultation";
 import { gsap, motionEase, useGSAP } from "@/lib/motion/gsap";
 import styles from "./BusinessScenePage.module.css";
 
-export type BusinessSceneId =
-  | "residential"
-  | "hospitality"
-  | "commercial"
-  | "public"
-  | "industrial";
+export type { BusinessSceneId } from "@/content/scene-resources";
 
 export type BusinessScenePageProps = {
   page: PageData;
   sceneId: BusinessSceneId;
-};
-
-type ProductsState = "loading" | "success" | "error";
-
-type ProductsResult = {
-  key: string;
-  products: ProductCard[];
-  status: ProductsState;
+  resources: SceneResource[];
 };
 
 const scenes: { id: BusinessSceneId; label: string; href: string }[] = [
@@ -146,158 +135,39 @@ function SceneFaq({ faqs }: { faqs: NonNullable<PageData["faqs"]> }) {
   );
 }
 
-function ProductDialog({
-  product,
-  dialogRef,
-  closeButtonRef,
-  onClose,
-}: {
-  product: ProductCard;
-  dialogRef: React.RefObject<HTMLDialogElement | null>;
-  closeButtonRef: React.RefObject<HTMLButtonElement | null>;
-  onClose: () => void;
-}) {
-  return (
-    <dialog
-      className={styles.dialog}
-      ref={dialogRef}
-      aria-labelledby="business-product-title"
-      aria-describedby="business-product-description"
-      onClose={onClose}
-      onClick={(event) => {
-        if (event.target === event.currentTarget) event.currentTarget.close();
-      }}
-    >
-      <button
-        className={styles.dialogClose}
-        ref={closeButtonRef}
-        type="button"
-        onClick={() => dialogRef.current?.close()}
-        aria-label="关闭产品详情"
-      >
-        <span aria-hidden="true">×</span>
-      </button>
-      <div className={styles.dialogImage}>
-        <Image src={product.image} alt={product.name} fill unoptimized sizes="(max-width: 720px) 90vw, 42vw" />
-      </div>
-      <div className={styles.dialogContent}>
-        <p className={styles.productCategory}>{product.category}</p>
-        <h2 id="business-product-title">{product.name}</h2>
-        <p id="business-product-description">{product.summary}</p>
-        <div className={styles.dataNotice}>
-          <strong>资料说明</strong>
-          <p>当前未发布具体型号与产品参数，正式信息以钜豪核验资料为准。</p>
-        </div>
-      </div>
-    </dialog>
-  );
-}
-
-function ProductSection({
-  products,
-  status,
-  onRetry,
-  onOpen,
-}: {
-  products: ProductCard[];
-  status: ProductsState;
-  onRetry: () => void;
-  onOpen: (product: ProductCard, trigger: HTMLButtonElement) => void;
-}) {
+function ProductSection({ resources }: { resources: SceneResource[] }) {
   return (
     <section className={styles.products} aria-labelledby="scene-products-title">
       <header className={styles.productsHeading}>
         <div>
-          <p>PRODUCT DIRECTIONS</p>
-          <h2 id="scene-products-title">场景产品组合</h2>
+          <p>RELATED RESOURCES</p>
+          <h2 id="scene-products-title">场景关联资料</h2>
         </div>
-        <p>产品数据通过可替换的数据层加载；具体型号、参数与适用条件以企业确认资料为准。</p>
+        <p>从产品专题、产品资料、项目资料与照明知识继续理解本场景；当前内容用于私有预览，具体适用条件仍以正式资料和项目确认结果为准。</p>
       </header>
-
-      <div className={styles.productState} aria-live="polite" aria-busy={status === "loading"}>
-        {status === "loading" && (
-          <div className={styles.loadingGrid} aria-label="正在加载产品">
-            {[0, 1, 2].map((item) => <span key={item} />)}
-          </div>
-        )}
-
-        {status === "error" && (
-          <div className={styles.stateMessage} role="alert">
-            <strong>产品数据暂时无法加载</strong>
-            <p>请稍后重试。</p>
-            <button type="button" onClick={onRetry}>重新加载</button>
-          </div>
-        )}
-
-        {status === "success" && products.length === 0 && (
-          <div className={styles.stateMessage}>
-            <strong>该场景的产品资料正在整理</strong>
-            <p>当前没有可展示的已接入产品。</p>
-          </div>
-        )}
-
-        {status === "success" && products.length > 0 && (
-          <div className={styles.productGrid}>
-            {products.map((product, index) => (
-              <article className={styles.productCard} key={product.id}>
-                <div className={styles.productImage}>
-                  <Image src={product.image} alt={product.name} fill unoptimized sizes="(max-width: 760px) 100vw, 33vw" />
-                </div>
-                <div className={styles.productCopy}>
-                  <small>{product.category} / {String(index + 1).padStart(2, "0")}</small>
-                  <h3>{product.name}</h3>
-                  <p>{product.summary}</p>
-                  <button type="button" onClick={(event) => onOpen(product, event.currentTarget)}>
-                    查看详情 <span aria-hidden="true">↗</span>
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+      <div className={styles.productState}>
+        <div className={styles.productGrid}>
+          {resources.map((resource, index) => (
+            <Link className={styles.productCard} href={resource.href} key={resource.href} data-resource-kind={resource.kind}>
+              <div className={styles.productImage}>
+                <Image src={resource.image} alt={resource.title} fill unoptimized sizes="(max-width: 760px) 100vw, 25vw" />
+              </div>
+              <div className={styles.productCopy}>
+                <small>{resource.kind} / {resource.detail} / {String(index + 1).padStart(2, "0")}</small>
+                <h3>{resource.title}</h3>
+                <p>{resource.summary}</p>
+                <span className={styles.resourceAction}>查看内容 <b aria-hidden="true">↗</b></span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-export function BusinessScenePage({ page, sceneId }: BusinessScenePageProps) {
+export function BusinessScenePage({ page, sceneId, resources }: BusinessScenePageProps) {
   const rootRef = useRef<HTMLElement>(null);
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const openerRef = useRef<HTMLButtonElement | null>(null);
-  const [retryKey, setRetryKey] = useState(0);
-  const requestKey = `${sceneId}:${retryKey}`;
-  const [productResult, setProductResult] = useState<ProductsResult>({
-    key: requestKey,
-    products: [],
-    status: "loading",
-  });
-  const [selectedProduct, setSelectedProduct] = useState<ProductCard | null>(null);
-  const products = productResult.key === requestKey ? productResult.products : [];
-  const status: ProductsState = productResult.key === requestKey ? productResult.status : "loading";
-
-  useEffect(() => {
-    let active = true;
-
-    siteApi.getProducts(sceneId).then(
-      (nextProducts) => {
-        if (!active) return;
-        setProductResult({ key: requestKey, products: nextProducts, status: "success" });
-      },
-      () => {
-        if (!active) return;
-        setProductResult({ key: requestKey, products: [], status: "error" });
-      },
-    );
-
-    return () => { active = false; };
-  }, [requestKey, sceneId]);
-
-  useEffect(() => {
-    if (!selectedProduct || !dialogRef.current) return;
-    if (!dialogRef.current.open) dialogRef.current.showModal();
-    closeButtonRef.current?.focus();
-  }, [selectedProduct]);
 
   useGSAP(
     () => {
@@ -315,7 +185,6 @@ export function BusinessScenePage({ page, sceneId }: BusinessScenePageProps) {
 
   useGSAP(
     () => {
-      if (status !== "success" || products.length === 0) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       gsap.from(`.${styles.productCard}`, {
         opacity: 0,
@@ -325,27 +194,8 @@ export function BusinessScenePage({ page, sceneId }: BusinessScenePageProps) {
         ease: motionEase,
       });
     },
-    { scope: rootRef, dependencies: [products.length, sceneId, status], revertOnUpdate: true },
+    { scope: rootRef, dependencies: [resources.length, sceneId], revertOnUpdate: true },
   );
-
-  useGSAP(
-    () => {
-      if (!selectedProduct || !dialogRef.current) return;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.from(dialogRef.current, { opacity: 0, scale: 0.97, y: 18, duration: 0.38, ease: motionEase });
-    },
-    { scope: rootRef, dependencies: [selectedProduct?.id], revertOnUpdate: true },
-  );
-
-  const openProduct = useCallback((product: ProductCard, trigger: HTMLButtonElement) => {
-    openerRef.current = trigger;
-    setSelectedProduct(product);
-  }, []);
-
-  const closeProduct = useCallback(() => {
-    setSelectedProduct(null);
-    requestAnimationFrame(() => openerRef.current?.focus());
-  }, []);
 
   return (
     <main className={styles.page} id="main-content" ref={rootRef}>
@@ -353,20 +203,11 @@ export function BusinessScenePage({ page, sceneId }: BusinessScenePageProps) {
       <SceneNavigation sceneId={sceneId} />
       <SolutionHighlights page={page} />
       {page.faqs?.length ? <SceneFaq faqs={page.faqs} /> : null}
-      <ProductSection
-        products={products}
-        status={status}
-        onRetry={() => setRetryKey((key) => key + 1)}
-        onOpen={openProduct}
-      />
-      {selectedProduct && (
-        <ProductDialog
-          product={selectedProduct}
-          dialogRef={dialogRef}
-          closeButtonRef={closeButtonRef}
-          onClose={closeProduct}
-        />
-      )}
+      <ProductSection resources={resources} />
+      <section className={styles.consultationCta} aria-label="场景方案咨询">
+        <div><p>PROJECT CONSULTATION</p><h2>把空间条件与项目阶段<br />带进下一步沟通。</h2></div>
+        <Link href={consultationHref("project", "solutions", sceneId)}>咨询本场景方案 <span aria-hidden="true">→</span></Link>
+      </section>
     </main>
   );
 }

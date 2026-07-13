@@ -15,7 +15,7 @@ import {
 const MAX_BODY_BYTES = 16_384;
 const RETENTION_DAYS = 180;
 const sources = new Set<ConsultationSource>(consultationSourceValues);
-const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "partners"]);
+const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 const stages = new Set<ContactRequest["stage"]>(["understanding", "planning", "delivery", "operation"]);
 const channels = new Set<ContactRequest["contactChannel"]>(["phone", "email", "wechat"]);
 

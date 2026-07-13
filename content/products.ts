@@ -26,6 +26,21 @@ export type ProductRecord = {
 
 export const products = rawProducts as ProductRecord[];
 
+const modelCounts = new Map<string, number>();
+for (const product of products) modelCounts.set(product.model, (modelCounts.get(product.model) ?? 0) + 1);
+
+export function productSeoTitle(product: ProductRecord) {
+  const model = product.model || product.source_id;
+  const remainder = product.title.startsWith(model)
+    ? product.title.slice(model.length).replace(/^[\s（(]+|[）)]$/g, "").replace(/\s+/g, " ").trim()
+    : "";
+  const variant = (modelCounts.get(product.model) ?? 0) > 1
+    ? Array.from(remainder).slice(0, 10).join("").trim()
+    : "";
+  const identity = variant ? `${model} ${variant}` : model;
+  return `${identity}｜${product.topic}｜钜豪照明`;
+}
+
 export function productByRouteKey(routeKey: string) {
   return products.find((product) => product.seo_slug.slice(1) === routeKey);
 }
@@ -42,7 +57,7 @@ export function productPageData(routeKey: string): PageData | null {
     label: product.model || product.title,
     eyebrow: "PRODUCT DETAIL",
     title: product.title,
-    seoTitle: `${product.title}｜${product.topic}｜钜豪照明`,
+    seoTitle: productSeoTitle(product),
     description: `查看 ${product.title} 的产品参数、适用场景、安装提示与相关照明方案。产品编号 ${product.source_id}。`,
     image: product.primary_image,
     intro: `${product.topic}产品，资料来自钜豪企业商城与产品知识库，并已完成在售、参数与图片门禁核验。`,
@@ -50,7 +65,7 @@ export function productPageData(routeKey: string): PageData | null {
     highlights: [
       { title: "产品型号", text: product.model || product.title },
       { title: "产品专题", text: product.topic },
-      { title: "资料状态", text: `${product.sale_status} · 已通过官网内容门禁` },
+      { title: "资料状态", text: `${product.sale_status} · 已通过机器门禁，人工审核与媒体授权待登记` },
     ],
     sections: [],
     related: [],

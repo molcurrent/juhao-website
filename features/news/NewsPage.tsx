@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { PageData } from "@/app/_data/pages";
@@ -59,7 +60,11 @@ export function NewsPage({
 
   return (
     <main id="main-content" className={styles.page}>
-      <section className={styles.hero} style={{ backgroundImage: `url(${page.image})` }}>
+      <section className={styles.hero}>
+        <figure className={styles.heroMedia}>
+          <Image src={page.image} alt={page.imageAlt ?? "钜豪照明资讯主题原创公共空间场景"} width={1672} height={941} priority sizes="100vw" />
+          <figcaption>钜豪照明原创资讯主题代表图</figcaption>
+        </figure>
         <div className={styles.heroContent} data-reveal="fade">
           <p className={styles.eyebrow}>{page.eyebrow}</p>
           <h1>{page.title}</h1>
@@ -115,7 +120,10 @@ export function NewsPage({
         {featured && (
           <div className={`${styles.feed} ${status !== "success" ? styles.feedAfterState : ""}`}>
             <Link className={styles.featured} href={featured.path} data-reveal>
-              <div className={styles.featuredImage} style={{ backgroundImage: `url(${featured.image})` }} />
+              <figure className={styles.featuredImage}>
+                <Image src={featured.image} alt={`${featured.title}主题场景代表图`} width={1672} height={941} sizes="(max-width: 800px) 100vw, 58vw" />
+                <figcaption>主题代表图 · 非文章证据图</figcaption>
+              </figure>
               <div className={styles.featuredCopy}>
                 <small>{featured.published ?? "持续更新"}</small>
                 <h2>{featured.title}</h2>
@@ -155,15 +163,6 @@ export function NewsPage({
           </nav>
         )}
       </section>
-    </main>
-  );
-}
-
-export function NewsArticlePage({ page }: { page: PageData }) {
-  return (
-    <main id="main-content" className={styles.articlePage}>
-      <header className={styles.articleHeader}><p className={styles.eyebrow}>{page.eyebrow} · {page.published}</p><h1 data-reveal="fade">{page.title}</h1><p>{page.intro}</p></header>
-      <section className={styles.articleBody}>{page.sections.map((section, index) => <article key={section.title} data-reveal><span>{String(index + 1).padStart(2, "0")}</span><div><h2>{section.title}</h2><p>{section.text}</p></div></article>)}</section>
     </main>
   );
 }

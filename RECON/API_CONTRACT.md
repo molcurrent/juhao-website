@@ -77,7 +77,7 @@ JUHAO_LEAD_WEBHOOK_SECRET=
 枚举范围：
 
 - `direction`：`home`、`project`、`channel`
-- `source`：`home-hero`、`home-platform`、`home-contact`、`floating`、`footer`、`header`、`mobile-nav`、`products`、`product-topic`、`product-detail`、`cases`、`case-detail`、`partners`、`service-network`、`mall`、`direct`
+- `source`：`home-hero`、`home-platform`、`home-contact`、`floating`、`footer`、`header`、`mobile-nav`、`products`、`product-topic`、`product-detail`、`cases`、`case-detail`、`solutions`、`partners`、`service-network`、`mall`、`direct`
 - `sourceDetail`：只允许与产品专题、产品详情、案例详情和合作入口配合使用，最大 80 个字母、数字或连字符
 - `scene`：`home-health`、`project`、`channel`
 - `intent`：`space-advice`、`project-brief`、`partnership`

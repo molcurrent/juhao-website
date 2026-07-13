@@ -52,14 +52,14 @@ export function ProductTopicPage({ page, topic }: { page: PageData; topic: Produ
 function FlagshipTopicGuide({ guide, products: topicProducts, topic }: { guide: TopicGuide; products: ProductRecord[]; topic: ProductTopic }) {
   return <>
     <section className={styles.topicStatus} aria-label="专题资料状态">
-      <p>VERIFIED STATUS</p><strong>{guide.status}</strong>
+      <p>CONTENT STATUS</p><strong>{guide.status}</strong>
     </section>
     <section className={styles.topicScenes} id="topic-scenarios" aria-labelledby="topic-scenarios-title">
       <header><p>01 / SPACE TASKS</p><h2 id="topic-scenarios-title">先按空间任务选</h2><span>以下内容是选型检查路径，不替代具体型号的配光、检测和现场样板。</span></header>
       <div>{guide.scenarios.map((scene, index) => <article key={scene.title}><small>{String(index + 1).padStart(2, "0")}</small><h3>{scene.title}</h3><p>{scene.task}</p><ul>{scene.checks.map((check) => <li key={check}>{check}</li>)}</ul></article>)}</div>
     </section>
     {guide.comparisonFields.length > 0 && topicProducts.length > 0 && <section className={styles.topicComparison} id="topic-comparison" aria-labelledby="topic-comparison-title">
-      <header><p>02 / VERIFIED COMPARISON</p><h2 id="topic-comparison-title">只对照已确认字段</h2><span>缺少正式资料的参数不会从商品标题、图片或经验中补写。</span></header>
+      <header><p>02 / SOURCE FIELD COMPARISON</p><h2 id="topic-comparison-title">只对照已确认字段</h2><span>缺少正式资料的参数不会从商品标题、图片或经验中补写。</span></header>
       <div className={styles.tableWrap}><table><thead><tr><th scope="col">对照项</th>{topicProducts.map((product) => <th scope="col" key={product.source_id}><Link href={product.seo_slug}>{product.model || product.source_id}</Link></th>)}</tr></thead>
         <tbody>{guide.comparisonFields.map((field) => <tr key={field.label}><th scope="row">{field.label}</th>{topicProducts.map((product) => {
           const value = field.parameter ? product.parameters.find((item) => item.name === field.parameter)?.value : undefined;
@@ -67,11 +67,11 @@ function FlagshipTopicGuide({ guide, products: topicProducts, topic }: { guide: 
         })}</tr>)}</tbody></table></div>
     </section>}
     <section className={styles.topicMedia} aria-labelledby="topic-media-title">
-      <header><p>03 / SEMANTIC MEDIA</p><h2 id="topic-media-title">可索引的资料图片</h2><span>图片标题与来源随内容呈现；企业渠道素材仍需企业承担并确认正式公开授权。</span></header>
+      <header><p>03 / SEMANTIC MEDIA</p><h2 id="topic-media-title">语义化资料图片</h2><span>图片标题与来源随内容呈现；企业渠道素材仍需企业承担并确认正式公开授权。</span></header>
       <div>{guide.media.map((item) => <figure key={item.src}><Image src={item.src} alt={item.alt} width={1000} height={760} loading="lazy" unoptimized /><figcaption>{item.caption}</figcaption></figure>)}</div>
     </section>
     <section className={styles.topicKnowledge} aria-labelledby="topic-knowledge-title">
-      <header><p>04 / REVIEWED KNOWLEDGE</p><h2 id="topic-knowledge-title">用审核知识理解选型</h2></header>
+      <header><p>04 / RELATED KNOWLEDGE</p><h2 id="topic-knowledge-title">用知识内容理解选型</h2></header>
       <div>{guide.knowledge.map((item) => <Link href={item.href} key={`${item.title}-${item.source}`}><small>{item.source}</small><h3>{item.title}</h3><p>{item.summary}</p><b>继续阅读 ↗</b></Link>)}</div>
     </section>
     <section className={styles.topicRelated} aria-labelledby="topic-related-title">
@@ -105,15 +105,23 @@ export function CasesPage({ page }: { page: PageData }) {
 }
 
 export function CaseDetailPage({ study }: { study: CaseStudy }) {
-  const isFlagship = "confirmedFacts" in study && "spaceBreakdown" in study && "relatedTopics" in study;
+  const sourceMeta = "sourceMeta" in study ? study.sourceMeta : null;
+  const hasSpaceBreakdown = study.spaceBreakdown.length > 0;
   return <main id="main-content" className={styles.page}>
-    <section className={styles.caseDetailHero}><Image src={study.image} alt={`${study.title}项目方案资料`} fill sizes="100vw" priority unoptimized/><div><p>{study.stage} / {study.type}</p><h1>{study.title}</h1><span>{study.summary}</span><strong>页面图片为方案效果资料，非完工实拍</strong></div></section>
+    <section className={styles.caseDetailHero}><Image src={study.image} alt={`${study.title}企业来源资料`} fill sizes="100vw" priority unoptimized/><div><p>{study.stage} / {study.type}</p><h1>{study.title}</h1><span>{study.summary}</span><strong>页面图片为企业来源资料，媒体授权待核验；不作为完工实拍证明</strong></div></section>
     <section className={styles.caseOverview}><div><p>01 / PROJECT BACKGROUND</p><h2>项目背景</h2></div><p>{study.background}</p></section>
-    {isFlagship && <section className={styles.caseVerification} aria-labelledby="case-verification-title">
-      <header><p>02 / EVIDENCE BOUNDARY</p><h2 id="case-verification-title">已确认，与尚待补齐</h2></header>
-      <div><article><small>CONFIRMED</small><h3>企业资料已确认</h3><ul>{study.confirmedFacts.map((item) => <li key={item}>{item}</li>)}</ul></article><article><small>PENDING</small><h3>暂不能作为结论</h3><ul>{study.completionEvidence.map((item) => <li key={item}>{item}</li>)}<li>项目方对官网公开使用资料的正式授权：待确认</li></ul></article></div>
+    {sourceMeta && <section className={styles.caseFacts} aria-label="案例来源与治理状态">
+      <article><p>SOURCE DATE</p><h2>来源日期</h2><ul><li>{sourceMeta.sourceDate}</li></ul></article>
+      <article><p>BODY MEDIA</p><h2>正文图数</h2><ul><li>{sourceMeta.bodyImageCount} 张</li></ul></article>
+      <article><p>FACT BOUNDARY</p><h2>事实边界</h2><ul><li>{sourceMeta.factBoundary}</li></ul></article>
+      <article><p>MEDIA RIGHTS</p><h2>媒体授权</h2><ul><li>{sourceMeta.mediaAuthorization}</li></ul></article>
     </section>}
-    {isFlagship && <section className={styles.caseSpaces} aria-labelledby="case-spaces-title"><header><p>03 / SPACE BREAKDOWN</p><h2 id="case-spaces-title">按空间拆解方案方向</h2><span>只呈现企业原文能够支持的方案方向，不使用“已安装”或“已实现”等完成时态。</span></header><div>{study.spaceBreakdown.map((space, index) => <article key={space.title}><small>{String(index + 1).padStart(2, "0")}</small><h3>{space.title}</h3><p>{space.text}</p></article>)}</div></section>}
+    <section className={styles.caseVerification} aria-labelledby="case-verification-title">
+      <header><p>02 / EVIDENCE BOUNDARY</p><h2 id="case-verification-title">已确认，与尚待补齐</h2></header>
+      <div><article><small>CONFIRMED</small><h3>企业资料已确认</h3><ul>{study.confirmedFacts.map((item) => <li key={item}>{item}</li>)}</ul></article><article><small>PENDING</small><h3>暂不能作为结论</h3><ul>{study.completionEvidence.map((item) => <li key={item}>{item}</li>)}{!sourceMeta && <li>项目方对官网公开使用资料的正式授权：待确认</li>}</ul></article></div>
+    </section>
+    {hasSpaceBreakdown && <section className={styles.caseSpaces} aria-labelledby="case-spaces-title"><header><p>03 / SPACE BREAKDOWN</p><h2 id="case-spaces-title">按空间拆解方案方向</h2><span>只呈现企业原文能够支持的方案方向，不使用“已安装”或“已实现”等完成时态。</span></header><div>{study.spaceBreakdown.map((space, index) => <article key={space.title}><small>{String(index + 1).padStart(2, "0")}</small><h3>{space.title}</h3><p>{space.text}</p></article>)}</div></section>}
+    {!hasSpaceBreakdown && sourceMeta && <section className={styles.caseOverview} aria-label="空间分节状态"><div><p>03 / SPACE EVIDENCE</p><h2>空间分节状态</h2></div><p>{sourceMeta.spaceEvidenceNote}</p></section>}
     <section className={styles.caseFacts}>
       <article><p>02 / SOLUTION SCOPE</p><h2>方案范围</h2><ul>{study.solutionScope.map((item) => <li key={item}>{item}</li>)}</ul></article>
       <article><p>03 / PRODUCT LIST</p><h2>产品方向清单</h2><ul>{study.productList.map((item) => <li key={item}>{item}</li>)}</ul></article>
@@ -121,10 +129,10 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
     </section>
     <section className={styles.caseEvidence}>
       <header><p>05 / SOURCE EVIDENCE</p><h2>企业资料图集</h2><span>{study.evidenceLabel}</span></header>
-      <div>{study.evidenceImages.map((item) => <figure key={item.src}><div className={"width" in item ? styles.evidenceNatural : undefined}>{"width" in item ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} loading="lazy" unoptimized /> : <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 100vw, 33vw" unoptimized />}</div><figcaption>{"caption" in item ? item.caption : item.alt}</figcaption></figure>)}</div>
+      <div>{study.evidenceImages.map((item) => <figure key={item.src}><div className={"width" in item ? styles.evidenceNatural : undefined}>{"width" in item ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} loading="lazy" unoptimized /> : <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 100vw, 33vw" unoptimized />}</div><figcaption>{item.caption}</figcaption></figure>)}</div>
       <small>资料来源：企业知识库文章 {study.sourceId}。页面阶段以企业后续交付、验收与授权资料为准。</small>
     </section>
-    {isFlagship && <section className={styles.caseRelatedTopics} aria-labelledby="case-related-title"><div><p>RELATED PRODUCT TOPICS</p><h2 id="case-related-title">理解相关产品方向</h2><span>相关品类用于理解方案方向，不代表项目最终采用这些页面中的具体型号。</span></div><nav aria-label="关联产品专题">{study.relatedTopics.map((item) => <Link href={item.href} key={item.href}>{item.label}<span>↗</span></Link>)}</nav></section>}
+    <section className={styles.caseRelatedTopics} aria-labelledby="case-related-title"><div><p>RELATED PRODUCT TOPICS</p><h2 id="case-related-title">理解相关产品方向</h2><span>相关品类用于理解方案方向，不代表项目最终采用这些页面中的具体型号。</span></div><nav aria-label="关联产品专题">{study.relatedTopics.map((item) => <Link href={item.href} key={item.href}>{item.label}<span>↗</span></Link>)}</nav></section>
     <section className={styles.caseStrategy}><div><p>LIGHTING STRATEGY</p><h2>照明策略</h2></div><ol>{study.strategy.map((item, index) => <li key={item}><b>{String(index + 1).padStart(2, "0")}</b><span>{item}</span></li>)}</ol></section>
     <section className={styles.caseCta}><div><p>PROJECT BRIEF</p><h2>让项目资料<br/>从方案走向落地。</h2></div><Link href={consultationHref("project", "case-detail", study.sourceId)}>提交工程需求 →</Link></section>
   </main>;
@@ -132,7 +140,7 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
 
 function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
   return <Link href={`/cases/${study.slug}`} className={styles.caseCard}>
-    <div><Image src={study.image} alt={`${study.title}项目方案资料`} width={800} height={560} loading="lazy" unoptimized /><span>{study.stage}</span></div>
+    <div><Image src={study.image} alt={`${study.title}企业来源资料`} width={800} height={560} loading="lazy" unoptimized /><span>{study.stage}</span></div>
     <small>{String(index + 1).padStart(2, "0")} / {study.type}</small><h2>{study.title}</h2><p>{study.summary}</p><b>查看项目资料 ↗</b>
   </Link>;
 }

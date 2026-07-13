@@ -18,6 +18,14 @@ async function render(worker, path, accept = "text/html") {
   );
 }
 
+function structuredData(html) {
+  return [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
+    .flatMap((match) => {
+      const value = JSON.parse(match[1]);
+      return Array.isArray(value) ? value : [value];
+    });
+}
+
 class FakeD1Statement {
   constructor(database, sql) {
     this.database = database;
@@ -91,14 +99,14 @@ async function postContact(worker, database, payload, origin = "http://localhost
   );
 }
 
-test("server-renders indexable multi-page content", async () => {
+test("server-renders published private-preview content", async () => {
   const worker = await createWorker();
   const routes = [
     ["/", "好房子", "钜豪照明官网"],
     ["/about", "关于钜豪照明", "关于钜豪"],
     ["/solutions/residential", "全屋照明解决方案", "健康家居光环境"],
     ["/smart-home", "智能家居照明解决方案", "钜豪智能"],
-    ["/news/healthy-home-lighting", "家庭健康光环境", "钜豪照明资讯"],
+    ["/news/downlight-vs-spotlight", "筒灯与射灯", "钜豪照明知识"],
   ];
 
   for (const [path, heading, titleFragment] of routes) {
@@ -114,6 +122,25 @@ test("server-renders indexable multi-page content", async () => {
     const documentTitle = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
     assert.doesNotMatch(documentTitle, /钜豪照明.*钜豪照明/, `${path} title repeats the brand`);
   }
+});
+
+test("falls back to same-origin images when local optimization bindings are unavailable", async () => {
+  const worker = await createWorker();
+  const local = await worker.fetch(
+    new Request("http://localhost/_vinext/image?url=%2Fimages%2Fjuhao-public.webp&w=640&q=75"),
+    {},
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(local.status, 307);
+  assert.equal(new URL(local.headers.get("location")).pathname, "/images/juhao-public.webp");
+
+  const external = await worker.fetch(
+    new Request("http://localhost/_vinext/image?url=https%3A%2F%2Fexample.com%2Fimage.jpg&w=640&q=75"),
+    {},
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(external.status, 503);
+  assert.equal(external.headers.get("location"), null);
 });
 
 test("covers the canonical visitor route contract", async () => {
@@ -151,7 +178,7 @@ test("renders independent feature structures instead of the generic fallback", a
     ["/about", "从一束光，抵达完整的人居体验"],
     ["/about/history", "公开发展节点"],
     ["/solutions", "按真实场景进入方案"],
-    ["/solutions/commercial", "场景产品组合"],
+    ["/solutions/commercial", "场景关联资料"],
     ["/healthy-light", "不把未经验证的指标"],
     ["/smart-home", "先设计生活"],
     ["/mall", "先把能力边界说清楚"],
@@ -175,14 +202,28 @@ test("renders independent feature structures instead of the generic fallback", a
   const residential = await render(worker, "/solutions/residential");
   const residentialHtml = await residential.text();
   assert.match(residentialHtml, /全屋照明应该从什么时候开始规划/);
-  assert.match(residentialHtml, /"@type":"FAQPage"/);
+  assert.doesNotMatch(residentialHtml, /"@type":"FAQPage"/);
 
-  const article = await render(worker, "/news/healthy-home-lighting");
+  const article = await render(worker, "/news/downlight-vs-spotlight");
   const articleHtml = await article.text();
   assert.match(articleHtml, /property="og:site_name" content="钜豪照明 JUHAO"/i);
-  assert.match(articleHtml, /property="article:published_time" content="2026-07-12"/i);
-  assert.match(articleHtml, /"image":"https:\/\/juhao\.com\/og\.png"/);
-  assert.match(articleHtml, /"publisher":\{"@id":"https:\/\/juhao\.com\/#organization"\}/);
+  assert.doesNotMatch(articleHtml, /property="article:published_time"/i);
+  assert.match(articleHtml, /property="og:image" content="https:\/\/juhao\.com\/images\/juhao-commercial\.webp"/i);
+  assert.match(articleHtml, /审核主体/);
+  assert.match(articleHtml, /JUHAO/);
+  assert.doesNotMatch(articleHtml, /"@type":"Article"/);
+});
+
+test("renders company news from conservative source facts without publishing blocked media", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/news/guangzhou-international-lighting-exhibition-2026");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  for (const marker of ["2026 广州光亚展", "来源日期", "2026-06-11", "来源记录 #232", "当前阶段", "公开边界", "14 个图片候选", "待企业内容负责人复核"]) {
+    assert.match(html, new RegExp(marker), marker);
+  }
+  assert.match(html, /property="og:image" content="https:\/\/juhao\.com\/images\/juhao-public\.webp"/i);
+  assert.doesNotMatch(html, /6a2a71c2e9cb3_thumb\.JPG|"@type":"Article"/);
 });
 
 test("renders the global visitor action layer", async () => {
@@ -211,7 +252,7 @@ test("renders three tracked consultation paths without demo copy", async () => {
   assert.doesNotMatch(html, /正式能力与开放范围|商品、订单、客户与服务边界以企业确认为准|后续确认的信息为准/);
 });
 
-test("publishes indexable product topics and stage-labelled project pages", async () => {
+test("publishes private-preview product topics and stage-labelled project pages", async () => {
   const worker = await createWorker();
   const routes = [
     ["/products", "首批开放", "照明产品中心"],
@@ -226,7 +267,7 @@ test("publishes indexable product topics and stage-labelled project pages", asyn
     const html = await response.text();
     assert.match(html, new RegExp(marker), path);
     assert.match(html, new RegExp(title), path);
-    assert.doesNotMatch(html, /content="noindex, follow"/i, path);
+    assert.match(html, /content="noindex, follow"/i, path);
     assert.match(html, /<link[^>]+rel="canonical"/i, path);
   }
 
@@ -236,8 +277,8 @@ test("publishes indexable product topics and stage-labelled project pages", asyn
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  assert.match(xml, /https:\/\/juhao\.com\/products\/spotlights/);
-  assert.match(xml, /https:\/\/juhao\.com\/cases\/jw-marriott-shenzhen-huafa-snow-world/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/products\/spotlights/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/cases\/jw-marriott-shenzhen-huafa-snow-world/);
 });
 
 test("renders source-labelled evidence galleries for all six project pages", async () => {
@@ -245,10 +286,10 @@ test("renders source-labelled evidence galleries for all six project pages", asy
   const cases = [
     ["jw-marriott-shenzhen-huafa-snow-world", "226", "深圳华发冰雪世界 JW 万豪酒店建筑方案效果图"],
     ["pullman-shangrao-guangfeng", "231", "上饶广丰铂尔曼酒店建筑方案效果图"],
-    ["grand-hyatt-suzhou-financial-street", "228", "苏州金融街君悦酒店项目资料图"],
-    ["doubletree-nantong-haimen", "229", "南通海门希尔顿逸林酒店项目资料图"],
-    ["yangzhou-riverfront-lighting", "220", "扬州经开区一河两岸项目概念资料图"],
-    ["china-smart-road-lighting-conference-2026", "225", "中国智慧道路照明大会现场资料图"],
+    ["grand-hyatt-suzhou-financial-street", "228", "苏州金融街君悦酒店正文资料图 02"],
+    ["doubletree-nantong-haimen", "229", "南通海门希尔顿逸林酒店正文资料图 02"],
+    ["yangzhou-riverfront-lighting", "220", "扬州经开区一河两岸正文资料图 02"],
+    ["xingtai-financial-center", "199", "邢台金融中心正文资料图 02"],
   ];
 
   for (const [slug, sourceId, imageAlt] of cases) {
@@ -257,8 +298,50 @@ test("renders source-labelled evidence galleries for all six project pages", asy
     const html = await response.text();
     assert.match(html, /企业资料图集/, slug);
     assert.match(html, new RegExp(`企业知识库文章[\\s\\S]{0,40}${sourceId}`), slug);
-    assert.match(html, /不作为(?:夜景)?完工证明|不属于工程完工案例/, slug);
+    assert.match(html, /不作为[^<]{0,40}(?:夜景)?完工证明/, slug);
     assert.match(html, new RegExp(imageAlt), slug);
+  }
+
+  const retiredConferenceCase = await render(worker, "/cases/china-smart-road-lighting-conference-2026");
+  assert.equal(retiredConferenceCase.status, 404);
+});
+
+test("renders conservative source evidence for the four audited project pages", async () => {
+  const worker = await createWorker();
+  const detailedCases = [
+    ["/cases/grand-hyatt-suzhou-financial-street", "2026-04-08", "23 张", ["大堂", "大堂吧", "全日餐厅", "大宴会厅", "小宴会厅", "中餐厅", "嘉宾轩", "客房"]],
+    ["/cases/xingtai-financial-center", "2024-12-03", "15 张", ["会议中心门厅", "多功能厅", "企业接待中心门厅", "酒店大堂", "全日餐厅", "包厢", "贵宾接待室", "客房"]],
+  ];
+
+  for (const [path, sourceDate, imageCount, spaces] of detailedCases) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "按空间拆解方案方向", "公开使用授权待核验", ...spaces]) {
+      assert.match(html, new RegExp(marker), `${path}: ${marker}`);
+    }
+    assert.equal((html.match(/class="[^\"]*caseSpaces[^\"]*"/g) ?? []).length, 1, path);
+  }
+
+  for (const [path, sourceDate, imageCount] of [
+    ["/cases/doubletree-nantong-haimen", "2026-04-10", "11 张"],
+    ["/cases/yangzhou-riverfront-lighting", "2025-12-10", "4 张"],
+  ]) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "来源正文未提供明确空间分节", "不根据图片内容推断空间名称或用途", "公开使用授权待核验"]) {
+      assert.match(html, new RegExp(marker), `${path}: ${marker}`);
+    }
+    assert.doesNotMatch(html, /按空间拆解方案方向/, path);
+  }
+
+  const yangzhou = await render(worker, "/cases/yangzhou-riverfront-lighting");
+  const yangzhouHtml = await yangzhou.text();
+  assert.equal((yangzhouHtml.match(/<figure/g) ?? []).length, 3, "220 uses each remaining body image once instead of padding the gallery");
+  const yangzhouImageSources = [...yangzhouHtml.matchAll(/<img[^>]+src="([^"]+)"/g)].map((match) => match[1]);
+  for (const imageStem of ["69392e5990867", "69392e6d12085", "69392e9e84b11", "69392e93b7d52"]) {
+    assert.equal(yangzhouImageSources.filter((src) => src.includes(imageStem)).length, 1, `220 image ${imageStem} is not repeated`);
   }
 });
 
@@ -267,7 +350,7 @@ test("deepens three flagship topics without inventing missing product facts", as
   const topics = [
     ["/products/spotlights", ["先按空间任务选", "只对照已确认字段", "光束角", "正式资料待补充", "深杯射灯一定不眩光吗"]],
     ["/products/ceiling-lights", ["客厅会客与观影", "光源数量（商城原字段）", "显色指数", "全屋必须统一一个色温吗"]],
-    ["/products/smart-home-devices", ["当前 0 款产品通过公开门禁", "断网后的实体控制", "结构化参数", "为什么专题暂时没有产品"]],
+    ["/products/smart-home-devices", ["当前 0 款产品完成公开审核与媒体授权", "断网后的实体控制", "结构化参数", "为什么专题暂时没有产品"]],
   ];
 
   for (const [path, markers] of topics) {
@@ -275,9 +358,15 @@ test("deepens three flagship topics without inventing missing product facts", as
     assert.equal(response.status, 200, path);
     const html = await response.text();
     for (const marker of markers) assert.match(html, new RegExp(marker), `${path}: ${marker}`);
-    assert.match(html, /可索引的资料图片/);
-    assert.match(html, /用审核知识理解选型/);
-    assert.match(html, /"@type":"FAQPage"/);
+    assert.match(html, /CONTENT STATUS/);
+    assert.doesNotMatch(html, /VERIFIED STATUS/);
+    if (path !== "/products/smart-home-devices") {
+      assert.match(html, /SOURCE FIELD COMPARISON/);
+      assert.doesNotMatch(html, /VERIFIED COMPARISON/);
+    }
+    assert.match(html, /语义化资料图片/);
+    assert.match(html, /用知识内容理解选型/);
+    assert.doesNotMatch(html, /"@type":"FAQPage"/);
     assert.match(html, /<img(?=[^>]*alt=)(?=[^>]*width=)(?=[^>]*height=)[^>]*>/i);
   }
 
@@ -310,34 +399,52 @@ test("surfaces verified homepage evidence and three content lines", async () => 
   const worker = await createWorker();
   const response = await render(worker, "/");
   const html = await response.text();
-  for (const marker of ["31", "已审核产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "5", "有来源的品牌荣誉", "企业动态", "项目动态", "照明知识"]) {
+  for (const marker of ["31", "私有预览产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "5", "有来源的品牌荣誉", "企业动态", "项目动态", "照明知识"]) {
     assert.match(html, new RegExp(marker), marker);
   }
   assert.match(html, /企业资料 #226/);
-  assert.match(html, /JUHAO 审核知识/);
+  assert.match(html, /企业资料 #199 \/ #220 \/ #226 \/ #228 \/ #229 \/ #231/);
+  assert.match(html, /企业资料 #167 \/ #184 \/ #223 \/ #225/);
+  assert.match(html, /JUHAO 审核/);
 });
 
-test("content ledger blocks pending products from public SEO routes", async () => {
+test("content ledger separates private routes, search and SEO approval", async () => {
   const worker = await createWorker();
   const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
   const publishedProducts = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
-  const pendingProducts = ledger.filter((item) => item.content_type === "产品" && item.review_status === "待审核");
-  const approvedProducts = ledger.filter((item) => item.content_type === "产品" && item.review_status === "已审核" && item.sale_status === "在售" && item.fact_status === "已核实" && item.image_authorization === "企业商城渠道素材");
-  const approvedCases = ledger.filter((item) => item.content_type === "案例" && item.review_status === "已审核" && item.fact_status === "已核实" && item.image_status === "完整");
-  assert.equal(pendingProducts.length, 69);
-  assert.equal(approvedProducts.length, 31);
-  assert.equal(publishedProducts.length, 31);
-  assert.equal(new Set([...pendingProducts, ...approvedProducts].map((item) => item.source_id)).size, 100);
-  assert.equal(approvedCases.length, 6);
+  const pendingProducts = ledger.filter((item) => item.content_type === "产品" && item.publish_status !== "published");
+  const previewProducts = ledger.filter((item) => item.content_type === "产品" && item.publish_status === "published");
+  const previewCases = ledger.filter((item) => item.content_type === "案例" && item.publish_status === "published");
+  const productRecords = ledger.filter((item) => item.content_type === "产品");
+  assert.ok(pendingProducts.length > 0, "the review queue should retain unpublished products");
+  assert.ok(previewProducts.length >= 30, "private-preview product coverage fell below the launch baseline");
+  assert.equal(publishedProducts.length, previewProducts.length);
+  assert.equal(pendingProducts.length + previewProducts.length, productRecords.length);
+  assert.equal(new Set(productRecords.map((item) => item.source_id)).size, productRecords.length);
+  assert.ok(previewCases.length >= 6, "private-preview case coverage fell below the launch baseline");
+  assert.deepEqual(new Set(previewCases.map((item) => item.source_id)), new Set(["199", "220", "226", "228", "229", "231"]));
+  assert.equal(previewCases.find((item) => item.source_id === "220").body_image_count, 4);
+  assert.equal(previewCases.find((item) => item.source_id === "228").body_image_count, 23);
+  assert.equal(previewCases.find((item) => item.source_id === "199").related_routes.includes("/solutions/commercial"), true);
+  assert.equal(previewCases.find((item) => item.source_id === "220").related_routes.includes("/solutions/public"), true);
+  for (const item of [...previewProducts, ...previewCases]) {
+    assert.equal(item.review_status, "needs_review", item.route);
+    assert.equal(item.indexable, false, item.route);
+  }
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  for (const item of approvedCases) assert.match(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
-  for (const item of approvedProducts) assert.match(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+  for (const item of previewCases) assert.doesNotMatch(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+  for (const item of previewProducts) assert.doesNotMatch(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
   for (const item of pendingProducts) assert.doesNotMatch(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+
+  const privatePreview = await render(worker, previewProducts[0].route);
+  assert.equal(privatePreview.status, 200);
+  const unpublished = await render(worker, pendingProducts[0].route);
+  assert.equal(unpublished.status, 404);
 });
 
-test("renders all 31 published product detail pages with parameters and Product schema", async () => {
+test("renders all private-preview product detail pages without Product schema", async () => {
   const worker = await createWorker();
   const products = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
   for (const product of products) {
@@ -347,11 +454,141 @@ test("renders all 31 published product detail pages with parameters and Product 
     assert.match(html, new RegExp(product.model.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), product.seo_slug);
     assert.match(html, /产品参数/);
     assert.match(html, /安装与选型提示/);
-    assert.match(html, /"@type":"Product"/);
+    assert.doesNotMatch(html, /"@type":"Product"/);
     assert.match(html, /source=product-detail/);
     assert.match(html, new RegExp(`sourceDetail=${product.source_id}`));
     assert.doesNotMatch(html, /undefined-/i);
   }
+});
+
+test("keeps visible Chinese breadcrumbs while private preview omits breadcrumb schema", async () => {
+  const worker = await createWorker();
+  const topics = [
+    ["spotlights", "射灯与轨道照明"], ["ceiling-lights", "家居顶灯"], ["new-chinese", "新中式"], ["art-lights", "艺术灯"],
+    ["crystal-chandeliers", "水晶吊灯"], ["linear-lighting", "灯带与线性照明"], ["switches", "开关电工"],
+    ["outdoor-lighting", "户外照明"], ["project-custom", "工程定制"], ["smart-home-devices", "家居智能设备"],
+  ];
+  const cases = [
+    ["jw-marriott-shenzhen-huafa-snow-world", "深圳华发冰雪世界 JW 万豪酒店"],
+    ["pullman-shangrao-guangfeng", "上饶广丰铂尔曼酒店"],
+    ["grand-hyatt-suzhou-financial-street", "苏州金融街君悦酒店"],
+    ["doubletree-nantong-haimen", "南通海门希尔顿逸林酒店"],
+    ["yangzhou-riverfront-lighting", "扬州经开区“一河两岸”户外亮化工程"],
+    ["xingtai-financial-center", "邢台金融中心"],
+  ];
+  const products = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
+  const topicNames = new Map(topics);
+
+  async function assertBreadcrumb(path, expectedNames) {
+    const response = await render(worker, path);
+    const html = await response.text();
+    for (const name of expectedNames) assert.match(html, new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `${path}: ${name}`);
+    assert.equal(structuredData(html).some((item) => item["@type"] === "BreadcrumbList"), false, `${path} has private-preview BreadcrumbList`);
+  }
+
+  for (const [slug, title] of topics) await assertBreadcrumb(`/products/${slug}`, ["首页", "产品中心", title]);
+  for (const product of products) await assertBreadcrumb(product.seo_slug, ["首页", "产品中心", topicNames.get(product.topic_slug), product.title]);
+  for (const [slug, title] of cases) await assertBreadcrumb(`/cases/${slug}`, ["首页", "工程案例", title]);
+});
+
+test("search covers ledger-searchable routes without inheriting sitemap state", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const paths = ledger
+    .filter((item) => item.publish_status === "published" && item.searchable)
+    .map((item) => item.route);
+  assert.ok(paths.length >= 60, "searchable route coverage fell below the launch baseline");
+
+  for (const path of paths) {
+    const response = await render(worker, `/search?keywords=${encodeURIComponent(path)}`);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, /data-search-results="[1-9]\d*"/, path);
+    assert.match(html, new RegExp(`href="${path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`), path);
+  }
+
+  for (const path of ledger.filter((item) => !item.searchable).slice(0, 8).map((item) => item.route)) {
+    const response = await render(worker, `/search?keywords=${encodeURIComponent(path)}`);
+    const html = await response.text();
+    assert.match(html, /data-search-results="0"/, path);
+  }
+});
+
+test("server-renders source-labelled resources and tracked consultation on solution pages", async () => {
+  const worker = await createWorker();
+  const routes = [
+    ["/solutions/residential", ["/products/ceiling-lights", "/products/ceiling-lights/12217", "/cases/jw-marriott-shenzhen-huafa-snow-world", "/news/layered-lighting-design"]],
+    ["/solutions/hospitality", ["/products/spotlights", "/products/spotlights/12287", "/cases/jw-marriott-shenzhen-huafa-snow-world", "/news/color-rendering-index"]],
+    ["/solutions/commercial", ["/products/spotlights", "/products/spotlights/12286", "/cases/pullman-shangrao-guangfeng", "/news/beam-angle-guide"]],
+    ["/solutions/public", ["/products/outdoor-lighting", "/products/outdoor-lighting/11001", "/cases/yangzhou-riverfront-lighting", "/news/ip-rating-wet-spaces"]],
+    ["/solutions/industrial", ["/products/project-custom", "/products/project-custom/12265", "/cases/yangzhou-riverfront-lighting", "/news/ies-photometric-file"]],
+  ];
+
+  for (const [path, resourcePaths] of routes) {
+    const response = await render(worker, path);
+    const html = await response.text();
+    for (const kind of ["产品专题", "产品资料", "项目资料", "知识内容"]) {
+      assert.match(html, new RegExp(`data-resource-kind="${kind}"`), `${path}: ${kind}`);
+    }
+    for (const resourcePath of resourcePaths) assert.match(html, new RegExp(`href="${resourcePath}"`), `${path}: ${resourcePath}`);
+    assert.match(html, /咨询本场景方案/, path);
+    assert.match(html, new RegExp(`source=solutions(?:&amp;|&)scene=project(?:&amp;|&)intent=project-brief(?:&amp;|&)sourceDetail=${path.split("/").at(-1)}`), path);
+    assert.doesNotMatch(html, /线性照明组合|重点照明组合|高空间照明组合|产品数据通过可替换的数据层加载/, path);
+  }
+});
+
+test("keeps source ids and concise unique SEO titles without private Product schema", async () => {
+  const worker = await createWorker();
+  const products = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
+  const titles = new Set();
+  const skus = new Set();
+
+  for (const product of products) {
+    const response = await render(worker, product.seo_slug);
+    const html = await response.text();
+    assert.equal(structuredData(html).some((item) => item["@type"] === "Product"), false, product.seo_slug);
+    assert.equal(skus.has(product.source_id), false, `duplicate source id ${product.source_id}`);
+    skus.add(product.source_id);
+
+    const documentTitle = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
+    assert.match(documentTitle, new RegExp(product.model.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), product.seo_slug);
+    assert.match(documentTitle, new RegExp(`｜${product.topic}｜钜豪照明$`), product.seo_slug);
+    assert.ok(documentTitle.length <= 48, `${product.seo_slug}: ${documentTitle}`);
+    assert.equal(titles.has(documentTitle), false, `duplicate title ${documentTitle}`);
+    titles.add(documentTitle);
+    assert.match(html, new RegExp(`<h1>${product.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</h1>`), product.seo_slug);
+  }
+
+  assert.equal(skus.size, products.length);
+  assert.equal(titles.size, products.length);
+});
+
+test("keeps source dates stable while unapproved records stay out of sitemap", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const response = await render(worker, "/sitemap.xml", "application/xml");
+  const xml = await response.text();
+  const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
+  assert.deepEqual(blocks, []);
+
+  const articles = ledger.filter((item) => item.content_type === "文章");
+  assert.equal(articles.length, 20);
+  const knowledge = articles.filter((item) => item.source_type === "knowledge_base_professional_article_review");
+  const companyNews = articles.filter((item) => item.source_type === "mall_sql_jh_articles");
+  assert.equal(knowledge.length, 12);
+  assert.equal(companyNews.length, 8);
+  for (const article of knowledge) {
+    assert.equal(article.review_status, "approved", article.route);
+    assert.equal(article.reviewer, "JUHAO", article.route);
+    assert.equal(article.updated_at, "2026-06-12", article.route);
+    assert.equal(article.published_at, "unknown", article.route);
+  }
+  for (const article of companyNews) {
+    assert.equal(article.review_status, "needs_review", article.route);
+    assert.match(article.published_at, /^202[56]-\d{2}-\d{2}$/, article.route);
+  }
+  const sourceDatedRecords = ledger.filter((item) => ["产品", "案例"].includes(item.content_type));
+  assert.equal(sourceDatedRecords.some((item) => item.updated_at === "2026-07-13"), false);
 });
 
 test("server-presets and records consultation context", async () => {
@@ -427,13 +664,10 @@ test("keeps incomplete and utility pages out of the index", async () => {
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  assert.match(xml, /https:\/\/juhao\.com\/solutions\/residential/);
-  assert.match(xml, /https:\/\/juhao\.com\/contact/);
-  assert.match(xml, /https:\/\/juhao\.com\/(?:about\/history|service|partners)/);
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|downloads|search|legal|privacy)/);
+  assert.doesNotMatch(xml, /<loc>/);
 });
 
-test("publishes verified history, honors, service network and cooperation content", async () => {
+test("publishes sourced history and truthful service and cooperation states", async () => {
   const worker = await createWorker();
   const history = await render(worker, "/about/history");
   const historyHtml = await history.text();
@@ -442,8 +676,8 @@ test("publishes verified history, honors, service network and cooperation conten
 
   const service = await render(worker, "/service");
   const serviceHtml = await service.text();
-  for (const marker of ["总部服务窗口", "商城与订单服务", "工程项目支持", "经销商协作", "400-0760-888"]) assert.match(serviceHtml, new RegExp(marker));
-  assert.doesNotMatch(serviceHtml, /Mock|示例服务点|非正式网点/);
+  for (const marker of ["官网回访入口", "商城与订单服务", "工程项目支持", "经销商协作", "企业联系信息签核中"]) assert.match(serviceHtml, new RegExp(marker));
+  assert.doesNotMatch(serviceHtml, /400-0760-888|Mock|示例服务点|非正式网点/);
 
   const partners = await render(worker, "/partners");
   const partnersHtml = await partners.text();
@@ -451,11 +685,12 @@ test("publishes verified history, honors, service network and cooperation conten
   assert.doesNotMatch(partnersHtml, /Mock|区域信息示例状态/);
 });
 
-test("serves indexable news pagination with independent canonicals", async () => {
+test("serves private-preview news pagination with independent canonicals", async () => {
   const worker = await createWorker();
   const pages = [
-    ["/news/page/2", "第 2 页", "零售空间照明", "酒店照明"],
-    ["/news/page/3", "第 3 页", "眩光控制基础", "工业照明规划"],
+    ["/news/page/2", "第 2 页", "大连金州皇冠假日酒店", "光束角定义与光斑大小"],
+    ["/news/page/3", "第 3 页", "IES 配光文件", "LED 灯带"],
+    ["/news/page/4", "第 4 页", "射灯离墙距离", "频闪与时间光调制"],
   ];
 
   for (const [path, pageTitle, firstArticle, secondArticle] of pages) {
@@ -466,16 +701,16 @@ test("serves indexable news pagination with independent canonicals", async () =>
     assert.match(html, new RegExp(firstArticle), path);
     assert.match(html, new RegExp(secondArticle), path);
     assert.match(html, new RegExp(`<link(?=[^>]*rel="canonical")(?=[^>]*href="https://juhao\\.com${path}")[^>]*>`, "i"), path);
-    assert.match(html, /"@type":"CollectionPage"/, path);
+    assert.doesNotMatch(html, /"@type":"CollectionPage"/, path);
     assert.match(html, /aria-label="资讯分页"/, path);
-    assert.doesNotMatch(html, /content="noindex, follow"/i, path);
+    assert.match(html, /content="noindex, follow"/i, path);
   }
 
   const firstPageAlias = await render(worker, "/news/page/1");
   assert.equal(firstPageAlias.status, 308);
   assert.equal(new URL(firstPageAlias.headers.get("location"), "http://localhost").pathname, "/news");
 
-  const outOfRange = await render(worker, "/news/page/4");
+  const outOfRange = await render(worker, "/news/page/5");
   assert.equal(outOfRange.status, 404);
   const outOfRangeHtml = await outOfRange.text();
   assert.match(outOfRangeHtml, /<meta(?=[^>]*name="robots")(?=[^>]*content="noindex")[^>]*>/i);
@@ -483,8 +718,8 @@ test("serves indexable news pagination with independent canonicals", async () =>
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  assert.match(xml, /https:\/\/juhao\.com\/news\/page\/2/);
-  assert.match(xml, /https:\/\/juhao\.com\/news\/page\/3/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/2/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/3/);
   assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/4/);
 });
 
@@ -532,7 +767,9 @@ test("serves discovery files and a branded 404", async () => {
   const worker = await createWorker();
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   assert.equal(sitemap.status, 200);
-  assert.match(await sitemap.text(), /https:\/\/juhao\.com\/solutions\/residential/);
+  const sitemapXml = await sitemap.text();
+  assert.match(sitemapXml, /<urlset[^>]*>/);
+  assert.doesNotMatch(sitemapXml, /<loc>/);
 
   const robots = await render(worker, "/robots.txt", "text/plain");
   assert.equal(robots.status, 200);
@@ -690,9 +927,10 @@ test("verifies a stored lead before rendering the noindex contact success receip
   assert.doesNotMatch(forgedHtml, /咨询已提交/);
 });
 
-test("exposes explicit follow-up channels only after the preparation step", () => {
+test("keeps unverified direct channels unavailable and exposes callback fields after preparation", () => {
   const source = readFileSync(new URL("../features/platform/ContactPage.tsx", import.meta.url), "utf8");
-  for (const marker of ["一键拨打", "新建邮件", "企业微信", "待企业核验", "提交回访", "contactChannel", "contactValue", "privacyVersion", "clientRequestId", "website"]) {
+  for (const marker of ["电话、邮件和企业微信入口尚未完成企业核验", "当前不可用", "待企业核验", "提交回访", "contactChannel", "contactValue", "privacyVersion", "clientRequestId", "website"]) {
     assert.match(source, new RegExp(marker), marker);
   }
+  assert.doesNotMatch(source, /一键拨打|新建邮件|400-0760-888|service@juhao\.com/);
 });
