@@ -10,6 +10,14 @@
 - 已确认的 6 条垃圾 URL 在新站 Worker 中返回 410，并附带 `X-Robots-Tag: noindex`。
 - `/login.html` 在新站切换后会永久跳转至 `https://mall.juhao.com/login.html`。
 
+## 2026-07-13 实时门槛核验
+
+- Sites 审核版本已保存，但私有生产部署仍为 `pending`，线上产品详情页尚未切换到该版本。
+- Sites 自定义域名列表为空，尚未生成 `juhao.com` 或 `www.juhao.com` 的 DNS 验证记录。
+- `https://www.juhao.com/` 当前仍返回旧站 PHP 页面；`/login.html` 返回 200，尚未分流。
+- 当前环境访问 `https://mall.juhao.com/` 无法完成 TLS 连接，商城子域名不能作为正式跳转目标验收。
+- 各项门槛、责任人与下一动作记录在 `content/governance/domain-cutover-checklist.csv`。
+
 ## 域名切换顺序
 
 1. 在旧服务器隔离并清除恶意文件、数据库注入和异常任务，轮换全部发布凭证。
@@ -25,6 +33,23 @@
 
 ```bash
 BASE_URL=https://www.juhao.com node scripts/check_launch_health.mjs
+```
+
+私有 Sites 版本验收可传入已有旁路令牌；脚本不会输出令牌：
+
+```bash
+BASE_URL=https://<private-site-host> \
+OAI_SITES_BYPASS_TOKEN=<token> \
+node scripts/check_launch_health.mjs
+```
+
+切换窗口必须同时检查商城：
+
+```bash
+BASE_URL=https://www.juhao.com \
+MALL_BASE_URL=https://mall.juhao.com \
+CHECK_MALL=1 \
+node scripts/check_launch_health.mjs
 ```
 
 脚本检查：
