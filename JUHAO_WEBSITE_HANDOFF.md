@@ -1,11 +1,11 @@
 # JUHAO 钜豪照明官网交接摘要
 
-- 最后核验：2026-07-13 19:27（Asia/Shanghai）
+- 最后核验：2026-07-13 19:38（Asia/Shanghai）
 - 项目目录：`/Users/mac/Documents/Codex/2026-07-12/sites-plugin-sites-openai-bundled-3`
 - 当前分支：`main`
 - 网站实施基线：`01305b088d047fc33e4e7d3e9fe0461d0ff060aa`
-- 当前私有线上应用提交：`4135b81830e8442bcfb643ea8fa130a0603d415d`
-- 本轮状态：代码与内容验收完成，Sites 第 18 版私有部署待执行
+- 当前私有线上应用提交：`46f04635bf574c0d301d699f1e4c5aa14f87efe1`
+- 本轮状态：代码、内容、自动化、浏览器与 Sites 第 18 版私有部署验收完成
 
 > 本文档是当前项目事实的优先入口。旧版 `README.md`、`NOTES.md` 和部分 `RECON/**` 记录只代表历史阶段；数量、发布状态和联系方式必须以当前代码、统一发布台账、媒体台账、Sites 实时状态和本文档为准。
 
@@ -253,11 +253,13 @@ npm test
 - 项目 ID：`appgprj_6a533dc64d64819194e7761cf915e12d`
 - 当前私有地址：`https://juhao-lighting-2026.rocky-snail-3254.chatgpt.site`
 - 当前访问策略：`custom`，仅所有者一人，无用户组。
-- 当前线上版本：第 17 版。
-- 本轮目标：保存并部署第 18 版私有版本。
+- 当前线上版本：第 18 版，状态 `succeeded`。
+- 部署提交：`46f04635bf574c0d301d699f1e4c5aa14f87efe1`。
+- 版本 ID：`appgprj_6a533dc64d64819194e7761cf915e12d~appgver_9a9bd07a083c8191a82202325e0f159f`。
+- 部署 ID：`appgdep_6a54cd343ea48191ac5b9f4d8880f9b6`。
 - 正式域名和公开访问：本轮不变更。
 
-本节在第 18 版部署完成后更新具体版本、提交和部署 ID。
+线上抽检首页、关于、两个产品专题、旗舰案例、企业动态、联系页、`robots.txt` 和 `sitemap.xml` 均返回 200。内容页均保持 `noindex`，sitemap 中 `<loc>` 为 0；页脚和页面关键内容已确认存在。
 
 ## 12. 仍需企业人工完成的门禁
 
