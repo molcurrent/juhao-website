@@ -844,6 +844,32 @@
   padding: 18px 20px;
 }
 
+.honorsSection {
+  padding: 130px var(--page-gutter);
+  background: #e8e4dc;
+}
+
+.honorsSection > header,
+.honorsSection > div {
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+}
+
+.honorsSection > header {
+  display: grid;
+  grid-template-columns: .35fr .75fr .9fr;
+  gap: 45px;
+  align-items: end;
+}
+
+.honorsSection h2 { margin: 0; font-size: clamp(45px, 5vw, 76px); letter-spacing: -.06em; }
+.honorsSection header > span { color: var(--ink-soft); font-size: 13px; line-height: 1.85; }
+.honorsSection > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 65px; border-top: 1px solid #c5c0b7; }
+.honorsSection article { min-height: 260px; padding: 25px 20px 30px 0; border-right: 1px solid #c5c0b7; }
+.honorsSection article small { color: var(--brand-orange); font-weight: 800; }
+.honorsSection article h3 { margin: 90px 0 18px; font-size: 19px; line-height: 1.45; }
+.honorsSection article p { color: var(--ink-soft); font-size: 10px; }
+
 /* Careers: warmer editorial framing, with explicit inactive state. */
 .careersHero {
   background: var(--brand-orange);
@@ -1071,6 +1097,11 @@
 }
 
 @media (max-width: 900px) {
+  .honorsSection { padding: 90px 24px; }
+  .honorsSection > header { grid-template-columns: 1fr; align-items: start; }
+  .honorsSection > div { grid-template-columns: 1fr 1fr; }
+  .honorsSection article { min-height: 220px; }
+
   .aboutHero,
   .careersHero {
     grid-template-columns: 1fr;

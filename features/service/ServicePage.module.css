@@ -628,6 +628,9 @@
   }
 }
 
+.networkGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;padding:1px;background:#d7d3cb}.networkGrid article{min-height:260px;padding:25px;background:var(--paper-raised)}.networkGrid article small{color:var(--brand-orange);font-size:10px}.networkGrid article h3{margin:55px 0 14px;font-size:22px}.networkGrid article p{color:var(--ink-soft);font-size:12px;line-height:1.8}.networkGrid article a{display:inline-block;margin-top:22px;padding-bottom:7px;border-bottom:1px solid var(--ink);font-size:11px;font-weight:700}.staticFaq{width:min(100%,1050px);margin-left:auto;border-top:1px solid var(--line)}.staticFaq details{border-bottom:1px solid var(--line)}.staticFaq summary{display:flex;justify-content:space-between;gap:24px;padding:26px 0;cursor:pointer;font-size:clamp(16px,1.7vw,22px);font-weight:700}.staticFaq summary span{font-size:24px}.staticFaq details p{max-width:760px;margin:0;padding:0 60px 30px 0;color:var(--ink-soft);line-height:1.85}
+@media(max-width:560px){.networkGrid{grid-template-columns:1fr}.networkGrid article{min-height:230px}}
+
 @media (prefers-reduced-motion: reduce) {
   .locationList {
     animation: none;

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { pages, SITE_URL } from "./_data/pages";
 import { NEWS_PAGE_SIZE, newsPagePath } from "@/lib/news-pagination";
 import { caseStudies, productTopics } from "@/content/catalog";
+import { products } from "@/content/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/cases/${study.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.75,
+    })),
+    ...products.map((product) => ({
+      url: `${SITE_URL}${product.seo_slug}`,
+      lastModified: product.publish_date,
+      changeFrequency: "monthly" as const,
+      priority: 0.72,
     })),
     ...newsPagination,
   ];

@@ -28,6 +28,18 @@ interface ExecutionContext {
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    const confirmedSpamPaths = new Set([
+      "/static/news/9062.html",
+      "/static/news/1689.html",
+      "/static/news/1022.html",
+      "/static/news/3649.html",
+      "/static/news/5795.html",
+      "/static/news/8058.html",
+    ]);
+
+    if (confirmedSpamPaths.has(url.pathname)) {
+      return new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" } });
+    }
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];

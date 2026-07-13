@@ -20,7 +20,9 @@ import { siteApi, type NewsPageResult } from "@/lib/api";
 import { resolveConsultationContext, type ConsultationContext } from "@/lib/consultation";
 import { NEWS_PAGE_SIZE, newsPagePath, parseNewsPageNumber } from "@/lib/news-pagination";
 import { caseStudies, catalogPageData, productTopics } from "@/content/catalog";
-import { CasesPage, ProductsPage } from "@/features/catalog/CatalogPages";
+import { productByRouteKey, productPageData, products } from "@/content/products";
+import { CaseDetailPage, CasesPage, ProductsPage, ProductTopicPage } from "@/features/catalog/CatalogPages";
+import { ProductDetailPage } from "@/features/catalog/ProductDetailPage";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 type Props = { params: Promise<{ slug: string[] }>; searchParams?: Promise<SearchParams> };
@@ -39,6 +41,8 @@ function resolveRoute(slug: string[]): RouteContext | null {
   if (directPage) return { routeKey: slug.join("/"), page: directPage, canonicalPath: directPage.path, newsPageNumber: null };
 
   const routeKey = slug.join("/");
+  const productPage = productPageData(routeKey);
+  if (productPage) return { routeKey, page: productPage, canonicalPath: productPage.path, newsPageNumber: null };
   const catalogPage = catalogPageData(routeKey);
   if (catalogPage) return { routeKey, page: catalogPage, canonicalPath: catalogPage.path, newsPageNumber: null };
 
@@ -64,6 +68,7 @@ export function generateStaticParams() {
   const catalogParams = [
     ...productTopics.map((item) => ({ slug: ["products", item.slug] })),
     ...caseStudies.map((item) => ({ slug: ["cases", item.slug] })),
+    ...products.map((item) => ({ slug: item.seo_slug.slice(1).split("/") })),
   ];
   const newsPageCount = Math.ceil(Object.values(pages).filter((page) => page.type === "article").length / NEWS_PAGE_SIZE);
   const newsParams = Array.from({ length: Math.max(0, newsPageCount - 1) }, (_, index) => ({ slug: ["news", "page", String(index + 2)] }));
@@ -112,6 +117,12 @@ function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { nam
 
 function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationContext }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[]; initialNews: NewsPageResult; consultationContext: ConsultationContext | null }) {
   if (routeKey === "products") return <ProductsPage page={page} />;
+  const product = productByRouteKey(routeKey);
+  if (product) return <ProductDetailPage product={product} />;
+  const topic = productTopics.find((item) => `products/${item.slug}` === routeKey);
+  if (topic) return <ProductTopicPage page={page} topic={topic} />;
+  const study = caseStudies.find((item) => `cases/${item.slug}` === routeKey);
+  if (study) return <CaseDetailPage study={study} />;
   if (routeKey === "cases") return <CasesPage page={page} />;
   if (routeKey === "about") return <AboutPage page={page} />;
   if (routeKey === "about/history") return <HistoryPage page={page} />;

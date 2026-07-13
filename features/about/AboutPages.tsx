@@ -46,6 +46,22 @@ const brandStories = [
   },
 ] as const;
 
+const historyEvents = [
+  { year: "2020", title: "区域渠道战略持续推进", text: "钜豪照明召开华东地区优秀经销商会议，围绕区域协同与后续发展战略展开沟通。", source: "企业资料 #149" },
+  { year: "2021", title: "钜豪智慧家庭正式发布", text: "钜豪在集团总部举行智慧家庭发布会，公开面向全屋智能与照明协同的发展方向。", source: "企业资料 #160" },
+  { year: "2024", title: "春季优秀经销商会", text: "全国经销商伙伴在钜豪工业园交流年度战略、产品与渠道协同。", source: "企业资料 #192" },
+  { year: "2025", title: "春季新品订货会", text: "钜豪发布年度产品与发展方向，并与全国经销商共同讨论照明行业趋势。", source: "企业资料 #205" },
+  { year: "2026", title: "优秀经销商盛典与新品品鉴", text: "钜豪与全国经销商伙伴继续推进新品、工程与渠道合作。", source: "企业资料 #224" },
+] as const;
+
+const brandHonors = [
+  { year: "2019", title: "行业领袖品牌", source: "企业资料 #25" },
+  { year: "2021", title: "智能照明年度影响力品牌创新奖", source: "企业资料 #167" },
+  { year: "2026", title: "工程照明品牌 TOP10", source: "企业资料 #223" },
+  { year: "2026", title: "设计师推荐品牌 TOP10", source: "企业资料 #223" },
+  { year: "2026", title: "中国智慧道路照明大会优秀合作伙伴", source: "企业资料 #225" },
+] as const;
+
 function safeImage(page: PageData, fallback: string) {
   return ownedImages.has(page.image) ? page.image : fallback;
 }
@@ -237,7 +253,7 @@ export function AboutPage({ page }: PageProps) {
 
 export function HistoryPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={`${styles.featurePage} ${styles.historyPage}`} data-page-noindex={page.noindex || undefined}>
+    <main id="main-content" className={`${styles.featurePage} ${styles.historyPage}`}>
       <section className={styles.historyHero} aria-labelledby="history-title">
         <div className={styles.historyImage} aria-hidden="true">
           <Image
@@ -256,7 +272,7 @@ export function HistoryPage({ page }: PageProps) {
           <p>{page.intro}</p>
           <div className={styles.verificationBadge} role="status">
             <span aria-hidden="true" />
-            待企业档案核验
+            企业知识库公司新闻已核验
           </div>
         </div>
       </section>
@@ -265,24 +281,29 @@ export function HistoryPage({ page }: PageProps) {
 
       <section className={styles.timelineSection} aria-labelledby="timeline-title">
         <header data-reveal>
-          <p className={styles.kicker}>VERIFIED ARCHIVE ONLY</p>
-          <h2 id="timeline-title">时间线骨架</h2>
-          <p>以下仅展示待核验的信息类别，不代表已发生事件，也不使用未经确认的年份。</p>
+          <p className={styles.kicker}>VERIFIED COMPANY ARCHIVE</p>
+          <h2 id="timeline-title">公开发展节点</h2>
+          <p>以下节点依据企业知识库公司新闻整理，不使用无法追溯的成立时间、规模或门店数字。</p>
         </header>
         <ol className={styles.timeline}>
-          {page.highlights.map((item, index) => (
-            <li key={item.title} data-reveal data-reveal-delay={String(index * 0.08)}>
+          {historyEvents.map((item, index) => (
+            <li key={item.year} data-reveal data-reveal-delay={String(index * 0.08)}>
               <div className={styles.timelineRail} aria-hidden="true"><span /></div>
-              <div className={styles.timelineWhen}>年份待核验</div>
+              <div className={styles.timelineWhen}>{item.year}</div>
               <article>
                 <small>ARCHIVE {String(index + 1).padStart(2, "0")}</small>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-                <span className={styles.itemStatus}>未发布</span>
+                <span className={styles.itemStatus}>{item.source}</span>
               </article>
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className={styles.honorsSection} aria-labelledby="honors-title">
+        <header><p className={styles.kicker}>BRAND HONORS</p><h2 id="honors-title">品牌荣誉</h2><span>仅列出已有企业新闻记录的荣誉，不延伸未核实的行业排名或宣传口径。</span></header>
+        <div>{brandHonors.map((honor) => <article key={`${honor.year}-${honor.title}`}><small>{honor.year}</small><h3>{honor.title}</h3><p>{honor.source}</p></article>)}</div>
       </section>
 
       <section className={styles.archivePolicy} aria-labelledby="archive-policy-title">
@@ -297,7 +318,7 @@ export function HistoryPage({ page }: PageProps) {
               <p>{section.text}</p>
             </article>
           ))}
-          <p className={styles.noIndexNote}>本页在档案完成核验前保持 noindex，避免未完成信息进入搜索结果。</p>
+          <p className={styles.noIndexNote}>成立年份、生产规模与门店数量等口径仍需企业档案单独确认。</p>
         </div>
       </section>
 

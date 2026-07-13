@@ -74,13 +74,13 @@ test("renders independent feature structures instead of the generic fallback", a
   const worker = await createWorker();
   const routes = [
     ["/about", "从一束光，抵达完整的人居体验"],
-    ["/about/history", "时间线骨架"],
+    ["/about/history", "公开发展节点"],
     ["/solutions", "按真实场景进入方案"],
     ["/solutions/commercial", "场景产品组合"],
     ["/healthy-light", "不把未经验证的指标"],
     ["/smart-home", "先设计生活"],
     ["/mall", "先把能力边界说清楚"],
-    ["/service", "按地区查找服务点"],
+    ["/service", "四类服务入口"],
     ["/sustainability", "长期价值的四个维度"],
     ["/partners", "从了解彼此开始"],
     ["/news", "理解光，也理解空间"],
@@ -139,8 +139,8 @@ test("renders three tracked consultation paths without demo copy", async () => {
 test("publishes indexable product topics and stage-labelled project pages", async () => {
   const worker = await createWorker();
   const routes = [
-    ["/products", "底层全量管理", "照明产品中心"],
-    ["/products/spotlights", "射灯与轨道照明", "产品专题"],
+    ["/products", "首批开放", "照明产品中心"],
+    ["/products/spotlights", "查看产品详情", "产品专题"],
     ["/cases", "把项目阶段", "工程案例与项目动态"],
     ["/cases/jw-marriott-shenzhen-huafa-snow-world", "签约 / 中标项目", "深圳华发冰雪世界 JW 万豪酒店"],
     ["/cases/yangzhou-riverfront-lighting", "尚不表述为完工案例", "扬州经开区"],
@@ -155,6 +155,10 @@ test("publishes indexable product topics and stage-labelled project pages", asyn
     assert.match(html, /<link[^>]+rel="canonical"/i, path);
   }
 
+  const caseDetail = await render(worker, "/cases/jw-marriott-shenzhen-huafa-snow-world");
+  const caseHtml = await caseDetail.text();
+  for (const marker of ["方案范围", "产品方向清单", "完工资料状态", "最终产品型号清单：待项目组确认"]) assert.match(caseHtml, new RegExp(marker));
+
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
   assert.match(xml, /https:\/\/juhao\.com\/products\/spotlights/);
@@ -164,16 +168,37 @@ test("publishes indexable product topics and stage-labelled project pages", asyn
 test("content ledger blocks pending products from public SEO routes", async () => {
   const worker = await createWorker();
   const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const publishedProducts = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
   const pendingProducts = ledger.filter((item) => item.content_type === "产品" && item.review_status === "待审核");
+  const approvedProducts = ledger.filter((item) => item.content_type === "产品" && item.review_status === "已审核" && item.sale_status === "在售" && item.fact_status === "已核实" && item.image_authorization === "企业商城渠道素材");
   const approvedCases = ledger.filter((item) => item.content_type === "案例" && item.review_status === "已审核" && item.fact_status === "已核实" && item.image_status === "完整");
-  assert.equal(pendingProducts.length, 100);
-  assert.equal(new Set(pendingProducts.map((item) => item.source_id)).size, 100);
+  assert.equal(pendingProducts.length, 75);
+  assert.equal(approvedProducts.length, 25);
+  assert.equal(publishedProducts.length, 25);
+  assert.equal(new Set([...pendingProducts, ...approvedProducts].map((item) => item.source_id)).size, 100);
   assert.equal(approvedCases.length, 6);
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
   for (const item of approvedCases) assert.match(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+  for (const item of approvedProducts) assert.match(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
   for (const item of pendingProducts) assert.doesNotMatch(xml, new RegExp(item.seo_slug.replaceAll("/", "\\/")), item.seo_slug);
+});
+
+test("renders all 25 published product detail pages with parameters and Product schema", async () => {
+  const worker = await createWorker();
+  const products = JSON.parse(readFileSync(new URL("../content/governance/published-products.json", import.meta.url), "utf8"));
+  for (const product of products) {
+    const response = await render(worker, product.seo_slug);
+    assert.equal(response.status, 200, product.seo_slug);
+    const html = await response.text();
+    assert.match(html, new RegExp(product.model.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), product.seo_slug);
+    assert.match(html, /产品参数/);
+    assert.match(html, /安装与选型提示/);
+    assert.match(html, /"@type":"Product"/);
+    assert.match(html, new RegExp(`source=product-${product.source_id}`));
+    assert.doesNotMatch(html, /undefined-/i);
+  }
 });
 
 test("server-presets and records consultation context", async () => {
@@ -231,12 +256,9 @@ test("server-renders the accessible about brand carousel", async () => {
 test("keeps incomplete and utility pages out of the index", async () => {
   const worker = await createWorker();
   const noindexRoutes = [
-    "/about/history",
     "/about/join",
     "/mall",
     "/sustainability",
-    "/service",
-    "/partners",
     "/downloads",
     "/search",
     "/legal",
@@ -254,7 +276,26 @@ test("keeps incomplete and utility pages out of the index", async () => {
   const xml = await sitemap.text();
   assert.match(xml, /https:\/\/juhao\.com\/solutions\/residential/);
   assert.match(xml, /https:\/\/juhao\.com\/contact/);
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|service|partners|downloads|search|legal|privacy)/);
+  assert.match(xml, /https:\/\/juhao\.com\/(?:about\/history|service|partners)/);
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/(?:mall|sustainability|downloads|search|legal|privacy)/);
+});
+
+test("publishes verified history, honors, service network and cooperation content", async () => {
+  const worker = await createWorker();
+  const history = await render(worker, "/about/history");
+  const historyHtml = await history.text();
+  for (const marker of ["2020", "钜豪智慧家庭正式发布", "2026", "品牌荣誉", "工程照明品牌 TOP10"]) assert.match(historyHtml, new RegExp(marker));
+  assert.doesNotMatch(historyHtml, /待企业档案核验|年份待核验|时间线骨架/);
+
+  const service = await render(worker, "/service");
+  const serviceHtml = await service.text();
+  for (const marker of ["总部服务窗口", "商城与订单服务", "工程项目支持", "经销商协作", "400-0760-888"]) assert.match(serviceHtml, new RegExp(marker));
+  assert.doesNotMatch(serviceHtml, /Mock|示例服务点|非正式网点/);
+
+  const partners = await render(worker, "/partners");
+  const partnersHtml = await partners.text();
+  for (const marker of ["经销商合作", "工程项目合作", "供应商合作", "官网与商城分工", "经销商登录"]) assert.match(partnersHtml, new RegExp(marker));
+  assert.doesNotMatch(partnersHtml, /Mock|区域信息示例状态/);
 });
 
 test("serves indexable news pagination with independent canonicals", async () => {
@@ -314,6 +355,19 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
     assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, destination, source);
   }
 
+  const login = await render(worker, "/login.html");
+  assert.equal(login.status, 308);
+  assert.equal(login.headers.get("location"), "https://mall.juhao.com/login.html");
+
+});
+
+test("returns 410 for confirmed spam URLs", async () => {
+  const worker = await createWorker();
+  for (const path of ["/static/news/9062.html", "/static/news/1689.html", "/static/news/1022.html", "/static/news/3649.html", "/static/news/5795.html", "/static/news/8058.html"]) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 410, path);
+    assert.match(response.headers.get("x-robots-tag") || "", /noindex/i, path);
+  }
 });
 
 test("serves discovery files and a branded 404", async () => {

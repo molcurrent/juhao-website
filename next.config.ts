@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
       { source: "/law", destination: "/legal", permanent: true },
       { source: "/news/page/1", destination: "/news", permanent: true },
       { source: "/news/:id(\\d+)", destination: "/news", permanent: true },
+      { source: "/login.html", destination: "https://mall.juhao.com/login.html", permanent: true },
     ];
   },
 };

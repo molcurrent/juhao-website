@@ -2,11 +2,11 @@ import type { PageData } from "./pages";
 
 export const contractPages = {
   "about/history": {
-    path: "/about/history", label: "发展历程", eyebrow: "OUR JOURNEY", title: "钜豪发展历程", seoTitle: "发展历程｜钜豪照明", image: "/images/juhao-industrial.webp", noindex: true,
-    description: "钜豪照明发展历程页面。经企业核验的关键年份与事件将在正式发布前补充。",
-    intro: "这里将按时间呈现钜豪在照明、智能家居与渠道服务方向的重要节点。为避免发布未经核验的信息，当前不展示具体年份与事件。",
-    highlights: [{ title: "品牌起点", text: "具体时间与事件待企业档案核验。" }, { title: "产品演进", text: "产品与技术节点待企业资料确认。" }, { title: "服务拓展", text: "渠道与服务节点待企业资料确认。" }],
-    sections: [{ title: "信息发布原则", text: "发展历程只采用企业可验证的一手资料；正式时间线将保留原站同类页面的滚动节奏，但不会复制原站内容。" }],
+    path: "/about/history", label: "发展历程", eyebrow: "OUR JOURNEY", title: "钜豪发展历程", seoTitle: "发展历程与品牌荣誉｜钜豪照明", image: "/images/juhao-industrial.webp",
+    description: "查看钜豪照明2020年以来在渠道战略、智慧家庭、产品发布与行业荣誉方面的公开发展节点。",
+    intro: "时间线依据企业知识库公司新闻整理，记录钜豪在照明、智慧家庭、产品与渠道协同方向的可追溯节点。",
+    highlights: [{ title: "渠道共建", text: "以区域会议和经销商盛典持续连接合作伙伴。" }, { title: "智慧家庭", text: "2021年公开发布钜豪智慧家庭。" }, { title: "产品演进", text: "通过年度新品会议持续更新产品与方案。" }],
+    sections: [{ title: "资料边界", text: "本页只采用可追溯的企业新闻节点；成立年份、产能、门店数量等未完成企业档案核验的口径不在此发布。" }],
     related: [{ label: "品牌介绍", href: "/about", text: "了解钜豪的品牌主张。" }, { label: "加入钜豪", href: "/about/join", text: "查看招聘信息发布原则。" }, { label: "联系钜豪", href: "/contact", text: "提交合作需求。" }],
   },
   "about/join": {
@@ -42,18 +42,18 @@ export const contractPages = {
     related: [{ label: "健康光", href: "/healthy-light", text: "了解以人为中心的光环境原则。" }, { label: "资料下载", href: "/downloads", text: "查看已确认的公开资料。" }, { label: "关于钜豪", href: "/about", text: "了解品牌主张。" }],
   },
   "service": {
-    path: "/service", label: "服务支持", eyebrow: "SERVICE & SUPPORT", title: "让每一次使用都有回应", seoTitle: "服务支持｜钜豪照明", image: "/images/juhao-public.webp", type: "service", noindex: true,
-    description: "查看钜豪照明服务流程、常见问题、资料入口与服务网点信息发布说明。",
-    intro: "服务页面将连接使用问题、资料下载、网点查询与项目支持。正式质保政策、网点地址与联系方式以企业确认信息为准。",
-    highlights: [{ title: "问题指引", text: "按使用情境找到清晰的处理入口。" }, { title: "资料支持", text: "集中管理已确认的说明与软件。" }, { title: "网点查询", text: "通过可替换数据层查询城市与服务点。" }, { title: "持续反馈", text: "为咨询与处理进度保留统一入口。" }],
-    sections: [{ title: "服务流程", text: "选择问题类型并准备产品、购买与现场信息，再由对应服务入口处理。正式时效承诺需要企业确认后发布。" }, { title: "数据说明", text: "当前网点仅使用本地 Mock 验证交互，不展示原站门店数据或未经核验的钜豪地址。" }],
+    path: "/service", label: "服务支持", eyebrow: "SERVICE & SUPPORT", title: "让每一次使用都有回应", seoTitle: "服务支持与服务网络｜钜豪照明", image: "/images/juhao-public.webp", type: "service",
+    description: "查看钜豪照明总部服务、商城服务、工程项目支持、经销商协作、资料下载与常见问题入口。",
+    intro: "从总部服务窗口到商城、工程与渠道协作，按真实业务类型进入对应服务路径。",
+    highlights: [{ title: "总部服务", text: "通过公开热线和企业地址联系钜豪。" }, { title: "商城服务", text: "采购、订单和经销商业务由独立商城承接。" }, { title: "工程支持", text: "围绕项目阶段、方案和交付信息沟通。" }, { title: "资料支持", text: "集中管理经核验的产品与光学资料。" }],
+    sections: [{ title: "服务流程", text: "准备产品型号、购买或项目资料、问题现象和所在城市，再进入对应服务入口。" }, { title: "服务网络", text: "当前公开总部、商城、工程与经销商协作四类服务入口；具体地区服务点将在地址与责任主体核验后逐步增加。" }],
     related: [{ label: "资料下载", href: "/downloads", text: "查看已确认的公开资料。" }, { label: "联系钜豪", href: "/contact", text: "提交方案或合作需求。" }, { label: "常见照明知识", href: "/news", text: "阅读使用与规划内容。" }],
     faqs: [{ question: "如何查询正式服务网点？", answer: "网点数据接入并经企业核验后，可按省市查询；当前不发布示例地址。" }, { question: "质保政策以什么为准？", answer: "以对应产品随附文件、购买凭证和企业正式公布的政策为准。" }],
   },
   "partners": {
-    path: "/partners", label: "合作共创", eyebrow: "PARTNERSHIP", title: "与长期主义者一起成长", seoTitle: "渠道合作｜钜豪照明", image: "/images/juhao-commercial.webp", type: "service", noindex: true,
-    description: "了解钜豪照明渠道与项目合作的基础流程、准备信息与区域信息发布原则。",
-    intro: "合作从真实市场、服务能力和长期经营意愿开始。具体政策、区域、投入与联系人只在企业确认后发布。",
+    path: "/partners", label: "合作共创", eyebrow: "PARTNERSHIP", title: "与长期主义者一起成长", seoTitle: "经销商加盟与工程合作｜钜豪照明", image: "/images/juhao-commercial.webp", type: "service",
+    description: "了解钜豪照明经销商合作、工程项目合作与供应商合作方向，以及合作流程和资料准备要求。",
+    intro: "钜豪通过品牌官网承接合作咨询，以独立商城保留采购、订单与经销商业务能力。合作从区域、团队、服务能力和长期经营计划开始。",
     highlights: [{ title: "需求沟通", text: "说明区域、团队与业务方向。" }, { title: "能力评估", text: "共同评估服务、运营与交付条件。" }, { title: "方案确认", text: "明确边界、节奏与双方责任。" }, { title: "持续共建", text: "围绕用户与市场反馈持续优化。" }],
     sections: [{ title: "合作前可准备", text: "所在区域、现有团队、服务能力、业务经验与计划，是高效沟通的基础。" }, { title: "信息真实性", text: "本页不复制原站招商政策或联系人，也不承诺未经企业批准的区域权益。" }],
     related: [{ label: "钜豪商城", href: "/mall", text: "了解数字化渠道服务方向。" }, { label: "照明方案", href: "/solutions", text: "浏览主要业务场景。" }, { label: "联系合作", href: "/contact", text: "提交合作背景与方向。" }],

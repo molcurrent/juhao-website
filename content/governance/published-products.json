@@ -1,0 +1,1847 @@
+[
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12287",
+    "content_type": "产品",
+    "title": "JH-S288-24W 宽边款 Φ95 射灯 天罡二号系列",
+    "model": "JH-S288-24W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/spotlights/12287",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-24W 宽边款 Φ95 射灯 天罡二号系列_12287.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a2788d81e5a8.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-11 11:19:10",
+    "stock": "21000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "118×125"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "30只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a2788d81e5a8.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a28fbb2b41.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a28fcbb8c2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a28fdbae58.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a28ffb21bd.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a290120c4e.jpg"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12286",
+    "content_type": "产品",
+    "title": "JH-S288-24W 窄边款 Φ95 射灯 天罡二号系列",
+    "model": "JH-S288-24W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/spotlights/12286",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-24W 窄边款 Φ95 射灯 天罡二号系列_12286.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a2786eccaeb6.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-11 11:10:33",
+    "stock": "21000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "103×125"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "30只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a2786eccaeb6.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a251a1a7ad.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a251b4a583.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a251d6ac9a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a251fbb520.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a25227f360.jpg"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12285",
+    "content_type": "产品",
+    "title": "JH-S288-24W 预埋款 Φ95 射灯 天罡二号系列",
+    "model": "JH-S288-24W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/spotlights/12285",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-24W 预埋款 Φ95 射灯 天罡二号系列_12285.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a27893e15cda.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-11 11:20:11",
+    "stock": "21000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "130×125"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "30只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a27893e15cda.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a2943e80a4.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a294527613.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a29460b95b.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a294789af2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a2948d7f79.jpg"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12217",
+    "content_type": "产品",
+    "title": "JH-8L8709-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "JH-8L8709-500",
+    "topic": "家居顶灯",
+    "topic_slug": "ceiling-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 16,
+    "department": "钜豪自营",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/ceiling-lights/12217",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-8L8709-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_12217.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0ece248654a.jpg",
+    "category": "吸顶灯",
+    "sale_time": "2026-05-21 17:19:55",
+    "stock": "0",
+    "delivery": "15天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "φ500*110"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-15㎡"
+      },
+      {
+        "name": "空间",
+        "value": "餐厅,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "84W*2"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0ece248654a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-10/68fb281d7b5c1.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-10/68fb281e9bbda.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-10/68fb2821030e5.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-10/68fb282283e07.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-10/68fb2823896f1.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺寸、顶面承重与预留线路。",
+      "不同规格与控制方式不得仅凭系列图片替代确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12205",
+    "content_type": "产品",
+    "title": "DC-2300-1200长吊现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "DC-2300-1200",
+    "topic": "家居顶灯",
+    "topic_slug": "ceiling-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 19,
+    "department": "家居顶灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/ceiling-lights/12205",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/DC-2300-1200长吊现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_12205.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0e7c95b8554.jpg",
+    "category": "吸顶灯",
+    "sale_time": "2026-05-21 17:10:19",
+    "stock": "0",
+    "delivery": "20天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "L1200*1200"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-15㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "140W"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0e7c95b8554.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e79da9cb37.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e79a94221f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78eb0511e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78ec03be2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78ecce50e.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺寸、顶面承重与预留线路。",
+      "不同规格与控制方式不得仅凭系列图片替代确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12204",
+    "content_type": "产品",
+    "title": "DC-2300-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "DC-2300-500",
+    "topic": "家居顶灯",
+    "topic_slug": "ceiling-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 19,
+    "department": "家居顶灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/ceiling-lights/12204",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/DC-2300-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_12204.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0e7c6660c0a.png",
+    "category": "吸顶灯",
+    "sale_time": "2026-05-21 17:11:33",
+    "stock": "0",
+    "delivery": "20天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "φ500*60"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-15㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "110W"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a0e7c6660c0a.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e79da9cb37.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e79a94221f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78eb0511e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78ec03be2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a0e78ecce50e.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺寸、顶面承重与预留线路。",
+      "不同规格与控制方式不得仅凭系列图片替代确认。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11989",
+    "content_type": "产品",
+    "title": "JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯",
+    "model": "JH-X-6L1858-460",
+    "topic": "新中式",
+    "topic_slug": "new-chinese",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 49,
+    "department": "中式灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/new-chinese/11989",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯_11989.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+    "category": "吸顶灯",
+    "sale_time": "2026-03-29 11:27:39",
+    "stock": "0",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "木艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED*72W"
+      },
+      {
+        "name": "尺寸",
+        "value": "φ460*70mm"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,玄关/过道/廊道"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "传统中式"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e55df73d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e567b915.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57018f2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57d1c8f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e58a05a3.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺度、吊装高度与空间净高。",
+      "天然材质或手工部件可能存在合理纹理差异。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11988",
+    "content_type": "产品",
+    "title": "JH-X-6L1858-520圆客厅餐厅书房卧室金丝檀木吸顶灯",
+    "model": "JH-X-6L1858-520",
+    "topic": "新中式",
+    "topic_slug": "new-chinese",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 49,
+    "department": "中式灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/new-chinese/11988",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-X-6L1858-520圆客厅餐厅书房卧室金丝檀木吸顶灯_11988.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+    "category": "吸顶灯",
+    "sale_time": "2026-03-29 11:26:33",
+    "stock": "0",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "木艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED*90W"
+      },
+      {
+        "name": "尺寸",
+        "value": "φ520*70mm"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,玄关/过道/廊道"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "传统中式"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e55df73d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e567b915.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57018f2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57d1c8f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e58a05a3.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺度、吊装高度与空间净高。",
+      "天然材质或手工部件可能存在合理纹理差异。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11987",
+    "content_type": "产品",
+    "title": "JH-X-6L1858-450方客厅餐厅书房卧室金丝檀木吸顶灯",
+    "model": "JH-X-6L1858-450",
+    "topic": "新中式",
+    "topic_slug": "new-chinese",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 49,
+    "department": "中式灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/new-chinese/11987",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-X-6L1858-450方客厅餐厅书房卧室金丝檀木吸顶灯_11987.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89a746ec62.jpg",
+    "category": "吸顶灯",
+    "sale_time": "2026-03-29 11:22:04",
+    "stock": "0",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "木艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED*60W"
+      },
+      {
+        "name": "尺寸",
+        "value": "450*450*70mm"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,玄关/过道/廊道"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "传统中式"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-03/69c89a746ec62.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e55df73d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e567b915.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57018f2.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e57d1c8f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-03/69c88e58a05a3.jpg"
+    ],
+    "installation_notes": [
+      "安装前核对灯体尺度、吊装高度与空间净高。",
+      "天然材质或手工部件可能存在合理纹理差异。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12162",
+    "content_type": "产品",
+    "title": "120093-600异形简约现代铝材亚克力吊灯",
+    "model": "120093-600",
+    "topic": "艺术灯",
+    "topic_slug": "art-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 20,
+    "department": "艺术灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/art-lights/12162",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/120093-600异形简约现代铝材亚克力吊灯_12162.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a06f4a88d4ba.jpg",
+    "category": "吊灯",
+    "sale_time": "2026-05-15 18:28:59",
+    "stock": "80",
+    "delivery": "20天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED"
+      },
+      {
+        "name": "面积",
+        "value": "15㎡-30㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "金色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a06f4a88d4ba.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f556b25b0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f557af16f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f558acab1.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f559c371e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f55aa5426.jpg"
+    ],
+    "installation_notes": [
+      "造型灯具需结合吊点、承重、运输与现场组装条件确认。",
+      "多层或异形组合应以最终深化图和装箱清单为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12161",
+    "content_type": "产品",
+    "title": "120093-500异形简约现代铝材亚克力吊灯",
+    "model": "120093-500",
+    "topic": "艺术灯",
+    "topic_slug": "art-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 20,
+    "department": "艺术灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/art-lights/12161",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/120093-500异形简约现代铝材亚克力吊灯_12161.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a06f493bb051.jpg",
+    "category": "吊灯",
+    "sale_time": "2026-05-15 18:30:07",
+    "stock": "80",
+    "delivery": "20天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED"
+      },
+      {
+        "name": "面积",
+        "value": "15㎡-30㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "金色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a06f493bb051.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f58bb609d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f58d38f6e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f58ee240e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f5904e801.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f59168f32.jpg"
+    ],
+    "installation_notes": [
+      "造型灯具需结合吊点、承重、运输与现场组装条件确认。",
+      "多层或异形组合应以最终深化图和装箱清单为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12160",
+    "content_type": "产品",
+    "title": "120093-800+500异形简约现代铝材亚克力吊灯",
+    "model": "120093-800+500",
+    "topic": "艺术灯",
+    "topic_slug": "art-lights",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 20,
+    "department": "艺术灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/art-lights/12160",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/120093-800+500异形简约现代铝材亚克力吊灯_12160.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a03e03ac36b3.jpg",
+    "category": "吊灯",
+    "sale_time": "2026-05-15 18:28:06",
+    "stock": "80",
+    "delivery": "20天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED"
+      },
+      {
+        "name": "面积",
+        "value": "15㎡-30㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "金色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-05/6a03e03ac36b3.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f5227df32.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f523940df.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f5249b41f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f525c3b94.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-05/6a06f527110fc.jpg"
+    ],
+    "installation_notes": [
+      "造型灯具需结合吊点、承重、运输与现场组装条件确认。",
+      "多层或异形组合应以最终深化图和装箱清单为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "6788",
+    "content_type": "产品",
+    "title": "JH-V-70502-1000*350*250椭圆  三色变光轻奢吊灯/餐厅/休闲区/过道/会所/优质五金+国产一级K9水晶",
+    "model": "JH-V-70502-1000*350*250",
+    "topic": "水晶吊灯",
+    "topic_slug": "crystal-chandeliers",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 17,
+    "department": "水晶灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/crystal-chandeliers/6788",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-V-70502-1000350250椭圆  三色变光轻奢吊灯餐厅休闲区过道会所优质五金+国产一级K9水晶_6788.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a316f3a539.jpg",
+    "category": "吊灯",
+    "sale_time": "2024-09-23 10:37:28",
+    "stock": "160",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED自带光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "L1000*W350*H250MM"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "香槟金"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "光源数量",
+        "value": "LED*120W双色"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a316f3a539.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417949ce7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/61164179b2b3c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417a6034a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417cc2a2c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417e1ad3d.jpg"
+    ],
+    "installation_notes": [
+      "需由专业人员核对承重结构、吊装高度和维护空间。",
+      "水晶组件数量、规格和装配顺序以正式说明书为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "6787",
+    "content_type": "产品",
+    "title": "JH-V-70502-1000*420双层 三色变光轻奢吊灯/餐厅/休闲区/过道/会所/优质五金+国产一级K9水晶",
+    "model": "JH-V-70502-1000*420",
+    "topic": "水晶吊灯",
+    "topic_slug": "crystal-chandeliers",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 17,
+    "department": "水晶灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/crystal-chandeliers/6787",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-V-70502-1000420双层 三色变光轻奢吊灯餐厅休闲区过道会所优质五金+国产一级K9水晶_6787.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a2fbdcbe31.jpg",
+    "category": "吊灯",
+    "sale_time": "2024-09-23 10:38:31",
+    "stock": "160",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED自带光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "∅1000*H420MM"
+      },
+      {
+        "name": "面积",
+        "value": "15㎡-30㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "香槟金"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "光源数量",
+        "value": "LED*240W双色（双层）"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a2fbdcbe31.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417949ce7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/61164179b2b3c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417a6034a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417cc2a2c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417e1ad3d.jpg"
+    ],
+    "installation_notes": [
+      "需由专业人员核对承重结构、吊装高度和维护空间。",
+      "水晶组件数量、规格和装配顺序以正式说明书为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "6786",
+    "content_type": "产品",
+    "title": "JH-V-70502-800*420双层 三色变光轻奢吊灯/餐厅/休闲区/过道/会所/优质五金+国产一级K9水晶",
+    "model": "JH-V-70502-800*420",
+    "topic": "水晶吊灯",
+    "topic_slug": "crystal-chandeliers",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 17,
+    "department": "水晶灯事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/crystal-chandeliers/6786",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-V-70502-800420双层 三色变光轻奢吊灯餐厅休闲区过道会所优质五金+国产一级K9水晶_6786.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a2fbdcbe31.jpg",
+    "category": "吊灯",
+    "sale_time": "2024-09-23 10:38:13",
+    "stock": "160",
+    "delivery": "25天交期",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED自带光源"
+      },
+      {
+        "name": "尺寸",
+        "value": "∅800*H420MM"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "香槟金"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "吊灯"
+      },
+      {
+        "name": "光源数量",
+        "value": "LED*190W双色"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2021-08/611a2fbdcbe31.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417949ce7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/61164179b2b3c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417a6034a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417cc2a2c.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2021-08/6116417e1ad3d.jpg"
+    ],
+    "installation_notes": [
+      "需由专业人员核对承重结构、吊装高度和维护空间。",
+      "水晶组件数量、规格和装配顺序以正式说明书为准。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11806",
+    "content_type": "产品",
+    "title": "JH-H-400W-24V（二代）",
+    "model": "JH-H-400W-24V",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "90%",
+    "parameter_count": 5,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 13,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/linear-lighting/11806",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-H-400W-24V（二代）_11806.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+    "category": "灯带",
+    "sale_time": "2026-03-04 11:54:17",
+    "stock": "5000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "尺寸",
+        "value": "240*48*22"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "功率(W)",
+        "value": "400W"
+      },
+      {
+        "name": "电压(V)",
+        "value": "24V"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50个/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a951229a0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a952eea3d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95470d0a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a955864c7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95694349.jpg"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ],
+    "publishable": true,
+    "quality_score": 115
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11805",
+    "content_type": "产品",
+    "title": "JH-H-300W-24V（二代）",
+    "model": "JH-H-300W-24V",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "90%",
+    "parameter_count": 5,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 13,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/linear-lighting/11805",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-H-300W-24V（二代）_11805.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+    "category": "灯带",
+    "sale_time": "2026-03-04 11:56:19",
+    "stock": "5000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "尺寸",
+        "value": "240*48*22"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "功率(W)",
+        "value": "300W"
+      },
+      {
+        "name": "电压(V)",
+        "value": "24V"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50个/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a951229a0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a952eea3d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95470d0a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a955864c7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95694349.jpg"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ],
+    "publishable": true,
+    "quality_score": 115
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11804",
+    "content_type": "产品",
+    "title": "JH-H-200W-24V（二代）",
+    "model": "JH-H-200W-24V",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "90%",
+    "parameter_count": 5,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 13,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/linear-lighting/11804",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-H-200W-24V（二代）_11804.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+    "category": "灯带",
+    "sale_time": "2026-03-04 11:56:46",
+    "stock": "5000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "尺寸",
+        "value": "208*48*22"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "功率(W)",
+        "value": "200W"
+      },
+      {
+        "name": "电压(V)",
+        "value": "24V"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50个/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2025-11/6915a92d022ca.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a951229a0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a952eea3d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95470d0a.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a955864c7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2025-11/6915a95694349.jpg"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ],
+    "publishable": true,
+    "quality_score": 115
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "8445",
+    "content_type": "产品",
+    "title": "JH-ZN-2.4G-F（情景面板） G系列 智能产品",
+    "model": "JH-ZN-2.4G-F",
+    "topic": "开关面板",
+    "topic_slug": "switches",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "84%",
+    "parameter_count": 4,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 17,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/switches/8445",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-ZN-2.4G-F（情景面板） G系列 智能产品_8445.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-05/6294898ece775.png",
+    "category": "筒射灯",
+    "sale_time": "2026-03-04 11:03:35",
+    "stock": "1700",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "其他"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,高层/复式/别墅"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "装箱数量",
+        "value": "1只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-05/6294898ece775.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-05/629489d144d8e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-05/629489d184f57.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-05/629489d36da5e.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-05/629489d412803.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-05/629489d49a420.jpg"
+    ],
+    "installation_notes": [
+      "由具备资质的人员按电气规范安装并断电施工。",
+      "负载类型、回路数量和智能协议需在选型前确认。"
+    ],
+    "publishable": true,
+    "quality_score": 109
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "11001",
+    "content_type": "产品",
+    "title": "JH-9240-100A5",
+    "model": "JH-9240-100A5",
+    "topic": "户外照明",
+    "topic_slug": "outdoor-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 7,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 15,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/outdoor-lighting/11001",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-9240-100A5_11001.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2024-11/673e959896daa.png",
+    "category": "室内护眼大路灯",
+    "sale_time": "2026-03-03 17:44:58",
+    "stock": "500",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "尺寸",
+        "value": "500*300*1100mm"
+      },
+      {
+        "name": "面积",
+        "value": "5㎡-10㎡"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "白色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "护眼灯,落地灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2024-11/673e959896daa.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2024-11/673e9ae6d11a7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2024-11/673e9ae7b1904.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2024-11/673e9ae89729f.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2024-11/673e9aeb60f26.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2024-11/673e9aee78617.jpg"
+    ],
+    "installation_notes": [
+      "户外使用需结合安装环境核对防护、充电和维护要求。",
+      "产品图片不能替代现场安全与防水施工。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "8948",
+    "content_type": "产品",
+    "title": "JH-T-052铜体/户外露营/床头台灯/小夜灯",
+    "model": "JH-T-052",
+    "topic": "户外照明",
+    "topic_slug": "outdoor-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 19,
+    "department": "儿童灯工业风事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/outdoor-lighting/8948",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-T-052铜体户外露营床头台灯小夜灯_8948.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-10/635a70237c512.jpg",
+    "category": "台灯",
+    "sale_time": "2022-10-27 19:49:06",
+    "stock": "120",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "水晶,亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "三色变光"
+      },
+      {
+        "name": "尺寸",
+        "value": "Φ140mm*H260mm"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "铜色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,卫生间,阳台,楼梯/拐角,高层/复式/别墅,玄关/过道/廊道,其他"
+      },
+      {
+        "name": "类型",
+        "value": "台灯,过道灯,路灯,柱头灯,草坪灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,地中海,田园,现代时尚卡通"
+      },
+      {
+        "name": "光源数量",
+        "value": "1"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-10/635a70237c512.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693de3fa9.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e1e202.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e481f0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e85370.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693eacb92.jpg"
+    ],
+    "installation_notes": [
+      "户外使用需结合安装环境核对防护、充电和维护要求。",
+      "产品图片不能替代现场安全与防水施工。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "8947",
+    "content_type": "产品",
+    "title": "JH-T-051铜体/户外露营/床头台灯/小夜灯",
+    "model": "JH-T-051",
+    "topic": "户外照明",
+    "topic_slug": "outdoor-lighting",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 19,
+    "department": "儿童灯工业风事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/outdoor-lighting/8947",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-T-051铜体户外露营床头台灯小夜灯_8947.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-10/635a6fef8c4cb.jpg",
+    "category": "台灯",
+    "sale_time": "2022-10-27 19:48:33",
+    "stock": "120",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "水晶,亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "三色变光"
+      },
+      {
+        "name": "尺寸",
+        "value": "Φ140mm*H260mm"
+      },
+      {
+        "name": "颜色工艺",
+        "value": "铜色"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,卫生间,阳台,楼梯/拐角,高层/复式/别墅,玄关/过道/廊道,其他"
+      },
+      {
+        "name": "类型",
+        "value": "台灯,过道灯,路灯,柱头灯,草坪灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,地中海,田园,现代时尚卡通"
+      },
+      {
+        "name": "光源数量",
+        "value": "1"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2022-10/635a6fef8c4cb.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693de3fa9.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e1e202.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e481f0.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693e85370.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2022-10/635a693eacb92.jpg"
+    ],
+    "installation_notes": [
+      "户外使用需结合安装环境核对防护、充电和维护要求。",
+      "产品图片不能替代现场安全与防水施工。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12267",
+    "content_type": "产品",
+    "title": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-12W",
+    "topic": "工程定制",
+    "topic_slug": "project-custom",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/project-custom/12267",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列_12267.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a277e7bd4800.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-16 14:37:17",
+    "stock": "20000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "96×87"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a277e7bd4800.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18be4f9b9.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18c22ca7d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18c3ae60d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18c88e07d.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18c9c9c40.jpg"
+    ],
+    "installation_notes": [
+      "定制产品以项目深化图、样板确认和技术交底为准。",
+      "造型、材质、光源与安装节点变更需留存书面记录。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12266",
+    "content_type": "产品",
+    "title": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-12W",
+    "topic": "工程定制",
+    "topic_slug": "project-custom",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/project-custom/12266",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列_12266.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a277d50574c5.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-16 14:36:35",
+    "stock": "20000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "82×87"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a277d50574c5.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a15fee54aa.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a16006a4e7.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a16014df33.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a160293304.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1603bd853.jpg"
+    ],
+    "installation_notes": [
+      "定制产品以项目深化图、样板确认和技术交底为准。",
+      "造型、材质、光源与安装节点变更需留存书面记录。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  },
+  {
+    "source": "企业知识库商品说明 + 商城 SQL",
+    "source_id": "12265",
+    "content_type": "产品",
+    "title": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-15W",
+    "topic": "工程定制",
+    "topic_slug": "project-custom",
+    "review_status": "已审核",
+    "sale_status": "在售",
+    "fact_status": "已核实",
+    "parameter_completeness": "100%",
+    "parameter_count": 8,
+    "image_status": "完整",
+    "image_authorization": "企业商城渠道素材",
+    "image_count": 23,
+    "department": "家居商照事业部",
+    "publish_date": "2026-07-13",
+    "updated_at": "2026-07-13",
+    "seo_slug": "/products/project-custom/12265",
+    "legacy_url": "",
+    "source_file": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明/JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列_12265.md",
+    "primary_image": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a278289dd9a2.png",
+    "category": "商用照明",
+    "sale_time": "2026-06-16 14:39:16",
+    "stock": "21000",
+    "delivery": "现货",
+    "warranty": "",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "107×98"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "30只/件"
+      }
+    ],
+    "gallery": [
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/goods/2026-06/6a278289dd9a2.png",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd235740.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd3b74aa.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd564344.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd750653.jpg",
+      "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd88d45a.jpg"
+    ],
+    "installation_notes": [
+      "定制产品以项目深化图、样板确认和技术交底为准。",
+      "造型、材质、光源与安装节点变更需留存书面记录。"
+    ],
+    "publishable": true,
+    "quality_score": 125
+  }
+]
