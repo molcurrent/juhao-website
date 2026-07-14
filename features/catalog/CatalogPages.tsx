@@ -71,16 +71,12 @@ function FlagshipTopicGuide({ guide, products: topicProducts, topic }: { guide: 
       <header><p>03 / SEMANTIC MEDIA</p><h2 id="topic-media-title">语义化资料图片</h2><span>图片标题与来源随内容呈现；当前站点素材已登记批次授权，图片本身不替代产品参数或项目事实审核。</span></header>
       <div>{guide.media.map((item, index) => <figure key={`${item.src}-${index}`}>{item.src.startsWith("media-") ? <SemanticPicture mediaId={item.src} alt={item.alt} sizes="(max-width: 900px) 100vw, 33vw" /> : <Image src={item.src} alt={item.alt} width={1000} height={760} loading="lazy" unoptimized />}<figcaption>{item.caption}</figcaption></figure>)}</div>
     </section>
-    <section className={styles.topicKnowledge} aria-labelledby="topic-knowledge-title">
-      <header><p>04 / RELATED KNOWLEDGE</p><h2 id="topic-knowledge-title">用知识内容理解选型</h2></header>
-      <div>{guide.knowledge.map((item) => <Link href={item.href} key={`${item.title}-${item.source}`}><small>{item.source}</small><h3>{item.title}</h3><p>{item.summary}</p><b>继续阅读 ↗</b></Link>)}</div>
-    </section>
     <section className={styles.topicRelated} aria-labelledby="topic-related-title">
-      <header><p>05 / RELATED APPLICATIONS</p><h2 id="topic-related-title">关联应用与项目资料</h2><span>关联内容用于理解方案方向，不代表某个项目最终采用当前展示型号。</span></header>
+      <header><p>04 / RELATED APPLICATIONS</p><h2 id="topic-related-title">关联应用与项目资料</h2><span>关联内容用于理解方案方向，不代表某个项目最终采用当前展示型号。</span></header>
       <div>{guide.related.map((item) => <Link href={item.href} key={item.href}><small>{item.status ?? "关联内容"}</small><h3>{item.title}</h3><p>{item.text}</p></Link>)}</div>
     </section>
     <section className={styles.topicFaq} aria-labelledby="topic-faq-title">
-      <header><p>06 / FAQ</p><h2 id="topic-faq-title">{topic.title}常见问题</h2></header>
+      <header><p>05 / FAQ</p><h2 id="topic-faq-title">{topic.title}常见问题</h2></header>
       <div>{guide.faqs.map((item, index) => <details key={item.question}><summary><span>{String(index + 1).padStart(2, "0")}</span>{item.question}</summary><p>{item.answer}</p></details>)}</div>
     </section>
     <aside className={styles.topicMissing} aria-label="仍待补齐的资料"><p>资料边界</p><div><h2>这些信息仍待企业补齐</h2><ul>{guide.missingEvidence.map((item) => <li key={item}>{item}</li>)}</ul></div></aside>

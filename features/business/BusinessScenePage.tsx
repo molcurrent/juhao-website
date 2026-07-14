@@ -140,7 +140,7 @@ function ProductSection({ resources }: { resources: SceneResource[] }) {
           <p>RELATED RESOURCES</p>
           <h2 id="scene-products-title">场景关联资料</h2>
         </div>
-        <p>从产品专题、产品资料、项目资料与照明知识继续理解本场景；当前内容用于私有预览，具体适用条件仍以正式资料和项目确认结果为准。</p>
+        <p>从钜豪产品专题、产品资料与项目资料继续理解本场景；当前内容用于私有预览，具体适用条件仍以正式资料和项目确认结果为准。</p>
       </header>
       <div className={styles.productState}>
         <div className={styles.productGrid}>

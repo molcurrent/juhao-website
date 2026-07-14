@@ -23,16 +23,12 @@ test("rejects indexable pages or sitemap URLs in private-preview mode", () => {
   ]);
 });
 
-test("requires the exact 33-route approved set in public simulation", () => {
-  assert.equal(EXPECTED_PUBLIC_SITEMAP_URLS, 33);
-  const eligible = Array.from({ length: EXPECTED_PUBLIC_SITEMAP_URLS }, (_, index) => `/route-${index}`);
-  assert.deepEqual(indexingPolicyFailures({ html: '<meta name="robots" content="index, follow">', path: "/products", shouldIndex: true }), []);
-  assert.deepEqual(indexingPolicyFailures({ sitemapStatus: 200, sitemapRoutes: eligible, expectedSitemapRoutes: eligible }), []);
-  assert.deepEqual(indexingPolicyFailures({ sitemapStatus: 200, sitemapRoutes: eligible.slice(1), expectedSitemapRoutes: eligible }), [
-    "/sitemap.xml: expected exact 33-route set, got 32",
-  ]);
-  assert.deepEqual(indexingPolicyFailures({ html: '<meta name="robots" content="noindex, follow">', path: "/products", shouldIndex: true }), [
-    "/products: eligible public route must not include robots noindex",
+test("keeps the JUHAO-only public simulation at an exact empty eligible set", () => {
+  assert.equal(EXPECTED_PUBLIC_SITEMAP_URLS, 0);
+  assert.deepEqual(indexingPolicyFailures({ html: '<meta name="robots" content="noindex, follow">', path: "/products", shouldIndex: false }), []);
+  assert.deepEqual(indexingPolicyFailures({ sitemapStatus: 200, sitemapRoutes: [], expectedSitemapRoutes: [] }), []);
+  assert.deepEqual(indexingPolicyFailures({ sitemapStatus: 200, sitemapRoutes: ["/news/downlight-vs-spotlight"], expectedSitemapRoutes: [] }), [
+    "/sitemap.xml: expected exact 0-route set, got 1",
   ]);
 });
 

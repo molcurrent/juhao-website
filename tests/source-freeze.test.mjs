@@ -6,8 +6,11 @@ import test from "node:test";
 const freeze = JSON.parse(readFileSync(new URL("../content/governance/source-freeze.json", import.meta.url), "utf8"));
 
 test("locks external content and media bytes to one reviewed batch", () => {
-  assert.equal(freeze.batch_id, "content-freeze-2026-07-14");
-  assert.equal(freeze.knowledge_sources.length, 33);
+  assert.equal(freeze.batch_id, "content-freeze-2026-07-14-juhao-only");
+  assert.equal(freeze.content_policy.scope, "juhao_only");
+  assert.equal(freeze.content_policy.professional_article_import, "disabled");
+  assert.equal(freeze.content_policy.removed_professional_article_routes, 33);
+  assert.deepEqual(freeze.knowledge_sources ?? [], []);
   assert.equal(freeze.help_sources.length, 137);
   assert.equal(freeze.product_sources.length, 112);
   assert.equal(freeze.topic_sources.length, 10);

@@ -77,24 +77,6 @@ const planningSteps = [
   },
 ];
 
-const verifiedKnowledge = [
-  {
-    href: "/news/smart-lighting-scene-control",
-    title: "智能照明与场景控制",
-    text: "先定义真实场景，再核对控制入口、回路、调光与异常回退。",
-  },
-  {
-    href: "/news/led-dimming-compatibility",
-    title: "LED 调光兼容性",
-    text: "灯具、驱动、控制器和回路负载需要作为组合验证。",
-  },
-  {
-    href: "/news/led-driver-constant-voltage-current",
-    title: "驱动电源与恒压恒流",
-    text: "不能只比较额定瓦数，还要核对输出窗口、负载和调光方式。",
-  },
-] as const;
-
 const fallbackFaqs = [
   {
     question: "智能照明一定要使用手机控制吗？",
@@ -251,16 +233,6 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
           <h2 id="smart-evidence-title">先公开方法，<br />再逐款审核设备</h2>
           <span>当前智能设备候选清单已建立，但 0 款完成协议、供电、安装、兼容范围与售后资料审核，因此不生成产品详情。</span>
         </header>
-        <div className={styles.evidenceGrid}>
-          {verifiedKnowledge.map((item, index) => (
-            <Link href={item.href} key={item.href}>
-              <small>{String(index + 1).padStart(2, "0")} / JUHAO 审核知识</small>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <b>查看来源与边界 ↗</b>
-            </Link>
-          ))}
-        </div>
         <Link className={styles.evidenceCta} href="/contact?source=product-topic&sourceDetail=smart-home-devices&scene=project&intent=project-brief#consultation-form">提交场景与兼容需求 →</Link>
       </section>
 

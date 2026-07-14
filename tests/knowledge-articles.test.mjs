@@ -1,85 +1,74 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { REMOVED_PROFESSIONAL_ARTICLE_ROUTES } from "./fixtures/removed-professional-article-routes.mjs";
 
-const knowledge = JSON.parse(readFileSync(new URL("../content/governance/knowledge-articles.generated.json", import.meta.url), "utf8"));
-const dataSource = readFileSync(new URL("../content/knowledge-articles.ts", import.meta.url), "utf8");
-const articleSource = readFileSync(new URL("../features/news/NewsArticlePage.tsx", import.meta.url), "utf8");
-const newsSource = readFileSync(new URL("../features/news/NewsPage.tsx", import.meta.url), "utf8");
-const routeSource = readFileSync(new URL("../app/[...slug]/page.tsx", import.meta.url), "utf8");
-const mockApiSource = readFileSync(new URL("../lib/api/mock.ts", import.meta.url), "utf8");
+const ROOT = new URL("../", import.meta.url);
+const optionalText = (path) => existsSync(new URL(path, ROOT)) ? readFileSync(new URL(path, ROOT), "utf8") : "";
+const optionalJson = (path) => {
+  const source = optionalText(path);
+  return source ? JSON.parse(source) : [];
+};
 
-test("ships a portable snapshot of all 33 JUHAO-approved knowledge articles", () => {
-  const expectedNewSlugs = new Set([
-    "led-lifetime-reliability", "chinese-style-chandelier-guide", "power-factor-harmonics",
-    "bedroom-night-lighting", "kitchen-task-lighting", "commercial-lighting-guide",
-    "living-room-tv-wall-lighting", "home-lighting-guide", "switch-panels-bathroom-heaters",
-    "reading-desk-lamp-guide", "smart-lighting-scene-control", "crystal-chandelier-guide",
-    "lumens-watts-lux-efficacy", "home-lighting-selection-checklist", "glare-control-ugr",
-    "color-tolerance-duv", "art-lighting-guide", "blue-light-photobiological-safety",
-    "vanity-makeup-lighting", "ceiling-fan-light-guide", "dining-table-lighting",
-  ]);
+const governanceKnowledge = optionalJson("content/governance/knowledge-articles.generated.json");
+const ledger = JSON.parse(readFileSync(new URL("content/governance/content-ledger.json", ROOT), "utf8"));
+const runtimeLedger = JSON.parse(readFileSync(new URL("content/runtime/publication-ledger.json", ROOT), "utf8"));
+const routeOg = JSON.parse(readFileSync(new URL("content/governance/route-og.json", ROOT), "utf8"));
+const companyNews = JSON.parse(readFileSync(new URL("content/runtime/company-news.json", ROOT), "utf8"));
 
-  assert.equal(knowledge.length, 33);
-  assert.equal(new Set(knowledge.map(({ slug }) => slug)).size, 33);
-  assert.equal(knowledge.filter(({ slug }) => expectedNewSlugs.has(slug)).length, 21);
-  for (const item of knowledge) {
-    assert.equal(item.reviewState, "approved_by_juhao", item.sourceKey);
-    assert.equal(item.reviewer, "JUHAO", item.sourceKey);
-    assert.match(item.sourceHash, /^[a-f0-9]{64}$/, item.sourceKey);
-    assert.match(item.sourcePath, /^专业灯光知识库\/.+\.md$/, item.sourceKey);
-    assert.doesNotMatch(item.sourcePath, /^\//, item.sourceKey);
-    assert.ok(item.coreConclusions.length > 0, item.sourceKey);
-    assert.ok(item.doNotSay.length > 0, item.sourceKey);
-    assert.equal(item.externalSourceStatus, item.sourceUrls.length ? "recorded" : "not_recorded");
-    if (!item.sourceUrls.length) assert.equal(item.sourceDisclosure, "本文已完成 JUHAO 内部知识库审核，外部来源链接未记录。");
+test("prevents generic professional articles from being regenerated or published", () => {
+  assert.equal(REMOVED_PROFESSIONAL_ARTICLE_ROUTES.length, 33);
+  assert.deepEqual(governanceKnowledge, []);
+
+  const removed = new Set(REMOVED_PROFESSIONAL_ARTICLE_ROUTES);
+  for (const [label, records] of [["governance ledger", ledger], ["runtime ledger", runtimeLedger], ["OG manifest", routeOg]]) {
+    assert.equal(records.some(({ route }) => removed.has(route)), false, label);
   }
 
-  const scalarYamlArticle = knowledge.find(({ slug }) => slug === "chinese-style-chandelier-guide");
-  assert.equal(scalarYamlArticle.sourceUrls.length, 3);
-  assert.ok(scalarYamlArticle.tags.length >= 3);
-  assert.equal(knowledge.find(({ slug }) => slug === "home-lighting-selection-checklist").boundaryTitle, "资料使用边界");
-  assert.ok(knowledge.find(({ slug }) => slug === "lumens-watts-lux-efficacy").supportingSections.some(({ title }) => title === "使用边界"));
-
-  assert.match(dataSource, /knowledge-articles\.generated\.json/);
-  assert.match(dataSource, /外部来源链接未记录/);
-  assert.match(dataSource, /role: "representative_not_evidence"/);
-  assert.match(dataSource, /provenancePath: "RECON\/JUHAO_ASSET_PROVENANCE\.md"/);
-  assert.doesNotMatch(dataSource, /published:\s*seed\.reviewedAt|\/Users\/mac/);
+  const sourceFiles = [
+    "app/_data/pages.ts",
+    "content/knowledge-articles.ts",
+    "content/scene-resources.ts",
+    "content/topic-guides.ts",
+    "features/home/HomePage.tsx",
+    "features/smart-home/SmartHomePage.tsx",
+    "features/solutions/SolutionsPages.tsx",
+  ];
+  const runtimeSources = sourceFiles.map((path) => optionalText(path)).join("\n");
+  for (const route of removed) assert.doesNotMatch(runtimeSources, new RegExp(route.replaceAll("/", "\\/")), route);
+  assert.doesNotMatch(runtimeSources, /knowledge_base_professional_article_review|专业灯光知识库|已审核知识文章/);
 });
 
-test("renders semantic article media, review evidence, sources and related paths", () => {
+test("keeps the news center limited to eight JUHAO company and project records", () => {
+  assert.equal(companyNews.length, 8);
+  assert.equal(new Set(companyNews.map(({ path }) => path)).size, 8);
+  assert.ok(companyNews.every(({ path, source_id }) => path.startsWith("/news/") && Number.isInteger(source_id)));
+
+  const articles = ledger.filter(({ content_type }) => content_type === "文章");
+  assert.equal(articles.length, 8);
+  assert.ok(articles.every(({ source_type }) => source_type === "mall_sql_jh_articles"));
+  assert.deepEqual(
+    articles.map(({ route }) => route).sort(),
+    companyNews.map(({ path }) => path).sort(),
+  );
+});
+
+test("keeps semantic media and structured data gates for JUHAO news", () => {
+  const articleSource = readFileSync(new URL("features/news/NewsArticlePage.tsx", ROOT), "utf8");
+  const newsSource = readFileSync(new URL("features/news/NewsPage.tsx", ROOT), "utf8");
+  const routeSource = readFileSync(new URL("app/[...slug]/page.tsx", ROOT), "utf8");
+  const mockApiSource = readFileSync(new URL("lib/api/mock.ts", ROOT), "utf8");
+
   assert.match(articleSource, /<Image/);
-  assert.match(articleSource, /width=\{media\?\.width/);
-  assert.match(articleSource, /height=\{media\?\.height/);
-  assert.match(articleSource, /审核主体/);
-  assert.match(articleSource, /审核日期 <time dateTime=\{evidence\.reviewedAt\}>/);
-  assert.match(articleSource, /来源核对/);
-  assert.match(articleSource, /evidence\.sourceUrls\.map/);
-  assert.match(articleSource, /evidence\.coreConclusions\.map/);
-  assert.match(articleSource, /evidence\.doNotSay\.map/);
-  assert.match(articleSource, /page\.related\.map/);
-});
-
-test("uses semantic images for the news hero and featured article", () => {
+  assert.match(articleSource, /companyNewsEvidence/);
+  assert.match(articleSource, /来源记录/);
+  assert.match(articleSource, /公开边界/);
   assert.match(newsSource, /<figure className=\{styles\.heroMedia\}>[\s\S]*?<Image/);
   assert.match(newsSource, /<figure className=\{styles\.featuredImage\}>[\s\S]*?<Image/);
   assert.doesNotMatch(newsSource, /backgroundImage:/);
-  assert.match(newsSource, /width=\{1672\}/);
-  assert.match(newsSource, /height=\{941\}/);
-});
-
-test("keeps structured data behind the unified indexability gate", () => {
   assert.match(routeSource, /const schema = indexable \? \[/);
   assert.match(routeSource, /const faqSchema = indexable &&/);
-  assert.match(routeSource, /\.\.\.\(publishedAt \? \{ datePublished:publishedAt, dateModified:publishedAt \} : \{\}\)/);
-  assert.doesNotMatch(routeSource, /datePublished:page\.articleEvidence\?\.reviewedAt|modifiedTime: page\.articleEvidence\.reviewedAt/);
-  assert.doesNotMatch(routeSource, /const schema = page\.noindex/);
-});
-
-test("keeps server-rendered news on published ledger routes in deterministic date order", () => {
   assert.match(mockApiSource, /page\.type === "article" && isPublishedRoute\(page\.path\)/);
   assert.match(mockApiSource, /right\.published[\s\S]*localeCompare\(left\.published/);
-  assert.match(mockApiSource, /dateOrder \|\| left\.path\.localeCompare\(right\.path\)/);
   assert.doesNotMatch(newsSource, /"use client"|siteApi|useEffect|useState/);
 });

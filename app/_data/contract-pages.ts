@@ -15,7 +15,7 @@ export const contractPages = {
     intro: "我们重视对用户、空间和长期价值保持好奇的人。当前页面不发布未经企业确认的职位、待遇或联系方式。",
     highlights: [{ title: "产品与技术", text: "围绕照明与智能体验持续探索。" }, { title: "空间与设计", text: "把需求转译成清晰的光环境方案。" }, { title: "渠道与服务", text: "连接合作伙伴与真实用户。" }],
     sections: [{ title: "职位发布", text: "所有正式职位将标明职责、要求、工作地点与有效期；申请入口由企业确认后开放。" }],
-    related: [{ label: "关于钜豪", href: "/about", text: "了解品牌与业务方向。" }, { label: "发展历程", href: "/about/history", text: "查看经核验的品牌节点。" }, { label: "新闻资讯", href: "/news", text: "了解近期内容。" }],
+    related: [{ label: "关于钜豪", href: "/about", text: "了解品牌与业务方向。" }, { label: "发展历程", href: "/about/history", text: "查看经核验的品牌节点。" }, { label: "钜豪动态", href: "/news", text: "查看企业与项目来源记录。" }],
   },
   "solutions/hospitality": {
     path: "/solutions/hospitality", label: "酒店照明", eyebrow: "HOSPITALITY LIGHTING", title: "酒店照明解决方案", seoTitle: "酒店照明解决方案｜钜豪照明", image: "/images/juhao-home.webp", type: "service",
@@ -31,7 +31,7 @@ export const contractPages = {
     intro: "健康光不是单一参数或口号，而是围绕人的活动、时间和空间条件，综合处理看清、舒适、氛围与控制。",
     highlights: [{ title: "视觉舒适", text: "在看清的同时控制直视眩光与强烈反差。" }, { title: "真实显色", text: "让人物、食物与材质呈现自然。" }, { title: "时间节奏", text: "让不同时间的亮度和色温更符合活动需要。" }, { title: "简单控制", text: "让高频场景容易使用，也能灵活调整。" }],
     sections: [{ title: "从人和活动开始", text: "先明确空间里的人要做什么、停留多久、视线在哪里，再选择灯具、配光与控制方式。" }, { title: "不夸大未经验证的指标", text: "产品级光学、光谱或健康声明必须由正式检测和企业资料支持；在数据接入前，本页只陈述通用规划原则。" }],
-    related: [{ label: "全屋照明", href: "/solutions/residential", text: "把健康光原则应用到家庭空间。" }, { label: "酒店照明", href: "/solutions/hospitality", text: "查看旅居场景的光环境规划。" }, { label: "照明资讯", href: "/news", text: "阅读更多基础知识。" }],
+    related: [{ label: "全屋照明", href: "/solutions/residential", text: "把健康光原则应用到家庭空间。" }, { label: "酒店照明", href: "/solutions/hospitality", text: "查看旅居场景的光环境规划。" }, { label: "钜豪产品", href: "/products", text: "查看已进入私有预览的产品资料。" }],
   },
   "sustainability": {
     path: "/sustainability", label: "可持续发展", eyebrow: "SUSTAINABILITY", title: "让长期价值被看见", seoTitle: "可持续发展｜钜豪照明", image: "/images/juhao-public.webp", noindex: true,
@@ -47,7 +47,7 @@ export const contractPages = {
     intro: "从官网回访、商城、工程与渠道协作四类路径进入对应服务；电话、邮箱、地址和地区服务点在企业签核后开放。",
     highlights: [{ title: "官网回访", text: "提交线索编号可追踪的服务需求。" }, { title: "商城服务", text: "采购、订单和经销商业务由独立商城承接。" }, { title: "工程支持", text: "围绕项目阶段、方案和交付信息沟通。" }, { title: "资料支持", text: "集中管理经核验的产品与光学资料。" }],
     sections: [{ title: "服务流程", text: "准备产品型号、购买或项目资料、问题现象和所在城市，再进入对应服务入口。" }, { title: "服务路径", text: "当前私有预览提供官网回访、商城状态、工程咨询与经销商协作四类入口；电话、邮箱、地址和具体地区服务点均待企业确认。" }],
-    related: [{ label: "资料下载", href: "/downloads", text: "查看已确认的公开资料。" }, { label: "联系钜豪", href: "/contact", text: "提交方案或合作需求。" }, { label: "常见照明知识", href: "/news", text: "阅读使用与规划内容。" }],
+    related: [{ label: "资料下载", href: "/downloads", text: "查看已确认的公开资料。" }, { label: "联系钜豪", href: "/contact", text: "提交方案或合作需求。" }, { label: "钜豪企业动态", href: "/news", text: "查看企业与项目来源记录。" }],
     faqs: [{ question: "如何查询正式服务网点？", answer: "网点数据接入并经企业核验后，可按省市查询；当前不发布示例地址。" }, { question: "质保政策以什么为准？", answer: "以对应产品随附文件、购买凭证和企业正式公布的政策为准。" }],
   },
   "partners": {
@@ -68,11 +68,11 @@ export const contractPages = {
   },
   "search": {
     path: "/search", label: "站内搜索", eyebrow: "SEARCH", title: "搜索钜豪网站", seoTitle: "站内搜索｜钜豪照明", image: "/images/juhao-home.webp", noindex: true,
-    description: "搜索钜豪照明官网中的解决方案、服务与资讯内容。",
-    intro: "输入关键词后，搜索结果将按页面、解决方案、资讯和资料分类展示。搜索结果页不进入搜索引擎索引。",
-    highlights: [{ title: "页面", text: "品牌、服务与合作信息。" }, { title: "解决方案", text: "按空间查找光环境思路。" }, { title: "资讯", text: "查找照明知识与品牌内容。" }],
-    sections: [{ title: "搜索状态", text: "当前本地索引覆盖 101 条可搜索内容，并提供输入、结果、空状态与错误状态；候选商品和治理清单不会进入搜索结果。" }],
-    related: [{ label: "照明方案", href: "/solutions", text: "按空间浏览。" }, { label: "新闻资讯", href: "/news", text: "阅读照明内容。" }, { label: "服务支持", href: "/service", text: "查看服务入口。" }],
+    description: "搜索钜豪照明官网中的产品、项目、品牌、解决方案与服务内容。",
+    intro: "输入关键词后，搜索结果将按钜豪页面、产品、项目、企业动态和解决方案展示。搜索结果页不进入搜索引擎索引。",
+    highlights: [{ title: "品牌与服务", text: "查找钜豪品牌、服务与合作信息。" }, { title: "产品与项目", text: "查找已发布的钜豪产品和阶段透明项目。" }, { title: "企业动态", text: "查找钜豪企业、品牌与项目来源记录。" }],
+    sections: [{ title: "搜索状态", text: "当前本地索引覆盖 68 条可搜索内容，并提供输入、结果、空状态与错误状态；候选商品和治理清单不会进入搜索结果。" }],
+    related: [{ label: "钜豪产品", href: "/products", text: "浏览已发布产品资料。" }, { label: "钜豪项目", href: "/cases", text: "查看阶段透明项目档案。" }, { label: "钜豪动态", href: "/news", text: "查看企业与项目来源记录。" }],
   },
   "legal": {
     path: "/legal", label: "法律声明", eyebrow: "LEGAL", title: "法律声明", seoTitle: "法律声明｜钜豪照明", image: "/images/juhao-industrial.webp", noindex: true,

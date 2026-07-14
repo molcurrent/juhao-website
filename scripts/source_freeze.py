@@ -23,7 +23,6 @@ ARTIFACTS = [
     "content/governance/hard-exclusions.json",
     "content/governance/help-article-inventory.csv",
     "content/governance/help-article-inventory.json",
-    "content/governance/knowledge-articles.generated.json",
     "content/governance/manual-approval-queue.csv",
     "content/governance/media-authorization-batches.json",
     "content/governance/media-inventory.csv",
@@ -59,7 +58,6 @@ def source_rows(records: Iterable[dict], path_key: str, hash_key: str) -> list[d
 
 
 def build_snapshot() -> dict:
-    knowledge = read_json("content/governance/knowledge-articles.generated.json")
     help_articles = read_json("content/governance/help-article-inventory.json")
     products = read_json("content/governance/product-candidates.json")
     ledger = read_json("content/governance/content-ledger.json")
@@ -71,13 +69,17 @@ def build_snapshot() -> dict:
         raise ValueError("企业资讯 SQL 快照哈希不唯一")
 
     return {
-        "batch_id": "content-freeze-2026-07-14",
+        "batch_id": "content-freeze-2026-07-14-juhao-only",
         "frozen_at": "2026-07-14",
+        "content_policy": {
+            "scope": "juhao_only",
+            "professional_article_import": "disabled",
+            "removed_professional_article_routes": 33,
+        },
         "mall_sql": {
             "filename": "juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
             "sha256": next(iter(sql_hashes)),
         },
-        "knowledge_sources": source_rows(knowledge, "sourcePath", "sourceHash"),
         "help_sources": source_rows(help_articles, "source_path", "source_hash"),
         "product_sources": source_rows(products, "source_file", "source_hash"),
         "topic_sources": source_rows(topic_rows, "source_locator", "source_sha256"),
@@ -97,7 +99,7 @@ def verify_external_sources(groups: set[str] | None = None) -> dict[str, int | s
     if not FREEZE_PATH.exists():
         return {"status": "freeze_not_created", "checked": 0}
     frozen = json.loads(FREEZE_PATH.read_text(encoding="utf-8"))
-    selected = groups or {"knowledge", "help", "products", "topics", "mall_sql"}
+    selected = groups or {"help", "products", "topics", "mall_sql"}
     checked = 0
 
     if "mall_sql" in selected and SQL_SOURCE.exists():
@@ -107,7 +109,6 @@ def verify_external_sources(groups: set[str] | None = None) -> dict[str, int | s
 
     if KB.exists():
         mapping = {
-            "knowledge": "knowledge_sources",
             "help": "help_sources",
             "products": "product_sources",
             "topics": "topic_sources",
@@ -149,7 +150,7 @@ def check_snapshot() -> dict:
     external = verify_external_sources()
     return {
         "batch_id": frozen["batch_id"],
-        "knowledge_sources": len(frozen["knowledge_sources"]),
+        "professional_article_import": frozen["content_policy"]["professional_article_import"],
         "help_sources": len(frozen["help_sources"]),
         "product_sources": len(frozen["product_sources"]),
         "topic_sources": len(frozen["topic_sources"]),

@@ -16,8 +16,6 @@ PUBLIC = ROOT / "public"
 PROVENANCE = ROOT / "RECON" / "JUHAO_ASSET_PROVENANCE.md"
 PRODUCTS_TS = ROOT / "content" / "products.ts"
 CATALOG_TS = ROOT / "content" / "catalog.ts"
-KNOWLEDGE_ARTICLES_TS = ROOT / "content" / "knowledge-articles.ts"
-KNOWLEDGE_ARTICLES_JSON = ROOT / "content" / "governance" / "knowledge-articles.generated.json"
 COMPANY_NEWS_RUNTIME_JSON = ROOT / "content" / "runtime" / "company-news.json"
 OUT_JSON = ROOT / "content" / "governance" / "media-inventory.json"
 OUT_CSV = ROOT / "content" / "governance" / "media-inventory.csv"
@@ -308,68 +306,8 @@ def product_records(verified_at: str) -> list[dict[str, Any]]:
     return rows
 
 
-def top_level_ts_objects(source: str, marker: str) -> list[str]:
-    section = source.split(marker, 1)[1]
-    blocks: list[str] = []
-    start: int | None = None
-    depth = 0
-    in_string = False
-    escaped = False
-    for index, char in enumerate(section):
-        if escaped:
-            escaped = False
-            continue
-        if char == "\\" and in_string:
-            escaped = True
-            continue
-        if char == '"':
-            in_string = not in_string
-            continue
-        if in_string:
-            continue
-        if char == "{":
-            if depth == 0:
-                start = index
-            depth += 1
-        elif char == "}" and depth:
-            depth -= 1
-            if depth == 0 and start is not None:
-                blocks.append(section[start:index + 1])
-                start = None
-        elif char == "]" and depth == 0:
-            break
-    return blocks
-
-
 def article_media_records(verified_at: str, approved_hashes: dict[str, str]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    if KNOWLEDGE_ARTICLES_JSON.exists():
-        knowledge_items = json.loads(KNOWLEDGE_ARTICLES_JSON.read_text(encoding="utf-8"))
-    else:
-        knowledge_source = KNOWLEDGE_ARTICLES_TS.read_text(encoding="utf-8")
-        knowledge_items = []
-        for block in top_level_ts_objects(knowledge_source, "const seeds: KnowledgeArticleSeed[] = ["):
-            def knowledge_field(name: str) -> str:
-                match = re.search(rf'\b{name}:\s*"([^"]+)"', block)
-                if not match:
-                    raise ValueError(f"knowledge article missing {name}")
-                return match.group(1)
-            knowledge_items.append({name: knowledge_field(name) for name in ["image", "slug", "imageAlt", "sourceKey", "sourcePath"]})
-    for item in knowledge_items:
-        rows.append(
-            local_record(
-                item["image"].removeprefix("/"),
-                f"/news/{item['slug']}",
-                "article_representative",
-                item["imageAlt"],
-                "knowledge_base_professional_article_review",
-                item["sourceKey"],
-                item["sourcePath"],
-                verified_at,
-                approved_hashes,
-            )
-        )
-
     for item in json.loads(COMPANY_NEWS_RUNTIME_JSON.read_text(encoding="utf-8")):
         media = item["local_representative_media"]
         rows.append(

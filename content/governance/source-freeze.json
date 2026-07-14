@@ -1,144 +1,15 @@
 {
-  "batch_id": "content-freeze-2026-07-14",
+  "batch_id": "content-freeze-2026-07-14-juhao-only",
   "frozen_at": "2026-07-14",
+  "content_policy": {
+    "scope": "juhao_only",
+    "professional_article_import": "disabled",
+    "removed_professional_article_routes": 33
+  },
   "mall_sql": {
     "filename": "juhao_mall_2026-07-10_02-41-52_mysql_data.sql",
     "sha256": "c9ae607cb66d6302555621724d491e2dfc9986d582479be1fbb5691cc05201a8"
   },
-  "knowledge_sources": [
-    {
-      "path": "专业灯光知识库/IES配光文件.md",
-      "sha256": "62d3c3930d19d037dabd75b27cf99b9ffa92fb6ddc6b578157103b85d633d3c9"
-    },
-    {
-      "path": "专业灯光知识库/IP防护等级与潮湿空间.md",
-      "sha256": "1c22183de9849a0f081d53dfb021d3bd425748d9ab0e55bbc77b1b334ff187a7"
-    },
-    {
-      "path": "专业灯光知识库/LED寿命与可靠性.md",
-      "sha256": "5e537024244ba810a35a7a39ebb840aff2c21d9c7f7ab19701aae11767e000d9"
-    },
-    {
-      "path": "专业灯光知识库/LED调光兼容性.md",
-      "sha256": "212072f01cbc6df40eb13669ea07d448466066d86eac343ecc9a292c9f835400"
-    },
-    {
-      "path": "专业灯光知识库/中式吊灯.md",
-      "sha256": "0e4f826163f1e9a0399f4db3cc35545eb7c7c9e144e557707bca1b0045de3951"
-    },
-    {
-      "path": "专业灯光知识库/光束角.md",
-      "sha256": "f1fbb987ab366b1e79558b9708306622c1f01140850ac47fff6ae2939e5badb4"
-    },
-    {
-      "path": "专业灯光知识库/功率因数与谐波.md",
-      "sha256": "af1c89b70e4098755b3e8bee13bed091083431dddd18607f2a3407adad0d2282"
-    },
-    {
-      "path": "专业灯光知识库/卧室与夜间照明.md",
-      "sha256": "58f7056777880615fc0dfa1672d91c78c6a6465024a9793f81ba9d569a698c9b"
-    },
-    {
-      "path": "专业灯光知识库/厨房照明.md",
-      "sha256": "94d82c873ab39e842e9c86e6d5f827596ec948c96ad0aff3587018b45df9d57e"
-    },
-    {
-      "path": "专业灯光知识库/商业灯光照明.md",
-      "sha256": "e501b304281719e7778a3ecc804da1bc518401b7a1dc0b9c58948eb47ffb4cb3"
-    },
-    {
-      "path": "专业灯光知识库/客厅与电视墙照明.md",
-      "sha256": "60db02ee2165e1ba1f10d637e1448280d494a384d9b0ceb5c15af271fc5d83bd"
-    },
-    {
-      "path": "专业灯光知识库/家居照明灯.md",
-      "sha256": "f9b07c618bdf84648fdfcde689ed5b49e6c0b769ed3ee5a64b1c5e4cb8abef5d"
-    },
-    {
-      "path": "专业灯光知识库/射灯离墙与洗墙.md",
-      "sha256": "81c465022f88c40750a5d55204f496e4d832e00a806acd4209532c2190e1693f"
-    },
-    {
-      "path": "专业灯光知识库/开关面板与浴霸.md",
-      "sha256": "e7ccde258cadd9608dd7161b66b03183a44b3ca2edef04bd1f0ff5a108349f39"
-    },
-    {
-      "path": "专业灯光知识库/护眼台灯.md",
-      "sha256": "510fc76b1e0310b3768d6aad2bf5c27accb203ff43cef74ccf73f55919adcd84"
-    },
-    {
-      "path": "专业灯光知识库/无主灯设计.md",
-      "sha256": "68873520707a2354d110a80024f155a336d640ba81afe42f084512c92d909f89"
-    },
-    {
-      "path": "专业灯光知识库/显色指数.md",
-      "sha256": "45d3209f166234d72d086f0ecd8a13c9b362373220dbcfbd3977ed08aa79d9f5"
-    },
-    {
-      "path": "专业灯光知识库/智能照明与场景控制.md",
-      "sha256": "de712bfc558bb197bb021aca6a4436874e2dad8f91d65a8fa1a10202a6e7f576"
-    },
-    {
-      "path": "专业灯光知识库/水晶吊灯.md",
-      "sha256": "ecbae8a20648efef370371637853083a90427717fe7f05a169aeece9452fc25c"
-    },
-    {
-      "path": "专业灯光知识库/灯光基础知识.md",
-      "sha256": "ac36ec62a6759e09ea8fbf8e814bcb2f2ffc007b2252d31f6fa286f9e148078f"
-    },
-    {
-      "path": "专业灯光知识库/灯具选购参数.md",
-      "sha256": "465785501ae128ba0500127587839355c6893bb76a5419afb7a99f3b2b83348a"
-    },
-    {
-      "path": "专业灯光知识库/灯带设计与安装.md",
-      "sha256": "15aa71e2d50f3047ae364d036db0ecc1c275f0912b8560c3508be239dfa787ab"
-    },
-    {
-      "path": "专业灯光知识库/眩光与防眩.md",
-      "sha256": "dda5f99d08b74ba86c447546180ded98b258a580a38b67a532b6bcca23b99a06"
-    },
-    {
-      "path": "专业灯光知识库/筒灯射灯区别.md",
-      "sha256": "4c2a775ffbace69b207615cd4366a22d7018014adfc885372aa953ff4a69853d"
-    },
-    {
-      "path": "专业灯光知识库/色容差与Duv.md",
-      "sha256": "710be3f1d4d0295c4a6a1e00aa76d96d1244b91d61c031c4dd11d0058e6465f4"
-    },
-    {
-      "path": "专业灯光知识库/色温选择.md",
-      "sha256": "b64824af99e2d267bbfe6626723e2e762d596aa5c6bd1a3121aec9b7e563e4dc"
-    },
-    {
-      "path": "专业灯光知识库/艺术灯.md",
-      "sha256": "31289d684d402e0a226169075cfccb8f0535e4cc64f80a78c00b8e18342c5f8c"
-    },
-    {
-      "path": "专业灯光知识库/蓝光与光生物安全.md",
-      "sha256": "248823547aa99951b7cc7b21699019b9aa1cd725737dc50919f1847c81ccf534"
-    },
-    {
-      "path": "专业灯光知识库/镜前与化妆照明.md",
-      "sha256": "01ef7a05719902adb5bdbaae6f5d9f6538e17e3a8d858d778a6103e8721bc09a"
-    },
-    {
-      "path": "专业灯光知识库/频闪与时间光调制.md",
-      "sha256": "31f5b3c7d3b70d1372e0523d0e9edd4467d9746b9085e7b5604319b3be9fcd68"
-    },
-    {
-      "path": "专业灯光知识库/风扇灯.md",
-      "sha256": "34e22e8f5fba4350387c2d7f6c543f2f7749f333c19f92037648d38ffda0b02b"
-    },
-    {
-      "path": "专业灯光知识库/餐桌照明.md",
-      "sha256": "e2ef68aa539f47122f298043c36f71807291819f28fead22688064eaca2afc51"
-    },
-    {
-      "path": "专业灯光知识库/驱动电源与恒压恒流.md",
-      "sha256": "cb965a2ca6817c11c6ca9a2a74a70c06d3c25ba6f541a12951792f9637590db6"
-    }
-  ],
   "help_sources": [
     {
       "path": "商城系统/帮助文章/2020横栏慈善万人行，钜豪与慈善同行！_122.md",
@@ -2547,28 +2418,27 @@
   ],
   "artifact_sha256": {
     "content/governance/company-news-source.json": "5bd4a5a0106c498e0873848584ecacc303802dba391b64f780a68e47498671c2",
-    "content/governance/content-ledger.csv": "d3ed6fcaa6017b4671cf295b3c373261725d311a065a6980e673f687ce20c4a7",
-    "content/governance/content-ledger.json": "25853cb35bc3bdcbbff848c945665e929f04840b95d0c492562c04e75cdc9607",
+    "content/governance/content-ledger.csv": "26b2d64788f518b21097fd084ce5ee8c90a2db1a11bcdcb20585ca232b55446c",
+    "content/governance/content-ledger.json": "2ec4fed81ec19b47cf2a43d612e2788b32e975d27ec91478926209046f31f24a",
     "content/governance/content-media-assignments.json": "6bb4f26ba57698a593b69e36b468fc01d87ae73897b95b999bb782ec777e7e12",
     "content/governance/hard-exclusions.json": "b620437e4f71365b63173405c034c7d430a9cb0024adf2debc5e976f941b81c6",
     "content/governance/help-article-inventory.csv": "30512ac9177895c1dff1135a20fe9cd31c9896665be1ef4c2de24db9293efc39",
     "content/governance/help-article-inventory.json": "d751a43b0b5298d92dcef999a223ab904b40e54e782da193618d911daabf146d",
-    "content/governance/knowledge-articles.generated.json": "ee773226e2b425196371fba22b2f5f71f06138bf217abeabdba8022d0b41c1b0",
     "content/governance/manual-approval-queue.csv": "37fe8d136303048c2fe5a20ae1ffdbd21f355243a645e6748378c7ad3fcd2d0c",
     "content/governance/media-authorization-batches.json": "c412fd3375f60abd76d9dfbd3dcdcd43d66c63a68fd43fb00fde8c433c3069a4",
-    "content/governance/media-inventory.csv": "b25307b6e08b723f674a878b6ad26ea990c962a7eb8ede8a73d6947cc314cefd",
-    "content/governance/media-inventory.json": "3ec4c74f7e0ccc4018e8bbf399170e2c70457edbb9c8863550f4305ffba06692",
+    "content/governance/media-inventory.csv": "7a5b2674fcdfef64669ea954148e401114098d3aa60fac4efc75176ebcdfb354",
+    "content/governance/media-inventory.json": "4831181723d8b97733a6512c9e22e547ec709bcd2d1ee83f8dd789408b23b4c8",
     "content/governance/media-mirrors.json": "5c278de6b1fc859c2a331f1ccbc8b1f72549a40a60b4a462a762f487ca3b9f57",
     "content/governance/media-source-snapshot.json": "cdf8534ff693d313c23635f271913251d94475b307a4f5ac84e703f183599406",
-    "content/governance/product-candidates.json": "f1034b81690d08a49d6c81fdd6f60bc335a6e881eb6dbfa281591b5e8a8b7e08",
+    "content/governance/product-candidates.json": "3f0e0761e2489735381fc6057622e27376c20bb9937822826eb2899e1bc2d7d1",
     "content/governance/published-products.json": "c271cdb2a8b9168caf28e5260f2104d917938a4f95c957215f6ca1f9962942f2",
-    "content/governance/quality-report.md": "a7dd45f98ffebf2509fe2611cc43ba033a47b3f0bc8d070780091631d466c59b",
-    "content/governance/route-og.json": "d74563bdb2f2633cae54e4ec117c65d85baeb083a79d559a06566604ec6602c5",
+    "content/governance/quality-report.md": "f9b3b59ed103f38a8f30a0810a6c2b12354061da0e0d88c0bbd9348a85d62b9b",
+    "content/governance/route-og.json": "be4c645b6e678c45388c7c2e541ac21ab6873511e8121e960c909199b3041f8d",
     "content/governance/runtime-media.json": "7132ba8bfaf9f52f50a6be926921b2ee6af18fdf2c4f07511fab18a22c239f4c",
     "content/runtime/company-news.json": "1f898a0212afe6c336c69d15e016728f4fa371b95af206171244d82f470a06a6",
     "content/runtime/legacy-news-routes.json": "bccba86bab5d7f9bcb1a20f028b5cc244c137e11cc8c31a1b6cbd22478dd3013",
     "content/runtime/media-rewrite-report.json": "0e45cab04ce8f78331a171056a13358d149a9056acf78eb040ed034765f51e04",
-    "content/runtime/publication-ledger.json": "95ea30f85785d24f2333451c619a699e141da341c0d1aa90f3d34eb0fcc4c39e",
+    "content/runtime/publication-ledger.json": "bbc1b8cb77660a350a960af77139243b18fd6a524b6c4f7ad881fdc6137bb63d",
     "content/runtime/published-products.json": "1859b66904b59a600a0e35088844cd4c04802d1f2c5b5258e839513e8471fdba"
   }
 }

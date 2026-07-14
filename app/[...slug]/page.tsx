@@ -244,7 +244,6 @@ export default async function SeoPage({ params, searchParams }: Props) {
           mainEntityOfPage:`${SITE_URL}${page.path}`,
           author:{"@id":`${SITE_URL}/#organization`},
           publisher:{"@id":`${SITE_URL}/#organization`},
-          ...(page.articleEvidence ? { citation:page.articleEvidence.sourceUrls, reviewedBy:{"@type":"Organization",name:page.articleEvidence.reviewer} } : {}),
         }
       : page.type === "service"
         ? { "@context":"https://schema.org", "@type":"Service", name:page.title, description:page.description, provider:{"@id":`${SITE_URL}/#organization`} }

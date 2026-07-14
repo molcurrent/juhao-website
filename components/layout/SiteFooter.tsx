@@ -43,7 +43,7 @@ const footerGroups = [
     title: "内容与联系",
     label: "内容与联系导航",
     links: [
-      ["新闻知识", "/news"],
+      ["钜豪动态", "/news"],
       ["站内搜索", "/search"],
       ["联系钜豪", "/contact"],
     ],

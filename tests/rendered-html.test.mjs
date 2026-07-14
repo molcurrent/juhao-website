@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { REMOVED_PROFESSIONAL_ARTICLE_ROUTES } from "./fixtures/removed-professional-article-routes.mjs";
 
 globalThis.__cloudflareTestEnv = {};
 
@@ -160,7 +161,7 @@ test("server-renders published private-preview content", async () => {
     ["/about", "关于钜豪照明", "关于钜豪"],
     ["/solutions/residential", "全屋照明解决方案", "健康家居光环境"],
     ["/smart-home", "智能家居照明解决方案", "钜豪智能"],
-    ["/news/downlight-vs-spotlight", "筒灯与射灯", "钜豪照明知识"],
+    ["/news/guangzhou-international-lighting-exhibition-2026", "2026 广州光亚展", "钜豪照明企业动态"],
   ];
 
   for (const [path, heading, titleFragment] of routes) {
@@ -258,13 +259,13 @@ test("renders independent feature structures instead of the generic fallback", a
   assert.match(residentialHtml, /全屋照明应该从什么时候开始规划/);
   assert.doesNotMatch(residentialHtml, /"@type":"FAQPage"/);
 
-  const article = await render(worker, "/news/downlight-vs-spotlight");
+  const article = await render(worker, "/news/guangzhou-international-lighting-exhibition-2026");
   const articleHtml = await article.text();
   assert.match(articleHtml, /property="og:site_name" content="钜豪照明 JUHAO"/i);
   assert.doesNotMatch(articleHtml, /property="article:published_time"/i);
-  assert.match(articleHtml, /property="og:image" content="https:\/\/juhao\.com\/og\/news--downlight-vs-spotlight-[a-f0-9]{8}\.jpg"/i);
-  assert.match(articleHtml, /审核主体/);
-  assert.match(articleHtml, /JUHAO/);
+  assert.match(articleHtml, /property="og:image" content="https:\/\/juhao\.com\/og\/news--guangzhou-international-lighting-exhibition-2026-[a-f0-9]{8}\.jpg"/i);
+  assert.match(articleHtml, /来源记录 #232/);
+  assert.match(articleHtml, /待企业内容负责人复核/);
   assert.doesNotMatch(articleHtml, /"@type":"Article"/);
 });
 
@@ -426,9 +427,13 @@ test("deepens three flagship topics without inventing missing product facts", as
       assert.doesNotMatch(html, /VERIFIED COMPARISON/);
     }
     assert.match(html, /语义化资料图片/);
-    assert.match(html, /用知识内容理解选型/);
+    assert.match(html, /先按空间任务选/);
+    assert.match(html, /关联应用与项目资料/);
+    assert.doesNotMatch(html, /用知识内容理解选型|知识资料：/);
+    for (const removedRoute of REMOVED_PROFESSIONAL_ARTICLE_ROUTES) assert.doesNotMatch(html, new RegExp(removedRoute), `${path}: ${removedRoute}`);
     assert.doesNotMatch(html, /"@type":"FAQPage"/);
     assert.match(html, /<img(?=[^>]*alt=)(?=[^>]*width=)(?=[^>]*height=)[^>]*>/i);
+    if (path !== "/products/smart-home-devices") assert.match(html, /查看产品详情/);
   }
 
   const smart = await render(worker, "/products/smart-home-devices");
@@ -460,13 +465,14 @@ test("surfaces verified homepage evidence and three content lines", async () => 
   const worker = await createWorker();
   const response = await render(worker, "/");
   const html = await response.text();
-  for (const marker of ["31", "私有预览产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "33", "已审核知识文章", "JUHAO 内部审核", "企业动态", "项目动态", "照明知识"]) {
+  for (const marker of ["31", "私有预览产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "企业动态", "项目动态"]) {
     assert.match(html, new RegExp(marker), marker);
   }
+  assert.match(html, /<strong>8<\/strong><span>钜豪企业与项目资讯<\/span><small>企业知识库来源记录<\/small>/);
+  assert.doesNotMatch(html, /33 篇已审核知识文章|已审核知识文章|JUHAO 内部审核|照明知识/);
   assert.match(html, /企业资料 #226/);
   assert.match(html, /企业资料 #199 \/ #220 \/ #226 \/ #228 \/ #229 \/ #231/);
   assert.doesNotMatch(html, /<strong>5<\/strong><span>有来源的品牌荣誉<\/span>/);
-  assert.match(html, /JUHAO 审核/);
 });
 
 test("content ledger separates private routes, search and SEO approval", async () => {
@@ -580,20 +586,21 @@ test("search covers ledger-searchable routes without inheriting sitemap state", 
 test("server-renders source-labelled resources and tracked consultation on solution pages", async () => {
   const worker = await createWorker();
   const routes = [
-    ["/solutions/residential", ["/products/ceiling-lights", "/products/ceiling-lights/12217", "/cases/jw-marriott-shenzhen-huafa-snow-world", "/news/layered-lighting-design"]],
-    ["/solutions/hospitality", ["/products/spotlights", "/products/spotlights/12287", "/cases/jw-marriott-shenzhen-huafa-snow-world", "/news/color-rendering-index"]],
-    ["/solutions/commercial", ["/products/spotlights", "/products/spotlights/12286", "/cases/pullman-shangrao-guangfeng", "/news/beam-angle-guide"]],
-    ["/solutions/public", ["/products/outdoor-lighting", "/products/outdoor-lighting/11001", "/cases/yangzhou-riverfront-lighting", "/news/ip-rating-wet-spaces"]],
-    ["/solutions/industrial", ["/products/project-custom", "/products/project-custom/12265", "/cases/yangzhou-riverfront-lighting", "/news/ies-photometric-file"]],
+    ["/solutions/residential", ["/products/ceiling-lights", "/products/ceiling-lights/12217", "/cases/jw-marriott-shenzhen-huafa-snow-world"]],
+    ["/solutions/hospitality", ["/products/spotlights", "/products/spotlights/12287", "/cases/jw-marriott-shenzhen-huafa-snow-world"]],
+    ["/solutions/commercial", ["/products/spotlights", "/products/spotlights/12286", "/cases/pullman-shangrao-guangfeng"]],
+    ["/solutions/public", ["/products/outdoor-lighting", "/products/outdoor-lighting/11001", "/cases/yangzhou-riverfront-lighting"]],
+    ["/solutions/industrial", ["/products/project-custom", "/products/project-custom/12265", "/cases/yangzhou-riverfront-lighting"]],
   ];
 
   for (const [path, resourcePaths] of routes) {
     const response = await render(worker, path);
     const html = await response.text();
-    for (const kind of ["产品专题", "产品资料", "项目资料", "知识内容"]) {
+    for (const kind of ["产品专题", "产品资料", "项目资料"]) {
       assert.match(html, new RegExp(`data-resource-kind="${kind}"`), `${path}: ${kind}`);
     }
     for (const resourcePath of resourcePaths) assert.match(html, new RegExp(`href="${resourcePath}"`), `${path}: ${resourcePath}`);
+    for (const removedRoute of REMOVED_PROFESSIONAL_ARTICLE_ROUTES) assert.doesNotMatch(html, new RegExp(removedRoute), `${path}: ${removedRoute}`);
     assert.match(html, /咨询本场景方案/, path);
     assert.match(html, new RegExp(`source=solutions(?:&amp;|&)scene=project(?:&amp;|&)intent=project-brief(?:&amp;|&)sourceDetail=${path.split("/").at(-1)}`), path);
     assert.doesNotMatch(html, /线性照明组合|重点照明组合|高空间照明组合|产品数据通过可替换的数据层加载/, path);
@@ -635,18 +642,11 @@ test("keeps source dates stable while unapproved records stay out of sitemap", a
   assert.deepEqual(blocks, []);
 
   const articles = ledger.filter((item) => item.content_type === "文章");
-  assert.equal(articles.length, 41);
+  assert.equal(articles.length, 8);
   const knowledge = articles.filter((item) => item.source_type === "knowledge_base_professional_article_review");
   const companyNews = articles.filter((item) => item.source_type === "mall_sql_jh_articles");
-  assert.equal(knowledge.length, 33);
+  assert.equal(knowledge.length, 0);
   assert.equal(companyNews.length, 8);
-  for (const article of knowledge) {
-    assert.equal(article.review_status, "approved", article.route);
-    assert.equal(article.reviewer, "JUHAO", article.route);
-    assert.equal(article.updated_at, article.reviewed_at, article.route);
-    assert.equal(article.published_at, "", article.route);
-    assert.equal(article.index_eligible, true, article.route);
-  }
   for (const article of companyNews) {
     assert.equal(article.review_status, "needs_review", article.route);
     assert.equal(article.published_at, "", article.route);
@@ -780,7 +780,7 @@ test("serves private-preview news pagination with independent canonicals", async
   const worker = await createWorker();
   const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
   const articleRoutes = new Set(ledger.filter((item) => item.content_type === "文章" && item.publish_status === "published").map((item) => item.route));
-  const pages = Array.from({ length: 7 }, (_, index) => index === 0 ? "/news" : `/news/page/${index + 1}`);
+  const pages = ["/news", "/news/page/2"];
   const seenArticles = new Set();
 
   for (const [index, path] of pages.entries()) {
@@ -793,7 +793,7 @@ test("serves private-preview news pagination with independent canonicals", async
     assert.match(html, /aria-label="资讯分页"/, path);
     assert.match(html, /content="noindex, follow"/i, path);
     const routesOnPage = new Set([...html.matchAll(/href="(\/news\/[a-z0-9-]+)"/g)].map((match) => match[1]).filter((route) => articleRoutes.has(route)));
-    assert.equal(routesOnPage.size, index === 6 ? 5 : 6, path);
+    assert.equal(routesOnPage.size, index === 0 ? 6 : 2, path);
     for (const route of routesOnPage) {
       assert.equal(seenArticles.has(route), false, `${route} repeated across news pages`);
       seenArticles.add(route);
@@ -805,7 +805,7 @@ test("serves private-preview news pagination with independent canonicals", async
   assert.equal(firstPageAlias.status, 308);
   assert.equal(new URL(firstPageAlias.headers.get("location"), "http://localhost").pathname, "/news");
 
-  const outOfRange = await render(worker, "/news/page/8");
+  const outOfRange = await render(worker, "/news/page/3");
   assert.equal(outOfRange.status, 404);
   const outOfRangeHtml = await outOfRange.text();
   assert.match(outOfRangeHtml, /<meta(?=[^>]*name="robots")(?=[^>]*content="noindex")[^>]*>/i);
@@ -813,7 +813,47 @@ test("serves private-preview news pagination with independent canonicals", async
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  for (let page = 2; page <= 7; page += 1) assert.doesNotMatch(xml, new RegExp(`https://juhao\\.com/news/page/${page}`));
+  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/2/);
+});
+
+test("returns 404 for removed professional articles without leaking them into search, ledgers, OG, or HTML", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const runtimeLedger = JSON.parse(readFileSync(new URL("../content/runtime/publication-ledger.json", import.meta.url), "utf8"));
+  const routeOg = JSON.parse(readFileSync(new URL("../content/governance/route-og.json", import.meta.url), "utf8"));
+  const removed = new Set(REMOVED_PROFESSIONAL_ARTICLE_ROUTES);
+
+  for (const [label, records] of [["content ledger", ledger], ["runtime ledger", runtimeLedger], ["OG manifest", routeOg]]) {
+    assert.equal(records.some(({ route }) => removed.has(route)), false, label);
+  }
+
+  const search = await render(worker, "/search?keywords=news");
+  const searchHtml = await search.text();
+  const publishedHtml = [];
+  for (const { route } of ledger.filter(({ publish_status }) => publish_status === "published")) {
+    const response = await render(worker, route);
+    assert.equal(response.status, 200, route);
+    publishedHtml.push(await response.text());
+  }
+  const serializedPublishedHtml = publishedHtml.join("\n");
+  for (const route of REMOVED_PROFESSIONAL_ARTICLE_ROUTES) {
+    assert.doesNotMatch(searchHtml, new RegExp(`href="${route}"`), `${route}: search`);
+    assert.doesNotMatch(serializedPublishedHtml, new RegExp(route), `${route}: published HTML`);
+    const response = await render(worker, route);
+    assert.equal(response.status, 404, route);
+    const html = await response.text();
+    assert.match(html, /这里还没有内容/);
+    assert.doesNotMatch(html, /<link[^>]+rel="canonical"/i, `${route}: canonical`);
+    const schemas = structuredData(html).flatMap((item) => Array.isArray(item["@graph"]) ? item["@graph"] : [item]);
+    for (const type of ["Article", "Product", "Service", "WebPage", "BreadcrumbList", "FAQPage", "CollectionPage"]) {
+      assert.equal(schemas.some((item) => item["@type"] === type), false, `${route}: ${type} schema`);
+    }
+  }
+
+  for (let page = 3; page <= 7; page += 1) {
+    const response = await render(worker, `/news/page/${page}`);
+    assert.equal(response.status, 404, `/news/page/${page}`);
+  }
 });
 
 test("redirects legacy NVC route families to JUHAO canonicals", async () => {

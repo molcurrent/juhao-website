@@ -3,7 +3,6 @@ export type TopicGuide = {
   media: { src: string; alt: string; caption: string }[];
   scenarios: { title: string; task: string; checks: string[] }[];
   comparisonFields: { label: string; parameter?: string; note?: string }[];
-  knowledge: { title: string; summary: string; href: string; source: string }[];
   related: { title: string; text: string; href: string; status?: string }[];
   faqs: { question: string; answer: string }[];
   missingEvidence: string[];
@@ -45,12 +44,6 @@ export const topicGuides: Partial<Record<string, TopicGuide>> = {
       { label: "光束角", note: "正式资料待补充" },
       { label: "色温", note: "正式资料待补充" },
       { label: "显色指数", note: "正式检测资料待补充" },
-    ],
-    knowledge: [
-      { title: "筒灯与射灯怎么区分", summary: "先看配光、中心光强、遮光结构和用途，不只看外观名称。", href: "/news/downlight-vs-spotlight", source: "知识资料：筒灯射灯区别" },
-      { title: "光束角与光斑", summary: "光束角需要结合照射距离、配光曲线和瞄准角度理解。", href: "/news/beam-angle-guide", source: "知识资料：光束角" },
-      { title: "眩光与防眩", summary: "遮光结构、安装位置、观察方向与背景亮度需要一起判断。", href: "/news/glare-control-ugr", source: "知识资料：眩光与防眩" },
-      { title: "色容差与 Duv", summary: "光色一致性不能只看相关色温，还需理解色容差与 Duv 的边界。", href: "/news/color-tolerance-duv", source: "知识资料：色容差与 Duv" },
     ],
     related: [
       { title: "深圳华发冰雪世界 JW 万豪酒店", text: "签约 / 中标项目；页面展示空间方案方向，不作为完工证明。", href: "/cases/jw-marriott-shenzhen-huafa-snow-world", status: "项目动态" },
@@ -100,15 +93,8 @@ export const topicGuides: Partial<Record<string, TopicGuide>> = {
       { label: "维护条件", note: "清洁方式、易损件与检修路径待正式资料确认" },
       { label: "控制方式", note: "开关、调光或智能控制能力须按具体型号与驱动组合确认" },
     ],
-    knowledge: [
-      { title: "家居照明选购清单", summary: "把空间任务、安装、维护和已确认参数放进同一张检查表。", href: "/news/home-lighting-selection-checklist", source: "知识资料：灯具选购参数" },
-      { title: "家居照明怎么选", summary: "先按客餐厅、卧室与辅助空间的真实任务选择照明组合。", href: "/news/home-lighting-guide", source: "知识资料：家居照明灯" },
-      { title: "显色指数能说明什么", summary: "显色评价不能脱离光谱、照度、材质和具体视觉任务。", href: "/news/color-rendering-index", source: "知识资料：显色指数" },
-      { title: "频闪与时间光调制", summary: "调制深度、频率、波形与调光状态需要共同评价。", href: "/news/temporal-light-modulation", source: "知识资料：频闪与时间光调制" },
-    ],
     related: [
       { title: "全屋照明解决方案", text: "从户型、活动和控制方式建立家庭光环境。", href: "/solutions/residential", status: "家庭应用" },
-      { title: "家庭色温选择", text: "理解相关色温的含义、选择条件与表达边界。", href: "/news/color-temperature-guide", status: "照明知识" },
     ],
     faqs: [
       { question: "顶灯瓦数越大，空间就一定越亮吗？", answer: "不能只用瓦数判断。还要看光通量、配光、安装高度、空间表面和实际使用任务。当前商城“光源数量”字段也需要企业进一步确认语义。" },
@@ -130,14 +116,8 @@ export const topicGuides: Partial<Record<string, TopicGuide>> = {
       { title: "入户与安防", task: "明确开锁、权限、日志、断电和隐私责任。", checks: ["供电与应急方式", "权限和数据处理", "长期维护责任"] },
     ],
     comparisonFields: [],
-    knowledge: [
-      { title: "先验证调光兼容", summary: "智能场景不能替代灯具、驱动、调光器与回路负载的组合验证。", href: "/news/led-dimming-compatibility", source: "知识资料：LED 调光兼容性" },
-      { title: "理解恒压与恒流", summary: "不能只比较额定瓦数，还要核对输出窗口、负载范围和调光方式。", href: "/news/led-driver-constant-voltage-current", source: "知识资料：驱动电源与恒压恒流" },
-      { title: "智能照明与场景控制", summary: "先定义生活场景，再核对控制入口、回路、调光与异常回退。", href: "/news/smart-lighting-scene-control", source: "知识资料：智能照明与场景控制" },
-    ],
     related: [
       { title: "智能家居场景", text: "查看回家、观影、睡眠和离家等场景的规划顺序。", href: "/smart-home", status: "系统方案" },
-      { title: "调光兼容检查", text: "了解灯具、驱动、控制器和回路负载为何必须成套验证。", href: "/news/led-dimming-compatibility", status: "照明知识" },
     ],
     faqs: [
       { question: "接入智能系统后，所有灯都能无级调光吗？", answer: "不能这样承诺。灯具驱动、控制协议、调光曲线、负载和系统兼容性都需要逐项核对。" },

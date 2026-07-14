@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readdir, readFile, stat } from "node:fs/promises";
 import test from "node:test";
+import { REMOVED_PROFESSIONAL_ARTICLE_ROUTES } from "./fixtures/removed-professional-article-routes.mjs";
 
 const inventoryPath = new URL("../content/governance/media-inventory.json", import.meta.url);
 const authorizationPath = new URL("../content/governance/media-authorization-batches.json", import.meta.url);
@@ -76,6 +77,8 @@ test("mirrors every normalized object and verifies source and derived bytes", as
 
 test("separates batch authorization from the 178-item page display gate", async () => {
   const rows = await json(inventoryPath);
+  assert.equal(rows.length, 463);
+  assert.equal(rows.some((row) => row.source_type === "knowledge_base_professional_article_review"), false);
   const remote = rows.filter((row) => /^https?:\/\//.test(row.asset_url));
   const selectedUrls = new Set(remote.filter((row) => row.publish_allowed).map((row) => row.asset_url));
   assert.equal(remote.length, 445);
@@ -168,7 +171,10 @@ test("inventories ordinary public assets while generated media stays in dedicate
 test("generates one small deterministic VI social card per published route", async () => {
   const [manifest, ledger] = await Promise.all([json(routeOgPath), json(ledgerPath)]);
   const published = ledger.filter((row) => row.publish_status === "published");
+  const removedRoutes = new Set(REMOVED_PROFESSIONAL_ARTICLE_ROUTES);
+  assert.equal(manifest.length, 81);
   assert.equal(manifest.length, published.length);
+  assert.equal(manifest.some(({ route }) => removedRoutes.has(route)), false);
   assert.equal(new Set(manifest.map((row) => row.route)).size, manifest.length);
   assert.equal(new Set(manifest.map((row) => row.path)).size, manifest.length);
   for (const row of manifest) {

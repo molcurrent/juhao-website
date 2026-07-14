@@ -13,7 +13,6 @@ from source_freeze import verify_external_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 KB = Path(os.environ.get("JUHAO_KNOWLEDGE_BASE", "/Users/mac/Documents/juhao数据库/企业知识库"))
-PROFESSIONAL = KB / "专业灯光知识库"
 HELP = KB / "商城系统" / "帮助文章"
 SQL_SOURCE = Path(
     os.environ.get(
@@ -24,112 +23,10 @@ SQL_SOURCE = Path(
 GOVERNANCE = ROOT / "content" / "governance"
 RUNTIME = ROOT / "content" / "runtime"
 
-KNOWLEDGE_OUTPUT = GOVERNANCE / "knowledge-articles.generated.json"
 HELP_JSON_OUTPUT = GOVERNANCE / "help-article-inventory.json"
 HELP_CSV_OUTPUT = GOVERNANCE / "help-article-inventory.csv"
 EXCLUSIONS_OUTPUT = GOVERNANCE / "hard-exclusions.json"
 LEGACY_ROUTES_OUTPUT = RUNTIME / "legacy-news-routes.json"
-
-INTERNAL_SOURCE_DISCLOSURE = "本文已完成 JUHAO 内部知识库审核，外部来源链接未记录。"
-
-
-def article_spec(
-    slug: str,
-    topic_label: str,
-    topic_href: str,
-    consultation: str,
-    image: str,
-    additional_related: tuple[tuple[str, str, str], ...] = (),
-) -> dict:
-    return {
-        "slug": slug,
-        "topic": {
-            "label": topic_label,
-            "href": topic_href,
-            "text": "进入关联专题，结合具体空间、产品资料与安装条件继续核对。",
-        },
-        "consultation": consultation,
-        "image": image,
-        "additionalRelated": [
-            {"label": label, "href": href, "text": text}
-            for label, href, text in additional_related
-        ],
-    }
-
-
-ARTICLE_SPECS = {
-    "筒灯射灯区别": article_spec("downlight-vs-spotlight", "射灯与轨道照明专题", "/products/spotlights", "home-health", "/images/juhao-commercial.webp"),
-    "光束角": article_spec("beam-angle-guide", "射灯与轨道照明专题", "/products/spotlights", "home-health", "/images/juhao-commercial.webp"),
-    "射灯离墙与洗墙": article_spec("spotlight-wall-washing", "射灯与轨道照明专题", "/products/spotlights", "project", "/images/juhao-commercial.webp"),
-    "色温选择": article_spec("color-temperature-guide", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "显色指数": article_spec("color-rendering-index", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "无主灯设计": article_spec("layered-lighting-design", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "灯带设计与安装": article_spec("led-strip-design-installation", "灯带与线性照明专题", "/products/linear-lighting", "project", "/images/juhao-public.webp"),
-    "IES配光文件": article_spec("ies-photometric-file", "工程定制专题", "/products/project-custom", "project", "/images/juhao-industrial.webp"),
-    "IP防护等级与潮湿空间": article_spec("ip-rating-wet-spaces", "户外照明专题", "/products/outdoor-lighting", "project", "/images/juhao-public.webp"),
-    "LED调光兼容性": article_spec("led-dimming-compatibility", "家居智能设备专题", "/products/smart-home-devices", "project", "/images/juhao-home.webp"),
-    "频闪与时间光调制": article_spec("temporal-light-modulation", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "驱动电源与恒压恒流": article_spec("led-driver-constant-voltage-current", "灯带与线性照明专题", "/products/linear-lighting", "project", "/images/juhao-industrial.webp"),
-    "LED寿命与可靠性": article_spec("led-lifetime-reliability", "工业照明方案", "/solutions/industrial", "project", "/images/juhao-industrial.webp"),
-    "中式吊灯": article_spec("chinese-style-chandelier-guide", "新中式照明专题", "/products/new-chinese", "home-health", "/images/juhao-home.webp"),
-    "功率因数与谐波": article_spec("power-factor-harmonics", "工业照明方案", "/solutions/industrial", "project", "/images/juhao-industrial.webp"),
-    "卧室与夜间照明": article_spec("bedroom-night-lighting", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-    "厨房照明": article_spec("kitchen-task-lighting", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-    "商业灯光照明": article_spec("commercial-lighting-guide", "商业照明方案", "/solutions/commercial", "project", "/images/juhao-commercial.webp"),
-    "客厅与电视墙照明": article_spec("living-room-tv-wall-lighting", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-    "家居照明灯": article_spec("home-lighting-guide", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "开关面板与浴霸": article_spec("switch-panels-bathroom-heaters", "开关面板专题", "/products/switches", "project", "/images/juhao-home.webp"),
-    "护眼台灯": article_spec("reading-desk-lamp-guide", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-    "智能照明与场景控制": article_spec("smart-lighting-scene-control", "家居智能设备专题", "/products/smart-home-devices", "project", "/images/juhao-home.webp"),
-    "水晶吊灯": article_spec("crystal-chandelier-guide", "水晶吊灯专题", "/products/crystal-chandeliers", "project", "/images/juhao-commercial.webp"),
-    "灯光基础知识": article_spec("lumens-watts-lux-efficacy", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "灯具选购参数": article_spec("home-lighting-selection-checklist", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "眩光与防眩": article_spec("glare-control-ugr", "射灯与轨道照明专题", "/products/spotlights", "home-health", "/images/juhao-commercial.webp"),
-    "色容差与Duv": article_spec("color-tolerance-duv", "射灯与轨道照明专题", "/products/spotlights", "project", "/images/juhao-commercial.webp"),
-    "艺术灯": article_spec("art-lighting-guide", "艺术灯专题", "/products/art-lights", "project", "/images/juhao-commercial.webp"),
-    "蓝光与光生物安全": article_spec(
-        "blue-light-photobiological-safety",
-        "健康照明",
-        "/healthy-light",
-        "home-health",
-        "/images/juhao-home.webp",
-        (("全屋照明方案", "/solutions/residential", "结合家庭空间与夜间使用方式理解光生物安全边界。"),),
-    ),
-    "镜前与化妆照明": article_spec("vanity-makeup-lighting", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-    "风扇灯": article_spec("ceiling-fan-light-guide", "家居顶灯专题", "/products/ceiling-lights", "home-health", "/images/juhao-home.webp"),
-    "餐桌照明": article_spec("dining-table-lighting", "全屋照明方案", "/solutions/residential", "home-health", "/images/juhao-home.webp"),
-}
-
-NEW_ARTICLE_SLUGS = {
-    "led-lifetime-reliability",
-    "chinese-style-chandelier-guide",
-    "power-factor-harmonics",
-    "bedroom-night-lighting",
-    "kitchen-task-lighting",
-    "commercial-lighting-guide",
-    "living-room-tv-wall-lighting",
-    "home-lighting-guide",
-    "switch-panels-bathroom-heaters",
-    "reading-desk-lamp-guide",
-    "smart-lighting-scene-control",
-    "crystal-chandelier-guide",
-    "lumens-watts-lux-efficacy",
-    "home-lighting-selection-checklist",
-    "glare-control-ugr",
-    "color-tolerance-duv",
-    "art-lighting-guide",
-    "blue-light-photobiological-safety",
-    "vanity-makeup-lighting",
-    "ceiling-fan-light-guide",
-    "dining-table-lighting",
-}
-
-IMAGE_ALTS = {
-    "/images/juhao-home.webp": "原创家庭空间中的分层照明场景",
-    "/images/juhao-commercial.webp": "原创商业空间中的重点照明与材质表现",
-    "/images/juhao-public.webp": "原创公共空间中的连续照明与通行引导",
-    "/images/juhao-industrial.webp": "原创工业空间中的作业照明与安全通道",
-}
 
 PROJECT_IDS = {154, 155, 156, 157, 158, 159, 181, 182, 183, 186, 187, 189, 190, 191, 193, 194, 195, 199, 200, 204, 206, 207, 208, 210, 216, 217, 218, 219, 220, 221, 226, 228, 229, 231}
 HONOR_IDS = {126, 151, 152, 167, 171, 184, 185, 222, 223, 225}
@@ -203,109 +100,6 @@ def parse_frontmatter(text: str) -> tuple[dict[str, object], str]:
         else:
             result[key] = strip_quotes(raw_value)
     return result, body
-
-
-def parse_sections(body: str) -> dict[str, list[str]]:
-    sections: dict[str, list[str]] = {}
-    current: str | None = None
-    for raw_line in body.splitlines():
-        heading = re.match(r"^##\s+(.+?)\s*$", raw_line)
-        if heading:
-            current = heading.group(1)
-            sections[current] = []
-            continue
-        if not current or raw_line.startswith("#"):
-            continue
-        line = raw_line.strip()
-        if not line:
-            continue
-        item = re.sub(r"^(?:[-*]\s+|\d+[.)]\s+)", "", line).strip()
-        if item and not item.startswith("!["):
-            sections[current].append(item)
-    return sections
-
-
-def public_section(title: str, items: list[str]) -> dict | None:
-    if not items:
-        return None
-    return {"title": title, "text": items[0], "points": items[1:]}
-
-
-def description_from(text: str, limit: int = 110) -> str:
-    return text if len(text) <= limit else text[: limit - 1].rstrip("，；。 ") + "。"
-
-
-def build_knowledge_articles() -> list[dict]:
-    if not PROFESSIONAL.is_dir():
-        raise FileNotFoundError(f"专业灯光知识库不存在：{PROFESSIONAL}")
-    stems = {path.stem for path in PROFESSIONAL.glob("*.md")} - {"_JUHAO分镜提示词规范", "专业灯光知识库"}
-    if stems != set(ARTICLE_SPECS):
-        raise ValueError(f"专业知识文档与路由清单不一致：missing={sorted(set(ARTICLE_SPECS) - stems)}, extra={sorted(stems - set(ARTICLE_SPECS))}")
-
-    rows: list[dict] = []
-    for stem, spec in ARTICLE_SPECS.items():
-        path = PROFESSIONAL / f"{stem}.md"
-        source_bytes = path.read_bytes()
-        frontmatter, body = parse_frontmatter(source_bytes.decode("utf-8"))
-        sections = parse_sections(body)
-        core = sections.get("可用于内容的核心结论", [])
-        if stem == "灯具选购参数":
-            core = [*sections.get("基础参数", []), *sections.get("使用与安装", [])]
-        if not core:
-            raise ValueError(f"{path.name}: no approved core conclusions")
-        do_not_say = sections.get("不应直接表达", [])
-        boundary_title = "不应直接表达"
-        if stem == "灯具选购参数":
-            do_not_say = sections.get("内容生产规则", [])
-            boundary_title = "资料使用边界"
-        if not do_not_say:
-            raise ValueError(f"{path.name}: no publication boundary")
-        if frontmatter.get("review_state") != "approved_by_juhao" or frontmatter.get("reviewer") != "JUHAO":
-            raise ValueError(f"{path.name}: not approved by JUHAO")
-
-        excluded_sections = {"可用于内容的核心结论", "不应直接表达", "内容生产提示", "内容生产规则", "基础参数", "使用与安装"}
-        supporting_sections = [
-            parsed
-            for title, items in sections.items()
-            if title not in excluded_sections and (parsed := public_section(title, items))
-        ]
-        source_urls = frontmatter.get("source_urls", [])
-        if not isinstance(source_urls, list):
-            raise ValueError(f"{path.name}: source_urls must normalize to a list")
-        external_source_status = "recorded" if source_urls else "not_recorded"
-        image = spec["image"]
-        rows.append({
-            **spec,
-            "title": frontmatter["title"],
-            "description": description_from(core[0]),
-            "category": frontmatter["category"],
-            "imageAlt": f"{IMAGE_ALTS[image]}，用于说明《{frontmatter['title']}》主题",
-            "sourcePath": f"专业灯光知识库/{path.name}",
-            "sourceKey": f"professional_knowledge/{stem}",
-            "sourceHash": sha256_bytes(source_bytes),
-            "sourceLabel": frontmatter["source"],
-            "sourceUrls": source_urls,
-            "externalSourceStatus": external_source_status,
-            "sourceDisclosure": "" if source_urls else INTERNAL_SOURCE_DISCLOSURE,
-            "reviewState": frontmatter["review_state"],
-            "reviewer": frontmatter["reviewer"],
-            "reviewedAt": frontmatter["reviewed_at"],
-            "sourceCheckedAt": frontmatter["source_checked_at"],
-            "tags": frontmatter.get("tags", []),
-            "keywords": frontmatter.get("keywords", []),
-            "coreConclusions": core,
-            "supportingSections": supporting_sections,
-            "boundaryTitle": boundary_title,
-            "doNotSay": do_not_say,
-        })
-
-    slugs = [row["slug"] for row in rows]
-    if len(rows) != 33 or len(set(slugs)) != 33 or set(slugs) & {"news", "page"}:
-        raise ValueError("knowledge article count or slug uniqueness failed")
-    new_rows = [row for row in rows if row["slug"] in NEW_ARTICLE_SLUGS]
-    if len(new_rows) != 21:
-        raise ValueError("new knowledge article set does not match the approved 21-route snapshot")
-    return rows
 
 
 def parse_sql_values(values: str) -> list[list[str]]:
@@ -524,8 +318,7 @@ def write_help_csv(rows: list[dict]) -> None:
 
 
 def main() -> None:
-    verify_external_sources({"knowledge", "help", "mall_sql"})
-    knowledge = build_knowledge_articles()
+    verify_external_sources({"help", "mall_sql"})
     sql_rows = load_help_sql()
     help_rows = build_help_inventory(sql_rows)
     legacy_routes = build_legacy_routes(help_rows)
@@ -536,15 +329,12 @@ def main() -> None:
         "forbidden_source_tables": ["jh_sys_configs"],
         "forbidden_legacy_patterns": ["WSTMart", "商淘", "客服QQ", "用户QQ群", "旧电话", "旧地址", "支付政策", "物流政策", "旧合作政策"],
     }
-    write_json(KNOWLEDGE_OUTPUT, knowledge)
     write_json(HELP_JSON_OUTPUT, help_rows)
     write_help_csv(help_rows)
     write_json(EXCLUSIONS_OUTPUT, hard_exclusions)
     write_json(LEGACY_ROUTES_OUTPUT, legacy_routes)
     print(json.dumps({
-        "knowledge_articles": len(knowledge),
-        "new_knowledge_articles": sum(row["slug"] in NEW_ARTICLE_SLUGS for row in knowledge),
-        "new_without_external_urls": sum(row["slug"] in NEW_ARTICLE_SLUGS and not row["sourceUrls"] for row in knowledge),
+        "professional_articles_imported": 0,
         "help_articles": len(help_rows),
         "help_categories": Counter(row["content_domain"] for row in help_rows),
         "legacy_routes": len(legacy_routes),

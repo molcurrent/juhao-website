@@ -174,119 +174,9 @@
     "path": "/og/news-f46b16ed.jpg",
     "width": 1200,
     "height": 630,
-    "bytes": 27682,
-    "sha256": "3ced7662c469d49395f6ad4641353054382d2e3cd6cc5c4d9e9accd10c71f5aa",
-    "alt": "钜豪照明新闻与资讯｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/art-lighting-guide",
-    "path": "/og/news--art-lighting-guide-525a8121.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27067,
-    "sha256": "80c14f17208036d13adf160cfce7c8f81021a0aae25e0094f15344654629b7dd",
-    "alt": "艺术灯常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/beam-angle-guide",
-    "path": "/og/news--beam-angle-guide-e4b45754.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 28175,
-    "sha256": "31c941716be43d6ccd368c5fe858564c15cd4f51e3b367e93215558e891756d0",
-    "alt": "光束角定义与光斑大小｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/bedroom-night-lighting",
-    "path": "/og/news--bedroom-night-lighting-986d8aff.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27750,
-    "sha256": "86eef5c181e8a2f81448615578427ef21fe51cc71dc04515f165790ef978cf0c",
-    "alt": "卧室分层与夜间照明｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/blue-light-photobiological-safety",
-    "path": "/og/news--blue-light-photobiological-safety-0b651089.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27323,
-    "sha256": "c2e53dc4749d6937278b1a22bb3c7a7e11cb4f6468748a11eab64ec248eb84ad",
-    "alt": "蓝光与光生物安全｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/ceiling-fan-light-guide",
-    "path": "/og/news--ceiling-fan-light-guide-0e1d0129.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27651,
-    "sha256": "b123ecb897287443da2a7e42b2822e38d3d577101d7c56274b8d974e789583a5",
-    "alt": "风扇灯常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/chinese-style-chandelier-guide",
-    "path": "/og/news--chinese-style-chandelier-guide-fd2071c1.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 28787,
-    "sha256": "b788e41abbf3f75990e2f4a033326e7ae462a113c2838150b775739436982144",
-    "alt": "中式吊灯常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/color-rendering-index",
-    "path": "/og/news--color-rendering-index-bf25ca06.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30430,
-    "sha256": "7de8a3c469984fa9cd63895375157d9b0576903bfd7b704062a76ea00df993f9",
-    "alt": "显色指数 Ra、R9 与色彩保真｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/color-temperature-guide",
-    "path": "/og/news--color-temperature-guide-2333a5c1.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 31299,
-    "sha256": "b90ce5e81808b8656fc78e12c9501c4c39f1000a78e7f5238444ac28b542bdfa",
-    "alt": "相关色温的含义与家居选择｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/color-tolerance-duv",
-    "path": "/og/news--color-tolerance-duv-ffd2fa11.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30588,
-    "sha256": "9111fce55e39d214fef51277ec56f68859d6cc21cb98e97faa83fa0cd04a40bb",
-    "alt": "色容差、Duv 与同批灯色一致性｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/commercial-lighting-guide",
-    "path": "/og/news--commercial-lighting-guide-4ae8e58f.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30936,
-    "sha256": "0b667ee15d80b6265fc6468e80b9a6388f86afafc111e296d58a823c7def1249",
-    "alt": "商业灯光照明常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/crystal-chandelier-guide",
-    "path": "/og/news--crystal-chandelier-guide-78e84ab8.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 28590,
-    "sha256": "2805e6b7c0e96ec03e4385fc1c0eafec6ea284d4197f0bbcc4147450f5e434ea",
-    "alt": "水晶吊灯常用专业知识｜钜豪照明",
+    "bytes": 26567,
+    "sha256": "b8e38df96193d2e4de1e43853bd83eba5cd41cdbb6dcadc4e4d7bb12e943302b",
+    "alt": "钜豪企业与项目动态｜钜豪照明",
     "stage_label": ""
   },
   {
@@ -310,36 +200,6 @@
     "stage_label": ""
   },
   {
-    "route": "/news/dining-table-lighting",
-    "path": "/og/news--dining-table-lighting-586bee2f.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30293,
-    "sha256": "c8a42d572efb5f300a4166a491dfe1b67eef78b45440064fa3516245a365f684",
-    "alt": "餐桌重点照明与吊灯选择｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/downlight-vs-spotlight",
-    "path": "/og/news--downlight-vs-spotlight-848e67ff.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 32780,
-    "sha256": "ba52cf6d865f87cdbd80076865ccb94157af220b86c71eb6c44836659b5713cd",
-    "alt": "筒灯与射灯应按配光和用途区分｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/glare-control-ugr",
-    "path": "/og/news--glare-control-ugr-459aafbd.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27667,
-    "sha256": "5a4f31efa4215da3d6e8ef08686ecc3b41adef717e4305f947a2f2d591376017",
-    "alt": "眩光、防眩结构与 UGR｜钜豪照明",
-    "stage_label": ""
-  },
-  {
     "route": "/news/guangzhou-international-lighting-exhibition-2026",
     "path": "/og/news--guangzhou-international-lighting-exhibition-2026-83fd2da3.jpg",
     "width": 1200,
@@ -360,56 +220,6 @@
     "stage_label": ""
   },
   {
-    "route": "/news/home-lighting-guide",
-    "path": "/og/news--home-lighting-guide-b29b245c.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 29991,
-    "sha256": "935e639ec7112997153adf8cf9a76dde4081c759fefdce3864781844b4e7546c",
-    "alt": "家居照明灯常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/home-lighting-selection-checklist",
-    "path": "/og/news--home-lighting-selection-checklist-abaf90b7.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 31579,
-    "sha256": "b2594880b867ff2543ffdf5c8fb27097bbaa817fb7709c9a4368d9d0d1a73c22",
-    "alt": "家用灯具选购参数检查表｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/ies-photometric-file",
-    "path": "/og/news--ies-photometric-file-ee3262c8.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 29468,
-    "sha256": "0624a64a3be09b42a2470870d5fa730bfc2031f226f5a4c4175fb3d50e424449",
-    "alt": "IES 配光文件与照明模拟｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/ip-rating-wet-spaces",
-    "path": "/og/news--ip-rating-wet-spaces-e0342c84.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30928,
-    "sha256": "f88c6edd10c9d139e38a02e24a91cf0bd74a1279159c9156e60b514efd6644b6",
-    "alt": "IP 防护等级与潮湿空间选灯｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/kitchen-task-lighting",
-    "path": "/og/news--kitchen-task-lighting-4a761759.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 29913,
-    "sha256": "296228c5f4227441dd0e9787a6b732072eb6f049420ac09f211d290296358bde",
-    "alt": "厨房环境光与操作台照明｜钜豪照明",
-    "stage_label": ""
-  },
-  {
     "route": "/news/kunming-guandu-wyndham-hotel-bid",
     "path": "/og/news--kunming-guandu-wyndham-hotel-bid-31ca0d10.jpg",
     "width": 1200,
@@ -420,56 +230,6 @@
     "stage_label": ""
   },
   {
-    "route": "/news/layered-lighting-design",
-    "path": "/og/news--layered-lighting-design-d039c7b7.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 34261,
-    "sha256": "f2cceece130b7d358db1d1e51c06cd67d23bed251809cc96cf7640ff531efb76",
-    "alt": "环境光、任务光与重点光的分层照明｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/led-dimming-compatibility",
-    "path": "/og/news--led-dimming-compatibility-99b7ee8c.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30540,
-    "sha256": "15687853be221770e70be7561158ba93d96606e1618bdb373fa727d5186961a3",
-    "alt": "LED 调光兼容性与低亮表现｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/led-driver-constant-voltage-current",
-    "path": "/og/news--led-driver-constant-voltage-current-9001e443.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 30370,
-    "sha256": "929f5e4a6ce7cc28b4d4fd99d8b6184b80d9276ef129c1791c7bb590cce03c1f",
-    "alt": "LED 驱动电源与恒压恒流｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/led-lifetime-reliability",
-    "path": "/og/news--led-lifetime-reliability-1a1f4ed1.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 29978,
-    "sha256": "705f82c4042336e7e2dda5a920bdb3b60648544373bf54bdcbc4c87cb9bcebc9",
-    "alt": "LED 寿命、光衰与整灯可靠性｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/led-strip-design-installation",
-    "path": "/og/news--led-strip-design-installation-cf98a54d.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 27371,
-    "sha256": "8dcd19a09c42df79f9751e726dc2eddec4e888b28fcb3186823f21a6dd5769f3",
-    "alt": "LED 灯带设计与安装｜钜豪照明",
-    "stage_label": ""
-  },
-  {
     "route": "/news/lighting-industry-top10-source-record-2026",
     "path": "/og/news--lighting-industry-top10-source-record-2026-16d6d7fc.jpg",
     "width": 1200,
@@ -477,26 +237,6 @@
     "bytes": 40090,
     "sha256": "472e5a26b0e6ce862f32371ed36f69ee9e7c14359787daf39c18d79aa9f61de0",
     "alt": "工程照明品牌 TOP10、设计师推荐品牌 TOP10 · 获奖来源记录｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/living-room-tv-wall-lighting",
-    "path": "/og/news--living-room-tv-wall-lighting-bfce10ff.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 28946,
-    "sha256": "aed59db68f2fa4d667aa22892807ee92ce5fac8c222a659789aeceef101cc279",
-    "alt": "客厅分层与电视墙照明｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/lumens-watts-lux-efficacy",
-    "path": "/og/news--lumens-watts-lux-efficacy-18b02f03.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 29898,
-    "sha256": "3654071de3fd94de37e4b14e8b6095d3ee157a195bbc2e78ed9c3cfcf07b4830",
-    "alt": "光通量、功率、照度与光效｜钜豪照明",
     "stage_label": ""
   },
   {
@@ -517,126 +257,6 @@
     "bytes": 26354,
     "sha256": "d66032d8428c6b0233afce29c916081fd80f8dc4ebbb01885ea8be805139ced8",
     "alt": "新闻与资讯第 2 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/page/3",
-    "path": "/og/news--page--3-fa8acc8e.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26387,
-    "sha256": "7b208f9a82d86ead1a56033a4a4dce76e909f3400f7dca3d69173b54f2dda93b",
-    "alt": "新闻与资讯第 3 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/page/4",
-    "path": "/og/news--page--4-422eb987.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26153,
-    "sha256": "3def0dfb37475a4877de2458b8dd554d2a1c3e546be20600727dbeb653b479c8",
-    "alt": "新闻与资讯第 4 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/page/5",
-    "path": "/og/news--page--5-959042b2.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26334,
-    "sha256": "aa753140a7cbc3dbfa448290cc0d77873ae753fb96a89b2e162da6bc8b2ece77",
-    "alt": "新闻与资讯第 5 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/page/6",
-    "path": "/og/news--page--6-1f057f78.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26416,
-    "sha256": "99c5624cf0f968ee60a76cfdc950cc1fa99f13a19ed408389840676011f3d64b",
-    "alt": "新闻与资讯第 6 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/page/7",
-    "path": "/og/news--page--7-09088ad1.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 25991,
-    "sha256": "3d15a7a57bae2fe452b8a60468d393cb83824146594eb857e7c12866005d6285",
-    "alt": "新闻与资讯第 7 页｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/power-factor-harmonics",
-    "path": "/og/news--power-factor-harmonics-6e8f8b43.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 32231,
-    "sha256": "7d32705476bac403123559871ebae0f6f70589f1f7061560245272560a79b5f0",
-    "alt": "功率因数、谐波与灯具输入功率｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/reading-desk-lamp-guide",
-    "path": "/og/news--reading-desk-lamp-guide-f9a592b3.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 28937,
-    "sha256": "b50581429729099a74c6f3dfd749921bbeef1e9497efb06cc10d61697a6e6485",
-    "alt": "护眼台灯常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/smart-lighting-scene-control",
-    "path": "/og/news--smart-lighting-scene-control-ce9a5be5.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 31129,
-    "sha256": "1849b4c616986cc8849bb7e05c273721daeef1bd139a83a1f0d1ce009e0f1518",
-    "alt": "智能照明、协议与场景控制｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/spotlight-wall-washing",
-    "path": "/og/news--spotlight-wall-washing-9fec5261.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 31009,
-    "sha256": "d8be7b05d569ee8e5d9533d38507257e9cf31e29b513bcb87ac01e0383c7a6cd",
-    "alt": "射灯离墙距离与洗墙效果｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/switch-panels-bathroom-heaters",
-    "path": "/og/news--switch-panels-bathroom-heaters-b59b9b29.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 32430,
-    "sha256": "8ca18463c5da8f15fe87cdfc4d53b98cae4c37593b95ec1b2c6119d8f5c4112d",
-    "alt": "开关面板与浴霸常用专业知识｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/temporal-light-modulation",
-    "path": "/og/news--temporal-light-modulation-370d8706.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26993,
-    "sha256": "25dc0d422a0f778e22bd5a00a5a679cba340517aa968d058ae5038d2cc2e2e1e",
-    "alt": "频闪与时间光调制｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/news/vanity-makeup-lighting",
-    "path": "/og/news--vanity-makeup-lighting-3b7ee61f.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 26077,
-    "sha256": "f3348c734a808244d1ff2d32688ea73edc590838226b27fdbea765fa67cbd264",
-    "alt": "镜前与化妆照明｜钜豪照明",
     "stage_label": ""
   },
   {

@@ -6,7 +6,6 @@ function fixture(path) {
   return JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
 }
 
-const knowledge = fixture("../content/governance/knowledge-articles.generated.json");
 const helpInventory = fixture("../content/governance/help-article-inventory.json");
 const exclusions = fixture("../content/governance/hard-exclusions.json");
 const legacyRoutes = fixture("../content/runtime/legacy-news-routes.json");
@@ -82,12 +81,11 @@ test("adds only the approved smart and JH31L331 evidence candidates", () => {
 });
 
 test("locks the private publication snapshot and keeps runtime governance safe", () => {
-  assert.equal(knowledge.length, 33);
-  assert.equal(ledger.length, 200);
-  assert.equal(ledger.filter(({ publish_status }) => publish_status === "published").length, 119);
-  assert.equal(ledger.filter(({ searchable, publish_status }) => searchable && publish_status === "published").length, 101);
-  assert.equal(ledger.filter(({ seo_candidate }) => seo_candidate).length, 107);
-  assert.equal(ledger.filter(({ index_eligible }) => index_eligible).length, 33);
+  assert.equal(ledger.length, 162);
+  assert.equal(ledger.filter(({ publish_status }) => publish_status === "published").length, 81);
+  assert.equal(ledger.filter(({ searchable, publish_status }) => searchable && publish_status === "published").length, 68);
+  assert.equal(ledger.filter(({ seo_candidate }) => seo_candidate).length, 69);
+  assert.equal(ledger.filter(({ index_eligible }) => index_eligible).length, 0);
   const strictlyEligible = ledger.filter((record) =>
     record.publish_status === "published"
     && record.seo_candidate
@@ -102,16 +100,17 @@ test("locks the private publication snapshot and keeps runtime governance safe",
   );
   assert.equal(ledger.filter(({ indexable }) => indexable).length, 0);
   assert.ok(ledger.every(({ published_at }) => published_at === ""));
-  assert.equal(ledger.filter(({ previewed_at }) => previewed_at === "2026-07-14").length, 119);
-  assert.equal(ledger.filter(({ content_type }) => content_type === "文章").length, 41);
-  assert.equal(1 + ledger.filter(({ content_type }) => content_type === "内容分页").length, 7);
+  assert.equal(ledger.filter(({ previewed_at }) => previewed_at === "2026-07-14").length, 81);
+  assert.equal(ledger.filter(({ content_type }) => content_type === "文章").length, 8);
+  assert.equal(1 + ledger.filter(({ content_type }) => content_type === "内容分页").length, 2);
+  assert.ok(ledger.filter(({ content_type }) => content_type === "文章").every(({ source_type }) => source_type === "mall_sql_jh_articles"));
 
-  assert.equal(runtimeLedger.length, 200);
+  assert.equal(runtimeLedger.length, 162);
   const serializedRuntime = JSON.stringify(runtimeLedger);
   assert.doesNotMatch(serializedRuntime, /\/Users\/|bocang\.oss|https?:\/\//);
   assert.doesNotMatch(serializedRuntime, /"(?:stock|price|delivery|warranty)"/);
   assert.ok(runtimeLedger.every(({ source_sha256 }) => source_sha256 === "unknown" || /^[a-f0-9]{64}$/.test(source_sha256)));
-  assert.equal(runtimeLedger.filter(({ index_eligible }) => index_eligible).length, 33);
+  assert.equal(runtimeLedger.filter(({ index_eligible }) => index_eligible).length, 0);
   assert.equal(runtimeLedger.filter(({ indexable }) => indexable).length, 0);
   assert.ok(runtimeLedger.every(({ published_at }) => published_at === ""));
 });

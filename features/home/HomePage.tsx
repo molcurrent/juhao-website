@@ -29,10 +29,10 @@ const newsItems = [
   { category: "项目动态", meta: "企业资料 #231", title: "上饶广丰铂尔曼酒店：按空间拆解方案证据", href: "/cases/pullman-shangrao-guangfeng" },
   { category: "企业动态", meta: "5 个可追溯节点", title: "从区域渠道到智慧家庭：钜豪发展资料时间线", href: "/about/history" },
   { category: "品牌荣誉", meta: "企业资料 #167 / #184 / #223 / #225", title: "只展示有企业资料编号的品牌荣誉", href: "/about/history" },
-  { category: "照明知识", meta: "JUHAO 审核 · 2026-06-12", title: "筒灯与射灯应按配光和用途区分", href: "/news/downlight-vs-spotlight" },
-  { category: "照明知识", meta: "JUHAO 审核 · 2026-06-12", title: "相关色温的含义与家居选择", href: "/news/color-temperature-guide" },
   { category: "企业动态", meta: "企业资料 #232 · 2026-06-11", title: "2026 广州光亚展参展来源记录", href: "/news/guangzhou-international-lighting-exhibition-2026" },
   { category: "企业动态", meta: "企业资料 #224 · 2026-03-17", title: "2026 春季经销商会议来源记录", href: "/news/dealer-conference-spring-2026" },
+  { category: "品牌动态", meta: "企业资料 #223 · 2026-01-20", title: "钜豪照明品牌荣誉来源记录", href: "/news/lighting-industry-top10-source-record-2026" },
+  { category: "品牌动态", meta: "企业资料 #222 · 2026-01-20", title: "钜豪家居照明品牌来源记录", href: "/news/home-lighting-brand-source-record-2025" },
 ];
 
 const businessPlatforms = [
@@ -98,7 +98,7 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
           <Link href="/products"><strong>{publishedProductCount}</strong><span>私有预览产品详情</span><small>企业商城 + 内容台账</small></Link>
           <Link href="/cases"><strong>6</strong><span>阶段透明的项目档案</span><small>企业资料 #199 / #220 / #226 / #228 / #229 / #231</small></Link>
           <Link href="/about/history"><strong>2020—2026</strong><span>5 个发展资料节点</span><small>企业资料 #149 / #160 / #192 / #205 / #224</small></Link>
-          <Link href="/news"><strong>33</strong><span>已审核知识文章</span><small>JUHAO 内部审核</small></Link>
+          <Link href="/news"><strong>8</strong><span>钜豪企业与项目资讯</span><small>企业知识库来源记录</small></Link>
         </div>
       </section>
 
@@ -120,7 +120,7 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
         <div className="strengthGrid" data-reveal>{businessPlatforms.map((item,i)=><article key={item.title}><small>0{i+1}</small><div className="strengthIcon"><i/><i/></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href} aria-label={`进入${item.title}`}>↗</Link></article>)}</div>
       </section>
 
-      <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> VERIFIED UPDATES</p><h2>资讯与项目动态</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明资讯与项目动态" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item.href} key={item.title}><div><span>{item.category}</span><small>{item.meta}</small></div><h3>{item.title}</h3><p>阅读完整内容，查看资料来源、当前阶段与内容边界。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>
+      <section className="news section" id="news"><div className="sectionNo">04 / INSIGHTS</div><div className="newsTitle" data-reveal><p className="eyebrow dark"><span /> VERIFIED UPDATES</p><h2>钜豪资讯与项目动态</h2></div><div className="homeNews" data-reveal><AccessibleCarousel ariaLabel="钜豪照明资讯与项目动态" autoPlay autoPlayInterval={5600}>{newsItems.map((item) => <Link className="homeNewsSlide" href={item.href} key={item.title}><div><span>{item.category}</span><small>{item.meta}</small></div><h3>{item.title}</h3><p>阅读完整内容，查看资料来源、当前阶段与内容边界。</p><b>↗</b></Link>)}</AccessibleCarousel></div></section>
 
       <section className="contact" id="contact"><div data-reveal><p className="eyebrow"><span /> CREATE WITH LIGHT</p><h2>选择你的<br/>咨询方向</h2></div><nav className="contactPaths" aria-label="首页咨询路径" data-reveal>{consultationOptions.map((item) => <Link href={consultationHref(item.kind, "home-contact")} key={item.kind}><span>{item.label}</span><strong>{item.cta}</strong><b aria-hidden="true">→</b></Link>)}</nav></section>
     </main><SiteFooter /></>

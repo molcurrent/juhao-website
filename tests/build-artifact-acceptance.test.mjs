@@ -54,7 +54,7 @@ test("detects governed runtime leak patterns without scanning arbitrary words", 
 
 test("keeps every published route within the initial bundle budgets", async () => {
   const report = await auditBundleBudgets();
-  assert.equal(report.summary.audited_routes, 119);
+  assert.equal(report.summary.audited_routes, 81);
   assert.equal(report.summary.failed_routes, 0, JSON.stringify(report.routes.filter((route) => !route.passed), null, 2));
   assert.equal(report.passed, true);
 });

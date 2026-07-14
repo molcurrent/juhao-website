@@ -33,6 +33,6 @@ export const navigation: NavigationItem[] = [
     { label: "服务与网点", href: "/service" },
     { label: "资料下载", href: "/downloads" },
   ] },
-  { label: "新闻知识", href: "/news" },
+  { label: "钜豪动态", href: "/news" },
   { label: "合作咨询", href: "/partners" },
 ];

@@ -60,15 +60,6 @@ CASE_SOLUTION_ROUTES = {
     199: "/solutions/commercial",
 }
 
-CASE_ARTICLE_RELATIONS = {
-    226: "/news/color-rendering-index",
-    231: "/news/color-rendering-index",
-    228: "/news/color-rendering-index",
-    229: "/news/color-rendering-index",
-    220: "/news/ip-rating-wet-spaces",
-    199: "/news/beam-angle-guide",
-}
-
 FORBIDDEN = re.compile(r"测试|饮料|食品|纸品|手机|三只松鼠|同仁堂|维达")
 LINK_RE = re.compile(r"\[\[商城系统/商品说明/([^|\]]+)\|([^\]]+)\]\]")
 FIELD_RE = re.compile(r"^(ID|分类|价格|创建时间|上架时间):\s*(.*)$", re.MULTILINE)
@@ -93,24 +84,10 @@ PAGE_SOURCE_FILES = [
     ROOT / "app" / "_data" / "pages.ts",
     ROOT / "app" / "_data" / "contract-pages.ts",
 ]
-KNOWLEDGE_ARTICLE_SOURCE = OUT / "knowledge-articles.generated.json"
 COMPANY_NEWS_SOURCE = OUT / "company-news-source.json"
 HELP_ARTICLE_INVENTORY = OUT / "help-article-inventory.json"
 PRODUCT_CANDIDATES_OUTPUT = OUT / "product-candidates.json"
 RUNTIME_LEDGER_OUTPUT = RUNTIME / "publication-ledger.json"
-
-TOPIC_ARTICLE_RELATIONS = {
-    "spotlights": ["/news/downlight-vs-spotlight", "/news/beam-angle-guide", "/news/spotlight-wall-washing", "/news/glare-control-ugr", "/news/color-tolerance-duv"],
-    "ceiling-lights": ["/news/layered-lighting-design", "/news/color-temperature-guide", "/news/color-rendering-index", "/news/temporal-light-modulation", "/news/home-lighting-guide", "/news/home-lighting-selection-checklist", "/news/ceiling-fan-light-guide"],
-    "new-chinese": ["/news/chinese-style-chandelier-guide", "/news/dining-table-lighting"],
-    "art-lights": ["/news/art-lighting-guide", "/news/glare-control-ugr"],
-    "crystal-chandeliers": ["/news/crystal-chandelier-guide", "/news/dining-table-lighting"],
-    "linear-lighting": ["/news/led-strip-design-installation", "/news/led-driver-constant-voltage-current"],
-    "switches": ["/news/switch-panels-bathroom-heaters", "/news/smart-lighting-scene-control"],
-    "outdoor-lighting": ["/news/ip-rating-wet-spaces", "/news/blue-light-photobiological-safety"],
-    "project-custom": ["/news/ies-photometric-file", "/news/commercial-lighting-guide"],
-    "smart-home-devices": ["/news/smart-lighting-scene-control", "/news/led-dimming-compatibility", "/news/led-driver-constant-voltage-current"],
-}
 
 TOPIC_CASE_RELATIONS = {
     "spotlights": [
@@ -507,58 +484,6 @@ def normalize_related_href(href: str) -> str | None:
     return href.split("?", 1)[0].split("#", 1)[0]
 
 
-def knowledge_article_records() -> list[dict]:
-    rows: list[dict] = []
-    for item in json.loads(KNOWLEDGE_ARTICLE_SOURCE.read_text(encoding="utf-8")):
-        slug = item["slug"]
-        route = f"/news/{slug}"
-        source_key = item["sourceKey"]
-        reviewed_at = item["reviewedAt"]
-        source_checked_at = item["sourceCheckedAt"]
-        related_routes = unique([
-            normalized for related in [item["topic"], *item.get("additionalRelated", [])]
-            if (normalized := normalize_related_href(related["href"]))
-        ] + [
-            "/products",
-            "/contact",
-        ])
-        rows.append({
-            "source": "企业知识库专业灯光知识 + JUHAO 审核包",
-            "source_id": source_key,
-            "source_type": "knowledge_base_professional_article_review",
-            "source_path": "content/governance/knowledge-articles.generated.json",
-            "source_locator": item["sourcePath"],
-            "source_sha256": item["sourceHash"],
-            "content_type": "文章",
-            "title": item["title"],
-            "route": route,
-            "review_status": "approved",
-            "reviewer": "JUHAO",
-            "reviewed_at": reviewed_at,
-            "last_verified_at": source_checked_at,
-            "publish_status": "published",
-            "seo_candidate": True,
-            "searchable": True,
-            "index_eligible": True,
-            "indexable": False,
-            "canonical_slug": route,
-            "published_at": "unknown",
-            "updated_at": reviewed_at,
-            "image_rights_status": "approved",
-            "previewed_at": PREVIEW_DATE,
-            "og_image": "",
-            "media_authorization_batch_id": "local-original-approved",
-            "related_products": [item for item in related_routes if item.startswith("/products/")],
-            "related_cases": [],
-            "related_articles": [],
-            "related_routes": related_routes,
-            "content_scope": "专业知识结论、来源与禁用表述已由 JUHAO 审核；审核日期不冒充文章首次发布日期，公开索引仍等待站点发布门禁。",
-            "publish_date": "",
-            "seo_slug": route,
-        })
-    return rows
-
-
 def company_news_records() -> list[dict]:
     help_by_id = {
         str(item["source_id"]): item
@@ -670,20 +595,19 @@ def direct_page_records(published: list[dict], cases: list[dict], previous_by_ro
         product_routes = {item["source_id"]: item["seo_slug"] for item in published}
         rows_by_route = {item["route"]: item for item in rows}
         scene_pattern = re.compile(
-            r'(residential|hospitality|commercial|public|industrial):\s*\{\s*topic:\s*"([^"]+)",\s*product:\s*"(\d+)",\s*study:\s*"([^"]+)",\s*knowledge:\s*"([^"]+)"\s*\}'
+            r'(residential|hospitality|commercial|public|industrial):\s*\{\s*topic:\s*"([^"]+)",\s*product:\s*"(\d+)",\s*study:\s*"([^"]+)"\s*\}'
         )
-        for scene, topic_slug, product_id, case_slug, article_path in scene_pattern.findall(scene_source.read_text(encoding="utf-8")):
+        for scene, topic_slug, product_id, case_slug in scene_pattern.findall(scene_source.read_text(encoding="utf-8")):
             row = rows_by_route[f"/solutions/{scene}"]
             row["related_products"] = [product_routes[product_id]]
             row["related_cases"] = [f"/cases/{case_slug}"]
-            row["related_articles"] = [f"/{article_path}"]
             row["related_routes"] = unique([*row["related_routes"], f"/products/{topic_slug}"])
     return rows
 
 
 def static_route_records(published: list[dict], cases: list[dict], previous_by_route: dict[str, dict]) -> list[dict]:
     direct_pages = direct_page_records(published, cases, previous_by_route)
-    article_records = [*company_news_records(), *knowledge_article_records()]
+    article_records = company_news_records()
     article_routes = [item["route"] for item in article_records]
     home_dates = stable_route_dates(previous_by_route, "/")
     rows = [{
@@ -712,8 +636,6 @@ def static_route_records(published: list[dict], cases: list[dict], previous_by_r
             "/cases/pullman-shangrao-guangfeng",
         ],
         "related_articles": [
-            "/news/downlight-vs-spotlight",
-            "/news/color-temperature-guide",
             "/news/guangzhou-international-lighting-exhibition-2026",
             "/news/dealer-conference-spring-2026",
         ],
@@ -756,7 +678,7 @@ def static_route_records(published: list[dict], cases: list[dict], previous_by_r
             "image_rights_status": "needs_review" if has_published_products else "unknown",
             "related_products": published_by_topic.get(slug, []),
             "related_cases": TOPIC_CASE_RELATIONS.get(slug, []),
-            "related_articles": TOPIC_ARTICLE_RELATIONS.get(slug, []),
+            "related_articles": [],
             "related_routes": ["/products", "/solutions", "/contact"],
             "content_scope": "专题页按企业知识库候选和当前机器门禁产品组织；缺失参数、项目证明和媒体公开授权不得推定为已确认。",
             "publish_date": "",
@@ -879,7 +801,7 @@ def apply_dynamic_governance(products: list[dict], published: list[dict], cases:
             "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341" if route_published else "",
             "related_products": [route for route in published_by_topic.get(item["topic_slug"], []) if route != item["seo_slug"]][:3] if route_published else [],
             "related_cases": TOPIC_CASE_RELATIONS.get(item["topic_slug"], []) if route_published else [],
-            "related_articles": TOPIC_ARTICLE_RELATIONS.get(item["topic_slug"], []) if route_published else [],
+            "related_articles": [],
             "related_routes": [f"/products/{item['topic_slug']}", "/products", "/contact"],
             "content_scope": (
                 "产品状态、结构化字段和当前页面素材已通过现有门禁；媒体批次授权已登记，产品事实与人工审核记录仍待负责人签核。"
@@ -891,7 +813,6 @@ def apply_dynamic_governance(products: list[dict], published: list[dict], cases:
     for item in cases:
         source_id = int(item["source_id"])
         solution_route = CASE_SOLUTION_ROUTES[source_id]
-        related_article = CASE_ARTICLE_RELATIONS.get(source_id, "")
         dates = stable_route_dates(previous_by_route, item["seo_slug"], item["updated_at"], item["updated_at"])
         item["publish_date"] = dates["published_at"] if dates["published_at"] != "unknown" else ""
         item["image_authorization"] = "当前站点媒体批次授权已登记；项目事实与页面选用仍待负责人签核"
@@ -918,7 +839,7 @@ def apply_dynamic_governance(products: list[dict], published: list[dict], cases:
             "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341",
             "related_products": [],
             "related_cases": [],
-            "related_articles": [related_article] if related_article else [],
+            "related_articles": [],
             "related_routes": ["/cases", solution_route, "/contact"],
             "content_scope": "来源文章记录的项目阶段已核对，当前站点媒体批次授权已登记；施工、供货、交付、完工、最终产品与页面选用仍待负责人签核，不从图片推断空间。",
         })
@@ -1008,6 +929,7 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
         "## 结果",
         "",
         f"- 统一发布台账：{len(ledger)} 条记录，其中 {sum(item['publish_status'] == 'published' for item in ledger)} 条当前私有预览路由、{sum(item['indexable'] for item in ledger)} 条可索引路由。",
+        "- 内容边界：通用照明专业文章不进入官网或网站治理快照；资讯仅保留可追溯的 JUHAO 企业与项目来源记录。",
         f"- 路由覆盖：{len(static_routes)} 条静态/功能路由，{len(published)} 条产品详情，{len(cases)} 条案例详情。",
         f"- 待治理：{sum(item['reviewer'] == 'unknown' for item in ledger)} 条未登记审核人，{sum(item['image_rights_status'] in {'needs_review', 'unknown'} for item in ledger)} 条仍需页面级媒体状态核对；批次授权不替代内容事实审核。",
         f"- 审核台账：{len(products)} 款候选；在原有专题候选池基础上增加 8 款智能设备和 5 款 JH31L331 证据候选。",
@@ -1041,20 +963,20 @@ def main() -> None:
     static_routes = static_route_records(published, cases, previous_by_route)
     projected_ledger = products + cases + static_routes
     expected_metrics = {
-        "records": 200,
-        "published": 119,
-        "searchable": 101,
-        "seo_candidates": 107,
-        "knowledge_articles": 33,
-        "all_articles": 41,
-        "news_pages": 7,
+        "records": 162,
+        "published": 81,
+        "searchable": 68,
+        "seo_candidates": 69,
+        "professional_articles": 0,
+        "all_articles": 8,
+        "news_pages": 2,
     }
     actual_metrics = {
         "records": len(projected_ledger),
         "published": sum(item["publish_status"] == "published" for item in projected_ledger),
         "searchable": sum(item["publish_status"] == "published" and item["searchable"] for item in projected_ledger),
         "seo_candidates": sum(item["seo_candidate"] for item in projected_ledger),
-        "knowledge_articles": len(knowledge_article_records()),
+        "professional_articles": sum(item.get("source_type") == "knowledge_base_professional_article_review" for item in projected_ledger),
         "all_articles": sum(item["content_type"] == "文章" for item in projected_ledger),
         "news_pages": 1 + sum(item["content_type"] == "内容分页" for item in projected_ledger),
     }

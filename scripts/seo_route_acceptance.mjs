@@ -102,8 +102,8 @@ export async function auditSeoRoutes({ mode, canonicalOrigin = "https://juhao.co
   const seenCanonicals = new Map();
   const eligibleRoutes = new Set(indexEligibleSeoRecords.map((record) => record.route));
 
-  if (publishedSeoRecords.length !== 119) failures.push(`runtime ledger: expected 119 published routes, got ${publishedSeoRecords.length}`);
-  if (indexEligibleSeoRecords.length !== 33) failures.push(`runtime ledger: expected 33 index-eligible routes, got ${indexEligibleSeoRecords.length}`);
+  if (publishedSeoRecords.length !== 81) failures.push(`runtime ledger: expected 81 published routes, got ${publishedSeoRecords.length}`);
+  if (indexEligibleSeoRecords.length !== 0) failures.push(`runtime ledger: expected 0 index-eligible routes, got ${indexEligibleSeoRecords.length}`);
 
   for (const record of publishedSeoRecords) {
     const response = await render(worker, record.route);

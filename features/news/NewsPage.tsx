@@ -26,7 +26,7 @@ export function NewsPage({
     <main id="main-content" className={styles.page}>
       <section className={styles.hero}>
         <figure className={styles.heroMedia}>
-          <Image src={page.image} alt={page.imageAlt ?? "钜豪照明资讯主题原创公共空间场景"} width={1672} height={941} priority sizes="100vw" />
+          <Image src={page.image} alt={page.imageAlt ?? "钜豪企业与项目动态主题原创公共空间场景"} width={1672} height={941} priority sizes="100vw" />
           <figcaption>钜豪照明原创资讯主题代表图</figcaption>
         </figure>
         <div className={styles.heroContent} data-reveal="fade">

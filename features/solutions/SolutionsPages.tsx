@@ -213,24 +213,6 @@ export function SolutionsOverviewPage({ page }: PageProps) {
 }
 
 export function HealthyLightPage({ page }: PageProps) {
-  const knowledgeLinks: PageData["related"] = [
-    {
-      href: "/news/blue-light-photobiological-safety",
-      label: "蓝光与光生物安全",
-      text: "理解通用风险框架、资料边界，以及产品声明为何需要检测依据。",
-    },
-    {
-      href: "/news/glare-control-ugr",
-      label: "眩光与防眩",
-      text: "从视线、亮度对比与安装条件理解防眩，而不是只看单一参数。",
-    },
-    {
-      href: "/news/bedroom-night-lighting",
-      label: "卧室与夜间照明",
-      text: "把夜间动线、低亮度活动与直观控制纳入住宅照明规划。",
-    },
-  ];
-
   return (
     <main id="main-content" className={`${styles.page} ${styles.healthyPage}`}>
       <section className={styles.healthyHero} aria-labelledby="healthy-light-title">
@@ -327,12 +309,6 @@ export function HealthyLightPage({ page }: PageProps) {
           </div>
         </div>
       </section>
-
-      <RelatedLinks
-        items={knowledgeLinks}
-        title="用已审核知识继续理解健康光"
-        titleId="healthy-knowledge-title"
-      />
 
       <RelatedLinks items={page.related} title="把原则带回真实空间" />
     </main>

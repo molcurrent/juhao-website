@@ -4,7 +4,7 @@ import type { PageData } from "@/app/_data/pages";
 import styles from "./NewsPage.module.css";
 
 function RepresentativeMedia({ page }: { page: PageData }) {
-  const media = page.articleEvidence?.representativeMedia ?? page.companyNewsEvidence?.local_representative_media;
+  const media = page.companyNewsEvidence?.local_representative_media;
   return (
     <figure className={styles.articleMedia}>
       <Image
@@ -39,7 +39,6 @@ function RelatedReading({ page }: { page: PageData }) {
 }
 
 export function NewsArticlePage({ page }: { page: PageData }) {
-  const evidence = page.articleEvidence;
   const companyEvidence = page.companyNewsEvidence;
 
   return (
@@ -49,50 +48,15 @@ export function NewsArticlePage({ page }: { page: PageData }) {
         <h1 data-reveal="fade">{page.title}</h1>
         <p>{page.intro}</p>
         <div className={styles.articleMeta} aria-label="文章审核信息">
-          {evidence
-            ? <><span>JUHAO 审核日期 <time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></span><span>审核主体 {evidence.reviewer}</span><span>来源核对 <time dateTime={evidence.sourceCheckedAt}>{evidence.sourceCheckedAt}</time></span></>
-            : companyEvidence
-              ? <><span>来源日期 <time dateTime={companyEvidence.published}>{companyEvidence.published}</time></span><span>来源记录 #{companyEvidence.source_id}</span><span>页面状态 待企业复核</span></>
-              : <span>发布日期 <time dateTime={page.published}>{page.published ?? "持续更新"}</time></span>}
+          {companyEvidence
+            ? <><span>来源日期 <time dateTime={companyEvidence.published}>{companyEvidence.published}</time></span><span>来源记录 #{companyEvidence.source_id}</span><span>页面状态 待企业复核</span></>
+            : <span>发布日期 <time dateTime={page.published}>{page.published ?? "持续更新"}</time></span>}
         </div>
       </header>
 
       <RepresentativeMedia page={page} />
 
-      {evidence ? (
-        <div className={styles.articleBody}>
-          <section className={styles.evidenceSection} aria-labelledby="core-conclusions-title" data-reveal>
-            <p className={styles.sectionLabel}>REVIEWED CONCLUSIONS</p>
-            <h2 id="core-conclusions-title">经钜豪审核的核心结论</h2>
-            <ol>{evidence.coreConclusions.map((conclusion) => <li key={conclusion}>{conclusion}</li>)}</ol>
-          </section>
-
-          <section className={`${styles.evidenceSection} ${styles.boundarySection}`} aria-labelledby="content-boundary-title" data-reveal>
-            <p className={styles.sectionLabel}>CONTENT BOUNDARY</p>
-            <h2 id="content-boundary-title">本文不作以下绝对化判断</h2>
-            <ul>{evidence.doNotSay.map((boundary) => <li key={boundary}>{boundary}</li>)}</ul>
-          </section>
-
-          <section className={styles.sourceSection} aria-labelledby="article-sources-title" data-reveal>
-            <div>
-              <p className={styles.sectionLabel}>SOURCE & REVIEW</p>
-              <h2 id="article-sources-title">资料来源与审核记录</h2>
-              <dl>
-                <div><dt>审核主体</dt><dd>{evidence.reviewer}</dd></div>
-                <div><dt>JUHAO 审核日期</dt><dd><time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></dd></div>
-                <div><dt>来源核对</dt><dd><time dateTime={evidence.sourceCheckedAt}>{evidence.sourceCheckedAt}</time></dd></div>
-                <div><dt>知识库键</dt><dd><code>{evidence.sourceKey}</code></dd></div>
-              </dl>
-            </div>
-            <div className={styles.sourceLinks}>
-              <p>{evidence.sourceLabel}</p>
-              {evidence.sourceUrls.length > 0
-                ? <ol>{evidence.sourceUrls.map((url, index) => <li key={url}><a href={url} target="_blank" rel="noreferrer noopener">资料来源 {String(index + 1).padStart(2, "0")} <span aria-hidden="true">↗</span></a></li>)}</ol>
-                : <p role="note">内部知识库审核，外部来源链接未记录。</p>}
-            </div>
-          </section>
-        </div>
-      ) : companyEvidence ? (
+      {companyEvidence ? (
         <div className={styles.articleBody}>
           <section className={styles.evidenceSection} aria-labelledby="company-news-facts-title" data-reveal>
             <p className={styles.sectionLabel}>SOURCE FACTS</p>

@@ -5,7 +5,7 @@ import { routeOgMetadataImage } from "@/lib/media/route-og";
 import "./globals.css";
 
 const title = "钜豪照明官网｜健康照明与智能家居解决方案";
-const description = "钜豪照明官网，浏览全屋、商业、公共与工业照明解决方案，了解智能家居、照明资讯及家庭、工程与渠道合作咨询。";
+const description = "钜豪照明官网，浏览全屋、商业、公共与工业照明解决方案，了解智能家居、钜豪企业与项目动态及家庭、工程与渠道合作咨询。";
 const homeOg = routeOgMetadataImage("/");
 
 export const metadata: Metadata = {

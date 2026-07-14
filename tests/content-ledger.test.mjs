@@ -57,16 +57,16 @@ test("gives every publication-ledger record the governance fields needed for rev
   const count = (predicate) => ledger.filter(predicate).length;
 
   assert.deepEqual(result.errors, []);
-  assert.equal(ledger.length, 200);
+  assert.equal(ledger.length, 162);
   assert.equal(result.metrics.published_routes, count((record) => record.publish_status === "published"));
   assert.equal(result.metrics.seo_candidates, count((record) => record.seo_candidate));
   assert.equal(result.metrics.searchable_routes, count((record) => record.searchable));
   assert.equal(result.metrics.index_eligible_routes, count((record) => record.index_eligible));
   assert.equal(result.metrics.indexable_routes, count((record) => record.indexable));
-  assert.equal(result.metrics.published_routes, 119);
-  assert.equal(result.metrics.seo_candidates, 107);
-  assert.equal(result.metrics.searchable_routes, 101);
-  assert.equal(result.metrics.index_eligible_routes, 33);
+  assert.equal(result.metrics.published_routes, 81);
+  assert.equal(result.metrics.seo_candidates, 69);
+  assert.equal(result.metrics.searchable_routes, 68);
+  assert.equal(result.metrics.index_eligible_routes, 0);
   assert.equal(result.metrics.indexable_routes, 0);
   assert.equal(new Set(ledger.map((record) => record.route)).size, ledger.length);
   for (const record of ledger) {
@@ -76,8 +76,8 @@ test("gives every publication-ledger record the governance fields needed for rev
   assert.equal(count((record) => record.content_type === "产品"), 112);
   assert.equal(count((record) => record.content_type === "案例"), 6);
   assert.equal(ledger.filter((record) => record.content_type === "产品专题").length, 10);
-  assert.equal(count((record) => record.content_type === "文章"), 41);
-  assert.equal(count((record) => record.content_type === "内容分页"), 6);
+  assert.equal(count((record) => record.content_type === "文章"), 8);
+  assert.equal(count((record) => record.content_type === "内容分页"), 1);
 });
 
 test("covers all 22 footer destinations in the publication ledger", async () => {

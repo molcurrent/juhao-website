@@ -17,14 +17,14 @@ export function SearchPage({ page, initialQuery, initialResults }: { page: PageD
       <div className={styles.searchPanel}>
         <form className={styles.form} method="get" action="/search" role="search">
           <label htmlFor="site-keywords">搜索网站内容</label>
-          <input id="site-keywords" name="keywords" type="search" defaultValue={query} placeholder="输入解决方案、空间或照明知识" autoComplete="off" />
+          <input id="site-keywords" name="keywords" type="search" defaultValue={query} placeholder="输入钜豪产品、项目或企业动态" autoComplete="off" />
           <button type="submit">搜索 <span>→</span></button>
         </form>
       </div>
       <section className={styles.results} aria-live="polite" data-search-results={status === "success" ? results.length : undefined}>
         <div className={styles.summary}><span>{summary}</span><span>{status === "success" ? `${results.length} 条` : ""}</span></div>
 
-        {status === "idle" && <div className={styles.empty}><strong>搜索钜豪网站</strong><span>可搜索“健康光”“商业照明”“服务”等内容。</span></div>}
+        {status === "idle" && <div className={styles.empty}><strong>搜索钜豪网站</strong><span>可搜索钜豪产品、项目、品牌动态与服务内容。</span></div>}
 
         {status === "success" && results.length === 0 && <div className={styles.empty}><strong>没有找到匹配内容</strong><span>请尝试更短或不同的关键词。</span></div>}
 
