@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cache } from "react";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteHeader } from "../_components/SiteHeader";
 import { pages, SITE_URL, type PageData } from "../_data/pages";
@@ -17,8 +17,9 @@ import { SmartHomePage } from "@/features/smart-home";
 import { HealthyLightPage, SolutionsOverviewPage } from "@/features/solutions";
 import { SustainabilityPage } from "@/features/sustainability/SustainabilityPage";
 import { DownloadsPage, LegalPage } from "@/features/utility/UtilityPages";
-import { siteApi, type NewsPageResult } from "@/lib/api";
-import { resolveConsultationContext, type ConsultationContext } from "@/lib/consultation";
+import type { NewsPageResult, SearchResult } from "@/lib/api/types";
+import { consultationHref, resolveConsultationContext, type ConsultationContext, type ConsultationKind } from "@/lib/consultation";
+import { getNewsPage } from "@/lib/news";
 import { NEWS_PAGE_SIZE, newsPagePath, parseNewsPageNumber } from "@/lib/news-pagination";
 import { caseStudies, catalogPageData, productTopics } from "@/content/catalog";
 import { productByRouteKey, productPageData, products } from "@/content/products";
@@ -26,8 +27,8 @@ import { CaseDetailPage, CasesPage, ProductsPage, ProductTopicPage } from "@/fea
 import { ProductDetailPage } from "@/features/catalog/ProductDetailPage";
 import { resourcesForScene } from "@/content/scene-resources";
 import { searchSite } from "@/content/search-index";
-import { isIndexableRoute, isPublishedRoute } from "@/content/publication-ledger";
-import type { SearchResult } from "@/lib/api";
+import { isIndexableRoute, isPublishedRoute, publicationRecordByRoute } from "@/content/publication-ledger";
+import { routeOgMetadataImage } from "@/lib/media/route-og";
 
 type SearchParams = Record<string, string | string[] | undefined>;
 type Props = { params: Promise<{ slug: string[] }>; searchParams?: Promise<SearchParams> };
@@ -58,7 +59,7 @@ function resolveRoute(slug: string[]): RouteContext | null {
   return null;
 }
 
-const loadNewsPage = cache((page: number) => siteApi.getNewsArticles({ page, pageSize: NEWS_PAGE_SIZE }));
+const loadNewsPage = (page: number) => getNewsPage(page, NEWS_PAGE_SIZE);
 
 const businessScenes: Record<string, BusinessSceneId> = {
   "solutions/residential": "residential",
@@ -67,6 +68,26 @@ const businessScenes: Record<string, BusinessSceneId> = {
   "solutions/public": "public",
   "solutions/industrial": "industrial",
 };
+
+const supplementalConsultation: Record<string, { kind: ConsultationKind; label: string; title: string; cta: string }> = {
+  about: { kind: "project", label: "BRAND TO BRIEF", title: "从了解品牌，进入真实需求。", cta: "提交照明需求" },
+  "about/history": { kind: "project", label: "HISTORY TO NOW", title: "以今天的空间问题，继续下一步。", cta: "提交照明需求" },
+  "about/join": { kind: "channel", label: "VERIFIED ENTRY", title: "职位未开放，企业协作仍可清晰说明。", cta: "提交企业协作需求" },
+  "healthy-light": { kind: "home-health", label: "FROM PRINCIPLE TO HOME", title: "把健康光原则，带回真实生活。", cta: "获取空间建议" },
+  sustainability: { kind: "project", label: "FACTS BEFORE CLAIMS", title: "只基于已确认条件讨论项目。", cta: "提交项目需求" },
+  downloads: { kind: "project", label: "DOCUMENT REQUEST", title: "暂无核验文件时，先说明资料用途。", cta: "提交资料需求" },
+  news: { kind: "project", label: "KNOWLEDGE TO ACTION", title: "把知识问题，转成可讨论的空间条件。", cta: "进入方案咨询" },
+  search: { kind: "project", label: "SEARCH TO BRIEF", title: "没有找到答案？说明你的空间问题。", cta: "进入方案咨询" },
+  legal: { kind: "project", label: "INFORMATION REVIEW", title: "对当前声明有疑问，可提交具体页面与问题。", cta: "提交信息咨询" },
+  privacy: { kind: "project", label: "DATA QUESTION", title: "对咨询数据处理有疑问，可提交具体问题。", cta: "提交信息咨询" },
+};
+
+function SupplementalConsultation({ routeKey, canonicalPath }: { routeKey: string; canonicalPath: string }) {
+  const item = supplementalConsultation[routeKey];
+  if (!item) return null;
+  const sourceDetail = canonicalPath.replace(/^\/+|\/+$/g, "").replaceAll("/", "-") || "home";
+  return <aside className="supplementalCta" aria-label="本页咨询入口"><div><p>{item.label}</p><h2>{item.title}</h2></div><Link href={consultationHref(item.kind, "page", sourceDetail)}>{item.cta}<span aria-hidden="true">→</span></Link></aside>;
+}
 
 export function generateStaticParams() {
   const pageParams = Object.keys(pages).filter((key) => isPublishedRoute(pages[key].path)).map((key) => ({ slug: key.split("/") }));
@@ -86,15 +107,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!route) return {};
   const { page, canonicalPath, newsPageNumber } = route;
   const indexable = isIndexableRoute(canonicalPath);
+  const publishedAt = publicationRecordByRoute(canonicalPath)?.published_at || undefined;
   const title = newsPageNumber ? `${page.seoTitle}｜第 ${newsPageNumber} 页` : page.seoTitle;
   const description = newsPageNumber ? `${page.description} 当前为第 ${newsPageNumber} 页。` : page.description;
-  const representativeMedia = page.articleEvidence?.representativeMedia ?? page.companyNewsEvidence?.local_representative_media;
-  const localPageMedia = page.image.startsWith("/images/")
-    ? { url: page.image, width: 1672, height: 941, alt: page.imageAlt ?? `${page.title}主题场景代表图` }
-    : null;
-  const socialImage = representativeMedia
-    ? { url: representativeMedia.src, width: representativeMedia.width, height: representativeMedia.height, alt: representativeMedia.alt }
-    : localPageMedia ?? { url: "/og.png", width: 1200, height: 630, alt: "JUHAO 钜豪｜好房子，光健康。" };
+  const socialImage = routeOgMetadataImage(canonicalPath);
   const socialMetadata = {
     title,
     description,
@@ -109,22 +125,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: canonicalPath },
     robots: indexable ? { index: true, follow: true } : { index: false, follow: true },
     openGraph: page.type === "article"
-      ? { ...socialMetadata, type: "article", ...(page.published ? { publishedTime: page.published } : {}), ...(page.articleEvidence ? { modifiedTime: page.articleEvidence.reviewedAt } : {}) }
+      ? { ...socialMetadata, type: "article", ...(publishedAt ? { publishedTime: publishedAt } : {}) }
       : { ...socialMetadata, type: "website" },
     twitter: { card: "summary_large_image", title, description, images: [socialImage.url] },
   };
 }
 
-function GenericPage({ page, breadcrumbs }: { page: PageData; breadcrumbs: { name: string; url: string }[] }) {
+function GenericPage({ routeKey, page, breadcrumbs }: { routeKey: string; page: PageData; breadcrumbs: { name: string; url: string }[] }) {
   return <main className="innerPage" id="main-content">
-    <section className="innerHero" style={{backgroundImage:`linear-gradient(90deg,rgba(7,8,7,.92),rgba(7,8,7,.32)),url(${page.image})`}}>
+    <section className="innerHero">
+      <div className="innerHeroMedia"><Image className="innerHeroImage" src={page.image} alt={page.imageAlt ?? `${page.title}主题场景`} width={1672} height={941} sizes="100vw" /></div>
+      <div className="innerHeroShade" />
       <div className="innerGrid"/><div className="innerHeroContent" data-reveal="fade"><nav className="breadcrumbs" aria-label="面包屑">{breadcrumbs.map((item,index)=><span key={item.url}>{index ? " / " : ""}<Link href={item.url.replace(SITE_URL,"") || "/"}>{item.name}</Link></span>)}</nav><p className="eyebrow"><span/>{page.eyebrow}</p><h1>{page.title}</h1><p>{page.intro}</p></div>
     </section>
     <section className="contentSection overview"><div className="contentLabel">核心要点</div><div className="highlightGrid">{page.highlights.map((item,index)=><article key={item.title} data-reveal><small>0{index+1}</small><h2>{item.title}</h2><p>{item.text}</p></article>)}</div></section>
     <section className="contentSection articleBody">{page.sections.map((section,index)=><article key={section.title} data-reveal><div className="contentLabel">{String(index+1).padStart(2,"0")}</div><div><h2>{section.title}</h2><p>{section.text}</p>{section.points && <ul>{section.points.map(point=><li key={point}>{point}</li>)}</ul>}</div></article>)}</section>
     {page.faqs && <section className="contentSection faq"><div className="contentLabel">常见问题</div><div><h2>你可能还想了解</h2>{page.faqs.map(faq=><details key={faq.question}><summary>{faq.question}<span>＋</span></summary><p>{faq.answer}</p></details>)}</div></section>}
     <section className="related"><p className="eyebrow"><span/>CONTINUE EXPLORING</p><h2>继续了解钜豪</h2><div className="relatedGrid">{page.related.map(item=><Link href={item.href} key={item.href}><span>{item.label}</span><p>{item.text}</p><b>↗</b></Link>)}</div></section>
-    <section className="pageCta"><div><p className="eyebrow"><span/>CREATE WITH LIGHT</p><h2>让光，更适合<br/>真实的空间</h2></div><Link href="/contact">联系方案顾问 <span>→</span></Link></section>
+    <section className="pageCta"><div><p className="eyebrow"><span/>CREATE WITH LIGHT</p><h2>让光，更适合<br/>真实的空间</h2></div><Link href={consultationHref("project", "page", routeKey.replaceAll("/", "-"))}>联系方案顾问 <span>→</span></Link></section>
   </main>;
 }
 
@@ -157,7 +175,7 @@ function PageFeature({ routeKey, page, breadcrumbs, initialNews, consultationCon
     return <NewsPage page={page} initialPage={initialNews} />;
   }
   if (page.type === "article") return <NewsArticlePage page={page} />;
-  return <GenericPage page={page} breadcrumbs={breadcrumbs} />;
+  return <GenericPage routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} />;
 }
 
 function routeBreadcrumbs(page: PageData, canonicalPath: string) {
@@ -183,6 +201,7 @@ export default async function SeoPage({ params, searchParams }: Props) {
   if (!route) notFound();
   const { routeKey, page, canonicalPath, newsPageNumber } = route;
   const indexable = isIndexableRoute(canonicalPath);
+  const publishedAt = publicationRecordByRoute(canonicalPath)?.published_at || undefined;
   const requestedNewsPage = newsPageNumber ?? 1;
   const resolvedSearchParams: SearchParams = routeKey === "contact" || routeKey === "search" ? (await searchParams) ?? {} : {};
   const consultationContext = routeKey === "contact" ? resolveConsultationContext(resolvedSearchParams) : null;
@@ -219,17 +238,16 @@ export default async function SeoPage({ params, searchParams }: Props) {
           "@type":"Article",
           headline:page.title,
           description:page.description,
-          image:`${SITE_URL}${page.articleEvidence?.representativeMedia.src ?? page.companyNewsEvidence?.local_representative_media.src ?? "/og.png"}`,
+          image:`${SITE_URL}${routeOgMetadataImage(canonicalPath).url}`,
           inLanguage:"zh-CN",
-          ...(page.published ? { datePublished:page.published } : {}),
-          dateModified:page.articleEvidence?.reviewedAt ?? page.published,
+          ...(publishedAt ? { datePublished:publishedAt, dateModified:publishedAt } : {}),
           mainEntityOfPage:`${SITE_URL}${page.path}`,
           author:{"@id":`${SITE_URL}/#organization`},
           publisher:{"@id":`${SITE_URL}/#organization`},
           ...(page.articleEvidence ? { citation:page.articleEvidence.sourceUrls, reviewedBy:{"@type":"Organization",name:page.articleEvidence.reviewer} } : {}),
         }
       : page.type === "service"
-        ? { "@context":"https://schema.org", "@type":"Service", name:page.title, description:page.description, provider:{"@id":`${SITE_URL}/#organization`}, areaServed:"CN" }
+        ? { "@context":"https://schema.org", "@type":"Service", name:page.title, description:page.description, provider:{"@id":`${SITE_URL}/#organization`} }
         : { "@context":"https://schema.org", "@type":"WebPage", name:page.title, description:page.description, inLanguage:"zh-CN", url:`${SITE_URL}${canonicalPath}` }
   ] : [];
   const faqSchema = indexable && page.faqs?.length ? { "@context":"https://schema.org", "@type":"FAQPage", mainEntity:page.faqs.map((faq)=>({"@type":"Question",name:faq.question,acceptedAnswer:{"@type":"Answer",text:faq.answer}})) } : null;
@@ -238,6 +256,7 @@ export default async function SeoPage({ params, searchParams }: Props) {
   return <>
     <SiteHeader />
     <PageFeature routeKey={routeKey} page={page} breadcrumbs={breadcrumbs} initialNews={initialNews} consultationContext={consultationContext} initialSearchQuery={initialSearchQuery} initialSearchResults={initialSearchResults} />
+    <SupplementalConsultation routeKey={routeKey} canonicalPath={canonicalPath} />
     <SiteFooter />
     {structuredData.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g,"\\u003c")}} />}
   </>;

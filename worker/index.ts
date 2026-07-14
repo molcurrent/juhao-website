@@ -1,6 +1,7 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import rawLegacyNewsRoutes from "../content/runtime/legacy-news-routes.json";
 
 interface Env {
   ASSETS?: Fetcher;
@@ -18,6 +19,19 @@ interface ExecutionContext {
   waitUntil(promise: Promise<unknown>): void;
   passThroughOnException(): void;
 }
+
+type LegacyNewsRoute = {
+  action: "redirect" | "not_found" | "gone";
+  status_code: 308 | 404 | 410;
+  destination: string;
+  legacy_paths: string[];
+};
+
+const legacyNewsByPath = new Map(
+  (rawLegacyNewsRoutes as LegacyNewsRoute[]).flatMap((record) =>
+    record.legacy_paths.map((path) => [path, record] as const),
+  ),
+);
 
 // Image security config. SVG sources with .svg extension auto-skip the
 // optimization endpoint on the client side (served directly, no proxy).
@@ -39,6 +53,18 @@ const worker = {
 
     if (confirmedSpamPaths.has(url.pathname)) {
       return new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" } });
+    }
+
+    const legacyNews = legacyNewsByPath.get(url.pathname);
+    if (legacyNews?.action === "redirect") {
+      return Response.redirect(new URL(legacyNews.destination, request.url), 308);
+    }
+    if (legacyNews) {
+      const status = legacyNews.action === "gone" ? 410 : 404;
+      return new Response(status === 410 ? "Gone" : "Not Found", {
+        status,
+        headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" },
+      });
     }
 
     if (url.pathname === "/_vinext/image") {

@@ -10,3 +10,4 @@
 .related{background:var(--vi-silver-soft)}
 .related a{padding-top:12px;border-top:1px solid var(--line)}
 .related a::before{content:"";position:absolute;inset:-1px auto auto 0;width:44px;height:3px;background:var(--brand-orange-bright)}
+.productMedia{display:block;width:100%;height:100%}.productMedia img,.related picture,.related picture img{display:block;width:100%;height:100%}.productMedia img,.related picture img{object-fit:cover}.visual{margin:0}.visual figcaption{position:absolute;right:20px;bottom:20px;padding:8px 10px;color:#fff;background:#111b;font-size:10px;letter-spacing:.04em}.gallery figure{margin:0}.gallery picture,.gallery picture img{display:block;width:100%}.gallery figcaption{padding:12px 2px 0;color:#aaa;font-size:10px;line-height:1.5}

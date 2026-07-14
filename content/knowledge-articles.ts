@@ -1,4 +1,5 @@
 import type { PageData } from "@/app/_data/pages";
+import rawKnowledgeArticles from "./governance/knowledge-articles.generated.json";
 
 type KnowledgeArticleSeed = {
   slug: string;
@@ -6,26 +7,42 @@ type KnowledgeArticleSeed = {
   description: string;
   category: string;
   topic: { label: string; href: string; text: string };
+  additionalRelated: { label: string; href: string; text: string }[];
   consultation: "home-health" | "project";
   image: "/images/juhao-commercial.webp" | "/images/juhao-home.webp" | "/images/juhao-public.webp" | "/images/juhao-industrial.webp";
   imageAlt: string;
   sourcePath: string;
   sourceKey: string;
+  sourceHash: string;
   sourceLabel: string;
   sourceUrls: string[];
+  externalSourceStatus: "recorded" | "not_recorded";
+  sourceDisclosure: string;
+  reviewState: "approved_by_juhao";
+  reviewer: "JUHAO";
   reviewedAt: string;
   sourceCheckedAt: string;
   coreConclusions: string[];
+  supportingSections: { title: string; text: string; points: string[] }[];
+  boundaryTitle: string;
   doNotSay: string[];
 };
 
 const mediaCaption = "钜豪照明原创场景代表图，仅用于说明文章主题，不作为文中参数或结论的证据图。";
+const noExternalSourceDisclosure = "本文已完成 JUHAO 内部知识库审核，外部来源链接未记录。";
+
+function uniqueRelated(items: PageData["related"]) {
+  return items.filter((item, index) => items.findIndex((candidate) => candidate.href === item.href) === index);
+}
 
 function makeKnowledgeArticle(seed: KnowledgeArticleSeed): PageData {
   const path = `/news/${seed.slug}`;
   const consultationQuery = seed.consultation === "home-health"
     ? "scene=home-health&intent=space-advice"
     : "scene=project&intent=project-brief";
+  const sourceDisclosure = seed.externalSourceStatus === "not_recorded"
+    ? [{ title: "来源说明", text: seed.sourceDisclosure || noExternalSourceDisclosure, points: [] }]
+    : [];
 
   return {
     path,
@@ -39,19 +56,24 @@ function makeKnowledgeArticle(seed: KnowledgeArticleSeed): PageData {
     intro: seed.coreConclusions[0],
     type: "article",
     highlights: seed.coreConclusions.slice(0, 4).map((text, index) => ({ title: `审核要点 ${String(index + 1).padStart(2, "0")}`, text })),
-    sections: [{ title: "经审核的核心结论", text: seed.coreConclusions[0], points: seed.coreConclusions.slice(1) }],
-    related: [
+    sections: [
+      { title: "经审核的核心结论", text: seed.coreConclusions[0], points: seed.coreConclusions.slice(1) },
+      ...seed.supportingSections,
+      ...sourceDisclosure,
+    ],
+    related: uniqueRelated([
       seed.topic,
+      ...seed.additionalRelated,
       { label: "进入产品中心", href: "/products", text: "按产品专题核对具体型号、参数与安装资料。" },
       { label: "咨询空间照明", href: `/contact?source=solutions&${consultationQuery}&sourceDetail=${seed.slug}#consultation-form`, text: "带上空间条件和使用任务，提交进一步咨询。" },
-    ],
+    ]),
     articleEvidence: {
       sourcePath: seed.sourcePath,
       sourceKey: seed.sourceKey,
       sourceLabel: seed.sourceLabel,
       sourceUrls: seed.sourceUrls,
-      reviewState: "approved_by_juhao",
-      reviewer: "JUHAO",
+      reviewState: seed.reviewState,
+      reviewer: seed.reviewer,
       reviewedAt: seed.reviewedAt,
       sourceCheckedAt: seed.sourceCheckedAt,
       coreConclusions: seed.coreConclusions,
@@ -69,293 +91,7 @@ function makeKnowledgeArticle(seed: KnowledgeArticleSeed): PageData {
   };
 }
 
-const seeds: KnowledgeArticleSeed[] = [
-  {
-    slug: "downlight-vs-spotlight",
-    title: "筒灯与射灯应按配光和用途区分",
-    description: "不只看外观名称，从光束角、配光曲线、中心光强、遮光结构、可调角度和现场效果理解筒灯与射灯的用途差异。",
-    category: "灯具分类",
-    topic: { label: "射灯与轨道照明专题", href: "/products/spotlights", text: "按配光、防眩与安装条件进入射灯专题。" },
-    consultation: "home-health",
-    image: "/images/juhao-commercial.webp",
-    imageAlt: "原创精品零售空间内的重点照明与暖色材质",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/筒灯射灯区别.md",
-    sourceKey: "professional_knowledge/筒灯射灯区别",
-    sourceLabel: "CIE S 017:2020 国际照明词汇；美国能源部住宅照明指南",
-    sourceUrls: ["https://cie.co.at/eilvterm/17-27-077", "https://files.cie.co.at/CIE_TN_010_2019.pdf", "https://www.energy.gov/energysaver/lighting-principles-and-terms"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "市场上的“筒灯”和“射灯”首先是产品类别和使用习惯，并不能只凭面环外观准确判断光效果。",
-      "用于整体或基础照明的产品通常配光更宽、更均匀。",
-      "用于重点照明的产品通常具有更集中的配光，并可能支持调节照射方向。",
-      "判断一款灯更适合基础照明还是重点照明，应查看光束角、配光曲线、中心光强、遮光结构、可调角度和现场效果。",
-      "同一外观尺寸下，不同光学系统可以产生明显不同的光斑和眩光表现。",
-    ],
-    doNotSay: ["“筒灯一定是 60° 至 120°，射灯一定是 15° 至 36°。”", "“射灯只能洗墙，筒灯只能照地。”", "只看名称，不看产品光学参数和配光数据。"],
-  },
-  {
-    slug: "beam-angle-guide",
-    title: "光束角定义与光斑大小",
-    description: "理解 CIE 光束角定义、完整角度与半角的区别，以及光束角、照射距离、光斑覆盖和中心亮度之间的边界。",
-    category: "灯具参数",
-    topic: { label: "射灯与轨道照明专题", href: "/products/spotlights", text: "在具体产品中核对光束角与配光资料。" },
-    consultation: "home-health",
-    image: "/images/juhao-commercial.webp",
-    imageAlt: "原创精品零售空间内形成层次的重点照明光束",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/光束角.md",
-    sourceKey: "professional_knowledge/光束角",
-    sourceLabel: "CIE S 017:2020 国际照明词汇；CIE TN 010:2019",
-    sourceUrls: ["https://cie.co.at/eilvterm/17-27-077", "https://files.cie.co.at/CIE_TN_010_2019.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "CIE 对光束角的定义以中心光强为基准：在通过光轴的平面中，两侧光强下降到中心光强 50% 的方向之间的完整夹角。",
-      "光束角是完整角度，不是从光轴到单侧边缘的半角。",
-      "在距离相同且其他条件接近时，较小光束角通常形成较小、更集中的光斑；较大光束角通常覆盖更宽。",
-      "光束角不等于灯具总光通量，也不能单独代表中心亮度。",
-    ],
-    doNotSay: ["“24° 永远最适合家用。”", "“光束角越小，灯就越亮。”", "把 50% 光强边界描述成肉眼可见的绝对硬边。", "不注明照射距离就比较光斑大小。"],
-  },
-  {
-    slug: "spotlight-wall-washing",
-    title: "射灯离墙距离与洗墙效果",
-    description: "从层高、光束角、配光曲线、瞄准角、灯具间距、墙面材质和目标亮度分布理解射灯洗墙。",
-    category: "安装避坑",
-    topic: { label: "射灯与轨道照明专题", href: "/products/spotlights", text: "查看射灯选型与安装条件。" },
-    consultation: "project",
-    image: "/images/juhao-commercial.webp",
-    imageAlt: "原创精品零售空间墙面与陈列区域的重点照明",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/射灯离墙与洗墙.md",
-    sourceKey: "professional_knowledge/射灯离墙与洗墙",
-    sourceLabel: "CIE 光束角定义；美国能源部照明设计原则",
-    sourceUrls: ["https://cie.co.at/eilvterm/17-27-077", "https://files.cie.co.at/CIE_TN_010_2019.pdf", "https://www.energy.gov/energysaver/lighting-design"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "射灯离墙距离没有适用于所有项目的单一标准答案。",
-      "洗墙效果同时受层高、光束角、配光曲线、灯具瞄准角、灯具间距、墙面材质和期望亮度分布影响。",
-      "离墙过近可能让墙面上部形成较小且变化剧烈的亮斑；离墙增大通常会扩大覆盖，但也可能降低目标区域照度或让光落到不希望的位置。",
-      "多灯连续洗墙时，应同时检查单灯光斑和相邻光斑的重叠，而不是只确定离墙距离。",
-    ],
-    doNotSay: ["“射灯统一离墙 20 cm、25 cm 或 30 cm 就不会翻车。”", "“某个离墙距离搭配某个光束角适合所有层高。”", "不说明灯具型号、层高和瞄准方式就展示距离结论。"],
-  },
-  {
-    slug: "color-temperature-guide",
-    title: "相关色温的含义与家居选择",
-    description: "理解相关色温描述的白光外观，并区分色温与光通量、照度、显色能力和功率。",
-    category: "灯具参数",
-    topic: { label: "家居顶灯专题", href: "/products/ceiling-lights", text: "按居住空间核对产品色温与其他参数。" },
-    consultation: "home-health",
-    image: "/images/juhao-home.webp",
-    imageAlt: "原创家庭客厅中的暖色间接光、阅读光与低位光",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/色温选择.md",
-    sourceKey: "professional_knowledge/色温选择",
-    sourceLabel: "CIE S 017:2020 国际照明词汇；美国能源部照明资料",
-    sourceUrls: ["https://cie.co.at/eilvterm/17-23-068", "https://www.energy.gov/cmei/femp/purchasing-energy-efficient-light-bulbs", "https://www1.eere.energy.gov/buildings/publications/pdfs/ssl/ssl_lighting-facts_factsheet.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "相关色温（CCT）用于描述白光外观偏暖还是偏冷，单位为开尔文（K）。",
-      "较低的相关色温通常呈现更暖的黄红感，较高的相关色温通常呈现更冷的蓝白感。",
-      "色温描述的是光色外观，不代表光通量、照度、显色能力或灯具功率。",
-      "2700K 至 3000K 常见于偏暖的居住氛围；约 4000K 常见于希望获得更中性清晰观感的场景。这是常见选择，不是所有家庭必须遵守的固定规则。",
-    ],
-    doNotSay: ["“3000K 一定高级，4000K 一定廉价。”", "“色温越高越亮。”", "“卧室只能用某一个固定色温。”", "仅凭标称色温判断两款灯的实际光色完全一致。"],
-  },
-  {
-    slug: "color-rendering-index",
-    title: "显色指数 Ra、R9 与色彩保真",
-    description: "理解 Ra、R9 与色彩保真指标的含义和边界，不用单一 Ra 数值概括全部色彩质量。",
-    category: "灯具参数",
-    topic: { label: "家居顶灯专题", href: "/products/ceiling-lights", text: "在具体型号资料中核对显色参数。" },
-    consultation: "home-health",
-    image: "/images/juhao-home.webp",
-    imageAlt: "原创家庭客厅中由照明呈现的木材、织物与墙面色彩",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/显色指数.md",
-    sourceKey: "professional_knowledge/显色指数",
-    sourceLabel: "CIE 13.3-1995；CIE 224:2017；CIE 色彩质量指标立场声明",
-    sourceUrls: ["https://cie.co.at/publications/method-measuring-and-specifying-colour-rendering-properties-light-sources", "https://cie.co.at/publications/colour-fidelity-index-accurate-scientific-use", "https://files.cie.co.at/CIE%20PS%20002_2025%20CIE%20Position%20Statement%20-%20Colour%20Quality%20Metrics-2nd%20ed.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "显色描述物体在测试光源下与参考光源下的颜色外观接近程度。",
-      "通用显色指数 Ra 是 CIE CRI 体系中的综合指标，传统计算使用前 8 个测试色样。",
-      "Ra 较高通常表示在该评价方法下总体色差更小，但 Ra 不能完整描述所有颜色、饱和度偏移和个人偏好。",
-      "R9 是特殊显色指数之一，反映饱和红色测试样本的表现，不包含在 Ra 的前 8 个样本平均值中。",
-      "CIE 认为色彩质量需要比单一 Ra 更完整的描述，并建议逐步采用或并行报告色彩保真指标 Rf。",
-    ],
-    doNotSay: ["“Ra95 代表所有颜色都比 Ra90 更鲜艳。”", "“Ra 数值越高，亮度越高。”", "“只看 Ra 就能判断全部光品质。”", "把相机自动白平衡造成的差异当成显色差异。"],
-  },
-  {
-    slug: "layered-lighting-design",
-    title: "环境光、任务光与重点光的分层照明",
-    description: "从空间活动和观看目标出发分配环境光、任务光与重点光，不用固定比例、数量或间距定义无主灯。",
-    category: "灯光设计",
-    topic: { label: "家居顶灯专题", href: "/products/ceiling-lights", text: "从家庭基础照明进入产品专题。" },
-    consultation: "home-health",
-    image: "/images/juhao-home.webp",
-    imageAlt: "原创家庭客厅中的环境光、阅读任务光与局部重点光",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/无主灯设计.md",
-    sourceKey: "professional_knowledge/无主灯设计",
-    sourceLabel: "美国能源部住宅照明原则与高性能住宅照明指南",
-    sourceUrls: ["https://www.energy.gov/energysaver/lighting-principles-and-terms", "https://www.energy.gov/energysaver/lighting-design", "https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/strategy_guideline_high_perf_lighting.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "“无主灯”不是简单取消一盏主灯，也不等于在天花上排列更多射灯。",
-      "设计应先确定空间中的活动和观看目标，再分配环境光、任务光和重点光。",
-      "任务区域可以通过局部照明提高可见度，而不必同步提高整个空间的环境光。",
-      "不同照明层采用独立回路或调光控制，更容易适配会客、观影、清洁和夜间通行等场景。",
-      "三层照明没有适用于所有住宅的固定亮度占比、灯具数量或间距。",
-    ],
-    doNotSay: ["“环境光、任务光、重点光必须按固定百分比分配。”", "“无主灯需要每隔固定距离装一盏灯。”", "“灯越多，空间层次越高级。”"],
-  },
-  {
-    slug: "led-strip-design-installation",
-    title: "LED 灯带设计与安装",
-    description: "把光源、驱动、连接线、型材、扩散罩与安装环境作为系统，核对压降、散热、颗粒感、防护和维护条件。",
-    category: "安装技巧",
-    topic: { label: "灯带与线性照明专题", href: "/products/linear-lighting", text: "进入线性照明专题核对产品与安装资料。" },
-    consultation: "project",
-    image: "/images/juhao-public.webp",
-    imageAlt: "原创公共图书馆中庭的连续台阶与导向照明",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/灯带设计与安装.md",
-    sourceKey: "professional_knowledge/灯带设计与安装",
-    sourceLabel: "GB/T 7000.221-2023；GB/T 24825-2022；GB/T 7000.1-2023",
-    sourceUrls: ["https://openstd.samr.gov.cn/bzgk/std/nd?no=2082", "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=BF3A9EAC7EB67D088F02619210B08AB8", "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=8679163CAC2573833D45CD5388CDA153"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "灯带系统应作为光源、驱动电源、连接线、型材、扩散罩和安装环境的组合进行设计。",
-      "长距离恒压灯带可能因线路电阻出现末端压降、亮度下降或色差，允许长度和供电方式应以制造商资料及计算为准。",
-      "铝型材可提供安装、遮光和一定散热条件，但是否需要及能否满足热管理要求要看灯带功率、结构和环境。",
-      "扩散罩与灯珠间距、型材深度共同影响是否出现颗粒感；“见光不见灯”不是只靠增加罩子实现。",
-      "柜内、吊顶、潮湿区和户外灯带对绝缘、防护、散热和维护空间的要求不同。",
-    ],
-    doNotSay: ["“灯带越密就一定越均匀。”", "“加铝槽就不会发热。”", "所有灯带都可按相同长度串接或使用同一种电源。"],
-  },
-  {
-    slug: "ies-photometric-file",
-    title: "IES 配光文件与照明模拟",
-    description: "了解 IES LM-63 光度数据文件能支持哪些照明计算，以及型号匹配、计算设置、样板实测与现场调试的边界。",
-    category: "照明设计",
-    topic: { label: "工程定制专题", href: "/products/project-custom", text: "按项目条件进入工程定制沟通。" },
-    consultation: "project",
-    image: "/images/juhao-industrial.webp",
-    imageAlt: "原创精密制造空间中的均匀高棚照明与安全通道",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/IES配光文件.md",
-    sourceKey: "professional_knowledge/IES配光文件",
-    sourceLabel: "ANSI/IES LM-63-19；美国能源部户外区域照明指南",
-    sourceUrls: ["https://store.ies.org/product/approved-method-ies-standard-file-format-for-the-electronic-transfer-of-photometric-data-and-related-information/", "https://www.energy.gov/sites/prod/files/2014/05/f16/outdoor_area_lighting.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "IES LM-63 是灯具光度数据的标准文件格式，可供照明计算软件读取光强分布等信息。",
-      "配光文件能帮助估算特定空间中的照度、均匀度和光分布，但结果依赖房间尺寸、材质反射率、安装位置、维护条件和计算设置。",
-      "使用模拟前应确认文件对应具体型号、功率、光束角、光学配件和安装方向。",
-      "IES 文件不是产品效果图，也不能单独证明显色、色温一致性、频闪、寿命或电气安全。",
-      "设计模拟应与样板实测和现场调试配合，尤其是高反射、镜面、深色或复杂造型空间。",
-    ],
-    doNotSay: ["“有 IES 文件就代表产品所有参数都经过认证。”", "“模拟达到某照度，现场就一定完全相同。”", "用相近型号的配光文件代替实际产品而不做说明。"],
-  },
-  {
-    slug: "ip-rating-wet-spaces",
-    title: "IP 防护等级与潮湿空间选灯",
-    description: "理解 IP 代码的两位特征数字，并结合安装位置、进水方向、清洁方式、通风和电气安装要求判断潮湿空间。",
-    category: "灯具安全",
-    topic: { label: "户外照明专题", href: "/products/outdoor-lighting", text: "进入户外照明专题核对具体产品防护资料。" },
-    consultation: "project",
-    image: "/images/juhao-public.webp",
-    imageAlt: "原创公共图书馆中庭的台阶、阅读与导向照明",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/IP防护等级与潮湿空间.md",
-    sourceKey: "professional_knowledge/IP防护等级与潮湿空间",
-    sourceLabel: "GB/T 4208-2017；IEC IP Ratings 指南；GB/T 7000.1-2023",
-    sourceUrls: ["https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=09CCED55688D4116ED89659C1E7526F8", "https://www.iec.ch/ip-ratings", "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=8679163CAC2573833D45CD5388CDA153"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "IP 代码说明外壳防尘、防接触和防水能力。",
-      "第一位特征数字主要对应固体异物和接近危险部件的防护，第二位主要对应进水防护；数字含义应按标准逐级解释。",
-      "IP 等级只说明标准规定的外壳防护能力，不等同于整灯的全部电气安全、耐腐蚀、耐高温或长期户外可靠性。",
-      "潮湿空间选灯应结合安装位置、可能的喷水方向、清洁方式、通风条件和当地电气安装要求。",
-      "同一卫生间内，不同安装区域的进水风险可能不同，不能用一个固定 IP 等级覆盖所有位置。",
-    ],
-    doNotSay: ["“IP44 就适合所有卫生间位置。”", "“IP65 可以长期泡水。”", "“有 IP 等级就代表整灯所有安全项目都合格。”", "仅凭外观或硅胶圈判断实际防护等级。"],
-  },
-  {
-    slug: "led-dimming-compatibility",
-    title: "LED 调光兼容性与低亮表现",
-    description: "把光源、驱动、调光器与回路负载作为完整系统，核对最低稳定亮度、启动、残光、闪烁、噪声和跳变。",
-    category: "控制与调光",
-    topic: { label: "家居智能设备专题", href: "/products/smart-home-devices", text: "进入智能设备专题核对协议、兼容与部署条件。" },
-    consultation: "project",
-    image: "/images/juhao-home.webp",
-    imageAlt: "原创家庭客厅在低亮场景中的间接光与阅读光",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/LED调光兼容性.md",
-    sourceKey: "professional_knowledge/LED调光兼容性",
-    sourceLabel: "美国能源部 LED 相切调光研究与 CALiPER 调光报告",
-    sourceUrls: ["https://www1.eere.energy.gov/buildings/publications/pdfs/ssl/poplawski_miller_phasecutdimming_lightfair2014.pdf", "https://energy.gov/sites/prod/files/2015/01/f19/caliper_retail-study_3-1.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "LED 灯具标注“可调光”并不代表它能与任意调光器稳定配合，光源、驱动、调光器和回路负载需要共同兼容。",
-      "相切调光系统可能受到调光器类型、最小负载、最大负载、灯具数量和线路条件影响。",
-      "调光质量不只看能否变暗，还应观察最低稳定亮度、调光范围、启动亮度、关断残光、闪烁、噪声和亮度跳变。",
-      "有些组合会出现低端突然熄灭、重新开灯时不能从低亮启动，或调光行程前半段几乎没有变化。",
-      "同一灯具更换驱动或同一调光器更换灯具数量后，兼容结果可能改变。",
-    ],
-    doNotSay: ["“支持调光，所以接任何智能开关都能用。”", "“能调到 1%”但未说明测量方法、相对光输出和配套控制器。", "只凭一次开关测试判断整套系统兼容。"],
-  },
-  {
-    slug: "temporal-light-modulation",
-    title: "频闪与时间光调制",
-    description: "理解时间光调制与可见闪烁、频闪效应和幻影阵列效应的关系，以及调制深度、频率、波形和调光状态的影响。",
-    category: "照明健康",
-    topic: { label: "家居顶灯专题", href: "/products/ceiling-lights", text: "在具体型号资料中核对光品质参数。" },
-    consultation: "home-health",
-    image: "/images/juhao-home.webp",
-    imageAlt: "原创家庭客厅中的稳定间接照明与局部阅读光",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/频闪与时间光调制.md",
-    sourceKey: "professional_knowledge/频闪与时间光调制",
-    sourceLabel: "CIE TN 006:2016；CIE TN 008:2017；CIE TN 012:2021",
-    sourceUrls: ["https://files.cie.co.at/883_CIE_TN_006-2016.pdf", "https://files.cie.co.at/943_CIE_TN_008-2017.pdf", "https://files.cie.co.at/CIE_TN_012_2021.pdf"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "LED 光输出随时间周期性变化，专业上属于时间光调制（TLM）。",
-      "时间光调制可能对应可见闪烁、运动中的频闪效应或快速眼动时的幻影阵列效应。",
-      "调制深度、频率和波形都会影响评价，不能只用一个百分比概括全部视觉影响。",
-      "CIE 指出，闪烁指数、调制深度和百分比闪烁描述的是波形特征，不直接等同于人的视觉感知结果。",
-      "调光器、驱动电源和调光档位都可能改变时间光调制表现。",
-    ],
-    doNotSay: ["“手机拍不到条纹即可证明灯具不存在任何频闪问题。”", "“频率高就一定没有任何时间光伪影。”", "未经检测宣称某产品达到具体 PstLM 或 SVM 数值。"],
-  },
-  {
-    slug: "led-driver-constant-voltage-current",
-    title: "LED 驱动电源与恒压恒流",
-    description: "区分恒流驱动与恒压电源，并从输出窗口、负载范围、调光方式、环境温度和安装条件核对匹配。",
-    category: "灯具参数",
-    topic: { label: "灯带与线性照明专题", href: "/products/linear-lighting", text: "进入线性照明专题核对驱动与安装资料。" },
-    consultation: "project",
-    image: "/images/juhao-industrial.webp",
-    imageAlt: "原创精密制造空间中的高棚照明与安全通道",
-    sourcePath: "/Users/mac/Documents/juhao数据库/企业知识库/专业灯光知识库/驱动电源与恒压恒流.md",
-    sourceKey: "professional_knowledge/驱动电源与恒压恒流",
-    sourceLabel: "GB/T 24825-2022；GB/T 19510.213-2023；IEC 62384:2020；IEC 61347-2-13:2024",
-    sourceUrls: ["https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=BF3A9EAC7EB67D088F02619210B08AB8", "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=B0E53DCC41345B7603F79205BD0293BA", "https://webstore.iec.ch/en/publication/27275", "https://webstore.iec.ch/en/publication/64713"],
-    reviewedAt: "2026-06-12",
-    sourceCheckedAt: "2026-06-12",
-    coreConclusions: [
-      "LED 驱动装置为 LED 模块提供规定的电压、电流或功率条件，其匹配会影响启动、亮度、调光、频闪和可靠性。",
-      "恒流驱动主要控制输出电流，常用于需要规定工作电流的 LED 模块；恒压电源主要维持规定输出电压，常见于配套恒压灯带和模块。",
-      "选择驱动不能只比较额定瓦数，还要核对输出电压范围、输出电流、负载范围、调光方式、环境温度和安装条件。",
-      "驱动额定功率大于负载功率不代表一定兼容；部分产品存在最小负载、输出窗口或线长限制。",
-      "更换驱动时应按灯具制造商要求匹配，不能用外形相同作为替代依据。",
-    ],
-    doNotSay: ["“瓦数够大就能带。”", "“24V 电源可以替代所有 24V 灯带驱动。”", "未核对输出窗口就替换恒流驱动。"],
-  },
-];
+const seeds = rawKnowledgeArticles as unknown as KnowledgeArticleSeed[];
 
 export const knowledgeArticlePages = Object.fromEntries(
   seeds.map((seed) => [`news/${seed.slug}`, makeKnowledgeArticle(seed)]),

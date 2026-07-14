@@ -261,9 +261,11 @@
     border: 0;
     opacity: 0;
     pointer-events: none;
+    transition: opacity var(--duration-fast) ease;
   }
 
   .backdropOpen {
+    opacity: 1;
     pointer-events: auto;
   }
 
@@ -281,6 +283,11 @@
     color: var(--white);
     background: var(--night);
     transform: translateX(100%);
+    transition: transform var(--duration-ui) var(--ease-enter);
+  }
+
+  .drawerOpen {
+    transform: translateX(0);
   }
 
   .mobileGroup {
@@ -358,6 +365,8 @@
   .topLink::after,
   .dropdown,
   .searchLink,
+  .backdrop,
+  .drawer,
   .menuButton i,
   .mobileChildren {
     transition: none;

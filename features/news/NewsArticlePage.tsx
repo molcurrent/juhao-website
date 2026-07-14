@@ -50,7 +50,7 @@ export function NewsArticlePage({ page }: { page: PageData }) {
         <p>{page.intro}</p>
         <div className={styles.articleMeta} aria-label="文章审核信息">
           {evidence
-            ? <><span>审核日期 <time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></span><span>审核主体 {evidence.reviewer}</span><span>来源核对 <time dateTime={evidence.sourceCheckedAt}>{evidence.sourceCheckedAt}</time></span></>
+            ? <><span>JUHAO 审核日期 <time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></span><span>审核主体 {evidence.reviewer}</span><span>来源核对 <time dateTime={evidence.sourceCheckedAt}>{evidence.sourceCheckedAt}</time></span></>
             : companyEvidence
               ? <><span>来源日期 <time dateTime={companyEvidence.published}>{companyEvidence.published}</time></span><span>来源记录 #{companyEvidence.source_id}</span><span>页面状态 待企业复核</span></>
               : <span>发布日期 <time dateTime={page.published}>{page.published ?? "持续更新"}</time></span>}
@@ -79,14 +79,16 @@ export function NewsArticlePage({ page }: { page: PageData }) {
               <h2 id="article-sources-title">资料来源与审核记录</h2>
               <dl>
                 <div><dt>审核主体</dt><dd>{evidence.reviewer}</dd></div>
-                <div><dt>审核日期</dt><dd><time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></dd></div>
+                <div><dt>JUHAO 审核日期</dt><dd><time dateTime={evidence.reviewedAt}>{evidence.reviewedAt}</time></dd></div>
                 <div><dt>来源核对</dt><dd><time dateTime={evidence.sourceCheckedAt}>{evidence.sourceCheckedAt}</time></dd></div>
                 <div><dt>知识库键</dt><dd><code>{evidence.sourceKey}</code></dd></div>
               </dl>
             </div>
             <div className={styles.sourceLinks}>
               <p>{evidence.sourceLabel}</p>
-              <ol>{evidence.sourceUrls.map((url, index) => <li key={url}><a href={url} target="_blank" rel="noreferrer noopener">资料来源 {String(index + 1).padStart(2, "0")} <span aria-hidden="true">↗</span></a></li>)}</ol>
+              {evidence.sourceUrls.length > 0
+                ? <ol>{evidence.sourceUrls.map((url, index) => <li key={url}><a href={url} target="_blank" rel="noreferrer noopener">资料来源 {String(index + 1).padStart(2, "0")} <span aria-hidden="true">↗</span></a></li>)}</ol>
+                : <p role="note">内部知识库审核，外部来源链接未记录。</p>}
             </div>
           </section>
         </div>
@@ -97,7 +99,7 @@ export function NewsArticlePage({ page }: { page: PageData }) {
             <h2 id="company-news-facts-title">来源记录与当前阶段</h2>
             <ol>
               <li>来源状态：知识库中的有效企业资讯记录。</li>
-              <li>当前阶段：{companyEvidence.phase_conservative_summary.stage}。</li>
+              <li>当前阶段：{companyEvidence.phase_stage}。</li>
               {companyEvidence.project_stage && <li>项目边界：{companyEvidence.project_stage.confirmed}，{companyEvidence.project_stage.implementation}。</li>}
             </ol>
           </section>
@@ -114,7 +116,7 @@ export function NewsArticlePage({ page }: { page: PageData }) {
             <h2 id="company-news-boundary-title">公开边界</h2>
             <ul>
               <li>{companyEvidence.publication_boundary}</li>
-              <li>{`来源中的 ${companyEvidence.remote_media.length} 个图片候选尚未完成公开使用授权核验，当前不在页面发布。`}</li>
+              <li>{`来源中的 ${companyEvidence.remote_media_count} 个图片候选尚未完成公开使用授权核验，当前不在页面发布。`}</li>
               <li>当前原创栏目示意图仅说明内容类型，不作为活动现场、项目实施或结果证据。</li>
             </ul>
           </section>

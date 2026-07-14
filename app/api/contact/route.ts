@@ -11,11 +11,17 @@ import {
   consultationSourceValues,
   type ConsultationSource,
 } from "@/lib/consultation";
+import {
+  failedNotificationUpdate,
+  leadNotificationConfig,
+  notifyInternalLead,
+  validateLeadNotificationConfig,
+} from "@/lib/server/lead-notifications";
 
 const MAX_BODY_BYTES = 16_384;
 const RETENTION_DAYS = 180;
 const sources = new Set<ConsultationSource>(consultationSourceValues);
-const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "solutions", "partners"]);
+const detailSources = new Set<ConsultationSource>(["page", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 const stages = new Set<ContactRequest["stage"]>(["understanding", "planning", "delivery", "operation"]);
 const channels = new Set<ContactRequest["contactChannel"]>(["phone", "email", "wechat"]);
 
@@ -60,6 +66,9 @@ function normalizePayload(value: unknown): ContactRequest {
   if (input.privacyVersion !== CONSULTATION_PRIVACY_VERSION) throw new ValidationError("数据处理说明版本已更新，请刷新后重试");
   const clientRequestId = requiredString(input.clientRequestId, "提交标识", 36, 36).toLowerCase();
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(clientRequestId)) throw new ValidationError("提交标识格式不正确");
+  const turnstileToken = typeof input.turnstileToken === "string" && input.turnstileToken.trim()
+    ? requiredString(input.turnstileToken, "安全校验", 1, 2_048)
+    : undefined;
 
   return {
     direction,
@@ -76,6 +85,7 @@ function normalizePayload(value: unknown): ContactRequest {
     consent: true,
     privacyVersion: CONSULTATION_PRIVACY_VERSION,
     clientRequestId,
+    ...(turnstileToken ? { turnstileToken } : {}),
   };
 }
 
@@ -89,46 +99,38 @@ async function sha256(value: string) {
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
-async function webhookSignature(secret: string, body: string) {
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  const signature = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(body));
-  return [...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+function publicIntakeReady() {
+  return env.PUBLIC_INTAKE_READY?.trim().toLowerCase() === "true";
 }
 
-async function notifyInternalLead(lead: ConsultationLeadRecord) {
-  const configuredUrl = env.JUHAO_LEAD_WEBHOOK_URL?.trim();
-  if (!configuredUrl) return;
-  const webhookUrl = new URL(configuredUrl);
-  if (webhookUrl.protocol !== "https:") throw new Error("webhook_url_invalid");
-  const body = JSON.stringify({
-    id: lead.id,
-    submittedAt: lead.createdAt,
-    direction: lead.direction,
-    source: lead.source,
-    sourceDetail: lead.sourceDetail,
-    scene: lead.scene,
-    intent: lead.intent,
-    project: lead.project,
-    stage: lead.stage,
-    need: lead.need,
-    contactName: lead.contactName,
-    contactChannel: lead.contactChannel,
-    contactValue: lead.contactValue,
-  });
-  const secret = env.JUHAO_LEAD_WEBHOOK_SECRET?.trim();
+function publicIntakeConfigurationError() {
+  if (!publicIntakeReady()) return null;
+  if (!env.JUHAO_LEAD_WEBHOOK_URL?.trim() || !env.JUHAO_LEAD_WEBHOOK_SECRET?.trim()) return "内部通知尚未配置";
+  if (!env.JUHAO_LEAD_MAINTENANCE_SECRET?.trim()) return "线索维护任务尚未配置";
+  if (!env.TURNSTILE_SECRET_KEY?.trim()) return "安全校验尚未配置";
+  return null;
+}
+
+async function verifyTurnstile(token: string | undefined, request: Request) {
+  const secret = env.TURNSTILE_SECRET_KEY?.trim();
+  if (!secret || !token) return false;
+  const body = new URLSearchParams({ secret, response: token });
+  const remoteIp = request.headers.get("CF-Connecting-IP")?.trim();
+  if (remoteIp) body.set("remoteip", remoteIp);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 4_000);
   try {
-    const response = await fetch(webhookUrl, {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(secret ? { "X-Juhao-Signature": `sha256=${await webhookSignature(secret, body)}` } : {}),
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
       signal: controller.signal,
     });
-    if (!response.ok) throw new Error(`webhook_http_${response.status}`);
+    if (!response.ok) return false;
+    const result = await response.json() as { success?: unknown };
+    return result.success === true;
+  } catch {
+    return false;
   } finally {
     clearTimeout(timeout);
   }
@@ -167,13 +169,29 @@ export async function POST(request: Request) {
     return json({ error: error instanceof ValidationError ? error.message : "请求内容格式不正确" }, 400);
   }
 
+  const configurationError = publicIntakeConfigurationError();
+  if (configurationError) return json({ error: `公开咨询入口未就绪：${configurationError}` }, 503);
+
+  const notificationConfig = leadNotificationConfig(env);
+  try {
+    validateLeadNotificationConfig(notificationConfig);
+  } catch {
+    return json({ error: "内部通知配置不完整，请稍后重试" }, 503);
+  }
+
+  if (publicIntakeReady() && !await verifyTurnstile(payload.turnstileToken, request)) {
+    return json({ error: "安全校验未通过，请刷新后重试" }, 403);
+  }
+
   if (!env.DB) return json({ error: "咨询服务暂时不可用，请稍后重试" }, 503);
 
   const now = new Date();
   const submittedAt = now.toISOString();
   const expiresAt = new Date(now.getTime() + RETENTION_DAYS * 24 * 60 * 60 * 1_000).toISOString();
-  const requestHash = await sha256(JSON.stringify(payload));
-  const webhookConfigured = Boolean(env.JUHAO_LEAD_WEBHOOK_URL?.trim());
+  const hashPayload = { ...payload };
+  delete hashPayload.turnstileToken;
+  const requestHash = await sha256(JSON.stringify(hashPayload));
+  const webhookConfigured = Boolean(notificationConfig.webhookUrl && notificationConfig.webhookSecret);
   const lead: ConsultationLeadRecord = {
     id: createLeadId(now),
     clientRequestId: payload.clientRequestId,
@@ -195,6 +213,8 @@ export async function POST(request: Request) {
     notificationStatus: webhookConfigured ? "pending" : "not_configured",
     notificationAttempts: 0,
     notificationLastError: null,
+    notificationLastAttemptAt: null,
+    notificationNextAttemptAt: null,
     createdAt: submittedAt,
     expiresAt,
   };
@@ -208,12 +228,24 @@ export async function POST(request: Request) {
     }
 
     if (webhookConfigured) {
+      const attemptedAt = new Date();
       try {
-        await notifyInternalLead(lead);
-        await updateConsultationNotification(env.DB, lead.id, "sent", null);
+        await notifyInternalLead(lead, notificationConfig);
+        await updateConsultationNotification(env.DB, lead.id, {
+          status: "sent",
+          error: null,
+          attemptedAt: attemptedAt.toISOString(),
+          nextAttemptAt: null,
+        });
       } catch (error) {
         const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
-        await updateConsultationNotification(env.DB, lead.id, "failed", detail);
+        const failure = failedNotificationUpdate(1, attemptedAt);
+        await updateConsultationNotification(env.DB, lead.id, {
+          status: failure.status,
+          error: detail,
+          attemptedAt: attemptedAt.toISOString(),
+          nextAttemptAt: failure.nextAttemptAt,
+        });
       }
     }
 

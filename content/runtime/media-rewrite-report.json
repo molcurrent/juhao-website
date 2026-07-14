@@ -1,0 +1,18 @@
+[
+  {
+    "file": "content/catalog.ts",
+    "replacements": 0,
+    "wired_media_ids": 46,
+    "before_sha256": "d739be4e78cbc0d5f9ddd0cdb50e077b327e24dc441753999bb1236c2c27cb82",
+    "after_sha256": "d739be4e78cbc0d5f9ddd0cdb50e077b327e24dc441753999bb1236c2c27cb82",
+    "remaining_enterprise_urls": 0
+  },
+  {
+    "file": "content/topic-guides.ts",
+    "replacements": 0,
+    "wired_media_ids": 6,
+    "before_sha256": "bcda561834cfbacd7818f62fdd67f5800f7943c8cb6b457b9e3b6a8bf77299ee",
+    "after_sha256": "bcda561834cfbacd7818f62fdd67f5800f7943c8cb6b457b9e3b6a8bf77299ee",
+    "remaining_enterprise_urls": 0
+  }
+]

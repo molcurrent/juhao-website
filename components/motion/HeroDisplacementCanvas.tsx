@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "@/lib/motion/gsap";
 import styles from "./HeroDisplacementCanvas.module.css";
 
 type HeroDisplacementCanvasProps = {
@@ -113,7 +112,7 @@ class DisplacementRenderer {
   private currentIndex = -1;
   private desiredIndex: number;
   private progress = { value: 0 };
-  private tween: ReturnType<typeof gsap.to> | null = null;
+  private tween: number | null = null;
   private resizeObserver: ResizeObserver | null = null;
   private raf = 0;
   private width = 1;
@@ -337,14 +336,21 @@ class DisplacementRenderer {
 
     this.next = target;
     this.progress.value = 0;
-    this.tween = gsap.to(this.progress, {
-      value: 1,
-      duration: 1,
-      ease: "power3.inOut",
-      overwrite: true,
-      onUpdate: this.scheduleDraw,
-      onComplete: () => this.completeTransition(targetIndex),
-    });
+    const startedAt = performance.now();
+    const animate = (time: number) => {
+      if (this.disposed || this.contextLost || version !== this.requestVersion) return;
+      const elapsed = Math.min(1, (time - startedAt) / 1000);
+      this.progress.value = elapsed < 0.5
+        ? 4 * elapsed * elapsed * elapsed
+        : 1 - Math.pow(-2 * elapsed + 2, 3) / 2;
+      this.scheduleDraw();
+      if (elapsed < 1) this.tween = requestAnimationFrame(animate);
+      else {
+        this.tween = null;
+        this.completeTransition(targetIndex);
+      }
+    };
+    this.tween = requestAnimationFrame(animate);
   }
 
   private completeTransition(targetIndex: number) {
@@ -363,7 +369,7 @@ class DisplacementRenderer {
   private interruptTransition() {
     this.requestVersion += 1;
     this.cancelPendingImages();
-    this.tween?.kill();
+    if (this.tween !== null) cancelAnimationFrame(this.tween);
     this.tween = null;
 
     if (!this.current || !this.next) {
@@ -549,7 +555,7 @@ class DisplacementRenderer {
   };
 
   private stopAnimation() {
-    this.tween?.kill();
+    if (this.tween !== null) cancelAnimationFrame(this.tween);
     this.tween = null;
     if (this.raf) cancelAnimationFrame(this.raf);
     this.raf = 0;

@@ -1,0 +1,1192 @@
+[
+  {
+    "route": "/",
+    "path": "/og/home.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 23322,
+    "sha256": "0be7c57c62e1de19dda4e76979a11ee0ce25292f130cef0c3b58520835a8b4d8",
+    "alt": "钜豪照明首页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/about",
+    "path": "/og/about-979bddc4.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 23378,
+    "sha256": "9bbb75a4d8236fa572857bc8f79fa077b6d547c400e30b41d71ef3f2ac06daba",
+    "alt": "关于钜豪照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/about/history",
+    "path": "/og/about--history-4c8637b7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24344,
+    "sha256": "a710c2d6d2301aaa57a372dbbaa069d11a735bf20ce31609f0daabd8232bb50d",
+    "alt": "钜豪发展历程｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/about/join",
+    "path": "/og/about--join-eff579ab.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26239,
+    "sha256": "53659c917a9028524bcbd2c24a5a6e1440b4fa69521c1dc88c10628aa56b7aad",
+    "alt": "与钜豪一起创造好光｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/cases",
+    "path": "/og/cases-ff17480d.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26639,
+    "sha256": "2fc4905fa1f6fedc709b7568a26e63c6c59a5d321e323593c90bcd20588a2066",
+    "alt": "工程案例与项目动态｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/cases/doubletree-nantong-haimen",
+    "path": "/og/cases--doubletree-nantong-haimen-2a8918be.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 31791,
+    "sha256": "1d9eeffe93ea4782dccfcdcb89e19d9b8344a2d11b4b4daba20986b30a2ed93b",
+    "alt": "南通海门希尔顿逸林酒店｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/cases/grand-hyatt-suzhou-financial-street",
+    "path": "/og/cases--grand-hyatt-suzhou-financial-street-5c10cb1c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29970,
+    "sha256": "576c09abc18f028049e957577447af5f114076bca7356097125f578dfbd390c1",
+    "alt": "苏州金融街君悦酒店｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/cases/jw-marriott-shenzhen-huafa-snow-world",
+    "path": "/og/cases--jw-marriott-shenzhen-huafa-snow-world-4527043b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 33973,
+    "sha256": "a424d77efb8d91a1f9dc2c9810650711f3b9c6f251ea7971bbe5ce9bd96ad62c",
+    "alt": "深圳华发冰雪世界 JW 万豪酒店｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/cases/pullman-shangrao-guangfeng",
+    "path": "/og/cases--pullman-shangrao-guangfeng-2d28cebc.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28006,
+    "sha256": "0b2e78a4c4bc2dd0225545a6c88952bc205adedda9ce08b6cbc959cbada68212",
+    "alt": "上饶广丰铂尔曼酒店｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/cases/xingtai-financial-center",
+    "path": "/og/cases--xingtai-financial-center-250c33d7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 25348,
+    "sha256": "4230322d08002fcce135cac6b2f54e163055409d362343f778fed5229a41be4b",
+    "alt": "邢台金融中心｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/cases/yangzhou-riverfront-lighting",
+    "path": "/og/cases--yangzhou-riverfront-lighting-fd856bae.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 33284,
+    "sha256": "04a9c87be558afc3398b3d49aa0dcd453c59baa31754c22e63b1c0e02f695e50",
+    "alt": "扬州经开区一河两岸户外亮化工程｜钜豪照明",
+    "stage_label": "签约 / 中标资料"
+  },
+  {
+    "route": "/contact",
+    "path": "/og/contact-4eb95063.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24518,
+    "sha256": "1da1e1d31d2beaba6f0f56b6918618e83c2919a022b8a5f56704a842aff4bbd1",
+    "alt": "联系钜豪照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/contact/success",
+    "path": "/og/contact--success-d9ac0b4c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24620,
+    "sha256": "16f410cf9f87aed81293ae550aa8fdc8fc0d58fa332140e3a6093d1838dfcd85",
+    "alt": "咨询提交成功｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/downloads",
+    "path": "/og/downloads-3fdb4b32.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24770,
+    "sha256": "0545b50a580e1de9d39410ecb0ff1333fc1cce06f2ac238df2f12ecbd7332911",
+    "alt": "产品与服务资料｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/healthy-light",
+    "path": "/og/healthy-light-66f3a9b9.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27433,
+    "sha256": "ab637aec3da9a0539d4f3555bc242de22f3af9a2b5de89c07075e4674212aa56",
+    "alt": "让光更关照人的感受｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/legal",
+    "path": "/og/legal-0596a980.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 21449,
+    "sha256": "2cbd8a872bfa19a5d30a9aba12d330cc63bfcda7fe43597cd1d692f4215774aa",
+    "alt": "法律声明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/mall",
+    "path": "/og/mall-b9170847.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 21715,
+    "sha256": "db9c78a00f36952dc0e0347ddbc8f4ce052ab9fcfed3c72b6274a8ef12e31455",
+    "alt": "钜豪商城｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news",
+    "path": "/og/news-f46b16ed.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27682,
+    "sha256": "3ced7662c469d49395f6ad4641353054382d2e3cd6cc5c4d9e9accd10c71f5aa",
+    "alt": "钜豪照明新闻与资讯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/art-lighting-guide",
+    "path": "/og/news--art-lighting-guide-525a8121.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27067,
+    "sha256": "80c14f17208036d13adf160cfce7c8f81021a0aae25e0094f15344654629b7dd",
+    "alt": "艺术灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/beam-angle-guide",
+    "path": "/og/news--beam-angle-guide-e4b45754.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28175,
+    "sha256": "31c941716be43d6ccd368c5fe858564c15cd4f51e3b367e93215558e891756d0",
+    "alt": "光束角定义与光斑大小｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/bedroom-night-lighting",
+    "path": "/og/news--bedroom-night-lighting-986d8aff.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27750,
+    "sha256": "86eef5c181e8a2f81448615578427ef21fe51cc71dc04515f165790ef978cf0c",
+    "alt": "卧室分层与夜间照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/blue-light-photobiological-safety",
+    "path": "/og/news--blue-light-photobiological-safety-0b651089.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27323,
+    "sha256": "c2e53dc4749d6937278b1a22bb3c7a7e11cb4f6468748a11eab64ec248eb84ad",
+    "alt": "蓝光与光生物安全｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/ceiling-fan-light-guide",
+    "path": "/og/news--ceiling-fan-light-guide-0e1d0129.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27651,
+    "sha256": "b123ecb897287443da2a7e42b2822e38d3d577101d7c56274b8d974e789583a5",
+    "alt": "风扇灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/chinese-style-chandelier-guide",
+    "path": "/og/news--chinese-style-chandelier-guide-fd2071c1.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28787,
+    "sha256": "b788e41abbf3f75990e2f4a033326e7ae462a113c2838150b775739436982144",
+    "alt": "中式吊灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/color-rendering-index",
+    "path": "/og/news--color-rendering-index-bf25ca06.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30430,
+    "sha256": "7de8a3c469984fa9cd63895375157d9b0576903bfd7b704062a76ea00df993f9",
+    "alt": "显色指数 Ra、R9 与色彩保真｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/color-temperature-guide",
+    "path": "/og/news--color-temperature-guide-2333a5c1.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 31299,
+    "sha256": "b90ce5e81808b8656fc78e12c9501c4c39f1000a78e7f5238444ac28b542bdfa",
+    "alt": "相关色温的含义与家居选择｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/color-tolerance-duv",
+    "path": "/og/news--color-tolerance-duv-ffd2fa11.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30588,
+    "sha256": "9111fce55e39d214fef51277ec56f68859d6cc21cb98e97faa83fa0cd04a40bb",
+    "alt": "色容差、Duv 与同批灯色一致性｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/commercial-lighting-guide",
+    "path": "/og/news--commercial-lighting-guide-4ae8e58f.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30936,
+    "sha256": "0b667ee15d80b6265fc6468e80b9a6388f86afafc111e296d58a823c7def1249",
+    "alt": "商业灯光照明常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/crystal-chandelier-guide",
+    "path": "/og/news--crystal-chandelier-guide-78e84ab8.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28590,
+    "sha256": "2805e6b7c0e96ec03e4385fc1c0eafec6ea284d4197f0bbcc4147450f5e434ea",
+    "alt": "水晶吊灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/dalian-jinzhou-crowne-plaza-hotel-bid",
+    "path": "/og/news--dalian-jinzhou-crowne-plaza-hotel-bid-63211eb0.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 33929,
+    "sha256": "3a66e8fc5cd632eb5cbc6c3f5f5281ff1eeae28d50e1993890e1f9c629220eb4",
+    "alt": "大连金州皇冠假日酒店 · 中标报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/dealer-conference-spring-2026",
+    "path": "/og/news--dealer-conference-spring-2026-85d1cd5c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 42263,
+    "sha256": "b1a51c9b8afa8c7f882623c820346f02732a619113f95c47e237c54055c6ad1e",
+    "alt": "2026 经销商盛典暨春季新品品鉴会 · 活动召开报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/dining-table-lighting",
+    "path": "/og/news--dining-table-lighting-586bee2f.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30293,
+    "sha256": "c8a42d572efb5f300a4166a491dfe1b67eef78b45440064fa3516245a365f684",
+    "alt": "餐桌重点照明与吊灯选择｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/downlight-vs-spotlight",
+    "path": "/og/news--downlight-vs-spotlight-848e67ff.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 32780,
+    "sha256": "ba52cf6d865f87cdbd80076865ccb94157af220b86c71eb6c44836659b5713cd",
+    "alt": "筒灯与射灯应按配光和用途区分｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/glare-control-ugr",
+    "path": "/og/news--glare-control-ugr-459aafbd.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27667,
+    "sha256": "5a4f31efa4215da3d6e8ef08686ecc3b41adef717e4305f947a2f2d591376017",
+    "alt": "眩光、防眩结构与 UGR｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/guangzhou-international-lighting-exhibition-2026",
+    "path": "/og/news--guangzhou-international-lighting-exhibition-2026-83fd2da3.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 34092,
+    "sha256": "2ee6afa918fe11fc10070642a3a8fe638d2990aa81f2bfe6539383c929a1a259",
+    "alt": "2026 广州光亚展 · 展会参展报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/home-lighting-brand-source-record-2025",
+    "path": "/og/news--home-lighting-brand-source-record-2025-79837f55.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39139,
+    "sha256": "2ec1272b6eed4878115b81945508c5589f0c774616f06c86d9805e90fcd865ff",
+    "alt": "2025 年度“十大家居照明品牌” · 获奖来源记录｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/home-lighting-guide",
+    "path": "/og/news--home-lighting-guide-b29b245c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29991,
+    "sha256": "935e639ec7112997153adf8cf9a76dde4081c759fefdce3864781844b4e7546c",
+    "alt": "家居照明灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/home-lighting-selection-checklist",
+    "path": "/og/news--home-lighting-selection-checklist-abaf90b7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 31579,
+    "sha256": "b2594880b867ff2543ffdf5c8fb27097bbaa817fb7709c9a4368d9d0d1a73c22",
+    "alt": "家用灯具选购参数检查表｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/ies-photometric-file",
+    "path": "/og/news--ies-photometric-file-ee3262c8.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29468,
+    "sha256": "0624a64a3be09b42a2470870d5fa730bfc2031f226f5a4c4175fb3d50e424449",
+    "alt": "IES 配光文件与照明模拟｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/ip-rating-wet-spaces",
+    "path": "/og/news--ip-rating-wet-spaces-e0342c84.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30928,
+    "sha256": "f88c6edd10c9d139e38a02e24a91cf0bd74a1279159c9156e60b514efd6644b6",
+    "alt": "IP 防护等级与潮湿空间选灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/kitchen-task-lighting",
+    "path": "/og/news--kitchen-task-lighting-4a761759.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29913,
+    "sha256": "296228c5f4227441dd0e9787a6b732072eb6f049420ac09f211d290296358bde",
+    "alt": "厨房环境光与操作台照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/kunming-guandu-wyndham-hotel-bid",
+    "path": "/og/news--kunming-guandu-wyndham-hotel-bid-31ca0d10.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 33622,
+    "sha256": "17001238e4c135e7d56f1864b1bd0584e7e23721f491fcd9de3631dfdd8e56ac",
+    "alt": "昆明官渡温德姆酒店 · 中标报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/layered-lighting-design",
+    "path": "/og/news--layered-lighting-design-d039c7b7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 34261,
+    "sha256": "f2cceece130b7d358db1d1e51c06cd67d23bed251809cc96cf7640ff531efb76",
+    "alt": "环境光、任务光与重点光的分层照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/led-dimming-compatibility",
+    "path": "/og/news--led-dimming-compatibility-99b7ee8c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30540,
+    "sha256": "15687853be221770e70be7561158ba93d96606e1618bdb373fa727d5186961a3",
+    "alt": "LED 调光兼容性与低亮表现｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/led-driver-constant-voltage-current",
+    "path": "/og/news--led-driver-constant-voltage-current-9001e443.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 30370,
+    "sha256": "929f5e4a6ce7cc28b4d4fd99d8b6184b80d9276ef129c1791c7bb590cce03c1f",
+    "alt": "LED 驱动电源与恒压恒流｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/led-lifetime-reliability",
+    "path": "/og/news--led-lifetime-reliability-1a1f4ed1.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29978,
+    "sha256": "705f82c4042336e7e2dda5a920bdb3b60648544373bf54bdcbc4c87cb9bcebc9",
+    "alt": "LED 寿命、光衰与整灯可靠性｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/led-strip-design-installation",
+    "path": "/og/news--led-strip-design-installation-cf98a54d.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27371,
+    "sha256": "8dcd19a09c42df79f9751e726dc2eddec4e888b28fcb3186823f21a6dd5769f3",
+    "alt": "LED 灯带设计与安装｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/lighting-industry-top10-source-record-2026",
+    "path": "/og/news--lighting-industry-top10-source-record-2026-16d6d7fc.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 40090,
+    "sha256": "472e5a26b0e6ce862f32371ed36f69ee9e7c14359787daf39c18d79aa9f61de0",
+    "alt": "工程照明品牌 TOP10、设计师推荐品牌 TOP10 · 获奖来源记录｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/living-room-tv-wall-lighting",
+    "path": "/og/news--living-room-tv-wall-lighting-bfce10ff.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28946,
+    "sha256": "aed59db68f2fa4d667aa22892807ee92ce5fac8c222a659789aeceef101cc279",
+    "alt": "客厅分层与电视墙照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/lumens-watts-lux-efficacy",
+    "path": "/og/news--lumens-watts-lux-efficacy-18b02f03.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29898,
+    "sha256": "3654071de3fd94de37e4b14e8b6095d3ee157a195bbc2e78ed9c3cfcf07b4830",
+    "alt": "光通量、功率、照度与光效｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/nanyandangshan-binyue-resort-hotel-bid",
+    "path": "/og/news--nanyandangshan-binyue-resort-hotel-bid-4a39d11c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36764,
+    "sha256": "194d7af06d79cf54248e9167d438928be0394b00d2a652e79bc37fee13dfa3bb",
+    "alt": "南雁荡山宾月花园度假酒店 · 中标报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/2",
+    "path": "/og/news--page--2-251093ee.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26354,
+    "sha256": "d66032d8428c6b0233afce29c916081fd80f8dc4ebbb01885ea8be805139ced8",
+    "alt": "新闻与资讯第 2 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/3",
+    "path": "/og/news--page--3-fa8acc8e.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26387,
+    "sha256": "7b208f9a82d86ead1a56033a4a4dce76e909f3400f7dca3d69173b54f2dda93b",
+    "alt": "新闻与资讯第 3 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/4",
+    "path": "/og/news--page--4-422eb987.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26153,
+    "sha256": "3def0dfb37475a4877de2458b8dd554d2a1c3e546be20600727dbeb653b479c8",
+    "alt": "新闻与资讯第 4 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/5",
+    "path": "/og/news--page--5-959042b2.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26334,
+    "sha256": "aa753140a7cbc3dbfa448290cc0d77873ae753fb96a89b2e162da6bc8b2ece77",
+    "alt": "新闻与资讯第 5 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/6",
+    "path": "/og/news--page--6-1f057f78.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26416,
+    "sha256": "99c5624cf0f968ee60a76cfdc950cc1fa99f13a19ed408389840676011f3d64b",
+    "alt": "新闻与资讯第 6 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/page/7",
+    "path": "/og/news--page--7-09088ad1.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 25991,
+    "sha256": "3d15a7a57bae2fe452b8a60468d393cb83824146594eb857e7c12866005d6285",
+    "alt": "新闻与资讯第 7 页｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/power-factor-harmonics",
+    "path": "/og/news--power-factor-harmonics-6e8f8b43.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 32231,
+    "sha256": "7d32705476bac403123559871ebae0f6f70589f1f7061560245272560a79b5f0",
+    "alt": "功率因数、谐波与灯具输入功率｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/reading-desk-lamp-guide",
+    "path": "/og/news--reading-desk-lamp-guide-f9a592b3.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 28937,
+    "sha256": "b50581429729099a74c6f3dfd749921bbeef1e9497efb06cc10d61697a6e6485",
+    "alt": "护眼台灯常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/smart-lighting-scene-control",
+    "path": "/og/news--smart-lighting-scene-control-ce9a5be5.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 31129,
+    "sha256": "1849b4c616986cc8849bb7e05c273721daeef1bd139a83a1f0d1ce009e0f1518",
+    "alt": "智能照明、协议与场景控制｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/spotlight-wall-washing",
+    "path": "/og/news--spotlight-wall-washing-9fec5261.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 31009,
+    "sha256": "d8be7b05d569ee8e5d9533d38507257e9cf31e29b513bcb87ac01e0383c7a6cd",
+    "alt": "射灯离墙距离与洗墙效果｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/switch-panels-bathroom-heaters",
+    "path": "/og/news--switch-panels-bathroom-heaters-b59b9b29.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 32430,
+    "sha256": "8ca18463c5da8f15fe87cdfc4d53b98cae4c37593b95ec1b2c6119d8f5c4112d",
+    "alt": "开关面板与浴霸常用专业知识｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/temporal-light-modulation",
+    "path": "/og/news--temporal-light-modulation-370d8706.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26993,
+    "sha256": "25dc0d422a0f778e22bd5a00a5a679cba340517aa968d058ae5038d2cc2e2e1e",
+    "alt": "频闪与时间光调制｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/vanity-makeup-lighting",
+    "path": "/og/news--vanity-makeup-lighting-3b7ee61f.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26077,
+    "sha256": "f3348c734a808244d1ff2d32688ea73edc590838226b27fdbea765fa67cbd264",
+    "alt": "镜前与化妆照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/news/yichang-shouhang-hotel-bid",
+    "path": "/og/news--yichang-shouhang-hotel-bid-8da918c4.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 32151,
+    "sha256": "b2e4c9ec72e6ea45e094a9a9b38bb1c52a881e33306bcc1ca262989088ab555a",
+    "alt": "宜昌首航国际大酒店 · 中标报道｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/partners",
+    "path": "/og/partners-6d0f8c42.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27163,
+    "sha256": "5b75ba1fa8001f2a20e47719c87ede7274a752f3831b04cd0463b7c9d7a396f2",
+    "alt": "与长期主义者一起成长｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/privacy",
+    "path": "/og/privacy-0ece7f7c.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22251,
+    "sha256": "cab7167c8280fedc904c844472a5742a8d589e56761572e0050cdd78dfa171da",
+    "alt": "隐私政策｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products",
+    "path": "/og/products-d66ca189.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 20239,
+    "sha256": "536a5a390638b2efd0bf8137098ae95de8a3f7dbb5bbb0b21171d62c30e34be9",
+    "alt": "产品中心｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/art-lights",
+    "path": "/og/products--art-lights-8452acd8.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 20507,
+    "sha256": "d8fe77330502b490f0e32badac29cc08a7d3c728dbb14246fb6d8d0b0cfcf59a",
+    "alt": "艺术灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/art-lights/12160",
+    "path": "/og/products--art-lights--12160-26c607a8.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 38482,
+    "sha256": "9eca5b89b56836456e177481e9d6a19c29ca37ec895bc7c7830e1d0820ddaf35",
+    "alt": "120093-800+500异形简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/art-lights/12161",
+    "path": "/og/products--art-lights--12161-003e83f3.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36574,
+    "sha256": "1908385f2713d12c48c6ea5f990ce2947cbc089bd0d144005d7d48a6978c7c84",
+    "alt": "120093-500异形简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/art-lights/12162",
+    "path": "/og/products--art-lights--12162-fd18b771.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36675,
+    "sha256": "761bcc6003b00df9927962e081cf07dbb885e3d906c1710b02261800f137fb1e",
+    "alt": "120093-600异形简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights",
+    "path": "/og/products--ceiling-lights-f0147ab4.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22390,
+    "sha256": "8ae0cb18f2faccf3f317b492b99b657043b35a189d555084fade8f76a2c9b25c",
+    "alt": "家居顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12217",
+    "path": "/og/products--ceiling-lights--12217-40815618.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 44507,
+    "sha256": "7e737ea0006dc3024890f88807e9a9ae9e4f6d7a1b7bd8a2d9f6d1136b7b1c0f",
+    "alt": "JH-8L8709-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12377",
+    "path": "/og/products--ceiling-lights--12377-192cf439.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 35619,
+    "sha256": "7e2e94db568bfa69034806fe791cbf1e1de9a1ec9ed422902510afbef5b0d1ec",
+    "alt": "屿光120112-500简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12378",
+    "path": "/og/products--ceiling-lights--12378-757ecd03.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 37622,
+    "sha256": "ac80467e114a810ddbfce6f5db9a55e679aa392da0203c1cb8d85155c20a5ccd",
+    "alt": "屿光120112-800+500简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12379",
+    "path": "/og/products--ceiling-lights--12379-cdc2aa8d.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39271,
+    "sha256": "fd832da66bd553a503033dbf6204f2ac94aa5dc7fc98efa2eb235ebc27d3be31",
+    "alt": "屿光120112-800+600+400简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12380",
+    "path": "/og/products--ceiling-lights--12380-b627f5bc.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39915,
+    "sha256": "feb0735dcf0ec634c008d8ace7d5b22bdeda2e87ad3286c142b0168baa88cc0f",
+    "alt": "屿光120112-500+600+800+500+600+800简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/ceiling-lights/12381",
+    "path": "/og/products--ceiling-lights--12381-d590e78b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 38189,
+    "sha256": "44fc0563b4b9133391ba9445471ed96a5d0f4498bb499644819d9448bcf7a996",
+    "alt": "屿光120112-1000*300L简约现代铝材亚克力吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/crystal-chandeliers",
+    "path": "/og/products--crystal-chandeliers-251e7e89.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22141,
+    "sha256": "8f2d8112031ebed910d4f34d46d78ecdac7731d7851178f14d0703073d2334ba",
+    "alt": "水晶吊灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/crystal-chandeliers/11650",
+    "path": "/og/products--crystal-chandeliers--11650-49b8c67a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39034,
+    "sha256": "d69001a78d99d0f983de77f1a2c11e8064c938aa55047303764682508f29faf3",
+    "alt": "JH-Q58018-750圆/客厅/餐厅/卧室/轻奢吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/crystal-chandeliers/11651",
+    "path": "/og/products--crystal-chandeliers--11651-7dfe1017.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39233,
+    "sha256": "c807dc2f494721bc162053ddd2ae698b2ed19ec688222db3efd19676df395c2e",
+    "alt": "JH-Q58018-600圆/客厅/餐厅/卧室/轻奢吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/crystal-chandeliers/11652",
+    "path": "/og/products--crystal-chandeliers--11652-ccf322de.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 39193,
+    "sha256": "315b831f918d3d3e56c120c48a53fb0f2de61ca75aac760b4b15eadd26e0a1f3",
+    "alt": "JH-Q58018-500圆/客厅/餐厅/卧室/轻奢吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/linear-lighting",
+    "path": "/og/products--linear-lighting-6106785b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 20054,
+    "sha256": "daa050aeda9d4bc78c0e2a967a0f94d8e9e60787c90119b039e6a9a81c7e7399",
+    "alt": "灯带｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/linear-lighting/9236",
+    "path": "/og/products--linear-lighting--9236-915dfe5b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 41331,
+    "sha256": "2638210bdf9f2c249827b869710339a41c3eeacfc02b18b1969de0ce6e674374",
+    "alt": "JH-8L6619-1100*720现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/linear-lighting/9237",
+    "path": "/og/products--linear-lighting--9237-96329794.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 45778,
+    "sha256": "857b2def549307fbefc4252ea4bbb77a2a8802431d622dd03d0d766367a4bcdd",
+    "alt": "JH-8L6619-500*500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/linear-lighting/9238",
+    "path": "/og/products--linear-lighting--9238-2b2b5f02.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 44545,
+    "sha256": "9a214cfba49e608fb0162df397d566db5b07a041184a59906a40f2eee6138629",
+    "alt": "JH-8L6619-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/new-chinese",
+    "path": "/og/products--new-chinese-c73fd8fd.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 20935,
+    "sha256": "7c258611ceb8ac3e5f0b22a62b355d2ca8ae1ac968868a1267f58708430172b5",
+    "alt": "新中式｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/new-chinese/11987",
+    "path": "/og/products--new-chinese--11987-df352ce9.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 40277,
+    "sha256": "f596c6a802918b04469113f675a69bce16218541607c502461005a1d38daba77",
+    "alt": "JH-X-6L1858-450方客厅餐厅书房卧室金丝檀木吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/new-chinese/11988",
+    "path": "/og/products--new-chinese--11988-f8ee9f6a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 40563,
+    "sha256": "dfb83b2d9608d3d5c88ec8737d4a3d5b1a464eaa27871c7513dcaff2a4bed2f9",
+    "alt": "JH-X-6L1858-520圆客厅餐厅书房卧室金丝檀木吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/new-chinese/11989",
+    "path": "/og/products--new-chinese--11989-2cbbe7cd.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 40421,
+    "sha256": "919e8a6f45122f21839bbc857ea6afbadfc62792f9de1b5de08f49f258501245",
+    "alt": "JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/outdoor-lighting",
+    "path": "/og/products--outdoor-lighting-5114ac0d.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22302,
+    "sha256": "b642430fc7b73673d0cf72421797cdd8a88483b644bfeda55dc334c104ffc47b",
+    "alt": "户外照明｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/outdoor-lighting/11001",
+    "path": "/og/products--outdoor-lighting--11001-5bd70500.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24389,
+    "sha256": "74344395dcdf7dfed66a48cbb88b3ad041a21410bf1ba509a027e3b4b0b939a6",
+    "alt": "JH-9240-100A5｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/outdoor-lighting/8947",
+    "path": "/og/products--outdoor-lighting--8947-4b73390f.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 35364,
+    "sha256": "84099802fdb789401cd29186851aef7a5b0f7f22b5b6eee8717187352b513b79",
+    "alt": "JH-T-051铜体/户外露营/床头台灯/小夜灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/outdoor-lighting/8948",
+    "path": "/og/products--outdoor-lighting--8948-edbb4659.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 35621,
+    "sha256": "76c30fc037b12d3b849193c90fd248185624579c2d7f8fa7192ca234b4bdf834",
+    "alt": "JH-T-052铜体/户外露营/床头台灯/小夜灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/project-custom",
+    "path": "/og/products--project-custom-b4239bda.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22065,
+    "sha256": "badf516ac0592cb5ec3621a76a58102f51ba4a4e7a5fdff156e708bc7e02ae3a",
+    "alt": "工程定制｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/project-custom/12265",
+    "path": "/og/products--project-custom--12265-4727473b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36845,
+    "sha256": "ae9c057dad5c5316fa10719f5d79a7995a71b7640e27666eac9b3ac1c29bbb07",
+    "alt": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/project-custom/12266",
+    "path": "/og/products--project-custom--12266-643f5a00.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36561,
+    "sha256": "3fc5096c70d11b2ef42eab6314d7e19b7c73ed7f2b6fe249b44414f4c8015402",
+    "alt": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/project-custom/12267",
+    "path": "/og/products--project-custom--12267-4b6cc23e.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36752,
+    "sha256": "fdb4922b7776f0a29f0559aa3a80917e40b0f8fcfe839a92e00c70ea2e4419cd",
+    "alt": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/smart-home-devices",
+    "path": "/og/products--smart-home-devices-fc4f8200.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 25745,
+    "sha256": "2c3ba5b7177495a167c6be19f98a8778c5981713ae876d1f6611bcaa3c996f60",
+    "alt": "家居智能设备｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights",
+    "path": "/og/products--spotlights-aa6dd714.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 19813,
+    "sha256": "7cffa097862727f7343465d387bcc3e307b309f6bbcc01c7004ef8fdd3608446",
+    "alt": "射灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12282",
+    "path": "/og/products--spotlights--12282-ebe84e9a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 37248,
+    "sha256": "3f7b2e8c037ae0bee15ab7e4e502992f1dccda726e4783047f59d8705ba3b204",
+    "alt": "JH-S288-30W 预埋款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12283",
+    "path": "/og/products--spotlights--12283-9d2b074d.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 37244,
+    "sha256": "1abfab6b3cc1cbdef7f9f067ff664803e40704297edc5dc245209aea735bd64b",
+    "alt": "JH-S288-30W 宽边款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12284",
+    "path": "/og/products--spotlights--12284-6ef5a141.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36988,
+    "sha256": "5b594270cfeaf3a83410f7d2450ffda1f12ed6536578e2fd7066f0c3d804449c",
+    "alt": "JH-S288-30W 窄边款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12285",
+    "path": "/og/products--spotlights--12285-05c0f6f8.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 37225,
+    "sha256": "013d1aac43e7cbb111ea4847f4d0527a610b007b28adfcae310dd69e96d06b09",
+    "alt": "JH-S288-24W 预埋款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12286",
+    "path": "/og/products--spotlights--12286-3ca25ddb.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36989,
+    "sha256": "aedfd419bf68e62cc050649f7a9b121fc631fe41e6588cec802448130c4935bd",
+    "alt": "JH-S288-24W 窄边款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12287",
+    "path": "/og/products--spotlights--12287-c18206a7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 37196,
+    "sha256": "152d805608666157c71933e81658fb67a2f675588b82b4cb7dedebe1ce96a9eb",
+    "alt": "JH-S288-24W 宽边款 Φ95 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/switches",
+    "path": "/og/products--switches-d3a2e827.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 22112,
+    "sha256": "7e820fbe0c78ab0ad03a43b471aac2e99baa70efe0f74859e80ff29c06edaafa",
+    "alt": "开关面板｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/switches/8445",
+    "path": "/og/products--switches--8445-75a8b4d7.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 34697,
+    "sha256": "31191dcfcb2e061188cc2ff320fe44befed99f14f9afef9a98e1932cd18bd458",
+    "alt": "JH-ZN-2.4G-F（情景面板） G系列 智能产品｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/search",
+    "path": "/og/search-6fb5b778.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 24682,
+    "sha256": "d4425e92f91637c303b7b8997eec2b3add1ff9ada62c931f4b256583c23c00c4",
+    "alt": "搜索钜豪网站｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/service",
+    "path": "/og/service-6b3a02b3.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27196,
+    "sha256": "36f7674518c23633da64c42f829a063043d61d06b132baf9f386f0292fb98969",
+    "alt": "让每一次使用都有回应｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/smart-home",
+    "path": "/og/smart-home-8ceeb87b.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 29286,
+    "sha256": "ff2e9be8e9c17ef93caa33be0fa11a83a2251461d4259e403ae75d174aaa881c",
+    "alt": "智能家居照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions",
+    "path": "/og/solutions-74a05f0a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26543,
+    "sha256": "36507b1fbda0ebe94b582237c5b1a42c6ad10c1d9d1e9a8689ae99b4eb43addb",
+    "alt": "空间照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions/commercial",
+    "path": "/og/solutions--commercial-314b30f2.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27447,
+    "sha256": "07ae5188572fd567591ff9e4af2a554fc471bf892eb6096b286fe5ecb98d42f8",
+    "alt": "商业照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions/hospitality",
+    "path": "/og/solutions--hospitality-a901ea8a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27536,
+    "sha256": "cccdd0468eddb470c595e984e8bc2afd2e481dbc02e94ae05d3f3b946ed01536",
+    "alt": "酒店照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions/industrial",
+    "path": "/og/solutions--industrial-a7fa6996.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26712,
+    "sha256": "0f13ddc406f9425dd3704865ee425f7ce606bf2beea054474ffdda7c47ad5baa",
+    "alt": "工业照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions/public",
+    "path": "/og/solutions--public-c0a0a2a5.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27213,
+    "sha256": "bb22cf0c69702e7b134522746ff034a45585afceb58ee420572328431e0bcbbe",
+    "alt": "公共照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/solutions/residential",
+    "path": "/og/solutions--residential-15f0cceb.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 27430,
+    "sha256": "6046d302e747cb52169c2dd4ccfc59599082344af34e391efc57d035580c9761",
+    "alt": "全屋照明解决方案｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/sustainability",
+    "path": "/og/sustainability-07703c12.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 26468,
+    "sha256": "9907c0bc088cf792bcdc37386c13a075ab858360ca2a20b3deb12339d6df4175",
+    "alt": "让长期价值被看见｜钜豪照明",
+    "stage_label": ""
+  }
+]

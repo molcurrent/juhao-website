@@ -5,7 +5,8 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { PageData } from "@/app/_data/pages";
-import { submitContact, type ContactRequest } from "@/lib/api";
+import { submitContact } from "@/lib/api/contact";
+import type { ContactRequest } from "@/lib/api/types";
 import { CONSULTATION_PRIVACY_VERSION, consultationContextForDirection, type ConsultationContext } from "@/lib/consultation";
 import styles from "./ContactPage.module.css";
 

@@ -1,20 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import type { PageData } from "@/app/_data/pages";
-import { siteApi, type NewsPageResult } from "@/lib/api";
+import type { NewsPageResult } from "@/lib/api/types";
 import { newsPagePath } from "@/lib/news-pagination";
 import styles from "./NewsPage.module.css";
-
-type NewsLoadState = "loading" | "success" | "error";
-
-type NewsResult = {
-  requestKey: string;
-  page: NewsPageResult;
-  status: NewsLoadState;
-};
 
 function paginationItems(current: number, total: number) {
   if (total <= 7) return Array.from({ length: total }, (_, index) => index + 1);
@@ -29,34 +18,9 @@ export function NewsPage({
   page: PageData;
   initialPage: NewsPageResult;
 }) {
-  const [retryKey, setRetryKey] = useState(0);
-  const [result, setResult] = useState<NewsResult>({
-    requestKey: "server",
-    page: initialPage,
-    status: "loading",
-  });
-  const requestKey = `${initialPage.page}:${retryKey}`;
-  const status: NewsLoadState = result.requestKey === requestKey ? result.status : "loading";
-  const pageResult = result.page.page === initialPage.page ? result.page : initialPage;
+  const pageResult = initialPage;
   const articles = pageResult.items;
   const [featured, ...rest] = articles;
-
-  useEffect(() => {
-    let active = true;
-
-    siteApi.getNewsArticles({ page: initialPage.page, pageSize: initialPage.pageSize }).then(
-      (nextPage) => {
-        if (!active) return;
-        setResult({ requestKey, page: nextPage, status: "success" });
-      },
-      () => {
-        if (!active) return;
-        setResult((current) => ({ requestKey, page: current.page.page === initialPage.page ? current.page : initialPage, status: "error" }));
-      },
-    );
-
-    return () => { active = false; };
-  }, [initialPage, requestKey]);
 
   return (
     <main id="main-content" className={styles.page}>
@@ -72,53 +36,28 @@ export function NewsPage({
         </div>
       </section>
 
-      <section className={styles.content} aria-labelledby="news-list-title" aria-busy={status === "loading"}>
+      <section className={styles.content} aria-labelledby="news-list-title">
         <header className={styles.sectionHead} data-reveal>
           <span>INSIGHTS / 资讯</span>
           <h2 id="news-list-title">理解光，也理解空间</h2>
         </header>
 
         <div className={styles.stateMessages} aria-live="polite" aria-atomic="true">
-          {status === "loading" && (
-            <div className={styles.statePanel} role="status">
-              <div className={styles.stateCopy}>
-                <i className={styles.loadingMark} aria-hidden="true" />
-                <div>
-                  <strong>{articles.length ? "正在同步最新资讯" : "正在加载资讯"}</strong>
-                  <p>{articles.length ? "首屏内容保持可读，刷新完成后自动更新。" : "请稍候。"}</p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {status === "error" && (
-            <div className={`${styles.statePanel} ${styles.errorState}`} role="alert">
-              <div className={styles.stateCopy}>
-                <i aria-hidden="true">!</i>
-                <div>
-                  <strong>暂时无法刷新资讯</strong>
-                  <p>{articles.length ? "以下仍显示服务端已加载的内容。" : "当前没有可显示的缓存内容。"}</p>
-                </div>
-              </div>
-              <button type="button" onClick={() => setRetryKey((key) => key + 1)}>重新加载</button>
-            </div>
-          )}
-
-          {status === "success" && articles.length === 0 && (
+          {articles.length === 0 && (
             <div className={styles.emptyState} role="status">
               <small>NEWSROOM / EMPTY</small>
               <strong>资讯内容正在整理</strong>
-              <p>当前没有可公开的文章，请稍后再来查看。</p>
+              <p>当前没有可在私有预览中展示的文章。</p>
             </div>
           )}
 
-          {status === "success" && articles.length > 0 && (
+          {articles.length > 0 && (
             <p className={styles.screenReader}>已加载第 {pageResult.page} 页的 {articles.length} 条资讯，共 {pageResult.total} 条。</p>
           )}
         </div>
 
         {featured && (
-          <div className={`${styles.feed} ${status !== "success" ? styles.feedAfterState : ""}`}>
+          <div className={styles.feed}>
             <Link className={styles.featured} href={featured.path} data-reveal>
               <figure className={styles.featuredImage}>
                 <Image src={featured.image} alt={`${featured.title}主题场景代表图`} width={1672} height={941} sizes="(max-width: 800px) 100vw, 58vw" />

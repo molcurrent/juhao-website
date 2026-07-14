@@ -40,22 +40,25 @@ class FakeD1Statement {
 
   async run() {
     if (this.sql.startsWith("DELETE FROM consultation_leads")) {
+      const before = this.database.rows.size;
       for (const [key, row] of this.database.rows) if (row.expires_at < this.values[0]) this.database.rows.delete(key);
-      return { meta: { changes: 0 } };
+      return { meta: { changes: before - this.database.rows.size } };
     }
     if (this.sql.startsWith("INSERT INTO consultation_leads")) {
       const clientRequestId = this.values[1];
       if (this.database.rows.has(clientRequestId)) return { meta: { changes: 0 } };
-      const columns = ["id", "client_request_id", "request_hash", "direction", "source", "source_detail", "scene", "intent", "project", "stage", "need", "contact_name", "contact_channel", "contact_value", "privacy_version", "consent_at", "status", "notification_status", "notification_attempts", "notification_last_error", "created_at", "expires_at"];
+      const columns = ["id", "client_request_id", "request_hash", "direction", "source", "source_detail", "scene", "intent", "project", "stage", "need", "contact_name", "contact_channel", "contact_value", "privacy_version", "consent_at", "status", "notification_status", "notification_attempts", "notification_last_error", "notification_last_attempt_at", "notification_next_attempt_at", "created_at", "expires_at"];
       this.database.rows.set(clientRequestId, Object.fromEntries(columns.map((column, index) => [column, this.values[index]])));
       return { meta: { changes: 1 } };
     }
     if (this.sql.startsWith("UPDATE consultation_leads")) {
-      const row = [...this.database.rows.values()].find((item) => item.id === this.values[2]);
+      const row = [...this.database.rows.values()].find((item) => item.id === this.values[4]);
       if (row) {
         row.notification_status = this.values[0];
         row.notification_attempts += 1;
         row.notification_last_error = this.values[1];
+        row.notification_last_attempt_at = this.values[2];
+        row.notification_next_attempt_at = this.values[3];
       }
       return { meta: { changes: row ? 1 : 0 } };
     }
@@ -70,6 +73,44 @@ class FakeD1Statement {
     if (this.sql.startsWith("SELECT id, created_at AS submitted_at")) {
       const row = [...this.database.rows.values()].find((item) => item.id === this.values[0]);
       return row ? { id: row.id, submitted_at: row.created_at } : null;
+    }
+    throw new Error(`Unexpected SQL: ${this.sql}`);
+  }
+
+  async all() {
+    if (this.sql.includes("notification_status IN ('pending', 'retry')")) {
+      const [now, limit] = this.values;
+      const results = [...this.database.rows.values()]
+        .filter((row) => ["pending", "retry"].includes(row.notification_status) && (!row.notification_next_attempt_at || row.notification_next_attempt_at <= now))
+        .sort((left, right) => left.created_at.localeCompare(right.created_at))
+        .slice(0, limit)
+        .map((row) => ({
+          id: row.id,
+          clientRequestId: row.client_request_id,
+          requestHash: row.request_hash,
+          direction: row.direction,
+          source: row.source,
+          sourceDetail: row.source_detail,
+          scene: row.scene,
+          intent: row.intent,
+          project: row.project,
+          stage: row.stage,
+          need: row.need,
+          contactName: row.contact_name,
+          contactChannel: row.contact_channel,
+          contactValue: row.contact_value,
+          privacyVersion: row.privacy_version,
+          consentAt: row.consent_at,
+          status: row.status,
+          notificationStatus: row.notification_status,
+          notificationAttempts: row.notification_attempts,
+          notificationLastError: row.notification_last_error,
+          notificationLastAttemptAt: row.notification_last_attempt_at,
+          notificationNextAttemptAt: row.notification_next_attempt_at,
+          createdAt: row.created_at,
+          expiresAt: row.expires_at,
+        }));
+      return { results };
     }
     throw new Error(`Unexpected SQL: ${this.sql}`);
   }
@@ -93,6 +134,19 @@ async function postContact(worker, database, payload, origin = "http://localhost
       method: "POST",
       headers: { accept: "application/json", "content-type": "application/json", origin },
       body: JSON.stringify(payload),
+    }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) }, DB: database, ...runtime },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+}
+
+async function runContactMaintenance(worker, database, runtime = {}, token = "maintenance-secret") {
+  for (const key of Object.keys(globalThis.__cloudflareTestEnv)) delete globalThis.__cloudflareTestEnv[key];
+  Object.assign(globalThis.__cloudflareTestEnv, { DB: database, ...runtime });
+  return worker.fetch(
+    new Request("http://localhost/api/contact/maintenance", {
+      method: "POST",
+      headers: { accept: "application/json", authorization: `Bearer ${token}` },
     }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) }, DB: database, ...runtime },
     { waitUntil() {}, passThroughOnException() {} },
@@ -208,7 +262,7 @@ test("renders independent feature structures instead of the generic fallback", a
   const articleHtml = await article.text();
   assert.match(articleHtml, /property="og:site_name" content="钜豪照明 JUHAO"/i);
   assert.doesNotMatch(articleHtml, /property="article:published_time"/i);
-  assert.match(articleHtml, /property="og:image" content="https:\/\/juhao\.com\/images\/juhao-commercial\.webp"/i);
+  assert.match(articleHtml, /property="og:image" content="https:\/\/juhao\.com\/og\/news--downlight-vs-spotlight-[a-f0-9]{8}\.jpg"/i);
   assert.match(articleHtml, /审核主体/);
   assert.match(articleHtml, /JUHAO/);
   assert.doesNotMatch(articleHtml, /"@type":"Article"/);
@@ -222,7 +276,7 @@ test("renders company news from conservative source facts without publishing blo
   for (const marker of ["2026 广州光亚展", "来源日期", "2026-06-11", "来源记录 #232", "当前阶段", "公开边界", "14 个图片候选", "待企业内容负责人复核"]) {
     assert.match(html, new RegExp(marker), marker);
   }
-  assert.match(html, /property="og:image" content="https:\/\/juhao\.com\/images\/juhao-public\.webp"/i);
+  assert.match(html, /property="og:image" content="https:\/\/juhao\.com\/og\/news--guangzhou-international-lighting-exhibition-2026-[a-f0-9]{8}\.jpg"/i);
   assert.doesNotMatch(html, /6a2a71c2e9cb3_thumb\.JPG|"@type":"Article"/);
 });
 
@@ -236,7 +290,7 @@ test("renders the global visitor action layer", async () => {
   assert.match(html, /<nav[^>]+aria-label="快捷咨询路径"/i);
   for (const label of ["家庭健康光", "工程项目", "渠道合作"]) assert.match(html, new RegExp(label));
   assert.match(html, /<button(?=[^>]*aria-label="返回页面顶部")(?=[^>]*aria-hidden="true")(?=[^>]*tabindex="-1")[^>]*>/i);
-  assert.match(html, /data-route-curtain="true"/i);
+  assert.doesNotMatch(html, /data-route-curtain|LIGHTING FOR BETTER LIVING[^<]*<\/span>[^<]*LOADING/i);
 });
 
 test("renders three tracked consultation paths without demo copy", async () => {
@@ -255,7 +309,7 @@ test("renders three tracked consultation paths without demo copy", async () => {
 test("publishes private-preview product topics and stage-labelled project pages", async () => {
   const worker = await createWorker();
   const routes = [
-    ["/products", "首批开放", "照明产品中心"],
+    ["/products", "页面只呈现企业知识库与商城中可核对的字段", "照明产品中心"],
     ["/products/spotlights", "查看产品详情", "产品专题"],
     ["/cases", "把项目阶段", "工程案例与项目动态"],
     ["/cases/jw-marriott-shenzhen-huafa-snow-world", "签约 / 中标项目", "深圳华发冰雪世界 JW 万豪酒店"],
@@ -317,9 +371,12 @@ test("renders conservative source evidence for the four audited project pages", 
     const response = await render(worker, path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "按空间拆解方案方向", "公开使用授权待核验", ...spaces]) {
+    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "按空间拆解方案方向", "当前站点媒体批次授权已登记", ...spaces]) {
       assert.match(html, new RegExp(marker), `${path}: ${marker}`);
     }
+    assert.match(html, /<picture[^>]+data-media-id="media-[a-f0-9]+"/i, path);
+    assert.match(html, /<source[^>]+type="image\/avif"[^>]+srcset="\/media\/derived\//i, path);
+    assert.doesNotMatch(html, /juhao-oss|\.aliyuncs\.com/i, path);
     assert.equal((html.match(/class="[^\"]*caseSpaces[^\"]*"/g) ?? []).length, 1, path);
   }
 
@@ -330,19 +387,23 @@ test("renders conservative source evidence for the four audited project pages", 
     const response = await render(worker, path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "来源正文未提供明确空间分节", "不根据图片内容推断空间名称或用途", "公开使用授权待核验"]) {
+    for (const marker of ["来源日期", sourceDate, "正文图数", imageCount, "事实边界", "媒体授权", "已确认，与尚待补齐", "来源正文未提供明确空间分节", "不根据图片内容推断空间名称或用途", "当前站点媒体批次授权已登记"]) {
       assert.match(html, new RegExp(marker), `${path}: ${marker}`);
     }
+    assert.match(html, /<picture[^>]+data-media-id="media-[a-f0-9]+"/i, path);
+    assert.doesNotMatch(html, /juhao-oss|\.aliyuncs\.com/i, path);
     assert.doesNotMatch(html, /按空间拆解方案方向/, path);
   }
 
   const yangzhou = await render(worker, "/cases/yangzhou-riverfront-lighting");
   const yangzhouHtml = await yangzhou.text();
   assert.equal((yangzhouHtml.match(/<figure/g) ?? []).length, 3, "220 uses each remaining body image once instead of padding the gallery");
-  const yangzhouImageSources = [...yangzhouHtml.matchAll(/<img[^>]+src="([^"]+)"/g)].map((match) => match[1]);
-  for (const imageStem of ["69392e5990867", "69392e6d12085", "69392e9e84b11", "69392e93b7d52"]) {
-    assert.equal(yangzhouImageSources.filter((src) => src.includes(imageStem)).length, 1, `220 image ${imageStem} is not repeated`);
+  const yangzhouMediaIds = [...yangzhouHtml.matchAll(/<picture[^>]+data-media-id="(media-[a-f0-9]+)"/g)].map((match) => match[1]);
+  for (const mediaId of ["media-8722229d5ba7c13aba4d", "media-328b5a2e6a8e01c7e972", "media-e3dd34a2aa9b6b2493df"]) {
+    assert.equal(yangzhouMediaIds.filter((value) => value === mediaId).length, 1, `220 media ${mediaId} is not repeated`);
   }
+  assert.equal(new Set(yangzhouMediaIds).size, yangzhouMediaIds.length, "220 uses each approved local media record once");
+  assert.match(yangzhouHtml, /src="\/media\/derived\/[a-f0-9]+-w\d+\.webp"/i);
 });
 
 test("deepens three flagship topics without inventing missing product facts", async () => {
@@ -350,7 +411,7 @@ test("deepens three flagship topics without inventing missing product facts", as
   const topics = [
     ["/products/spotlights", ["先按空间任务选", "只对照已确认字段", "光束角", "正式资料待补充", "深杯射灯一定不眩光吗"]],
     ["/products/ceiling-lights", ["客厅会客与观影", "光源数量（商城原字段）", "显色指数", "全屋必须统一一个色温吗"]],
-    ["/products/smart-home-devices", ["当前 0 款产品完成公开审核与媒体授权", "断网后的实体控制", "结构化参数", "为什么专题暂时没有产品"]],
+    ["/products/smart-home-devices", ["当前 0 款候选设备完成协议、供电、安装、兼容与售后资料审核", "断网后的实体控制", "结构化参数", "为什么专题暂时没有产品"]],
   ];
 
   for (const [path, markers] of topics) {
@@ -399,12 +460,12 @@ test("surfaces verified homepage evidence and three content lines", async () => 
   const worker = await createWorker();
   const response = await render(worker, "/");
   const html = await response.text();
-  for (const marker of ["31", "私有预览产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "5", "有来源的品牌荣誉", "企业动态", "项目动态", "照明知识"]) {
+  for (const marker of ["31", "私有预览产品详情", "6", "阶段透明的项目档案", "5 个发展资料节点", "33", "已审核知识文章", "JUHAO 内部审核", "企业动态", "项目动态", "照明知识"]) {
     assert.match(html, new RegExp(marker), marker);
   }
   assert.match(html, /企业资料 #226/);
   assert.match(html, /企业资料 #199 \/ #220 \/ #226 \/ #228 \/ #229 \/ #231/);
-  assert.match(html, /企业资料 #167 \/ #184 \/ #223 \/ #225/);
+  assert.doesNotMatch(html, /<strong>5<\/strong><span>有来源的品牌荣誉<\/span>/);
   assert.match(html, /JUHAO 审核/);
 });
 
@@ -454,6 +515,8 @@ test("renders all private-preview product detail pages without Product schema", 
     assert.match(html, new RegExp(product.model.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), product.seo_slug);
     assert.match(html, /产品参数/);
     assert.match(html, /安装与选型提示/);
+    assert.match(html, new RegExp(`产品资料图｜来源：企业商城商品 ${product.source_id}`));
+    assert.match(html, /<figure[^>]*>[\s\S]*?<picture[^>]+data-media-id=/i);
     assert.doesNotMatch(html, /"@type":"Product"/);
     assert.match(html, /source=product-detail/);
     assert.match(html, new RegExp(`sourceDetail=${product.source_id}`));
@@ -572,20 +635,23 @@ test("keeps source dates stable while unapproved records stay out of sitemap", a
   assert.deepEqual(blocks, []);
 
   const articles = ledger.filter((item) => item.content_type === "文章");
-  assert.equal(articles.length, 20);
+  assert.equal(articles.length, 41);
   const knowledge = articles.filter((item) => item.source_type === "knowledge_base_professional_article_review");
   const companyNews = articles.filter((item) => item.source_type === "mall_sql_jh_articles");
-  assert.equal(knowledge.length, 12);
+  assert.equal(knowledge.length, 33);
   assert.equal(companyNews.length, 8);
   for (const article of knowledge) {
     assert.equal(article.review_status, "approved", article.route);
     assert.equal(article.reviewer, "JUHAO", article.route);
-    assert.equal(article.updated_at, "2026-06-12", article.route);
-    assert.equal(article.published_at, "unknown", article.route);
+    assert.equal(article.updated_at, article.reviewed_at, article.route);
+    assert.equal(article.published_at, "", article.route);
+    assert.equal(article.index_eligible, true, article.route);
   }
   for (const article of companyNews) {
     assert.equal(article.review_status, "needs_review", article.route);
-    assert.match(article.published_at, /^202[56]-\d{2}-\d{2}$/, article.route);
+    assert.equal(article.published_at, "", article.route);
+    assert.match(article.publish_date, /^202[56]-\d{2}-\d{2}$/, article.route);
+    assert.equal(article.index_eligible, false, article.route);
   }
   const sourceDatedRecords = ledger.filter((item) => ["产品", "案例"].includes(item.content_type));
   assert.equal(sourceDatedRecords.some((item) => item.updated_at === "2026-07-13"), false);
@@ -627,6 +693,31 @@ test("renders the grouped footer information architecture", async () => {
   assert.match(html, /<nav[^>]+aria-label="咨询路径"/i);
   for (const label of ["家庭健康光", "工程项目", "渠道合作"]) assert.match(html, new RegExp(label));
   assert.match(html, /好房子，光健康。/);
+});
+
+test("gives every footer destination a tracked consultation next step", async () => {
+  const worker = await createWorker();
+  const destinations = [
+    "/about", "/products", "/cases", "/about/history", "/about/join", "/healthy-light", "/sustainability",
+    "/solutions", "/solutions/residential", "/solutions/hospitality", "/solutions/commercial", "/solutions/public", "/solutions/industrial",
+    "/smart-home", "/service", "/partners", "/downloads", "/news", "/search", "/legal", "/privacy",
+  ];
+
+  for (const path of destinations) {
+    const response = await render(worker, path);
+    const html = (await response.text()).replaceAll("&amp;", "&");
+    const hrefs = [...html.matchAll(/href="(\/contact\?[^\"]+)"/g)].map((match) => match[1]);
+    assert.equal(hrefs.some((href) => {
+      const query = new URL(href, "http://localhost").searchParams;
+      return query.has("source") && query.has("scene") && query.has("intent");
+    }), true, `${path}: missing tracked consultation CTA`);
+  }
+
+  const contact = await render(worker, "/contact");
+  const contactHtml = await contact.text();
+  assert.match(contactHtml, /id="consultation-form"/);
+  assert.match(contactHtml, /选择咨询方向/);
+  assert.match(contactHtml, /提交回访/);
 });
 
 test("server-renders the accessible about brand carousel", async () => {
@@ -687,30 +778,34 @@ test("publishes sourced history and truthful service and cooperation states", as
 
 test("serves private-preview news pagination with independent canonicals", async () => {
   const worker = await createWorker();
-  const pages = [
-    ["/news/page/2", "第 2 页", "大连金州皇冠假日酒店", "光束角定义与光斑大小"],
-    ["/news/page/3", "第 3 页", "IES 配光文件", "LED 灯带"],
-    ["/news/page/4", "第 4 页", "射灯离墙距离", "频闪与时间光调制"],
-  ];
+  const ledger = JSON.parse(readFileSync(new URL("../content/governance/content-ledger.json", import.meta.url), "utf8"));
+  const articleRoutes = new Set(ledger.filter((item) => item.content_type === "文章" && item.publish_status === "published").map((item) => item.route));
+  const pages = Array.from({ length: 7 }, (_, index) => index === 0 ? "/news" : `/news/page/${index + 1}`);
+  const seenArticles = new Set();
 
-  for (const [path, pageTitle, firstArticle, secondArticle] of pages) {
+  for (const [index, path] of pages.entries()) {
     const response = await render(worker, path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.match(html, new RegExp(pageTitle), path);
-    assert.match(html, new RegExp(firstArticle), path);
-    assert.match(html, new RegExp(secondArticle), path);
+    if (index > 0) assert.match(html, new RegExp(`第 ${index + 1} 页`), path);
     assert.match(html, new RegExp(`<link(?=[^>]*rel="canonical")(?=[^>]*href="https://juhao\\.com${path}")[^>]*>`, "i"), path);
     assert.doesNotMatch(html, /"@type":"CollectionPage"/, path);
     assert.match(html, /aria-label="资讯分页"/, path);
     assert.match(html, /content="noindex, follow"/i, path);
+    const routesOnPage = new Set([...html.matchAll(/href="(\/news\/[a-z0-9-]+)"/g)].map((match) => match[1]).filter((route) => articleRoutes.has(route)));
+    assert.equal(routesOnPage.size, index === 6 ? 5 : 6, path);
+    for (const route of routesOnPage) {
+      assert.equal(seenArticles.has(route), false, `${route} repeated across news pages`);
+      seenArticles.add(route);
+    }
   }
+  assert.deepEqual([...seenArticles].sort(), [...articleRoutes].sort());
 
   const firstPageAlias = await render(worker, "/news/page/1");
   assert.equal(firstPageAlias.status, 308);
   assert.equal(new URL(firstPageAlias.headers.get("location"), "http://localhost").pathname, "/news");
 
-  const outOfRange = await render(worker, "/news/page/5");
+  const outOfRange = await render(worker, "/news/page/8");
   assert.equal(outOfRange.status, 404);
   const outOfRangeHtml = await outOfRange.text();
   assert.match(outOfRangeHtml, /<meta(?=[^>]*name="robots")(?=[^>]*content="noindex")[^>]*>/i);
@@ -718,9 +813,7 @@ test("serves private-preview news pagination with independent canonicals", async
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/2/);
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/3/);
-  assert.doesNotMatch(xml, /https:\/\/juhao\.com\/news\/page\/4/);
+  for (let page = 2; page <= 7; page += 1) assert.doesNotMatch(xml, new RegExp(`https://juhao\\.com/news/page/${page}`));
 });
 
 test("redirects legacy NVC route families to JUHAO canonicals", async () => {
@@ -734,7 +827,6 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
     ["/download", "/downloads"],
     ["/law", "/legal"],
     ["/news/page/1", "/news"],
-    ["/news/132", "/news"],
   ];
 
   for (const [source, destination] of redirects) {
@@ -752,6 +844,19 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
   const legacyHome = await render(worker, "/index.html");
   assert.equal(legacyHome.status, 308);
   assert.equal(new URL(legacyHome.headers.get("location"), "http://localhost").pathname, "/");
+
+  const numericRoutes = JSON.parse(readFileSync(new URL("../content/runtime/legacy-news-routes.json", import.meta.url), "utf8"));
+  for (const record of numericRoutes) {
+    for (const path of record.legacy_paths) {
+      const response = await render(worker, path);
+      assert.equal(response.status, record.status_code, path);
+      if (record.action === "redirect") {
+        assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, record.destination, path);
+      } else {
+        assert.match(response.headers.get("x-robots-tag") || "", /noindex/i, path);
+      }
+    }
+  }
 });
 
 test("returns 410 for confirmed spam URLs", async () => {
@@ -886,9 +991,169 @@ test("notifies the configured internal webhook after storing the lead", async ()
     assert.equal(response.status, 201);
     assert.equal(webhookRequest.url, "https://hooks.juhao.test/leads");
     assert.match(webhookRequest.init.headers["X-Juhao-Signature"], /^sha256=[0-9a-f]{64}$/);
+    assert.match(webhookRequest.init.headers["Idempotency-Key"], /^JUHAO-\d{8}-[A-F0-9]{8}$/);
     const stored = database.rows.get("550e8400-e29b-41d4-a716-446655440004");
     assert.equal(stored.notification_status, "sent");
     assert.equal(stored.notification_attempts, 1);
+    assert.match(stored.notification_last_attempt_at, /^\d{4}-\d{2}-\d{2}T/);
+    assert.equal(stored.notification_next_attempt_at, null);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("requires webhook HMAC configuration and gates only explicitly public intake", async () => {
+  const worker = await createWorker();
+  const payload = {
+    direction: "project",
+    source: "page",
+    sourceDetail: "solutions-commercial",
+    scene: "project",
+    intent: "project-brief",
+    project: "商业空间照明方案咨询",
+    stage: "planning",
+    need: "希望梳理重点照明与基础照明的选择边界",
+    contactName: "周女士",
+    contactChannel: "email",
+    contactValue: "zhou@example.com",
+    consent: true,
+    privacyVersion: "2026-07-13",
+    clientRequestId: "550e8400-e29b-41d4-a716-446655440006",
+  };
+
+  const missingSignatureDatabase = new FakeD1();
+  const missingSignature = await postContact(worker, missingSignatureDatabase, payload, "http://localhost", {
+    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
+  });
+  assert.equal(missingSignature.status, 503);
+  assert.equal(missingSignatureDatabase.rows.size, 0);
+
+  const publicDatabase = new FakeD1();
+  const missingPublicConfiguration = await postContact(worker, publicDatabase, { ...payload, clientRequestId: "550e8400-e29b-41d4-a716-446655440007" }, "http://localhost", {
+    PUBLIC_INTAKE_READY: "true",
+  });
+  assert.equal(missingPublicConfiguration.status, 503);
+
+  const missingTurnstile = await postContact(worker, publicDatabase, { ...payload, clientRequestId: "550e8400-e29b-41d4-a716-446655440008" }, "http://localhost", {
+    PUBLIC_INTAKE_READY: "true",
+    TURNSTILE_SECRET_KEY: "turnstile-secret",
+    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
+    JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
+    JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
+  });
+  assert.equal(missingTurnstile.status, 403);
+  assert.equal(publicDatabase.rows.size, 0);
+});
+
+test("verifies Turnstile only after the public intake gate is enabled", async () => {
+  const worker = await createWorker();
+  const database = new FakeD1();
+  const runtime = {
+    PUBLIC_INTAKE_READY: "true",
+    TURNSTILE_SECRET_KEY: "turnstile-secret",
+    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
+    JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
+    JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
+  };
+  const payload = {
+    direction: "home",
+    source: "home-hero",
+    scene: "home-health",
+    intent: "space-advice",
+    project: "三居室家庭照明规划",
+    stage: "planning",
+    need: "希望改善客餐厅不同活动下的照明层次",
+    contactName: "林女士",
+    contactChannel: "email",
+    contactValue: "lin@example.com",
+    consent: true,
+    privacyVersion: "2026-07-13",
+    clientRequestId: "550e8400-e29b-41d4-a716-446655440010",
+    turnstileToken: "token-one",
+  };
+  const originalFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (input) => {
+    calls.push(input.toString());
+    if (input.toString().includes("/turnstile/v0/siteverify")) return Response.json({ success: true });
+    return new Response(null, { status: 204 });
+  };
+
+  try {
+    const created = await postContact(worker, database, payload, "http://localhost", runtime);
+    assert.equal(created.status, 201);
+    assert.equal(database.rows.size, 1);
+    assert.equal(calls.filter((url) => url.includes("/turnstile/v0/siteverify")).length, 1);
+    assert.equal(calls.filter((url) => url === runtime.JUHAO_LEAD_WEBHOOK_URL).length, 1);
+
+    const repeated = await postContact(worker, database, { ...payload, turnstileToken: "token-two" }, "http://localhost", runtime);
+    assert.equal(repeated.status, 200);
+    assert.equal(database.rows.size, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("retries failed notifications, reaches dead letter, and purges without new submissions", async () => {
+  const worker = await createWorker();
+  const database = new FakeD1();
+  const runtime = {
+    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
+    JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
+    JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
+  };
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 503 });
+
+  try {
+    const created = await postContact(worker, database, {
+      direction: "channel",
+      source: "direct",
+      scene: "channel",
+      intent: "partnership",
+      project: "佛山照明渠道合作咨询",
+      stage: "understanding",
+      need: "希望了解已审核产品范围和后续合作资料要求",
+      contactName: "梁先生",
+      contactChannel: "phone",
+      contactValue: "138 0000 0000",
+      consent: true,
+      privacyVersion: "2026-07-13",
+      clientRequestId: "550e8400-e29b-41d4-a716-446655440009",
+    }, "http://localhost", runtime);
+    assert.equal(created.status, 201);
+    const stored = database.rows.get("550e8400-e29b-41d4-a716-446655440009");
+    assert.equal(stored.notification_status, "retry");
+    assert.equal(stored.notification_attempts, 1);
+    assert.match(stored.notification_next_attempt_at, /^\d{4}-\d{2}-\d{2}T/);
+
+    stored.notification_next_attempt_at = null;
+    globalThis.fetch = async () => new Response(null, { status: 204 });
+    const retried = await runContactMaintenance(worker, database, runtime);
+    assert.equal(retried.status, 200);
+    assert.deepEqual(await retried.json(), { purged: 0, attempted: 1, sent: 1, retry: 0, deadLetter: 0, notification: "processed" });
+    assert.equal(stored.notification_status, "sent");
+    assert.equal(stored.notification_attempts, 2);
+
+    stored.notification_status = "retry";
+    stored.notification_attempts = 4;
+    stored.notification_next_attempt_at = null;
+    globalThis.fetch = async () => new Response(null, { status: 503 });
+    const exhausted = await runContactMaintenance(worker, database, runtime);
+    assert.equal(exhausted.status, 200);
+    assert.equal((await exhausted.json()).deadLetter, 1);
+    assert.equal(stored.notification_status, "dead_letter");
+    assert.equal(stored.notification_attempts, 5);
+    assert.equal(stored.notification_next_attempt_at, null);
+
+    stored.expires_at = "2000-01-01T00:00:00.000Z";
+    const purged = await runContactMaintenance(worker, database, { JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret" });
+    assert.equal(purged.status, 200);
+    assert.equal((await purged.json()).purged, 1);
+    assert.equal(database.rows.size, 0);
+
+    const unauthorized = await runContactMaintenance(worker, database, { JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret" }, "wrong-secret");
+    assert.equal(unauthorized.status, 401);
   } finally {
     globalThis.fetch = originalFetch;
   }

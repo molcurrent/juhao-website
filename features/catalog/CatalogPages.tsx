@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { PageData } from "@/app/_data/pages";
+import { SemanticPicture } from "@/components/media/SemanticPicture";
 import { caseStudies, productTopics, type CaseStudy, type ProductTopic } from "@/content/catalog";
 import { products, productsByTopic, type ProductRecord } from "@/content/products";
 import { topicGuideBySlug, type TopicGuide } from "@/content/topic-guides";
@@ -18,7 +19,7 @@ function Hero({ page, label }: { page: PageData; label: string }) {
 export function ProductsPage({ page }: { page: PageData }) {
   return <main id="main-content" className={styles.page}>
     <Hero page={page} label="PRODUCT CENTER" />
-    <section className={styles.intro}><p>产品内容中心</p><div><h2>从空间出发<br/>找到合适的光</h2><span>首批开放 {products.length} 款精选产品，覆盖 10 个产品专题。每个详情页均已核对在售状态、结构化参数、事业部和企业商城图片来源。</span></div></section>
+    <section className={styles.intro}><p>产品内容中心</p><div><h2>从空间出发<br/>找到合适的光</h2><span>当前私有预览开放 {products.length} 款产品详情，覆盖 10 个产品专题。页面只呈现企业知识库与商城中可核对的字段；具体适用性仍需结合安装条件和项目资料确认。</span></div></section>
     <section className={styles.topicGrid} aria-label="产品专题">
       {productTopics.map((topic, index) => <TopicCard topic={topic} index={index} key={topic.slug} />)}
     </section>
@@ -67,8 +68,8 @@ function FlagshipTopicGuide({ guide, products: topicProducts, topic }: { guide: 
         })}</tr>)}</tbody></table></div>
     </section>}
     <section className={styles.topicMedia} aria-labelledby="topic-media-title">
-      <header><p>03 / SEMANTIC MEDIA</p><h2 id="topic-media-title">语义化资料图片</h2><span>图片标题与来源随内容呈现；企业渠道素材仍需企业承担并确认正式公开授权。</span></header>
-      <div>{guide.media.map((item) => <figure key={item.src}><Image src={item.src} alt={item.alt} width={1000} height={760} loading="lazy" unoptimized /><figcaption>{item.caption}</figcaption></figure>)}</div>
+      <header><p>03 / SEMANTIC MEDIA</p><h2 id="topic-media-title">语义化资料图片</h2><span>图片标题与来源随内容呈现；当前站点素材已登记批次授权，图片本身不替代产品参数或项目事实审核。</span></header>
+      <div>{guide.media.map((item, index) => <figure key={`${item.src}-${index}`}>{item.src.startsWith("media-") ? <SemanticPicture mediaId={item.src} alt={item.alt} sizes="(max-width: 900px) 100vw, 33vw" /> : <Image src={item.src} alt={item.alt} width={1000} height={760} loading="lazy" unoptimized />}<figcaption>{item.caption}</figcaption></figure>)}</div>
     </section>
     <section className={styles.topicKnowledge} aria-labelledby="topic-knowledge-title">
       <header><p>04 / RELATED KNOWLEDGE</p><h2 id="topic-knowledge-title">用知识内容理解选型</h2></header>
@@ -88,7 +89,7 @@ function FlagshipTopicGuide({ guide, products: topicProducts, topic }: { guide: 
 
 function ProductCard({ product }: { product: ProductRecord }) {
   return <Link className={styles.productCard} href={product.seo_slug}>
-    <div><Image src={product.primary_image} alt={product.title} fill sizes="(max-width: 900px) 100vw, 33vw" unoptimized /></div>
+    <div><SemanticPicture mediaId={product.primary_media_id} alt={product.title} sizes="(max-width: 900px) 100vw, 33vw" /></div>
     <small>{product.topic} / {product.department}</small><h2>{product.title}</h2><p>{product.parameters.slice(0, 3).map((item) => `${item.name}：${item.value}`).join(" · ")}</p><b>查看产品详情 ↗</b>
   </Link>;
 }
@@ -108,7 +109,7 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
   const sourceMeta = "sourceMeta" in study ? study.sourceMeta : null;
   const hasSpaceBreakdown = study.spaceBreakdown.length > 0;
   return <main id="main-content" className={styles.page}>
-    <section className={styles.caseDetailHero}><Image src={study.image} alt={`${study.title}企业来源资料`} fill sizes="100vw" priority unoptimized/><div><p>{study.stage} / {study.type}</p><h1>{study.title}</h1><span>{study.summary}</span><strong>页面图片为企业来源资料，媒体授权待核验；不作为完工实拍证明</strong></div></section>
+    <section className={styles.caseDetailHero}><SemanticPicture className={styles.caseHeroMedia} imageClassName={styles.caseHeroImage} mediaId={study.image} alt={`${study.title}企业来源资料`} sizes="100vw" priority/><div><p>{study.stage} / {study.type}</p><h1>{study.title}</h1><span>{study.summary}</span><strong>页面图片已纳入当前站点媒体授权批次；不作为供货、施工、交付或完工证明</strong></div></section>
     <section className={styles.caseOverview}><div><p>01 / PROJECT BACKGROUND</p><h2>项目背景</h2></div><p>{study.background}</p></section>
     {sourceMeta && <section className={styles.caseFacts} aria-label="案例来源与治理状态">
       <article><p>SOURCE DATE</p><h2>来源日期</h2><ul><li>{sourceMeta.sourceDate}</li></ul></article>
@@ -129,7 +130,7 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
     </section>
     <section className={styles.caseEvidence}>
       <header><p>05 / SOURCE EVIDENCE</p><h2>企业资料图集</h2><span>{study.evidenceLabel}</span></header>
-      <div>{study.evidenceImages.map((item) => <figure key={item.src}><div className={"width" in item ? styles.evidenceNatural : undefined}>{"width" in item ? <Image src={item.src} alt={item.alt} width={item.width} height={item.height} loading="lazy" unoptimized /> : <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 100vw, 33vw" unoptimized />}</div><figcaption>{item.caption}</figcaption></figure>)}</div>
+      <div>{study.evidenceImages.map((item) => <figure key={item.src}><div className={"width" in item ? styles.evidenceNatural : undefined}><SemanticPicture className={styles.evidencePicture} mediaId={item.src} alt={item.alt} sizes="(max-width: 900px) 100vw, 33vw" /></div><figcaption>{item.caption}</figcaption></figure>)}</div>
       <small>资料来源：企业知识库文章 {study.sourceId}。页面阶段以企业后续交付、验收与授权资料为准。</small>
     </section>
     <section className={styles.caseRelatedTopics} aria-labelledby="case-related-title"><div><p>RELATED PRODUCT TOPICS</p><h2 id="case-related-title">理解相关产品方向</h2><span>相关品类用于理解方案方向，不代表项目最终采用这些页面中的具体型号。</span></div><nav aria-label="关联产品专题">{study.relatedTopics.map((item) => <Link href={item.href} key={item.href}>{item.label}<span>↗</span></Link>)}</nav></section>
@@ -140,7 +141,7 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
 
 function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
   return <Link href={`/cases/${study.slug}`} className={styles.caseCard}>
-    <div><Image src={study.image} alt={`${study.title}企业来源资料`} width={800} height={560} loading="lazy" unoptimized /><span>{study.stage}</span></div>
+    <div><SemanticPicture mediaId={study.image} alt={`${study.title}企业来源资料`} sizes="(max-width: 900px) 100vw, 33vw" /><span>{study.stage}</span></div>
     <small>{String(index + 1).padStart(2, "0")} / {study.type}</small><h2>{study.title}</h2><p>{study.summary}</p><b>查看项目资料 ↗</b>
   </Link>;
 }

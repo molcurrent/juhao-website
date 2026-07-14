@@ -1,0 +1,830 @@
+{
+  "products": {
+    "8445": {
+      "primary_media_id": "media-3e806e6b1229aaae55f2",
+      "gallery_media_ids": [
+        "media-3e806e6b1229aaae55f2",
+        "media-0878971b26bbb2d7c8d1",
+        "media-8d8089202797c7003001",
+        "media-2dc826f9fa903b2786a8",
+        "media-4c5e758d94c98520348a",
+        "media-e6aaef13211b3115cca7"
+      ]
+    },
+    "8947": {
+      "primary_media_id": "media-222adb2ace91c73f5a2a",
+      "gallery_media_ids": [
+        "media-222adb2ace91c73f5a2a",
+        "media-b3a0b0af8b0024f88e3e",
+        "media-89f959bfa0d8f431cf97",
+        "media-8c60df90f8da1b438700",
+        "media-a2996e923479519667d6",
+        "media-0cf1f358f364f90594c1"
+      ]
+    },
+    "8948": {
+      "primary_media_id": "media-1ea14f519b857af8f75c",
+      "gallery_media_ids": [
+        "media-1ea14f519b857af8f75c",
+        "media-b3a0b0af8b0024f88e3e",
+        "media-89f959bfa0d8f431cf97",
+        "media-8c60df90f8da1b438700",
+        "media-a2996e923479519667d6",
+        "media-0cf1f358f364f90594c1"
+      ]
+    },
+    "9236": {
+      "primary_media_id": "media-786a9308e4bbf0266515",
+      "gallery_media_ids": [
+        "media-786a9308e4bbf0266515",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "9237": {
+      "primary_media_id": "media-30b8cce7d94afb776846",
+      "gallery_media_ids": [
+        "media-30b8cce7d94afb776846",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "9238": {
+      "primary_media_id": "media-a36aae33ae25838ddca2",
+      "gallery_media_ids": [
+        "media-a36aae33ae25838ddca2",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "11001": {
+      "primary_media_id": "media-64996bc8d20e7408a00c",
+      "gallery_media_ids": [
+        "media-64996bc8d20e7408a00c",
+        "media-eff9faf1615b6b0b4466",
+        "media-344b5256dd241b9834cf",
+        "media-9f5e1bb28b2d3dbc5f42",
+        "media-f7402ab2ce68869f03af",
+        "media-9e2d43384bfec6383e75"
+      ]
+    },
+    "11650": {
+      "primary_media_id": "media-56fe3c215abba3cb3d17",
+      "gallery_media_ids": [
+        "media-56fe3c215abba3cb3d17",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "11651": {
+      "primary_media_id": "media-4ff156d13de11f0bbeae",
+      "gallery_media_ids": [
+        "media-4ff156d13de11f0bbeae",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "11652": {
+      "primary_media_id": "media-75d35a3f771f7813af46",
+      "gallery_media_ids": [
+        "media-75d35a3f771f7813af46",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "11987": {
+      "primary_media_id": "media-d539e31f80fb57355be9",
+      "gallery_media_ids": [
+        "media-d539e31f80fb57355be9",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "11988": {
+      "primary_media_id": "media-eaa9482eef9b1126ef40",
+      "gallery_media_ids": [
+        "media-eaa9482eef9b1126ef40",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "11989": {
+      "primary_media_id": "media-eaa9482eef9b1126ef40",
+      "gallery_media_ids": [
+        "media-eaa9482eef9b1126ef40",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "12160": {
+      "primary_media_id": "media-78cdb024871124ee44b7",
+      "gallery_media_ids": [
+        "media-78cdb024871124ee44b7",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "12161": {
+      "primary_media_id": "media-bae271a605da30565bce",
+      "gallery_media_ids": [
+        "media-bae271a605da30565bce",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "12162": {
+      "primary_media_id": "media-288e3a365387de3c4374",
+      "gallery_media_ids": [
+        "media-288e3a365387de3c4374",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "12217": {
+      "primary_media_id": "media-f4267d585d4d439676f5",
+      "gallery_media_ids": [
+        "media-f4267d585d4d439676f5",
+        "media-85965b968be3cdc31078",
+        "media-2020375bc39abb29667e",
+        "media-f1b26088f37bce6a2e19",
+        "media-684f7466d9e045938127",
+        "media-c83eaa0670464e972807"
+      ]
+    },
+    "12265": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12266": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12267": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12282": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12283": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12284": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12285": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12286": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12287": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "12377": {
+      "primary_media_id": "media-bd38555883752f000d6c",
+      "gallery_media_ids": [
+        "media-bd38555883752f000d6c",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "12378": {
+      "primary_media_id": "media-d2232e3ec1d5cd0e6229",
+      "gallery_media_ids": [
+        "media-d2232e3ec1d5cd0e6229",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "12379": {
+      "primary_media_id": "media-abb4cf2f502b926260e3",
+      "gallery_media_ids": [
+        "media-abb4cf2f502b926260e3",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "12380": {
+      "primary_media_id": "media-9830da3c7f06033ce20a",
+      "gallery_media_ids": [
+        "media-9830da3c7f06033ce20a",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "12381": {
+      "primary_media_id": "media-098b82c77eb38ca17bfe",
+      "gallery_media_ids": [
+        "media-098b82c77eb38ca17bfe",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    }
+  },
+  "cases": {
+    "199": {
+      "hero_media_id": "media-17da5cdb8b9746ee9d4b",
+      "evidence_media_ids": [
+        "media-216f7c0937b06844de56",
+        "media-12ae798bba893cb457c2",
+        "media-30926902ac38e2f98c31",
+        "media-9ee2ee48b44a140dff34",
+        "media-1db3b7c50328d66af595",
+        "media-c1f0d8a2d192f7090514",
+        "media-bb3c58816d42682c111f",
+        "media-5fbf57abb411be686a8e"
+      ]
+    },
+    "220": {
+      "hero_media_id": "media-f333412c5eee8d78de8c",
+      "evidence_media_ids": [
+        "media-8722229d5ba7c13aba4d",
+        "media-e3dd34a2aa9b6b2493df",
+        "media-328b5a2e6a8e01c7e972"
+      ]
+    },
+    "226": {
+      "hero_media_id": "media-d613f98d1383b9f3c425",
+      "evidence_media_ids": [
+        "media-17f02c67e4fe0c2c2777",
+        "media-4c85f077042dec09c895",
+        "media-7a15ba7b52a29ec5bf28",
+        "media-ed1795ddaa6be62d4450",
+        "media-abc70a5cfb378fc3e6cc",
+        "media-d6086d0a9209eb98868e",
+        "media-b0c745d6120afa0fe780",
+        "media-3bc47282473ed1796065"
+      ]
+    },
+    "228": {
+      "hero_media_id": "media-1e27187efa4e9a51c12d",
+      "evidence_media_ids": [
+        "media-1e55b55082f9f6644e87",
+        "media-1c5939e2bd88ae3e4711",
+        "media-40103e6461671190bf77",
+        "media-b6561f91dcb200c51017",
+        "media-5430e1acf6da804d4cb1",
+        "media-8e24541b08eee2ea5f6a",
+        "media-3f2b010c6377480459a3",
+        "media-521c49a37195a6210eff"
+      ]
+    },
+    "229": {
+      "hero_media_id": "media-c0acc3fd3b87be085b1e",
+      "evidence_media_ids": [
+        "media-52dcb9407298b11feb5a",
+        "media-836102d98fe27196308e",
+        "media-005ed63fbb57c3fd5a9b",
+        "media-8d3c78615ffcf45edc7f",
+        "media-7dd6800211e4203bef28"
+      ]
+    },
+    "231": {
+      "hero_media_id": "media-61499a8e2f892e2b4efe",
+      "evidence_media_ids": [
+        "media-81b811f21f07fda6a0a6",
+        "media-f58b16bececb2d80f622",
+        "media-d94bdc810a5370a9ef6f",
+        "media-29627c896800dbf0392a",
+        "media-36253539ec88c5a51b2b",
+        "media-b34470b368cfc10096e3",
+        "media-1ca203d1ff4f93424165",
+        "media-76204af8af863d490215"
+      ]
+    }
+  },
+  "routes": {
+    "/cases/doubletree-nantong-haimen": {
+      "primary_media_id": "media-c0acc3fd3b87be085b1e",
+      "gallery_media_ids": [
+        "media-52dcb9407298b11feb5a",
+        "media-836102d98fe27196308e",
+        "media-005ed63fbb57c3fd5a9b",
+        "media-8d3c78615ffcf45edc7f",
+        "media-7dd6800211e4203bef28"
+      ]
+    },
+    "/cases/grand-hyatt-suzhou-financial-street": {
+      "primary_media_id": "media-1e27187efa4e9a51c12d",
+      "gallery_media_ids": [
+        "media-1e55b55082f9f6644e87",
+        "media-1c5939e2bd88ae3e4711",
+        "media-40103e6461671190bf77",
+        "media-b6561f91dcb200c51017",
+        "media-5430e1acf6da804d4cb1",
+        "media-8e24541b08eee2ea5f6a",
+        "media-3f2b010c6377480459a3",
+        "media-521c49a37195a6210eff"
+      ]
+    },
+    "/cases/jw-marriott-shenzhen-huafa-snow-world": {
+      "primary_media_id": "media-d613f98d1383b9f3c425",
+      "gallery_media_ids": [
+        "media-17f02c67e4fe0c2c2777",
+        "media-4c85f077042dec09c895",
+        "media-7a15ba7b52a29ec5bf28",
+        "media-ed1795ddaa6be62d4450",
+        "media-abc70a5cfb378fc3e6cc",
+        "media-d6086d0a9209eb98868e",
+        "media-b0c745d6120afa0fe780",
+        "media-3bc47282473ed1796065"
+      ]
+    },
+    "/cases/pullman-shangrao-guangfeng": {
+      "primary_media_id": "media-61499a8e2f892e2b4efe",
+      "gallery_media_ids": [
+        "media-81b811f21f07fda6a0a6",
+        "media-f58b16bececb2d80f622",
+        "media-d94bdc810a5370a9ef6f",
+        "media-29627c896800dbf0392a",
+        "media-36253539ec88c5a51b2b",
+        "media-b34470b368cfc10096e3",
+        "media-1ca203d1ff4f93424165",
+        "media-76204af8af863d490215"
+      ]
+    },
+    "/cases/xingtai-financial-center": {
+      "primary_media_id": "media-17da5cdb8b9746ee9d4b",
+      "gallery_media_ids": [
+        "media-216f7c0937b06844de56",
+        "media-12ae798bba893cb457c2",
+        "media-30926902ac38e2f98c31",
+        "media-9ee2ee48b44a140dff34",
+        "media-1db3b7c50328d66af595",
+        "media-c1f0d8a2d192f7090514",
+        "media-bb3c58816d42682c111f",
+        "media-5fbf57abb411be686a8e"
+      ]
+    },
+    "/cases/yangzhou-riverfront-lighting": {
+      "primary_media_id": "media-f333412c5eee8d78de8c",
+      "gallery_media_ids": [
+        "media-8722229d5ba7c13aba4d",
+        "media-e3dd34a2aa9b6b2493df",
+        "media-328b5a2e6a8e01c7e972"
+      ]
+    },
+    "/products/art-lights/12160": {
+      "primary_media_id": "media-78cdb024871124ee44b7",
+      "gallery_media_ids": [
+        "media-78cdb024871124ee44b7",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "/products/art-lights/12161": {
+      "primary_media_id": "media-bae271a605da30565bce",
+      "gallery_media_ids": [
+        "media-bae271a605da30565bce",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "/products/art-lights/12162": {
+      "primary_media_id": "media-288e3a365387de3c4374",
+      "gallery_media_ids": [
+        "media-288e3a365387de3c4374",
+        "media-d82cbd920b3501404aed",
+        "media-0684f1306e50e0e71295",
+        "media-8654949dbdbbb4154a12",
+        "media-efbedf92e1cd6464943a",
+        "media-5f5bbee25945960ae656"
+      ]
+    },
+    "/products/ceiling-lights/12217": {
+      "primary_media_id": "media-f4267d585d4d439676f5",
+      "gallery_media_ids": [
+        "media-f4267d585d4d439676f5",
+        "media-85965b968be3cdc31078",
+        "media-2020375bc39abb29667e",
+        "media-f1b26088f37bce6a2e19",
+        "media-684f7466d9e045938127",
+        "media-c83eaa0670464e972807"
+      ]
+    },
+    "/products/ceiling-lights/12377": {
+      "primary_media_id": "media-bd38555883752f000d6c",
+      "gallery_media_ids": [
+        "media-bd38555883752f000d6c",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "/products/ceiling-lights/12378": {
+      "primary_media_id": "media-d2232e3ec1d5cd0e6229",
+      "gallery_media_ids": [
+        "media-d2232e3ec1d5cd0e6229",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "/products/ceiling-lights/12379": {
+      "primary_media_id": "media-abb4cf2f502b926260e3",
+      "gallery_media_ids": [
+        "media-abb4cf2f502b926260e3",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "/products/ceiling-lights/12380": {
+      "primary_media_id": "media-9830da3c7f06033ce20a",
+      "gallery_media_ids": [
+        "media-9830da3c7f06033ce20a",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "/products/ceiling-lights/12381": {
+      "primary_media_id": "media-098b82c77eb38ca17bfe",
+      "gallery_media_ids": [
+        "media-098b82c77eb38ca17bfe",
+        "media-20f2f34096c98342bdbe",
+        "media-d6ef33a94a68c3d0c6e2",
+        "media-d73a53ed4e54eea05ed3",
+        "media-b7df84d03de677ac967f",
+        "media-a41f950aa93c786e8db9"
+      ]
+    },
+    "/products/crystal-chandeliers/11650": {
+      "primary_media_id": "media-56fe3c215abba3cb3d17",
+      "gallery_media_ids": [
+        "media-56fe3c215abba3cb3d17",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "/products/crystal-chandeliers/11651": {
+      "primary_media_id": "media-4ff156d13de11f0bbeae",
+      "gallery_media_ids": [
+        "media-4ff156d13de11f0bbeae",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "/products/crystal-chandeliers/11652": {
+      "primary_media_id": "media-75d35a3f771f7813af46",
+      "gallery_media_ids": [
+        "media-75d35a3f771f7813af46",
+        "media-661829b9679c6c78dfc7",
+        "media-ad3ab6dcb11ea28977ec",
+        "media-e6d78bf6d3e724289a48",
+        "media-95c984372a748f7d5570",
+        "media-cae9ea23c4b89d01aa69"
+      ]
+    },
+    "/products/linear-lighting/9236": {
+      "primary_media_id": "media-786a9308e4bbf0266515",
+      "gallery_media_ids": [
+        "media-786a9308e4bbf0266515",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "/products/linear-lighting/9237": {
+      "primary_media_id": "media-30b8cce7d94afb776846",
+      "gallery_media_ids": [
+        "media-30b8cce7d94afb776846",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "/products/linear-lighting/9238": {
+      "primary_media_id": "media-a36aae33ae25838ddca2",
+      "gallery_media_ids": [
+        "media-a36aae33ae25838ddca2",
+        "media-fe566d322ffa36294329",
+        "media-fd50bad6870794376972",
+        "media-ecb8ca85f5df42643d4e",
+        "media-6be2591c0100efe5f5a4",
+        "media-287310e597f5116da607"
+      ]
+    },
+    "/products/new-chinese/11987": {
+      "primary_media_id": "media-d539e31f80fb57355be9",
+      "gallery_media_ids": [
+        "media-d539e31f80fb57355be9",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "/products/new-chinese/11988": {
+      "primary_media_id": "media-eaa9482eef9b1126ef40",
+      "gallery_media_ids": [
+        "media-eaa9482eef9b1126ef40",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "/products/new-chinese/11989": {
+      "primary_media_id": "media-eaa9482eef9b1126ef40",
+      "gallery_media_ids": [
+        "media-eaa9482eef9b1126ef40",
+        "media-cdd0e43a13691537fa2f",
+        "media-d0d138ac85eb578a734a",
+        "media-a2c2197a534e0674f2c0",
+        "media-6254fcabf7e29d7a0594",
+        "media-5e1740bea7f8e3a1930e"
+      ]
+    },
+    "/products/outdoor-lighting/11001": {
+      "primary_media_id": "media-64996bc8d20e7408a00c",
+      "gallery_media_ids": [
+        "media-64996bc8d20e7408a00c",
+        "media-eff9faf1615b6b0b4466",
+        "media-344b5256dd241b9834cf",
+        "media-9f5e1bb28b2d3dbc5f42",
+        "media-f7402ab2ce68869f03af",
+        "media-9e2d43384bfec6383e75"
+      ]
+    },
+    "/products/outdoor-lighting/8947": {
+      "primary_media_id": "media-222adb2ace91c73f5a2a",
+      "gallery_media_ids": [
+        "media-222adb2ace91c73f5a2a",
+        "media-b3a0b0af8b0024f88e3e",
+        "media-89f959bfa0d8f431cf97",
+        "media-8c60df90f8da1b438700",
+        "media-a2996e923479519667d6",
+        "media-0cf1f358f364f90594c1"
+      ]
+    },
+    "/products/outdoor-lighting/8948": {
+      "primary_media_id": "media-1ea14f519b857af8f75c",
+      "gallery_media_ids": [
+        "media-1ea14f519b857af8f75c",
+        "media-b3a0b0af8b0024f88e3e",
+        "media-89f959bfa0d8f431cf97",
+        "media-8c60df90f8da1b438700",
+        "media-a2996e923479519667d6",
+        "media-0cf1f358f364f90594c1"
+      ]
+    },
+    "/products/project-custom/12265": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/project-custom/12266": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/project-custom/12267": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12282": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12283": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12284": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12285": {
+      "primary_media_id": "media-902fe2facc5273aabd33",
+      "gallery_media_ids": [
+        "media-902fe2facc5273aabd33",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12286": {
+      "primary_media_id": "media-82cfc9ba7440f4a473a7",
+      "gallery_media_ids": [
+        "media-82cfc9ba7440f4a473a7",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/spotlights/12287": {
+      "primary_media_id": "media-f06be83573bb4ac57dee",
+      "gallery_media_ids": [
+        "media-f06be83573bb4ac57dee",
+        "media-6bd0173593eaefdeac16",
+        "media-ca89425d4163c25784ce",
+        "media-2fdbe838b4d637b5e1d0",
+        "media-d1662dae4d2f5fe1049e",
+        "media-05e3b45b163be240d3ac"
+      ]
+    },
+    "/products/switches/8445": {
+      "primary_media_id": "media-3e806e6b1229aaae55f2",
+      "gallery_media_ids": [
+        "media-3e806e6b1229aaae55f2",
+        "media-0878971b26bbb2d7c8d1",
+        "media-8d8089202797c7003001",
+        "media-2dc826f9fa903b2786a8",
+        "media-4c5e758d94c98520348a",
+        "media-e6aaef13211b3115cca7"
+      ]
+    }
+  }
+}

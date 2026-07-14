@@ -16,12 +16,16 @@ export type ConsultationLeadRecord = {
   privacyVersion: string;
   consentAt: string;
   status: "received";
-  notificationStatus: "pending" | "sent" | "failed" | "not_configured";
+  notificationStatus: ConsultationNotificationStatus;
   notificationAttempts: number;
   notificationLastError: string | null;
+  notificationLastAttemptAt: string | null;
+  notificationNextAttemptAt: string | null;
   createdAt: string;
   expiresAt: string;
 };
+
+export type ConsultationNotificationStatus = "pending" | "sent" | "retry" | "dead_letter" | "not_configured";
 
 type StoredLead = {
   id: string;
@@ -39,7 +43,8 @@ export async function findConsultationLeadById(db: D1Database, id: string) {
 }
 
 export async function purgeExpiredConsultationLeads(db: D1Database, now: string) {
-  await db.prepare("DELETE FROM consultation_leads WHERE expires_at < ?").bind(now).run();
+  const result = await db.prepare("DELETE FROM consultation_leads WHERE expires_at < ?").bind(now).run();
+  return Number(result.meta.changes ?? 0);
 }
 
 export async function insertConsultationLead(db: D1Database, lead: ConsultationLeadRecord) {
@@ -48,8 +53,9 @@ export async function insertConsultationLead(db: D1Database, lead: ConsultationL
       id, client_request_id, request_hash, direction, source, source_detail, scene, intent,
       project, stage, need, contact_name, contact_channel, contact_value, privacy_version,
       consent_at, status, notification_status, notification_attempts, notification_last_error,
+      notification_last_attempt_at, notification_next_attempt_at,
       created_at, expires_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(client_request_id) DO NOTHING
   `).bind(
     lead.id,
@@ -72,6 +78,8 @@ export async function insertConsultationLead(db: D1Database, lead: ConsultationL
     lead.notificationStatus,
     lead.notificationAttempts,
     lead.notificationLastError,
+    lead.notificationLastAttemptAt,
+    lead.notificationNextAttemptAt,
     lead.createdAt,
     lead.expiresAt,
   ).run();
@@ -89,14 +97,83 @@ export async function insertConsultationLead(db: D1Database, lead: ConsultationL
 export async function updateConsultationNotification(
   db: D1Database,
   id: string,
-  status: "sent" | "failed",
-  error: string | null,
+  update: {
+    status: Exclude<ConsultationNotificationStatus, "pending" | "not_configured">;
+    error: string | null;
+    attemptedAt: string;
+    nextAttemptAt: string | null;
+  },
 ) {
   await db.prepare(`
     UPDATE consultation_leads
     SET notification_status = ?,
         notification_attempts = notification_attempts + 1,
-        notification_last_error = ?
+        notification_last_error = ?,
+        notification_last_attempt_at = ?,
+        notification_next_attempt_at = ?
     WHERE id = ?
-  `).bind(status, error, id).run();
+  `).bind(update.status, update.error, update.attemptedAt, update.nextAttemptAt, id).run();
+}
+
+type RetryableLeadRow = {
+  id: string;
+  clientRequestId: string;
+  requestHash: string;
+  direction: string;
+  source: string;
+  sourceDetail: string | null;
+  scene: string;
+  intent: string;
+  project: string;
+  stage: string;
+  need: string;
+  contactName: string;
+  contactChannel: string;
+  contactValue: string;
+  privacyVersion: string;
+  consentAt: string;
+  status: "received";
+  notificationStatus: "pending" | "retry";
+  notificationAttempts: number;
+  notificationLastError: string | null;
+  notificationLastAttemptAt: string | null;
+  notificationNextAttemptAt: string | null;
+  createdAt: string;
+  expiresAt: string;
+};
+
+export async function listRetryableConsultationLeads(db: D1Database, now: string, limit = 25) {
+  const result = await db.prepare(`
+    SELECT
+      id,
+      client_request_id AS clientRequestId,
+      request_hash AS requestHash,
+      direction,
+      source,
+      source_detail AS sourceDetail,
+      scene,
+      intent,
+      project,
+      stage,
+      need,
+      contact_name AS contactName,
+      contact_channel AS contactChannel,
+      contact_value AS contactValue,
+      privacy_version AS privacyVersion,
+      consent_at AS consentAt,
+      status,
+      notification_status AS notificationStatus,
+      notification_attempts AS notificationAttempts,
+      notification_last_error AS notificationLastError,
+      notification_last_attempt_at AS notificationLastAttemptAt,
+      notification_next_attempt_at AS notificationNextAttemptAt,
+      created_at AS createdAt,
+      expires_at AS expiresAt
+    FROM consultation_leads
+    WHERE notification_status IN ('pending', 'retry')
+      AND (notification_next_attempt_at IS NULL OR notification_next_attempt_at <= ?)
+    ORDER BY created_at ASC
+    LIMIT ?
+  `).bind(now, limit).all<RetryableLeadRow>();
+  return result.results;
 }

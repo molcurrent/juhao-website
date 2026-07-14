@@ -17,16 +17,20 @@ PROVENANCE = ROOT / "RECON" / "JUHAO_ASSET_PROVENANCE.md"
 PRODUCTS_TS = ROOT / "content" / "products.ts"
 CATALOG_TS = ROOT / "content" / "catalog.ts"
 KNOWLEDGE_ARTICLES_TS = ROOT / "content" / "knowledge-articles.ts"
-COMPANY_NEWS_TS = ROOT / "content" / "company-news.ts"
+KNOWLEDGE_ARTICLES_JSON = ROOT / "content" / "governance" / "knowledge-articles.generated.json"
+COMPANY_NEWS_RUNTIME_JSON = ROOT / "content" / "runtime" / "company-news.json"
 OUT_JSON = ROOT / "content" / "governance" / "media-inventory.json"
 OUT_CSV = ROOT / "content" / "governance" / "media-inventory.csv"
+MIRRORS_JSON = ROOT / "content" / "governance" / "media-mirrors.json"
+SOURCE_SNAPSHOT_JSON = ROOT / "content" / "governance" / "media-source-snapshot.json"
+BATCH_ID = "oss-batch-2026-07-14-current-site-341"
 DEFAULT_PACKETS_DIR = Path(
     os.environ.get(
         "JUHAO_CONTENT_PACKETS_DIR",
         "/Users/mac/Documents/Codex/2026-07-13/juhao-website-handoff-md-users-mac/work/content-source-packets",
     )
 )
-DEFAULT_VERIFIED_AT = os.environ.get("MEDIA_INVENTORY_VERIFIED_AT", "2026-07-13")
+DEFAULT_VERIFIED_AT = os.environ.get("MEDIA_INVENTORY_VERIFIED_AT", "2026-07-14")
 
 FIELDS = [
     "asset_url",
@@ -45,14 +49,16 @@ FIELDS = [
     "last_verified_at",
     "publish_allowed",
     "indexable",
+    "media_id",
+    "authorization_batch_id",
+    "normalized_source_url",
+    "source_sha256",
+    "original_path",
+    "variants",
 ]
 
 PUBLIC_DEFAULTS = {
     "favicon.png": ("site-wide", "site_icon", "钜豪照明网站图标"),
-    "og.png": ("site-wide", "open_graph_default", "钜豪照明默认社交分享图"),
-    "file.svg": ("unassigned", "unassigned_asset", "文件图标"),
-    "globe.svg": ("unassigned", "unassigned_asset", "地球图标"),
-    "window.svg": ("unassigned", "unassigned_asset", "窗口图标"),
     "brand/juhao-logo-horizontal.svg": ("site-wide", "brand_logo", "钜豪照明横版标志"),
     "brand/juhao-logo-horizontal-white.svg": ("site-wide", "brand_logo", "钜豪照明白色横版标志"),
     "brand/juhao-logo-stacked.svg": ("site-wide", "brand_logo", "钜豪照明竖版标志"),
@@ -63,6 +69,9 @@ PUBLIC_DEFAULTS = {
     "images/juhao-public.webp": ("/solutions/public", "hero", "钜豪照明公共空间光环境视觉图"),
     "images/juhao-industrial.webp": ("/solutions/industrial", "hero", "钜豪照明工业空间光环境视觉图"),
 }
+
+MIRRORS_BY_URL: dict[str, dict[str, Any]] = {}
+PUBLISHABLE_SOURCE_TYPES = {"repository_product_catalog", "repository_case_catalog"}
 
 
 def sha256(path: Path) -> str:
@@ -118,6 +127,10 @@ def record(**values: Any) -> dict[str, Any]:
     return result
 
 
+def normalize_source_url(value: str) -> str:
+    return re.sub(r"^http://", "https://", value)
+
+
 def local_record(
     relative: str,
     route: str,
@@ -158,6 +171,9 @@ def local_record(
         last_verified_at=verified_at,
         publish_allowed=approved,
         indexable=False,
+        source_sha256=digest,
+        original_path=f"/{relative}",
+        variants=[],
     )
 
 
@@ -174,6 +190,34 @@ def remote_record(
     height: int | None = None,
     gate: str = "public_media_authorization_not_verified",
 ) -> dict[str, Any]:
+    normalized = normalize_source_url(url)
+    mirror = MIRRORS_BY_URL.get(normalized)
+    if mirror:
+        publish_allowed = source_type in PUBLISHABLE_SOURCE_TYPES
+        return record(
+            asset_url=url,
+            local_path=f"public{mirror['original_path']}",
+            content_route=route,
+            role=role,
+            source_type=source_type,
+            source_id=source_id,
+            source_path=source_path,
+            width=mirror["width"],
+            height=mirror["height"],
+            alt=alt,
+            rights_status="approved",
+            rights_basis=f"{BATCH_ID} 批次授权已匹配；内容事实与页面发布仍由独立门禁控制。",
+            sha256=mirror["source_sha256"],
+            last_verified_at=verified_at,
+            publish_allowed=publish_allowed,
+            indexable=False,
+            media_id=mirror["media_id"],
+            authorization_batch_id=BATCH_ID,
+            normalized_source_url=normalized,
+            source_sha256=mirror["source_sha256"],
+            original_path=mirror["original_path"],
+            variants=mirror["variants"],
+        )
     return record(
         asset_url=url,
         local_path="",
@@ -191,6 +235,8 @@ def remote_record(
         last_verified_at=verified_at,
         publish_allowed=False,
         indexable=False,
+        normalized_source_url=normalized,
+        variants=[],
     )
 
 
@@ -198,6 +244,8 @@ def public_asset_records(verified_at: str, approved_hashes: dict[str, str]) -> l
     rows: list[dict[str, Any]] = []
     for path in sorted(item for item in PUBLIC.rglob("*") if item.is_file()):
         relative = path.relative_to(PUBLIC).as_posix()
+        if relative.startswith(("media/", "og/")):
+            continue
         route, role, alt = PUBLIC_DEFAULTS.get(relative, ("unassigned", "unassigned_asset", path.stem))
         rows.append(
             local_record(
@@ -295,31 +343,34 @@ def top_level_ts_objects(source: str, marker: str) -> list[str]:
 
 def article_media_records(verified_at: str, approved_hashes: dict[str, str]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    knowledge_source = KNOWLEDGE_ARTICLES_TS.read_text(encoding="utf-8")
-    for block in top_level_ts_objects(knowledge_source, "const seeds: KnowledgeArticleSeed[] = ["):
-        def knowledge_field(name: str) -> str:
-            match = re.search(rf'\b{name}:\s*"([^"]+)"', block)
-            if not match:
-                raise ValueError(f"knowledge article missing {name}")
-            return match.group(1)
-
+    if KNOWLEDGE_ARTICLES_JSON.exists():
+        knowledge_items = json.loads(KNOWLEDGE_ARTICLES_JSON.read_text(encoding="utf-8"))
+    else:
+        knowledge_source = KNOWLEDGE_ARTICLES_TS.read_text(encoding="utf-8")
+        knowledge_items = []
+        for block in top_level_ts_objects(knowledge_source, "const seeds: KnowledgeArticleSeed[] = ["):
+            def knowledge_field(name: str) -> str:
+                match = re.search(rf'\b{name}:\s*"([^"]+)"', block)
+                if not match:
+                    raise ValueError(f"knowledge article missing {name}")
+                return match.group(1)
+            knowledge_items.append({name: knowledge_field(name) for name in ["image", "slug", "imageAlt", "sourceKey", "sourcePath"]})
+    for item in knowledge_items:
         rows.append(
             local_record(
-                knowledge_field("image").removeprefix("/"),
-                f"/news/{knowledge_field('slug')}",
+                item["image"].removeprefix("/"),
+                f"/news/{item['slug']}",
                 "article_representative",
-                knowledge_field("imageAlt"),
+                item["imageAlt"],
                 "knowledge_base_professional_article_review",
-                knowledge_field("sourceKey"),
-                knowledge_field("sourcePath"),
+                item["sourceKey"],
+                item["sourcePath"],
                 verified_at,
                 approved_hashes,
             )
         )
 
-    company_source = COMPANY_NEWS_TS.read_text(encoding="utf-8")
-    seed_json = company_source.split("const seeds = ", 1)[1].split("] as const satisfies", 1)[0] + "]"
-    for item in json.loads(seed_json):
+    for item in json.loads(COMPANY_NEWS_RUNTIME_JSON.read_text(encoding="utf-8")):
         media = item["local_representative_media"]
         rows.append(
             local_record(
@@ -327,9 +378,9 @@ def article_media_records(verified_at: str, approved_hashes: dict[str, str]) -> 
                 item["path"],
                 "article_representative",
                 media["alt"],
-                item["source_type"],
+                "mall_sql_jh_articles",
                 str(item["source_id"]),
-                item["source_path"],
+                "content/governance/company-news-source.json",
                 verified_at,
                 approved_hashes,
             )
@@ -470,11 +521,35 @@ def packet_records(packets_dir: Path, case_routes: dict[str, str], verified_at: 
     return rows
 
 
+def snapshot_records(verified_at: str) -> list[dict[str, Any]]:
+    snapshot = json.loads(SOURCE_SNAPSHOT_JSON.read_text(encoding="utf-8"))
+    return [
+        remote_record(
+            item["asset_url"],
+            item["content_route"],
+            item["role"],
+            item["source_type"],
+            str(item["source_id"]),
+            item["source_path"],
+            item["alt"],
+            verified_at,
+            item.get("width") or None,
+            item.get("height") or None,
+        )
+        for item in snapshot
+    ]
+
+
 def dedupe_and_sort(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen: set[tuple[Any, ...]] = set()
     result: list[dict[str, Any]] = []
     for row in rows:
-        key = tuple(row[field] for field in FIELDS)
+        key = tuple(
+            json.dumps(row[field], ensure_ascii=False, sort_keys=True)
+            if isinstance(row[field], (list, dict))
+            else row[field]
+            for field in FIELDS
+        )
         if key not in seen:
             seen.add(key)
             result.append(row)
@@ -501,24 +576,36 @@ def write_outputs(rows: list[dict[str, Any]]) -> None:
                     **row,
                     "publish_allowed": str(row["publish_allowed"]).lower(),
                     "indexable": str(row["indexable"]).lower(),
+                    "variants": json.dumps(row["variants"], ensure_ascii=False),
                 }
             )
 
 
 def main() -> None:
+    global MIRRORS_BY_URL
     parser = argparse.ArgumentParser(description="Build JUHAO auditable media inventory without downloading remote files.")
     parser.add_argument("--packets-dir", type=Path, default=DEFAULT_PACKETS_DIR)
     parser.add_argument("--verified-at", default=DEFAULT_VERIFIED_AT)
     args = parser.parse_args()
 
+    if MIRRORS_JSON.exists():
+        mirrors = json.loads(MIRRORS_JSON.read_text(encoding="utf-8"))
+        MIRRORS_BY_URL = {item["source_url"]: item for item in mirrors}
+
     approved_hashes = provenance_hashes()
-    catalog, case_routes = catalog_records(args.verified_at, approved_hashes)
+    if SOURCE_SNAPSHOT_JSON.exists():
+        governed_remote = snapshot_records(args.verified_at)
+    else:
+        catalog, case_routes = catalog_records(args.verified_at, approved_hashes)
+        governed_remote = (
+            product_records(args.verified_at)
+            + catalog
+            + packet_records(args.packets_dir, case_routes, args.verified_at)
+        )
     rows = dedupe_and_sort(
         public_asset_records(args.verified_at, approved_hashes)
-        + product_records(args.verified_at)
-        + catalog
         + article_media_records(args.verified_at, approved_hashes)
-        + packet_records(args.packets_dir, case_routes, args.verified_at)
+        + governed_remote
     )
     write_outputs(rows)
     print(

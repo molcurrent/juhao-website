@@ -6,12 +6,28 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { findConsultationLeadById } from "@/db/consultation-leads";
 import { isPublishedRoute } from "@/content/publication-ledger";
+import { routeOgMetadataImage } from "@/lib/media/route-og";
 import styles from "./page.module.css";
 
+const title = "咨询提交结果｜钜豪照明";
+const description = "查看钜豪照明官网咨询回访的线索编号和后续联系方法。";
+const socialImage = routeOgMetadataImage("/contact/success");
+
 export const metadata: Metadata = {
-  title: "咨询提交结果｜钜豪照明",
-  description: "查看钜豪照明官网咨询回访的线索编号和后续联系方法。",
+  title,
+  description,
+  alternates: { canonical: "/contact/success" },
   robots: { index: false, follow: false, noarchive: true },
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    siteName: "钜豪照明 JUHAO",
+    title,
+    description,
+    url: "/contact/success",
+    images: [socialImage],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [socialImage.url] },
 };
 
 type Props = {

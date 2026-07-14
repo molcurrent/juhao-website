@@ -57,25 +57,27 @@ test("gives every publication-ledger record the governance fields needed for rev
   const count = (predicate) => ledger.filter(predicate).length;
 
   assert.deepEqual(result.errors, []);
-  assert.ok(ledger.length >= 100, "publication ledger coverage fell below the review baseline");
+  assert.equal(ledger.length, 200);
   assert.equal(result.metrics.published_routes, count((record) => record.publish_status === "published"));
   assert.equal(result.metrics.seo_candidates, count((record) => record.seo_candidate));
   assert.equal(result.metrics.searchable_routes, count((record) => record.searchable));
+  assert.equal(result.metrics.index_eligible_routes, count((record) => record.index_eligible));
   assert.equal(result.metrics.indexable_routes, count((record) => record.indexable));
-  assert.ok(result.metrics.published_routes >= EXPECTED_FOOTER_TARGETS.length);
-  assert.ok(result.metrics.seo_candidates > 0);
-  assert.ok(result.metrics.searchable_routes > 0);
+  assert.equal(result.metrics.published_routes, 119);
+  assert.equal(result.metrics.seo_candidates, 107);
+  assert.equal(result.metrics.searchable_routes, 101);
+  assert.equal(result.metrics.index_eligible_routes, 33);
   assert.equal(result.metrics.indexable_routes, 0);
   assert.equal(new Set(ledger.map((record) => record.route)).size, ledger.length);
   for (const record of ledger) {
     for (const field of REQUIRED_PUBLICATION_FIELDS) assert.ok(field in record, `${record.route}: ${field}`);
   }
 
-  assert.ok(count((record) => record.content_type === "产品") >= 90, "product review inventory is unexpectedly small");
-  assert.ok(count((record) => record.content_type === "案例") >= 6, "case route coverage is unexpectedly small");
+  assert.equal(count((record) => record.content_type === "产品"), 112);
+  assert.equal(count((record) => record.content_type === "案例"), 6);
   assert.equal(ledger.filter((record) => record.content_type === "产品专题").length, 10);
-  assert.ok(count((record) => record.content_type === "文章") >= 6, "article route coverage is unexpectedly small");
-  assert.ok(count((record) => record.content_type === "内容分页") >= 1, "news pagination is missing");
+  assert.equal(count((record) => record.content_type === "文章"), 41);
+  assert.equal(count((record) => record.content_type === "内容分页"), 6);
 });
 
 test("covers all 22 footer destinations in the publication ledger", async () => {
@@ -126,7 +128,14 @@ test("rejects indexability until review identity, date and media rights are appr
   const candidate = readContentLedger().find((record) => record.seo_candidate && record.searchable);
   assert.ok(candidate);
 
-  const unapproved = { ...candidate, indexable: true };
+  const unapproved = {
+    ...candidate,
+    index_eligible: true,
+    review_status: "needs_review",
+    reviewer: "unknown",
+    reviewed_at: "unknown",
+    image_rights_status: "pending",
+  };
   const rejected = validateContentLedger([unapproved]);
   for (const reason of [
     "approved review_status",

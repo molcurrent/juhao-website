@@ -1,0 +1,5090 @@
+[
+  {
+    "candidate_id": "help-1",
+    "source_id": 1,
+    "source_title": "购物流程",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=1",
+    "source_path": "商城系统/帮助文章/购物流程_1.md",
+    "source_hash": "6844a056ec1b8bf771c230b2669ce296fa7dbc55e475bf49d9ba8c0f1dd8cf88",
+    "source_category": "购物指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:28:05",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-2",
+    "source_id": 2,
+    "source_title": "会员介绍",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=2",
+    "source_path": "商城系统/帮助文章/会员介绍_2.md",
+    "source_hash": "a76de7f3904438cc498aa7b3679c3a4ce0e10857aae87c0ac76bba1c480d8286",
+    "source_category": "购物指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:30:54",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-3",
+    "source_id": 3,
+    "source_title": "常见问题",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=3",
+    "source_path": "商城系统/帮助文章/常见问题_3.md",
+    "source_hash": "63a26134cab2937bee7c6957018e52bed6eaa68362d0c8d783ad27c8fc628d34",
+    "source_category": "购物指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:31:26",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-4",
+    "source_id": 4,
+    "source_title": "在线支付",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=4",
+    "source_path": "商城系统/帮助文章/在线支付_4.md",
+    "source_hash": "4a08837114695e57bcc556a71e6ef721948f4e953703ec413740e28150cdc195",
+    "source_category": "支付方式",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:34:30",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-5",
+    "source_id": 5,
+    "source_title": "货到付款",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=5",
+    "source_path": "商城系统/帮助文章/货到付款_5.md",
+    "source_hash": "5dd507a9e5d9925080f12ebc4b172957a44e732c3e9d8a70768a82deeefff45c",
+    "source_category": "支付方式",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:34:44",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-6",
+    "source_id": 6,
+    "source_title": "分期付款",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=6",
+    "source_path": "商城系统/帮助文章/分期付款_6.md",
+    "source_hash": "09dab7cdba588cd0c972d7220e635f01c1dbea2e6d57ba48c9704e692688e3de",
+    "source_category": "支付方式",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:35:00",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-7",
+    "source_id": 7,
+    "source_title": "邮局汇款",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=7",
+    "source_path": "商城系统/帮助文章/邮局汇款_7.md",
+    "source_hash": "0e80892169eff480ff693403a08d09bb5d52a7fe4ee49ada62231c3ce3159875",
+    "source_category": "支付方式",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:35:34",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-8",
+    "source_id": 8,
+    "source_title": "售后政策",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=8",
+    "source_path": "商城系统/帮助文章/售后政策_8.md",
+    "source_hash": "4456c229fb73fb9ea2aed2a4de961a28d0bb1280d58554053c57e01cb7eaa72b",
+    "source_category": "售后服务",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:36:08",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-9",
+    "source_id": 9,
+    "source_title": "退款/换货",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=9",
+    "source_path": "商城系统/帮助文章/退款换货_9.md",
+    "source_hash": "0400ee98e62bf6d5a5b96a2e6c534692489856935ea3dbaa92e810b1eedf3b49",
+    "source_category": "售后服务",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:37:04",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-10",
+    "source_id": 10,
+    "source_title": "退款维权流程",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=10",
+    "source_path": "商城系统/帮助文章/退款维权流程_10.md",
+    "source_hash": "cb24461f398d3ea1d7a9d4d01f92d067e43c3ae3e9c6ab96345262b3dd33d910",
+    "source_category": "售后服务",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:37:42",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-11",
+    "source_id": 11,
+    "source_title": "配送查询",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=11",
+    "source_path": "商城系统/帮助文章/配送查询_11.md",
+    "source_hash": "f4842d230604d622f8b76cd708c9eb0f5140eabb6025099b82a84033322f9cf9",
+    "source_category": "商城咨询",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:38:46",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-12",
+    "source_id": 12,
+    "source_title": "211限时达",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=12",
+    "source_path": "商城系统/帮助文章/211限时达_12.md",
+    "source_hash": "1c89739fce1c773b5fe8f82e1f03b873ceadb4fe7af726a3a4c11ad2edf7ecb5",
+    "source_category": "商城咨询",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:40:42",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-14",
+    "source_id": 14,
+    "source_title": "关于我们",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=14",
+    "source_path": "商城系统/帮助文章/关于我们_14.md",
+    "source_hash": "0c171445583320abfe4b653ecd194a27c4178d8e44f7163e93b1b41244e6d532",
+    "source_category": "商务合作",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:43:07",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-15",
+    "source_id": 15,
+    "source_title": "联系我们",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=15",
+    "source_path": "商城系统/帮助文章/联系我们_15.md",
+    "source_hash": "4c4281042968bb501f2b99d3fb51274574a8cd30df9a165db542ba3475af0822",
+    "source_category": "商务合作",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:43:21",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-17",
+    "source_id": 17,
+    "source_title": "供货商合作",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=17",
+    "source_path": "商城系统/帮助文章/供货商合作_17.md",
+    "source_hash": "2814052f7a43c63b01daf4c22891695ccd657785a5f72897b9489d8b771a8f03",
+    "source_category": "商务合作",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:43:55",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-18",
+    "source_id": 18,
+    "source_title": "新闻媒体合作",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=18",
+    "source_path": "商城系统/帮助文章/新闻媒体合作_18.md",
+    "source_hash": "8bca6f6ffdf44bc5dcc9f0aa1e49289f87f4cc010daca9d436bfe6ff92bebe28",
+    "source_category": "商务合作",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-09-06 15:44:11",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-09-06"
+  },
+  {
+    "candidate_id": "help-27",
+    "source_id": 27,
+    "source_title": "价格保护",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=27",
+    "source_path": "商城系统/帮助文章/价格保护_27.md",
+    "source_hash": "4128f425da0ce2da51fee3cc275e4bf435a62c7abef212b03063f909878ab61f",
+    "source_category": "售后服务",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 10:11:27",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-28",
+    "source_id": 28,
+    "source_title": "公司转账",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=28",
+    "source_path": "商城系统/帮助文章/公司转账_28.md",
+    "source_hash": "e275d7f6238722fda4f9875bd9b73991d543ec967a9663c0f35da7a61c520dcd",
+    "source_category": "支付方式",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 10:14:28",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-29",
+    "source_id": 29,
+    "source_title": "取消订单",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=29",
+    "source_path": "商城系统/帮助文章/取消订单_29.md",
+    "source_hash": "ee3aa7d09a07f4b8920c48c476e3a823da0ec6e73a7b8f9114c1976963ce4e44",
+    "source_category": "售后服务",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 10:35:17",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-30",
+    "source_id": 30,
+    "source_title": "配送费用说明",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=30",
+    "source_path": "商城系统/帮助文章/配送费用说明_30.md",
+    "source_hash": "d8062be7b92ed978d7dd91664befa93941df1355920628412c250bb53aba5a62",
+    "source_category": "商城咨询",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 10:36:43",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-31",
+    "source_id": 31,
+    "source_title": "入驻商家配送说明",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=31",
+    "source_path": "商城系统/帮助文章/入驻商家配送说明_31.md",
+    "source_hash": "fe02c398ea736811242960e5ff921f406d20714fa87e55030536a3ce0bb1c2a2",
+    "source_category": "商城咨询",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 10:57:50",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-32",
+    "source_id": 32,
+    "source_title": "优惠政策",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=32",
+    "source_path": "商城系统/帮助文章/优惠政策_32.md",
+    "source_hash": "ebe2b23994f9179f9d17285d35552029bda6ccbff11e5ee4b23e156d0a87c9b0",
+    "source_category": "购物指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 11:12:25",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-33",
+    "source_id": 33,
+    "source_title": "发票制度",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=33",
+    "source_path": "商城系统/帮助文章/发票制度_33.md",
+    "source_hash": "4d659021ac821229ad854530b95c369318042e53beaa21dc6d34e48155a2bcdf",
+    "source_category": "购物指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2016-10-20 11:16:00",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 2,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2016-10-20"
+  },
+  {
+    "candidate_id": "help-105",
+    "source_id": 105,
+    "source_title": "招商方向",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=105",
+    "source_path": "商城系统/帮助文章/招商方向_105.md",
+    "source_hash": "8d9d56427e9e3daefb64f456cb7534d69bd0b9bbd30e22942e68cfc22de8d718",
+    "source_category": "商家入驻指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2017-06-26 22:23:49",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2017-06-26"
+  },
+  {
+    "candidate_id": "help-106",
+    "source_id": 106,
+    "source_title": "招商标准",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=106",
+    "source_path": "商城系统/帮助文章/招商标准_106.md",
+    "source_hash": "030881ba8ce62e33f9e6550e1f695b6369ef0f132eef53ef71eccc56733133aa",
+    "source_category": "商家入驻指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2017-06-26 22:30:54",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2017-06-26"
+  },
+  {
+    "candidate_id": "help-107",
+    "source_id": 107,
+    "source_title": "资质要求",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=107",
+    "source_path": "商城系统/帮助文章/资质要求_107.md",
+    "source_hash": "0c867b40b38a98ba8e4459d5e2e84b7bfd985a0bc9350b05f9c6635365007b9c",
+    "source_category": "商家入驻指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2017-06-26 22:32:30",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2017-06-26"
+  },
+  {
+    "candidate_id": "help-108",
+    "source_id": 108,
+    "source_title": "资费标准",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=108",
+    "source_path": "商城系统/帮助文章/资费标准_108.md",
+    "source_hash": "a0929f796ef30329cbbffd54bcb6e3f654ec9b1a746554dc4a38647f5b575fa3",
+    "source_category": "商家入驻指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2017-06-26 22:33:26",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2017-06-26"
+  },
+  {
+    "candidate_id": "help-109",
+    "source_id": 109,
+    "source_title": "入驻协议",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=109",
+    "source_path": "商城系统/帮助文章/入驻协议_109.md",
+    "source_hash": "e05b68310101e6902e229a690c8818da6e6b9e134e374461bd413c508ce0a093",
+    "source_category": "商家入驻指南",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2017-06-26 23:07:24",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2017-06-26"
+  },
+  {
+    "candidate_id": "help-111",
+    "source_id": 111,
+    "source_title": "供应商添加产品视频教程",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=111",
+    "source_path": "商城系统/帮助文章/供应商添加产品视频教程_111.md",
+    "source_hash": "e7bde680796fb57edaeaf0c25332c0f63ef6cf4f7cbfb74d46afb7e2f246d515",
+    "source_category": "商家帮助",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-01-05 19:33:17",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-01-05"
+  },
+  {
+    "candidate_id": "help-112",
+    "source_id": 112,
+    "source_title": "如何绑定收款支付宝",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=112",
+    "source_path": "商城系统/帮助文章/如何绑定收款支付宝_112.md",
+    "source_hash": "28f3c2f9abda385d0c0f2a4675d8233c13c22fcb211c578517b7babf77292d01",
+    "source_category": "商家帮助",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-01-05 19:41:03",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-01-05"
+  },
+  {
+    "candidate_id": "help-113",
+    "source_id": 113,
+    "source_title": "如何添加商品分类",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=113",
+    "source_path": "商城系统/帮助文章/如何添加商品分类_113.md",
+    "source_hash": "64d764e5a4cfd125d96e6c69e69acc42842df11ef4eaf4cae55eb78d282a8eb2",
+    "source_category": "商家帮助",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-01-05 19:52:23",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-01-05"
+  },
+  {
+    "candidate_id": "help-114",
+    "source_id": 114,
+    "source_title": "商家如何发放优惠券",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=114",
+    "source_path": "商城系统/帮助文章/商家如何发放优惠券_114.md",
+    "source_hash": "dec78e45bb04d9624feb36a782d07dce36bbea3c4ca26509a6c856734b14109f",
+    "source_category": "商家帮助",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-01-05 19:52:48",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-01-05"
+  },
+  {
+    "candidate_id": "help-118",
+    "source_id": 118,
+    "source_title": "钜豪专题宣传片",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=118",
+    "source_path": "商城系统/帮助文章/钜豪专题宣传片_118.md",
+    "source_hash": "07b14ff4c8cb8f7a4dd4ce6ebcaf7ca788847b497047c07d8a0df2a293aae960",
+    "source_category": "宣传视频",
+    "content_domain": "video_asset",
+    "content_kind": "missing_video_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-03-25 11:19:01",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "video_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "视频文件、画面权利与内容事实"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-03/5e7acd98c1f71_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-118",
+    "last_verified_at": "2020-03-25"
+  },
+  {
+    "candidate_id": "help-119",
+    "source_id": 119,
+    "source_title": "钜豪30秒宣传片",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=119",
+    "source_path": "商城系统/帮助文章/钜豪30秒宣传片_119.md",
+    "source_hash": "8da7d695b5270a5fadbfbb8fc4c0a3924a3c562dc141cee2683d2baa6d693890",
+    "source_category": "宣传视频",
+    "content_domain": "video_asset",
+    "content_kind": "missing_video_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-03-25 11:19:55",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "video_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "视频文件、画面权利与内容事实"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-03/5e7acdd7e5c89_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-119",
+    "last_verified_at": "2020-03-25"
+  },
+  {
+    "candidate_id": "help-120",
+    "source_id": 120,
+    "source_title": "如何推广钜豪商城",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=120",
+    "source_path": "商城系统/帮助文章/如何推广钜豪商城_120.md",
+    "source_hash": "c84c609384155763397643cdb00d139af5ef6bbcff0579fd463e01df88e12a3d",
+    "source_category": "宣传视频",
+    "content_domain": "video_asset",
+    "content_kind": "missing_video_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-03-25 11:20:54",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "video_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "视频文件、画面权利与内容事实"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-09/5f657f1734f8a_thumb.png",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-120",
+    "last_verified_at": "2020-03-25"
+  },
+  {
+    "candidate_id": "help-121",
+    "source_id": 121,
+    "source_title": "钜豪形象",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=121",
+    "source_path": "商城系统/帮助文章/钜豪形象_121.md",
+    "source_hash": "e01ca7673ec1fb314c7562f1e476d346d5ab597357efe9ac3ef9d2c8444bc2ec",
+    "source_category": "宣传视频",
+    "content_domain": "video_asset",
+    "content_kind": "missing_video_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-03-25 11:22:02",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "video_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "视频文件、画面权利与内容事实"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-03/5e7ace56b3c57_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-121",
+    "last_verified_at": "2020-03-25"
+  },
+  {
+    "candidate_id": "help-122",
+    "source_id": 122,
+    "source_title": "2020横栏慈善万人行，钜豪与慈善同行！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=122",
+    "source_path": "商城系统/帮助文章/2020横栏慈善万人行，钜豪与慈善同行！_122.md",
+    "source_hash": "6cd362c7bd57dc1e67066eac1e9b3c5b34e96c97f97d51a7ec22f1c9d6783562",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 11:01:32",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e991cf3ce961_thumb.jpg",
+    "body_media_count": 13,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-122",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-123",
+    "source_id": 123,
+    "source_title": "钜豪集团全力做好复工准备",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=123",
+    "source_path": "商城系统/帮助文章/钜豪集团全力做好复工准备_123.md",
+    "source_hash": "183a7fe01dd5e62274ffe1778d854229ebe5efd8ac68e105cb580320c7ace826",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 11:35:40",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e9923eed1d65_thumb.jpg",
+    "body_media_count": 12,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-123",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-124",
+    "source_id": 124,
+    "source_title": "智慧生活，钜豪为你量身定制！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=124",
+    "source_path": "商城系统/帮助文章/智慧生活，钜豪为你量身定制！_124.md",
+    "source_hash": "a5c3193d73139bac822203f957ec1ef7519b395172d6b72ac41a3f1648db282a",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 12:02:04",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e99264bc94a4_thumb.jpg",
+    "body_media_count": 26,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-124",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-125",
+    "source_id": 125,
+    "source_title": "健康复工，安全复产，钜豪照明蓄势待发！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=125",
+    "source_path": "商城系统/帮助文章/健康复工，安全复产，钜豪照明蓄势待发！_125.md",
+    "source_hash": "bb3e3fa0f295fa82ea0096d35832ca1a23a923fbe9256713e35fbb8918b8224f",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 12:21:49",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e992cc43a068_thumb.jpg",
+    "body_media_count": 18,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-125",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-126",
+    "source_id": 126,
+    "source_title": "钜豪照明荣获“中国照明电器行业创新发展企业”表彰",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=126",
+    "source_path": "商城系统/帮助文章/钜豪照明荣获“中国照明电器行业创新发展企业”表彰_126.md",
+    "source_hash": "02f9691af82a87ef65f99e265e69c9aae0b1d89c074357a933ec38fc55ab4dbe",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 13:06:12",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e99384e7c2cf_thumb.jpg",
+    "body_media_count": 11,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人",
+      "品牌负责人"
+    ],
+    "manual_queue_id": "HELP-126",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-127",
+    "source_id": 127,
+    "source_title": "阿里云与广东钜豪携手点亮智能照明产业未来，达成“钜豪智慧家庭”合作",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=127",
+    "source_path": "商城系统/帮助文章/阿里云与广东钜豪携手点亮智能照明产业未来，达成“钜豪智慧家庭”合作_127.md",
+    "source_hash": "724f32be2a44364c8bab2ce8e58d5ef25c88b1819187441e6c04f41b690c803a",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 13:11:27",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e993a2c8dce3_thumb.jpg",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-127",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-128",
+    "source_id": 128,
+    "source_title": "【成员动态】联盟新成员介绍——钜豪信息",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=128",
+    "source_path": "商城系统/帮助文章/【成员动态】联盟新成员介绍——钜豪信息_128.md",
+    "source_hash": "6e511b18e2d5821f63f50d407cd75a2e14c8ff098c55a87edf168eb74709c318",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 13:39:26",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e99409ec129c_thumb.jpg",
+    "body_media_count": 5,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-128",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-129",
+    "source_id": 129,
+    "source_title": "不忘初心，筑梦2020！钜豪迎新团年晚宴！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=129",
+    "source_path": "商城系统/帮助文章/不忘初心，筑梦2020！钜豪迎新团年晚宴！_129.md",
+    "source_hash": "560ef52e09ce6839ded5941becd550d3fa0eab0f937270e49c47e4ecf9b8b2a3",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-17 13:57:46",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5e99425fd29c3_thumb.jpg",
+    "body_media_count": 35,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-129",
+    "last_verified_at": "2020-04-17"
+  },
+  {
+    "candidate_id": "help-130",
+    "source_id": 130,
+    "source_title": "如何登陆后台",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=130",
+    "source_path": "商城系统/帮助文章/如何登陆后台_130.md",
+    "source_hash": "653dc4a48bda77cbc89b6fb9bf861e3018607d1926e805bdd95810d0ebc80ddf",
+    "source_category": "如何添加下级网点、店铺和客服",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-22 16:49:25",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea11411ed75e_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-22"
+  },
+  {
+    "candidate_id": "help-131",
+    "source_id": 131,
+    "source_title": "市代如何为下级ABC店添加网点",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=131",
+    "source_path": "商城系统/帮助文章/市代如何为下级ABC店添加网点_131.md",
+    "source_hash": "e8913ab81f86a215cbfa51465c68670920d899a5d932eb1ef73091269c3597d9",
+    "source_category": "如何添加下级网点、店铺和客服",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-22 16:50:47",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea1140219d0d_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-22"
+  },
+  {
+    "candidate_id": "help-132",
+    "source_id": 132,
+    "source_title": "如何为网点添加客服",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=132",
+    "source_path": "商城系统/帮助文章/如何为网点添加客服_132.md",
+    "source_hash": "e5b364c6d546581f5a53186461698b3d8f42becda7d220c805743fb8ae74e194",
+    "source_category": "如何添加下级网点、店铺和客服",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-22 16:53:12",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea113d113a10_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-22"
+  },
+  {
+    "candidate_id": "help-133",
+    "source_id": 133,
+    "source_title": "如何为下级网点添加店铺",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=133",
+    "source_path": "商城系统/帮助文章/如何为下级网点添加店铺_133.md",
+    "source_hash": "c01373396d5bdd7d20786234537f0fef426f33742c6ae18948c0b7075cd7c312",
+    "source_category": "如何添加下级网点、店铺和客服",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-22 16:54:58",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea113b56a38d_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-22"
+  },
+  {
+    "candidate_id": "help-134",
+    "source_id": 134,
+    "source_title": "如何设置下级网点产品采购价",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=134",
+    "source_path": "商城系统/帮助文章/如何设置下级网点产品采购价_134.md",
+    "source_hash": "7f5288ce017c27bdb9e2aae607a48a2d05980efa383ae5fbb3ef615f65f162f7",
+    "source_category": "如何设置下级网点产品采购价",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-23 13:26:27",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea13cadde46e_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-23"
+  },
+  {
+    "candidate_id": "help-135",
+    "source_id": 135,
+    "source_title": "如何将产品分享给好友",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=135",
+    "source_path": "商城系统/帮助文章/如何将产品分享给好友_135.md",
+    "source_hash": "f2169fb43c84e2f15a31efa629ed250a5b7c514ee0d81cee1acc8f5714035141",
+    "source_category": "如何把产品和推广海报分享给好友",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-23 13:37:13",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea13c9855e24_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-23"
+  },
+  {
+    "candidate_id": "help-136",
+    "source_id": 136,
+    "source_title": "如何快速切换身份",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=136",
+    "source_path": "商城系统/帮助文章/如何快速切换身份_136.md",
+    "source_hash": "14bbfff98c66de53e24466f59bce13acdbc9980ac718540aa3d144d6225d2d35",
+    "source_category": "如何快速切换身份",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-23 13:42:14",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea13c8297dc5_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-23"
+  },
+  {
+    "candidate_id": "help-137",
+    "source_id": 137,
+    "source_title": "如何为自营网点添加店铺",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=137",
+    "source_path": "商城系统/帮助文章/如何为自营网点添加店铺_137.md",
+    "source_hash": "82a27f6134e1ac6b85721ca86b47731df1914d1aee3628f7374daccca0383531",
+    "source_category": "如何添加下级网点、店铺和客服",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-23 14:06:10",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "not_applicable",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-23"
+  },
+  {
+    "candidate_id": "help-138",
+    "source_id": 138,
+    "source_title": "市代或经销商如何提现",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=138",
+    "source_path": "商城系统/帮助文章/市代或经销商如何提现_138.md",
+    "source_hash": "f8e40a932b995fbf4b75f9fcecfe2b235c5e4b38a8778297d20008f462b165f7",
+    "source_category": "市代或经销商如何提现",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-23 16:08:32",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea14cfb8ee9b_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-23"
+  },
+  {
+    "candidate_id": "help-139",
+    "source_id": 139,
+    "source_title": "市代如何查看处理下级网点订单",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=139",
+    "source_path": "商城系统/帮助文章/市代如何查看处理下级网点订单_139.md",
+    "source_hash": "8d17eb89bd2bff876b13f3fa50746b1ee2459c12223e1e206c79981876ccdcaf",
+    "source_category": "市代如何查看处理下级网点订单",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-29 16:34:00",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea93bf3ed009_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-29"
+  },
+  {
+    "candidate_id": "help-140",
+    "source_id": 140,
+    "source_title": "市代如何查看处理自营店铺订单",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=140",
+    "source_path": "商城系统/帮助文章/市代如何查看处理自营店铺订单_140.md",
+    "source_hash": "0c5b2154c2d597de8e4c585e0052be36bc647c05d038f7b21c914dc3f936d972",
+    "source_category": "市代如何查看处理下级网点订单",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-04-29 16:35:17",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-04/5ea93c4053d16_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-04-29"
+  },
+  {
+    "candidate_id": "help-141",
+    "source_id": 141,
+    "source_title": "恭贺钜豪承办横栏2020工厂直购节圆满成功",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=141",
+    "source_path": "商城系统/帮助文章/恭贺钜豪承办横栏2020工厂直购节圆满成功_141.md",
+    "source_hash": "98b30baaf85171df33f910afd07ba8c54e12b7c1c62d83e01968a58a93bb9864",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-05-22 10:01:24",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-05/5ec732c5b93d8_thumb.jpg",
+    "body_media_count": 15,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-141",
+    "last_verified_at": "2020-05-22"
+  },
+  {
+    "candidate_id": "help-142",
+    "source_id": 142,
+    "source_title": "钜豪优秀经销集训会议成功召开",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=142",
+    "source_path": "商城系统/帮助文章/钜豪优秀经销集训会议成功召开_142.md",
+    "source_hash": "dec8c08343e72b69a58658213abc7ffd1a229babd3f44cf2fc861af4a07ed0dc",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-05-22 10:23:44",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-05/5ec7345519a01_thumb.jpg",
+    "body_media_count": 15,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-142",
+    "last_verified_at": "2020-05-22"
+  },
+  {
+    "candidate_id": "help-143",
+    "source_id": 143,
+    "source_title": "如何分享自己店铺的推广海报给好友",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=143",
+    "source_path": "商城系统/帮助文章/如何分享自己店铺的推广海报给好友_143.md",
+    "source_hash": "2dfdc7d9c20a8392676d30b4ac8d54e032c019311ddd12d92713526e153f003a",
+    "source_category": "如何把产品和推广海报分享给好友",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-05-25 17:23:29",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-05/5ecb8e8b1d552_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-05-25"
+  },
+  {
+    "candidate_id": "help-144",
+    "source_id": 144,
+    "source_title": "省领导莅临钜豪参观调研",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=144",
+    "source_path": "商城系统/帮助文章/省领导莅临钜豪参观调研_144.md",
+    "source_hash": "6a92350dd57112bcd6b4ff7f05f373e2f77180cbc34bbb39dbb0f62d5d90f116",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-08-29 18:06:45",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-08/5f4a28ad93691_thumb.jpg",
+    "body_media_count": 5,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-144",
+    "last_verified_at": "2020-08-29"
+  },
+  {
+    "candidate_id": "help-145",
+    "source_id": 145,
+    "source_title": "5G多功能模组化智慧路灯",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=145",
+    "source_path": "商城系统/帮助文章/5G多功能模组化智慧路灯_145.md",
+    "source_hash": "a6aca244eebf8031345806fa744014442fe231261b5d69413a933968ee852fe5",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-08-30 10:02:04",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-08/5f4b08eb6a7f6_thumb.jpg",
+    "body_media_count": 25,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-145",
+    "last_verified_at": "2020-08-30"
+  },
+  {
+    "candidate_id": "help-146",
+    "source_id": 146,
+    "source_title": "钜豪智慧光空间 ▏系列产品之高端创意线条灯",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=146",
+    "source_path": "商城系统/帮助文章/钜豪智慧光空间 ▏系列产品之高端创意线条灯_146.md",
+    "source_hash": "c9a6d66e08252fb8507e2c2c63f98cfdcd380ab1c4623e641050336e48f58467",
+    "source_category": "公司新闻",
+    "content_domain": "product_topic",
+    "content_kind": "product_topic_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-08-30 15:10:52",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "product_topic",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "具体型号、参数、库存、价格与适用结论"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-08/5f4b50aa7db27_thumb.png",
+    "body_media_count": 68,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-146",
+    "last_verified_at": "2020-08-30"
+  },
+  {
+    "candidate_id": "help-147",
+    "source_id": 147,
+    "source_title": "照明新宠，最吸睛最流行的磁吸灯！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=147",
+    "source_path": "商城系统/帮助文章/照明新宠，最吸睛最流行的磁吸灯！_147.md",
+    "source_hash": "d66581134c0938d85f1d885fae3abce4a802d733bf89ea9f9b629717861ea9a7",
+    "source_category": "公司新闻",
+    "content_domain": "product_topic",
+    "content_kind": "product_topic_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-08-30 15:38:43",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "product_topic",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "具体型号、参数、库存、价格与适用结论"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-08/5f4b57b1e9f50_thumb.jpg",
+    "body_media_count": 49,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-147",
+    "last_verified_at": "2020-08-30"
+  },
+  {
+    "candidate_id": "help-148",
+    "source_id": 148,
+    "source_title": "如何推广钜豪商城",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=148",
+    "source_path": "商城系统/帮助文章/如何推广钜豪商城_148.md",
+    "source_hash": "cbfe3656900ac8e059d5cd6a025fd06cc27a79b9314a5acf9f62a3fd52d96978",
+    "source_category": "如何推广钜豪商城",
+    "content_domain": "legacy_template",
+    "content_kind": "prohibited_legacy_content",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-09-19 11:50:13",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "legacy_template",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "全部旧商城模板内容"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-09/5f65815486fa5_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "legacy_template_prohibited",
+    "image_rights_status": "needs_review",
+    "inventory_status": "prohibited_legacy",
+    "publication_blockers": [
+      "legacy_template_content"
+    ],
+    "required_approvers": [],
+    "manual_queue_id": "",
+    "last_verified_at": "2020-09-19"
+  },
+  {
+    "candidate_id": "help-149",
+    "source_id": 149,
+    "source_title": "谋定5年发展战略！钜豪照明2020华东会议启新篇！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=149",
+    "source_path": "商城系统/帮助文章/谋定5年发展战略！钜豪照明2020华东会议启新篇！_149.md",
+    "source_hash": "4c15e485105e0f96d8f06ec1741878fcb6aab723ac5a72d2de1eaa5af57650f4",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-12-01 11:13:33",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-12/5fc5b5012de57_thumb.jpg",
+    "body_media_count": 9,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-149",
+    "last_verified_at": "2020-12-01"
+  },
+  {
+    "candidate_id": "help-150",
+    "source_id": 150,
+    "source_title": "2020钜豪陕西经销商会议圆满成功",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=150",
+    "source_path": "商城系统/帮助文章/2020钜豪陕西经销商会议圆满成功_150.md",
+    "source_hash": "886a275c964d82b992505c58d4a57bde9940c4a822fcc11925e2d1812ca3d38d",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-12-01 11:36:02",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-12/5fc5ba1c21fcf_thumb.jpg",
+    "body_media_count": 9,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-150",
+    "last_verified_at": "2020-12-01"
+  },
+  {
+    "candidate_id": "help-151",
+    "source_id": 151,
+    "source_title": "钜豪照明荣获“2020年度行业领袖品牌”",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=151",
+    "source_path": "商城系统/帮助文章/钜豪照明荣获“2020年度行业领袖品牌”_151.md",
+    "source_hash": "4fa23128427494198b9f23edee625a3e22534f158b29232bb03703741ceb0cbf",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-12-28 15:29:51",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-12/5fe98a233248b_thumb.jpg",
+    "body_media_count": 3,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人",
+      "品牌负责人"
+    ],
+    "manual_queue_id": "HELP-151",
+    "last_verified_at": "2020-12-28"
+  },
+  {
+    "candidate_id": "help-152",
+    "source_id": 152,
+    "source_title": "钜豪照明荣获三项殊荣",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=152",
+    "source_path": "商城系统/帮助文章/钜豪照明荣获三项殊荣_152.md",
+    "source_hash": "f56f134fa363d97e15ea17846d493bfd71dd7bfdc0640d69ed27f9e383dbd378",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2020-12-28 15:48:15",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2020-12/5fe98e0e260a5_thumb.jpeg",
+    "body_media_count": 8,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人",
+      "品牌负责人"
+    ],
+    "manual_queue_id": "HELP-152",
+    "last_verified_at": "2020-12-28"
+  },
+  {
+    "candidate_id": "help-153",
+    "source_id": 153,
+    "source_title": "钜豪迎新团年晚宴圆满落幕",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=153",
+    "source_path": "商城系统/帮助文章/钜豪迎新团年晚宴圆满落幕_153.md",
+    "source_hash": "ee6fe83cb9ac985b6d23f6840bf6f769c73c364d3063ec4eab9c9d0b12638b66",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-01-12 15:25:44",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-01/5ffd4ea953178_thumb.jpg",
+    "body_media_count": 17,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-153",
+    "last_verified_at": "2021-01-12"
+  },
+  {
+    "candidate_id": "help-154",
+    "source_id": 154,
+    "source_title": "钜豪案例 | 大王山朗豪酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=154",
+    "source_path": "商城系统/帮助文章/钜豪案例  大王山朗豪酒店_154.md",
+    "source_hash": "14d04887646d228448bc7e9a8cbb2a863f486ca78d1275fe29cb836e8fc0f1c5",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-02-28 10:52:12",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-02/603b0557b77cc_thumb.jpg",
+    "body_media_count": 18,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-154",
+    "last_verified_at": "2021-02-28"
+  },
+  {
+    "candidate_id": "help-155",
+    "source_id": 155,
+    "source_title": "钜豪案例 | 中国首家汉唐文化主题五星级酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=155",
+    "source_path": "商城系统/帮助文章/钜豪案例  中国首家汉唐文化主题五星级酒店_155.md",
+    "source_hash": "acd50ba56bd8a7d6d46beca41d60aec6b7612ddb867251471766485a16c17335",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-01 11:35:38",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/603c5dc727901_thumb.jpg",
+    "body_media_count": 23,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-155",
+    "last_verified_at": "2021-03-01"
+  },
+  {
+    "candidate_id": "help-156",
+    "source_id": 156,
+    "source_title": "钜豪案例 | 丽枫花园酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=156",
+    "source_path": "商城系统/帮助文章/钜豪案例  丽枫花园酒店_156.md",
+    "source_hash": "d249286263f1d6ff6a8b107dbab1248fdea0908ccca3edf1965f986f19a6f11c",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-01 11:55:46",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/603c6340c8f40_thumb.jpg",
+    "body_media_count": 16,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-156",
+    "last_verified_at": "2021-03-01"
+  },
+  {
+    "candidate_id": "help-157",
+    "source_id": 157,
+    "source_title": "钜豪案例 | 秦晋国际大酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=157",
+    "source_path": "商城系统/帮助文章/钜豪案例  秦晋国际大酒店_157.md",
+    "source_hash": "5ab4643a0c5e61c27df615f49b87b1fb8418ff56a6e78e268803eabd8211326d",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-01 14:00:10",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/603c8357b5d52_thumb.png",
+    "body_media_count": 16,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-157",
+    "last_verified_at": "2021-03-01"
+  },
+  {
+    "candidate_id": "help-158",
+    "source_id": 158,
+    "source_title": "钜豪案例 | 拉萨-林芝线高铁站",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=158",
+    "source_path": "商城系统/帮助文章/钜豪案例  拉萨-林芝线高铁站_158.md",
+    "source_hash": "e5bbcf5f32424c91db3759b0bc4e8524287459398852568b481cf4088588dc39",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-02 15:42:05",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/603decbea0cad_thumb.jpg",
+    "body_media_count": 16,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-158",
+    "last_verified_at": "2021-03-02"
+  },
+  {
+    "candidate_id": "help-159",
+    "source_id": 159,
+    "source_title": "钜豪案例 | 樟树温德姆大酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=159",
+    "source_path": "商城系统/帮助文章/钜豪案例  樟树温德姆大酒店_159.md",
+    "source_hash": "3355f9de57bb523298a44ffa08c03ec5eece49946c8156d6dc7707d83da0277e",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-02 16:02:01",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/603def858c3fd_thumb.jpg",
+    "body_media_count": 9,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-159",
+    "last_verified_at": "2021-03-02"
+  },
+  {
+    "candidate_id": "help-160",
+    "source_id": 160,
+    "source_title": "光·智见未来 | 钜豪智慧家庭正式发布！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=160",
+    "source_path": "商城系统/帮助文章/光·智见未来  钜豪智慧家庭正式发布！_160.md",
+    "source_hash": "c574b5ff855a995a65f3cacdc214cd4bcf1a5b5710c40f016ef6a41a5928bea8",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-17 19:23:16",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/6051e53ab42e4_thumb.jpg",
+    "body_media_count": 12,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-160",
+    "last_verified_at": "2021-03-17"
+  },
+  {
+    "candidate_id": "help-164",
+    "source_id": 164,
+    "source_title": "年度盛典，智见未来！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=164",
+    "source_path": "商城系统/帮助文章/年度盛典，智见未来！_164.md",
+    "source_hash": "c0e7e9b5a28021bd793fabe54a4c04af49dd3747d6ebfea657a97891b5311055",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-03-20 11:12:51",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-03/605564e2e6805_thumb.JPG",
+    "body_media_count": 12,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-164",
+    "last_verified_at": "2021-03-20"
+  },
+  {
+    "candidate_id": "help-165",
+    "source_id": 165,
+    "source_title": "2021光亚展 | 钜豪邀您打卡！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=165",
+    "source_path": "商城系统/帮助文章/2021光亚展  钜豪邀您打卡！_165.md",
+    "source_hash": "b12abb9a35592dbf19167667a38a41b3de4d8d4848e2807b9a4201ca4360e07d",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-07-31 14:26:52",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-07/6104ebd03b9ec_thumb.jpg",
+    "body_media_count": 2,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-165",
+    "last_verified_at": "2021-07-31"
+  },
+  {
+    "candidate_id": "help-166",
+    "source_id": 166,
+    "source_title": "光亚展 | 钜豪开启智能家居技术与商业发展新征程",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=166",
+    "source_path": "商城系统/帮助文章/光亚展  钜豪开启智能家居技术与商业发展新征程_166.md",
+    "source_hash": "32b4b15c52f91728e238a46e5901c45b23f9969413b74e5999bc20fcb9d26141",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-08-07 11:31:27",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-08/610dfb0b1d45a_thumb.JPG",
+    "body_media_count": 18,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-166",
+    "last_verified_at": "2021-08-07"
+  },
+  {
+    "candidate_id": "help-167",
+    "source_id": 167,
+    "source_title": "光之荣耀 | 钜豪喜获智能照明“年度影响力品牌”创新奖",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=167",
+    "source_path": "商城系统/帮助文章/光之荣耀  钜豪喜获智能照明“年度影响力品牌”创新奖_167.md",
+    "source_hash": "d660cb6ebdf4ace92b5c0bff7f901731d828267d79a6ce247fa9204ba1c1c9da",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-08-09 10:41:17",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-08/6110950392b7e_thumb.jpg",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-167",
+    "last_verified_at": "2021-08-09"
+  },
+  {
+    "candidate_id": "help-168",
+    "source_id": 168,
+    "source_title": "“转型升级，智变融生”钜豪2021秋季新品订货会圆满成功",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=168",
+    "source_path": "商城系统/帮助文章/“转型升级，智变融生”钜豪2021秋季新品订货会圆满成功_168.md",
+    "source_hash": "a1dd9d47b190457ef4a18f5375beb9abb90d7e4a02b7e2f1538777a5fd59093c",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-09-14 11:36:58",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-09/614016268fe08_thumb.jpg",
+    "body_media_count": 13,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-168",
+    "last_verified_at": "2021-09-14"
+  },
+  {
+    "candidate_id": "help-169",
+    "source_id": 169,
+    "source_title": "独具匠“芯”，品质照明！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=169",
+    "source_path": "商城系统/帮助文章/独具匠“芯”，品质照明！_169.md",
+    "source_hash": "733ecbe1ef173444d71bec5b48869b6503c2500e747b748c9727f6080aa156c5",
+    "source_category": "公司新闻",
+    "content_domain": "product_topic",
+    "content_kind": "product_topic_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-10-08 14:59:11",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "product_topic",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "具体型号、参数、库存、价格与适用结论"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-10/615fea204f790_thumb.jpg",
+    "body_media_count": 8,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-169",
+    "last_verified_at": "2021-10-08"
+  },
+  {
+    "candidate_id": "help-170",
+    "source_id": 170,
+    "source_title": "钜豪智慧家庭",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=170",
+    "source_path": "商城系统/帮助文章/钜豪智慧家庭_170.md",
+    "source_hash": "c382b0225821ffb89e75b29827a2e5024a7f8dce98ebedb38acea593e7e84bd0",
+    "source_category": "宣传视频",
+    "content_domain": "video_asset",
+    "content_kind": "missing_video_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-11-09 17:44:52",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "video_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "视频文件、画面权利与内容事实"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-11/618a431216b0c_thumb.png",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-170",
+    "last_verified_at": "2021-11-09"
+  },
+  {
+    "candidate_id": "help-171",
+    "source_id": 171,
+    "source_title": "高光时刻！钜豪荣获“光明奖”三大奖项！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=171",
+    "source_path": "商城系统/帮助文章/高光时刻！钜豪荣获“光明奖”三大奖项！_171.md",
+    "source_hash": "7cc47b07b80ac1a9cfea3fcd3e287e4a432caf37004fd6fa5e44a5fef9f041c3",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2021-12-09 09:48:10",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2021-12/61b15d9bd16c2_thumb.jpg",
+    "body_media_count": 6,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人",
+      "品牌负责人"
+    ],
+    "manual_queue_id": "HELP-171",
+    "last_verified_at": "2021-12-09"
+  },
+  {
+    "candidate_id": "help-172",
+    "source_id": 172,
+    "source_title": "开局喜人，未来可期！钜豪2022年春季新品订货会圆满举行！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=172",
+    "source_path": "商城系统/帮助文章/开局喜人，未来可期！钜豪2022年春季新品订货会圆满举行！_172.md",
+    "source_hash": "ab502b0c04f006a2e03eb1b5ba896346dc5b0f4eaf502731f0f8a8fbd44e61da",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-03-12 09:52:28",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-03/622bfb0835c0e_thumb.JPG",
+    "body_media_count": 8,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-172",
+    "last_verified_at": "2022-03-12"
+  },
+  {
+    "candidate_id": "help-173",
+    "source_id": 173,
+    "source_title": "钜豪智慧家G系列19键遥控器的配对应用",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=173",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列19键遥控器的配对应用_173.md",
+    "source_hash": "acee579a1a31492836fc9ae9311f3aea6f39d8a01158347d2b7e7b8da05c0415",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:25:47",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/62988216a9768_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-173",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-174",
+    "source_id": 174,
+    "source_title": "钜豪智慧家G系列八键情景面板的配对应用",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=174",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列八键情景面板的配对应用_174.md",
+    "source_hash": "458c3f2edb8f27431ad32735ab4803358d50199b2db344f4eaea7dd86ee8d611",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:27:10",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/6298826b06128_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-174",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-175",
+    "source_id": 175,
+    "source_title": "钜豪智慧家G系列情景联动的设置应用",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=175",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列情景联动的设置应用_175.md",
+    "source_hash": "6a66a9daab90502387a898315ffdddadb18dfbfb32fc60296dd45c1c8c0ef88e",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:27:56",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/62988299e5f43_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-175",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-176",
+    "source_id": 176,
+    "source_title": "钜豪智慧家G系列系列窗帘的配对应用",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=176",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列系列窗帘的配对应用_176.md",
+    "source_hash": "99cc806160debfa950f358628df6f8797b386ab4aaa42ca7410fd4b58529af92",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:28:56",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/629882d19a295_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-176",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-177",
+    "source_id": 177,
+    "source_title": "钜豪智慧家G系列智能语音面板的配对与应用",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=177",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列智能语音面板的配对与应用_177.md",
+    "source_hash": "26eb926f6fa661eb517d4b59db590f732f7dc08b171f678fd13f4ea6f4d4451d",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:30:07",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/629883182f5c8_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-177",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-178",
+    "source_id": 178,
+    "source_title": "钜豪智慧家G系列智能语音与电视的配对",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=178",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列智能语音与电视的配对_178.md",
+    "source_hash": "2f29d3b82e3b0eeb2c2cd32ec3a0270643d144e693a08eb834c074aa501df47f",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:31:10",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/6298835ca0b33_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-178",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-179",
+    "source_id": 179,
+    "source_title": "钜豪智慧家G系列智能语音与空调的配对",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=179",
+    "source_path": "商城系统/帮助文章/钜豪智慧家G系列智能语音与空调的配对_179.md",
+    "source_hash": "f81dddf8879d98dc3faa8bcbe0fa5638fa0dfeb40c3423176870d930d945763c",
+    "source_category": "钜豪G系列培训教程",
+    "content_domain": "smart_tutorial",
+    "content_kind": "missing_tutorial_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-06-02 17:35:22",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "tutorial_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "教程文件、适用设备和操作版本"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-06/62988457cc356_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-179",
+    "last_verified_at": "2022-06-02"
+  },
+  {
+    "candidate_id": "help-180",
+    "source_id": 180,
+    "source_title": "点亮智慧校园，钜豪照明全力布局智慧教育照明！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=180",
+    "source_path": "商城系统/帮助文章/点亮智慧校园，钜豪照明全力布局智慧教育照明！_180.md",
+    "source_hash": "b9a72a9fdf7e626a2fcb7549f6c3cf46f74e66cf2b4c26e3159c0f3273bb77f2",
+    "source_category": "公司新闻",
+    "content_domain": "smart_capability",
+    "content_kind": "smart_capability_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 15:27:25",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "technical_capability",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "协议、兼容范围、部署条件与售后边界"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/63032f785d472_thumb.jpg",
+    "body_media_count": 5,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-180",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-181",
+    "source_id": 181,
+    "source_title": "喜讯 | 钜豪中标宁波国际会议中心",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=181",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪中标宁波国际会议中心_181.md",
+    "source_hash": "cf5b36c377bbbff3cfd1c57aad080b9de28d447927f2e820e49cf94702f5d14a",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 15:39:35",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/6303321e26fa2_thumb.jpeg",
+    "body_media_count": 6,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-181",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-182",
+    "source_id": 182,
+    "source_title": "钜豪案例 | 三江九月酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=182",
+    "source_path": "商城系统/帮助文章/钜豪案例  三江九月酒店_182.md",
+    "source_hash": "95cab6a347f428a7f78767429d720fd69cf171cac63acd85d791f55c0ec3e184",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 15:49:56",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/6303353447f07_thumb.jpg",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-182",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-183",
+    "source_id": 183,
+    "source_title": "喜讯 | 钜豪照明中标陕西榆林胜利大酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=183",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标陕西榆林胜利大酒店_183.md",
+    "source_hash": "46f5e74f7b3db8e6db6f08e15aa7280b3e0f5ffd93eea1ddf22e8e1702907ec9",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 16:02:14",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/630336d70316a_thumb.jpg",
+    "body_media_count": 14,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-183",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-184",
+    "source_id": 184,
+    "source_title": "钜豪照明连续五年蝉联中国灯饰照明行业领袖品牌",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=184",
+    "source_path": "商城系统/帮助文章/钜豪照明连续五年蝉联中国灯饰照明行业领袖品牌_184.md",
+    "source_hash": "e8df33008a8981afd4b1aa4e38dda2c5971d6132a3626b39e569e82abdc62a16",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 16:09:44",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/630339154456d_thumb.jpg",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-184",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-185",
+    "source_id": 185,
+    "source_title": "喜讯 | 中山市企业知识产权保护流动工作室落户钜豪照明",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=185",
+    "source_path": "商城系统/帮助文章/喜讯  中山市企业知识产权保护流动工作室落户钜豪照明_185.md",
+    "source_hash": "07338677de3355183063022856cacd417be2cbaa79e9bff757f69026273d5e0a",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 16:15:23",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/63033ae6b8ac1_thumb.jpg",
+    "body_media_count": 3,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-185",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-186",
+    "source_id": 186,
+    "source_title": "喜讯 | 钜豪照明中标三亚茅台酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=186",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标三亚茅台酒店_186.md",
+    "source_hash": "04bec80db3eb10edfb182d52f2f0fbf0a582c5b206f69676954408bfe12c826e",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 16:26:15",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/63033cc0c57d7_thumb.jpg",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-186",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-187",
+    "source_id": 187,
+    "source_title": "喜讯 | 钜豪照明中标太原万达锦华酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=187",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标太原万达锦华酒店_187.md",
+    "source_hash": "fd0e29f6ac650ec8e8e08a9fcf2d024918d4413315cfbb7c7384156c87e966d6",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2022-08-22 16:30:55",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2022-08/63033e69d37b6_thumb.jpg",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-187",
+    "last_verified_at": "2022-08-22"
+  },
+  {
+    "candidate_id": "help-188",
+    "source_id": 188,
+    "source_title": "脚踏实地，卯劲前行 | 2023钜豪春季新品订货会圆满成功",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=188",
+    "source_path": "商城系统/帮助文章/脚踏实地，卯劲前行  2023钜豪春季新品订货会圆满成功_188.md",
+    "source_hash": "5ddaa69aefa083e9446c4bb9700c5cce2a1ad1cb412714c13d5dd404f0c5c29d",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2023-04-04 17:12:52",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2023-04/642be7d8908a4_thumb.JPG",
+    "body_media_count": 16,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-188",
+    "last_verified_at": "2023-04-04"
+  },
+  {
+    "candidate_id": "help-189",
+    "source_id": 189,
+    "source_title": "喜讯 | 钜豪照明中标西安紫锦酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=189",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标西安紫锦酒店_189.md",
+    "source_hash": "dc4ab8eaeaef9f460f3cb4eb2ea385f3f2da5ad53e4a1088eb5ff2c89914b741",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2023-07-29 10:02:42",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2023-07/64c471e9b0fab_thumb.jpg",
+    "body_media_count": 9,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-189",
+    "last_verified_at": "2023-07-29"
+  },
+  {
+    "candidate_id": "help-190",
+    "source_id": 190,
+    "source_title": "喜讯 | 钜豪照明中标珠海瑰宝酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=190",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标珠海瑰宝酒店_190.md",
+    "source_hash": "01ea7ea5532478001a1281186e384e5ba2e009afbfeebf7c44d9767dbcc7744c",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2023-07-29 10:18:21",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2023-07/64c474b2283f8_thumb.jpg",
+    "body_media_count": 16,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-190",
+    "last_verified_at": "2023-07-29"
+  },
+  {
+    "candidate_id": "help-191",
+    "source_id": 191,
+    "source_title": "喜讯 | 钜豪照明中标上海世博中心酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=191",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标上海世博中心酒店_191.md",
+    "source_hash": "43f7efe0511820b4d92af01b01a0d3be20008927980ac81816eda167312bdd19",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2023-07-29 10:25:05",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2023-07/64c4786ad21bb_thumb.png",
+    "body_media_count": 7,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-191",
+    "last_verified_at": "2023-07-29"
+  },
+  {
+    "candidate_id": "help-192",
+    "source_id": 192,
+    "source_title": "从心向上 智见未来 | 钜豪2024年春季优秀经销商会圆满成功",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=192",
+    "source_path": "商城系统/帮助文章/从心向上 智见未来  钜豪2024年春季优秀经销商会圆满成功_192.md",
+    "source_hash": "7b79615a14a2d98d27265d5bc2c676a2004670d2e093b87e933478a504118cb1",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-03-19 11:48:52",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-03/65f9062e02eb2_thumb.JPG",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-192",
+    "last_verified_at": "2024-03-19"
+  },
+  {
+    "candidate_id": "help-193",
+    "source_id": 193,
+    "source_title": "喜讯 | 钜豪照明助力亚洲第一大站——广州白云站",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=193",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明助力亚洲第一大站——广州白云站_193.md",
+    "source_hash": "e4e9270c28c95cb51c37a4d6ea51d3ae0d2ba47fb0bc1859f459aadbadfb503e",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-04-08 11:40:58",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-04/661367669e496_thumb.jpg",
+    "body_media_count": 9,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-193",
+    "last_verified_at": "2024-04-08"
+  },
+  {
+    "candidate_id": "help-194",
+    "source_id": 194,
+    "source_title": "喜讯 | 钜豪照明中标上海西郊宾馆",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=194",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标上海西郊宾馆_194.md",
+    "source_hash": "b04be66e7963cce54c0b04a532a1561294ec03625312aedb8a566697d18e315c",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-05-30 14:35:45",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-05/66581d75c5856_thumb.png",
+    "body_media_count": 5,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-194",
+    "last_verified_at": "2024-05-30"
+  },
+  {
+    "candidate_id": "help-195",
+    "source_id": 195,
+    "source_title": "喜讯 | 钜豪照明中标上海·海上世界酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=195",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标上海·海上世界酒店_195.md",
+    "source_hash": "7a0040bcb3c0981034a5ac1a47ebfdbf5f46af616c49e3a787a7e4680f765211",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-05-30 15:00:09",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-05/665822eac4d41_thumb.jpg",
+    "body_media_count": 11,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-195",
+    "last_verified_at": "2024-05-30"
+  },
+  {
+    "candidate_id": "help-196",
+    "source_id": 196,
+    "source_title": "七星系列射灯IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=196",
+    "source_path": "商城系统/帮助文章/七星系列射灯IES文件_196.md",
+    "source_hash": "af55d689932cde4e52e2e53687c8dc9888514275f575214097f809980261355e",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-08-30 17:54:04",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-12/6757e9585b384_thumb.png",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-196",
+    "last_verified_at": "2024-08-30"
+  },
+  {
+    "candidate_id": "help-197",
+    "source_id": 197,
+    "source_title": "钜豪照明两线1实体",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=197",
+    "source_path": "商城系统/帮助文章/钜豪照明两线1实体_197.md",
+    "source_hash": "599ec179433eb13fba4fcdee1907b9e4be398effc061674395a28c2c57292ed8",
+    "source_category": "两线1实体",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-09-09 16:44:33",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-09/66deb55f86c7a_thumb.png",
+    "body_media_count": 1,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-197",
+    "last_verified_at": "2024-09-09"
+  },
+  {
+    "candidate_id": "help-199",
+    "source_id": 199,
+    "source_title": "喜讯 | 钜豪照明助力“邢台第一高”——邢台金融中心",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=199",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明助力“邢台第一高”——邢台金融中心_199.md",
+    "source_hash": "da25e9de134a6da4672cbebcc87bd715e6f3f3a1bfb68f353819deab141ca57a",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-12-03 09:25:01",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/xingtai-financial-center",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-12/674e5de79c8ba_thumb.jpg",
+    "body_media_count": 15,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-199",
+    "last_verified_at": "2024-12-03"
+  },
+  {
+    "candidate_id": "help-200",
+    "source_id": 200,
+    "source_title": "喜讯 | 钜豪照明中标远安双泉山庄精品度假酒店",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=200",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标远安双泉山庄精品度假酒店_200.md",
+    "source_hash": "a37168351d270e6617fff765e9be1972d5fd412b92bd0602fcd713864416fac3",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-12-03 09:42:32",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-12/674e62029875f_thumb.jpg",
+    "body_media_count": 15,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-200",
+    "last_verified_at": "2024-12-03"
+  },
+  {
+    "candidate_id": "help-201",
+    "source_id": 201,
+    "source_title": "七星系列线型灯IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=201",
+    "source_path": "商城系统/帮助文章/七星系列线型灯IES文件_201.md",
+    "source_hash": "40d561ce08424418ddd605421eeed0282112ea922d79d150ec234a6f223ea9d4",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-12-10 15:20:25",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-12/6757ebaaddfb0_thumb.png",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-201",
+    "last_verified_at": "2024-12-10"
+  },
+  {
+    "candidate_id": "help-203",
+    "source_id": 203,
+    "source_title": "逐光系列IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=203",
+    "source_path": "商城系统/帮助文章/逐光系列IES文件_203.md",
+    "source_hash": "0e851beb674a192107e05258e4494bd5c19f5583ad85789e485c753e236a58ca",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2024-12-24 14:17:29",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2024-12/676a51109b9a8_thumb.png",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-203",
+    "last_verified_at": "2024-12-24"
+  },
+  {
+    "candidate_id": "help-204",
+    "source_id": 204,
+    "source_title": "喜讯 | 钜豪照明助力香山会议中心",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=204",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明助力香山会议中心_204.md",
+    "source_hash": "8ec0e276adde0ad7c54b931cd1b9185572af0493bed711705954d54bec81bd91",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-01-11 13:51:46",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-01/678205430d049_thumb.jpg",
+    "body_media_count": 8,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-204",
+    "last_verified_at": "2025-01-11"
+  },
+  {
+    "candidate_id": "help-205",
+    "source_id": 205,
+    "source_title": "“逐光而行 ·智向未来”2025钜豪照明春季新品订货会圆满召开！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=205",
+    "source_path": "商城系统/帮助文章/“逐光而行 ·智向未来”2025钜豪照明春季新品订货会圆满召开！_205.md",
+    "source_hash": "ec3560f0b1ea71ca55e0271222d5e0d80268ebbf045f1a920aee6578d85df250",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-03-03 14:59:33",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-03/67c5506471c93_thumb.JPG",
+    "body_media_count": 18,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-205",
+    "last_verified_at": "2025-03-03"
+  },
+  {
+    "candidate_id": "help-206",
+    "source_id": 206,
+    "source_title": "喜讯 | 钜豪照明中标银川诺富特酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=206",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标银川诺富特酒店！_206.md",
+    "source_hash": "b3e65fd6e92f10271d3321566dcf96412702d31bf86c457e6c730419a990d28a",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-03-11 14:21:16",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-03/67cfd517d9dd9_thumb.jpg",
+    "body_media_count": 11,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-206",
+    "last_verified_at": "2025-03-11"
+  },
+  {
+    "candidate_id": "help-207",
+    "source_id": 207,
+    "source_title": "喜讯 | 钜豪照明中标“乡根一夜温泉度假酒店、洲际假日酒店、洲际英迪格酒店”！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=207",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标“乡根一夜温泉度假酒店、洲际假日酒店、洲际英迪格酒店”！_207.md",
+    "source_hash": "d8f2dee71e72758f9b0a8b5863a1e74f06bd15517101c90dd429b6f96e8529e4",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-04-25 15:20:27",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-04/680b3647ab45f_thumb.png",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-207",
+    "last_verified_at": "2025-04-25"
+  },
+  {
+    "candidate_id": "help-208",
+    "source_id": 208,
+    "source_title": "喜讯 | 钜豪照明中标常州华耀酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=208",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标常州华耀酒店！_208.md",
+    "source_hash": "5980c12ace19f579da1e92c28645f57f8597b8e394f6e5d05bca0e6ee00120ce",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-04-25 15:31:14",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-04/680b3918dcdc0_thumb.jpg",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-208",
+    "last_verified_at": "2025-04-25"
+  },
+  {
+    "candidate_id": "help-209",
+    "source_id": 209,
+    "source_title": "星光系列IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=209",
+    "source_path": "商城系统/帮助文章/星光系列IES文件_209.md",
+    "source_hash": "5a08510d9c4e8392cddefd1f2d8a868c775d640358cadb213ec3af3bff82a076",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-04-29 15:57:50",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-04/68108674d164e_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-209",
+    "last_verified_at": "2025-04-29"
+  },
+  {
+    "candidate_id": "help-210",
+    "source_id": 210,
+    "source_title": "喜讯 | 钜豪照明中标泰兴皇冠假日酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=210",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标泰兴皇冠假日酒店！_210.md",
+    "source_hash": "acd88e79be7a97cb9f747c91cfec4acf2efa7ffad470756f8e48c86457c39b32",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-05-20 17:00:19",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-05/682c43f591c59_thumb.jpg",
+    "body_media_count": 6,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-210",
+    "last_verified_at": "2025-05-20"
+  },
+  {
+    "candidate_id": "help-216",
+    "source_id": 216,
+    "source_title": "喜讯 | 钜豪照明中标安国盛海假日酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=216",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标安国盛海假日酒店！_216.md",
+    "source_hash": "142ab3859164b1ec725c39525d92b8c41e2ae4df3c115a2389559323c9032a8f",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-07-23 11:04:17",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-07/68804f1bb2f28_thumb.jpg",
+    "body_media_count": 17,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "inventory_needs_evidence",
+    "publication_blockers": [
+      "dedicated_evidence_missing",
+      "public_claim_signoff"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-216",
+    "last_verified_at": "2025-07-23"
+  },
+  {
+    "candidate_id": "help-217",
+    "source_id": 217,
+    "source_title": "喜讯 | 钜豪照明中标南雁荡山宾月花园度假酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=217",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标南雁荡山宾月花园度假酒店！_217.md",
+    "source_hash": "59b9752b9f238c7f2adc216c475023891505fc49e541fef879df3cf2a97f10f6",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-08-11 10:53:37",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/nanyandangshan-binyue-resort-hotel-bid",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-08/68995ae41e0d1_thumb.jpg",
+    "body_media_count": 20,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-217",
+    "last_verified_at": "2025-08-11"
+  },
+  {
+    "candidate_id": "help-218",
+    "source_id": 218,
+    "source_title": "喜讯 | 钜豪照明中标大连金州皇冠假日酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=218",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标大连金州皇冠假日酒店！_218.md",
+    "source_hash": "adafa276e73566b44d73e805a9035a2c86eb4b1bda5e8e37068f14f1bf5b3850",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-08-12 09:27:23",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/dalian-jinzhou-crowne-plaza-hotel-bid",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-08/689a970ca7678_thumb.jpg",
+    "body_media_count": 10,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-218",
+    "last_verified_at": "2025-08-12"
+  },
+  {
+    "candidate_id": "help-219",
+    "source_id": 219,
+    "source_title": "喜讯 | 钜豪照明中标昆明官渡温德姆酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=219",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标昆明官渡温德姆酒店！_219.md",
+    "source_hash": "2d7b21f1611e628b87b8035e2ca3d257355d13a988e59aa3c1f48beeea778f30",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-11-21 09:30:41",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/kunming-guandu-wyndham-hotel-bid",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-11/691fc2539ef2b_thumb.jpg",
+    "body_media_count": 14,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-219",
+    "last_verified_at": "2025-11-21"
+  },
+  {
+    "candidate_id": "help-220",
+    "source_id": 220,
+    "source_title": "喜讯 | 钜豪照明中标扬州经开区“一河两岸”户外亮化工程！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=220",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标扬州经开区“一河两岸”户外亮化工程！_220.md",
+    "source_hash": "fc1a8c35407973eaa4f412099529b8cec46b19a388199fbd87dfe9bebdeb526b",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-12-10 16:29:57",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/yangzhou-riverfront-lighting",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-12/69392f29784cf_thumb.png",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-220",
+    "last_verified_at": "2025-12-10"
+  },
+  {
+    "candidate_id": "help-221",
+    "source_id": 221,
+    "source_title": "喜讯 | 钜豪照明中标宜昌首航国际大酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=221",
+    "source_path": "商城系统/帮助文章/喜讯  钜豪照明中标宜昌首航国际大酒店！_221.md",
+    "source_hash": "e60e892ea92361ddccd671ee1a245bc4ab2ea59c8b56345ed870b127321e62bc",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2025-12-11 09:58:13",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/yichang-shouhang-hotel-bid",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2025-12/693a2527c5f54_thumb.png",
+    "body_media_count": 22,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-221",
+    "last_verified_at": "2025-12-11"
+  },
+  {
+    "candidate_id": "help-222",
+    "source_id": 222,
+    "source_title": "钜豪照明荣获“十大家居照明品牌”",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=222",
+    "source_path": "商城系统/帮助文章/钜豪照明荣获“十大家居照明品牌”_222.md",
+    "source_hash": "20b6ad3b7c3637cc32cb64159e8e0b8e66fd80723a8c3053eb6d5e6bdbd705b4",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-01-20 11:05:11",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/home-lighting-brand-source-record-2025",
+    "embedded_routes": [],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-01/696ef09fa3fe8_thumb.jpg",
+    "body_media_count": 3,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-222",
+    "last_verified_at": "2026-01-20"
+  },
+  {
+    "candidate_id": "help-223",
+    "source_id": 223,
+    "source_title": "双奖加冕，感恩同行！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=223",
+    "source_path": "商城系统/帮助文章/双奖加冕，感恩同行！_223.md",
+    "source_hash": "8749ed104c0193be7f0a20482d776e480142825f4ac6beb0b091c61842e16976",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-01-20 11:10:26",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/lighting-industry-top10-source-record-2026",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-01/696ef14c785bd_thumb.jpg",
+    "body_media_count": 4,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-223",
+    "last_verified_at": "2026-01-20"
+  },
+  {
+    "candidate_id": "help-224",
+    "source_id": 224,
+    "source_title": "“聚势拓界，达愿赴远”2026钜豪照明优秀经销商盛典暨春季新品品鉴会圆满召开！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=224",
+    "source_path": "商城系统/帮助文章/“聚势拓界，达愿赴远”2026钜豪照明优秀经销商盛典暨春季新品品鉴会圆满召开！_224.md",
+    "source_hash": "ecdce229682799a7322a23138a7eba92fffffe06a690c8f74f6a2b302a532ace",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-03-17 10:06:09",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/dealer-conference-spring-2026",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-03/69b8b706cb14e_thumb.jpg",
+    "body_media_count": 31,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-224",
+    "last_verified_at": "2026-03-17"
+  },
+  {
+    "candidate_id": "help-225",
+    "source_id": 225,
+    "source_title": "载誉扬州｜钜豪照明亮相2026中国智慧道路照明大会，荣获优秀合作伙伴称号！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=225",
+    "source_path": "商城系统/帮助文章/载誉扬州｜钜豪照明亮相2026中国智慧道路照明大会，荣获优秀合作伙伴称号！_225.md",
+    "source_hash": "efe4d252e76319af1bc6287534cdcab7f78e7c23e96a6c8e110d788ea5169fff",
+    "source_category": "公司新闻",
+    "content_domain": "honor",
+    "content_kind": "honor_source_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-03-28 10:52:42",
+    "current_usage": "embedded_reference",
+    "current_route": "/about/history",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "honor_claim",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "证书原件、授予方、日期与获奖主体"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-03/69c74246c4113_thumb.jpg",
+    "body_media_count": 8,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-225",
+    "last_verified_at": "2026-03-28"
+  },
+  {
+    "candidate_id": "help-226",
+    "source_id": 226,
+    "source_title": "钜豪照明中标深圳华发冰雪世界 JW 万豪酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=226",
+    "source_path": "商城系统/帮助文章/钜豪照明中标深圳华发冰雪世界 JW 万豪酒店！_226.md",
+    "source_hash": "a7d3164949f5ba26c325a2d36824c0098f71f5a767f343825d46a253398bd8a6",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-03-28 11:02:07",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/jw-marriott-shenzhen-huafa-snow-world",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "",
+    "body_media_count": 13,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-226",
+    "last_verified_at": "2026-03-28"
+  },
+  {
+    "candidate_id": "help-227",
+    "source_id": 227,
+    "source_title": "天罡2号系列IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=227",
+    "source_path": "商城系统/帮助文章/天罡2号系列IES文件_227.md",
+    "source_hash": "b18f85dacfb794710084cf2cabaa2a0d357d81e8c5e6a1c1f5b4a9d08a292559",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-04-03 11:46:56",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-04/69cf382719d95_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-227",
+    "last_verified_at": "2026-04-03"
+  },
+  {
+    "candidate_id": "help-228",
+    "source_id": 228,
+    "source_title": "钜豪照明中标苏州金融街君悦酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=228",
+    "source_path": "商城系统/帮助文章/钜豪照明中标苏州金融街君悦酒店！_228.md",
+    "source_hash": "95aacb81a9222a41d8bb564e3cc99f25d04556ad0053e094858acfb186b19999",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-04-08 10:21:44",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/grand-hyatt-suzhou-financial-street",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-04/69d5bb2b4c88b_thumb.jpg",
+    "body_media_count": 23,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-228",
+    "last_verified_at": "2026-04-08"
+  },
+  {
+    "candidate_id": "help-229",
+    "source_id": 229,
+    "source_title": "钜豪照明中标南通海门希尔顿逸林酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=229",
+    "source_path": "商城系统/帮助文章/钜豪照明中标南通海门希尔顿逸林酒店！_229.md",
+    "source_hash": "b527f336b109401f7a16506458544f59e6ed1dc22893ec20e724a9845215063a",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-04-10 14:44:50",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/doubletree-nantong-haimen",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-04/69d89bb1a7ef5_thumb.jpg",
+    "body_media_count": 11,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-229",
+    "last_verified_at": "2026-04-10"
+  },
+  {
+    "candidate_id": "help-230",
+    "source_id": 230,
+    "source_title": "天玺系列IES文件",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=230",
+    "source_path": "商城系统/帮助文章/天玺系列IES文件_230.md",
+    "source_hash": "46b0831d12f8b2aaed3ef1c28c0f99fb2b6dacc9ed69a4ea13a4e7fa08d9feaa",
+    "source_category": "IES文件下载",
+    "content_domain": "ies_asset",
+    "content_kind": "missing_photometric_payload",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-05-11 14:55:30",
+    "current_usage": "inventory_only",
+    "current_route": "",
+    "embedded_routes": [],
+    "claim_type": "photometric_asset",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "配光文件、对应型号和测试条件"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-05/6a017b0b854a6_thumb.jpg",
+    "body_media_count": 0,
+    "payload_status": "missing_supporting_file",
+    "image_rights_status": "needs_review",
+    "inventory_status": "blocked_missing_payload",
+    "publication_blockers": [
+      "supporting_file_missing",
+      "content_facts_not_reviewed"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "技术负责人"
+    ],
+    "manual_queue_id": "HELP-230",
+    "last_verified_at": "2026-05-11"
+  },
+  {
+    "candidate_id": "help-231",
+    "source_id": 231,
+    "source_title": "钜豪照明中标上饶广丰铂尔曼酒店！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=231",
+    "source_path": "商城系统/帮助文章/钜豪照明中标上饶广丰铂尔曼酒店！_231.md",
+    "source_hash": "2974176b5f555ace3336dc2595421835ea8cfa46ca5e52e376374911732893e9",
+    "source_category": "公司新闻",
+    "content_domain": "project",
+    "content_kind": "project_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-05-26 15:11:42",
+    "current_usage": "dedicated_route",
+    "current_route": "/cases/pullman-shangrao-guangfeng",
+    "embedded_routes": [],
+    "claim_type": "project_stage",
+    "confirmed_stage": "来源记录存在；后续实施状态待证",
+    "unverified_claims": [
+      "施工、供货、交付和完工状态",
+      "最终产品清单和成果数据"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-05/6a154778dcc70_thumb.jpg",
+    "body_media_count": 19,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-231",
+    "last_verified_at": "2026-05-26"
+  },
+  {
+    "candidate_id": "help-232",
+    "source_id": 232,
+    "source_title": "专卖为基，双线助飞 | 钜豪照明光亚展放大招！",
+    "source_type": "mall_sql_jh_articles+knowledge_base_markdown",
+    "source_locator": "jh_articles.articleId=232",
+    "source_path": "商城系统/帮助文章/专卖为基，双线助飞  钜豪照明光亚展放大招！_232.md",
+    "source_hash": "dc81fb7897ee0e87ebd65371a627b97bc6065e218b5d486a3dc22a9aec3619ea",
+    "source_category": "公司新闻",
+    "content_domain": "company_dynamic",
+    "content_kind": "company_news_record",
+    "is_show": "1",
+    "data_flag": "1",
+    "create_time": "2026-06-11 16:30:57",
+    "current_usage": "dedicated_route",
+    "current_route": "/news/guangzhou-international-lighting-exhibition-2026",
+    "embedded_routes": [
+      "/about/history"
+    ],
+    "claim_type": "company_event",
+    "confirmed_stage": "来源记录存在；公开表述待签核",
+    "unverified_claims": [
+      "宣传性判断、未经复核的规模和行业地位"
+    ],
+    "cover_candidate": "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/articles/2026-06/6a2a71c2e9cb3_thumb.JPG",
+    "body_media_count": 13,
+    "payload_status": "source_markdown_available",
+    "image_rights_status": "needs_review",
+    "inventory_status": "routed_private_needs_signoff",
+    "publication_blockers": [
+      "public_claim_signoff",
+      "media_selection_required"
+    ],
+    "required_approvers": [
+      "内容负责人",
+      "业务负责人"
+    ],
+    "manual_queue_id": "HELP-232",
+    "last_verified_at": "2026-06-11"
+  }
+]

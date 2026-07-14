@@ -24,3 +24,4 @@
 .topicScenes article,.caseVerification article{background:var(--paper)}
 .topicMedia,.caseEvidence{background:var(--vi-silver-soft)}
 .topicRelated a{background:var(--paper-raised)}
+.productCard picture,.caseCard picture,.topicMedia picture,.evidencePicture{display:block;width:100%;height:100%}.productCard picture img,.caseCard picture img,.topicMedia picture img,.evidencePicture img{display:block;width:100%;height:100%;object-fit:cover}.caseHeroMedia{position:absolute;inset:0;display:block;width:100%;height:100%}.caseHeroImage{width:100%;height:100%;object-fit:cover}.caseEvidence .evidenceNatural .evidencePicture,.caseEvidence .evidenceNatural .evidencePicture img{height:auto}.caseEvidence .evidenceNatural .evidencePicture img{position:static;object-fit:contain}

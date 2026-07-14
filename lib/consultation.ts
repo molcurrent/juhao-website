@@ -67,6 +67,7 @@ const sources = new Set<ConsultationSource>([
   "footer",
   "header",
   "mobile-nav",
+  "page",
   "products",
   "product-topic",
   "product-detail",
@@ -79,7 +80,7 @@ const sources = new Set<ConsultationSource>([
   "direct",
 ]);
 
-const detailSources = new Set<ConsultationSource>(["product-topic", "product-detail", "case-detail", "solutions", "partners"]);
+const detailSources = new Set<ConsultationSource>(["page", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 
 export const consultationSourceValues = [...sources];
 

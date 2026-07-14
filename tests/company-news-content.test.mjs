@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { companyNewsArticleByPath, companyNewsArticles, companyNewsByPath } from "../content/company-news.ts";
+
+const governancePath = new URL("../content/governance/company-news-source.json", import.meta.url);
+const runtimePath = new URL("../content/runtime/company-news.json", import.meta.url);
+const governance = JSON.parse(readFileSync(governancePath, "utf8"));
+const governanceById = new Map(governance.map((article) => [article.source_id, article]));
 
 const expected = new Map([
   [232, ["/news/guangzhou-international-lighting-exhibition-2026", "2026-06-11 16:30:57", 13]],
@@ -22,43 +29,57 @@ function pageCopy(article) {
   ].join("\n");
 }
 
-test("contains the eight stable source records with their real SQL dates", () => {
+test("contains the eight stable runtime records with their real source dates", () => {
   assert.equal(companyNewsArticles.length, 8);
   assert.deepEqual(companyNewsArticles.map(({ source_id }) => source_id), [...expected.keys()]);
   assert.equal(new Set(companyNewsArticles.map(({ path }) => path)).size, 8);
   assert.equal(companyNewsByPath.size, 8);
 
   for (const article of companyNewsArticles) {
-    const [path, createTime] = expected.get(article.source_id);
+    const [path, createTime, expectedBodyCount] = expected.get(article.source_id);
+    const source = governanceById.get(article.source_id);
     assert.equal(article.path, path);
-    assert.equal(article.create_time, createTime);
     assert.equal(article.published, createTime.slice(0, 10));
-    assert.equal(article.source_locator, `jh_articles.articleId=${article.source_id}`);
-    assert.equal(article.source_status.is_show, "1");
-    assert.equal(article.source_status.data_flag, "1");
-    assert.equal(article.source_status.interpretation, "active_in_source");
+    assert.equal(article.remote_media_count, expectedBodyCount + 1);
+    assert.equal(source.create_time, createTime);
+    assert.equal(source.source_locator, `jh_articles.articleId=${article.source_id}`);
+    assert.deepEqual(source.source_status, { is_show: "1", data_flag: "1", interpretation: "active_in_source" });
     assert.equal(companyNewsArticleByPath(path), article);
   }
 });
 
-test("keeps every remote cover and body candidate blocked for rights review", () => {
-  const media = companyNewsArticles.flatMap((article) => article.remote_media);
-  assert.equal(media.length, 125);
-  assert.equal(media.filter(({ role }) => role === "cover").length, 8);
-  assert.equal(media.filter(({ role }) => role === "body").length, 117);
-
-  for (const article of companyNewsArticles) {
-    const expectedBodyCount = expected.get(article.source_id)[2];
-    assert.equal(article.remote_media.filter(({ role }) => role === "cover").length, 1);
-    assert.equal(article.remote_media.filter(({ role }) => role === "body").length, expectedBodyCount);
-  }
-  for (const candidate of media) {
+test("keeps all 125 remote candidates in governance and out of the runtime snapshot", () => {
+  const candidates = governance.flatMap((article) => article.remote_media_sources);
+  const runtimeText = readFileSync(runtimePath, "utf8");
+  assert.equal(candidates.length, 125);
+  assert.equal(candidates.filter(({ role }) => role === "cover").length, 8);
+  assert.equal(candidates.filter(({ role }) => role === "body").length, 117);
+  for (const candidate of candidates) {
     assert.match(candidate.src, /^https?:\/\//);
-    assert.equal(candidate.rights_status, "needs_review");
-    assert.equal(candidate.publish_allowed, false);
-    assert.equal(candidate.evidence_role, "candidate_not_published");
-    assert.equal(candidate.publication_gate, "public_media_authorization_not_verified");
+    assert.equal(candidate.publication_gate, "content_fact_and_page_selection_review_pending");
   }
+  assert.doesNotMatch(runtimeText, /https?:\/\//);
+  assert.doesNotMatch(runtimeText, /\/Users\//);
+  for (const article of companyNewsArticles) {
+    for (const forbidden of [
+      "create_time",
+      "source_path",
+      "source_locator",
+      "source_sql_sha256",
+      "source_status",
+      "phase_conservative_summary",
+      "remote_media_sources",
+      "remote_media",
+      "governance",
+    ]) assert.equal(Object.hasOwn(article, forbidden), false, `${article.path}: leaked ${forbidden}`);
+  }
+});
+
+test("rebuilds the slim runtime snapshot deterministically", () => {
+  execFileSync("python3", ["scripts/build_company_news_runtime.py", "--check"], {
+    cwd: new URL("..", import.meta.url),
+    stdio: "pipe",
+  });
 });
 
 test("uses local visuals only as approved column illustrations, never as news evidence", () => {
@@ -84,17 +105,19 @@ test("limits page-facing copy to the conservative summary and excludes promotion
   const promotionalTerms = /火热|强势|硬核|络绎不绝|重磅|上万平方|备受瞩目|盛大|圆满|辉煌|卓越|璀璨|奢华|极高|领军实力|典范之作|首选品牌/;
 
   for (const article of companyNewsArticles) {
+    const source = governanceById.get(article.source_id);
     const copy = pageCopy(article);
-    assert.equal(article.governance.page_copy_basis, "phase_conservative_summary_only");
+    assert.equal(source.governance.page_copy_basis, "phase_conservative_summary_only");
     assert.equal(article.intro, article.description);
-    assert.notEqual(article.description, article.governance.source_description);
+    assert.notEqual(article.description, source.governance.source_description);
     assert.ok(article.sections[0].text);
     assert.ok(article.sections[0].points.length >= 1);
-    assert.equal(article.sections[1].text, article.phase_conservative_summary.publication_boundary);
-    assert.equal(article.publication_boundary, article.phase_conservative_summary.publication_boundary);
+    assert.equal(article.phase_stage, source.phase_conservative_summary.stage);
+    assert.equal(article.sections[1].text, source.phase_conservative_summary.publication_boundary);
+    assert.equal(article.publication_boundary, source.phase_conservative_summary.publication_boundary);
     assert.doesNotMatch(copy, promotionalTerms, article.path);
 
-    for (const claim of article.governance.excluded_unverified_claims) {
+    for (const claim of source.governance.excluded_unverified_claims) {
       assert.ok(!copy.includes(claim.text), `${article.path}: leaked unverified claim`);
     }
   }

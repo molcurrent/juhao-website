@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, type KeyboardEvent } from "react";
 import type { PageData } from "@/app/_data/pages";
-import { gsap, motionEase, useGSAP } from "@/lib/motion/gsap";
+import { consultationHref } from "@/lib/consultation";
 import styles from "./SmartHomePage.module.css";
 
 type SceneId = "home" | "movie" | "sleep" | "away";
@@ -77,6 +77,24 @@ const planningSteps = [
   },
 ];
 
+const verifiedKnowledge = [
+  {
+    href: "/news/smart-lighting-scene-control",
+    title: "智能照明与场景控制",
+    text: "先定义真实场景，再核对控制入口、回路、调光与异常回退。",
+  },
+  {
+    href: "/news/led-dimming-compatibility",
+    title: "LED 调光兼容性",
+    text: "灯具、驱动、控制器和回路负载需要作为组合验证。",
+  },
+  {
+    href: "/news/led-driver-constant-voltage-current",
+    title: "驱动电源与恒压恒流",
+    text: "不能只比较额定瓦数，还要核对输出窗口、负载和调光方式。",
+  },
+] as const;
+
 const fallbackFaqs = [
   {
     question: "智能照明一定要使用手机控制吗？",
@@ -93,50 +111,11 @@ export type SmartHomePageProps = {
 };
 
 export function SmartHomePage({ page }: SmartHomePageProps) {
-  const rootRef = useRef<HTMLElement>(null);
-  const scenePanelRef = useRef<HTMLElement>(null);
   const sceneButtonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const [activeSceneId, setActiveSceneId] = useState<SceneId>(scenes[0].id);
   const activeScene = scenes.find((scene) => scene.id === activeSceneId) ?? scenes[0];
   const activeSceneIndex = scenes.indexOf(activeScene);
   const faqs = page.faqs?.length ? page.faqs : fallbackFaqs;
-
-  useGSAP(
-    () => {
-      const media = gsap.matchMedia();
-
-      media.add("(prefers-reduced-motion: no-preference)", () => {
-        const timeline = gsap.timeline({ defaults: { ease: motionEase } });
-        timeline
-          .from(`.${styles.heroMedia}`, { autoAlpha: 0, scale: 1.05, duration: 1.15 })
-          .from(`.${styles.heroEyebrow}`, { autoAlpha: 0, y: 16, duration: 0.55 }, 0.16)
-          .from(`.${styles.heroTitle} > *`, { autoAlpha: 0, y: 42, duration: 0.78, stagger: 0.1 }, 0.24)
-          .from(`.${styles.heroIntro}, .${styles.heroActions}`, { autoAlpha: 0, y: 22, duration: 0.65, stagger: 0.08 }, 0.42)
-          .from(`.${styles.signalBoard}`, { autoAlpha: 0, x: 26, duration: 0.7 }, 0.5);
-      });
-
-      return () => media.revert();
-    },
-    { scope: rootRef },
-  );
-
-  useGSAP(
-    () => {
-      if (!scenePanelRef.current) return;
-      const media = gsap.matchMedia();
-
-      media.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.fromTo(
-          scenePanelRef.current,
-          { autoAlpha: 0.35, y: 18 },
-          { autoAlpha: 1, y: 0, duration: 0.52, ease: motionEase, clearProps: "transform" },
-        );
-      });
-
-      return () => media.revert();
-    },
-    { scope: rootRef, dependencies: [activeSceneId], revertOnUpdate: true },
-  );
 
   const selectSceneFromKeyboard = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     let nextIndex = index;
@@ -159,7 +138,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
   };
 
   return (
-    <main className={styles.page} id="main-content" ref={rootRef}>
+    <main className={styles.page} id="main-content">
       <section className={styles.hero} aria-labelledby="smart-home-title">
         <div className={styles.heroMedia} aria-hidden="true">
           <Image src={page.image} alt="" fill priority unoptimized sizes="100vw" />
@@ -176,7 +155,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
           <p className={styles.heroIntro}>{page.intro}</p>
           <div className={styles.heroActions}>
             <a href="#life-scenes">体验生活场景 <span aria-hidden="true">↓</span></a>
-            <Link href="/contact">咨询规划 <span aria-hidden="true">↗</span></Link>
+            <Link href={consultationHref("project", "solutions", "smart-home")}>咨询规划 <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
 
@@ -250,7 +229,6 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
                   hidden={!active}
                   id={`smart-scene-panel-${scene.id}`}
                   key={scene.id}
-                  ref={active ? scenePanelRef : undefined}
                   role="tabpanel"
                   tabIndex={0}
                 >
@@ -267,10 +245,29 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
         </div>
       </section>
 
+      <section className={styles.evidence} aria-labelledby="smart-evidence-title">
+        <header>
+          <p>02 / VERIFIED CONTENT</p>
+          <h2 id="smart-evidence-title">先公开方法，<br />再逐款审核设备</h2>
+          <span>当前智能设备候选清单已建立，但 0 款完成协议、供电、安装、兼容范围与售后资料审核，因此不生成产品详情。</span>
+        </header>
+        <div className={styles.evidenceGrid}>
+          {verifiedKnowledge.map((item, index) => (
+            <Link href={item.href} key={item.href}>
+              <small>{String(index + 1).padStart(2, "0")} / JUHAO 审核知识</small>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <b>查看来源与边界 ↗</b>
+            </Link>
+          ))}
+        </div>
+        <Link className={styles.evidenceCta} href="/contact?source=product-topic&sourceDetail=smart-home-devices&scene=project&intent=project-brief#consultation-form">提交场景与兼容需求 →</Link>
+      </section>
+
       <section className={styles.planning} id="planning" aria-labelledby="planning-title">
         <div className={styles.planningInner}>
           <header className={styles.planningHeading} data-reveal>
-            <p>02 / SYSTEM PLANNING</p>
+            <p>03 / SYSTEM PLANNING</p>
             <h2 id="planning-title">让智能从图纸上<br />就变得清楚</h2>
           </header>
 
@@ -302,7 +299,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
 
       <section className={styles.faq} aria-labelledby="smart-faq-title">
         <header data-reveal>
-          <p>03 / QUESTIONS</p>
+          <p>04 / QUESTIONS</p>
           <h2 id="smart-faq-title">关于智能照明，<br />先问对问题</h2>
         </header>
         <div className={styles.faqList} data-reveal>

@@ -2,7 +2,7 @@ import { contractPages } from "./contract-pages";
 import { companyNewsPages, type CompanyNewsArticle } from "@/content/company-news";
 import { knowledgeArticlePages } from "@/content/knowledge-articles";
 
-export const SITE_URL = "https://juhao.com";
+export const SITE_URL = (process.env.SITE_CANONICAL_ORIGIN || "https://juhao.com").replace(/\/$/, "");
 
 export type ArticleEvidence = {
   sourcePath: string;
@@ -52,7 +52,7 @@ export const pages: Record<string, PageData> = {
     path: "/products", label: "产品中心", eyebrow: "PRODUCT CENTER", title: "产品中心", seoTitle: "照明产品中心｜产品专题与选型入口｜钜豪照明", image: "/images/juhao-commercial.webp", type: "page",
     description: "浏览钜豪照明射灯、家居顶灯、新中式、艺术灯、水晶吊灯、线性照明、开关电工、户外照明、工程定制与智能设备专题。",
     intro: "以专题组织产品，以审核控制发布。先从空间和使用任务进入，再核对型号、参数、安装条件与资料。",
-    highlights: [{ title: "10 个首批专题", text: "覆盖家居、商照、工程、户外与智能设备。" }, { title: "精选发布", text: "不把内容贫弱或资料未确认的商品批量生成页面。" }],
+    highlights: [{ title: "10 个产品专题", text: "当前共 31 个私有产品详情；各专题按审核进度逐款开放。" }, { title: "精选发布", text: "不把内容贫弱、协议不清或型号映射未解决的商品批量生成页面。" }],
     sections: [{ title: "产品内容中心", text: "产品页面承担内容展示、参数理解、方案关联与咨询承接；复杂交易、订单与经销商能力继续由独立商城承担。" }],
     related: [{ label: "照明方案", href: "/solutions", text: "按空间找到对应选型方法。" }, { label: "工程案例", href: "/cases", text: "从真实项目理解应用场景。" }, { label: "进入商城", href: "/mall", text: "前往独立交易与经销商系统。" }],
   },
@@ -60,7 +60,7 @@ export const pages: Record<string, PageData> = {
     path: "/cases", label: "工程案例", eyebrow: "PROJECTS & CASES", title: "工程案例与项目动态", seoTitle: "工程案例与项目动态｜酒店·商业·户外照明｜钜豪照明", image: "/images/juhao-public.webp", type: "page",
     description: "浏览钜豪照明酒店、户外亮化与智慧道路项目动态，明确区分签约中标、实施中与已完成案例。",
     intro: "案例中心不复制新闻稿，而是按项目背景、空间任务、照明策略与当前阶段重构内容。",
-    highlights: [{ title: "阶段透明", text: "签约或中标项目不会包装成已落地案例。" }, { title: "结构化呈现", text: "围绕空间、需求、策略、产品与服务组织项目资料。" }],
+    highlights: [{ title: "6 个项目档案", text: "签约或中标项目不会包装成已落地案例。" }, { title: "结构化呈现", text: "围绕空间、需求、策略、产品与服务组织项目资料。" }],
     sections: [{ title: "从项目事实开始", text: "首批内容覆盖酒店、户外亮化与智慧道路方向；实施图片、产品清单和成果数据将在资料核验后补充。" }],
     related: [{ label: "酒店照明方案", href: "/solutions/hospitality", text: "了解酒店空间照明方法。" }, { label: "公共照明方案", href: "/solutions/public", text: "了解公共与城市空间照明。" }, { label: "工程项目咨询", href: "/contact?source=cases&scene=project&intent=project-brief", text: "提交项目类型、阶段与需求。" }],
   },
@@ -69,14 +69,14 @@ export const pages: Record<string, PageData> = {
     description: "了解钜豪照明的品牌理念、业务方向与服务价值，认识品牌围绕健康照明、智能家居与渠道服务的持续探索。",
     intro: "钜豪以健康光环境为出发点，将照明产品、空间设计、智能控制和数字化服务连接起来，为家庭与不同类型空间提供清晰、可落地的光环境思路。",
     highlights: [{title:"健康人居",text:"从视觉舒适、空间层次与日常节律出发思考光。"},{title:"专业方案",text:"围绕住宅、商业、公共与工业空间梳理照明需求。"},{title:"智能协同",text:"让照明与窗帘、环境和安防设备自然联动。"}],
-    sections: [{title:"品牌主张",text:"好房子，光健康。钜豪关注的不只是灯具本身，更关注人在空间里的真实感受。通过合理的亮度、色温、显色与分区控制，让光服务于休息、工作、交流与展示。"},{title:"我们提供什么",text:"从空间需求梳理到照明方案选择，再到智能控制和渠道服务，钜豪希望让复杂的照明决策更简单。",points:["全屋与场景照明方案","商业、公共与工业空间照明思路","智能家居照明联动","照明选品与渠道服务"]}],
+    sections: [{title:"品牌主张",text:"好房子，光健康。钜豪关注的不只是灯具本身，更关注人在空间里的真实感受。通过合理的亮度、色温、显色与分区控制，让光服务于休息、工作、交流与展示。"},{title:"当前可核对内容",text:"官网当前开放 31 个产品详情、6 个阶段透明项目档案、33 篇已审核知识文章和 5 个有来源的发展节点；未确认的产能、网点、荣誉总数和服务区域不作为品牌数据发布。",points:["全屋与场景照明方法","商业、公共与工业空间照明思路","智能家居场景规划","照明选品与渠道咨询"]}],
     related: [{label:"查看照明解决方案",href:"/solutions",text:"按不同空间找到对应的光环境思路。"},{label:"了解智能家居照明",href:"/smart-home",text:"探索灯光与空间设备的协同。"},{label:"联系钜豪照明",href:"/contact",text:"提交方案或合作需求。"}]
   },
   "solutions": {
     path: "/solutions", label: "照明解决方案", eyebrow: "LIGHTING SOLUTIONS", title: "空间照明解决方案", seoTitle: "照明解决方案｜全屋·商业·公共·工业｜钜豪照明", image: "/images/juhao-commercial.webp", type:"service",
     description: "按空间浏览钜豪照明解决方案，涵盖全屋、商业、公共与工业照明，并进入对应场景页面了解方案重点。",
     intro: "不同空间有不同的使用节奏与视觉任务。钜豪从人的活动、空间功能和维护需求出发，帮助用户建立更清晰的照明方案框架。",
-    highlights: [{title:"全屋照明",text:"关注生活节律、舒适氛围与分区控制。"},{title:"商业照明",text:"兼顾品牌表达、商品呈现与顾客体验。"},{title:"公共照明",text:"重视安全、识别、耐久与维护效率。"},{title:"工业照明",text:"围绕作业可见度、稳定性与能源效率。"}],
+    highlights: [{title:"全屋照明",text:"关注生活节律、舒适氛围与分区控制。"},{title:"酒店照明",text:"按抵达、公共区域、餐饮与客房组织连续体验。"},{title:"商业与公共",text:"兼顾空间识别、使用体验与长期维护。"},{title:"工业照明",text:"围绕作业可见度、稳定性与能源效率。"}],
     sections: [{title:"从空间需求开始",text:"好的方案不是堆叠灯具，而是先看空间里的人要做什么。动线、停留、阅读、展示、作业与休息，都会影响光的层次和控制方式。"},{title:"方案关注维度",text:"通过照度、色温、显色、眩光、配光与智能控制等维度，形成匹配场景的照明组合。",points:["明确空间用途与视觉任务","规划基础光、重点光和氛围光","选择适合的灯具与控制方式","兼顾安装、维护与长期使用"]}],
     related: [{label:"全屋照明解决方案",href:"/solutions/residential",text:"为家庭日常建立舒适光环境。"},{label:"商业照明解决方案",href:"/solutions/commercial",text:"让光参与空间体验与品牌表达。"},{label:"公共照明解决方案",href:"/solutions/public",text:"面向公共空间的安全与效率。"},{label:"工业照明解决方案",href:"/solutions/industrial",text:"服务生产与作业环境。"}]
   },
@@ -114,10 +114,10 @@ export const pages: Record<string, PageData> = {
   },
   "smart-home": {
     path:"/smart-home",label:"智能家居",eyebrow:"SMART HOME LIGHTING",title:"智能家居照明解决方案",seoTitle:"智能家居照明解决方案｜钜豪智能",image:"/images/juhao-home.webp",type:"service",noindex:true,
-    description:"了解智能灯光与空间设备联动的使用场景、系统组成和方案咨询入口，探索自然便捷的智能家居体验。",
-    intro:"真正自然的智能体验，不需要频繁操作。灯光、窗帘、环境和安防可以根据时间、活动与空间状态协同工作。",
+    description:"了解智能灯光场景、系统规划与咨询入口。当前没有完成协议和兼容审核的设备详情，不作具体产品能力承诺。",
+    intro:"真正自然的智能体验，应从生活场景、回路和稳定的手动控制开始。当前候选设备仍待协议、兼容、部署与售后资料核验。",
     highlights:[{title:"回家场景",text:"灯光与窗帘协同响应，让空间自然进入欢迎状态。"},{title:"观影场景",text:"一键调整亮度与遮光，减少重复操作。"},{title:"睡眠场景",text:"逐步降低环境亮度，为休息建立柔和过渡。"},{title:"离家场景",text:"统一关闭或检查设备状态，简化日常管理。"}],
-    sections:[{title:"智能的价值在于场景",text:"单个设备联网并不等于好的智能家居。更重要的是根据真实生活编排场景，并保留简单直观的手动控制。"},{title:"规划重点",text:"智能照明应与空间设计、电气点位和家庭习惯同步规划。",points:["先梳理高频生活场景","保留稳定、直观的基础控制","按空间设置分区与权限","为后期调整留出扩展空间"]}],
+    sections:[{title:"智能的价值在于场景",text:"单个设备联网并不等于好的智能家居。更重要的是根据真实生活编排场景，并保留简单直观的手动控制。"},{title:"当前产品状态",text:"智能设备候选清单已建立，但 0 款完成协议、供电、安装、兼容范围和售后资料审核，因此本轮只发布规划方法与知识内容。",points:["先梳理高频生活场景","保留稳定、直观的基础控制","逐项核对协议与兼容范围","审核一款再发布一款"]}],
     related:[{label:"全屋照明解决方案",href:"/solutions/residential",text:"先建立家庭光环境基础。"},{label:"查看照明解决方案",href:"/solutions",text:"浏览不同空间照明类型。"},{label:"咨询智能家居方案",href:"/contact",text:"提交户型与联动需求。"}],faqs:[{question:"智能照明一定要使用手机控制吗？",answer:"不一定。合理的系统应保留墙面控制、场景按键和自动化逻辑，手机更适合作为设置与远程管理入口。"},{question:"智能照明应该在装修哪个阶段确定？",answer:"建议在电气点位和回路规划前确定主要场景与控制方式，减少后期调整成本。"}]
   },
   "mall": {
@@ -130,9 +130,9 @@ export const pages: Record<string, PageData> = {
   },
   "news": {
     path:"/news",label:"新闻资讯",eyebrow:"NEWS & INSIGHTS",title:"钜豪照明新闻与资讯",seoTitle:"钜豪照明新闻｜品牌动态与照明资讯",image:"/images/juhao-public.webp",
-    description:"查看钜豪照明品牌动态、解决方案资讯与照明知识文章，进入详情页阅读完整内容。",
-    intro:"持续分享健康光环境、空间照明和智能家居相关知识，帮助用户在真实需求中理解光、选择光、使用光。",
-    highlights:[{title:"照明知识",text:"理解照度、色温、显色与眩光等关键概念。"},{title:"空间方案",text:"从家庭、商业与公共空间拆解照明思路。"},{title:"智能生活",text:"探索灯光和空间设备的自然协同。"}],
+    description:"浏览 33 篇已审核照明知识和 8 篇阶段透明的企业、项目来源记录，进入详情页查看来源与内容边界。",
+    intro:"当前资讯中心共 41 篇内容：知识文章帮助用户理解和选择光，企业与项目动态保留真实来源日期、阶段和待核验事项。",
+    highlights:[{title:"33 篇照明知识",text:"覆盖基础参数、空间选择、安装、安全与智能控制。"},{title:"8 篇企业与项目动态",text:"保留来源日期和阶段，不采用未核验宣传判断。"},{title:"来源透明",text:"外部链接未记录时明确标注内部知识库审核状态。"}],
     sections:[{title:"内容来源",text:"资讯区只发布企业知识库中可追溯的公司动态，以及已由 JUHAO 审核的专业照明知识。",points:["企业与项目动态保留真实来源日期和阶段","专业知识保留审核人、核验日期和外部资料来源","未经核验的宣传性数字、完工状态和媒体授权不作为结论"]}],
     related:[{label:"筒灯与射灯怎么区分",href:"/news/downlight-vs-spotlight",text:"从配光和用途理解两类灯具。"},{label:"家庭色温怎么选择",href:"/news/color-temperature-guide",text:"理解相关色温的含义与选择边界。"},{label:"全部照明解决方案",href:"/solutions",text:"进入对应空间的方案页面。"}]
   },

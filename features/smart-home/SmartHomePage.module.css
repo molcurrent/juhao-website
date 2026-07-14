@@ -420,6 +420,92 @@
   margin-right: 8px;
 }
 
+.evidence {
+  background: #121411;
+  border-bottom: 1px solid rgb(255 255 255 / 14%);
+  border-top: 1px solid rgb(255 255 255 / 14%);
+  margin: 0 auto;
+  max-width: var(--content-max);
+  padding: clamp(92px, 9vw, 140px) var(--page-gutter);
+}
+
+.evidence > header {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(150px, 0.38fr) minmax(300px, 0.9fr) minmax(260px, 0.72fr);
+  margin-bottom: 64px;
+}
+
+.evidence > header > p {
+  color: var(--brand-orange-bright);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 8px 0 0;
+}
+
+.evidence > header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.8vw, 74px);
+  letter-spacing: -0.065em;
+  line-height: 1.04;
+  margin: 0;
+}
+
+.evidence > header span {
+  color: rgb(255 255 255 / 60%);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.evidenceGrid {
+  background: rgb(255 255 255 / 14%);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.evidenceGrid a {
+  background: var(--night);
+  min-height: 320px;
+  padding: 30px;
+  position: relative;
+}
+
+.evidenceGrid small {
+  color: rgb(255 255 255 / 40%);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.evidenceGrid h3 {
+  font-size: clamp(21px, 2vw, 28px);
+  margin: 58px 0 16px;
+}
+
+.evidenceGrid p {
+  color: rgb(255 255 255 / 58%);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0 0 58px;
+}
+
+.evidenceGrid b {
+  bottom: 30px;
+  color: var(--brand-orange-bright);
+  font-size: 12px;
+  position: absolute;
+}
+
+.evidenceCta {
+  border-bottom: 1px solid var(--brand-orange-bright);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 40px;
+  padding: 14px 0;
+}
+
 .planning {
   background: var(--paper);
   color: var(--ink);
@@ -735,6 +821,14 @@
   }
 
   .planningLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence > header {
+    grid-template-columns: 1fr;
+  }
+
+  .evidenceGrid {
     grid-template-columns: 1fr;
   }
 

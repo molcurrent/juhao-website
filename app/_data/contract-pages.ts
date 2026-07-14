@@ -71,7 +71,7 @@ export const contractPages = {
     description: "搜索钜豪照明官网中的解决方案、服务与资讯内容。",
     intro: "输入关键词后，搜索结果将按页面、解决方案、资讯和资料分类展示。搜索结果页不进入搜索引擎索引。",
     highlights: [{ title: "页面", text: "品牌、服务与合作信息。" }, { title: "解决方案", text: "按空间查找光环境思路。" }, { title: "资讯", text: "查找照明知识与品牌内容。" }],
-    sections: [{ title: "搜索状态", text: "阶段 5 将接入本地全文索引，并覆盖输入、加载、结果、空状态与错误状态。" }],
+    sections: [{ title: "搜索状态", text: "当前本地索引覆盖 101 条可搜索内容，并提供输入、结果、空状态与错误状态；候选商品和治理清单不会进入搜索结果。" }],
     related: [{ label: "照明方案", href: "/solutions", text: "按空间浏览。" }, { label: "新闻资讯", href: "/news", text: "阅读照明内容。" }, { label: "服务支持", href: "/service", text: "查看服务入口。" }],
   },
   "legal": {

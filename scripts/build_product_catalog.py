@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 from collections import Counter
 from datetime import date
 from pathlib import Path
+
+from source_freeze import verify_external_sources
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +16,8 @@ KB = Path("/Users/mac/Documents/juhao数据库/企业知识库")
 MALL = KB / "商城系统"
 SQL_SOURCE = Path("/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-10_02-41-52_mysql_data.sql")
 OUT = ROOT / "content" / "governance"
+RUNTIME = ROOT / "content" / "runtime"
+PREVIEW_DATE = "2026-07-14"
 
 TOPICS = [
     ("射灯", "spotlights"),
@@ -30,6 +35,11 @@ TOPICS = [
 PUBLISH_LIMITS = {
     "射灯": 6,
     "家居顶灯": 6,
+}
+
+ADDITIONAL_CANDIDATES = {
+    "家居智能设备": ["11689", "11691", "11694", "11695", "11696", "665", "664", "587"],
+    "射灯": ["6692", "10505", "10506", "10507", "10508"],
 }
 
 CASES = [
@@ -83,13 +93,23 @@ PAGE_SOURCE_FILES = [
     ROOT / "app" / "_data" / "pages.ts",
     ROOT / "app" / "_data" / "contract-pages.ts",
 ]
-KNOWLEDGE_ARTICLE_SOURCE = ROOT / "content" / "knowledge-articles.ts"
-COMPANY_NEWS_SOURCE = ROOT / "content" / "company-news.ts"
+KNOWLEDGE_ARTICLE_SOURCE = OUT / "knowledge-articles.generated.json"
+COMPANY_NEWS_SOURCE = OUT / "company-news-source.json"
+HELP_ARTICLE_INVENTORY = OUT / "help-article-inventory.json"
+PRODUCT_CANDIDATES_OUTPUT = OUT / "product-candidates.json"
+RUNTIME_LEDGER_OUTPUT = RUNTIME / "publication-ledger.json"
 
 TOPIC_ARTICLE_RELATIONS = {
-    "spotlights": ["/news/downlight-vs-spotlight", "/news/beam-angle-guide", "/news/spotlight-wall-washing", "/news/layered-lighting-design"],
-    "ceiling-lights": ["/news/layered-lighting-design", "/news/color-temperature-guide", "/news/color-rendering-index", "/news/temporal-light-modulation"],
-    "smart-home-devices": ["/news/led-dimming-compatibility", "/news/led-driver-constant-voltage-current", "/news/ip-rating-wet-spaces"],
+    "spotlights": ["/news/downlight-vs-spotlight", "/news/beam-angle-guide", "/news/spotlight-wall-washing", "/news/glare-control-ugr", "/news/color-tolerance-duv"],
+    "ceiling-lights": ["/news/layered-lighting-design", "/news/color-temperature-guide", "/news/color-rendering-index", "/news/temporal-light-modulation", "/news/home-lighting-guide", "/news/home-lighting-selection-checklist", "/news/ceiling-fan-light-guide"],
+    "new-chinese": ["/news/chinese-style-chandelier-guide", "/news/dining-table-lighting"],
+    "art-lights": ["/news/art-lighting-guide", "/news/glare-control-ugr"],
+    "crystal-chandeliers": ["/news/crystal-chandelier-guide", "/news/dining-table-lighting"],
+    "linear-lighting": ["/news/led-strip-design-installation", "/news/led-driver-constant-voltage-current"],
+    "switches": ["/news/switch-panels-bathroom-heaters", "/news/smart-lighting-scene-control"],
+    "outdoor-lighting": ["/news/ip-rating-wet-spaces", "/news/blue-light-photobiological-safety"],
+    "project-custom": ["/news/ies-photometric-file", "/news/commercial-lighting-guide"],
+    "smart-home-devices": ["/news/smart-lighting-scene-control", "/news/led-dimming-compatibility", "/news/led-driver-constant-voltage-current"],
 }
 
 TOPIC_CASE_RELATIONS = {
@@ -110,6 +130,7 @@ GOVERNANCE_FIELDS = {
     "seo_candidate",
     "searchable",
     "indexable",
+    "index_eligible",
     "canonical_slug",
     "published_at",
     "image_rights_status",
@@ -118,9 +139,31 @@ GOVERNANCE_FIELDS = {
     "related_articles",
     "related_routes",
     "content_scope",
+    "source_locator",
+    "source_sha256",
+    "previewed_at",
+    "og_image",
+    "media_authorization_batch_id",
+    "candidate_reason",
+    "route_state",
+    "publication_blockers",
+    "source_file",
+    "source_hash",
+    "stock",
+    "delivery",
+    "warranty",
+    "sale_time",
 }
 
 ISO_DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})")
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def kb_relative(path: Path) -> str:
+    return str(path.relative_to(KB))
 
 
 def iso_date(value: object) -> str | None:
@@ -301,7 +344,8 @@ def product_record(topic: str, topic_slug: str, stem: str, label: str, departmen
         "updated_at": latest_date(fields.get("上架时间"), fields.get("创建时间"), sql["sale_time"], sql["create_time"]),
         "seo_slug": f"/products/{topic_slug}/{source_id}",
         "legacy_url": "",
-        "source_file": str(path),
+        "source_file": kb_relative(path),
+        "source_hash": sha256_file(path),
         "primary_image": images[0],
         "category": fields.get("分类", ""),
         "sale_time": sql["sale_time"],
@@ -334,6 +378,40 @@ def build_products(goods: dict[str, dict[str, str]], departments: dict[str, str]
             used_candidates.add(record["source_id"])
             if sum(item["topic"] == topic for item in candidate_pool) == 10:
                 break
+    for topic, source_ids in ADDITIONAL_CANDIDATES.items():
+        topic_slug = next(slug for name, slug in TOPICS if name == topic)
+        for source_id in source_ids:
+            matches = list((MALL / "商品说明").glob(f"*_{source_id}.md"))
+            if len(matches) != 1:
+                raise ValueError(f"candidate {source_id}: expected one product markdown, found {len(matches)}")
+            stem = matches[0].stem
+            title_match = re.search(r"^# 商品说明：(.+)$", matches[0].read_text(encoding="utf-8"), re.MULTILINE)
+            label = title_match.group(1).strip() if title_match else stem.rsplit("_", 1)[0]
+            record = product_record(topic, topic_slug, stem, label, departments, goods)
+            if not record:
+                raise ValueError(f"candidate {source_id}: product source did not pass minimum source parsing")
+            record["publishable"] = False
+            record["machine_status"] = "needs_review"
+            record["fact_status"] = "候选资料存在，关键发布条件未满足"
+            if source_id in {"6692", "10505", "10506", "10507", "10508"}:
+                record["candidate_reason"] = "JH31L331 系列存在未解析规格行，型号与规格映射未确认。"
+                record["publication_blockers"] = [
+                    "unresolved_variant_mapping",
+                    "undefined_spec_rows",
+                    "verified_optics_dimensions_driver_missing",
+                    "media_rights_unverified",
+                ]
+            else:
+                record["candidate_reason"] = "智能设备缺少结构化参数、协议兼容、部署条件与售后边界。"
+                record["publication_blockers"] = [
+                    "structured_parameters_missing",
+                    "protocol_compatibility_unverified",
+                    "deployment_support_boundary_missing",
+                    "media_rights_unverified",
+                ]
+            record["route_state"] = "candidate_only"
+            candidate_pool.append(record)
+            used_candidates.add(source_id)
     published: list[dict] = []
     for topic, _ in TOPICS:
         limit = PUBLISH_LIMITS.get(topic, 3)
@@ -376,7 +454,8 @@ def build_cases(article_dates: dict[str, str]) -> list[dict]:
             "updated_at": article_dates.get(str(source_id), "unknown"),
             "seo_slug": f"/cases/{slug}",
             "legacy_url": "",
-            "source_file": str(matches[0]),
+            "source_file": kb_relative(matches[0]),
+            "source_hash": sha256_file(matches[0]),
             "primary_image": body_images[0] if body_images else cover_image,
             "category": case_type,
             "sale_time": stage,
@@ -414,11 +493,11 @@ def direct_page_type(route: str) -> str:
 
 def page_source(route: str, source_file: Path) -> tuple[str, str, str]:
     if route == "/products":
-        return "knowledge_base_topic_indexes+mall_sql", "products", str(MALL / "商品专题分类")
+        return "knowledge_base_topic_indexes+mall_sql", "products", "content/governance/product-candidates.json"
     if route == "/cases":
-        return "knowledge_base_help_articles", "199,220,226,228,229,231", str(MALL / "帮助文章")
+        return "knowledge_base_help_articles", "199,220,226,228,229,231", "content/governance/help-article-inventory.json"
     if route == "/about/history":
-        return "knowledge_base_company_news", "149,160,167,184,185,188,192,205,223,224,225,232", str(MALL / "帮助文章")
+        return "knowledge_base_company_news", "149,160,167,184,185,188,192,205,223,224,225,232", "content/governance/help-article-inventory.json"
     return "repository_content", route.removeprefix("/") or "home", str(source_file.relative_to(ROOT))
 
 
@@ -428,67 +507,30 @@ def normalize_related_href(href: str) -> str | None:
     return href.split("?", 1)[0].split("#", 1)[0]
 
 
-def top_level_ts_objects(source: str, marker: str) -> list[str]:
-    section = source.split(marker, 1)[1]
-    blocks: list[str] = []
-    start: int | None = None
-    depth = 0
-    in_string = False
-    escaped = False
-    for index, char in enumerate(section):
-        if escaped:
-            escaped = False
-            continue
-        if char == "\\" and in_string:
-            escaped = True
-            continue
-        if char == '"':
-            in_string = not in_string
-            continue
-        if in_string:
-            continue
-        if char == "{":
-            if depth == 0:
-                start = index
-            depth += 1
-        elif char == "}" and depth:
-            depth -= 1
-            if depth == 0 and start is not None:
-                blocks.append(section[start:index + 1])
-                start = None
-        elif char == "]" and depth == 0:
-            break
-    return blocks
-
-
 def knowledge_article_records() -> list[dict]:
-    source = KNOWLEDGE_ARTICLE_SOURCE.read_text(encoding="utf-8")
     rows: list[dict] = []
-    for block in top_level_ts_objects(source, "const seeds: KnowledgeArticleSeed[] = ["):
-        def field(name: str) -> str:
-            match = re.search(rf'\b{name}:\s*"([^"]+)"', block)
-            if not match:
-                raise ValueError(f"knowledge article missing {name}")
-            return match.group(1)
-
-        slug = field("slug")
+    for item in json.loads(KNOWLEDGE_ARTICLE_SOURCE.read_text(encoding="utf-8")):
+        slug = item["slug"]
         route = f"/news/{slug}"
-        source_path = field("sourcePath")
-        source_key = field("sourceKey")
-        reviewed_at = field("reviewedAt")
-        source_checked_at = field("sourceCheckedAt")
+        source_key = item["sourceKey"]
+        reviewed_at = item["reviewedAt"]
+        source_checked_at = item["sourceCheckedAt"]
         related_routes = unique([
-            normalized
-            for href in re.findall(r'\bhref:\s*"([^"]+)"', block)
-            if (normalized := normalize_related_href(href))
+            normalized for related in [item["topic"], *item.get("additionalRelated", [])]
+            if (normalized := normalize_related_href(related["href"]))
+        ] + [
+            "/products",
+            "/contact",
         ])
         rows.append({
             "source": "企业知识库专业灯光知识 + JUHAO 审核包",
             "source_id": source_key,
             "source_type": "knowledge_base_professional_article_review",
-            "source_path": source_path,
+            "source_path": "content/governance/knowledge-articles.generated.json",
+            "source_locator": item["sourcePath"],
+            "source_sha256": item["sourceHash"],
             "content_type": "文章",
-            "title": field("title"),
+            "title": item["title"],
             "route": route,
             "review_status": "approved",
             "reviewer": "JUHAO",
@@ -497,11 +539,15 @@ def knowledge_article_records() -> list[dict]:
             "publish_status": "published",
             "seo_candidate": True,
             "searchable": True,
+            "index_eligible": True,
             "indexable": False,
             "canonical_slug": route,
             "published_at": "unknown",
             "updated_at": reviewed_at,
             "image_rights_status": "approved",
+            "previewed_at": PREVIEW_DATE,
+            "og_image": "",
+            "media_authorization_batch_id": "local-original-approved",
             "related_products": [item for item in related_routes if item.startswith("/products/")],
             "related_cases": [],
             "related_articles": [],
@@ -514,11 +560,14 @@ def knowledge_article_records() -> list[dict]:
 
 
 def company_news_records() -> list[dict]:
-    source = COMPANY_NEWS_SOURCE.read_text(encoding="utf-8")
-    seed_json = source.split("const seeds = ", 1)[1].split("] as const satisfies", 1)[0] + "]"
+    help_by_id = {
+        str(item["source_id"]): item
+        for item in json.loads(HELP_ARTICLE_INVENTORY.read_text(encoding="utf-8"))
+    }
     rows: list[dict] = []
-    for item in json.loads(seed_json):
+    for item in json.loads(COMPANY_NEWS_SOURCE.read_text(encoding="utf-8")):
         route = item["path"]
+        help_item = help_by_id[str(item["source_id"])]
         related_routes = unique([
             normalized
             for related in item["related"]
@@ -529,7 +578,9 @@ def company_news_records() -> list[dict]:
             "source": "企业商城资讯 SQL",
             "source_id": str(item["source_id"]),
             "source_type": item["source_type"],
-            "source_path": item["source_path"],
+            "source_path": "content/governance/help-article-inventory.json",
+            "source_locator": help_item["source_path"],
+            "source_sha256": help_item["source_hash"],
             "content_type": "文章",
             "title": item["title"],
             "route": route,
@@ -540,6 +591,7 @@ def company_news_records() -> list[dict]:
             "publish_status": "published",
             "seo_candidate": True,
             "searchable": True,
+            "index_eligible": False,
             "indexable": False,
             "canonical_slug": route,
             "published_at": published_at,
@@ -684,7 +736,9 @@ def static_route_records(published: list[dict], cases: list[dict], previous_by_r
             "source": "knowledge_base_topic_index+repository_topic_guide",
             "source_id": slug,
             "source_type": "knowledge_base_topic_index+repository_topic_guide",
-            "source_path": str(MALL / "商品专题分类" / f"{topic}_专题索引.md"),
+            "source_path": "content/governance/product-candidates.json",
+            "source_locator": f"商城系统/商品专题分类/{topic}_专题索引.md",
+            "source_sha256": sha256_file(MALL / "商品专题分类" / f"{topic}_专题索引.md"),
             "content_type": "产品专题",
             "title": topic,
             "route": route,
@@ -786,28 +840,52 @@ def apply_dynamic_governance(products: list[dict], published: list[dict], cases:
 
     for item in products:
         route_published = item["source_id"] in published_ids
+        item.setdefault(
+            "candidate_reason",
+            "已通过当前机器门禁并进入私有预览。" if route_published else "专题候选池记录尚未通过全部发布门禁。",
+        )
+        item.setdefault(
+            "publication_blockers",
+            ["human_product_review"] if route_published else ["machine_review_incomplete", "human_product_review", "media_rights_signoff"],
+        )
+        item["route_state"] = "private_preview" if route_published else "candidate_only"
+        item["image_authorization"] = (
+            "当前站点媒体批次授权已登记；产品事实仍待负责人签核"
+            if route_published
+            else "公开使用授权待核验"
+        )
         dates = stable_route_dates(previous_by_route, item["seo_slug"], item["updated_at"], item["updated_at"])
         item["publish_date"] = dates["published_at"] if route_published and dates["published_at"] != "unknown" else ""
         item.update({
             "route": item["seo_slug"],
             "source_type": "knowledge_base_product_markdown+mall_sql",
-            "source_path": item["source_file"],
+            "source_path": "content/governance/product-candidates.json",
+            "source_locator": item["source_file"],
+            "source_sha256": item["source_hash"],
             "reviewer": "unknown",
             "reviewed_at": "unknown",
             "last_verified_at": dates["last_verified_at"],
             "publish_status": "published" if route_published else "needs_review",
             "seo_candidate": route_published,
             "searchable": route_published,
+            "index_eligible": False,
             "indexable": False,
             "canonical_slug": item["seo_slug"],
             "published_at": dates["published_at"] if route_published else "unknown",
             "updated_at": dates["updated_at"],
-            "image_rights_status": "needs_review",
+            "image_rights_status": "approved" if route_published else "needs_review",
+            "previewed_at": PREVIEW_DATE if route_published else "unknown",
+            "og_image": "",
+            "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341" if route_published else "",
             "related_products": [route for route in published_by_topic.get(item["topic_slug"], []) if route != item["seo_slug"]][:3] if route_published else [],
             "related_cases": TOPIC_CASE_RELATIONS.get(item["topic_slug"], []) if route_published else [],
             "related_articles": TOPIC_ARTICLE_RELATIONS.get(item["topic_slug"], []) if route_published else [],
             "related_routes": [f"/products/{item['topic_slug']}", "/products", "/contact"],
-            "content_scope": "产品状态、结构化字段和素材来源渠道已通过现有机器门禁；人工审核人、审核时间和媒体公开授权仍待登记。",
+            "content_scope": (
+                "产品状态、结构化字段和当前页面素材已通过现有门禁；媒体批次授权已登记，产品事实与人工审核记录仍待负责人签核。"
+                if route_published
+                else "候选产品尚未进入页面显示集；机器门禁、人工事实审核与媒体使用范围仍待逐项确认。"
+            ),
         })
 
     for item in cases:
@@ -816,32 +894,67 @@ def apply_dynamic_governance(products: list[dict], published: list[dict], cases:
         related_article = CASE_ARTICLE_RELATIONS.get(source_id, "")
         dates = stable_route_dates(previous_by_route, item["seo_slug"], item["updated_at"], item["updated_at"])
         item["publish_date"] = dates["published_at"] if dates["published_at"] != "unknown" else ""
+        item["image_authorization"] = "当前站点媒体批次授权已登记；项目事实与页面选用仍待负责人签核"
         item.update({
             "route": item["seo_slug"],
             "source_type": "knowledge_base_project_article",
-            "source_path": item["source_file"],
+            "source_path": "content/governance/help-article-inventory.json",
+            "source_locator": item["source_file"],
+            "source_sha256": item["source_hash"],
             "reviewer": "unknown",
             "reviewed_at": "unknown",
             "last_verified_at": dates["last_verified_at"],
             "publish_status": "published",
             "seo_candidate": True,
             "searchable": True,
+            "index_eligible": False,
             "indexable": False,
             "canonical_slug": item["seo_slug"],
             "published_at": dates["published_at"],
             "updated_at": dates["updated_at"],
-            "image_rights_status": "needs_review",
+            "image_rights_status": "approved",
+            "previewed_at": PREVIEW_DATE,
+            "og_image": "",
+            "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341",
             "related_products": [],
             "related_cases": [],
             "related_articles": [related_article] if related_article else [],
             "related_routes": ["/cases", solution_route, "/contact"],
-            "content_scope": "来源文章记录的项目阶段已核对；施工、供货、交付、完工、最终产品与媒体公开授权仍待负责人签核，不从图片推断空间。",
+            "content_scope": "来源文章记录的项目阶段已核对，当前站点媒体批次授权已登记；施工、供货、交付、完工、最终产品与页面选用仍待负责人签核，不从图片推断空间。",
         })
+
+
+def apply_publication_interface(ledger: list[dict]) -> None:
+    og_path = OUT / "route-og.json"
+    og_by_route = {
+        item["route"]: item["path"]
+        for item in json.loads(og_path.read_text(encoding="utf-8"))
+    } if og_path.exists() else {}
+    for item in ledger:
+        item["index_eligible"] = (
+            item["publish_status"] == "published"
+            and bool(item["seo_candidate"])
+            and item["review_status"] == "approved"
+            and item["reviewer"] != "unknown"
+            and item["reviewed_at"] != "unknown"
+            and item["image_rights_status"] in {"approved", "not_applicable"}
+        )
+        item["indexable"] = False
+        item["published_at"] = ""
+        if not item.get("source_sha256"):
+            source_path = ROOT / item.get("source_path", "")
+            item["source_sha256"] = sha256_file(source_path) if source_path.is_file() else "unknown"
+        item.setdefault("previewed_at", PREVIEW_DATE if item["publish_status"] == "published" else "unknown")
+        item["og_image"] = og_by_route.get(item["route"], item.get("og_image", ""))
+        item.setdefault("media_authorization_batch_id", "")
 
 
 def write_outputs(products: list[dict], published: list[dict], cases: list[dict], static_routes: list[dict]) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    RUNTIME.mkdir(parents=True, exist_ok=True)
     ledger = products + cases + static_routes
+    PRODUCT_CANDIDATES_OUTPUT.write_text(json.dumps(products, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    apply_publication_interface(ledger)
     excluded_flat_fields = {"parameters", "gallery", "installation_notes", "publishable", "quality_score"}
     flat_fields = list(dict.fromkeys(
         key
@@ -859,6 +972,25 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
     (OUT / "content-ledger.json").write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     public_products = [{key: value for key, value in item.items() if key not in GOVERNANCE_FIELDS} for item in published]
     (OUT / "published-products.json").write_text(json.dumps(public_products, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    runtime_fields = [
+        "route",
+        "content_type",
+        "title",
+        "publish_status",
+        "seo_candidate",
+        "searchable",
+        "index_eligible",
+        "indexable",
+        "canonical_slug",
+        "published_at",
+        "updated_at",
+        "previewed_at",
+        "og_image",
+        "media_authorization_batch_id",
+        "source_sha256",
+    ]
+    runtime_ledger = [{field: item.get(field, "") for field in runtime_fields} for item in ledger]
+    RUNTIME_LEDGER_OUTPUT.write_text(json.dumps(runtime_ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     distribution = Counter(item["topic"] for item in published)
     completeness = [int(item["parameter_completeness"].rstrip("%")) for item in published]
@@ -877,9 +1009,9 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
         "",
         f"- 统一发布台账：{len(ledger)} 条记录，其中 {sum(item['publish_status'] == 'published' for item in ledger)} 条当前私有预览路由、{sum(item['indexable'] for item in ledger)} 条可索引路由。",
         f"- 路由覆盖：{len(static_routes)} 条静态/功能路由，{len(published)} 条产品详情，{len(cases)} 条案例详情。",
-        f"- 待治理：{sum(item['reviewer'] == 'unknown' for item in ledger)} 条未登记审核人，{sum(item['image_rights_status'] in {'needs_review', 'unknown'} for item in ledger)} 条未完成媒体公开授权确认。",
-        f"- 审核台账：{len(products)} 款候选，保持每个专题 10 款。",
-        f"- 私有预览：{len(published)} 款；产品 ID 唯一，无跨专题重复发布。人工审核与媒体授权完成前不进入公开 SEO。",
+        f"- 待治理：{sum(item['reviewer'] == 'unknown' for item in ledger)} 条未登记审核人，{sum(item['image_rights_status'] in {'needs_review', 'unknown'} for item in ledger)} 条仍需页面级媒体状态核对；批次授权不替代内容事实审核。",
+        f"- 审核台账：{len(products)} 款候选；在原有专题候选池基础上增加 8 款智能设备和 5 款 JH31L331 证据候选。",
+        f"- 私有预览：{len(published)} 款；产品 ID 唯一，无跨专题重复发布。当前站点媒体批次授权已登记，产品事实人工审核完成前不进入公开 SEO。",
         "- 深专题发布上限：射灯、家居顶灯各 6 款；其余专题各 3 款。",
         f"- 参数完整度：最低 {min(completeness)}%，平均 {sum(completeness) / len(completeness):.1f}%。",
         "- 在售门禁：`isSale=1`、`goodsStatus=1`、`dataFlag=1`。",
@@ -898,6 +1030,7 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
 
 
 def main() -> None:
+    verify_external_sources({"help", "products", "topics", "mall_sql"})
     previous_by_route = load_previous_ledger()
     goods = load_goods()
     article_dates = load_article_dates()
@@ -906,6 +1039,27 @@ def main() -> None:
     cases = build_cases(article_dates)
     apply_dynamic_governance(products, published, cases, previous_by_route)
     static_routes = static_route_records(published, cases, previous_by_route)
+    projected_ledger = products + cases + static_routes
+    expected_metrics = {
+        "records": 200,
+        "published": 119,
+        "searchable": 101,
+        "seo_candidates": 107,
+        "knowledge_articles": 33,
+        "all_articles": 41,
+        "news_pages": 7,
+    }
+    actual_metrics = {
+        "records": len(projected_ledger),
+        "published": sum(item["publish_status"] == "published" for item in projected_ledger),
+        "searchable": sum(item["publish_status"] == "published" and item["searchable"] for item in projected_ledger),
+        "seo_candidates": sum(item["seo_candidate"] for item in projected_ledger),
+        "knowledge_articles": len(knowledge_article_records()),
+        "all_articles": sum(item["content_type"] == "文章" for item in projected_ledger),
+        "news_pages": 1 + sum(item["content_type"] == "内容分页" for item in projected_ledger),
+    }
+    if actual_metrics != expected_metrics:
+        raise ValueError(f"publication snapshot drifted: expected={expected_metrics}, actual={actual_metrics}")
     write_outputs(products, published, cases, static_routes)
     print(json.dumps({
         "candidate_products": len(products),
@@ -913,6 +1067,7 @@ def main() -> None:
         "cases": len(cases),
         "static_routes": len(static_routes),
         "indexable_routes": sum(item["indexable"] for item in products + cases + static_routes),
+        "publication_metrics": actual_metrics,
         "distribution": Counter(item["topic"] for item in published),
     }, ensure_ascii=False))
 

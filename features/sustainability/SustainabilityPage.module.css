@@ -11,8 +11,15 @@
   align-items: flex-end;
   padding: 100px var(--page-gutter);
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero::before {
@@ -20,11 +27,13 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, #090b0af2 0%, #090b0aa5 54%, #090b0a30);
+  z-index: 1;
 }
 
 .heroContent {
   position: relative;
   max-width: 1060px;
+  z-index: 2;
 }
 
 .eyebrow {

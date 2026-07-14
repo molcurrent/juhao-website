@@ -18,10 +18,15 @@ export const REQUIRED_PUBLICATION_FIELDS = [
   "publish_status",
   "seo_candidate",
   "searchable",
+  "index_eligible",
   "indexable",
   "canonical_slug",
   "published_at",
   "updated_at",
+  "source_sha256",
+  "previewed_at",
+  "og_image",
+  "media_authorization_batch_id",
   "image_rights_status",
   "related_products",
   "related_cases",
@@ -32,10 +37,12 @@ const REVIEW_STATUSES = new Set(["approved", "needs_review", "rejected"]);
 const PUBLISH_STATUSES = new Set(["draft", "needs_review", "approved", "published", "rejected", "archived"]);
 const IMAGE_RIGHTS_STATUSES = new Set(["approved", "needs_review", "unknown", "not_applicable"]);
 const RELATED_FIELDS = ["related_products", "related_cases", "related_articles"];
-const DATE_FIELDS = ["reviewed_at", "last_verified_at", "published_at", "updated_at"];
+const DATE_FIELDS = ["reviewed_at", "last_verified_at", "published_at", "updated_at", "previewed_at"];
 
 function hasValue(record, field) {
-  if (!(field in record) || record[field] === null || record[field] === undefined || record[field] === "") return false;
+  if (!(field in record) || record[field] === null || record[field] === undefined) return false;
+  if (["published_at", "previewed_at", "og_image", "media_authorization_batch_id"].includes(field)) return true;
+  if (record[field] === "") return false;
   if (RELATED_FIELDS.includes(field)) return Array.isArray(record[field]);
   return true;
 }
@@ -59,6 +66,7 @@ export function validateContentLedger(records) {
     }
 
     if (typeof record.indexable !== "boolean") errors.push(`${label}: indexable must be boolean`);
+    if (typeof record.index_eligible !== "boolean") errors.push(`${label}: index_eligible must be boolean`);
     if (typeof record.seo_candidate !== "boolean") errors.push(`${label}: seo_candidate must be boolean`);
     if (typeof record.searchable !== "boolean") errors.push(`${label}: searchable must be boolean`);
     if (typeof record.route !== "string" || !record.route.startsWith("/")) errors.push(`${label}: route must be root-relative`);
@@ -70,8 +78,10 @@ export function validateContentLedger(records) {
 
     for (const field of DATE_FIELDS) {
       const value = record[field];
+      if (field === "published_at" && value === "") continue;
       if (value !== "unknown" && !/^\d{4}-\d{2}-\d{2}$/.test(value)) errors.push(`${label}: invalid ${field} ${value}`);
     }
+    if (!/^[a-f0-9]{64}$/.test(record.source_sha256 || "")) errors.push(`${label}: source_sha256 must be SHA-256`);
     for (const field of RELATED_FIELDS) {
       if (!Array.isArray(record[field])) continue;
       for (const route of record[field]) {
@@ -81,19 +91,22 @@ export function validateContentLedger(records) {
     }
 
     routeCounts.set(record.route, (routeCounts.get(record.route) ?? 0) + 1);
-    if (record.indexable) canonicalCounts.set(record.canonical_slug, (canonicalCounts.get(record.canonical_slug) ?? 0) + 1);
-    if (record.indexable && record.publish_status !== "published") errors.push(`${label}: indexable record must currently be published`);
+    if (record.index_eligible) canonicalCounts.set(record.canonical_slug, (canonicalCounts.get(record.canonical_slug) ?? 0) + 1);
+    if (record.index_eligible && record.publish_status !== "published") errors.push(`${label}: index_eligible record must currently be published`);
     if (record.searchable && record.publish_status !== "published") errors.push(`${label}: searchable record must currently be published`);
-    if (record.indexable && !record.seo_candidate) errors.push(`${label}: indexable record must be an seo_candidate`);
-    if (record.indexable && !record.searchable) errors.push(`${label}: indexable record must be searchable`);
-    if (record.indexable && record.review_status !== "approved") errors.push(`${label}: indexable record must have approved review_status`);
-    if (record.indexable && record.reviewer === "unknown") errors.push(`${label}: indexable record must name a reviewer`);
-    if (record.indexable && record.reviewed_at === "unknown") errors.push(`${label}: indexable record must have reviewed_at`);
-    if (record.indexable && !["approved", "not_applicable"].includes(record.image_rights_status)) errors.push(`${label}: indexable record has unapproved image rights`);
+    if (record.index_eligible && !record.seo_candidate) errors.push(`${label}: index_eligible record must be an seo_candidate`);
+    if (record.index_eligible && record.review_status !== "approved") errors.push(`${label}: index_eligible record must have approved review_status`);
+    if (record.index_eligible && record.reviewer === "unknown") errors.push(`${label}: index_eligible record must name a reviewer`);
+    if (record.index_eligible && record.reviewed_at === "unknown") errors.push(`${label}: index_eligible record must have reviewed_at`);
+    if (record.index_eligible && !["approved", "not_applicable"].includes(record.image_rights_status)) errors.push(`${label}: index_eligible record has unapproved image rights`);
+    if (record.indexable && !record.index_eligible) errors.push(`${label}: indexable record must be index_eligible`);
+    if (record.published_at !== "") errors.push(`${label}: published_at must stay empty before public launch`);
+    if (record.publish_status === "published" && !/^\d{4}-\d{2}-\d{2}$/.test(record.previewed_at)) errors.push(`${label}: published preview requires previewed_at`);
+    if (record.publish_status === "published" && !record.og_image.startsWith("/og/")) errors.push(`${label}: published preview requires generated og_image`);
   });
 
   for (const [route, count] of routeCounts) if (count > 1) errors.push(`${route}: duplicate route (${count})`);
-  for (const [canonical, count] of canonicalCounts) if (count > 1) errors.push(`${canonical}: duplicate indexable canonical (${count})`);
+  for (const [canonical, count] of canonicalCounts) if (count > 1) errors.push(`${canonical}: duplicate index_eligible canonical (${count})`);
 
   const published = records.filter((record) => record.publish_status === "published");
   const indexable = records.filter((record) => record.indexable);
@@ -105,6 +118,7 @@ export function validateContentLedger(records) {
       published_routes: published.length,
       seo_candidates: records.filter((record) => record.seo_candidate).length,
       searchable_routes: records.filter((record) => record.publish_status === "published" && record.searchable).length,
+      index_eligible_routes: records.filter((record) => record.index_eligible).length,
       indexable_routes: indexable.length,
       reviewer_unknown: records.filter((record) => record.reviewer === "unknown").length,
       reviewed_at_unknown: records.filter((record) => record.reviewed_at === "unknown").length,

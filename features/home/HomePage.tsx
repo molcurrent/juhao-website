@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { PageLoader } from "@/components/motion/PageLoader";
 import { HeroDisplacementCanvas } from "@/components/motion/HeroDisplacementCanvas";
 import { AccessibleCarousel } from "@/components/ui/AccessibleCarousel";
 import { consultationHref, consultationOptions } from "@/lib/consultation";
@@ -66,7 +65,7 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
   const hero = heroSlides[activeHero];
 
   return (
-    <><PageLoader/><SiteHeader home /><main id="main-content">
+    <><SiteHeader home /><main id="main-content">
 
       <section className="hero" id="top">
         <div className="heroImage" style={{ backgroundImage: `url(${hero.image})` }} />
@@ -85,6 +84,12 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
         <a className="scroll" href="#about"><span>SCROLL</span><i /></a>
       </section>
 
+      <aside className="heroProofPeek" aria-label="首页已核验内容">
+        <span>已核验内容</span>
+        <Link href="/products">{publishedProductCount} 个产品详情</Link>
+        <Link href="/cases">6 个阶段透明项目档案</Link>
+      </aside>
+
       <section className="intro section" id="about">
         <div className="sectionNo">01 / BRAND</div>
         <div className="introLead" data-reveal><p className="eyebrow dark"><span /> ABOUT JUHAO</p><h2>让健康好光<br/>成为美好生活的底色</h2></div>
@@ -93,7 +98,7 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
           <Link href="/products"><strong>{publishedProductCount}</strong><span>私有预览产品详情</span><small>企业商城 + 内容台账</small></Link>
           <Link href="/cases"><strong>6</strong><span>阶段透明的项目档案</span><small>企业资料 #199 / #220 / #226 / #228 / #229 / #231</small></Link>
           <Link href="/about/history"><strong>2020—2026</strong><span>5 个发展资料节点</span><small>企业资料 #149 / #160 / #192 / #205 / #224</small></Link>
-          <Link href="/about/history"><strong>5</strong><span>有来源的品牌荣誉</span><small>企业资料 #167 / #184 / #223 / #225</small></Link>
+          <Link href="/news"><strong>33</strong><span>已审核知识文章</span><small>JUHAO 内部审核</small></Link>
         </div>
       </section>
 

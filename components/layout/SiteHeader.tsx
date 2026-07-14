@@ -5,14 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { navigation } from "@/content/navigation";
-import { gsap, useGSAP } from "@/lib/motion/gsap";
 import { consultationHref } from "@/lib/consultation";
 import styles from "./SiteHeader.module.css";
 
 export function SiteHeader({ home = false }: { home?: boolean }) {
   const pathname = usePathname();
   const drawer = useRef<HTMLElement>(null);
-  const backdrop = useRef<HTMLButtonElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
   const menuWasOpen = useRef(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,12 +79,6 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
     setMobileOpen(null);
   }
 
-  useGSAP(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    gsap.to(drawer.current, { x: menuOpen ? 0 : "100%", duration: reduced ? 0 : 0.55, ease: "power3.inOut" });
-    gsap.to(backdrop.current, { autoAlpha: menuOpen ? 1 : 0, duration: reduced ? 0 : 0.3, ease: "power2.out" });
-  }, { dependencies: [menuOpen] });
-
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.solid : ""}`} onMouseLeave={() => setDesktopOpen(null)}>
@@ -106,8 +98,8 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
         <Link className={styles.cta} href={consultationHref("project", "header")} onClick={closeNavigation}>提交项目需求 <span>↗</span></Link>
         <button ref={menuButton} className={`${styles.menuButton} ${menuOpen ? styles.menuOpen : ""}`} type="button" onClick={() => menuOpen ? closeNavigation() : setMenuOpen(true)} aria-controls="mobile-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? "关闭导航" : "打开导航"}><i /><i /></button>
       </header>
-      <button ref={backdrop} className={`${styles.backdrop} ${menuOpen ? styles.backdropOpen : ""}`} type="button" onClick={closeNavigation} aria-label="关闭导航遮罩" aria-hidden="true" tabIndex={-1} />
-      <nav ref={drawer} id="mobile-navigation" className={styles.drawer} aria-label="移动端导航" aria-hidden={!menuOpen}>
+      <button className={`${styles.backdrop} ${menuOpen ? styles.backdropOpen : ""}`} type="button" onClick={closeNavigation} aria-label="关闭导航遮罩" aria-hidden="true" tabIndex={-1} />
+      <nav ref={drawer} id="mobile-navigation" className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""}`} aria-label="移动端导航" aria-hidden={!menuOpen}>
         {navigation.map((item) => <div className={styles.mobileGroup} key={item.href}>
           <div className={styles.mobileRow}><Link href={item.href} onClick={closeNavigation}>{item.label}</Link>{item.children && <button type="button" onClick={() => setMobileOpen((open) => open === item.href ? null : item.href)} aria-expanded={mobileOpen === item.href} aria-label={`${mobileOpen === item.href ? "收起" : "展开"}${item.label}子菜单`}>{mobileOpen === item.href ? "−" : "+"}</button>}</div>
           {item.children && <div className={`${styles.mobileChildren} ${mobileOpen === item.href ? styles.mobileChildrenOpen : ""}`} inert={mobileOpen !== item.href}><div>{item.children.map((child) => <Link href={child.href} key={child.href} onClick={closeNavigation}>{child.label}</Link>)}</div></div>}

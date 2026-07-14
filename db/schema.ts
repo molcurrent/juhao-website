@@ -21,9 +21,12 @@ export const consultationLeads = sqliteTable("consultation_leads", {
   notificationStatus: text("notification_status").notNull().default("not_configured"),
   notificationAttempts: integer("notification_attempts").notNull().default(0),
   notificationLastError: text("notification_last_error"),
+  notificationLastAttemptAt: text("notification_last_attempt_at"),
+  notificationNextAttemptAt: text("notification_next_attempt_at"),
   createdAt: text("created_at").notNull(),
   expiresAt: text("expires_at").notNull(),
 }, (table) => [
   index("consultation_leads_created_at_idx").on(table.createdAt),
   index("consultation_leads_notification_status_idx").on(table.notificationStatus),
+  index("consultation_leads_notification_retry_idx").on(table.notificationStatus, table.notificationNextAttemptAt),
 ]);

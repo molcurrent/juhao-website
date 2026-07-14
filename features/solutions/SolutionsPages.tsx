@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { PageData } from "@/app/_data/pages";
+import { consultationHref } from "@/lib/consultation";
 
 import styles from "./SolutionsPages.module.css";
 
@@ -80,12 +81,20 @@ function Breadcrumbs({ current }: { current: string }) {
   );
 }
 
-function RelatedLinks({ items, title }: { items: PageData["related"]; title: string }) {
+function RelatedLinks({
+  items,
+  title,
+  titleId = "solutions-related-title",
+}: {
+  items: PageData["related"];
+  title: string;
+  titleId?: string;
+}) {
   return (
-    <section className={styles.related} aria-labelledby="solutions-related-title">
+    <section className={styles.related} aria-labelledby={titleId}>
       <header data-reveal>
         <p className={styles.kicker}>CONTINUE EXPLORING</p>
-        <h2 id="solutions-related-title">{title}</h2>
+        <h2 id={titleId}>{title}</h2>
       </header>
       <div className={styles.relatedGrid}>
         {items.map((item, index) => (
@@ -194,7 +203,7 @@ export function SolutionsOverviewPage({ page }: PageProps) {
         </div>
         <div data-reveal data-reveal-delay="0.08">
           <p>{page.sections[1]?.text ?? "方案需要同时回应空间体验、安装条件与长期使用。"}</p>
-          <Link href="/contact">提交项目需求 <span aria-hidden="true">↗</span></Link>
+          <Link href={consultationHref("project", "solutions", "overview")}>提交项目需求 <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -204,6 +213,24 @@ export function SolutionsOverviewPage({ page }: PageProps) {
 }
 
 export function HealthyLightPage({ page }: PageProps) {
+  const knowledgeLinks: PageData["related"] = [
+    {
+      href: "/news/blue-light-photobiological-safety",
+      label: "蓝光与光生物安全",
+      text: "理解通用风险框架、资料边界，以及产品声明为何需要检测依据。",
+    },
+    {
+      href: "/news/glare-control-ugr",
+      label: "眩光与防眩",
+      text: "从视线、亮度对比与安装条件理解防眩，而不是只看单一参数。",
+    },
+    {
+      href: "/news/bedroom-night-lighting",
+      label: "卧室与夜间照明",
+      text: "把夜间动线、低亮度活动与直观控制纳入住宅照明规划。",
+    },
+  ];
+
   return (
     <main id="main-content" className={`${styles.page} ${styles.healthyPage}`}>
       <section className={styles.healthyHero} aria-labelledby="healthy-light-title">
@@ -300,6 +327,12 @@ export function HealthyLightPage({ page }: PageProps) {
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        items={knowledgeLinks}
+        title="用已审核知识继续理解健康光"
+        titleId="healthy-knowledge-title"
+      />
 
       <RelatedLinks items={page.related} title="把原则带回真实空间" />
     </main>

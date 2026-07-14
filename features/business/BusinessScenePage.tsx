@@ -1,12 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import type { PageData } from "@/app/_data/pages";
+import { SemanticPicture } from "@/components/media/SemanticPicture";
 import type { BusinessSceneId, SceneResource } from "@/content/scene-resources";
 import { consultationHref } from "@/lib/consultation";
-import { gsap, motionEase, useGSAP } from "@/lib/motion/gsap";
 import styles from "./BusinessScenePage.module.css";
 
 export type { BusinessSceneId } from "@/content/scene-resources";
@@ -150,7 +147,9 @@ function ProductSection({ resources }: { resources: SceneResource[] }) {
           {resources.map((resource, index) => (
             <Link className={styles.productCard} href={resource.href} key={resource.href} data-resource-kind={resource.kind}>
               <div className={styles.productImage}>
-                <Image src={resource.image} alt={resource.title} fill unoptimized sizes="(max-width: 760px) 100vw, 25vw" />
+                {resource.mediaId
+                  ? <SemanticPicture mediaId={resource.mediaId} alt={resource.title} sizes="(max-width: 760px) 100vw, 25vw" />
+                  : <Image src={resource.image} alt={resource.title} fill unoptimized sizes="(max-width: 760px) 100vw, 25vw" />}
               </div>
               <div className={styles.productCopy}>
                 <small>{resource.kind} / {resource.detail} / {String(index + 1).padStart(2, "0")}</small>
@@ -167,38 +166,8 @@ function ProductSection({ resources }: { resources: SceneResource[] }) {
 }
 
 export function BusinessScenePage({ page, sceneId, resources }: BusinessScenePageProps) {
-  const rootRef = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const timeline = gsap.timeline({ defaults: { duration: 0.72, ease: motionEase } });
-      timeline
-        .from(`.${styles.heroMedia}`, { opacity: 0, scale: 1.04, duration: 1.1 })
-        .from(`.${styles.breadcrumbs}, .${styles.eyebrow}`, { opacity: 0, y: 18, stagger: 0.08 }, 0.12)
-        .from(`.${styles.heroContent} h1, .${styles.heroIntro}`, { opacity: 0, y: 34, stagger: 0.1 }, 0.2)
-        .from(`.${styles.sceneLink}`, { opacity: 0, y: 18, stagger: 0.06 }, 0.42)
-        .from(`.${styles.highlightCard}`, { opacity: 0, y: 28, stagger: 0.08 }, 0.54);
-    },
-    { scope: rootRef },
-  );
-
-  useGSAP(
-    () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.from(`.${styles.productCard}`, {
-        opacity: 0,
-        y: 28,
-        duration: 0.65,
-        stagger: 0.08,
-        ease: motionEase,
-      });
-    },
-    { scope: rootRef, dependencies: [resources.length, sceneId], revertOnUpdate: true },
-  );
-
   return (
-    <main className={styles.page} id="main-content" ref={rootRef}>
+    <main className={styles.page} id="main-content">
       <SceneHero page={page} />
       <SceneNavigation sceneId={sceneId} />
       <SolutionHighlights page={page} />
