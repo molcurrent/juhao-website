@@ -25,7 +25,7 @@ export type PageData = {
 
 export const pages: Record<string, PageData> = {
   "products": {
-    path: "/products", label: "产品中心", eyebrow: "PRODUCT CENTER", title: "产品中心", seoTitle: "照明产品中心｜产品专题与选型入口｜钜豪照明", image: "/images/juhao-commercial.webp", type: "page",
+    path: "/products", label: "产品中心", eyebrow: "PRODUCT CENTER", title: "产品中心", seoTitle: "照明产品中心｜产品专题与选型入口｜钜豪照明", image: "/images/jh-products.webp", type: "page",
     description: "浏览钜豪照明射灯、家居顶灯、新中式、艺术灯、水晶吊灯、线性照明、开关电工、户外照明、工程定制与智能设备专题。",
     intro: "以专题组织产品，以审核控制发布。先从空间和使用任务进入，再核对型号、参数、安装条件与资料。",
     highlights: [{ title: "10 个产品专题", text: "当前共 31 个私有产品详情；各专题按审核进度逐款开放。" }, { title: "精选发布", text: "不把内容贫弱、协议不清或型号映射未解决的商品批量生成页面。" }],
@@ -33,7 +33,7 @@ export const pages: Record<string, PageData> = {
     related: [{ label: "照明方案", href: "/solutions", text: "按空间找到对应选型方法。" }, { label: "工程案例", href: "/cases", text: "从真实项目理解应用场景。" }, { label: "进入商城", href: "/mall", text: "前往独立交易与经销商系统。" }],
   },
   "cases": {
-    path: "/cases", label: "工程案例", eyebrow: "PROJECTS & CASES", title: "工程案例与项目动态", seoTitle: "工程案例与项目动态｜酒店·商业·户外照明｜钜豪照明", image: "/images/juhao-public.webp", type: "page",
+    path: "/cases", label: "工程案例", eyebrow: "PROJECTS & CASES", title: "工程案例与项目动态", seoTitle: "工程案例与项目动态｜酒店·商业·户外照明｜钜豪照明", image: "/images/juhao-hero.webp", imageAlt: "原创现代空间照明场景，用于工程案例栏目视觉示意", type: "page",
     description: "浏览钜豪照明酒店、户外亮化与智慧道路项目动态，明确区分签约中标、实施中与已完成案例。",
     intro: "案例中心不复制新闻稿，而是按项目背景、空间任务、照明策略与当前阶段重构内容。",
     highlights: [{ title: "6 个项目档案", text: "签约或中标项目不会包装成已落地案例。" }, { title: "结构化呈现", text: "围绕空间、需求、策略、产品与服务组织项目资料。" }],
@@ -41,15 +41,15 @@ export const pages: Record<string, PageData> = {
     related: [{ label: "酒店照明方案", href: "/solutions/hospitality", text: "了解酒店空间照明方法。" }, { label: "公共照明方案", href: "/solutions/public", text: "了解公共与城市空间照明。" }, { label: "工程项目咨询", href: "/contact?source=cases&scene=project&intent=project-brief", text: "提交项目类型、阶段与需求。" }],
   },
   "about": {
-    path: "/about", label: "关于钜豪", eyebrow: "ABOUT JUHAO", title: "关于钜豪照明", seoTitle: "关于钜豪｜钜豪照明品牌介绍", image: "/images/juhao-home.webp",
+    path: "/about", label: "关于钜豪", eyebrow: "ABOUT JUHAO", title: "关于钜豪照明", seoTitle: "关于钜豪｜钜豪照明品牌介绍", image: "/images/jh-brand.webp",
     description: "了解钜豪照明的品牌理念、业务方向与服务价值，认识品牌围绕健康照明、智能家居与渠道服务的持续探索。",
     intro: "钜豪以健康光环境为出发点，将照明产品、空间设计、智能控制和数字化服务连接起来，为家庭与不同类型空间提供清晰、可落地的光环境思路。",
     highlights: [{title:"健康人居",text:"从视觉舒适、空间层次与日常节律出发思考光。"},{title:"专业方案",text:"围绕住宅、商业、公共与工业空间梳理照明需求。"},{title:"智能协同",text:"让照明与窗帘、环境和安防设备自然联动。"}],
-    sections: [{title:"品牌主张",text:"好房子，光健康。钜豪关注的不只是灯具本身，更关注人在空间里的真实感受。通过合理的亮度、色温、显色与分区控制，让光服务于休息、工作、交流与展示。"},{title:"当前可核对内容",text:"官网当前开放 31 个产品详情、6 个阶段透明项目档案、8 篇钜豪企业与项目资讯和 5 个有来源的发展节点；未确认的产能、网点、荣誉总数和服务区域不作为品牌数据发布。",points:["钜豪产品与专题资料","钜豪项目阶段记录","钜豪品牌发展节点","照明选品与渠道咨询"]}],
+    sections: [{title:"品牌主张",text:"好房子，光健康。钜豪关注的不只是灯具本身，更关注人在空间里的真实感受。通过合理的亮度、色温、显色与分区控制，让光服务于休息、工作、交流与展示。"},{title:"当前可核对内容",text:"官网当前开放 31 个产品详情、6 个阶段透明项目档案、8 篇钜豪企业与项目资讯和 9 个有来源的发展节点；未确认的产能、网点、荣誉总数和服务区域不作为品牌数据发布。",points:["钜豪产品与专题资料","钜豪项目阶段记录","钜豪品牌发展节点","照明选品与渠道咨询"]}],
     related: [{label:"查看照明解决方案",href:"/solutions",text:"按不同空间找到对应的光环境思路。"},{label:"了解智能家居照明",href:"/smart-home",text:"探索灯光与空间设备的协同。"},{label:"联系钜豪照明",href:"/contact",text:"提交方案或合作需求。"}]
   },
   "solutions": {
-    path: "/solutions", label: "照明解决方案", eyebrow: "LIGHTING SOLUTIONS", title: "空间照明解决方案", seoTitle: "照明解决方案｜全屋·商业·公共·工业｜钜豪照明", image: "/images/juhao-commercial.webp", type:"service",
+    path: "/solutions", label: "照明解决方案", eyebrow: "LIGHTING SOLUTIONS", title: "空间照明解决方案", seoTitle: "照明解决方案｜全屋·商业·公共·工业｜钜豪照明", image: "/images/jh-solutions.webp", type:"service",
     description: "按空间浏览钜豪照明解决方案，涵盖全屋、商业、公共与工业照明，并进入对应场景页面了解方案重点。",
     intro: "不同空间有不同的使用节奏与视觉任务。钜豪从人的活动、空间功能和维护需求出发，帮助用户建立更清晰的照明方案框架。",
     highlights: [{title:"全屋照明",text:"关注生活节律、舒适氛围与分区控制。"},{title:"酒店照明",text:"按抵达、公共区域、餐饮与客房组织连续体验。"},{title:"商业与公共",text:"兼顾空间识别、使用体验与长期维护。"},{title:"工业照明",text:"围绕作业可见度、稳定性与能源效率。"}],
@@ -89,7 +89,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"公共照明解决方案",href:"/solutions/public",text:"查看公共空间照明思路。"},{label:"全部照明解决方案",href:"/solutions",text:"浏览其他空间类型。"},{label:"咨询工业照明方案",href:"/contact",text:"提交现场条件与作业需求。"}]
   },
   "smart-home": {
-    path:"/smart-home",label:"智能家居",eyebrow:"SMART HOME LIGHTING",title:"智能家居照明解决方案",seoTitle:"智能家居照明解决方案｜钜豪智能",image:"/images/juhao-home.webp",type:"service",noindex:true,
+    path:"/smart-home",label:"智能家居",eyebrow:"SMART HOME LIGHTING",title:"智能家居照明解决方案",seoTitle:"智能家居照明解决方案｜钜豪智能",image:"/images/jh-smart.webp",type:"service",noindex:true,
     description:"了解智能灯光场景、系统规划与咨询入口。当前没有完成协议和兼容审核的设备详情，不作具体产品能力承诺。",
     intro:"真正自然的智能体验，应从生活场景、回路和稳定的手动控制开始。当前候选设备仍待协议、兼容、部署与售后资料核验。",
     highlights:[{title:"回家场景",text:"灯光与窗帘协同响应，让空间自然进入欢迎状态。"},{title:"观影场景",text:"一键调整亮度与遮光，减少重复操作。"},{title:"睡眠场景",text:"逐步降低环境亮度，为休息建立柔和过渡。"},{title:"离家场景",text:"统一关闭或检查设备状态，简化日常管理。"}],
@@ -97,7 +97,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"全屋照明解决方案",href:"/solutions/residential",text:"先建立家庭光环境基础。"},{label:"查看照明解决方案",href:"/solutions",text:"浏览不同空间照明类型。"},{label:"咨询智能家居方案",href:"/contact",text:"提交户型与联动需求。"}],faqs:[{question:"智能照明一定要使用手机控制吗？",answer:"不一定。合理的系统应保留墙面控制、场景按键和自动化逻辑，手机更适合作为设置与远程管理入口。"},{question:"智能照明应该在装修哪个阶段确定？",answer:"建议在电气点位和回路规划前确定主要场景与控制方式，减少后期调整成本。"}]
   },
   "mall": {
-    path:"/mall",label:"钜豪商城",eyebrow:"JUHAO MALL",title:"钜豪商城",seoTitle:"钜豪商城｜照明选品与渠道服务平台",image:"/images/juhao-commercial.webp",noindex:true,
+    path:"/mall",label:"钜豪商城",eyebrow:"JUHAO MALL",title:"钜豪商城",seoTitle:"钜豪商城｜照明选品与渠道服务平台",image:"/images/jh48-mall-hero.webp",noindex:true,
     description:"了解钜豪商城的照明选品、订单、客户与分销服务，并获取平台及合作咨询入口。",
     intro:"钜豪商城围绕照明选品与渠道协作，连接商品、订单、客户与服务，帮助合作伙伴更清晰地管理业务流程。",
     highlights:[{title:"照明选品",text:"按品类和场景组织商品，提升选品效率。"},{title:"订单协同",text:"连接销售与采购环节，减少重复沟通。"},{title:"客户服务",text:"沉淀需求和服务记录，支持长期经营。"},{title:"分销协作",text:"为渠道拓展与内容分享提供数字化入口。"}],
@@ -105,7 +105,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"查看照明解决方案",href:"/solutions",text:"从空间需求进入方案选择。"},{label:"智能家居照明",href:"/smart-home",text:"了解智能场景规划。"},{label:"商城与合作咨询",href:"/contact",text:"提交平台合作需求。"}]
   },
   "news": {
-    path:"/news",label:"钜豪动态",eyebrow:"JUHAO NEWS & UPDATES",title:"钜豪企业与项目动态",seoTitle:"钜豪照明新闻｜企业·品牌·项目动态",image:"/images/juhao-public.webp",
+    path:"/news",label:"钜豪动态",eyebrow:"JUHAO NEWS & UPDATES",title:"钜豪企业与项目动态",seoTitle:"钜豪照明新闻｜企业·品牌·项目动态",image:"/images/jh-news.webp",imageAlt:"原创照明展陈空间，用于企业与项目动态栏目视觉示意",
     description:"浏览 8 篇可追溯的钜豪企业、品牌与项目来源记录，进入详情页查看来源日期、当前阶段与内容边界。",
     intro:"资讯中心只保留与钜豪直接相关的企业、品牌和项目内容；每篇记录保留真实来源日期、阶段和待核验事项。",
     highlights:[{title:"4 篇企业与品牌动态",text:"记录钜豪展会、经销商会议与品牌来源信息。"},{title:"4 篇项目动态",text:"保留中标报道阶段，不表达为实施或完工证明。"},{title:"来源透明",text:"每篇内容标注企业资料编号、来源日期与公开边界。"}],
@@ -113,7 +113,7 @@ export const pages: Record<string, PageData> = {
     related:[{label:"2026 广州光亚展来源记录",href:"/news/guangzhou-international-lighting-exhibition-2026",text:"查看钜豪参展资料的来源与公开边界。"},{label:"2026 春季经销商会议",href:"/news/dealer-conference-spring-2026",text:"查看钜豪经销商会议来源记录。"},{label:"工程项目档案",href:"/cases",text:"查看钜豪项目的阶段透明资料。"}]
   },
   "contact": {
-    path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/juhao-public.webp",
+    path:"/contact",label:"联系合作",eyebrow:"CONTACT JUHAO",title:"联系钜豪照明",seoTitle:"联系钜豪照明｜方案咨询与合作",image:"/images/jh-contact.webp",imageAlt:"原创照明方案咨询空间，用于联系与合作栏目视觉示意",
     description:"按家庭健康光、工程项目与渠道合作三类方向整理咨询需求，说明场景、阶段和希望解决的问题。",
     intro:"选择与你最接近的咨询方向，说明空间或业务类型、当前阶段和核心目标，让沟通从真实需求开始。",
     highlights:[{title:"照明方案",text:"住宅、商业、公共或工业空间的照明需求。"},{title:"智能家居",text:"灯光、窗帘、环境与安防的场景联动需求。"},{title:"商城合作",text:"照明选品、门店经营与渠道协作需求。"},{title:"品牌合作",text:"项目、内容与其他业务合作方向。"}],

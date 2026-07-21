@@ -6,6 +6,12 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const runtimeLedger = JSON.parse(
   readFileSync(resolve(ROOT, "content/runtime/publication-ledger.json"), "utf8"),
 );
+const knowledgeLibrary = JSON.parse(
+  readFileSync(resolve(ROOT, "content/runtime/knowledge-library.json"), "utf8"),
+);
+const routeOg = JSON.parse(
+  readFileSync(resolve(ROOT, "content/governance/route-og.json"), "utf8"),
+);
 
 export const publishedSeoRecords = runtimeLedger.filter(
   (record) => record.publish_status === "published",
@@ -14,6 +20,41 @@ export const publishedSeoRecords = runtimeLedger.filter(
 export const indexEligibleSeoRecords = publishedSeoRecords.filter(
   (record) => record.index_eligible,
 );
+
+const knowledgeOgImage = routeOg.find((record) => record.route === "/news")?.path;
+if (!knowledgeOgImage) throw new Error("Knowledge archive SEO acceptance requires the /news social card");
+
+export const knowledgeArchiveSeoRecords = [
+  {
+    route: "/knowledge",
+    canonical_slug: "/knowledge",
+    og_image: knowledgeOgImage,
+    content_type: "知识档案索引",
+    published_at: "",
+    index_eligible: false,
+    archive_noindex: true,
+    article: false,
+  },
+  ...knowledgeLibrary.articles.map((article) => ({
+    route: article.path,
+    canonical_slug: article.path,
+    og_image: knowledgeOgImage,
+    content_type: "知识档案",
+    published_at: "",
+    index_eligible: false,
+    archive_noindex: true,
+    article: true,
+  })),
+];
+
+export const seoAuditRecords = [
+  ...publishedSeoRecords.map((record) => ({
+    ...record,
+    archive_noindex: false,
+    article: record.content_type === "文章",
+  })),
+  ...knowledgeArchiveSeoRecords,
+];
 
 const ROUTE_SCHEMA_TYPES = new Set([
   "Article",
@@ -104,8 +145,10 @@ export async function auditSeoRoutes({ mode, canonicalOrigin = "https://juhao.co
 
   if (publishedSeoRecords.length !== 81) failures.push(`runtime ledger: expected 81 published routes, got ${publishedSeoRecords.length}`);
   if (indexEligibleSeoRecords.length !== 0) failures.push(`runtime ledger: expected 0 index-eligible routes, got ${indexEligibleSeoRecords.length}`);
+  if (knowledgeArchiveSeoRecords.length !== 138) failures.push(`knowledge archive: expected 138 routes, got ${knowledgeArchiveSeoRecords.length}`);
+  if (seoAuditRecords.length !== 219) failures.push(`SEO audit: expected 219 routes, got ${seoAuditRecords.length}`);
 
-  for (const record of publishedSeoRecords) {
+  for (const record of seoAuditRecords) {
     const response = await render(worker, record.route);
     const html = await response.text();
     if (response.status !== 200) {
@@ -120,7 +163,7 @@ export async function auditSeoRoutes({ mode, canonicalOrigin = "https://juhao.co
     const h1Count = tags(html, /<h1\b/gi).length;
     const expectedCanonical = canonicalUrl(canonicalOrigin, record.canonical_slug);
     const expectedOgImage = canonicalUrl(canonicalOrigin, record.og_image);
-    const shouldIndex = mode === "public" && eligibleRoutes.has(record.route);
+    const shouldIndex = !record.archive_noindex && mode === "public" && eligibleRoutes.has(record.route);
 
     if (h1Count !== 1) failures.push(`${record.route}: expected one H1, got ${h1Count}`);
     if (titleValues.length !== 1 || !titleValues[0]) failures.push(`${record.route}: expected one non-empty title, got ${titleValues.length}`);
@@ -145,7 +188,7 @@ export async function auditSeoRoutes({ mode, canonicalOrigin = "https://juhao.co
       failures.push(`${record.route}: noindex route exposes route-level schema (${schemaTypes.join(", ")})`);
     }
 
-    if (record.content_type === "文章") {
+    if (record.article) {
       const publishedTime = metaValues(html, "property", "article:published_time", "content");
       const modifiedTime = metaValues(html, "property", "article:modified_time", "content");
       const articles = schemas.filter((item) => item?.["@type"] === "Article");
@@ -185,6 +228,8 @@ export async function auditSeoRoutes({ mode, canonicalOrigin = "https://juhao.co
     mode,
     passed: failures.length === 0,
     published_routes: publishedSeoRecords.length,
+    knowledge_archive_routes: knowledgeArchiveSeoRecords.length,
+    audited_routes: seoAuditRecords.length,
     index_eligible_routes: indexEligibleSeoRecords.length,
     sitemap_routes: actualSitemapRoutes.length,
     failures,

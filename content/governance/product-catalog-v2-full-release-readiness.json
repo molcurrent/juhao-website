@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-07-16",
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "batch_id": "catalog-v2-full-release-1208",
+  "purpose": "full_catalog_release_after_all_approvals",
+  "target_visibility": "public_indexable",
+  "state": "draft",
+  "active_batch_id": "catalog-v2-private-sample-120",
+  "family_count": 1208,
+  "source_member_count": 1913,
+  "family_set_sha256": "535044ef0d59495a92a80a6ef6da541799a625bd6419fc7bab7531c51783223f",
+  "member_set_sha256": "6d87866fbfe55f2e06e486344be65809be01e76a374556acfe5450352144dfe2",
+  "full_batch_coverage_exact": true,
+  "relationship_reviews": {
+    "required_count": 353,
+    "unresolved_review_ids": [],
+    "approved_count": 353
+  },
+  "category_anomaly_reviews": {
+    "required_count": 5,
+    "unresolved_review_ids": [],
+    "approved_count": 5
+  },
+  "cross_category_owner_selection": {
+    "required_count": 24,
+    "publication_policy": "neutral_catalog_series_without_forced_primary_category",
+    "neutral_route_contract_complete": true,
+    "pending_family_ids": [
+      "family-0e113c4abfc9",
+      "family-12a5a75eddd9",
+      "family-30498dd52a51",
+      "family-3355b8346c45",
+      "family-3af9f6786625",
+      "family-3fbcdc71c0c6",
+      "family-424dd24463d8",
+      "family-6e95ab4888a6",
+      "family-76a48ec4846a",
+      "family-7f26b5629cc2",
+      "family-80d5a41b61a0",
+      "family-854b417683d8",
+      "family-867dbe009a2b",
+      "family-a07813ab9f8b",
+      "family-b420b59d312e",
+      "family-c1a9e4f31306",
+      "family-c4f0602af05c",
+      "family-c70907454c73",
+      "family-d2492822d838",
+      "family-e57c2d60a24c",
+      "family-e64af3d44cfa",
+      "family-ea384bf6c039",
+      "family-ece189d903fd",
+      "family-fd0d114a2c01"
+    ],
+    "families": [
+      {
+        "family_id": "family-0e113c4abfc9",
+        "title": "JH-Q51004 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 2,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-12a5a75eddd9",
+        "title": "JH-Q59889 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 9,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-30498dd52a51",
+        "title": "JH-Q56603 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 7,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-3355b8346c45",
+        "title": "暖煦光巢MA12949-2金简约现代台灯",
+        "source_categories": [
+          "台灯",
+          "吊灯"
+        ],
+        "member_count": 12,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-3af9f6786625",
+        "title": "JH-Q57502 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 8,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-3fbcdc71c0c6",
+        "title": "JH-Q56603 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 2,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-424dd24463d8",
+        "title": "JH-D-6L6649 跨分类系列",
+        "source_categories": [
+          "台灯",
+          "吊灯",
+          "壁灯",
+          "落地灯"
+        ],
+        "member_count": 11,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-6e95ab4888a6",
+        "title": "JH-Q57512 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 7,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-76a48ec4846a",
+        "title": "VA5-120076 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 7,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-7f26b5629cc2",
+        "title": "JH-Q59869 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 8,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-80d5a41b61a0",
+        "title": "VA5-120077 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 9,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-854b417683d8",
+        "title": "JH-Q57515 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 12,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-867dbe009a2b",
+        "title": "月沫120008-500简约现代铝材亚克力吊灯",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 8,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-a07813ab9f8b",
+        "title": "JH-Q57508 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 9,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-b420b59d312e",
+        "title": "JH-66679 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 11,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-c1a9e4f31306",
+        "title": "草莓MB12251-2简约现代铝材铁艺亚克力壁灯",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯",
+          "壁灯"
+        ],
+        "member_count": 3,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-c4f0602af05c",
+        "title": "汐语星120009-500 简约现代铁艺铝材亚克力吊灯",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 6,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-c70907454c73",
+        "title": "JH-Q56017 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "吸顶灯"
+        ],
+        "member_count": 5,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-d2492822d838",
+        "title": "JH-65598 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 8,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-e57c2d60a24c",
+        "title": "JH-76601 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 5,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-e64af3d44cfa",
+        "title": "简逸V-12947-8圆",
+        "source_categories": [
+          "台灯",
+          "吊灯",
+          "壁灯",
+          "落地灯"
+        ],
+        "member_count": 10,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-ea384bf6c039",
+        "title": "JH-V-50209 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 7,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-ece189d903fd",
+        "title": "JH-Q57501 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 7,
+        "route_plan_state": "pending_category_selection"
+      },
+      {
+        "family_id": "family-fd0d114a2c01",
+        "title": "JH-76606 跨分类系列",
+        "source_categories": [
+          "吊灯",
+          "壁灯"
+        ],
+        "member_count": 6,
+        "route_plan_state": "pending_category_selection"
+      }
+    ]
+  },
+  "canonical_route_readiness": {
+    "route_ready_family_count": 1208,
+    "route_pending_family_count": 0,
+    "pending_family_ids": [],
+    "route_strategy": "neutral_catalog_series"
+  },
+  "media_authorization": {
+    "family_count": 1208,
+    "unique_media_paths": 9842,
+    "authorized_media_paths": 124,
+    "unauthorized_media_path_count": 9718,
+    "unauthorized_media_paths_sha256": "48a167836464d21104d9dbcb492195b21236da817cffcdf25aff2be60fe55ce8",
+    "public_projection": {
+      "emitted_media_path_count": 0,
+      "suppressed_source_media_path_count": 9842,
+      "emitted_unauthorized_media_path_count": 0
+    },
+    "public_media_policy": "suppress_all_source_media_until_public_asset_authorization"
+  },
+  "decision_application": {
+    "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3",
+    "approved_pending_application_ids": []
+  },
+  "public_runtime": {
+    "emitted": true,
+    "publication_state": "prepared_noindex",
+    "catalog_count": 1208,
+    "reason": "safe_public_projection_prepared_but_batch_is_not_active"
+  },
+  "controls": {
+    "robots_index": true,
+    "sitemap_included": true,
+    "alias_activation": "approved"
+  },
+  "public_release_eligible": false,
+  "blockers": [
+    "full_release_batch_not_active",
+    "full_release_batch_not_signed"
+  ],
+  "publication_boundary": "draft_full_release_specification_only_not_active_not_deployed"
+}

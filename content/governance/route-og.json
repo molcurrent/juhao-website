@@ -580,36 +580,6 @@
     "stage_label": ""
   },
   {
-    "route": "/products/project-custom/12265",
-    "path": "/og/products--project-custom--12265-4727473b.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 36845,
-    "sha256": "ae9c057dad5c5316fa10719f5d79a7995a71b7640e27666eac9b3ac1c29bbb07",
-    "alt": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/products/project-custom/12266",
-    "path": "/og/products--project-custom--12266-643f5a00.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 36561,
-    "sha256": "3fc5096c70d11b2ef42eab6314d7e19b7c73ed7f2b6fe249b44414f4c8015402",
-    "alt": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列｜钜豪照明",
-    "stage_label": ""
-  },
-  {
-    "route": "/products/project-custom/12267",
-    "path": "/og/products--project-custom--12267-4b6cc23e.jpg",
-    "width": 1200,
-    "height": 630,
-    "bytes": 36752,
-    "sha256": "fdb4922b7776f0a29f0559aa3a80917e40b0f8fcfe839a92e00c70ea2e4419cd",
-    "alt": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列｜钜豪照明",
-    "stage_label": ""
-  },
-  {
     "route": "/products/smart-home-devices",
     "path": "/og/products--smart-home-devices-fc4f8200.jpg",
     "width": 1200,
@@ -627,6 +597,36 @@
     "bytes": 19813,
     "sha256": "7cffa097862727f7343465d387bcc3e307b309f6bbcc01c7004ef8fdd3608446",
     "alt": "射灯｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12265",
+    "path": "/og/products--spotlights--12265-806e80a2.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36616,
+    "sha256": "b91f1b0d989d1dbcd933d6279c5edb72580714c23c5e9b0fd42f1c3bf90ac271",
+    "alt": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12266",
+    "path": "/og/products--spotlights--12266-79a04e1e.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36320,
+    "sha256": "e6fcd595b7657e6cc255afe8f2c191b12236e84963b957dbc1beb3bff6c9c3e1",
+    "alt": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列｜钜豪照明",
+    "stage_label": ""
+  },
+  {
+    "route": "/products/spotlights/12267",
+    "path": "/og/products--spotlights--12267-e988b09a.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 36495,
+    "sha256": "5cd00312a87fbb2e80c15225bc33df866880e74528135cb21e49a3b8a5782119",
+    "alt": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列｜钜豪照明",
     "stage_label": ""
   },
   {

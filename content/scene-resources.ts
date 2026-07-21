@@ -14,19 +14,19 @@ export type SceneResource = {
   mediaId?: string;
 };
 
-const sceneResourceConfig: Record<BusinessSceneId, { topic: string; product: string; study: string }> = {
-  residential: { topic: "ceiling-lights", product: "12217", study: "jw-marriott-shenzhen-huafa-snow-world" },
-  hospitality: { topic: "spotlights", product: "12287", study: "jw-marriott-shenzhen-huafa-snow-world" },
-  commercial: { topic: "spotlights", product: "12286", study: "pullman-shangrao-guangfeng" },
-  public: { topic: "outdoor-lighting", product: "11001", study: "yangzhou-riverfront-lighting" },
-  industrial: { topic: "project-custom", product: "12265", study: "yangzhou-riverfront-lighting" },
+const sceneResourceConfig: Record<BusinessSceneId, { topic: string; product?: string; study?: string; topicImage: string }> = {
+  residential: { topic: "ceiling-lights", product: "12217", topicImage: "/images/jh-scene-residential.webp" },
+  hospitality: { topic: "spotlights", product: "12287", study: "jw-marriott-shenzhen-huafa-snow-world", topicImage: "/images/jh-scene-hospitality.webp" },
+  commercial: { topic: "spotlights", product: "12286", study: "xingtai-financial-center", topicImage: "/images/jh-scene-commercial.webp" },
+  public: { topic: "outdoor-lighting", product: "11001", study: "yangzhou-riverfront-lighting", topicImage: "/images/jh-scene-public.webp" },
+  industrial: { topic: "project-custom", topicImage: "/images/jh-scene-industrial.webp" },
 };
 
 export function resourcesForScene(sceneId: BusinessSceneId): SceneResource[] {
   const config = sceneResourceConfig[sceneId];
   const topic = productTopics.find((item) => item.slug === config.topic)!;
-  const product = products.find((item) => item.source_id === config.product)!;
-  const study = caseStudies.find((item) => item.slug === config.study)!;
+  const product = config.product ? products.find((item) => item.source_id === config.product) : undefined;
+  const study = config.study ? caseStudies.find((item) => item.slug === config.study) : undefined;
 
   return [
     {
@@ -35,25 +35,25 @@ export function resourcesForScene(sceneId: BusinessSceneId): SceneResource[] {
       detail: topic.scene,
       title: topic.title,
       summary: topic.description,
-      image: topic.image,
+      image: config.topicImage,
     },
-    {
+    ...(product ? [{
       href: product.seo_slug,
-      kind: "产品资料",
+      kind: "产品资料" as const,
       detail: product.model,
       title: product.title,
       summary: `${product.topic} · ${product.sale_status} · 来源字段已通过机器校验，具体适用条件以正式资料与项目确认结果为准`,
       image: requireRuntimeMedia(product.primary_media_id).fallback,
       mediaId: product.primary_media_id,
-    },
-    {
+    }] : []),
+    ...(study ? [{
       href: `/cases/${study.slug}`,
-      kind: "项目资料",
+      kind: "项目资料" as const,
       detail: study.stage,
       title: study.title,
       summary: study.summary,
       image: requireRuntimeMedia(study.image).fallback,
       mediaId: study.image,
-    },
+    }] : []),
   ];
 }

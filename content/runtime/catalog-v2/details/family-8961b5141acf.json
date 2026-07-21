@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-8961b5141acf",
+    "canonical_slug": "602",
+    "canonical_source_key": "mall_sql:602",
+    "canonical_source_id": "602",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH9216 太空灰 七彩氛围LED台灯/护眼台灯",
+    "category": "护眼灯",
+    "source_categories": [
+      "护眼灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-8961b5141acf",
+    "model_label": "JH9216",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:602",
+      "display_id": "602",
+      "title": "JH9216 太空灰 七彩氛围LED台灯/护眼台灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:602",
+        "source_id": "602",
+        "display_id": "602",
+        "model_label": "JH9216",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "181*134*727"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "2835"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铁艺"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "181*134*727"
+      ],
+      "finishes": [
+        "太空灰色 中国红 白色"
+      ],
+      "light_sources": [
+        "2835"
+      ],
+      "materials": [
+        "铁艺"
+      ],
+      "spaces": [
+        "卧室",
+        "书房",
+        "儿童房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "台灯",
+        "护眼灯",
+        "儿童灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:602",
+      "source_path": "商城系统/商品说明/JH9216 太空灰 七彩氛围LED台灯护眼台灯_602.md",
+      "source_sha256": "650f5a1e2c66040ef4d6bb98325ae076378b8c11ec65fa036c15e81f0db0359f"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铁艺",
+      "光源类型": "2835",
+      "尺寸": "181*134*727",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "太空灰色   中国红  白色",
+      "空间": "卧室,书房,儿童房",
+      "类型": "台灯,护眼灯,儿童灯",
+      "风格": "简约现代"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 10,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 11,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-c000b922646f",
+      "source_key": "mall_sql:602",
+      "display_id": "602",
+      "label": "JH9216 太空灰 七彩氛围LED台灯/护眼台灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "181*134*727",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "太空灰色   中国红  白色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

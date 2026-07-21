@@ -30,3 +30,12 @@ export const consultationLeads = sqliteTable("consultation_leads", {
   index("consultation_leads_notification_status_idx").on(table.notificationStatus),
   index("consultation_leads_notification_retry_idx").on(table.notificationStatus, table.notificationNextAttemptAt),
 ]);
+
+export const consultationRateLimits = sqliteTable("consultation_rate_limits", {
+  keyHash: text("key_hash").primaryKey(),
+  windowStartedAt: text("window_started_at").notNull(),
+  requestCount: integer("request_count").notNull().default(1),
+  expiresAt: text("expires_at").notNull(),
+}, (table) => [
+  index("consultation_rate_limits_expires_at_idx").on(table.expiresAt),
+]);

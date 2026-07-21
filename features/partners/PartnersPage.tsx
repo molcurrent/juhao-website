@@ -11,16 +11,16 @@ const steps = [
 ] as const;
 
 const cooperationTypes = [
-  { title: "经销商合作", text: "面向具备本地市场、门店运营和用户服务能力的长期伙伴。", points: ["所在区域与现有门店", "团队与服务覆盖", "灯饰照明经营经验", "年度业务计划"] },
-  { title: "工程项目合作", text: "面向酒店、商业、公共、教育、工业与户外项目的方案和产品协作。", points: ["项目类型与所在城市", "设计或施工阶段", "图纸、清单与交付节点", "技术与服务需求"] },
-  { title: "供应商合作", text: "围绕产品、材料、工程交付与数字化供应链建立清晰合作边界。", points: ["企业与产品资质", "质量与交付能力", "售后与责任机制", "合规和知识产权资料"] },
+  { title: "经销商合作", status: "意向收集开放 · 区域权益未承诺", text: "面向具备本地市场、门店运营和用户服务能力的长期伙伴。", points: ["所在区域与现有门店", "团队与服务覆盖", "灯饰照明经营经验", "年度业务计划"] },
+  { title: "工程项目合作", status: "项目沟通开放 · 以项目资料为准", text: "面向酒店、商业、公共、教育、工业与户外项目的方案和产品协作。", points: ["项目类型与所在城市", "设计或施工阶段", "图纸、清单与交付节点", "技术与服务需求"] },
+  { title: "供应商合作", status: "资料接收开放 · 准入标准待确认", text: "围绕产品、材料、工程交付与数字化供应链建立清晰合作边界。", points: ["企业与产品资质", "质量与交付能力", "售后与责任机制", "合规和知识产权资料"] },
 ] as const;
 
 export function PartnersPage({ page }: { page: PageData }) {
-  return <main id="main-content" className={styles.page}>
-    <section className={styles.hero} style={{ backgroundImage: `url(${page.image})` }}><div data-reveal="fade"><small>{page.eyebrow}</small><h1>{page.title}</h1><p>{page.intro}</p></div></section>
-    <section className={styles.process}><header data-reveal><span>01 / PROCESS</span><h2>从了解彼此开始</h2></header><div className={styles.steps}>{steps.map((step, index) => <article className={styles.step} key={step[0]} data-reveal><small>0{index + 1}</small><h3>{step[0]}</h3><p>{step[1]}</p></article>)}</div></section>
-    <section className={styles.cooperation}><header><span>02 / PARTNERSHIP</span><h2>三类合作入口</h2><p>品牌官网负责意向沟通和内容承接；采购、订单与经销商业务继续由独立商城处理。</p></header><div>{cooperationTypes.map((item, index) => <article key={item.title}><small>0{index + 1}</small><h3>{item.title}</h3><p>{item.text}</p><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul><Link href={consultationHref(index === 0 ? "channel" : "project", "partners", String(index + 1))}>提交合作信息 →</Link></article>)}</div></section>
-    <section className={styles.channelModel}><div><span>03 / DIGITAL CHANNEL</span><h2>官网与商城分工</h2><p>官网用于品牌、产品、案例、知识与合作咨询；商城保留采购、订单和经销商系统。外部商城连接恢复前，官网提供合作咨询兜底。</p></div><nav><Link href="/mall">查看商城连接状态 ↗</Link><Link href={consultationHref("channel", "partners", "channel-entry")}>提交渠道合作信息 ↗</Link></nav></section>
+  return <main id="main-content" className={styles.page} tabIndex={-1}>
+    <section className={styles.hero} data-page-hero="image" style={{ backgroundImage: `url(${page.image})` }}><div data-reveal="fade"><small data-page-role="eyebrow">{page.eyebrow}</small><h1 data-page-role="display">{page.title}</h1><p data-page-role="lead">{page.intro}</p></div></section>
+    <section className={styles.process} data-page-section><header data-reveal><span>合作流程</span><h2>从了解彼此开始</h2></header><div className={styles.steps}>{steps.map((step, index) => <article className={styles.step} key={step[0]} data-reveal><small>0{index + 1}</small><h3>{step[0]}</h3><p>{step[1]}</p></article>)}</div></section>
+    <section className={styles.cooperation} data-page-section><header><span>合作方向</span><h2>三类合作入口</h2><p>品牌官网负责意向沟通和内容承接；采购、订单与经销商业务继续由独立商城处理。</p></header><div>{cooperationTypes.map((item, index) => <article key={item.title}><small data-status="info">{item.status}</small><h3>{item.title}</h3><p>{item.text}</p><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul><Link href={consultationHref(index === 0 ? "channel" : "project", "partners", String(index + 1))}>提交合作信息 →</Link></article>)}</div></section>
+    <section className={styles.channelModel} data-page-section><div><span>业务分工</span><h2>官网与商城分工</h2><p>官网用于品牌、产品、案例、知识与合作咨询；商城保留采购、订单和经销商系统。外部商城连接恢复前，官网提供合作咨询兜底。</p></div><nav><Link href="/mall">查看商城连接状态 ↗</Link><Link href={consultationHref("channel", "partners", "channel-entry")}>提交渠道合作信息 ↗</Link></nav></section>
   </main>;
 }

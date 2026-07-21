@@ -103,9 +103,12 @@ currentlyIndexable = PUBLIC_INDEXING_ENABLED && index_eligible && published
 PUBLIC_INDEXING_ENABLED=false
 CANONICAL_HOST_APPROVED=false
 PUBLIC_INTAKE_READY=false
+CONTACT_EDGE_RATE_LIMIT_VERIFIED=false
 ```
 
 `SITE_CANONICAL_ORIGIN=https://juhao.com` 只是兼容值，不代表正式域名已确认。正式域名未批准时真实公开门禁必须失败。
+
+公开咨询还必须填写 `TURNSTILE_ALLOWED_HOSTNAMES`，并由 IT 核验 Cloudflare 边缘/WAF 前置限流后才可把 `CONTACT_EDGE_RATE_LIMIT_VERIFIED` 改为 `true`。该值是发布与运行时硬门禁，不代表当前已经批准；D1 只承担通过 Turnstile 后的业务提交配额。
 
 ## 4. 企业知识库治理
 
@@ -113,6 +116,8 @@ PUBLIC_INTAKE_READY=false
 
 - 8 篇企业/项目资讯只引用 JUHAO 来源记录。
 - 137 条帮助记录继续作为 JUHAO 企业资料治理清单：34 项目、10 荣誉、21 品牌/企业动态、6 智能能力、3 产品专题、7 智能教程缺文件、6 IES 缺文件、5 视频缺文件、45 旧商城或错误模板。
+- 本地预览新增 `/knowledge` 企业资料库：130 篇来源正文按“企业新闻 22、工程案例 34、招商合作 23、商城帮助 43、智能家居 15”五类整理；另保留 7 条只有标题与时长的 G 系列教程目录项，合计覆盖帮助文章目录 137 条来源记录。
+- 资料库正文不发布远程图片、外链、旧联系方式或未核验现行政策；旧商城内容只作为带边界说明的历史资料展示，全部资料库页面保持 `noindex`。
 - 现有项目页面关联 ID：`199,220,226,228,229,231,217,218,219,221`；其余 24 条只作候选，不新增项目路由。
 - 荣誉来源：`126,151,152,167,171,184,185,222,223,225`；证书、授予方、日期和主体不齐时，不输出荣誉总数。
 - 事实纠正继续锁定：`#228=苏州金融街君悦酒店`、`#229=南通海门希尔顿逸林酒店`、`#220=扬州经开区一河两岸户外亮化工程`。

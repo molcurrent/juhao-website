@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-50b4b4258de7",
+    "canonical_slug": "11692",
+    "canonical_source_key": "mall_sql:11692",
+    "canonical_source_id": "11692",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-L60 超薄晾晒王 智能晾衣机（枪灰色）",
+    "category": "智能晾衣架",
+    "source_categories": [
+      "智能晾衣架"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-50b4b4258de7",
+    "model_label": "JH-L60",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11692",
+      "display_id": "11692",
+      "title": "JH-L60 超薄晾晒王 智能晾衣机（枪灰色）",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11692",
+        "source_id": "11692",
+        "display_id": "11692",
+        "model_label": "JH-L60",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11692",
+      "source_path": "商城系统/商品说明/JH-L60 超薄晾晒王 智能晾衣机（枪灰色）_11692.md",
+      "source_sha256": "2f0997689c7a5e208e03417e0ddbaaecfa002768e8d225270888eecdc1419d09"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 9,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 10,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-35512165e518",
+      "source_key": "mall_sql:11692",
+      "display_id": "11692",
+      "label": "JH-L60 超薄晾晒王 智能晾衣机（枪灰色）",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

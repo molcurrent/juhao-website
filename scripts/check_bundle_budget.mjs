@@ -11,6 +11,7 @@ const WORKER_PATH = resolve(ROOT, "dist/server/index.js");
 export const BUNDLE_BUDGETS = Object.freeze({
   ordinaryGzipBytes: 150 * 1024,
   contactGzipBytes: 180 * 1024,
+  minimumSafetyMarginBytes: 10 * 1024,
   largestJavaScriptAssetRawBytes: 500 * 1024,
 });
 
@@ -95,8 +96,10 @@ export async function auditBundleBudgets({
       null,
     );
     const gzipBudgetBytes = route === "/contact" ? budgets.contactGzipBytes : budgets.ordinaryGzipBytes;
+    const gzipSafetyMarginBytes = gzipBudgetBytes - gzipBytes;
     const violations = [];
     if (gzipBytes > gzipBudgetBytes) violations.push("initial_gzip");
+    if (gzipSafetyMarginBytes < budgets.minimumSafetyMarginBytes) violations.push("initial_gzip_safety_margin");
     if ((largestJavaScriptAsset?.raw_bytes ?? 0) >= budgets.largestJavaScriptAssetRawBytes) {
       violations.push("largest_javascript_asset_raw");
     }
@@ -107,6 +110,8 @@ export async function auditBundleBudgets({
       initial_raw_bytes: rawBytes,
       initial_gzip_bytes: gzipBytes,
       gzip_budget_bytes: gzipBudgetBytes,
+      gzip_safety_margin_bytes: gzipSafetyMarginBytes,
+      minimum_gzip_safety_margin_bytes: budgets.minimumSafetyMarginBytes,
       largest_javascript_asset: largestJavaScriptAsset?.path ?? null,
       largest_javascript_asset_raw_bytes: largestJavaScriptAsset?.raw_bytes ?? 0,
       largest_javascript_asset_raw_budget_bytes: budgets.largestJavaScriptAssetRawBytes,
@@ -125,6 +130,10 @@ export async function auditBundleBudgets({
     (maximum, result) => !maximum || result.largest_javascript_asset_raw_bytes > maximum.largest_javascript_asset_raw_bytes ? result : maximum,
     null,
   );
+  const minimumGzipSafetyMargin = results.reduce(
+    (minimum, result) => !minimum || result.gzip_safety_margin_bytes < minimum.gzip_safety_margin_bytes ? result : minimum,
+    null,
+  );
 
   return {
     generated_from: "dist HTML stylesheet/modulepreload links and dist/client assets",
@@ -132,6 +141,7 @@ export async function auditBundleBudgets({
     thresholds: {
       ordinary_initial_js_css_gzip_bytes: budgets.ordinaryGzipBytes,
       contact_initial_js_css_gzip_bytes: budgets.contactGzipBytes,
+      minimum_initial_gzip_safety_margin_bytes: budgets.minimumSafetyMarginBytes,
       largest_initial_javascript_asset_raw_bytes_exclusive: budgets.largestJavaScriptAssetRawBytes,
     },
     summary: {
@@ -140,6 +150,8 @@ export async function auditBundleBudgets({
       failed_routes: violations.length,
       maximum_initial_gzip_route: maximumGzip?.route ?? null,
       maximum_initial_gzip_bytes: maximumGzip?.initial_gzip_bytes ?? 0,
+      minimum_gzip_safety_margin_route: minimumGzipSafetyMargin?.route ?? null,
+      minimum_gzip_safety_margin_bytes: minimumGzipSafetyMargin?.gzip_safety_margin_bytes ?? 0,
       maximum_raw_javascript_asset_route: maximumRawJavaScriptAsset?.route ?? null,
       maximum_raw_javascript_asset_bytes: maximumRawJavaScriptAsset?.largest_javascript_asset_raw_bytes ?? 0,
     },

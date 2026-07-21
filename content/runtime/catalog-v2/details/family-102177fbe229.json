@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-102177fbe229",
+    "canonical_slug": "456",
+    "canonical_source_key": "mall_sql:456",
+    "canonical_source_id": "456",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "酒店豪华休息厅和电梯厅装饰灯",
+    "category": "非标装饰灯",
+    "source_categories": [
+      "非标装饰灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-102177fbe229",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:456",
+      "display_id": "456",
+      "title": "酒店豪华休息厅和电梯厅装饰灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:456",
+        "source_id": "456",
+        "display_id": "456",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "detail_images_missing",
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:456",
+      "source_path": "商城系统/商品说明/酒店豪华休息厅和电梯厅装饰灯_456.md",
+      "source_sha256": "f2f12cd69edbecbb15ad3df8055ddc53e3b28ebab858d4827e5c41afb4a0aae7"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 0,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-4752f6a6a528",
+      "source_key": "mall_sql:456",
+      "display_id": "456",
+      "label": "酒店豪华休息厅和电梯厅装饰灯",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "detail_images_missing",
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

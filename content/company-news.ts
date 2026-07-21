@@ -29,7 +29,7 @@ export type CompanyNewsArticle = {
     implementation: "后续实施待证";
   } | null;
   local_representative_media: {
-    src: "/images/juhao-public.webp" | "/images/juhao-commercial.webp" | "/images/juhao-home.webp";
+    src: string;
     alt: string;
     width: 1672;
     height: 941;

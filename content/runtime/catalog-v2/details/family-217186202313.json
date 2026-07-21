@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-217186202313",
+    "canonical_slug": "11913",
+    "canonical_source_key": "mall_sql:11913",
+    "canonical_source_id": "11913",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-D-6L31065-42寸 变频风扇灯客厅餐厅书房卧室",
+    "category": "风扇灯",
+    "source_categories": [
+      "风扇灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-217186202313",
+    "model_label": "JH-D-6L31065-42",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11913",
+      "display_id": "11913",
+      "title": "JH-D-6L31065-42寸 变频风扇灯客厅餐厅书房卧室",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11913",
+        "source_id": "11913",
+        "display_id": "11913",
+        "model_label": "JH-D-6L31065-42",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "33W+90W"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铁艺"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "areas",
+        "label": "适用面积",
+        "values": [
+          "10㎡-15㎡"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-15㎡"
+      ],
+      "light_sources": [
+        "33W+90W"
+      ],
+      "materials": [
+        "铁艺"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "儿童房",
+        "高层/复式/别墅"
+      ],
+      "styles": [
+        "家居风扇灯"
+      ],
+      "types": [
+        "风扇灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11913",
+      "source_path": "商城系统/商品说明/JH-D-6L31065-42寸 变频风扇灯客厅餐厅书房卧室_11913.md",
+      "source_sha256": "22d665b09dfbc2d370ab3a0accc98c0ddad704f74a6d668f09c53005654618cf"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铁艺",
+      "光源类型": "33W+90W",
+      "尺寸": "&amp;amp;amp;amp;500",
+      "面积": "10㎡-15㎡",
+      "空间": "客厅,餐厅,卧室,书房,儿童房,高层/复式/别墅",
+      "类型": "风扇灯",
+      "风格": "家居风扇灯"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 17,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-aaa7dfaf9c4d",
+      "source_key": "mall_sql:11913",
+      "display_id": "11913",
+      "label": "JH-D-6L31065-42寸 变频风扇灯客厅餐厅书房卧室",
+      "dimensions": {
+        "dimensions": {
+          "value": "&amp;amp;amp;amp;500",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

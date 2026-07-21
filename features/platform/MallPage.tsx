@@ -20,7 +20,7 @@ export type MallPageProps = {
 
 export function MallPage({ page }: MallPageProps) {
   return (
-    <main id="main-content" className={styles.page}>
+    <main id="main-content" className={styles.page} tabIndex={-1}>
       <section
         className={styles.hero}
         style={{
@@ -45,7 +45,7 @@ export function MallPage({ page }: MallPageProps) {
 
           <div className={styles.platformVisual} role="img" aria-label="商城连接恢复门禁">
             <div className={styles.visualHeader}>
-              <span>CONNECTION GATE</span>
+              <span>连接状态</span>
               <span>CHECKED 2026-07-13</span>
             </div>
             <ol className={styles.visualFlow}>
@@ -63,7 +63,7 @@ export function MallPage({ page }: MallPageProps) {
 
       <section className={styles.capabilities} aria-labelledby="mall-capabilities-title">
         <header className={styles.sectionHeading} data-reveal>
-          <p>01 / CAPABILITY FRAMEWORK</p>
+          <p>能力边界</p>
           <div>
             <h2 id="mall-capabilities-title">先把能力边界说清楚</h2>
             <p>以下内容来自页面信息架构建议，只说明可讨论的方向。正式版本需逐项确认是否存在、由谁使用，以及数据从哪里来。</p>
@@ -86,7 +86,7 @@ export function MallPage({ page }: MallPageProps) {
       <section className={styles.workflowSection} aria-labelledby="mall-workflow-title">
         <div className={styles.workflowInner}>
           <header data-reveal>
-            <p>02 / BUSINESS FLOW</p>
+            <p>业务流程</p>
             <h2 id="mall-workflow-title">平台之前，先确认业务流程</h2>
           </header>
           <ol className={styles.workflowList}>
@@ -102,7 +102,7 @@ export function MallPage({ page }: MallPageProps) {
 
       <section className={styles.audiences} aria-labelledby="mall-audiences-title">
         <div className={styles.audienceIntro} data-reveal>
-          <p>03 / FOR PARTNERS</p>
+          <p>合作伙伴</p>
           <h2 id="mall-audiences-title">不同角色，需要确认不同问题</h2>
           <p>页面不会把通用平台设想包装成已上线服务。明确角色、权限和责任后，才能判断应该开放哪些能力。</p>
         </div>
@@ -119,7 +119,7 @@ export function MallPage({ page }: MallPageProps) {
 
       <section className={styles.confirmation} aria-labelledby="mall-confirmation-title" data-reveal>
         <div>
-          <p>PUBLICATION GATE</p>
+          <p>发布状态</p>
           <h2 id="mall-confirmation-title">连接验收后再开放</h2>
         </div>
         <div>

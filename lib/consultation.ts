@@ -4,7 +4,8 @@ export type ConsultationKind = "home-health" | "project" | "channel";
 
 export type ConsultationSource = ContactRequest["source"];
 
-export const CONSULTATION_PRIVACY_VERSION = "2026-07-13";
+export const CONSULTATION_PRIVACY_VERSION = "2026-07-18";
+export const CONSULTATION_TURNSTILE_ACTION = "juhao-contact";
 
 export type ConsultationOption = {
   kind: ConsultationKind;
@@ -80,7 +81,7 @@ const sources = new Set<ConsultationSource>([
   "direct",
 ]);
 
-const detailSources = new Set<ConsultationSource>(["page", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
+const detailSources = new Set<ConsultationSource>(["page", "products", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 
 export const consultationSourceValues = [...sources];
 

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-0df081bdfae8",
+    "canonical_slug": "11690",
+    "canonical_source_key": "mall_sql:11690",
+    "canonical_source_id": "11690",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-L21 超薄全屏灯智能晾衣机（直流电机-天空银）",
+    "category": "智能晾衣架",
+    "source_categories": [
+      "智能晾衣架"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-0df081bdfae8",
+    "model_label": "JH-L21",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11690",
+      "display_id": "11690",
+      "title": "JH-L21 超薄全屏灯智能晾衣机（直流电机-天空银）",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11690",
+        "source_id": "11690",
+        "display_id": "11690",
+        "model_label": "JH-L21",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11690",
+      "source_path": "商城系统/商品说明/JH-L21 超薄全屏灯智能晾衣机（直流电机-天空银）_11690.md",
+      "source_sha256": "4d0d4f728781b6e06c9ae38f931683c1b1f87f8a0415b0e160d89b2efaa1b1f5"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 9,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 10,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-fb99a946a05a",
+      "source_key": "mall_sql:11690",
+      "display_id": "11690",
+      "label": "JH-L21 超薄全屏灯智能晾衣机（直流电机-天空银）",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

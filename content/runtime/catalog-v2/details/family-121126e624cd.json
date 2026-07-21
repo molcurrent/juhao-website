@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-121126e624cd",
+    "canonical_slug": "11904",
+    "canonical_source_key": "mall_sql:11904",
+    "canonical_source_id": "11904",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-T9188E-2.5-8W  亮白  Φ75 筒灯",
+    "category": "筒射灯",
+    "source_categories": [
+      "筒射灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-121126e624cd",
+    "model_label": "JH-T9188E-2.5-8W",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11904",
+      "display_id": "11904",
+      "title": "JH-T9188E-2.5-8W  亮白  Φ75 筒灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11904",
+        "source_id": "11904",
+        "display_id": "11904",
+        "model_label": "JH-T9188E-2.5-8W",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "88*41"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "2835"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "88*41"
+      ],
+      "finishes": [
+        "亮白 亮黑"
+      ],
+      "light_sources": [
+        "2835"
+      ],
+      "materials": [
+        "铝材"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房"
+      ],
+      "styles": [
+        "家居筒射灯"
+      ],
+      "types": [
+        "筒射灯"
+      ],
+      "voltages": [
+        "220V-240V"
+      ],
+      "wattages": [
+        "8W"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11904",
+      "source_path": "商城系统/商品说明/JH-T9188E-2.5-8W  亮白  Φ75 筒灯_11904.md",
+      "source_sha256": "b80369645d3808929837ce9350646d11afaa77d90cf26603d289cba7c7ba2712"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铝材",
+      "光源类型": "2835",
+      "尺寸": "88*41",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "亮白 亮黑",
+      "空间": "客厅,餐厅,卧室,书房",
+      "类型": "筒射灯",
+      "风格": "家居筒射灯",
+      "电压(V)": "220V-240V",
+      "功率(W)": "8W",
+      "灯具是否带光源": "带光源",
+      "装箱数量": "100只/件"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 16,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-7eb483a23277",
+      "source_key": "mall_sql:11904",
+      "display_id": "11904",
+      "label": "JH-T9188E-2.5-8W  亮白  Φ75 筒灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "88*41",
+          "evidence": "source_attribute:尺寸"
+        },
+        "wattage": {
+          "value": "8W",
+          "evidence": "source_attribute:功率(W)"
+        },
+        "finish_color": {
+          "value": "亮白 亮黑",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

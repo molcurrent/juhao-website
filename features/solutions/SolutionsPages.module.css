@@ -11,19 +11,19 @@
 
 .kicker {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   margin: 0;
   text-transform: uppercase;
 }
 
 .breadcrumbs {
   align-items: center;
-  color: rgb(255 255 255 / 62%);
+  color: rgb(255 255 255 / 76%);
   display: flex;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 12px;
   gap: 10px;
   letter-spacing: 0.04em;
 }
@@ -54,18 +54,24 @@
   margin-bottom: clamp(70px, 12vh, 126px);
 }
 
+.overviewHero .kicker,
+.healthyHero .kicker {
+  color: var(--brand-orange-bright);
+}
+
 .overviewHeroCopy h1 {
   font-family: var(--font-display);
-  font-size: clamp(64px, 7.3vw, 118px);
-  letter-spacing: -0.075em;
-  line-height: 0.93;
+  font-size: clamp(58px, 6.4vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 34px;
   max-width: 700px;
+  text-wrap: balance;
 }
 
 .heroIntro {
   color: rgb(255 255 255 / 66%);
-  font-size: clamp(15px, 1.2vw, 18px);
+  font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.9;
   margin: 0;
   max-width: 650px;
@@ -80,6 +86,7 @@
   justify-content: space-between;
   margin-top: 52px;
   max-width: 250px;
+  min-height: 44px;
   padding: 0 0 14px;
   transition: border-color var(--duration-fast) var(--ease-enter), color var(--duration-fast) var(--ease-enter);
 }
@@ -132,8 +139,8 @@
 
 .overviewHeroVisual figcaption small {
   color: var(--brand-orange-soft);
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
 }
 
 .overviewHeroVisual figcaption span {
@@ -163,14 +170,15 @@
 .dimensionSection h2 {
   font-family: var(--font-display);
   font-size: clamp(46px, 5.3vw, 82px);
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
   line-height: 1.04;
   margin: 24px 0 0;
+  text-wrap: balance;
 }
 
 .sectionHeading > p {
-  color: rgb(255 255 255 / 58%);
-  font-size: 14px;
+  color: rgb(255 255 255 / 76%);
+  font-size: 16px;
   line-height: 1.9;
   margin: 0;
   max-width: 520px;
@@ -229,10 +237,9 @@
 }
 
 .sceneMeta small {
-  color: rgb(255 255 255 / 52%);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  color: rgb(255 255 255 / 76%);
+  font-size: 12px;
+  letter-spacing: 0.08em;
 }
 
 .sceneMeta h3 {
@@ -242,8 +249,8 @@
 }
 
 .sceneMeta p {
-  color: rgb(255 255 255 / 62%);
-  font-size: 13px;
+  color: rgb(255 255 255 / 78%);
+  font-size: 16px;
   line-height: 1.8;
   margin: 0;
   max-width: 410px;
@@ -315,8 +322,8 @@
 .methodNumber,
 .methodList small {
   color: var(--brand-orange);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
 }
 
 .methodList small {
@@ -331,7 +338,7 @@
 
 .methodList p {
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.9;
   margin: 0;
   max-width: 620px;
@@ -340,28 +347,25 @@
 .solutionCallout {
   align-items: end;
   background: var(--brand-orange);
-  color: var(--white);
+  color: var(--text-on-accent);
   display: grid;
   gap: clamp(60px, 9vw, 150px);
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.6fr);
   padding: clamp(92px, 10vw, 160px) var(--page-gutter);
 }
 
-.solutionCallout .kicker {
-  color: rgb(255 255 255 / 72%);
-}
-
 .solutionCallout h2 {
   font-family: var(--font-display);
-  font-size: clamp(50px, 6.8vw, 104px);
-  letter-spacing: -0.075em;
-  line-height: 0.99;
+  font-size: clamp(48px, 6.2vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 0;
+  text-wrap: balance;
 }
 
 .solutionCallout > div:last-child > p {
-  color: rgb(255 255 255 / 76%);
-  font-size: 15px;
+  color: var(--text-on-accent);
+  font-size: 16px;
   line-height: 1.9;
   margin: 0 0 36px;
 }
@@ -371,9 +375,10 @@
   background: var(--white);
   color: var(--ink);
   display: flex;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   justify-content: space-between;
+  min-height: 44px;
   padding: 20px 22px;
   transition: background-color var(--duration-fast) var(--ease-enter), color var(--duration-fast) var(--ease-enter);
 }
@@ -404,37 +409,40 @@
 .relatedGrid {
   border-top: 1px solid rgb(255 255 255 / 15%);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .relatedGrid a {
   border-right: 1px solid rgb(255 255 255 / 15%);
   display: flex;
   flex-direction: column;
+  grid-column: span 4;
   min-height: 280px;
   padding: 28px clamp(22px, 3vw, 42px);
   position: relative;
   transition: background-color var(--duration-ui) var(--ease-enter), transform var(--duration-ui) var(--ease-enter);
 }
 
+.relatedGrid a:nth-child(3n + 1) {
+  grid-column: span 5;
+}
+
+.relatedGrid a:nth-child(3n + 2) {
+  grid-column: span 3;
+}
+
 .relatedGrid a:first-child {
   border-left: 1px solid rgb(255 255 255 / 15%);
 }
 
-.relatedGrid small {
-  color: rgb(255 255 255 / 42%);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-}
-
 .relatedGrid strong {
   font-size: clamp(20px, 2vw, 28px);
-  margin-top: 52px;
+  margin-top: 0;
 }
 
 .relatedGrid p {
-  color: rgb(255 255 255 / 56%);
-  font-size: 13px;
+  color: rgb(255 255 255 / 74%);
+  font-size: 16px;
   line-height: 1.8;
   margin: 14px 0 0;
   max-width: 320px;
@@ -497,16 +505,17 @@
 
 .healthyHeroContent h1 {
   font-family: var(--font-display);
-  font-size: clamp(60px, 8vw, 126px);
-  letter-spacing: -0.08em;
-  line-height: 0.93;
+  font-size: clamp(58px, 6.5vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 34px;
   max-width: 850px;
+  text-wrap: balance;
 }
 
 .healthyHeroContent > p:last-child {
   color: rgb(255 255 255 / 72%);
-  font-size: clamp(15px, 1.2vw, 18px);
+  font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.9;
   margin: 0;
   max-width: 720px;
@@ -527,7 +536,8 @@
   background: rgb(10 12 11 / 88%);
   border-left: 1px solid rgb(255 255 255 / 13%);
   color: rgb(255 255 255 / 72%);
-  font-size: 12px;
+  font-size: 13px;
+  min-height: 60px;
   padding: 22px 20px;
   text-align: center;
   transition: background-color var(--duration-ui) var(--ease-enter), color var(--duration-ui) var(--ease-enter);
@@ -546,26 +556,20 @@
 .humanStatement {
   display: grid;
   gap: clamp(44px, 7vw, 110px);
-  grid-template-columns: 70px minmax(280px, 1fr) minmax(300px, 0.8fr);
+  grid-template-columns: minmax(280px, 1fr) minmax(300px, 0.8fr);
   margin: 0 auto;
   max-width: var(--content-max);
   padding: clamp(110px, 12vw, 190px) var(--page-gutter);
   scroll-margin-top: var(--header-height);
 }
 
-.statementIndex {
-  color: var(--brand-orange);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  padding-top: 8px;
-}
-
 .humanStatement h2 {
   font-family: var(--font-display);
   font-size: clamp(48px, 6vw, 92px);
-  letter-spacing: -0.07em;
+  letter-spacing: -0.04em;
   line-height: 1.02;
-  margin: 26px 0 0;
+  margin: 0;
+  text-wrap: balance;
 }
 
 .statementCopy {
@@ -576,7 +580,7 @@
 
 .statementCopy p {
   color: var(--ink-soft);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.95;
   margin: 0;
 }
@@ -606,47 +610,39 @@
 .dimensionGrid {
   border-top: 1px solid rgb(255 255 255 / 15%);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .dimensionGrid article {
   border-bottom: 1px solid rgb(255 255 255 / 15%);
   border-right: 1px solid rgb(255 255 255 / 15%);
-  min-height: 390px;
+  grid-column: span 5;
+  min-height: 360px;
   padding: 28px clamp(20px, 2.3vw, 36px) 38px;
   transition: background-color var(--duration-ui) var(--ease-enter), transform var(--duration-ui) var(--ease-enter);
 }
 
 .dimensionGrid article:first-child {
   border-left: 1px solid rgb(255 255 255 / 15%);
+  grid-column: span 7;
 }
 
-.dimensionTopline {
-  align-items: center;
-  display: flex;
-  gap: 16px;
+.dimensionGrid article:nth-child(3) {
+  border-left: 1px solid rgb(255 255 255 / 15%);
 }
 
-.dimensionTopline small {
-  color: var(--brand-orange-soft);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-}
-
-.dimensionTopline span {
-  background: rgb(255 255 255 / 18%);
-  height: 1px;
-  width: 38px;
+.dimensionGrid article:nth-child(4) {
+  grid-column: span 7;
 }
 
 .dimensionGrid h3 {
   font-size: clamp(22px, 2vw, 29px);
-  margin: 140px 0 20px;
+  margin: 82px 0 20px;
 }
 
 .dimensionGrid p {
-  color: rgb(255 255 255 / 58%);
-  font-size: 13px;
+  color: rgb(255 255 255 / 74%);
+  font-size: 16px;
   line-height: 1.85;
   margin: 0;
 }
@@ -689,10 +685,48 @@
   object-fit: cover;
 }
 
+.healthyDiagram {
+  align-content: center;
+  background: #111411;
+  color: #fff;
+  display: grid;
+  padding: clamp(34px, 5vw, 72px);
+}
+
+.healthyNarrative .healthyDiagram::after {
+  background: radial-gradient(circle at 84% 18%, rgb(232 88 15 / 28%), transparent 34%);
+}
+
+.healthyDiagram > div {
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  display: grid;
+  gap: 8px 20px;
+  grid-template-columns: minmax(110px, .7fr) 1fr;
+  padding: 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.healthyDiagram small {
+  color: var(--brand-orange);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.healthyDiagram strong {
+  font-size: clamp(23px, 2.5vw, 36px);
+}
+
+.healthyDiagram span {
+  color: rgb(255 255 255 / 66%);
+  grid-column: 2;
+  line-height: 1.7;
+}
+
 .healthyNarrative figcaption {
   bottom: 30px;
   color: rgb(255 255 255 / 76%);
-  font-size: 12px;
+  font-size: 13px;
   left: 30px;
   line-height: 1.7;
   max-width: 320px;
@@ -703,14 +737,15 @@
 .healthyNarrative h2 {
   font-family: var(--font-display);
   font-size: clamp(44px, 5.2vw, 80px);
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
   line-height: 1.05;
-  margin: 26px 0 30px;
+  margin: 0 0 30px;
+  text-wrap: balance;
 }
 
 .healthyNarrative > div > p:not(.kicker) {
   color: var(--ink-soft);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.95;
   margin: 0;
 }
@@ -737,7 +772,7 @@
 
 .healthyNarrative li span {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   padding-top: 4px;
 }
@@ -753,11 +788,11 @@
 
 .boundaryLabel {
   align-items: center;
-  color: #7e634f;
+  color: #6a5140;
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 14px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
 }
 
 .boundaryLabel span {
@@ -774,9 +809,10 @@
 .boundaryCopy > h2 {
   font-family: var(--font-display);
   font-size: clamp(46px, 6vw, 92px);
-  letter-spacing: -0.07em;
+  letter-spacing: -0.04em;
   line-height: 1.02;
   margin: 0;
+  text-wrap: balance;
 }
 
 .boundaryCopy > p {
@@ -788,19 +824,18 @@
 }
 
 .boundaryNotice {
-  border-left: 3px solid var(--brand-orange);
   border-top: 1px solid rgb(75 55 41 / 24%);
   margin-top: 54px;
-  padding: 26px 0 0 26px;
+  padding: 26px 0 0;
 }
 
 .boundaryNotice strong {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .boundaryNotice p {
   color: #66584e;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.85;
   margin: 12px 0 0;
   max-width: 760px;
@@ -843,6 +878,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .dimensionGrid article,
+  .dimensionGrid article:first-child,
+  .dimensionGrid article:nth-child(3),
+  .dimensionGrid article:nth-child(4) {
+    grid-column: auto;
+  }
+
   .dimensionGrid article:nth-child(3) {
     border-left: 1px solid rgb(255 255 255 / 15%);
   }
@@ -853,6 +895,31 @@
 }
 
 @media (max-width: 760px) {
+  .kicker,
+  .breadcrumbs,
+  .heroLink,
+  .sceneMeta small,
+  .methodNumber,
+  .methodList small,
+  .healthyNarrative li span,
+  .boundaryLabel,
+  .healthyNarrative figcaption,
+  .boundaryNotice strong {
+    font-size: 14px;
+  }
+
+  .overviewHeroVisual figcaption small {
+    font-size: 14px;
+  }
+
+  .breadcrumbs a {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
   .overviewHero {
     min-height: auto;
   }
@@ -916,6 +983,12 @@
   }
 
   .relatedGrid a,
+  .relatedGrid a:nth-child(3n + 1),
+  .relatedGrid a:nth-child(3n + 2) {
+    grid-column: auto;
+  }
+
+  .relatedGrid a,
   .relatedGrid a:first-child {
     border-bottom: 1px solid rgb(255 255 255 / 15%);
     border-left: 1px solid rgb(255 255 255 / 15%);
@@ -945,15 +1018,13 @@
 
   .healthyLocalNav a {
     border-bottom: 1px solid rgb(255 255 255 / 13%);
+    font-size: 14px;
+    min-height: 44px;
     padding: 12px 16px;
   }
 
   .humanStatement {
     gap: 34px;
-  }
-
-  .statementIndex {
-    display: none;
   }
 
   .dimensionGrid {

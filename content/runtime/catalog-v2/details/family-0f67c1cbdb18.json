@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-0f67c1cbdb18",
+    "canonical_slug": "11442",
+    "canonical_source_key": "mall_sql:11442",
+    "canonical_source_id": "11442",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-ZX-04 户外照明系列",
+    "category": "户外照明",
+    "source_categories": [
+      "户外照明"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 3,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-0f67c1cbdb18",
+    "model_label": "JH-ZX-04",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11442",
+      "display_id": "11442",
+      "title": "JH-ZX-04 大号 壁灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11436",
+        "source_id": "11436",
+        "display_id": "11436",
+        "model_label": "JH-ZX-04",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11441",
+        "source_id": "11441",
+        "display_id": "11441",
+        "model_label": "JH-ZX-04",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11442",
+        "source_id": "11442",
+        "display_id": "11442",
+        "model_label": "JH-ZX-04",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {
+      "types": [
+        "壁灯"
+      ]
+    },
+    "quality_flags": [
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11436",
+      "source_path": "商城系统/商品说明/JH-ZX-04 小号 壁灯_11436.md",
+      "source_sha256": "bd8040047d2c7fa32b3636288a8158a31c335e81a718bdd86a2d437ffdbb0ff1"
+    },
+    {
+      "source_key": "mall_sql:11441",
+      "source_path": "商城系统/商品说明/JH-ZX-04 中号 壁灯_11441.md",
+      "source_sha256": "b01a6871b7d63bca4efced1adff4304282241b15458ee9dad8bea422991a4485"
+    },
+    {
+      "source_key": "mall_sql:11442",
+      "source_path": "商城系统/商品说明/JH-ZX-04 大号 壁灯_11442.md",
+      "source_sha256": "b184d873e5a8c1181d4d2a6a6badc08f3d5da38406290baad8f056d942417bf7"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "类型": "壁灯"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 15,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-0ecfacc52ab3",
+      "source_key": "mall_sql:11436",
+      "display_id": "11436",
+      "label": "JH-ZX-04 小号 壁灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-ZX-PD-01",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-142702229457",
+      "source_key": "mall_sql:11441",
+      "display_id": "11441",
+      "label": "JH-ZX-04 中号 壁灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-ZX-PD-02",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-bda904bac6f7",
+      "source_key": "mall_sql:11442",
+      "display_id": "11442",
+      "label": "JH-ZX-04 大号 壁灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-ZX-PD-03",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

@@ -57,18 +57,19 @@ test("keeps semantic media and structured data gates for JUHAO news", () => {
   const articleSource = readFileSync(new URL("features/news/NewsArticlePage.tsx", ROOT), "utf8");
   const newsSource = readFileSync(new URL("features/news/NewsPage.tsx", ROOT), "utf8");
   const routeSource = readFileSync(new URL("app/[...slug]/page.tsx", ROOT), "utf8");
-  const mockApiSource = readFileSync(new URL("lib/api/mock.ts", ROOT), "utf8");
+  const newsModelSource = readFileSync(new URL("lib/news.ts", ROOT), "utf8");
 
   assert.match(articleSource, /<Image/);
   assert.match(articleSource, /companyNewsEvidence/);
   assert.match(articleSource, /来源记录/);
   assert.match(articleSource, /公开边界/);
   assert.match(newsSource, /<figure className=\{styles\.heroMedia\}>[\s\S]*?<Image/);
-  assert.match(newsSource, /<figure className=\{styles\.featuredImage\}>[\s\S]*?<Image/);
+  assert.match(newsSource, /className=\{styles\.featuredVisual\}/);
+  assert.doesNotMatch(newsSource, /<figure className=\{styles\.featuredImage\}>/);
   assert.doesNotMatch(newsSource, /backgroundImage:/);
   assert.match(routeSource, /const schema = indexable \? \[/);
   assert.match(routeSource, /const faqSchema = indexable &&/);
-  assert.match(mockApiSource, /page\.type === "article" && isPublishedRoute\(page\.path\)/);
-  assert.match(mockApiSource, /right\.published[\s\S]*localeCompare\(left\.published/);
+  assert.match(newsModelSource, /page\.type === "article" && isPublishedRoute\(page\.path\)/);
+  assert.match(newsModelSource, /right\.published[\s\S]*localeCompare\(left\.published/);
   assert.doesNotMatch(newsSource, /"use client"|siteApi|useEffect|useState/);
 });

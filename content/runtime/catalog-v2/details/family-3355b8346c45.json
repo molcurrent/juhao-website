@@ -1,0 +1,1751 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-3355b8346c45",
+    "canonical_slug": "11366",
+    "canonical_source_key": "mall_sql:11366",
+    "canonical_source_id": "11366",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_category_selection",
+    "route_plan_evidence": "same_complete_reference_image_set_category_requires_owner_selection",
+    "title": "暖煦光巢MA12949-2金简约现代台灯",
+    "category": "待复核",
+    "source_categories": [
+      "台灯",
+      "吊灯"
+    ],
+    "category_state": "pending_owner_selection",
+    "member_count": 12,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-3355b8346c45",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11366",
+      "display_id": "11366",
+      "title": "暖煦光巢V-12949B-3金 简约现代吊灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11315",
+        "source_id": "11315",
+        "display_id": "11315",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11329",
+        "source_id": "11329",
+        "display_id": "11329",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11331",
+        "source_id": "11331",
+        "display_id": "11331",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11332",
+        "source_id": "11332",
+        "display_id": "11332",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11334",
+        "source_id": "11334",
+        "display_id": "11334",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11335",
+        "source_id": "11335",
+        "display_id": "11335",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11352",
+        "source_id": "11352",
+        "display_id": "11352",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11362",
+        "source_id": "11362",
+        "display_id": "11362",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11363",
+        "source_id": "11363",
+        "display_id": "11363",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11364",
+        "source_id": "11364",
+        "display_id": "11364",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11365",
+        "source_id": "11365",
+        "display_id": "11365",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11366",
+        "source_id": "11366",
+        "display_id": "11366",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铝材",
+          "磨砂/刻花玻璃"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "areas",
+        "label": "适用面积",
+        "values": [
+          "5㎡-10㎡",
+          "10㎡-15㎡"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡",
+        "10㎡-15㎡"
+      ],
+      "finishes": [
+        "黑色",
+        "金色"
+      ],
+      "light_sources": [
+        "LED"
+      ],
+      "materials": [
+        "铝材",
+        "磨砂/刻花玻璃",
+        "铁艺"
+      ],
+      "spaces": [
+        "餐厅",
+        "卧室",
+        "书房",
+        "客厅"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "吸顶灯",
+        "台灯",
+        "落地灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11315",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949-2黑简约现代吊灯_11315.md",
+      "source_sha256": "b29b71579da1eb8f79ecc8e6343c069302aeef46234056e63cc75873741cb3d7"
+    },
+    {
+      "source_key": "mall_sql:11329",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949B-3黑简约现代吊灯_11329.md",
+      "source_sha256": "ea46b5aa2f0a1f083e0bf62ea723d46b4ebe6786aedc029330de0c34a3e19b65"
+    },
+    {
+      "source_key": "mall_sql:11331",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949-4黑简约现代吊灯_11331.md",
+      "source_sha256": "9ef313229d84d5f60611b9ca4866159cb0d68c9daa742022dcb5b857bae51f97"
+    },
+    {
+      "source_key": "mall_sql:11332",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949-5黑简约现代吊灯_11332.md",
+      "source_sha256": "d58ede2ff2aa1b94187fbd65b47140418743a4a3555911db66efc7a9eacbf35e"
+    },
+    {
+      "source_key": "mall_sql:11334",
+      "source_path": "商城系统/商品说明/暖煦光巢MA12949-3黑简约现代台灯_11334.md",
+      "source_sha256": "4ef271eadeb51e01ba371e0e33f53ebd2ffa63b0fdad921b5cef710a1697ad43"
+    },
+    {
+      "source_key": "mall_sql:11335",
+      "source_path": "商城系统/商品说明/暖煦光巢MA12949-2黑简约现代台灯_11335.md",
+      "source_sha256": "4f2a7a1d711d3643ee87231d441d276f46b7b881aa521c6e1d75c7f50ebf1cef"
+    },
+    {
+      "source_key": "mall_sql:11352",
+      "source_path": "商城系统/商品说明/暖煦光巢MT12949-4黑简约现代落地灯_11352.md",
+      "source_sha256": "d64b1733d2a2d3502b3ed0ed7a15b260fb6253e4e77fb7686775ece4fba93005"
+    },
+    {
+      "source_key": "mall_sql:11362",
+      "source_path": "商城系统/商品说明/暖煦光巢MA12949-3金简约现代台灯_11362.md",
+      "source_sha256": "52811c4baafa980f5929258adfd190d11725e7186bd5b7fd7928ab7f836afa82"
+    },
+    {
+      "source_key": "mall_sql:11363",
+      "source_path": "商城系统/商品说明/暖煦光巢MA12949-2金简约现代台灯_11363.md",
+      "source_sha256": "a930f54ef4fb06136bc5f9dd284c0928f6019d21546a65f27cf4c29f92b418d3"
+    },
+    {
+      "source_key": "mall_sql:11364",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949A-3黑简约现代吊灯_11364.md",
+      "source_sha256": "9317901cdf20abd49afd5a69d8423c9d5cb43afc71d3094cde6a267ff266b087"
+    },
+    {
+      "source_key": "mall_sql:11365",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949-2金 简约现代吊灯_11365.md",
+      "source_sha256": "0dd66cc1bdb4e420faa11b23804fcc47bbc8f955e06acbc0f586d0b124c2fd8e"
+    },
+    {
+      "source_key": "mall_sql:11366",
+      "source_path": "商城系统/商品说明/暖煦光巢V-12949B-3金 简约现代吊灯_11366.md",
+      "source_sha256": "e7cde10f396608f06708de07fb1ed170e8bfa1cb7fafbf67acf7789f8c47bc2e"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铝材",
+      "光源类型": "LED",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "金色",
+      "空间": "餐厅,卧室,书房",
+      "类型": "吸顶灯",
+      "风格": "简约现代"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 23,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-bb7c38dfab76",
+      "source_key": "mall_sql:11315",
+      "display_id": "11315",
+      "label": "暖煦光巢V-12949-2黑简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-bef0235fae63",
+      "source_key": "mall_sql:11329",
+      "display_id": "11329",
+      "label": "暖煦光巢V-12949B-3黑简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-27a6f89053f1",
+      "source_key": "mall_sql:11331",
+      "display_id": "11331",
+      "label": "暖煦光巢V-12949-4黑简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-461abd583f6d",
+      "source_key": "mall_sql:11332",
+      "display_id": "11332",
+      "label": "暖煦光巢V-12949-5黑简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-a8a9fba6fe27",
+      "source_key": "mall_sql:11334",
+      "display_id": "11334",
+      "label": "暖煦光巢MA12949-3黑简约现代台灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-5dd2197de010",
+      "source_key": "mall_sql:11335",
+      "display_id": "11335",
+      "label": "暖煦光巢MA12949-2黑简约现代台灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-1402b740a87c",
+      "source_key": "mall_sql:11352",
+      "display_id": "11352",
+      "label": "暖煦光巢MT12949-4黑简约现代落地灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-c96129815120",
+      "source_key": "mall_sql:11362",
+      "display_id": "11362",
+      "label": "暖煦光巢MA12949-3金简约现代台灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-6ef714c45c30",
+      "source_key": "mall_sql:11363",
+      "display_id": "11363",
+      "label": "暖煦光巢MA12949-2金简约现代台灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-9e17b0b968ba",
+      "source_key": "mall_sql:11364",
+      "display_id": "11364",
+      "label": "暖煦光巢V-12949A-3黑简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-ceec262ab2b5",
+      "source_key": "mall_sql:11365",
+      "display_id": "11365",
+      "label": "暖煦光巢V-12949-2金 简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-e5f97c60f76d",
+      "source_key": "mall_sql:11366",
+      "display_id": "11366",
+      "label": "暖煦光巢V-12949B-3金 简约现代吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "金色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 12,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 13,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 14,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 15,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

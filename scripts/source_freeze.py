@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Iterable
 
@@ -35,6 +36,7 @@ ARTIFACTS = [
     "content/governance/route-og.json",
     "content/governance/runtime-media.json",
     "content/runtime/company-news.json",
+    "content/runtime/knowledge-library.json",
     "content/runtime/legacy-news-routes.json",
     "content/runtime/media-rewrite-report.json",
     "content/runtime/publication-ledger.json",
@@ -95,19 +97,33 @@ def build_snapshot() -> dict:
     }
 
 
-def verify_external_sources(groups: set[str] | None = None) -> dict[str, int | str]:
+def verify_external_sources(
+    groups: set[str] | None = None,
+    *,
+    require_available: bool = False,
+) -> dict[str, int | str]:
     if not FREEZE_PATH.exists():
+        if require_available:
+            raise ValueError("缺少 source-freeze.json；无法核对外部来源")
         return {"status": "freeze_not_created", "checked": 0}
     frozen = json.loads(FREEZE_PATH.read_text(encoding="utf-8"))
     selected = groups or {"help", "products", "topics", "mall_sql"}
     checked = 0
 
-    if "mall_sql" in selected and SQL_SOURCE.exists():
-        if sha256_file(SQL_SOURCE) != frozen["mall_sql"]["sha256"]:
-            raise ValueError("商城 SQL 已变化；停止吸收，请建立新的内容冻结批次")
-        checked += 1
+    if "mall_sql" in selected:
+        if not SQL_SOURCE.is_file():
+            if require_available:
+                raise ValueError(f"外部来源不可用：{SQL_SOURCE}")
+        else:
+            if sha256_file(SQL_SOURCE) != frozen["mall_sql"]["sha256"]:
+                raise ValueError("商城 SQL 已变化；停止吸收，请建立新的内容冻结批次")
+            checked += 1
 
-    if KB.exists():
+    knowledge_groups = selected.intersection({"help", "products", "topics"})
+    if knowledge_groups and not KB.is_dir() and require_available:
+        raise ValueError(f"外部知识库不可用：{KB}")
+
+    if KB.is_dir():
         mapping = {
             "help": "help_sources",
             "products": "product_sources",
@@ -139,7 +155,7 @@ def verify_media_files() -> int:
     return checked
 
 
-def check_snapshot() -> dict:
+def check_snapshot(*, check_external: bool = False) -> dict:
     if not FREEZE_PATH.exists():
         raise ValueError("缺少 source-freeze.json；不得在未冻结来源的情况下构建")
     frozen = json.loads(FREEZE_PATH.read_text(encoding="utf-8"))
@@ -147,7 +163,11 @@ def check_snapshot() -> dict:
     if current != frozen:
         changed = [key for key in current if current.get(key) != frozen.get(key)]
         raise ValueError(f"治理快照已变化；停止构建并建立新批次：{', '.join(changed)}")
-    external = verify_external_sources()
+    external = (
+        verify_external_sources(require_available=True)
+        if check_external
+        else {"status": "not_requested", "checked": 0}
+    )
     return {
         "batch_id": frozen["batch_id"],
         "professional_article_import": frozen["content_policy"]["professional_article_import"],
@@ -163,17 +183,32 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Freeze or verify JUHAO source snapshots.")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--write", action="store_true", help="Explicitly write a reviewed freeze batch.")
-    group.add_argument("--check", action="store_true", help="Verify committed artifacts and available external sources.")
+    group.add_argument("--check", action="store_true", help="Verify only committed artifacts used by a reproducible build.")
+    group.add_argument(
+        "--check-external",
+        action="store_true",
+        help="Explicitly audit available repository-external sources against the reviewed freeze.",
+    )
     args = parser.parse_args()
 
     if args.write:
         snapshot = build_snapshot()
         FREEZE_PATH.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        result = {"written": str(FREEZE_PATH.relative_to(ROOT)), **check_snapshot()}
+        result = {
+            "written": str(FREEZE_PATH.relative_to(ROOT)),
+            **check_snapshot(check_external=True),
+        }
     else:
-        result = check_snapshot()
+        result = check_snapshot(check_external=args.check_external)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as error:
+        print(
+            json.dumps({"status": "failed", "error": str(error)}, ensure_ascii=False, indent=2),
+            file=sys.stderr,
+        )
+        raise SystemExit(1) from error

@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-ea384bf6c039",
+    "canonical_slug": "6654",
+    "canonical_source_key": "mall_sql:6654",
+    "canonical_source_id": "6654",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_category_selection",
+    "route_plan_evidence": "same_complete_reference_image_set_category_requires_owner_selection",
+    "title": "JH-V-50209 跨分类系列",
+    "category": "待复核",
+    "source_categories": [
+      "吊灯",
+      "壁灯"
+    ],
+    "category_state": "pending_owner_selection",
+    "member_count": 7,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-ea384bf6c039",
+    "model_label": "JH-V-50209-520*1450",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:6654",
+      "display_id": "6654",
+      "title": "JH-V-50209-520*1450 轻奢楼梯灯吊灯/客厅/中空/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:6654",
+        "source_id": "6654",
+        "display_id": "6654",
+        "model_label": "JH-V-50209-520*1450",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6682",
+        "source_id": "6682",
+        "display_id": "6682",
+        "model_label": "JH-V-50209-600",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6683",
+        "source_id": "6683",
+        "display_id": "6683",
+        "model_label": "JH-V-50209-520",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6684",
+        "source_id": "6684",
+        "display_id": "6684",
+        "model_label": "JH-V-50209-800",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6685",
+        "source_id": "6685",
+        "display_id": "6685",
+        "model_label": "JH-V-50209-900*300",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6686",
+        "source_id": "6686",
+        "display_id": "6686",
+        "model_label": "JH-V-50209-1500",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:6687",
+        "source_id": "6687",
+        "display_id": "6687",
+        "model_label": "JH-V-50209-250*140*280",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "520*H1450MM",
+          "600*H290MM"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "E14"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "水晶",
+          "锌合金"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "25㎡-40㎡",
+        "10㎡-20㎡",
+        "15㎡-30㎡",
+        "10㎡-25㎡",
+        "40㎡以上",
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "520*H1450MM",
+        "600*H290MM",
+        "520*H280MM",
+        "800*H290MM"
+      ],
+      "finishes": [
+        "S金+天然贝壳"
+      ],
+      "light_sources": [
+        "E14"
+      ],
+      "materials": [
+        "水晶",
+        "锌合金",
+        "铁艺",
+        "其他"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "楼梯/拐角",
+        "高层/复式/别墅",
+        "卧室",
+        "书房",
+        "儿童房",
+        "低户型",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "轻奢"
+      ],
+      "types": [
+        "吊灯",
+        "水晶灯",
+        "壁灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:6654",
+      "source_path": "商城系统/商品说明/JH-V-50209-5201450 轻奢楼梯灯吊灯客厅中空复式高层别墅铁艺+合金+水晶+天然贝壳_6654.md",
+      "source_sha256": "ead767877f3c248ecf7f0d73d368db4db9e5d7ca86e29aad517ae906e2caa86d"
+    },
+    {
+      "source_key": "mall_sql:6682",
+      "source_path": "商城系统/商品说明/JH-V-50209-600 轻奢吊灯客厅餐厅卧室低户型复式高层别墅铁艺+合金+水晶+天然贝壳_6682.md",
+      "source_sha256": "1635c6fde653bf39aea6f8f4e397910aefaf4de69491ef9d27f0d7051549f7ae"
+    },
+    {
+      "source_key": "mall_sql:6683",
+      "source_path": "商城系统/商品说明/JH-V-50209-520 轻奢吊灯客厅餐厅卧室低户型复式高层别墅铁艺+合金+水晶+天然贝壳_6683.md",
+      "source_sha256": "bdad26b7a71640212acda8f070d6812a966f188d5b4f7dbbca12bc70d9207226"
+    },
+    {
+      "source_key": "mall_sql:6684",
+      "source_path": "商城系统/商品说明/JH-V-50209-800 轻奢吊灯客厅餐厅卧室低户型复式高层别墅铁艺+合金+水晶+天然贝壳_6684.md",
+      "source_sha256": "315a117941abe0448b1df052a3de0834cd797087bcf48319dda5be1616b7b049"
+    },
+    {
+      "source_key": "mall_sql:6685",
+      "source_path": "商城系统/商品说明/JH-V-50209-900300 轻奢椭圆吊灯客厅餐厅卧室低户型复式高层别墅铁艺+合金+水晶+天然贝壳_6685.md",
+      "source_sha256": "3cfadb99b632c34db4adfd77d881f9150a6161648a0538051b85bae990a44d7f"
+    },
+    {
+      "source_key": "mall_sql:6686",
+      "source_path": "商城系统/商品说明/JH-V-50209-1500 轻奢大吊灯客厅中空复式高层别墅铁艺+合金+水晶+天然贝壳_6686.md",
+      "source_sha256": "4ace52706a51ceafa603b0d3ba0955f8588450aaea22a38481ad4b7ccd53399b"
+    },
+    {
+      "source_key": "mall_sql:6687",
+      "source_path": "商城系统/商品说明/JH-V-50209-250140280 轻奢壁灯客厅餐厅卧室低户型复式高层别墅铁艺+合金+水晶+天然贝壳_6687.md",
+      "source_sha256": "522d6952bc52c9b8511e7445493b1abeaf93c89021220f32265f07e932554e40"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "水晶,锌合金,铁艺,其他",
+      "光源类型": "E14",
+      "尺寸": "520*H1450MM",
+      "面积": "25㎡-40㎡",
+      "颜色工艺": "S金+天然贝壳",
+      "空间": "客厅,餐厅,楼梯/拐角,高层/复式/别墅",
+      "类型": "吊灯,水晶灯",
+      "风格": "轻奢",
+      "光源数量": "E14*33"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 19,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-5721ab3b6556",
+      "source_key": "mall_sql:6654",
+      "display_id": "6654",
+      "label": "JH-V-50209-520*1450 轻奢楼梯灯吊灯/客厅/中空/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "520*H1450MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-554c15be345e",
+      "source_key": "mall_sql:6682",
+      "display_id": "6682",
+      "label": "JH-V-50209-600 轻奢吊灯/客厅/餐厅/卧室/低户型/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "600*H290MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-2cac17808c37",
+      "source_key": "mall_sql:6683",
+      "display_id": "6683",
+      "label": "JH-V-50209-520 轻奢吊灯/客厅/餐厅/卧室/低户型/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "520*H280MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-e7a0f02d2b89",
+      "source_key": "mall_sql:6684",
+      "display_id": "6684",
+      "label": "JH-V-50209-800 轻奢吊灯/客厅/餐厅/卧室/低户型/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "800*H290MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-da1b3dd81dae",
+      "source_key": "mall_sql:6685",
+      "display_id": "6685",
+      "label": "JH-V-50209-900*300 轻奢椭圆吊灯/客厅/餐厅/卧室/低户型/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "800*H290MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-d5702200be2a",
+      "source_key": "mall_sql:6686",
+      "display_id": "6686",
+      "label": "JH-V-50209-1500 轻奢大吊灯/客厅/中空/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "520*H1450MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-95bcb09ddde7",
+      "source_key": "mall_sql:6687",
+      "display_id": "6687",
+      "label": "JH-V-50209-250*140*280 轻奢壁灯/客厅/餐厅/卧室/低户型/复式高层/别墅/铁艺+合金+水晶+天然贝壳",
+      "dimensions": {
+        "dimensions": {
+          "value": "520*H280MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "S金+天然贝壳",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

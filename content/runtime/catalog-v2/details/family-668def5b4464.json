@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-668def5b4464",
+    "canonical_slug": "2321",
+    "canonical_source_key": "mall_sql:2321",
+    "canonical_source_id": "2321",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "XD58533-8简欧风格吊灯/客厅/餐厅/卧室/高层/复式/别墅/锌合金+天然玉石/仿玉石+仿云石封口罩",
+    "category": "吊灯",
+    "source_categories": [
+      "吊灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-668def5b4464",
+    "model_label": "XD58533-8",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:2321",
+      "display_id": "2321",
+      "title": "XD58533-8简欧风格吊灯/客厅/餐厅/卧室/高层/复式/别墅/锌合金+天然玉石/仿玉石+仿云石封口罩",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:2321",
+        "source_id": "2321",
+        "display_id": "2321",
+        "model_label": "XD58533-8",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "∅925*H535"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "E27"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "锌合金",
+          "亚克力"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-20㎡"
+      ],
+      "dimensions": [
+        "∅925*H535"
+      ],
+      "finishes": [
+        "豪金+巧克力"
+      ],
+      "light_sources": [
+        "E27"
+      ],
+      "materials": [
+        "锌合金",
+        "亚克力",
+        "仿玉石",
+        "人造云石"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "低户型",
+        "高层/复式/别墅",
+        "其他"
+      ],
+      "styles": [
+        "简约现代",
+        "欧式",
+        "欧式现代简约"
+      ],
+      "types": [
+        "吊灯",
+        "玉石大吊灯",
+        "复式楼大吊灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:2321",
+      "source_path": "商城系统/商品说明/XD58533-8简欧风格吊灯客厅餐厅卧室高层复式别墅锌合金+天然玉石仿玉石+仿云石封口罩_2321.md",
+      "source_sha256": "c374547c76502667f62604364f9193d27c485643b7d93dfd91c05458c445307b"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "锌合金,亚克力,仿玉石,人造云石",
+      "光源类型": "E27",
+      "尺寸": "∅925*H535",
+      "面积": "10㎡-20㎡",
+      "颜色工艺": "豪金+巧克力",
+      "空间": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,其他",
+      "类型": "吊灯,玉石大吊灯,复式楼大吊灯",
+      "风格": "简约现代,欧式,欧式现代简约",
+      "光源数量": "E27*8个"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 17,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-f3c2e0c4c570",
+      "source_key": "mall_sql:2321",
+      "display_id": "2321",
+      "label": "XD58533-8简欧风格吊灯/客厅/餐厅/卧室/高层/复式/别墅/锌合金+天然玉石/仿玉石+仿云石封口罩",
+      "dimensions": {
+        "dimensions": {
+          "value": "∅925*H535",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "豪金+巧克力",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

@@ -15,6 +15,8 @@ npm test
 
 `npm test` 会先执行 production build，再验证服务端正文、canonical、robots、sitemap、JSON-LD、旧路由迁移和 404。
 
+日常 `npm run build` 只核对仓库内已冻结产物，保证构建不受仓库外知识库实时变化影响。需要显式核对外部来源时运行 `npm run check:sources`；准备公开发布时运行 `npm run check:release`，它会逐项检查人工签核、公开索引、规范主域名与咨询入口配置。外部来源不可用或发生漂移、发布条件未签核时，相应审计命令按设计返回失败，且不会改写冻结或审批数据。
+
 ## 工程边界
 
 - `app/`：路由入口、metadata、sitemap、robots 与 404。
@@ -25,7 +27,7 @@ npm test
 - 全站提供家庭健康光、工程项目和渠道合作三类咨询快捷入口，记录来源、场景与意图；同时保留滚动后返回顶部和 reduced-motion 路由过场降级。
 - `components/ui/`：可访问 Carousel；首页资讯与关于页品牌场景共用键盘、触摸、自动播放、暂停和 reduced-motion 行为。
 - `features/`：首页、关于、解决方案、智能家居、服务、合作、新闻、搜索、商城、联系、可持续、下载与法律页面。
-- `lib/api/`：统一 `SiteApi` 接口与本地 Mock；页面不调用原 NVC 接口。
+- `lib/api/`：仅保留同源咨询提交及其运行时校验；内容直接读取本地治理数据。
 - `styles/tokens.css`：品牌颜色、排版、空间、时长与层级变量。
 - `RECON/`：路由契约、动效清单、取证结论和预发布验收报告。原始浏览器证据只留本地，不进入 Git 或发布包。
 
@@ -40,7 +42,9 @@ npm test
 
 ## 数据与发布安全
 
-`SiteApi` 支持本地 Mock 和正式 HTTP/CMS 两种读取适配器；咨询回访独立使用同源 `/api/contact`，先写入 Sites D1，再按可选的服务端 Webhook 通知内部接收端，不会因咨询上线而切换产品、服务、搜索或资讯数据源。字段与安全边界见 [API 契约](RECON/API_CONTRACT.md)。
+产品、服务、搜索与资讯由本地治理数据直接提供；咨询回访独立使用同源 `/api/contact`，先写入 Sites D1，再按可选的服务端 Webhook 通知内部接收端。字段与安全边界见 [API 契约](RECON/API_CONTRACT.md)。
+
+公开咨询入口必须同时配置 Turnstile 允许主机名，并在 Cloudflare 边缘/WAF 完成前置限流验收后将 `CONTACT_EDGE_RATE_LIMIT_VERIFIED=true`。D1 限流只统计已通过 Turnstile 的业务提交，不能替代边缘抗滥用规则；未验收时发布门禁和运行时接口都会保持关闭。
 
 以下信息在企业确认前不得改成可索引正式内容：
 

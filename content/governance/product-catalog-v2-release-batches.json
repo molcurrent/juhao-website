@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "active_batch_id": "catalog-v2-private-sample-120",
+  "ownership": "human_reviewed_release_specification",
+  "batches": [
+    {
+      "batch_id": "catalog-v2-private-sample-120",
+      "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+      "purpose": "private_sample",
+      "target_visibility": "private_noindex",
+      "family_selection": {
+        "artifact": "product-sample-batch-120.json",
+        "expected_count": 120,
+        "family_set_sha256": "2cd00653c5a36e85552e78595556057ceeafba50c587f879d0400327a7f2b411"
+      },
+      "selection_policy": "existing_routes_first_then_category_round_robin_by_quality",
+      "state": "emitted",
+      "approved_by": null,
+      "approved_at": null,
+      "controls": {
+        "robots_index": false,
+        "sitemap_included": false,
+        "alias_activation": "disabled"
+      },
+      "publication_boundary": "local_private_preview_only_not_deployed_not_public_release"
+    },
+    {
+      "batch_id": "catalog-v2-full-release-1208",
+      "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+      "purpose": "full_catalog_release_after_all_approvals",
+      "target_visibility": "public_indexable",
+      "family_selection": {
+        "scope": "all_derived_families",
+        "expected_count": 1208,
+        "expected_source_member_count": 1913,
+        "family_set_sha256": "535044ef0d59495a92a80a6ef6da541799a625bd6419fc7bab7531c51783223f",
+        "member_set_sha256": "6d87866fbfe55f2e06e486344be65809be01e76a374556acfe5450352144dfe2"
+      },
+      "model": {
+        "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3",
+        "applied_family_model_sha256": "e8e9cf4d812a6c53205b0aab4c49263e3455b17485e4847eac530a5bc33538a5"
+      },
+      "selection_policy": "all_derived_families_after_all_product_review_approvals",
+      "state": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "controls": {
+        "robots_index": true,
+        "sitemap_included": true,
+        "alias_activation": "approved"
+      },
+      "publication_boundary": "inactive_until_full_release_readiness_is_eligible_and_launch_gate_passes"
+    }
+  ]
+}

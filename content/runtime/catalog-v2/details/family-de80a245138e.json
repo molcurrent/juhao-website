@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-de80a245138e",
+    "canonical_slug": "11698",
+    "canonical_source_key": "mall_sql:11698",
+    "canonical_source_id": "11698",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-685空调型取暖四合一浴霸",
+    "category": "浴霸",
+    "source_categories": [
+      "浴霸"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-de80a245138e",
+    "model_label": "JH-685",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11698",
+      "display_id": "11698",
+      "title": "JH-685空调型取暖四合一浴霸",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11698",
+        "source_id": "11698",
+        "display_id": "11698",
+        "model_label": "JH-685",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11698",
+      "source_path": "商城系统/商品说明/JH-685空调型取暖四合一浴霸_11698.md",
+      "source_sha256": "d8e75c6f0f480e6ab1a57feb066635f97caa14275f18d56c97dc2687a56df2ae"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 14,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-a5171662aff8",
+      "source_key": "mall_sql:11698",
+      "display_id": "11698",
+      "label": "JH-685空调型取暖四合一浴霸",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

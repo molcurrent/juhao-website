@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-d9a430f2bdc8",
+    "canonical_slug": "1950",
+    "canonical_source_key": "mall_sql:1950",
+    "canonical_source_id": "1950",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-008GY-2*36W 双色 模组",
+    "category": "模组",
+    "source_categories": [
+      "模组"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-d9a430f2bdc8",
+    "model_label": "JH-008GY-2*36W",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:1950",
+      "display_id": "1950",
+      "title": "JH-008GY-2*36W 双色 模组",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:1950",
+        "source_id": "1950",
+        "display_id": "1950",
+        "model_label": "JH-008GY-2*36W",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "Ф315*25mm"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "2835"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "亚克力"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "Ф315*25mm"
+      ],
+      "finishes": [
+        "透明色"
+      ],
+      "light_sources": [
+        "2835"
+      ],
+      "materials": [
+        "亚克力"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "儿童房",
+        "阳台",
+        "低户型",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "光源类"
+      ],
+      "types": [
+        "吸顶灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:1950",
+      "source_path": "商城系统/商品说明/JH-008GY-236W 双色 模组_1950.md",
+      "source_sha256": "a3cc5940797a2e5b60c5311b0642249e4b5f628c0d69411afcfcf1c0c8ac9fae"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "亚克力",
+      "光源类型": "2835",
+      "尺寸": "Ф315*25mm",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "透明色",
+      "空间": "客厅,餐厅,卧室,书房,儿童房,阳台,低户型,玄关/过道/廊道",
+      "类型": "吸顶灯",
+      "风格": "光源类"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 15,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-e2cf1a079939",
+      "source_key": "mall_sql:1950",
+      "display_id": "1950",
+      "label": "JH-008GY-2*36W 双色 模组",
+      "dimensions": {
+        "dimensions": {
+          "value": "Ф315*25mm",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "透明色",
+          "evidence": "source_attribute:颜色工艺"
+        },
+        "wattage": {
+          "value": "36W",
+          "evidence": "title_literal"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

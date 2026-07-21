@@ -1,5 +1,241 @@
 [
   {
+    "source_id": "9238",
+    "title": "JH-8L6619-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "JH-8L6619-500",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-03-06",
+    "seo_slug": "/products/linear-lighting/9238",
+    "category": "吸顶灯",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色透镜贴片+双色灯带"
+      },
+      {
+        "name": "尺寸",
+        "value": "φ500*95"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-15㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "变光64W"
+      }
+    ],
+    "primary_media_id": "media-a36aae33ae25838ddca2",
+    "gallery_media_ids": [
+      "media-a36aae33ae25838ddca2",
+      "media-287310e597f5116da607",
+      "media-fe566d322ffa36294329",
+      "media-fd50bad6870794376972",
+      "media-ecb8ca85f5df42643d4e",
+      "media-6be2591c0100efe5f5a4"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ]
+  },
+  {
+    "source_id": "9237",
+    "title": "JH-8L6619-500*500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "JH-8L6619-500*500",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-03-06",
+    "seo_slug": "/products/linear-lighting/9237",
+    "category": "吸顶灯",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色透镜贴片+双色灯带"
+      },
+      {
+        "name": "尺寸",
+        "value": "500*500*95"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-15㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "变光76W"
+      }
+    ],
+    "primary_media_id": "media-30b8cce7d94afb776846",
+    "gallery_media_ids": [
+      "media-30b8cce7d94afb776846",
+      "media-287310e597f5116da607",
+      "media-fe566d322ffa36294329",
+      "media-fd50bad6870794376972",
+      "media-ecb8ca85f5df42643d4e",
+      "media-6be2591c0100efe5f5a4"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ]
+  },
+  {
+    "source_id": "9236",
+    "title": "JH-8L6619-1100*720现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "model": "JH-8L6619-1100*720",
+    "topic": "灯带",
+    "topic_slug": "linear-lighting",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-03-06",
+    "seo_slug": "/products/linear-lighting/9236",
+    "category": "吸顶灯",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "亚克力,铁艺"
+      },
+      {
+        "name": "光源类型",
+        "value": "LED双色透镜贴片+双色灯带"
+      },
+      {
+        "name": "尺寸",
+        "value": "1100*720*95"
+      },
+      {
+        "name": "面积",
+        "value": "20㎡-35㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房"
+      },
+      {
+        "name": "类型",
+        "value": "吸顶灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "光源数量",
+        "value": "变光170W"
+      }
+    ],
+    "primary_media_id": "media-786a9308e4bbf0266515",
+    "gallery_media_ids": [
+      "media-786a9308e4bbf0266515",
+      "media-287310e597f5116da607",
+      "media-fe566d322ffa36294329",
+      "media-fd50bad6870794376972",
+      "media-ecb8ca85f5df42643d4e",
+      "media-6be2591c0100efe5f5a4"
+    ],
+    "installation_notes": [
+      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
+      "灯带、驱动与控制器的兼容性应成套确认。"
+    ]
+  },
+  {
+    "source_id": "8445",
+    "title": "JH-ZN-2.4G-F（情景面板） G系列 智能产品",
+    "model": "JH-ZN-2.4G-F",
+    "topic": "开关面板",
+    "topic_slug": "switches",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "84%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-07-13",
+    "seo_slug": "/products/switches/8445",
+    "category": "筒射灯",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "其他"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,高层/复式/别墅"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代"
+      },
+      {
+        "name": "装箱数量",
+        "value": "1只/件"
+      }
+    ],
+    "primary_media_id": "media-3e806e6b1229aaae55f2",
+    "gallery_media_ids": [
+      "media-3e806e6b1229aaae55f2",
+      "media-0878971b26bbb2d7c8d1",
+      "media-8d8089202797c7003001",
+      "media-2dc826f9fa903b2786a8",
+      "media-4c5e758d94c98520348a",
+      "media-e6aaef13211b3115cca7"
+    ],
+    "installation_notes": [
+      "由具备资质的人员按电气规范安装并断电施工。",
+      "负载类型、回路数量和智能协议需在选型前确认。"
+    ]
+  },
+  {
     "source_id": "12287",
     "title": "JH-S288-24W 宽边款 Φ95 射灯 天罡二号系列",
     "model": "JH-S288-24W",
@@ -341,6 +577,195 @@
       {
         "name": "尺寸",
         "value": "130×145"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "30只/件"
+      }
+    ],
+    "primary_media_id": "media-902fe2facc5273aabd33",
+    "gallery_media_ids": [
+      "media-902fe2facc5273aabd33",
+      "media-6bd0173593eaefdeac16",
+      "media-ca89425d4163c25784ce",
+      "media-2fdbe838b4d637b5e1d0",
+      "media-d1662dae4d2f5fe1049e",
+      "media-05e3b45b163be240d3ac"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ]
+  },
+  {
+    "source_id": "12267",
+    "title": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-12W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-07-13",
+    "seo_slug": "/products/spotlights/12267",
+    "category": "商用照明",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "96×87"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50只/件"
+      }
+    ],
+    "primary_media_id": "media-f06be83573bb4ac57dee",
+    "gallery_media_ids": [
+      "media-f06be83573bb4ac57dee",
+      "media-6bd0173593eaefdeac16",
+      "media-ca89425d4163c25784ce",
+      "media-2fdbe838b4d637b5e1d0",
+      "media-d1662dae4d2f5fe1049e",
+      "media-05e3b45b163be240d3ac"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ]
+  },
+  {
+    "source_id": "12266",
+    "title": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-12W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-07-13",
+    "seo_slug": "/products/spotlights/12266",
+    "category": "商用照明",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "82×87"
+      },
+      {
+        "name": "面积",
+        "value": "10㎡-25㎡"
+      },
+      {
+        "name": "空间",
+        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
+      },
+      {
+        "name": "类型",
+        "value": "筒射灯"
+      },
+      {
+        "name": "风格",
+        "value": "简约现代,家居筒射灯"
+      },
+      {
+        "name": "装箱数量",
+        "value": "50只/件"
+      }
+    ],
+    "primary_media_id": "media-82cfc9ba7440f4a473a7",
+    "gallery_media_ids": [
+      "media-82cfc9ba7440f4a473a7",
+      "media-6bd0173593eaefdeac16",
+      "media-ca89425d4163c25784ce",
+      "media-2fdbe838b4d637b5e1d0",
+      "media-d1662dae4d2f5fe1049e",
+      "media-05e3b45b163be240d3ac"
+    ],
+    "installation_notes": [
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
+    ]
+  },
+  {
+    "source_id": "12265",
+    "title": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列",
+    "model": "JH-S288-15W",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
+    "review_status": "needs_review",
+    "sale_status": "在售",
+    "fact_status": "来源字段已通过机器校验",
+    "parameter_completeness": "100%",
+    "image_authorization": "当前站点媒体批次授权已登记",
+    "department": "未确认",
+    "publish_date": "2026-07-13",
+    "seo_slug": "/products/spotlights/12265",
+    "category": "商用照明",
+    "parameters": [
+      {
+        "name": "材质",
+        "value": "铝材"
+      },
+      {
+        "name": "光源类型",
+        "value": "全光谱"
+      },
+      {
+        "name": "尺寸",
+        "value": "107×98"
       },
       {
         "name": "面积",
@@ -1279,242 +1704,6 @@
     ]
   },
   {
-    "source_id": "9238",
-    "title": "JH-8L6619-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
-    "model": "JH-8L6619-500",
-    "topic": "灯带",
-    "topic_slug": "linear-lighting",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-03-06",
-    "seo_slug": "/products/linear-lighting/9238",
-    "category": "吸顶灯",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "亚克力,铁艺"
-      },
-      {
-        "name": "光源类型",
-        "value": "LED双色透镜贴片+双色灯带"
-      },
-      {
-        "name": "尺寸",
-        "value": "φ500*95"
-      },
-      {
-        "name": "面积",
-        "value": "10㎡-15㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房"
-      },
-      {
-        "name": "类型",
-        "value": "吸顶灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代"
-      },
-      {
-        "name": "光源数量",
-        "value": "变光64W"
-      }
-    ],
-    "primary_media_id": "media-a36aae33ae25838ddca2",
-    "gallery_media_ids": [
-      "media-a36aae33ae25838ddca2",
-      "media-287310e597f5116da607",
-      "media-fe566d322ffa36294329",
-      "media-fd50bad6870794376972",
-      "media-ecb8ca85f5df42643d4e",
-      "media-6be2591c0100efe5f5a4"
-    ],
-    "installation_notes": [
-      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
-      "灯带、驱动与控制器的兼容性应成套确认。"
-    ]
-  },
-  {
-    "source_id": "9237",
-    "title": "JH-8L6619-500*500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
-    "model": "JH-8L6619-500*500",
-    "topic": "灯带",
-    "topic_slug": "linear-lighting",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-03-06",
-    "seo_slug": "/products/linear-lighting/9237",
-    "category": "吸顶灯",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "亚克力,铁艺"
-      },
-      {
-        "name": "光源类型",
-        "value": "LED双色透镜贴片+双色灯带"
-      },
-      {
-        "name": "尺寸",
-        "value": "500*500*95"
-      },
-      {
-        "name": "面积",
-        "value": "10㎡-15㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房"
-      },
-      {
-        "name": "类型",
-        "value": "吸顶灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代"
-      },
-      {
-        "name": "光源数量",
-        "value": "变光76W"
-      }
-    ],
-    "primary_media_id": "media-30b8cce7d94afb776846",
-    "gallery_media_ids": [
-      "media-30b8cce7d94afb776846",
-      "media-287310e597f5116da607",
-      "media-fe566d322ffa36294329",
-      "media-fd50bad6870794376972",
-      "media-ecb8ca85f5df42643d4e",
-      "media-6be2591c0100efe5f5a4"
-    ],
-    "installation_notes": [
-      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
-      "灯带、驱动与控制器的兼容性应成套确认。"
-    ]
-  },
-  {
-    "source_id": "9236",
-    "title": "JH-8L6619-1100*720现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
-    "model": "JH-8L6619-1100*720",
-    "topic": "灯带",
-    "topic_slug": "linear-lighting",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-03-06",
-    "seo_slug": "/products/linear-lighting/9236",
-    "category": "吸顶灯",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "亚克力,铁艺"
-      },
-      {
-        "name": "光源类型",
-        "value": "LED双色透镜贴片+双色灯带"
-      },
-      {
-        "name": "尺寸",
-        "value": "1100*720*95"
-      },
-      {
-        "name": "面积",
-        "value": "20㎡-35㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房"
-      },
-      {
-        "name": "类型",
-        "value": "吸顶灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代"
-      },
-      {
-        "name": "光源数量",
-        "value": "变光170W"
-      }
-    ],
-    "primary_media_id": "media-786a9308e4bbf0266515",
-    "gallery_media_ids": [
-      "media-786a9308e4bbf0266515",
-      "media-287310e597f5116da607",
-      "media-fe566d322ffa36294329",
-      "media-fd50bad6870794376972",
-      "media-ecb8ca85f5df42643d4e",
-      "media-6be2591c0100efe5f5a4"
-    ],
-    "installation_notes": [
-      "驱动功率需留有余量，并核对电压、回路长度和散热条件。",
-      "灯带、驱动与控制器的兼容性应成套确认。"
-    ]
-  },
-  {
-    "source_id": "8445",
-    "title": "JH-ZN-2.4G-F（情景面板） G系列 智能产品",
-    "model": "JH-ZN-2.4G-F",
-    "topic": "开关面板",
-    "topic_slug": "switches",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "84%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-07-13",
-    "seo_slug": "/products/switches/8445",
-    "category": "筒射灯",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "其他"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,高层/复式/别墅"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代"
-      },
-      {
-        "name": "装箱数量",
-        "value": "1只/件"
-      }
-    ],
-    "primary_media_id": "media-3e806e6b1229aaae55f2",
-    "gallery_media_ids": [
-      "media-3e806e6b1229aaae55f2",
-      "media-0878971b26bbb2d7c8d1",
-      "media-8d8089202797c7003001",
-      "media-2dc826f9fa903b2786a8",
-      "media-4c5e758d94c98520348a",
-      "media-e6aaef13211b3115cca7"
-    ],
-    "installation_notes": [
-      "由具备资质的人员按电气规范安装并断电施工。",
-      "负载类型、回路数量和智能协议需在选型前确认。"
-    ]
-  },
-  {
     "source_id": "11001",
     "title": "JH-9240-100A5",
     "model": "JH-9240-100A5",
@@ -1697,195 +1886,6 @@
     "installation_notes": [
       "户外使用需结合安装环境核对防护、充电和维护要求。",
       "产品图片不能替代现场安全与防水施工。"
-    ]
-  },
-  {
-    "source_id": "12267",
-    "title": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列",
-    "model": "JH-S288-12W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-07-13",
-    "seo_slug": "/products/project-custom/12267",
-    "category": "商用照明",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "铝材"
-      },
-      {
-        "name": "光源类型",
-        "value": "全光谱"
-      },
-      {
-        "name": "尺寸",
-        "value": "96×87"
-      },
-      {
-        "name": "面积",
-        "value": "10㎡-25㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
-      },
-      {
-        "name": "类型",
-        "value": "筒射灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代,家居筒射灯"
-      },
-      {
-        "name": "装箱数量",
-        "value": "50只/件"
-      }
-    ],
-    "primary_media_id": "media-f06be83573bb4ac57dee",
-    "gallery_media_ids": [
-      "media-f06be83573bb4ac57dee",
-      "media-6bd0173593eaefdeac16",
-      "media-ca89425d4163c25784ce",
-      "media-2fdbe838b4d637b5e1d0",
-      "media-d1662dae4d2f5fe1049e",
-      "media-05e3b45b163be240d3ac"
-    ],
-    "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
-    ]
-  },
-  {
-    "source_id": "12266",
-    "title": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列",
-    "model": "JH-S288-12W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-07-13",
-    "seo_slug": "/products/project-custom/12266",
-    "category": "商用照明",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "铝材"
-      },
-      {
-        "name": "光源类型",
-        "value": "全光谱"
-      },
-      {
-        "name": "尺寸",
-        "value": "82×87"
-      },
-      {
-        "name": "面积",
-        "value": "10㎡-25㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
-      },
-      {
-        "name": "类型",
-        "value": "筒射灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代,家居筒射灯"
-      },
-      {
-        "name": "装箱数量",
-        "value": "50只/件"
-      }
-    ],
-    "primary_media_id": "media-82cfc9ba7440f4a473a7",
-    "gallery_media_ids": [
-      "media-82cfc9ba7440f4a473a7",
-      "media-6bd0173593eaefdeac16",
-      "media-ca89425d4163c25784ce",
-      "media-2fdbe838b4d637b5e1d0",
-      "media-d1662dae4d2f5fe1049e",
-      "media-05e3b45b163be240d3ac"
-    ],
-    "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
-    ]
-  },
-  {
-    "source_id": "12265",
-    "title": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列",
-    "model": "JH-S288-15W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
-    "review_status": "needs_review",
-    "sale_status": "在售",
-    "fact_status": "来源字段已通过机器校验",
-    "parameter_completeness": "100%",
-    "image_authorization": "当前站点媒体批次授权已登记",
-    "department": "未确认",
-    "publish_date": "2026-07-13",
-    "seo_slug": "/products/project-custom/12265",
-    "category": "商用照明",
-    "parameters": [
-      {
-        "name": "材质",
-        "value": "铝材"
-      },
-      {
-        "name": "光源类型",
-        "value": "全光谱"
-      },
-      {
-        "name": "尺寸",
-        "value": "107×98"
-      },
-      {
-        "name": "面积",
-        "value": "10㎡-25㎡"
-      },
-      {
-        "name": "空间",
-        "value": "客厅,餐厅,卧室,书房,儿童房,低户型,高层/复式/别墅"
-      },
-      {
-        "name": "类型",
-        "value": "筒射灯"
-      },
-      {
-        "name": "风格",
-        "value": "简约现代,家居筒射灯"
-      },
-      {
-        "name": "装箱数量",
-        "value": "30只/件"
-      }
-    ],
-    "primary_media_id": "media-902fe2facc5273aabd33",
-    "gallery_media_ids": [
-      "media-902fe2facc5273aabd33",
-      "media-6bd0173593eaefdeac16",
-      "media-ca89425d4163c25784ce",
-      "media-2fdbe838b4d637b5e1d0",
-      "media-d1662dae4d2f5fe1049e",
-      "media-05e3b45b163be240d3ac"
-    ],
-    "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
     ]
   }
 ]

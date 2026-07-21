@@ -23,12 +23,16 @@
 }
 
 .heroInner,
+.prepareInner {
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+}
+
 .directions,
-.prepareInner,
 .checkerSection,
 .officialContacts,
 .nextSteps {
-  width: min(100%, var(--content-max));
+  width: min(calc(100% - (2 * var(--page-gutter))), var(--content-max));
   margin-inline: auto;
 }
 
@@ -40,12 +44,12 @@
   border-top: 1px solid var(--line);
 }
 
-.officialContacts > div > p { margin: 0; color: var(--brand-orange); font-size: 10px; font-weight: 700; letter-spacing: .22em; }
-.officialContacts h2 { margin: 28px 0; font-family: var(--font-display); font-size: clamp(42px, 5vw, 74px); line-height: 1.02; letter-spacing: -.06em; }
-.officialContacts > div > span { display: block; max-width: 480px; color: var(--ink-soft); font-size: 13px; line-height: 1.85; }
+.officialContacts > div > p { margin: 0; color: var(--brand-orange); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.officialContacts h2 { margin: 28px 0; font-family: var(--font-display); font-size: clamp(42px, 5vw, 74px); line-height: 1.02; letter-spacing: -.04em; }
+.officialContacts > div > span { display: block; max-width: 480px; color: var(--text-muted-on-light); font-size: 15px; line-height: 1.85; }
 .officialContacts address { display: grid; margin: 0; border-top: 1px solid var(--line); font-style: normal; }
 .officialContacts address > * { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.officialContacts small { color: var(--ink-soft); font-size: 10px; letter-spacing: .12em; }
+.officialContacts small { color: var(--text-muted-on-light); font-size: 12px; letter-spacing: .06em; }
 .officialContacts strong { font-size: clamp(17px, 2vw, 26px); line-height: 1.45; }
 
 .heroInner {
@@ -63,9 +67,9 @@
   align-items: center;
   margin: 0;
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.23em;
+  letter-spacing: 0.12em;
 }
 
 .eyebrow span {
@@ -78,9 +82,9 @@
   max-width: 1050px;
   margin: 30px 0;
   font-family: var(--font-display);
-  font-size: clamp(62px, 8.5vw, 132px);
-  line-height: 0.93;
-  letter-spacing: -0.08em;
+  font-size: clamp(58px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 .heroText {
@@ -89,6 +93,39 @@
   color: #c8cbc5;
   font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.9;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.heroActions a {
+  min-height: 50px;
+  padding: 0 18px;
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  border: 1px solid #ffffff55;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.heroActions .heroPrimary {
+  color: var(--ink);
+  background: var(--brand-orange-bright);
+  border-color: var(--brand-orange-bright);
+}
+
+.heroActions a:hover,
+.heroActions a:focus-visible {
+  color: var(--ink);
+  background: var(--white);
+  border-color: var(--white);
 }
 
 .channelStatus {
@@ -114,7 +151,7 @@
 .channelStatus p {
   margin: 7px 0 0;
   color: #aeb1ab;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -134,9 +171,9 @@
 .nextSteps > div:first-child > p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.08em;
 }
 
 .sectionHeading h2,
@@ -147,7 +184,7 @@
   font-family: var(--font-display);
   font-size: clamp(44px, 5.6vw, 84px);
   line-height: 1.02;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
 }
 
 .sectionHeading div > p,
@@ -166,15 +203,22 @@
   border-top: 1px solid var(--line);
 }
 
-.directionGrid article {
+.directionGrid button {
   min-height: 310px;
-  padding: 28px 28px 38px 0;
+  padding: 28px 28px 38px;
+  color: inherit;
+  background: transparent;
+  border: 0;
   border-right: 1px solid var(--line);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: color var(--duration-fast) ease, background-color var(--duration-ui) var(--ease-enter);
 }
 
-.directionGrid article > span {
+.directionGrid button > span {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .directionGrid h3 {
@@ -186,8 +230,29 @@
   max-width: 310px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.85;
+}
+
+.directionGrid b {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: var(--brand-orange);
+  font-size: 13px;
+}
+
+.directionGrid button:hover,
+.directionGrid button:focus-visible,
+.directionGrid .directionActive {
+  color: var(--white);
+  background: var(--night);
+}
+
+.directionGrid button:hover p,
+.directionGrid button:focus-visible p,
+.directionGrid .directionActive p {
+  color: #c8cbc5;
 }
 
 .prepareSection {
@@ -232,7 +297,7 @@
 
 .prepareList li > span {
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .prepareList h3 {
@@ -258,12 +323,16 @@
 
 .checkerIntro h2 {
   margin-top: 32px;
+  font-size: clamp(42px, 4.8vw, 72px);
+  line-height: 1.03;
+  text-wrap: balance;
 }
 
 .privacyNote {
   margin-top: 42px;
   padding: 22px;
-  border-left: 3px solid var(--brand-orange);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand-orange);
   background: var(--paper-raised);
 }
 
@@ -274,7 +343,7 @@
 .privacyNote p {
   margin: 7px 0 0;
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.75;
 }
 
@@ -290,12 +359,13 @@
   margin-bottom: 32px;
   padding: 20px;
   background: #fff0e6;
-  border-left: 3px solid var(--brand-orange);
+  border: 1px solid #edc8b5;
+  border-top: 3px solid var(--brand-orange);
 }
 
 .contextBanner small {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: .16em;
 }
@@ -307,7 +377,7 @@
 .contextBanner p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.75;
 }
 
@@ -320,7 +390,7 @@
 .directionFieldset legend,
 .field > span {
   margin-bottom: 12px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
@@ -358,12 +428,12 @@
 }
 
 .radioGrid label > span {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .radioGrid label > strong {
   color: var(--ink);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .radioGrid .radioActive {
@@ -393,7 +463,7 @@
   border: 1px solid var(--line);
   border-radius: 0;
   font: inherit;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .field input,
@@ -414,10 +484,30 @@
   border-color: var(--brand-orange);
 }
 
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: #a8320f;
+  box-shadow: inset 4px 0 0 #a8320f;
+}
+
+.fieldError {
+  margin: 8px 0 0;
+  color: #8f260a;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.directionFieldset[aria-invalid="true"] .radioGrid {
+  outline: 2px solid #a8320f;
+  outline-offset: 3px;
+}
+
 .field small {
   margin-top: 8px;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
@@ -436,7 +526,7 @@
   border: 1px solid var(--ink);
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -458,7 +548,7 @@
 .formNotice {
   margin: 18px 0 0;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -470,12 +560,14 @@
 .resultReady,
 .resultNeedsWork {
   padding: 20px;
-  border-left: 3px solid #2f754b;
+  border: 1px solid #b9d0bf;
+  border-top: 3px solid #2f754b;
   background: #e8f0e9;
 }
 
 .resultNeedsWork {
-  border-left-color: var(--brand-orange);
+  border-color: #edc8b5;
+  border-top-color: var(--brand-orange);
   background: #fff0e6;
 }
 
@@ -486,7 +578,7 @@
 .result p {
   margin: 7px 0 0;
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.75;
 }
 
@@ -498,7 +590,7 @@
 
 .submitHeading small {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.16em;
 }
@@ -511,7 +603,7 @@
 .submitHeading p,
 .consent {
   color: var(--ink-soft);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -537,19 +629,19 @@
 
 .channelOptions small {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .12em;
 }
 
 .channelOptions strong {
   overflow-wrap: anywhere;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .channelOptions span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .channelOptions .channelUnavailable {
@@ -581,10 +673,21 @@
   margin-top: 4px;
 }
 
+.consentInvalid {
+  padding: 10px;
+  outline: 2px solid #a8320f;
+  outline-offset: 2px;
+}
+
 .consent a {
   margin: 0 3px;
   color: var(--ink);
   text-decoration: underline;
+}
+
+.turnstile {
+  min-height: 65px;
+  margin-bottom: 20px;
 }
 
 .submitButton {
@@ -595,7 +698,7 @@
   border: 1px solid var(--brand-orange);
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -612,7 +715,7 @@
 .submitStatus p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -626,7 +729,7 @@
 }
 
 .nextSteps > div:first-child > p {
-  color: #632301;
+  color: var(--ink);
 }
 
 .nextSteps h2 {
@@ -654,20 +757,15 @@
   padding: 0 4px;
   color: inherit;
   border-bottom: 1px solid #10121170;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 @media (hover: hover) {
-  .directionGrid article,
   .radioGrid label,
   .links a,
   .formActions button {
     transition: transform var(--duration-ui) var(--ease-enter), background-color var(--duration-ui) var(--ease-enter);
-  }
-
-  .directionGrid article:hover {
-    background: var(--paper-raised);
   }
 
   .links a:hover,
@@ -677,12 +775,6 @@
 }
 
 @media (max-width: 1080px) {
-  .directions,
-  .checkerSection,
-  .officialContacts {
-    padding-inline: var(--page-gutter);
-  }
-
   .checkerSection {
     grid-template-columns: 0.72fr 1.28fr;
     gap: 50px;
@@ -708,6 +800,7 @@
   .checkerSection,
   .officialContacts,
   .nextSteps {
+    width: 100%;
     padding: 82px 24px;
   }
 
@@ -723,7 +816,7 @@
     margin-top: 56px;
   }
 
-  .directionGrid article {
+  .directionGrid button {
     min-height: 230px;
     border-bottom: 1px solid var(--line);
     border-right: 0;
@@ -732,17 +825,53 @@
   .directionGrid h3 {
     margin-top: 60px;
   }
+
+  .eyebrow,
+  .heroActions a,
+  .channelStatus strong,
+  .sectionHeading > p,
+  .prepareIntro > p:first-child,
+  .checkerIntro > p:first-child,
+  .nextSteps > div:first-child > p,
+  .directionGrid button > span,
+  .directionGrid b,
+  .prepareList li > span,
+  .prepareList p,
+  .privacyNote strong,
+  .contextBanner small,
+  .directionFieldset legend,
+  .field > span,
+  .radioGrid label > span,
+  .field small,
+  .formNotice,
+  .result strong,
+  .submitHeading small,
+  .channelOptions small,
+  .channelOptions span,
+  .officialContacts > div > p,
+  .officialContacts small {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 560px) {
   .hero h1 {
-    font-size: clamp(58px, 19vw, 82px);
+    font-size: clamp(52px, 16vw, 72px);
   }
 
   .radioGrid,
   .fieldGrid,
   .channelOptions {
     grid-template-columns: 1fr;
+  }
+
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .heroActions a {
+    width: 100%;
   }
 
   .officialContacts address > * {
@@ -777,7 +906,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .directionGrid article,
+  .directionGrid button,
   .radioGrid label,
   .links a,
   .formActions button {
@@ -791,15 +920,15 @@
 .prepareIntro h2,
 .checkerIntro h2,
 .nextSteps h2 {
-  letter-spacing: -.05em;
+  letter-spacing: -.04em;
 }
 
-.directionGrid article,
+.directionGrid button,
 .checkerForm {
   position: relative;
 }
 
-.directionGrid article::before,
+.directionGrid button::before,
 .checkerForm::before {
   content: "";
   position: absolute;
@@ -814,4 +943,12 @@
 .field select:focus,
 .field textarea:focus {
   outline-color: rgb(224 87 23 / 28%);
+}
+
+@media (min-width: 1081px) {
+  .checkerIntro {
+    position: sticky;
+    top: calc(var(--header-height) + 32px);
+    align-self: start;
+  }
 }

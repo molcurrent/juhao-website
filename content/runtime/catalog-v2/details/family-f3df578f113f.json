@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-f3df578f113f",
+    "canonical_slug": "248",
+    "canonical_source_key": "mall_sql:248",
+    "canonical_source_id": "248",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-8-B-7832-S户外防水铝材壁灯",
+    "category": "壁灯",
+    "source_categories": [
+      "壁灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-f3df578f113f",
+    "model_label": "JH-8-B-7832-S",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:248",
+      "display_id": "248",
+      "title": "JH-8-B-7832-S户外防水铝材壁灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:248",
+        "source_id": "248",
+        "display_id": "248",
+        "model_label": "JH-8-B-7832-S",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "240*130*180"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "E27光源"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "磨砂/刻花玻璃",
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "dimensions": [
+        "240*130*180"
+      ],
+      "finishes": [
+        "黑色"
+      ],
+      "light_sources": [
+        "E27光源"
+      ],
+      "materials": [
+        "磨砂/刻花玻璃",
+        "铝材"
+      ],
+      "spaces": [
+        "阳台",
+        "楼梯/拐角",
+        "高层/复式/别墅",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "简约现代",
+        "美式复古",
+        "欧式现代简约",
+        "北欧风格",
+        "工业风",
+        "户外照明"
+      ],
+      "types": [
+        "壁灯",
+        "柱头灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:248",
+      "source_path": "商城系统/商品说明/JH-8-B-7832-S户外防水铝材壁灯_248.md",
+      "source_sha256": "a550e27c866fe83e4ae6a94d2fe71e5abd320c7136d1e5bf0f1452e2890b137f"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "磨砂/刻花玻璃,铝材",
+      "光源类型": "E27光源",
+      "尺寸": "240*130*180",
+      "颜色工艺": "黑色",
+      "空间": "阳台,楼梯/拐角,高层/复式/别墅,玄关/过道/廊道",
+      "类型": "壁灯,柱头灯",
+      "风格": "简约现代,美式复古,欧式现代简约,北欧风格,工业风,户外照明",
+      "光源数量": "1"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 13,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-47507ca56eed",
+      "source_key": "mall_sql:248",
+      "display_id": "248",
+      "label": "JH-8-B-7832-S户外防水铝材壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "240*130*180",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "黑色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

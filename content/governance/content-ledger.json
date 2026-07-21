@@ -8561,8 +8561,8 @@
     "content_type": "产品",
     "title": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列",
     "model": "JH-S288-12W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
     "review_status": "needs_review",
     "machine_status": "passed",
     "sale_status": "在售",
@@ -8575,7 +8575,7 @@
     "department": "未确认",
     "publish_date": "2026-07-13",
     "updated_at": "2026-06-16",
-    "seo_slug": "/products/project-custom/12267",
+    "seo_slug": "/products/spotlights/12267",
     "legacy_url": "",
     "source_file": "商城系统/商品说明/JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列_12267.md",
     "source_hash": "985c46a9f1431c2ffb10e98dc936844a64b5b4e972b5c3c50622a9d836b1ba5f",
@@ -8628,8 +8628,8 @@
       "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a18c9c9c40.jpg"
     ],
     "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
     ],
     "publishable": true,
     "quality_score": 125,
@@ -8638,7 +8638,7 @@
       "human_product_review"
     ],
     "route_state": "private_preview",
-    "route": "/products/project-custom/12267",
+    "route": "/products/spotlights/12267",
     "source_type": "knowledge_base_product_markdown+mall_sql",
     "source_path": "content/governance/product-candidates.json",
     "source_locator": "商城系统/商品说明/JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列_12267.md",
@@ -8651,20 +8651,24 @@
     "searchable": true,
     "index_eligible": false,
     "indexable": false,
-    "canonical_slug": "/products/project-custom/12267",
+    "canonical_slug": "/products/spotlights/12267",
     "published_at": "",
     "image_rights_status": "approved",
     "previewed_at": "2026-07-14",
-    "og_image": "/og/products--project-custom--12267-4b6cc23e.jpg",
+    "og_image": "/og/products--spotlights--12267-e988b09a.jpg",
     "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341",
     "related_products": [
-      "/products/project-custom/12266",
-      "/products/project-custom/12265"
+      "/products/spotlights/12287",
+      "/products/spotlights/12286",
+      "/products/spotlights/12285"
     ],
-    "related_cases": [],
+    "related_cases": [
+      "/cases/jw-marriott-shenzhen-huafa-snow-world",
+      "/cases/pullman-shangrao-guangfeng"
+    ],
     "related_articles": [],
     "related_routes": [
-      "/products/project-custom",
+      "/products/spotlights",
       "/products",
       "/contact"
     ],
@@ -8676,8 +8680,8 @@
     "content_type": "产品",
     "title": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列",
     "model": "JH-S288-12W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
     "review_status": "needs_review",
     "machine_status": "passed",
     "sale_status": "在售",
@@ -8690,7 +8694,7 @@
     "department": "未确认",
     "publish_date": "2026-07-13",
     "updated_at": "2026-06-16",
-    "seo_slug": "/products/project-custom/12266",
+    "seo_slug": "/products/spotlights/12266",
     "legacy_url": "",
     "source_file": "商城系统/商品说明/JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列_12266.md",
     "source_hash": "3113518b76dbbe0b10db05524db62e5907e9f28d2a01fdda8bf03e94bc78bb66",
@@ -8743,8 +8747,8 @@
       "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1603bd853.jpg"
     ],
     "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
     ],
     "publishable": true,
     "quality_score": 125,
@@ -8753,7 +8757,7 @@
       "human_product_review"
     ],
     "route_state": "private_preview",
-    "route": "/products/project-custom/12266",
+    "route": "/products/spotlights/12266",
     "source_type": "knowledge_base_product_markdown+mall_sql",
     "source_path": "content/governance/product-candidates.json",
     "source_locator": "商城系统/商品说明/JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列_12266.md",
@@ -8766,20 +8770,24 @@
     "searchable": true,
     "index_eligible": false,
     "indexable": false,
-    "canonical_slug": "/products/project-custom/12266",
+    "canonical_slug": "/products/spotlights/12266",
     "published_at": "",
     "image_rights_status": "approved",
     "previewed_at": "2026-07-14",
-    "og_image": "/og/products--project-custom--12266-643f5a00.jpg",
+    "og_image": "/og/products--spotlights--12266-79a04e1e.jpg",
     "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341",
     "related_products": [
-      "/products/project-custom/12267",
-      "/products/project-custom/12265"
+      "/products/spotlights/12287",
+      "/products/spotlights/12286",
+      "/products/spotlights/12285"
     ],
-    "related_cases": [],
+    "related_cases": [
+      "/cases/jw-marriott-shenzhen-huafa-snow-world",
+      "/cases/pullman-shangrao-guangfeng"
+    ],
     "related_articles": [],
     "related_routes": [
-      "/products/project-custom",
+      "/products/spotlights",
       "/products",
       "/contact"
     ],
@@ -8791,8 +8799,8 @@
     "content_type": "产品",
     "title": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列",
     "model": "JH-S288-15W",
-    "topic": "工程定制",
-    "topic_slug": "project-custom",
+    "topic": "射灯",
+    "topic_slug": "spotlights",
     "review_status": "needs_review",
     "machine_status": "passed",
     "sale_status": "在售",
@@ -8805,7 +8813,7 @@
     "department": "未确认",
     "publish_date": "2026-07-13",
     "updated_at": "2026-06-16",
-    "seo_slug": "/products/project-custom/12265",
+    "seo_slug": "/products/spotlights/12265",
     "legacy_url": "",
     "source_file": "商城系统/商品说明/JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列_12265.md",
     "source_hash": "5e36399d6ba91f9bf9a828a57798ad016d2746bfb8c920af13b1e790a985751f",
@@ -8858,8 +8866,8 @@
       "https://bocang.oss-cn-shenzhen.aliyuncs.com/upload/image/2026-06/6a2a1cd88d45a.jpg"
     ],
     "installation_notes": [
-      "定制产品以项目深化图、样板确认和技术交底为准。",
-      "造型、材质、光源与安装节点变更需留存书面记录。"
+      "开孔、灯体尺寸和吊顶深度需在施工前复核。",
+      "光束角、照射距离与防眩要求应结合空间方案确认。"
     ],
     "publishable": true,
     "quality_score": 125,
@@ -8868,7 +8876,7 @@
       "human_product_review"
     ],
     "route_state": "private_preview",
-    "route": "/products/project-custom/12265",
+    "route": "/products/spotlights/12265",
     "source_type": "knowledge_base_product_markdown+mall_sql",
     "source_path": "content/governance/product-candidates.json",
     "source_locator": "商城系统/商品说明/JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列_12265.md",
@@ -8881,20 +8889,24 @@
     "searchable": true,
     "index_eligible": false,
     "indexable": false,
-    "canonical_slug": "/products/project-custom/12265",
+    "canonical_slug": "/products/spotlights/12265",
     "published_at": "",
     "image_rights_status": "approved",
     "previewed_at": "2026-07-14",
-    "og_image": "/og/products--project-custom--12265-4727473b.jpg",
+    "og_image": "/og/products--spotlights--12265-806e80a2.jpg",
     "media_authorization_batch_id": "oss-batch-2026-07-14-current-site-341",
     "related_products": [
-      "/products/project-custom/12267",
-      "/products/project-custom/12266"
+      "/products/spotlights/12287",
+      "/products/spotlights/12286",
+      "/products/spotlights/12285"
     ],
-    "related_cases": [],
+    "related_cases": [
+      "/cases/jw-marriott-shenzhen-huafa-snow-world",
+      "/cases/pullman-shangrao-guangfeng"
+    ],
     "related_articles": [],
     "related_routes": [
-      "/products/project-custom",
+      "/products/spotlights",
       "/products",
       "/contact"
     ],
@@ -12285,9 +12297,9 @@
       "/products/outdoor-lighting/11001",
       "/products/outdoor-lighting/8948",
       "/products/outdoor-lighting/8947",
-      "/products/project-custom/12267",
-      "/products/project-custom/12266",
-      "/products/project-custom/12265"
+      "/products/spotlights/12267",
+      "/products/spotlights/12266",
+      "/products/spotlights/12265"
     ],
     "related_cases": [],
     "related_articles": [],
@@ -12447,9 +12459,7 @@
     "related_products": [
       "/products/ceiling-lights/12217"
     ],
-    "related_cases": [
-      "/cases/jw-marriott-shenzhen-huafa-snow-world"
-    ],
+    "related_cases": [],
     "related_articles": [],
     "related_routes": [
       "/smart-home",
@@ -12490,7 +12500,7 @@
       "/products/spotlights/12286"
     ],
     "related_cases": [
-      "/cases/pullman-shangrao-guangfeng"
+      "/cases/xingtai-financial-center"
     ],
     "related_articles": [],
     "related_routes": [
@@ -12531,9 +12541,7 @@
     "related_products": [
       "/products/outdoor-lighting/11001"
     ],
-    "related_cases": [
-      "/cases/yangzhou-riverfront-lighting"
-    ],
+    "related_cases": [],
     "related_articles": [],
     "related_routes": [
       "/solutions/commercial",
@@ -12570,9 +12578,7 @@
     "published_at": "",
     "updated_at": "unknown",
     "image_rights_status": "unknown",
-    "related_products": [
-      "/products/project-custom/12265"
-    ],
+    "related_products": [],
     "related_cases": [
       "/cases/yangzhou-riverfront-lighting"
     ],
@@ -13487,7 +13493,10 @@
       "/products/spotlights/12285",
       "/products/spotlights/12284",
       "/products/spotlights/12283",
-      "/products/spotlights/12282"
+      "/products/spotlights/12282",
+      "/products/spotlights/12267",
+      "/products/spotlights/12266",
+      "/products/spotlights/12265"
     ],
     "related_cases": [
       "/cases/jw-marriott-shenzhen-huafa-snow-world",
@@ -13817,18 +13826,14 @@
     "reviewed_at": "unknown",
     "last_verified_at": "2026-07-13",
     "publish_status": "published",
-    "seo_candidate": true,
-    "searchable": true,
+    "seo_candidate": false,
+    "searchable": false,
     "indexable": false,
     "canonical_slug": "/products/project-custom",
     "published_at": "",
     "updated_at": "unknown",
-    "image_rights_status": "needs_review",
-    "related_products": [
-      "/products/project-custom/12267",
-      "/products/project-custom/12266",
-      "/products/project-custom/12265"
-    ],
+    "image_rights_status": "unknown",
+    "related_products": [],
     "related_cases": [],
     "related_articles": [],
     "related_routes": [

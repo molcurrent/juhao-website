@@ -1,0 +1,1221 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-07-16",
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "derived_family_model_sha256": "2b08f49f7b1ad65871c3aa4d8ff8e28888ff358757c13e9335cf0eadb367c17b",
+  "source_batch_id": "catalog-v2-private-sample-120",
+  "status": "advisory_only_not_release_batch",
+  "selection_policy": "active_sample_families_with_authorized_primary_image_ranked_by_full_media_review_burden_authorized_ratio_and_source_quality",
+  "release_constraints": {
+    "human_family_and_category_decisions_required": true,
+    "primary_authorization_does_not_authorize_detail_media": true,
+    "unauthorized_detail_media_must_be_suppressed_or_authorized": true,
+    "public_batch_requires_separate_signed_release_specification": true
+  },
+  "counts": {
+    "active_sample_families": 120,
+    "authorized_primary_candidates": 22,
+    "fully_media_authorized_candidates": 1,
+    "decision_clear_candidates": 22,
+    "release_ready_candidates": 0,
+    "categories_covered": 6,
+    "legacy_aliases_covered": 31
+  },
+  "suggested_first_pilot_range": {
+    "minimum": 12,
+    "maximum": 18,
+    "condition": "only_after_required_product_decisions_and_media_scope_are_signed"
+  },
+  "candidates": [
+    {
+      "family_id": "family-a3d872de3600",
+      "title": "JH-Q58018 吸顶灯系列",
+      "category": "吸顶灯",
+      "member_count": 5,
+      "representative_score": 74,
+      "representative": {
+        "source_key": "mall_sql:11652",
+        "display_id": "11652",
+        "primary_image": "/upload/goods/2025-09/68be4ed6a099c.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2025-09/68be4ed6a099c.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 6,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 0,
+        "fully_authorized": true,
+        "authorized_media_paths": [
+          "/upload/goods/2025-09/68be4ed6a099c.jpg",
+          "/upload/image/2025-09/68be480b43b96.jpg",
+          "/upload/image/2025-09/68be480d33899.jpg",
+          "/upload/image/2025-09/68be480edfae6.jpg",
+          "/upload/image/2025-09/68be4810d99e8.jpg",
+          "/upload/image/2025-09/68be4812b8271.jpg"
+        ],
+        "unauthorized_media_paths": [],
+        "unauthorized_media_paths_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "governance": {
+        "required_review_ids": [
+          "family-a3d872de3600"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/crystal-chandeliers/11650",
+        "/products/crystal-chandeliers/11651",
+        "/products/crystal-chandeliers/11652"
+      ],
+      "legacy_alias_count": 3,
+      "release_ready": false,
+      "candidate_state": "full_media_candidate_pending_release_signoff",
+      "candidate_rank": 1
+    },
+    {
+      "family_id": "family-5ae1d7b4ce39",
+      "title": "JH-T-035 台灯系列",
+      "category": "台灯",
+      "member_count": 12,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:8948",
+        "display_id": "8948",
+        "primary_image": "/upload/goods/2022-10/635a70237c512.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2022-10/635a70237c512.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2022-10/635a70237c512.jpg",
+          "/upload/image/2022-10/635a693de3fa9.jpg",
+          "/upload/image/2022-10/635a693e1e202.jpg",
+          "/upload/image/2022-10/635a693e481f0.jpg",
+          "/upload/image/2022-10/635a693e85370.jpg",
+          "/upload/image/2022-10/635a693eacb92.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2022-10/635a693ed7162.jpg",
+          "/upload/image/2022-10/635a693f12fbd.jpg",
+          "/upload/image/2022-10/635a693f40e7d.jpg",
+          "/upload/image/2022-10/635a693fe6ccd.jpg",
+          "/upload/image/2022-10/635a6940306c2.jpg",
+          "/upload/image/2022-10/635a69405787e.jpg",
+          "/upload/image/2022-10/635a6940862fd.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "f611a0cdafd0465c6e983f8b013ec2b73f2a91f84ef4154791bd53791c34566d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "family-5ae1d7b4ce39"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/outdoor-lighting/8947",
+        "/products/outdoor-lighting/8948"
+      ],
+      "legacy_alias_count": 2,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 2
+    },
+    {
+      "family_id": "family-559d77c8ac4e",
+      "title": "JH-8L8709 吸顶灯系列",
+      "category": "吸顶灯",
+      "member_count": 2,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12217",
+        "display_id": "12217",
+        "primary_image": "/upload/goods/2026-05/6a0ece248654a.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-05/6a0ece248654a.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-05/6a0ece248654a.jpg",
+          "/upload/image/2025-10/68fb281d7b5c1.jpg",
+          "/upload/image/2025-10/68fb281e9bbda.jpg",
+          "/upload/image/2025-10/68fb2821030e5.jpg",
+          "/upload/image/2025-10/68fb282283e07.jpg",
+          "/upload/image/2025-10/68fb2823896f1.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2025-10/68fb2824b30d5.jpg",
+          "/upload/image/2025-10/68fb282581074.jpg",
+          "/upload/image/2025-10/68fb2826965c8.jpg",
+          "/upload/image/2025-10/68fb28279f274.jpg",
+          "/upload/image/2025-10/68fb28288d3d5.jpg",
+          "/upload/image/2025-10/68fb28297df5d.jpg",
+          "/upload/image/2025-10/68fb282a55487.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "f87e1a0478ffc4aaa98793156d11e0d731e42704f87e1c72bee1ce44421a5173"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-873dc22529ae",
+          "family-559d77c8ac4e"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/ceiling-lights/12217"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 3
+    },
+    {
+      "family_id": "family-5c97ea3f5b5b",
+      "title": "JH-8L6619-500*500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:9237",
+        "display_id": "9237",
+        "primary_image": "/upload/goods/2023-03/64228a77eac28.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2023-03/64228a77eac28.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2023-03/64228a77eac28.jpg",
+          "/upload/image/2026-03/69aa3de79e73d.jpg",
+          "/upload/image/2023-03/642288f6a9ef7.jpg",
+          "/upload/image/2023-03/642288f6e3677.jpg",
+          "/upload/image/2023-03/642288f728980.jpg",
+          "/upload/image/2023-03/642288f782b89.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2023-03/642288f7d1339.jpg",
+          "/upload/image/2023-03/642288f81de1d.jpg",
+          "/upload/image/2023-03/642288f86982e.jpg",
+          "/upload/image/2023-03/642288f8edef5.jpg",
+          "/upload/image/2023-03/642288f97c859.jpg",
+          "/upload/image/2023-03/642289099ac66.jpg",
+          "/upload/image/2023-03/64228909e517b.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "8b0556ead7c6a6b9d68523f8de7e994232e48c6b8a82e09bacb2f87a9afb574b"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-98bc0995d87b"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/linear-lighting/9237"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 4
+    },
+    {
+      "family_id": "family-77b9971e550c",
+      "title": "JH-8L6619-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:9238",
+        "display_id": "9238",
+        "primary_image": "/upload/goods/2023-03/64228a9a62b45.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2023-03/64228a9a62b45.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2023-03/64228a9a62b45.jpg",
+          "/upload/image/2026-03/69aa3d39d6a9d.jpg",
+          "/upload/image/2023-03/642288f6a9ef7.jpg",
+          "/upload/image/2023-03/642288f6e3677.jpg",
+          "/upload/image/2023-03/642288f728980.jpg",
+          "/upload/image/2023-03/642288f782b89.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2023-03/642288f7d1339.jpg",
+          "/upload/image/2023-03/642288f81de1d.jpg",
+          "/upload/image/2023-03/642288f86982e.jpg",
+          "/upload/image/2023-03/642288f8edef5.jpg",
+          "/upload/image/2023-03/642288f97c859.jpg",
+          "/upload/image/2023-03/642289099ac66.jpg",
+          "/upload/image/2023-03/64228909e517b.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "8b0556ead7c6a6b9d68523f8de7e994232e48c6b8a82e09bacb2f87a9afb574b"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-98bc0995d87b"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/linear-lighting/9238"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 5
+    },
+    {
+      "family_id": "family-7f75dcce796c",
+      "title": "JH-8L6619-1100*720现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:9236",
+        "display_id": "9236",
+        "primary_image": "/upload/goods/2023-03/642288e5bf7b2.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2023-03/642288e5bf7b2.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2023-03/642288e5bf7b2.jpg",
+          "/upload/image/2026-03/69aa44947aef1.jpg",
+          "/upload/image/2023-03/642288f6a9ef7.jpg",
+          "/upload/image/2023-03/642288f6e3677.jpg",
+          "/upload/image/2023-03/642288f728980.jpg",
+          "/upload/image/2023-03/642288f782b89.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2023-03/642288f7d1339.jpg",
+          "/upload/image/2023-03/642288f81de1d.jpg",
+          "/upload/image/2023-03/642288f86982e.jpg",
+          "/upload/image/2023-03/642288f8edef5.jpg",
+          "/upload/image/2023-03/642288f97c859.jpg",
+          "/upload/image/2023-03/642289099ac66.jpg",
+          "/upload/image/2023-03/64228909e517b.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "8b0556ead7c6a6b9d68523f8de7e994232e48c6b8a82e09bacb2f87a9afb574b"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-98bc0995d87b"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/linear-lighting/9236"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 6
+    },
+    {
+      "family_id": "family-18bd9bbbdcd2",
+      "title": "JH-S288-15W 预埋款 Φ75 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12265",
+        "display_id": "12265",
+        "primary_image": "/upload/goods/2026-06/6a278289dd9a2.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a278289dd9a2.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a278289dd9a2.png",
+          "/upload/image/2026-06/6a2a1cd235740.jpg",
+          "/upload/image/2026-06/6a2a1cd3b74aa.jpg",
+          "/upload/image/2026-06/6a2a1cd564344.jpg",
+          "/upload/image/2026-06/6a2a1cd750653.jpg",
+          "/upload/image/2026-06/6a2a1cd88d45a.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a1cd9c2f6d.jpg",
+          "/upload/image/2026-06/6a2a1cdae09bf.jpg",
+          "/upload/image/2026-06/6a2a1cdbf178e.jpg",
+          "/upload/image/2026-06/6a2a1cdd06aa3.jpg",
+          "/upload/image/2026-06/6a2a1cde0d97b.jpg",
+          "/upload/image/2026-06/6a2a1cdf8b3d0.jpg",
+          "/upload/image/2026-06/6a2a1ce17cf56.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "3e2445421ff88a0324403e8de95ce1655ff9381b4af1c978a976dbd8476d3b2d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12265"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 7
+    },
+    {
+      "family_id": "family-3a66ceb9de0f",
+      "title": "JH-S288-30W 窄边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12284",
+        "display_id": "12284",
+        "primary_image": "/upload/goods/2026-06/6a278b90e8d0e.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a278b90e8d0e.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a278b90e8d0e.png",
+          "/upload/image/2026-06/6a2a2c6dca15d.jpg",
+          "/upload/image/2026-06/6a2a2c6f0fa76.jpg",
+          "/upload/image/2026-06/6a2a2c6fa4d17.jpg",
+          "/upload/image/2026-06/6a2a2c70d8434.jpg",
+          "/upload/image/2026-06/6a2a2c720b556.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a2c732df15.jpg",
+          "/upload/image/2026-06/6a2a2c749d6bc.jpg",
+          "/upload/image/2026-06/6a2a2c762cb73.jpg",
+          "/upload/image/2026-06/6a2a2c77ee469.jpg",
+          "/upload/image/2026-06/6a2a2c7959381.jpg",
+          "/upload/image/2026-06/6a2a2c7a733ef.jpg",
+          "/upload/image/2026-06/6a2a2c7c00fd1.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "126164231117b06e7479180e1b5c920a54dda4cb473d2bd48951b15b23a3a3d2"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12284"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 8
+    },
+    {
+      "family_id": "family-606781f21fca",
+      "title": "JH-S288-30W 预埋款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12282",
+        "display_id": "12282",
+        "primary_image": "/upload/goods/2026-06/6a278a7cb9b8b.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a278a7cb9b8b.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a278a7cb9b8b.png",
+          "/upload/image/2026-06/6a2a2a669b79a.jpg",
+          "/upload/image/2026-06/6a2a2a67b084e.jpg",
+          "/upload/image/2026-06/6a2a2a68d17f9.jpg",
+          "/upload/image/2026-06/6a2a2a6abc56d.jpg",
+          "/upload/image/2026-06/6a2a2a6c91d1f.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a2a6f90c30.jpg",
+          "/upload/image/2026-06/6a2a2a72e0744.jpg",
+          "/upload/image/2026-06/6a2a2a7510d51.jpg",
+          "/upload/image/2026-06/6a2a2a76acb72.jpg",
+          "/upload/image/2026-06/6a2a2a77c676b.jpg",
+          "/upload/image/2026-06/6a2a2a7bd64c7.jpg",
+          "/upload/image/2026-06/6a2a2a7e20233.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "16f7f2285d55d172370d6dec401fe9912c246f4eba94ff43305429ed1a7c58c3"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12282"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 9
+    },
+    {
+      "family_id": "family-907eecc820ae",
+      "title": "JH-S288-24W 预埋款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12285",
+        "display_id": "12285",
+        "primary_image": "/upload/goods/2026-06/6a27893e15cda.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a27893e15cda.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a27893e15cda.png",
+          "/upload/image/2026-06/6a2a2943e80a4.jpg",
+          "/upload/image/2026-06/6a2a294527613.jpg",
+          "/upload/image/2026-06/6a2a29460b95b.jpg",
+          "/upload/image/2026-06/6a2a294789af2.jpg",
+          "/upload/image/2026-06/6a2a2948d7f79.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a294a81e19.jpg",
+          "/upload/image/2026-06/6a2a294bb7445.jpg",
+          "/upload/image/2026-06/6a2a294cc7b8d.jpg",
+          "/upload/image/2026-06/6a2a294dbab68.jpg",
+          "/upload/image/2026-06/6a2a294e79cd2.jpg",
+          "/upload/image/2026-06/6a2a294f66320.jpg",
+          "/upload/image/2026-06/6a2a295059e09.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "d629bebd5395b2996dd35a6323789d3586c842a30dfe349e6704e23ffbb9a77d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12285"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 10
+    },
+    {
+      "family_id": "family-91eba5983ab4",
+      "title": "JH-S288-12W 宽边款 Φ75 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12267",
+        "display_id": "12267",
+        "primary_image": "/upload/goods/2026-06/6a277e7bd4800.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a277e7bd4800.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a277e7bd4800.png",
+          "/upload/image/2026-06/6a2a18be4f9b9.jpg",
+          "/upload/image/2026-06/6a2a18c22ca7d.jpg",
+          "/upload/image/2026-06/6a2a18c3ae60d.jpg",
+          "/upload/image/2026-06/6a2a18c88e07d.jpg",
+          "/upload/image/2026-06/6a2a18c9c9c40.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a18cb8bd78.jpg",
+          "/upload/image/2026-06/6a2a18cca6aff.jpg",
+          "/upload/image/2026-06/6a2a18cd9decc.jpg",
+          "/upload/image/2026-06/6a2a18ce7d47c.jpg",
+          "/upload/image/2026-06/6a2a18cf6059c.jpg",
+          "/upload/image/2026-06/6a2a18d06a022.jpg",
+          "/upload/image/2026-06/6a2a18d186045.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "e4ea8d980a0b8af3f09e30bd879ab76161ca01d7d0324cfd52cb208128b9b2d7"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12267"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 11
+    },
+    {
+      "family_id": "family-a9891b9d18fa",
+      "title": "JH-S288-30W 宽边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12283",
+        "display_id": "12283",
+        "primary_image": "/upload/goods/2026-06/6a278a277fc45.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a278a277fc45.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a278a277fc45.png",
+          "/upload/image/2026-06/6a2a298911eb5.jpg",
+          "/upload/image/2026-06/6a2a298a46617.jpg",
+          "/upload/image/2026-06/6a2a298ad1526.jpg",
+          "/upload/image/2026-06/6a2a298c434e9.jpg",
+          "/upload/image/2026-06/6a2a298d8931f.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a298ead147.jpg",
+          "/upload/image/2026-06/6a2a298faa38e.jpg",
+          "/upload/image/2026-06/6a2a299086c70.jpg",
+          "/upload/image/2026-06/6a2a299162572.jpg",
+          "/upload/image/2026-06/6a2a29926a020.jpg",
+          "/upload/image/2026-06/6a2a299398a1f.jpg",
+          "/upload/image/2026-06/6a2a299484659.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "956fbb3bf93c308edaa7e33b6ec5a38d25914ffc1421aeb4150018010df91214"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12283"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 12
+    },
+    {
+      "family_id": "family-c201aa392506",
+      "title": "JH-S288-24W 宽边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12287",
+        "display_id": "12287",
+        "primary_image": "/upload/goods/2026-06/6a2788d81e5a8.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a2788d81e5a8.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a2788d81e5a8.png",
+          "/upload/image/2026-06/6a2a28fbb2b41.jpg",
+          "/upload/image/2026-06/6a2a28fcbb8c2.jpg",
+          "/upload/image/2026-06/6a2a28fdbae58.jpg",
+          "/upload/image/2026-06/6a2a28ffb21bd.jpg",
+          "/upload/image/2026-06/6a2a290120c4e.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a2902cdccc.jpg",
+          "/upload/image/2026-06/6a2a290400e6a.jpg",
+          "/upload/image/2026-06/6a2a290507c81.jpg",
+          "/upload/image/2026-06/6a2a2905df400.jpg",
+          "/upload/image/2026-06/6a2a290774f8f.jpg",
+          "/upload/image/2026-06/6a2a2908b194e.jpg",
+          "/upload/image/2026-06/6a2a2909af650.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "4eb3b63a5a87ed477a5fc0332699c40c7318c3241a0d126de186c9147f24a94e"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12287"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 13
+    },
+    {
+      "family_id": "family-db235d89122b",
+      "title": "JH-S288-12W 窄边款 Φ75 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12266",
+        "display_id": "12266",
+        "primary_image": "/upload/goods/2026-06/6a277d50574c5.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a277d50574c5.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a277d50574c5.png",
+          "/upload/image/2026-06/6a2a15fee54aa.jpg",
+          "/upload/image/2026-06/6a2a16006a4e7.jpg",
+          "/upload/image/2026-06/6a2a16014df33.jpg",
+          "/upload/image/2026-06/6a2a160293304.jpg",
+          "/upload/image/2026-06/6a2a1603bd853.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a160568e70.jpg",
+          "/upload/image/2026-06/6a2a1606a5971.jpg",
+          "/upload/image/2026-06/6a2a1607b7ff6.jpg",
+          "/upload/image/2026-06/6a2a1608a27ad.jpg",
+          "/upload/image/2026-06/6a2a160988557.jpg",
+          "/upload/image/2026-06/6a2a160a97ddf.jpg",
+          "/upload/image/2026-06/6a2a160bd6607.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "4effed3bf299c9d90765d0a01c46890d03cf5d5887cbed77e92ad522a76e9d56"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12266"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 14
+    },
+    {
+      "family_id": "family-dd0b539a1179",
+      "title": "JH-S288-24W 窄边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "member_count": 1,
+      "representative_score": 88,
+      "representative": {
+        "source_key": "mall_sql:12286",
+        "display_id": "12286",
+        "primary_image": "/upload/goods/2026-06/6a2786eccaeb6.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a2786eccaeb6.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a2786eccaeb6.png",
+          "/upload/image/2026-06/6a2a251a1a7ad.jpg",
+          "/upload/image/2026-06/6a2a251b4a583.jpg",
+          "/upload/image/2026-06/6a2a251d6ac9a.jpg",
+          "/upload/image/2026-06/6a2a251fbb520.jpg",
+          "/upload/image/2026-06/6a2a25227f360.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2a25239f1a3.jpg",
+          "/upload/image/2026-06/6a2a2524e3d28.jpg",
+          "/upload/image/2026-06/6a2a2525dcd5e.jpg",
+          "/upload/image/2026-06/6a2a2526e8a3b.jpg",
+          "/upload/image/2026-06/6a2a252822149.jpg",
+          "/upload/image/2026-06/6a2a252a29062.jpg",
+          "/upload/image/2026-06/6a2a252b70f09.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "a2c39f1c3de24244927d2799e2aefddd3f264632fe1deece7325251eca576f4d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/spotlights/12286"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 15
+    },
+    {
+      "family_id": "family-15de95ee9cb2",
+      "title": "120093-500异形简约现代铝材亚克力吊灯",
+      "category": "吊灯",
+      "member_count": 1,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:12161",
+        "display_id": "12161",
+        "primary_image": "/upload/goods/2026-05/6a06f493bb051.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-05/6a06f493bb051.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-05/6a06f493bb051.jpg",
+          "/upload/image/2026-05/6a06f58bb609d.jpg",
+          "/upload/image/2026-05/6a06f58d38f6e.jpg",
+          "/upload/image/2026-05/6a06f58ee240e.jpg",
+          "/upload/image/2026-05/6a06f5904e801.jpg",
+          "/upload/image/2026-05/6a06f59168f32.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-05/6a06f592ad547.jpg",
+          "/upload/image/2026-05/6a06f594325d5.jpg",
+          "/upload/image/2026-05/6a06f5956f29d.jpg",
+          "/upload/image/2026-05/6a06f59696f29.jpg",
+          "/upload/image/2026-05/6a06f597b95ec.jpg",
+          "/upload/image/2026-05/6a06f5990a880.jpg",
+          "/upload/image/2026-05/6a06f59a641c0.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "2ca1fb181e68178ccafc79f1847d76d5dcb44e55a85c8e9b0b0842ad4f3d759d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-47798a8554b7"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/art-lights/12161"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 16
+    },
+    {
+      "family_id": "family-1dd9feab2188",
+      "title": "120093-800+500异形简约现代铝材亚克力吊灯",
+      "category": "吊灯",
+      "member_count": 1,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:12160",
+        "display_id": "12160",
+        "primary_image": "/upload/goods/2026-05/6a03e03ac36b3.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-05/6a03e03ac36b3.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-05/6a03e03ac36b3.jpg",
+          "/upload/image/2026-05/6a06f5227df32.jpg",
+          "/upload/image/2026-05/6a06f523940df.jpg",
+          "/upload/image/2026-05/6a06f5249b41f.jpg",
+          "/upload/image/2026-05/6a06f525c3b94.jpg",
+          "/upload/image/2026-05/6a06f527110fc.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-05/6a06f527da4bc.jpg",
+          "/upload/image/2026-05/6a06f528d5a26.jpg",
+          "/upload/image/2026-05/6a06f529c3d40.jpg",
+          "/upload/image/2026-05/6a06f52a91c11.jpg",
+          "/upload/image/2026-05/6a06f52b71ff4.jpg",
+          "/upload/image/2026-05/6a06f52c39b9a.jpg",
+          "/upload/image/2026-05/6a06f52d280b8.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "60d0b8bd2cb5c5539b6fb7c248f51cbaf01d1344cf2b444cac0654bc81ca31bf"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-47798a8554b7"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/art-lights/12160"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 17
+    },
+    {
+      "family_id": "family-2997a4ff9dfb",
+      "title": "120093-600异形简约现代铝材亚克力吊灯",
+      "category": "吊灯",
+      "member_count": 1,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:12162",
+        "display_id": "12162",
+        "primary_image": "/upload/goods/2026-05/6a06f4a88d4ba.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-05/6a06f4a88d4ba.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-05/6a06f4a88d4ba.jpg",
+          "/upload/image/2026-05/6a06f556b25b0.jpg",
+          "/upload/image/2026-05/6a06f557af16f.jpg",
+          "/upload/image/2026-05/6a06f558acab1.jpg",
+          "/upload/image/2026-05/6a06f559c371e.jpg",
+          "/upload/image/2026-05/6a06f55aa5426.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-05/6a06f55b6179e.jpg",
+          "/upload/image/2026-05/6a06f55c63c9d.jpg",
+          "/upload/image/2026-05/6a06f55d5b666.jpg",
+          "/upload/image/2026-05/6a06f55e2a9c4.jpg",
+          "/upload/image/2026-05/6a06f55f10576.jpg",
+          "/upload/image/2026-05/6a06f55fb9864.jpg",
+          "/upload/image/2026-05/6a06f560a71b5.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "7df5271764e02e590142be1ae520d8ce9a237f0914b577c47194471356781d7d"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-47798a8554b7"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/art-lights/12162"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 18
+    },
+    {
+      "family_id": "family-f294d2abb5d4",
+      "title": "屿光120112-500简约现代铝材亚克力吊灯",
+      "category": "吊灯",
+      "member_count": 5,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:12381",
+        "display_id": "12381",
+        "primary_image": "/upload/goods/2026-06/6a2e52ed5018a.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-06/6a2e52ed5018a.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-06/6a2e52ed5018a.jpg",
+          "/upload/image/2026-06/6a2e4ff6d817d.jpg",
+          "/upload/image/2026-06/6a2e4ff816a52.jpg",
+          "/upload/image/2026-06/6a2e4ff91940e.jpg",
+          "/upload/image/2026-06/6a2e4ffa1ee41.jpg",
+          "/upload/image/2026-06/6a2e4ffb06502.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-06/6a2e4ffbb9eea.jpg",
+          "/upload/image/2026-06/6a2e4ffc7c29a.jpg",
+          "/upload/image/2026-06/6a2e4ffd48bfd.jpg",
+          "/upload/image/2026-06/6a2e4ffe06405.jpg",
+          "/upload/image/2026-06/6a2e4ffec5369.jpg",
+          "/upload/image/2026-06/6a2e4fffc1de4.jpg",
+          "/upload/image/2026-06/6a2e50007b1cb.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "e93e981c3f59159bf91a70cbd68c1db47403f5fbcecc1d1394c0df2d237ee761"
+      },
+      "governance": {
+        "required_review_ids": [
+          "family-f294d2abb5d4"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/ceiling-lights/12377",
+        "/products/ceiling-lights/12378",
+        "/products/ceiling-lights/12379",
+        "/products/ceiling-lights/12380",
+        "/products/ceiling-lights/12381"
+      ],
+      "legacy_alias_count": 5,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 19
+    },
+    {
+      "family_id": "family-b1164a806916",
+      "title": "JH-X-6L1858 吸顶灯系列",
+      "category": "吸顶灯",
+      "member_count": 6,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:11989",
+        "display_id": "11989",
+        "primary_image": "/upload/goods/2026-03/69c89bbd9c0d2.jpg"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+          "/upload/image/2026-03/69c88e55df73d.jpg",
+          "/upload/image/2026-03/69c88e567b915.jpg",
+          "/upload/image/2026-03/69c88e57018f2.jpg",
+          "/upload/image/2026-03/69c88e57d1c8f.jpg",
+          "/upload/image/2026-03/69c88e58a05a3.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2026-03/69c88e5926849.jpg",
+          "/upload/image/2026-03/69c88e59a0b87.jpg",
+          "/upload/image/2026-03/69c88e5a23433.jpg",
+          "/upload/image/2026-03/69c88e5a9f288.jpg",
+          "/upload/image/2026-03/69c88e5b408ef.jpg",
+          "/upload/image/2026-03/69c88e5bcb0b3.jpg",
+          "/upload/image/2026-03/69c88e5c64a48.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "1238e9b6d1e11e098f99c459292dd9ea24161ca3fc7824773ac0684178664d92"
+      },
+      "governance": {
+        "required_review_ids": [
+          "family-b1164a806916"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/new-chinese/11987",
+        "/products/new-chinese/11988",
+        "/products/new-chinese/11989"
+      ],
+      "legacy_alias_count": 3,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 20
+    },
+    {
+      "family_id": "family-0f78e49f6810",
+      "title": "JH-9240-100A5",
+      "category": "室内护眼大路灯",
+      "member_count": 1,
+      "representative_score": 84,
+      "representative": {
+        "source_key": "mall_sql:11001",
+        "display_id": "11001",
+        "primary_image": "/upload/goods/2024-11/673e959896daa.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2024-11/673e959896daa.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2024-11/673e959896daa.png",
+          "/upload/image/2024-11/673e9ae6d11a7.jpg",
+          "/upload/image/2024-11/673e9ae7b1904.jpg",
+          "/upload/image/2024-11/673e9ae89729f.jpg",
+          "/upload/image/2024-11/673e9aeb60f26.jpg",
+          "/upload/image/2024-11/673e9aee78617.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2024-11/673e9af04a075.jpg",
+          "/upload/image/2024-11/673e9af2844d0.jpg",
+          "/upload/image/2024-11/673e9af3c179b.jpg",
+          "/upload/image/2024-11/673e9af5ab992.jpg",
+          "/upload/image/2024-11/673e9afa058ff.jpg",
+          "/upload/image/2024-11/673e9afcc5f4b.jpg",
+          "/upload/image/2024-11/673e9b04dddd3.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "3107c9c7b397ce53165dd0f2a927f84e9866f5d5db2818acdbe01fdb546e8d79"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-177281330798"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/outdoor-lighting/11001"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 21
+    },
+    {
+      "family_id": "family-972959f4c328",
+      "title": "JH-ZN-2.4G-F（情景面板） G系列 智能产品",
+      "category": "筒射灯",
+      "member_count": 1,
+      "representative_score": 72,
+      "representative": {
+        "source_key": "mall_sql:8445",
+        "display_id": "8445",
+        "primary_image": "/upload/goods/2022-05/6294898ece775.png"
+      },
+      "media": {
+        "primary_image": "/upload/goods/2022-05/6294898ece775.png",
+        "primary_image_authorized": true,
+        "display_media_count": 13,
+        "authorized_media_count": 6,
+        "unauthorized_media_count": 7,
+        "fully_authorized": false,
+        "authorized_media_paths": [
+          "/upload/goods/2022-05/6294898ece775.png",
+          "/upload/image/2022-05/629489d144d8e.jpg",
+          "/upload/image/2022-05/629489d184f57.jpg",
+          "/upload/image/2022-05/629489d36da5e.jpg",
+          "/upload/image/2022-05/629489d412803.jpg",
+          "/upload/image/2022-05/629489d49a420.jpg"
+        ],
+        "unauthorized_media_paths": [
+          "/upload/image/2022-05/629489d5b111e.jpg",
+          "/upload/image/2022-05/629489d61bd27.jpg",
+          "/upload/image/2022-05/629489d6cd30c.jpg",
+          "/upload/image/2022-05/629489d76b65d.jpg",
+          "/upload/image/2022-05/629489d81722c.jpg",
+          "/upload/image/2022-05/629489d871e1a.jpg",
+          "/upload/image/2022-05/629489d8b28bf.jpg"
+        ],
+        "unauthorized_media_paths_sha256": "3845c9dded31d3bb65170b325475e03c0b7fbc9f0d30858a5df78b6e031fa693"
+      },
+      "governance": {
+        "required_review_ids": [
+          "candidate-c2e87a1daf51"
+        ],
+        "unresolved_review_ids": [],
+        "required_category_review_ids": [],
+        "unresolved_category_review_ids": [],
+        "family_id_stability_requires_actions": {}
+      },
+      "legacy_aliases": [
+        "/products/switches/8445"
+      ],
+      "legacy_alias_count": 1,
+      "release_ready": false,
+      "candidate_state": "primary_only_candidate_pending_release_signoff",
+      "candidate_rank": 22
+    }
+  ]
+}

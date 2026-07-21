@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-a8351ce02e03",
+    "canonical_slug": "11440",
+    "canonical_source_key": "mall_sql:11440",
+    "canonical_source_id": "11440",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-CPDZX 户外照明系列",
+    "category": "户外照明",
+    "source_categories": [
+      "户外照明"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 3,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-a8351ce02e03",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11440",
+      "display_id": "11440",
+      "title": "JH-CPDZX--01  小号  太阳能草坪灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11440",
+        "source_id": "11440",
+        "display_id": "11440",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11449",
+        "source_id": "11449",
+        "display_id": "11449",
+        "model_label": null,
+        "model_state": "pending_review"
+      },
+      {
+        "source_key": "mall_sql:11450",
+        "source_id": "11450",
+        "display_id": "11450",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [],
+    "facets": {
+      "finishes": [
+        "古铜色",
+        "黑色",
+        "咖啡色"
+      ],
+      "types": [
+        "草坪灯"
+      ]
+    },
+    "quality_flags": [
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11440",
+      "source_path": "商城系统/商品说明/JH-CPDZX--01  小号  太阳能草坪灯_11440.md",
+      "source_sha256": "827b6cbf3da15ef3775e5df857166b836f7e90978d5e43f213029c9470fb49b7"
+    },
+    {
+      "source_key": "mall_sql:11449",
+      "source_path": "商城系统/商品说明/JH-CPDZX--01  中号  太阳能草坪灯_11449.md",
+      "source_sha256": "d5703e8f7bd79e7ffc046e9c3e6534b79f62f1e498257d0fff8a78e7e9671a16"
+    },
+    {
+      "source_key": "mall_sql:11450",
+      "source_path": "商城系统/商品说明/JH-CPDZX--01  大号  太阳能草坪灯_11450.md",
+      "source_sha256": "687833756c9a2f3ed9af1a82e8b215e30857ab6646543bfaac60baf6a7d1ae9e"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "颜色工艺": "古铜色、黑色、咖啡色",
+      "类型": "草坪灯"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 20,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-30a047bfaa04",
+      "source_key": "mall_sql:11440",
+      "display_id": "11440",
+      "label": "JH-CPDZX--01  小号  太阳能草坪灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "古铜色、黑色、咖啡色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-CPD-01-01",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-02",
+          "source_row": 2,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-03",
+          "source_row": 3,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-f5c3e78c9d27",
+      "source_key": "mall_sql:11449",
+      "display_id": "11449",
+      "label": "JH-CPDZX--01  中号  太阳能草坪灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-CPD-01-04",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-05",
+          "source_row": 2,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-06",
+          "source_row": 3,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-4a6bd68dadec",
+      "source_key": "mall_sql:11450",
+      "display_id": "11450",
+      "label": "JH-CPDZX--01  大号  太阳能草坪灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": "JH-CPD-01-08",
+          "source_row": 1,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-09",
+          "source_row": 2,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": "JH-CPD-01-07",
+          "source_row": 3,
+          "normalization": "unchanged",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

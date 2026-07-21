@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-07-16",
+  "batch_id": "catalog-v2-private-sample-120",
+  "mode": "dry_run",
+  "activation": false,
+  "worker_imported": false,
+  "sitemap_included": false,
+  "alias_count": 31,
+  "canonical_preservation_count": 22,
+  "redirect_count": 9,
+  "aliases": [
+    {
+      "source_key": "mall_sql:12160",
+      "legacy_route": "/products/art-lights/12160",
+      "family_id": "family-1dd9feab2188",
+      "private_preview_route": "/catalog-lab/family-1dd9feab2188",
+      "future_canonical_route": "/products/art-lights/12160",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12161",
+      "legacy_route": "/products/art-lights/12161",
+      "family_id": "family-15de95ee9cb2",
+      "private_preview_route": "/catalog-lab/family-15de95ee9cb2",
+      "future_canonical_route": "/products/art-lights/12161",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12162",
+      "legacy_route": "/products/art-lights/12162",
+      "family_id": "family-2997a4ff9dfb",
+      "private_preview_route": "/catalog-lab/family-2997a4ff9dfb",
+      "future_canonical_route": "/products/art-lights/12162",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12217",
+      "legacy_route": "/products/ceiling-lights/12217",
+      "family_id": "family-559d77c8ac4e",
+      "private_preview_route": "/catalog-lab/family-559d77c8ac4e",
+      "future_canonical_route": "/products/ceiling-lights/12217",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12377",
+      "legacy_route": "/products/ceiling-lights/12377",
+      "family_id": "family-f294d2abb5d4",
+      "private_preview_route": "/catalog-lab/family-f294d2abb5d4",
+      "future_canonical_route": "/products/ceiling-lights/12381",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12378",
+      "legacy_route": "/products/ceiling-lights/12378",
+      "family_id": "family-f294d2abb5d4",
+      "private_preview_route": "/catalog-lab/family-f294d2abb5d4",
+      "future_canonical_route": "/products/ceiling-lights/12381",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12379",
+      "legacy_route": "/products/ceiling-lights/12379",
+      "family_id": "family-f294d2abb5d4",
+      "private_preview_route": "/catalog-lab/family-f294d2abb5d4",
+      "future_canonical_route": "/products/ceiling-lights/12381",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12380",
+      "legacy_route": "/products/ceiling-lights/12380",
+      "family_id": "family-f294d2abb5d4",
+      "private_preview_route": "/catalog-lab/family-f294d2abb5d4",
+      "future_canonical_route": "/products/ceiling-lights/12381",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12381",
+      "legacy_route": "/products/ceiling-lights/12381",
+      "family_id": "family-f294d2abb5d4",
+      "private_preview_route": "/catalog-lab/family-f294d2abb5d4",
+      "future_canonical_route": "/products/ceiling-lights/12381",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11650",
+      "legacy_route": "/products/crystal-chandeliers/11650",
+      "family_id": "family-a3d872de3600",
+      "private_preview_route": "/catalog-lab/family-a3d872de3600",
+      "future_canonical_route": "/products/crystal-chandeliers/11652",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11651",
+      "legacy_route": "/products/crystal-chandeliers/11651",
+      "family_id": "family-a3d872de3600",
+      "private_preview_route": "/catalog-lab/family-a3d872de3600",
+      "future_canonical_route": "/products/crystal-chandeliers/11652",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11652",
+      "legacy_route": "/products/crystal-chandeliers/11652",
+      "family_id": "family-a3d872de3600",
+      "private_preview_route": "/catalog-lab/family-a3d872de3600",
+      "future_canonical_route": "/products/crystal-chandeliers/11652",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:9236",
+      "legacy_route": "/products/linear-lighting/9236",
+      "family_id": "family-7f75dcce796c",
+      "private_preview_route": "/catalog-lab/family-7f75dcce796c",
+      "future_canonical_route": "/products/linear-lighting/9236",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:9237",
+      "legacy_route": "/products/linear-lighting/9237",
+      "family_id": "family-5c97ea3f5b5b",
+      "private_preview_route": "/catalog-lab/family-5c97ea3f5b5b",
+      "future_canonical_route": "/products/linear-lighting/9237",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:9238",
+      "legacy_route": "/products/linear-lighting/9238",
+      "family_id": "family-77b9971e550c",
+      "private_preview_route": "/catalog-lab/family-77b9971e550c",
+      "future_canonical_route": "/products/linear-lighting/9238",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11987",
+      "legacy_route": "/products/new-chinese/11987",
+      "family_id": "family-b1164a806916",
+      "private_preview_route": "/catalog-lab/family-b1164a806916",
+      "future_canonical_route": "/products/new-chinese/11989",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11988",
+      "legacy_route": "/products/new-chinese/11988",
+      "family_id": "family-b1164a806916",
+      "private_preview_route": "/catalog-lab/family-b1164a806916",
+      "future_canonical_route": "/products/new-chinese/11989",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11989",
+      "legacy_route": "/products/new-chinese/11989",
+      "family_id": "family-b1164a806916",
+      "private_preview_route": "/catalog-lab/family-b1164a806916",
+      "future_canonical_route": "/products/new-chinese/11989",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:11001",
+      "legacy_route": "/products/outdoor-lighting/11001",
+      "family_id": "family-0f78e49f6810",
+      "private_preview_route": "/catalog-lab/family-0f78e49f6810",
+      "future_canonical_route": "/products/outdoor-lighting/11001",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:8947",
+      "legacy_route": "/products/outdoor-lighting/8947",
+      "family_id": "family-5ae1d7b4ce39",
+      "private_preview_route": "/catalog-lab/family-5ae1d7b4ce39",
+      "future_canonical_route": "/products/outdoor-lighting/8948",
+      "route_action": "redirect_to_family_canonical",
+      "would_redirect_status": 308,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:8948",
+      "legacy_route": "/products/outdoor-lighting/8948",
+      "family_id": "family-5ae1d7b4ce39",
+      "private_preview_route": "/catalog-lab/family-5ae1d7b4ce39",
+      "future_canonical_route": "/products/outdoor-lighting/8948",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12265",
+      "legacy_route": "/products/spotlights/12265",
+      "family_id": "family-18bd9bbbdcd2",
+      "private_preview_route": "/catalog-lab/family-18bd9bbbdcd2",
+      "future_canonical_route": "/products/spotlights/12265",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12266",
+      "legacy_route": "/products/spotlights/12266",
+      "family_id": "family-db235d89122b",
+      "private_preview_route": "/catalog-lab/family-db235d89122b",
+      "future_canonical_route": "/products/spotlights/12266",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12267",
+      "legacy_route": "/products/spotlights/12267",
+      "family_id": "family-91eba5983ab4",
+      "private_preview_route": "/catalog-lab/family-91eba5983ab4",
+      "future_canonical_route": "/products/spotlights/12267",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12282",
+      "legacy_route": "/products/spotlights/12282",
+      "family_id": "family-606781f21fca",
+      "private_preview_route": "/catalog-lab/family-606781f21fca",
+      "future_canonical_route": "/products/spotlights/12282",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12283",
+      "legacy_route": "/products/spotlights/12283",
+      "family_id": "family-a9891b9d18fa",
+      "private_preview_route": "/catalog-lab/family-a9891b9d18fa",
+      "future_canonical_route": "/products/spotlights/12283",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12284",
+      "legacy_route": "/products/spotlights/12284",
+      "family_id": "family-3a66ceb9de0f",
+      "private_preview_route": "/catalog-lab/family-3a66ceb9de0f",
+      "future_canonical_route": "/products/spotlights/12284",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12285",
+      "legacy_route": "/products/spotlights/12285",
+      "family_id": "family-907eecc820ae",
+      "private_preview_route": "/catalog-lab/family-907eecc820ae",
+      "future_canonical_route": "/products/spotlights/12285",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12286",
+      "legacy_route": "/products/spotlights/12286",
+      "family_id": "family-dd0b539a1179",
+      "private_preview_route": "/catalog-lab/family-dd0b539a1179",
+      "future_canonical_route": "/products/spotlights/12286",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:12287",
+      "legacy_route": "/products/spotlights/12287",
+      "family_id": "family-c201aa392506",
+      "private_preview_route": "/catalog-lab/family-c201aa392506",
+      "future_canonical_route": "/products/spotlights/12287",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    },
+    {
+      "source_key": "mall_sql:8445",
+      "legacy_route": "/products/switches/8445",
+      "family_id": "family-972959f4c328",
+      "private_preview_route": "/catalog-lab/family-972959f4c328",
+      "future_canonical_route": "/products/switches/8445",
+      "route_action": "preserve_canonical",
+      "would_redirect_status": null,
+      "activation": false
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-007886dd3bb1",
+    "canonical_slug": "11701",
+    "canonical_source_key": "mall_sql:11701",
+    "canonical_source_id": "11701",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-693 凉霸",
+    "category": "浴霸",
+    "source_categories": [
+      "浴霸"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-007886dd3bb1",
+    "model_label": "JH-693",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11701",
+      "display_id": "11701",
+      "title": "JH-693 凉霸",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11701",
+        "source_id": "11701",
+        "display_id": "11701",
+        "model_label": "JH-693",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11701",
+      "source_path": "商城系统/商品说明/JH-693 凉霸_11701.md",
+      "source_sha256": "397badc7587d5c1da74c1cdc3b8519ae0cc6f5152b506615f034c6a58430cf78"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 11,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 12,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-d10b8dc9a824",
+      "source_key": "mall_sql:11701",
+      "display_id": "11701",
+      "label": "JH-693 凉霸",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

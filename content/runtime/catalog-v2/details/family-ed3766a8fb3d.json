@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-ed3766a8fb3d",
+    "canonical_slug": "11046",
+    "canonical_source_key": "mall_sql:11046",
+    "canonical_source_id": "11046",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-9240-150A3",
+    "category": "室内护眼大路灯",
+    "source_categories": [
+      "室内护眼大路灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-ed3766a8fb3d",
+    "model_label": "JH-9240-150A3",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11046",
+      "display_id": "11046",
+      "title": "JH-9240-150A3",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11046",
+        "source_id": "11046",
+        "display_id": "11046",
+        "model_label": "JH-9240-150A3",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "580*320*2035MM"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "areas",
+        "label": "适用面积",
+        "values": [
+          "5㎡-10㎡"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "spaces",
+        "label": "适用空间",
+        "values": [
+          "客厅",
+          "卧室"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "580*320*2035MM"
+      ],
+      "finishes": [
+        "灰色"
+      ],
+      "spaces": [
+        "客厅",
+        "卧室",
+        "书房",
+        "儿童房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "护眼灯",
+        "落地灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11046",
+      "source_path": "商城系统/商品说明/JH-9240-150A3_11046.md",
+      "source_sha256": "91bb879ee1cda92d06f2c693094ee484887b6a48a93dc692d916c3db360cb63e"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "尺寸": "580*320*2035MM",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "灰色",
+      "空间": "客厅,卧室,书房,儿童房",
+      "类型": "护眼灯,落地灯",
+      "风格": "简约现代"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 17,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-d16ba0049397",
+      "source_key": "mall_sql:11046",
+      "display_id": "11046",
+      "label": "JH-9240-150A3",
+      "dimensions": {
+        "dimensions": {
+          "value": "580*320*2035MM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "灰色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

@@ -30,6 +30,22 @@ export const products = rawProducts as ProductRecord[];
 const modelCounts = new Map<string, number>();
 for (const product of products) modelCounts.set(product.model, (modelCounts.get(product.model) ?? 0) + 1);
 
+export function productTitleParts(product: Pick<ProductRecord, "title" | "model">) {
+  const title = product.title.replace(/\s+/g, " ").trim();
+  const model = product.model.replace(/\s+/g, " ").trim();
+  const modelIndex = model ? title.indexOf(model) : -1;
+  const hasModel = modelIndex >= 0;
+  const description = hasModel
+    ? `${title.slice(0, modelIndex)} ${title.slice(modelIndex + model.length)}`.replace(/^[\s（(]+|[）)]$/g, "").replace(/\s+/g, " ").trim() || title
+    : title;
+  return {
+    model: model || null,
+    description,
+    hasModel,
+    accessibleName: hasModel && model && description !== title ? `${model} · ${description}` : title,
+  };
+}
+
 export function productSeoTitle(product: ProductRecord) {
   const model = product.model || product.source_id;
   const remainder = product.title.startsWith(model)

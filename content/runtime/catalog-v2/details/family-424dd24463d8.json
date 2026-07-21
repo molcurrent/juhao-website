@@ -1,0 +1,1322 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-424dd24463d8",
+    "canonical_slug": "12069",
+    "canonical_source_key": "mall_sql:12069",
+    "canonical_source_id": "12069",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_category_selection",
+    "route_plan_evidence": "same_complete_reference_image_set_category_requires_owner_selection",
+    "title": "JH-D-6L6649 跨分类系列",
+    "category": "待复核",
+    "source_categories": [
+      "台灯",
+      "吊灯",
+      "壁灯",
+      "落地灯"
+    ],
+    "category_state": "pending_owner_selection",
+    "member_count": 11,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-424dd24463d8",
+    "model_label": "JH-L-6L6649-1",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:12069",
+      "display_id": "12069",
+      "title": "JH-L-6L6649-1落地灯 客厅餐厅卧室书房手绘玻璃罩落地灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:12059",
+        "source_id": "12059",
+        "display_id": "12059",
+        "model_label": "JH-D-6L6649-1",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12060",
+        "source_id": "12060",
+        "display_id": "12060",
+        "model_label": "JH-D-6L6649-1",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12061",
+        "source_id": "12061",
+        "display_id": "12061",
+        "model_label": "JH-B-6L6649-1200",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12062",
+        "source_id": "12062",
+        "display_id": "12062",
+        "model_label": "JH-B-6L6649-1500",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12063",
+        "source_id": "12063",
+        "display_id": "12063",
+        "model_label": "JH-B-6L6649-650",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12064",
+        "source_id": "12064",
+        "display_id": "12064",
+        "model_label": "JH-B-6L6649-500",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12065",
+        "source_id": "12065",
+        "display_id": "12065",
+        "model_label": "JH-D-6L6649-5",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12066",
+        "source_id": "12066",
+        "display_id": "12066",
+        "model_label": "JH-D-6L6649-3",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12067",
+        "source_id": "12067",
+        "display_id": "12067",
+        "model_label": "JH-D-6L6649-6",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12068",
+        "source_id": "12068",
+        "display_id": "12068",
+        "model_label": "JH-T-6L6649-1",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12069",
+        "source_id": "12069",
+        "display_id": "12069",
+        "model_label": "JH-L-6L6649-1",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "H350*135*L1500mm",
+          "H460*135*L1500mm"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED*20W",
+          "LED*30W"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铁艺"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-25㎡"
+      ],
+      "dimensions": [
+        "H350*135*L1500mm",
+        "H460*135*L1500mm",
+        "180*135*L1200mm",
+        "180*135*L1500mm",
+        "210*135*L650mm",
+        "210*135*L500mm",
+        "300*H350*L1500mm",
+        "135*D150*L540mm",
+        "135*D220*L1650mm"
+      ],
+      "light_sources": [
+        "LED*20W",
+        "LED*30W",
+        "LED*100W",
+        "LED*60W",
+        "LED*120W"
+      ],
+      "materials": [
+        "铁艺"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "低户型",
+        "高层/复式/别墅",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "宋式美学"
+      ],
+      "types": [
+        "吊灯",
+        "壁灯",
+        "台灯",
+        "落地灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:12059",
+      "source_path": "商城系统/商品说明/JH-D-6L6649-1小吊 餐厅书房卧室床头手绘玻璃罩小吊_12059.md",
+      "source_sha256": "1d9e143098c08a43f5ac852db4abbc162e84190265c605bc1a7b119c94c680c2"
+    },
+    {
+      "source_key": "mall_sql:12060",
+      "source_path": "商城系统/商品说明/JH-D-6L6649-1长吊 餐厅书房卧室床头手绘玻璃罩小吊_12060.md",
+      "source_sha256": "55b7fc11a51fc26bed24acb0b083e079c4efc41ed9389c38267dec037fdd3859"
+    },
+    {
+      "source_key": "mall_sql:12061",
+      "source_path": "商城系统/商品说明/JH-B-6L6649-1200壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯_12061.md",
+      "source_sha256": "68cb237335c8f63b975d532009b6f27d457886447831deb7591bd8181a7a94bf"
+    },
+    {
+      "source_key": "mall_sql:12062",
+      "source_path": "商城系统/商品说明/JH-B-6L6649-1500壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯_12062.md",
+      "source_sha256": "f7df01ddf2ea3090bbe6c6b7d49dce6a8b6f4e9ca1a32426176e366547a1f5fd"
+    },
+    {
+      "source_key": "mall_sql:12063",
+      "source_path": "商城系统/商品说明/JH-B-6L6649-650壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯_12063.md",
+      "source_sha256": "7032b7bc682319c7a567cb4c3ae25733a631dfa266c286f614579869ee2b17e6"
+    },
+    {
+      "source_key": "mall_sql:12064",
+      "source_path": "商城系统/商品说明/JH-B-6L6649-500壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯_12064.md",
+      "source_sha256": "2c94af0663108cfa6aa583a9cae6b6c42f60698ed1f093628455132d65fb4591"
+    },
+    {
+      "source_key": "mall_sql:12065",
+      "source_path": "商城系统/商品说明/JH-D-6L6649-5 长餐吊 餐吊吧台床头小吊手绘玻璃罩吊灯_12065.md",
+      "source_sha256": "e74a9683f8b8b1165ec78fa56b84da8707beab606585e3ff99ff7b5041b58604"
+    },
+    {
+      "source_key": "mall_sql:12066",
+      "source_path": "商城系统/商品说明/JH-D-6L6649-3  圆盘餐厅卧室书房床头手绘玻璃罩小吊_12066.md",
+      "source_sha256": "b16bcf4ec703159050b778cea824c99abb7b3d56df67b35e5de33491641dfb71"
+    },
+    {
+      "source_key": "mall_sql:12067",
+      "source_path": "商城系统/商品说明/JH-D-6L6649-6 楼梯灯  客厅中空楼梯间手绘玻璃罩吊灯_12067.md",
+      "source_sha256": "c8dc6a88dad212c66d4ed8cb0a4eb3242b8c13133c8cdc51c7d39a5debef1194"
+    },
+    {
+      "source_key": "mall_sql:12068",
+      "source_path": "商城系统/商品说明/JH-T-6L6649-1台灯 客厅卧室书房手绘玻璃罩台灯_12068.md",
+      "source_sha256": "5064062130569314312cb3c9d52dd373852d4bfa89e295ff53388b5d01fbd306"
+    },
+    {
+      "source_key": "mall_sql:12069",
+      "source_path": "商城系统/商品说明/JH-L-6L6649-1落地灯 客厅餐厅卧室书房手绘玻璃罩落地灯_12069.md",
+      "source_sha256": "66f88f1c259660fab1a3695ac39bef9440b7beca435d48f297c7d83711c64d3d"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铁艺",
+      "光源类型": "LED*30W",
+      "尺寸": "135*D220*L1650mm",
+      "面积": "10㎡-25㎡",
+      "空间": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,玄关/过道/廊道",
+      "类型": "落地灯",
+      "风格": "宋式美学"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 18,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-12021538e0d1",
+      "source_key": "mall_sql:12059",
+      "display_id": "12059",
+      "label": "JH-D-6L6649-1小吊 餐厅书房卧室床头手绘玻璃罩小吊",
+      "dimensions": {
+        "dimensions": {
+          "value": "H350*135*L1500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-5a3d21b945f2",
+      "source_key": "mall_sql:12060",
+      "display_id": "12060",
+      "label": "JH-D-6L6649-1长吊 餐厅书房卧室床头手绘玻璃罩小吊",
+      "dimensions": {
+        "dimensions": {
+          "value": "H460*135*L1500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-edd9d90c0884",
+      "source_key": "mall_sql:12061",
+      "display_id": "12061",
+      "label": "JH-B-6L6649-1200壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "180*135*L1200mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-ab4112363776",
+      "source_key": "mall_sql:12062",
+      "display_id": "12062",
+      "label": "JH-B-6L6649-1500壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "180*135*L1500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-3a78fc2738e7",
+      "source_key": "mall_sql:12063",
+      "display_id": "12063",
+      "label": "JH-B-6L6649-650壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "210*135*L650mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-6d390eb89181",
+      "source_key": "mall_sql:12064",
+      "display_id": "12064",
+      "label": "JH-B-6L6649-500壁灯 客厅餐厅书房卧室床头手绘玻璃罩壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "210*135*L500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-4055a85cd42e",
+      "source_key": "mall_sql:12065",
+      "display_id": "12065",
+      "label": "JH-D-6L6649-5 长餐吊 餐吊吧台床头小吊手绘玻璃罩吊灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "L1200*H350*&amp;amp;135*L1500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-f20db8e84cba",
+      "source_key": "mall_sql:12066",
+      "display_id": "12066",
+      "label": "JH-D-6L6649-3  圆盘餐厅卧室书房床头手绘玻璃罩小吊",
+      "dimensions": {
+        "dimensions": {
+          "value": "300*H350*L1500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-cb2a98f25064",
+      "source_key": "mall_sql:12067",
+      "display_id": "12067",
+      "label": "JH-D-6L6649-6 楼梯灯  客厅中空楼梯间手绘玻璃罩吊灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "D450*H350*&amp;amp;amp;135*L2500mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-90fc798c56f7",
+      "source_key": "mall_sql:12068",
+      "display_id": "12068",
+      "label": "JH-T-6L6649-1台灯 客厅卧室书房手绘玻璃罩台灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "135*D150*L540mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-e915a25a98b5",
+      "source_key": "mall_sql:12069",
+      "display_id": "12069",
+      "label": "JH-L-6L6649-1落地灯 客厅餐厅卧室书房手绘玻璃罩落地灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "135*D220*L1650mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 8,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 9,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 10,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 11,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

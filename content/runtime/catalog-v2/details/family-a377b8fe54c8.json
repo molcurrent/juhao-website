@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-a377b8fe54c8",
+    "canonical_slug": "2383",
+    "canonical_source_key": "mall_sql:2383",
+    "canonical_source_id": "2383",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-8-B-9045室内户外门柱过道全铜壁灯",
+    "category": "壁灯",
+    "source_categories": [
+      "壁灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-a377b8fe54c8",
+    "model_label": "JH-8-B-9045",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:2383",
+      "display_id": "2383",
+      "title": "JH-8-B-9045室内户外门柱过道全铜壁灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:2383",
+        "source_id": "2383",
+        "display_id": "2383",
+        "model_label": "JH-8-B-9045",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "W185*H440*E140"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "E27*1"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铜",
+          "磨砂/刻花玻璃"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "dimensions": [
+        "W185*H440*E140"
+      ],
+      "finishes": [
+        "全铜"
+      ],
+      "light_sources": [
+        "E27*1"
+      ],
+      "materials": [
+        "铜",
+        "磨砂/刻花玻璃"
+      ],
+      "spaces": [
+        "阳台",
+        "楼梯/拐角",
+        "低户型",
+        "高层/复式/别墅",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "简约现代",
+        "美式复古",
+        "美式简约",
+        "现代中式",
+        "传统中式",
+        "欧式",
+        "欧式现代简约",
+        "后现代",
+        "工业风",
+        "新古典"
+      ],
+      "types": [
+        "壁灯",
+        "过道灯",
+        "庭院灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:2383",
+      "source_path": "商城系统/商品说明/JH-8-B-9045室内户外门柱过道全铜壁灯_2383.md",
+      "source_sha256": "f78a6c5e191726a6c19f20c6b0d29c59c6342288dd5bf1ce3b7ae1d1433e4d1e"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铜,磨砂/刻花玻璃",
+      "光源类型": "E27*1",
+      "尺寸": "W185*H440*E140",
+      "颜色工艺": "全铜",
+      "空间": "阳台,楼梯/拐角,低户型,高层/复式/别墅,玄关/过道/廊道",
+      "类型": "壁灯,过道灯,庭院灯",
+      "风格": "简约现代,美式复古,美式简约,现代中式,传统中式,欧式,欧式现代简约,后现代,工业风,新古典",
+      "光源数量": "1"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 12,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-09d1b38b55a5",
+      "source_key": "mall_sql:2383",
+      "display_id": "2383",
+      "label": "JH-8-B-9045室内户外门柱过道全铜壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "W185*H440*E140",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "全铜",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-8c41ab7e0a94",
+    "canonical_slug": "6059",
+    "canonical_source_key": "mall_sql:6059",
+    "canonical_source_id": "6059",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "12612砂黑现代简约礼品台灯",
+    "category": "台灯",
+    "source_categories": [
+      "台灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-8c41ab7e0a94",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:6059",
+      "display_id": "6059",
+      "title": "12612砂黑现代简约礼品台灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:6059",
+        "source_id": "6059",
+        "display_id": "6059",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "亚克力",
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "areas",
+        "label": "适用面积",
+        "values": [
+          "10㎡-15㎡"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-15㎡"
+      ],
+      "finishes": [
+        "拉丝S金/玫瑰金/砂黑"
+      ],
+      "light_sources": [
+        "LED"
+      ],
+      "materials": [
+        "亚克力",
+        "铝材"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "儿童房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "台灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:6059",
+      "source_path": "商城系统/商品说明/12612砂黑现代简约礼品台灯_6059.md",
+      "source_sha256": "46946f8c094789268a15a6e6da06651669564d1b4db6add945eb96c0c00db7a0"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "亚克力,铝材",
+      "光源类型": "LED",
+      "面积": "10㎡-15㎡",
+      "颜色工艺": "拉丝S金/玫瑰金/砂黑",
+      "空间": "客厅,餐厅,卧室,书房,儿童房",
+      "类型": "台灯",
+      "风格": "简约现代"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 15,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-cb06aadb51ba",
+      "source_key": "mall_sql:6059",
+      "display_id": "6059",
+      "label": "12612砂黑现代简约礼品台灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "拉丝S金/玫瑰金/砂黑",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

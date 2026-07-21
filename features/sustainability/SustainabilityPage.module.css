@@ -38,15 +38,15 @@
 
 .eyebrow {
   color: var(--brand-orange-bright);
-  font-size: 10px;
-  letter-spacing: 0.28em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
 }
 
 .hero h1 {
   margin: 26px 0 32px;
-  font-size: clamp(58px, 8.4vw, 126px);
-  line-height: 0.94;
-  letter-spacing: -0.08em;
+  font-size: clamp(58px, 8.4vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 .heroContent > p:last-child {
@@ -67,20 +67,117 @@
 
 .manifesto small {
   color: var(--brand-orange);
-  letter-spacing: 0.22em;
+  letter-spacing: 0.08em;
 }
 
 .manifesto h2 {
   margin: 0 0 30px;
   font-size: clamp(40px, 5vw, 76px);
   line-height: 1.08;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 
 .manifesto p {
   color: var(--ink-soft);
   font-size: 17px;
   line-height: 2;
+}
+
+.statusPanel {
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(50px, 8vw, 130px);
+  padding: 120px var(--page-gutter);
+  color: var(--ink);
+  background: var(--vi-silver-soft);
+}
+
+.statusPanel header > p {
+  margin: 0 0 28px;
+  color: var(--brand-orange);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.statusPanel h2 {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+}
+
+.statusPanel dl {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.statusPanel dl > div {
+  display: grid;
+  grid-template-columns: minmax(150px, .58fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.statusPanel dt {
+  display: flex;
+  gap: 22px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.statusPanel dt span {
+  color: var(--brand-orange);
+}
+
+.statusPanel dd {
+  display: grid;
+  grid-template-columns: minmax(110px, .45fr) minmax(0, 1fr);
+  gap: 22px;
+  margin: 0;
+}
+
+.statusPanel dd strong {
+  font-size: 17px;
+}
+
+.statusPanel dd small {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.statusPanel footer {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+}
+
+.statusPanel footer p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.statusPanel footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.statusPanel footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  color: var(--white);
+  background: var(--night);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .pillars {
@@ -96,20 +193,25 @@
 }
 
 .pillars header span {
-  color: #999c96;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  color: var(--text-muted-on-dark);
+  font-size: 12px;
+  letter-spacing: 0.08em;
 }
 
 .pillars header h2 {
   margin: 0;
   font-size: clamp(42px, 5.5vw, 82px);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card:first-child,
+.card:nth-child(4) {
+  grid-column: span 2;
 }
 
 .card {
@@ -123,7 +225,7 @@
 }
 
 .card h3 {
-  margin: 110px 0 20px;
+  margin: 24px 0 20px;
   font-size: 24px;
 }
 
@@ -144,8 +246,8 @@
 .disclosure h2 {
   margin: 0;
   font-size: clamp(44px, 6vw, 88px);
-  line-height: 1;
-  letter-spacing: -0.07em;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 .disclosure p {
@@ -161,15 +263,37 @@
   }
 
   .manifesto,
+  .statusPanel,
   .disclosure,
   .pillars header {
     grid-template-columns: 1fr;
   }
 
   .manifesto,
+  .statusPanel,
   .pillars,
   .disclosure {
     padding: 84px 24px;
+  }
+
+  .statusPanel footer {
+    grid-column: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .statusPanel dl > div {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .statusPanel dd {
+    grid-template-columns: minmax(110px, .55fr) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .statusPanel footer nav {
+    justify-content: flex-start;
   }
 
   .grid {
@@ -181,13 +305,30 @@
     border-bottom: 1px solid #ffffff2d;
   }
 
-  .card h3 {
-    margin-top: 64px;
-  }
+  .card h3 { margin-top: 24px; }
 }
 
 @media (max-width: 560px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .card:first-child,
+  .card:nth-child(4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .eyebrow,
+  .manifesto small,
+  .statusPanel header > p,
+  .statusPanel dt,
+  .statusPanel dd small,
+  .statusPanel footer p,
+  .statusPanel footer a,
+  .pillars header span,
+  .card small {
+    font-size: 14px;
   }
 }

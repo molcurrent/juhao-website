@@ -14,7 +14,7 @@
 .result > p {
   margin: 0;
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .22em;
 }
@@ -22,9 +22,9 @@
 .result h1 {
   margin: 30px 0;
   font-family: var(--font-display);
-  font-size: clamp(58px, 9vw, 118px);
-  line-height: .95;
-  letter-spacing: -.075em;
+  font-size: clamp(58px, 9vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 .result > span {
@@ -45,7 +45,7 @@
 
 .result dt {
   color: #92958f;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .12em;
 }
 
@@ -57,11 +57,84 @@
   font-weight: 700;
 }
 
+.receipt {
+  margin-top: 54px;
+  padding: 0 24px 22px;
+  background: linear-gradient(120deg, #ffffff08, transparent);
+  border-block: 1px solid #ffffff2d;
+}
+
+.receipt dl {
+  margin: 0;
+  padding-inline: 0;
+  border-block: 0;
+  border-bottom: 1px solid #ffffff2d;
+}
+
+.copyAction {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding-top: 16px;
+}
+
+.copyAction button {
+  min-height: 44px;
+  padding: 0 16px;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid #ffffff4a;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: color var(--duration-fast) ease, background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.copyAction button:hover,
+.copyAction button:focus-visible {
+  color: var(--night);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.copyAction button:active {
+  transform: translateY(1px);
+}
+
+.copyAction span {
+  min-height: 1.5em;
+  color: #b9bcb6;
+  font-size: 12px;
+}
+
+.nextStep {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #ffffff2d;
+}
+
+.nextStep small {
+  color: var(--brand-orange-bright);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.nextStep strong {
+  font-size: clamp(18px, 2.4vw, 26px);
+  line-height: 1.45;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 48px;
+  margin-top: 30px;
 }
 
 .actions a {
@@ -82,10 +155,46 @@
   border-color: var(--brand-orange-bright);
 }
 
+.actions a {
+  transition: color var(--duration-fast) ease, background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.actions a:hover,
+.actions a:focus-visible {
+  color: var(--night);
+  background: var(--white);
+  border-color: var(--white);
+}
+
 @media (max-width: 560px) {
   .result dl {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .receipt {
+    padding-inline: 18px;
+  }
+
+  .nextStep {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .copyAction {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .copyAction button {
+    width: 100%;
+  }
+
+  .copyAction button,
+  .copyAction span,
+  .nextStep small,
+  .actions a {
+    font-size: 14px;
   }
 
   .actions {

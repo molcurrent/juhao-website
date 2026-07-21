@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-58fca1a8dc11",
+    "canonical_slug": "1182",
+    "canonical_source_key": "mall_sql:1182",
+    "canonical_source_id": "1182",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-C-G9-7W  光源",
+    "category": "LED灯泡",
+    "source_categories": [
+      "LED灯泡"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-58fca1a8dc11",
+    "model_label": "JH-C-G9-7W",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:1182",
+      "display_id": "1182",
+      "title": "JH-C-G9-7W  光源",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:1182",
+        "source_id": "1182",
+        "display_id": "1182",
+        "model_label": "JH-C-G9-7W",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "20*66"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "2835"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "PC"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "20*66"
+      ],
+      "finishes": [
+        "金色"
+      ],
+      "light_colors": [
+        "黄",
+        "暖白",
+        "白"
+      ],
+      "light_sources": [
+        "2835"
+      ],
+      "materials": [
+        "PC"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "书房"
+      ],
+      "styles": [
+        "光源类"
+      ],
+      "types": [
+        "吊灯",
+        "水晶灯",
+        "玉石大吊灯",
+        "复式楼大吊灯",
+        "LED灯泡"
+      ],
+      "voltages": [
+        "100-240V"
+      ],
+      "wattages": [
+        "7W"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:1182",
+      "source_path": "商城系统/商品说明/JH-C-G9-7W  光源_1182.md",
+      "source_sha256": "4b86faa7cc1e2c45caa0df2e952db50a34e9557325543d4780ac18fa23adcd98"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "PC",
+      "光源类型": "2835",
+      "尺寸": "20*66",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "金色",
+      "空间": "客厅,餐厅,书房",
+      "类型": "吊灯,水晶灯,玉石大吊灯,复式楼大吊灯,LED灯泡",
+      "风格": "光源类",
+      "功率(W)": "7W",
+      "电压(V)": "100-240V",
+      "发光颜色": "黄,暖白,白",
+      "装箱数量": "600只/件"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 19,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-be9188021f61",
+      "source_key": "mall_sql:1182",
+      "display_id": "1182",
+      "label": "JH-C-G9-7W  光源",
+      "dimensions": {
+        "dimensions": {
+          "value": "20*66",
+          "evidence": "source_attribute:尺寸"
+        },
+        "wattage": {
+          "value": "7W",
+          "evidence": "source_attribute:功率(W)"
+        },
+        "finish_color": {
+          "value": "金色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

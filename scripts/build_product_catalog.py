@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -33,8 +34,16 @@ TOPICS = [
 ]
 
 PUBLISH_LIMITS = {
-    "射灯": 6,
+    "射灯": 9,
     "家居顶灯": 6,
+}
+
+# These frozen source records are standard spotlights even though the source
+# topic index currently files them under engineering customisation.
+SEMANTIC_TOPIC_OVERRIDES = {
+    "12265": ("射灯", "spotlights"),
+    "12266": ("射灯", "spotlights"),
+    "12267": ("射灯", "spotlights"),
 }
 
 ADDITIONAL_CANDIDATES = {
@@ -286,6 +295,7 @@ def product_record(topic: str, topic_slug: str, stem: str, label: str, departmen
     text = path.read_text(encoding="utf-8")
     fields = dict(FIELD_RE.findall(text))
     source_id = fields.get("ID", "")
+    topic, topic_slug = SEMANTIC_TOPIC_OVERRIDES.get(source_id, (topic, topic_slug))
     sql = goods.get(source_id)
     images = unique(IMAGE_RE.findall(text))
     if not sql or not images or FORBIDDEN.search(f"{label} {fields.get('分类', '')}"):
@@ -595,12 +605,16 @@ def direct_page_records(published: list[dict], cases: list[dict], previous_by_ro
         product_routes = {item["source_id"]: item["seo_slug"] for item in published}
         rows_by_route = {item["route"]: item for item in rows}
         scene_pattern = re.compile(
-            r'(residential|hospitality|commercial|public|industrial):\s*\{\s*topic:\s*"([^"]+)",\s*product:\s*"(\d+)",\s*study:\s*"([^"]+)"\s*\}'
+            r'(residential|hospitality|commercial|public|industrial):\s*\{\s*'
+            r'topic:\s*"([^"]+)",\s*'
+            r'(?:product:\s*"(\d+)",\s*)?'
+            r'(?:study:\s*"([^"]+)",\s*)?'
+            r'topicImage:\s*"[^"]+"\s*\}'
         )
         for scene, topic_slug, product_id, case_slug in scene_pattern.findall(scene_source.read_text(encoding="utf-8")):
             row = rows_by_route[f"/solutions/{scene}"]
-            row["related_products"] = [product_routes[product_id]]
-            row["related_cases"] = [f"/cases/{case_slug}"]
+            row["related_products"] = [product_routes[product_id]] if product_id else []
+            row["related_cases"] = [f"/cases/{case_slug}"] if case_slug else []
             row["related_routes"] = unique([*row["related_routes"], f"/products/{topic_slug}"])
     return rows
 
@@ -934,7 +948,7 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
         f"- 待治理：{sum(item['reviewer'] == 'unknown' for item in ledger)} 条未登记审核人，{sum(item['image_rights_status'] in {'needs_review', 'unknown'} for item in ledger)} 条仍需页面级媒体状态核对；批次授权不替代内容事实审核。",
         f"- 审核台账：{len(products)} 款候选；在原有专题候选池基础上增加 8 款智能设备和 5 款 JH31L331 证据候选。",
         f"- 私有预览：{len(published)} 款；产品 ID 唯一，无跨专题重复发布。当前站点媒体批次授权已登记，产品事实人工审核完成前不进入公开 SEO。",
-        "- 深专题发布上限：射灯、家居顶灯各 6 款；其余专题各 3 款。",
+        "- 专题发布上限：射灯 9 款、家居顶灯 6 款；工程定制不再以标准射灯凑数，其余专题各 3 款。",
         f"- 参数完整度：最低 {min(completeness)}%，平均 {sum(completeness) / len(completeness):.1f}%。",
         "- 在售门禁：`isSale=1`、`goodsStatus=1`、`dataFlag=1`。",
         "- 图片门禁：至少 4 张，且全部来自企业商城 OSS 渠道。",
@@ -952,6 +966,40 @@ def write_outputs(products: list[dict], published: list[dict], cases: list[dict]
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--catalog-v2",
+        action="store_true",
+        help="Build the frozen 2026-07-16 family/variant catalog sample.",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Verify catalog-v2 generated outputs without rewriting them.",
+    )
+    args = parser.parse_args()
+    if args.catalog_v2:
+        from product_catalog_v2 import build_catalog_v2
+
+        report = build_catalog_v2(ROOT, check=args.check)
+        print(
+            json.dumps(
+                {
+                    "source_products": report["families"]["source_products"],
+                    "derived_families": report["families"]["derived_families"],
+                    "sample": report["sample"]["actual"],
+                    "existing_routes_reserved": report["sample"][
+                        "existing_routes_reserved"
+                    ],
+                    "acceptance": report["acceptance"],
+                },
+                ensure_ascii=False,
+            )
+        )
+        return
+    if args.check:
+        parser.error("--check currently requires --catalog-v2")
+
     verify_external_sources({"help", "products", "topics", "mall_sql"})
     previous_by_route = load_previous_ledger()
     goods = load_goods()
@@ -965,8 +1013,8 @@ def main() -> None:
     expected_metrics = {
         "records": 162,
         "published": 81,
-        "searchable": 68,
-        "seo_candidates": 69,
+        "searchable": 67,
+        "seo_candidates": 68,
         "professional_articles": 0,
         "all_articles": 8,
         "news_pages": 2,

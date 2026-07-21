@@ -2,7 +2,7 @@ import type { PageData } from "./pages";
 
 export const contractPages = {
   "about/history": {
-    path: "/about/history", label: "发展历程", eyebrow: "OUR JOURNEY", title: "钜豪发展历程", seoTitle: "发展历程与品牌荣誉｜钜豪照明", image: "/images/juhao-industrial.webp",
+    path: "/about/history", label: "发展历程", eyebrow: "OUR JOURNEY", title: "钜豪发展历程", seoTitle: "发展历程与品牌荣誉｜钜豪照明", image: "/images/jh48-history-archive.webp",
     description: "查看钜豪照明2020年以来在渠道战略、智慧家庭、产品发布与行业荣誉方面的公开发展节点。",
     intro: "时间线依据企业知识库公司新闻整理，记录钜豪在照明、智慧家庭、产品与渠道协同方向的可追溯节点。",
     highlights: [{ title: "渠道共建", text: "以区域会议和经销商盛典持续连接合作伙伴。" }, { title: "智慧家庭", text: "2021年公开发布钜豪智慧家庭。" }, { title: "产品演进", text: "通过年度新品会议持续更新产品与方案。" }],
@@ -10,7 +10,7 @@ export const contractPages = {
     related: [{ label: "品牌介绍", href: "/about", text: "了解钜豪的品牌主张。" }, { label: "加入钜豪", href: "/about/join", text: "查看招聘信息发布原则。" }, { label: "联系钜豪", href: "/contact", text: "提交合作需求。" }],
   },
   "about/join": {
-    path: "/about/join", label: "加入钜豪", eyebrow: "JOIN JUHAO", title: "与钜豪一起创造好光", seoTitle: "加入钜豪｜钜豪照明", image: "/images/juhao-commercial.webp", noindex: true,
+    path: "/about/join", label: "加入钜豪", eyebrow: "JOIN JUHAO", title: "与钜豪一起创造好光", seoTitle: "加入钜豪｜钜豪照明", image: "/images/jh48-careers-studio.webp", noindex: true,
     description: "钜豪照明招聘与人才页面。正式职位、地点与申请方式将在企业确认后发布。",
     intro: "我们重视对用户、空间和长期价值保持好奇的人。当前页面不发布未经企业确认的职位、待遇或联系方式。",
     highlights: [{ title: "产品与技术", text: "围绕照明与智能体验持续探索。" }, { title: "空间与设计", text: "把需求转译成清晰的光环境方案。" }, { title: "渠道与服务", text: "连接合作伙伴与真实用户。" }],
@@ -18,7 +18,7 @@ export const contractPages = {
     related: [{ label: "关于钜豪", href: "/about", text: "了解品牌与业务方向。" }, { label: "发展历程", href: "/about/history", text: "查看经核验的品牌节点。" }, { label: "钜豪动态", href: "/news", text: "查看企业与项目来源记录。" }],
   },
   "solutions/hospitality": {
-    path: "/solutions/hospitality", label: "酒店照明", eyebrow: "HOSPITALITY LIGHTING", title: "酒店照明解决方案", seoTitle: "酒店照明解决方案｜钜豪照明", image: "/images/juhao-home.webp", type: "service",
+    path: "/solutions/hospitality", label: "酒店照明", eyebrow: "HOSPITALITY LIGHTING", title: "酒店照明解决方案", seoTitle: "酒店照明解决方案｜钜豪照明", image: "/images/jh-hotel.webp", type: "service",
     description: "了解酒店抵达、公共区域、客房与餐饮空间的照明规划重点，并获取项目咨询入口。",
     intro: "酒店光环境需要在识别、氛围与休息之间自然转换，让宾客从抵达到入住都感受到连续而克制的空间体验。",
     highlights: [{ title: "抵达空间", text: "建立入口识别与欢迎感。" }, { title: "公共区域", text: "用层次串联通行、交流与停留。" }, { title: "客房", text: "支持阅读、休息与夜间起居。" }, { title: "餐饮", text: "兼顾食物显色与桌面氛围。" }],
@@ -26,7 +26,7 @@ export const contractPages = {
     related: [{ label: "商业照明", href: "/solutions/commercial", text: "查看商业空间的光环境思路。" }, { label: "健康光", href: "/healthy-light", text: "了解以人为中心的照明原则。" }, { label: "项目咨询", href: "/contact", text: "提交酒店类型与项目阶段。" }],
   },
   "healthy-light": {
-    path: "/healthy-light", label: "健康光", eyebrow: "HUMAN-CENTRIC LIGHT", title: "让光更关照人的感受", seoTitle: "健康光环境｜钜豪照明", image: "/images/juhao-home.webp", type: "service",
+    path: "/healthy-light", label: "健康光", eyebrow: "HUMAN-CENTRIC LIGHT", title: "让光更关照人的感受", seoTitle: "健康光环境｜钜豪照明", image: "/images/jh48-healthy-hero.webp", type: "service",
     description: "从视觉舒适、显色、眩光、时间与场景等维度，了解钜豪健康光环境的规划思路。",
     intro: "健康光不是单一参数或口号，而是围绕人的活动、时间和空间条件，综合处理看清、舒适、氛围与控制。",
     highlights: [{ title: "视觉舒适", text: "在看清的同时控制直视眩光与强烈反差。" }, { title: "真实显色", text: "让人物、食物与材质呈现自然。" }, { title: "时间节奏", text: "让不同时间的亮度和色温更符合活动需要。" }, { title: "简单控制", text: "让高频场景容易使用，也能灵活调整。" }],
@@ -34,7 +34,7 @@ export const contractPages = {
     related: [{ label: "全屋照明", href: "/solutions/residential", text: "把健康光原则应用到家庭空间。" }, { label: "酒店照明", href: "/solutions/hospitality", text: "查看旅居场景的光环境规划。" }, { label: "钜豪产品", href: "/products", text: "查看已进入私有预览的产品资料。" }],
   },
   "sustainability": {
-    path: "/sustainability", label: "可持续发展", eyebrow: "SUSTAINABILITY", title: "让长期价值被看见", seoTitle: "可持续发展｜钜豪照明", image: "/images/juhao-public.webp", noindex: true,
+    path: "/sustainability", label: "可持续发展", eyebrow: "SUSTAINABILITY", title: "让长期价值被看见", seoTitle: "可持续发展｜钜豪照明", image: "/images/jh-sustain.webp", noindex: true,
     description: "了解钜豪照明可持续发展页面的信息框架，以及产品、运营、伙伴与社会责任方向的披露原则。",
     intro: "可持续发展需要可验证的数据与持续行动。本页面先建立披露框架，正式指标、报告与案例仅在企业核验后发布。",
     highlights: [{ title: "产品责任", text: "关注使用效率、耐久与可维护性。" }, { title: "运营责任", text: "用可验证数据呈现资源与运营改善。" }, { title: "伙伴协同", text: "与渠道和项目伙伴建立清晰责任边界。" }, { title: "透明披露", text: "区分目标、行动、结果与尚未完成事项。" }],
@@ -42,7 +42,7 @@ export const contractPages = {
     related: [{ label: "健康光", href: "/healthy-light", text: "了解以人为中心的光环境原则。" }, { label: "资料下载", href: "/downloads", text: "查看已确认的公开资料。" }, { label: "关于钜豪", href: "/about", text: "了解品牌主张。" }],
   },
   "service": {
-    path: "/service", label: "服务支持", eyebrow: "SERVICE & SUPPORT", title: "让每一次使用都有回应", seoTitle: "服务支持与咨询入口｜钜豪照明", image: "/images/juhao-public.webp", type: "service",
+    path: "/service", label: "服务支持", eyebrow: "SERVICE & SUPPORT", title: "让每一次使用都有回应", seoTitle: "服务支持与咨询入口｜钜豪照明", image: "/images/jh-service.webp", type: "service",
     description: "查看钜豪照明官网回访、商城服务、工程项目支持、经销商协作、资料下载与常见问题入口。",
     intro: "从官网回访、商城、工程与渠道协作四类路径进入对应服务；电话、邮箱、地址和地区服务点在企业签核后开放。",
     highlights: [{ title: "官网回访", text: "提交线索编号可追踪的服务需求。" }, { title: "商城服务", text: "采购、订单和经销商业务由独立商城承接。" }, { title: "工程支持", text: "围绕项目阶段、方案和交付信息沟通。" }, { title: "资料支持", text: "集中管理经核验的产品与光学资料。" }],
@@ -51,7 +51,7 @@ export const contractPages = {
     faqs: [{ question: "如何查询正式服务网点？", answer: "网点数据接入并经企业核验后，可按省市查询；当前不发布示例地址。" }, { question: "质保政策以什么为准？", answer: "以对应产品随附文件、购买凭证和企业正式公布的政策为准。" }],
   },
   "partners": {
-    path: "/partners", label: "合作共创", eyebrow: "PARTNERSHIP", title: "与长期主义者一起成长", seoTitle: "经销商加盟与工程合作｜钜豪照明", image: "/images/juhao-commercial.webp", type: "service", noindex: true,
+    path: "/partners", label: "合作共创", eyebrow: "PARTNERSHIP", title: "与长期主义者一起成长", seoTitle: "经销商加盟与工程合作｜钜豪照明", image: "/images/jh-partners.webp", type: "service", noindex: true,
     description: "了解钜豪照明经销商合作、工程项目合作与供应商合作方向，以及合作流程和资料准备要求。",
     intro: "钜豪通过品牌官网承接合作咨询，以独立商城保留采购、订单与经销商业务能力。合作从区域、团队、服务能力和长期经营计划开始。",
     highlights: [{ title: "需求沟通", text: "说明区域、团队与业务方向。" }, { title: "能力评估", text: "共同评估服务、运营与交付条件。" }, { title: "方案确认", text: "明确边界、节奏与双方责任。" }, { title: "持续共建", text: "围绕用户与市场反馈持续优化。" }],
@@ -59,7 +59,7 @@ export const contractPages = {
     related: [{ label: "钜豪商城", href: "/mall", text: "了解数字化渠道服务方向。" }, { label: "照明方案", href: "/solutions", text: "浏览主要业务场景。" }, { label: "联系合作", href: "/contact", text: "提交合作背景与方向。" }],
   },
   "downloads": {
-    path: "/downloads", label: "资料下载", eyebrow: "DOWNLOADS", title: "产品与服务资料", seoTitle: "资料下载｜钜豪照明", image: "/images/juhao-industrial.webp", noindex: true,
+    path: "/downloads", label: "资料下载", eyebrow: "DOWNLOADS", title: "产品与服务资料", seoTitle: "资料下载｜钜豪照明", image: "/images/jh-products.webp", noindex: true,
     description: "钜豪照明资料下载中心。正式产品文档、软件与报告将在文件来源和版本核验后发布。",
     intro: "下载中心将按资料类型、适用产品、版本与更新时间组织文件。当前没有已核验文件，因此不提供示例下载链接。",
     highlights: [{ title: "产品资料", text: "规格、安装与使用文件。" }, { title: "软件工具", text: "标明系统、版本与校验信息。" }, { title: "品牌资料", text: "经授权的品牌与项目资料。" }, { title: "报告文件", text: "可持续或专题报告。" }],
@@ -71,7 +71,7 @@ export const contractPages = {
     description: "搜索钜豪照明官网中的产品、项目、品牌、解决方案与服务内容。",
     intro: "输入关键词后，搜索结果将按钜豪页面、产品、项目、企业动态和解决方案展示。搜索结果页不进入搜索引擎索引。",
     highlights: [{ title: "品牌与服务", text: "查找钜豪品牌、服务与合作信息。" }, { title: "产品与项目", text: "查找已发布的钜豪产品和阶段透明项目。" }, { title: "企业动态", text: "查找钜豪企业、品牌与项目来源记录。" }],
-    sections: [{ title: "搜索状态", text: "当前本地索引覆盖 68 条可搜索内容，并提供输入、结果、空状态与错误状态；候选商品和治理清单不会进入搜索结果。" }],
+    sections: [{ title: "搜索状态", text: "当前本地索引提供输入、结果、空状态、分类筛选与分页；候选商品和治理清单不会进入搜索结果。" }],
     related: [{ label: "钜豪产品", href: "/products", text: "浏览已发布产品资料。" }, { label: "钜豪项目", href: "/cases", text: "查看阶段透明项目档案。" }, { label: "钜豪动态", href: "/news", text: "查看企业与项目来源记录。" }],
   },
   "legal": {
@@ -85,13 +85,14 @@ export const contractPages = {
   "privacy": {
     path: "/privacy", label: "隐私政策", eyebrow: "PRIVACY", title: "隐私政策", seoTitle: "隐私政策｜钜豪照明", image: "/images/juhao-public.webp", noindex: true,
     description: "说明钜豪照明官网咨询回访表单实际收集的信息、处理目的、保存期限和联系渠道。",
-    intro: "本说明只覆盖官网“提交回访”功能当前真实的数据流，不沿用旧站文本，也不对尚未启用的统计、账号或交易功能作推定。说明版本为 2026-07-13，企业审核状态：待确认；本页用于如实披露产品实现，不构成法律意见。",
-    highlights: [{ title: "数据范围", text: "咨询场景、需求摘要、联系人称呼、所选联系渠道及对应联系方式。" }, { title: "处理目的", text: "仅用于识别本次咨询、安排回复、避免重复提交和跟踪内部通知状态。" }, { title: "保存期限", text: "系统为每条回访线索设置 180 日到期时间，企业应按到期字段完成删除或按已批准流程处理。" }],
+    intro: "本说明只覆盖官网“提交回访”功能当前真实的数据流，不沿用旧站文本，也不对尚未启用的统计、账号或交易功能作推定。说明版本为 2026-07-18，企业审核状态：待确认；本页用于如实披露产品实现，不构成法律意见。",
+    highlights: [{ title: "数据范围", text: "咨询场景、需求摘要、联系人称呼、所选联系渠道及对应联系方式；公开入口另处理密钥化 IP 摘要用于频率控制。" }, { title: "处理目的", text: "用于识别本次咨询、安排回复、避免重复提交、跟踪内部通知状态和防止接口滥用。" }, { title: "保存期限", text: "回访线索设置 180 日到期时间；限流摘要的活动窗口约 10 分钟，正常运行下于到期后的下一次每日维护清理，任务异常时在恢复后补清理。" }],
     sections: [
       { title: "何时收集", text: "第一步“检查准备情况”只在当前页面整理内容。只有访客主动选择“提交回访”、勾选同意并提交后，需求与联系信息才会发送到官网同源接口并保存。电话、邮件和企业微信等直接联系入口在企业核验前保持关闭。" },
-      { title: "保存与内部通知", text: "回访线索保存在官网使用的 Cloudflare D1 数据库中，并记录线索编号、提交时间、同意说明版本和通知状态。系统不为该功能保存原始 IP。若企业配置内部通知 Webhook，线索内容会发送到企业批准的内部接收端；未配置时仅保存于数据库。" },
+      { title: "安全校验", text: "公开入口提交时，Turnstile 单次令牌和访客网络地址会发送至 Cloudflare Siteverify 用于安全校验；二者不作为本站回访线索字段保存。校验通过后，本站只以服务端密钥生成 IP 摘要用于频率控制。" },
+      { title: "保存与内部通知", text: "回访线索保存在官网使用的 Cloudflare D1 数据库中，并记录线索编号、提交时间、同意说明版本和通知状态。系统不保存原始 IP；公开入口会以服务端密钥生成 IP 摘要，仅用于约 10 分钟的提交频率控制。正常运行下，摘要在到期后的下一次每日维护中清理；维护任务异常时，在任务恢复后补清理。若企业配置内部通知 Webhook，线索内容会发送到企业批准的内部接收端；未配置时仅保存于数据库。" },
       { title: "查阅、更正与删除", text: "如需查询、更正或删除主动提交的回访信息，请保存线索编号，并从官网联系页再次提交该编号和请求。电话、邮箱等直接联系渠道将在企业签核后补充。企业应在核验身份和适用流程后处理。" },
-      { title: "版本与审核", text: "当前数据处理说明版本：2026-07-13；企业审核状态：待确认。若收集字段、用途、保存方式、接收方或期限发生变化，应先更新本页版本和表单提示，再启用对应功能。" },
+      { title: "版本与审核", text: "当前数据处理说明版本：2026-07-18；企业审核状态：待确认。若收集字段、用途、保存方式、接收方或期限发生变化，应先更新本页版本和表单提示，再启用对应功能。" },
     ],
     related: [{ label: "法律声明", href: "/legal", text: "查看法律文本发布状态。" }, { label: "服务支持", href: "/service", text: "查看服务入口。" }, { label: "联系钜豪", href: "/contact", text: "查看咨询入口。" }],
   },

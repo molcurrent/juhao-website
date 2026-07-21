@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-05aa338dad9e",
+    "canonical_slug": "11739",
+    "canonical_source_key": "mall_sql:11739",
+    "canonical_source_id": "11739",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-8L6829-600*600现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "category": "吸顶灯",
+    "source_categories": [
+      "吸顶灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-05aa338dad9e",
+    "model_label": "JH-8L6829-600*600",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11739",
+      "display_id": "11739",
+      "title": "JH-8L6829-600*600现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11739",
+        "source_id": "11739",
+        "display_id": "11739",
+        "model_label": "JH-8L6829-600*600",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "600*600*80"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED双色智能光源"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "亚克力",
+          "铁艺"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-15㎡"
+      ],
+      "dimensions": [
+        "600*600*80"
+      ],
+      "light_sources": [
+        "LED双色智能光源"
+      ],
+      "materials": [
+        "亚克力",
+        "铁艺"
+      ],
+      "spaces": [
+        "餐厅",
+        "书房",
+        "儿童房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "吸顶灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11739",
+      "source_path": "商城系统/商品说明/JH-8L6829-600600现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_11739.md",
+      "source_sha256": "83031df08a5a77cb7bb12a55cbffe2989ab7fc86e0ec207c6804675886678238"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "亚克力,铁艺",
+      "光源类型": "LED双色智能光源",
+      "尺寸": "600*600*80",
+      "面积": "10㎡-15㎡",
+      "空间": "餐厅,书房,儿童房",
+      "类型": "吸顶灯",
+      "风格": "简约现代",
+      "光源数量": "131W*2"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 14,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-5c8ccc866aa1",
+      "source_key": "mall_sql:11739",
+      "display_id": "11739",
+      "label": "JH-8L6829-600*600现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "600*600*80",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

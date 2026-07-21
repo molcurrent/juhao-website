@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "projection": "product_catalog_v2_full_family_staging",
+  "snapshot_date": "2026-07-16",
+  "visibility": "private_governance_only",
+  "publication_state": "not_runtime_not_indexable_not_authorized",
+  "runtime_emission": false,
+  "sitemap_included": false,
+  "media_policy": "metadata_only_no_media_urls",
+  "human_decision_ledger_modified": false,
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3",
+  "source_disposition_artifact": "../product-catalog-v2-source-disposition.json",
+  "source_count": 1920,
+  "eligible_source_count": 1913,
+  "effective_eligible_source_count": 1913,
+  "excluded_non_lighting_source_count": 7,
+  "family_count": 1208,
+  "shard_size": 100,
+  "shard_count": 13,
+  "shards": [
+    {
+      "file": "families-0001.json",
+      "family_count": 100,
+      "sha256": "452590aac1f243f43b79a2de7e6636048eaf200a691d8d9d03bc3b93b3dfd580"
+    },
+    {
+      "file": "families-0002.json",
+      "family_count": 100,
+      "sha256": "027f01a9dfbe58e672c71b8bbe3090b90febd5fcd0b293e5b3b055f8328bd8fb"
+    },
+    {
+      "file": "families-0003.json",
+      "family_count": 100,
+      "sha256": "93a9ce0852a71e2263a73edd0d6a00b905cc1f62b4aa585b418eff7a773dfeb8"
+    },
+    {
+      "file": "families-0004.json",
+      "family_count": 100,
+      "sha256": "2bdc0fb3bcfa2a9388c22f145f1501f807c0d300d926e73ac239d10ca39ed338"
+    },
+    {
+      "file": "families-0005.json",
+      "family_count": 100,
+      "sha256": "3c7c4312bba6ffe609016e9ae09f084cc9ee41dc3c39774beb82fe70c5cfcc0d"
+    },
+    {
+      "file": "families-0006.json",
+      "family_count": 100,
+      "sha256": "7f20009e689e03b4c09a8b9df49fad3a476b68edcb1667937d8db49555e57fba"
+    },
+    {
+      "file": "families-0007.json",
+      "family_count": 100,
+      "sha256": "6f0276a7203e2c2ef507325a8e3d1fa2d5d922adf9a373184dbc50ea49552389"
+    },
+    {
+      "file": "families-0008.json",
+      "family_count": 100,
+      "sha256": "2e9ce82c3e58febf04cf35c5a4778425bb4274508c27922e02de283701a45e27"
+    },
+    {
+      "file": "families-0009.json",
+      "family_count": 100,
+      "sha256": "bd41ff2ca92aaac9a276744c9138942f14171041c4150736aa7ab60817277246"
+    },
+    {
+      "file": "families-0010.json",
+      "family_count": 100,
+      "sha256": "6e2bfbac9dd48b555c7807ea7643934cb3173dd0e9fab5ba17420d0223021842"
+    },
+    {
+      "file": "families-0011.json",
+      "family_count": 100,
+      "sha256": "c64bc8493a71bbfa51fa3514082c35354586ed8dd33027753345f94a29b227dc"
+    },
+    {
+      "file": "families-0012.json",
+      "family_count": 100,
+      "sha256": "772cb7d91b7a0d6c36b4596a3ddc7353968553e433d0c8afed0631473aa5ff35"
+    },
+    {
+      "file": "families-0013.json",
+      "family_count": 8,
+      "sha256": "a97631254c03d2ab1f7aea479a30d5bc76bbcab8d13400663686118a89937fb2"
+    }
+  ],
+  "acceptance": {
+    "source_count_is_1920": true,
+    "source_keys_are_unique": true,
+    "static_eligible_source_count_is_1913": true,
+    "effective_eligible_sources_each_belong_to_one_family": true,
+    "excluded_non_lighting_count_is_7": true,
+    "source_dispositions_are_exhaustive_and_disjoint": true,
+    "candidate_family_count_matches_effective_model": true,
+    "family_ids_are_unique": true,
+    "all_family_rows_are_sharded_once": true,
+    "projection_contains_no_runtime_media_reference": true,
+    "supplement_local_media_evidence_is_complete": true,
+    "local_media_evidence_never_enters_runtime_or_authorization": true
+  }
+}

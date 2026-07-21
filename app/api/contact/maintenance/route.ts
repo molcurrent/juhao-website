@@ -1,15 +1,5 @@
 import { env } from "cloudflare:workers";
-import {
-  listRetryableConsultationLeads,
-  purgeExpiredConsultationLeads,
-  updateConsultationNotification,
-} from "@/db/consultation-leads";
-import {
-  failedNotificationUpdate,
-  leadNotificationConfig,
-  notifyInternalLead,
-  validateLeadNotificationConfig,
-} from "@/lib/server/lead-notifications";
+import { runConsultationMaintenance } from "@/lib/server/consultation-maintenance";
 
 function json(data: unknown, status: number) {
   return Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
@@ -33,46 +23,9 @@ export async function POST(request: Request) {
   if (!token || !await tokenMatches(token, maintenanceSecret)) return json({ error: "未授权" }, 401);
   if (!env.DB) return json({ error: "咨询服务暂时不可用" }, 503);
 
-  const now = new Date();
-  const nowIso = now.toISOString();
-  const purged = await purgeExpiredConsultationLeads(env.DB, nowIso);
-  const config = leadNotificationConfig(env);
-  if (!config.webhookUrl) return json({ purged, attempted: 0, sent: 0, retry: 0, deadLetter: 0, notification: "not_configured" }, 200);
   try {
-    validateLeadNotificationConfig(config);
+    return json(await runConsultationMaintenance(env), 200);
   } catch {
-    return json({ error: "内部通知配置不完整", purged }, 503);
+    return json({ error: "线索维护任务执行失败" }, 503);
   }
-
-  const leads = await listRetryableConsultationLeads(env.DB, nowIso);
-  let sent = 0;
-  let retry = 0;
-  let deadLetter = 0;
-
-  for (const lead of leads) {
-    const attemptedAt = new Date();
-    try {
-      await notifyInternalLead(lead, config);
-      await updateConsultationNotification(env.DB, lead.id, {
-        status: "sent",
-        error: null,
-        attemptedAt: attemptedAt.toISOString(),
-        nextAttemptAt: null,
-      });
-      sent += 1;
-    } catch (error) {
-      const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
-      const failure = failedNotificationUpdate(lead.notificationAttempts + 1, attemptedAt);
-      await updateConsultationNotification(env.DB, lead.id, {
-        status: failure.status,
-        error: detail,
-        attemptedAt: attemptedAt.toISOString(),
-        nextAttemptAt: failure.nextAttemptAt,
-      });
-      if (failure.status === "dead_letter") deadLetter += 1;
-      else retry += 1;
-    }
-  }
-
-  return json({ purged, attempted: leads.length, sent, retry, deadLetter, notification: "processed" }, 200);
 }

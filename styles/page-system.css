@@ -1,0 +1,102 @@
+[data-page-hero][data-page-hero] {
+  min-height: var(--page-hero-min-height);
+  scroll-margin-top: var(--header-offset);
+}
+
+[data-page-hero="image"] {
+  --page-hero-min-height: var(--hero-image-min);
+}
+
+[data-page-hero="split"] {
+  --page-hero-min-height: var(--hero-split-min);
+}
+
+[data-page-hero="document"] {
+  --page-hero-min-height: var(--hero-document-min);
+}
+
+[data-page-hero="workbench"] {
+  --page-hero-min-height: var(--hero-workbench-min);
+}
+
+[data-page-role="eyebrow"][data-page-role] {
+  font-size: var(--type-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+[data-page-role="small"][data-page-role] {
+  font-size: var(--type-small);
+}
+
+[data-page-role="lead"][data-page-role] {
+  max-width: var(--reading-measure-compact);
+  font-size: var(--type-lead);
+  line-height: 1.8;
+}
+
+[data-page-role="heading-3"][data-page-role] {
+  font-size: var(--type-heading-3);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+[data-page-role="heading-2"][data-page-role] {
+  font-size: var(--type-heading-2);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+[data-page-role="display"][data-page-role] {
+  font-family: var(--font-display);
+  font-size: var(--type-display);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+[data-page-role="metadata"][data-page-role] {
+  font-size: var(--type-small);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-page-content="article"][data-page-content] {
+  max-width: var(--reading-measure);
+  font-size: var(--type-body);
+  line-height: 1.9;
+}
+
+[data-page-section] {
+  scroll-margin-top: calc(var(--header-offset) + 1.25rem);
+}
+
+[data-status] {
+  font-size: var(--type-small);
+  font-weight: 700;
+}
+
+[data-status="success"] {
+  color: var(--status-success);
+  background: var(--status-success-surface);
+}
+
+[data-status="warning"] {
+  color: var(--status-warning);
+  background: var(--status-warning-surface);
+}
+
+[data-status="danger"] {
+  color: var(--status-danger);
+  background: var(--status-danger-surface);
+}
+
+[data-status="info"] {
+  color: var(--status-info);
+  background: var(--status-info-surface);
+}
+
+@media (max-width: 700px) {
+  [data-page-hero][data-page-hero] {
+    --page-hero-min-height: auto;
+  }
+}

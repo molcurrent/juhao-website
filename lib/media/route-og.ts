@@ -14,12 +14,8 @@ export type RouteOgRecord = {
 const routeOg = rawRouteOg as RouteOgRecord[];
 const routeOgByRoute = new Map(routeOg.map((record) => [record.route, record]));
 
-export function getRouteOg(route: string) {
-  return routeOgByRoute.get(route);
-}
-
-export function requireRouteOg(route: string) {
-  const record = getRouteOg(route);
+function requireRouteOg(route: string) {
+  const record = routeOgByRoute.get(route);
   if (!record) throw new Error(`Published route is missing its generated social card: ${route}`);
   return record;
 }

@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { companyNewsArticleByPath, companyNewsArticles, companyNewsByPath } from "../content/company-news.ts";
+import { resolveConsultationContext } from "../lib/consultation.ts";
 
 const governancePath = new URL("../content/governance/company-news-source.json", import.meta.url);
 const runtimePath = new URL("../content/runtime/company-news.json", import.meta.url);
@@ -84,10 +85,16 @@ test("rebuilds the slim runtime snapshot deterministically", () => {
 
 test("uses local visuals only as approved column illustrations, never as news evidence", () => {
   const allowed = new Set([
-    "/images/juhao-public.webp",
-    "/images/juhao-commercial.webp",
-    "/images/juhao-home.webp",
+    "/images/jh48-news-light-fair.webp",
+    "/images/jh48-news-dealer.webp",
+    "/images/jh48-news-brand-award.webp",
+    "/images/jh48-news-home-brand.webp",
+    "/images/jh48-news-yichang-hotel.webp",
+    "/images/jh48-news-kunming-hotel.webp",
+    "/images/jh48-news-dalian-hotel.webp",
+    "/images/jh48-news-nanyan-resort.webp",
   ]);
+  assert.equal(new Set(companyNewsArticles.map((article) => article.local_representative_media.src)).size, companyNewsArticles.length);
   for (const article of companyNewsArticles) {
     const media = article.local_representative_media;
     assert.ok(allowed.has(media.src));
@@ -96,7 +103,7 @@ test("uses local visuals only as approved column illustrations, never as news ev
     assert.equal(media.rights_status, "approved");
     assert.equal(media.provenance_path, "RECON/JUHAO_ASSET_PROVENANCE.md");
     assert.match(media.alt, /原创/);
-    assert.match(media.alt, /栏目示意图/);
+    assert.match(media.alt, /(?:栏目|场景)示意图/);
     assert.match(media.alt, /不作为/);
   }
 });
@@ -154,6 +161,13 @@ test("provides at least two existing destination types for every article", () =>
       assert.ok(allowedDestinations.some((prefix) => link.href.startsWith(prefix)), `${article.path}: ${link.href}`);
       assert.ok(link.label);
       assert.ok(link.text);
+      if (link.href.startsWith("/contact?")) {
+        const url = new URL(link.href, "https://juhao.com");
+        const context = resolveConsultationContext(Object.fromEntries(url.searchParams));
+        assert.ok(context, `${article.path}: invalid consultation context`);
+        assert.equal(context.source, "page");
+        assert.equal(context.sourceDetail, article.path.split("/").at(-1));
+      }
     }
   }
 });

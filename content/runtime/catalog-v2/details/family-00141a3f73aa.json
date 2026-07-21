@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-00141a3f73aa",
+    "canonical_slug": "11666",
+    "canonical_source_key": "mall_sql:11666",
+    "canonical_source_id": "11666",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-ZTDZX-09 （黑色）尖盖剑花柱头灯",
+    "category": "户外照明",
+    "source_categories": [
+      "户外照明"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 2,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-00141a3f73aa",
+    "model_label": "JH-ZTDZX-09",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11666",
+      "display_id": "11666",
+      "title": "JH-ZTDZX-09 （黑色）尖盖剑花柱头灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11664",
+        "source_id": "11664",
+        "display_id": "11664",
+        "model_label": "JH-ZTDZX-07",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11666",
+        "source_id": "11666",
+        "display_id": "11666",
+        "model_label": "JH-ZTDZX-09",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {
+      "types": [
+        "柱头灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11664",
+      "source_path": "商城系统/商品说明/JH-ZTDZX-07 （古铜色）尖盖剑花柱头灯_11664.md",
+      "source_sha256": "1681c5032cfb9b694889ebf7f880c764ed1c9c6e6439e817a4ff2bdf0b40a055"
+    },
+    {
+      "source_key": "mall_sql:11666",
+      "source_path": "商城系统/商品说明/JH-ZTDZX-09 （黑色）尖盖剑花柱头灯_11666.md",
+      "source_sha256": "ed8b467b9778502a16557bb01a07d816255219bcc56edac362af19e98411cc50"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "类型": "柱头灯"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 16,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-148eff3e4afc",
+      "source_key": "mall_sql:11664",
+      "display_id": "11664",
+      "label": "JH-ZTDZX-07 （古铜色）尖盖剑花柱头灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-719ab5673047",
+      "source_key": "mall_sql:11666",
+      "display_id": "11666",
+      "label": "JH-ZTDZX-09 （黑色）尖盖剑花柱头灯",
+      "dimensions": {},
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

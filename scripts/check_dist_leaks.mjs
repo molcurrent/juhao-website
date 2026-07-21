@@ -20,6 +20,10 @@ export const DIST_LEAK_RULES = Object.freeze([
   { id: "legacy_customer_qq", pattern: /\b153289970\b/g },
   { id: "legacy_template_marker", pattern: /\bWSTMart\b|商淘|客服QQ|用户QQ群/g },
   {
+    id: "private_catalog_governance_projection",
+    pattern: /product_catalog_v2_full_source_disposition|product_catalog_v2_full_family_staging|product-catalog-v2-family-staging|families-\d{4}\.json/gi,
+  },
+  {
     id: "price_or_inventory_field",
     pattern: /(?:(?:\\?")[a-z_]*(?:price|stock|inventory)[a-z_]*(?:\\?")|\b(?:price|stock|inventory|salePrice|marketPrice)\b)\s*:/gi,
   },

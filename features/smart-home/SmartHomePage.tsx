@@ -120,7 +120,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
   };
 
   return (
-    <main className={styles.page} id="main-content">
+    <main className={styles.page} id="main-content" tabIndex={-1}>
       <section className={styles.hero} aria-labelledby="smart-home-title">
         <div className={styles.heroMedia} aria-hidden="true">
           <Image src={page.image} alt="" fill priority unoptimized sizes="100vw" />
@@ -142,7 +142,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
         </div>
 
         <div className={styles.signalBoard} aria-hidden="true">
-          <p>SCENE LOGIC</p>
+          <p>场景逻辑</p>
           <ol>
             <li><small>01</small><span>时刻</span><i /></li>
             <li><small>02</small><span>活动</span><i /></li>
@@ -153,7 +153,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
 
       <section className={styles.scenes} id="life-scenes" aria-labelledby="life-scenes-title">
         <header className={styles.sectionHeading} data-reveal>
-          <p>01 / DAILY RHYTHM</p>
+          <p>全天节律</p>
           <div>
             <h2 id="life-scenes-title">先设计生活，<br />再设计控制</h2>
             <p>场景不是功能清单，而是对日常时刻的清晰回应。选择一个场景，查看它应该解决什么问题。</p>
@@ -190,7 +190,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
           <div className={styles.sceneStage} data-scene={activeScene.id}>
             <Image
               className={styles.sceneImage}
-              src="/images/juhao-home.webp"
+              src="/images/jh48-smart-scene-home.webp"
               alt="钜豪智能照明生活场景示意"
               fill
               unoptimized
@@ -229,7 +229,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
 
       <section className={styles.evidence} aria-labelledby="smart-evidence-title">
         <header>
-          <p>02 / VERIFIED CONTENT</p>
+          <p>已核验内容</p>
           <h2 id="smart-evidence-title">先公开方法，<br />再逐款审核设备</h2>
           <span>当前智能设备候选清单已建立，但 0 款完成协议、供电、安装、兼容范围与售后资料审核，因此不生成产品详情。</span>
         </header>
@@ -239,14 +239,14 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
       <section className={styles.planning} id="planning" aria-labelledby="planning-title">
         <div className={styles.planningInner}>
           <header className={styles.planningHeading} data-reveal>
-            <p>03 / SYSTEM PLANNING</p>
+            <p>系统规划</p>
             <h2 id="planning-title">让智能从图纸上<br />就变得清楚</h2>
           </header>
 
           <div className={styles.planningLayout}>
             <div className={styles.planningDiagram} aria-hidden="true" data-reveal="fade">
               <div className={styles.diagramOrbit}><span>生活</span><span>空间</span><span>控制</span><span>调试</span></div>
-              <div className={styles.diagramCore}><strong>JUHAO</strong><small>SCENE FIRST</small></div>
+              <div className={styles.diagramCore}><strong>JUHAO</strong><small>场景优先</small></div>
               <p>需求不是从设备型号开始</p>
             </div>
 
@@ -271,7 +271,7 @@ export function SmartHomePage({ page }: SmartHomePageProps) {
 
       <section className={styles.faq} aria-labelledby="smart-faq-title">
         <header data-reveal>
-          <p>04 / QUESTIONS</p>
+          <p>常见问题</p>
           <h2 id="smart-faq-title">关于智能照明，<br />先问对问题</h2>
         </header>
         <div className={styles.faqList} data-reveal>

@@ -54,7 +54,7 @@
 .planningHeading > p,
 .faq > header > p {
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.22em;
   margin: 0;
@@ -75,10 +75,10 @@
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(64px, 8.7vw, 136px);
-  letter-spacing: -0.085em;
-  line-height: 0.87;
-  margin: 30px 0 38px;
+  font-size: clamp(62px, 8vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 30px 0 34px;
 }
 
 .heroTitle > * {
@@ -88,7 +88,7 @@
 .heroTitle strong {
   color: var(--brand-orange-bright);
   font-weight: inherit;
-  margin-left: 0.64em;
+  margin-left: 0.52em;
 }
 
 .heroIntro {
@@ -137,7 +137,7 @@
 .signalBoard > p {
   border-bottom: 1px solid rgb(255 255 255 / 22%);
   color: rgb(255 255 255 / 48%);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   margin: 0;
   padding-bottom: 15px;
@@ -160,7 +160,7 @@
 
 .signalBoard small {
   color: rgb(255 255 255 / 34%);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .signalBoard span {
@@ -199,7 +199,7 @@
 .faq h2 {
   font-family: var(--font-display);
   font-size: clamp(48px, 6.2vw, 94px);
-  letter-spacing: -0.07em;
+  letter-spacing: -0.04em;
   line-height: 1.02;
   margin: 0;
 }
@@ -246,7 +246,7 @@
 
 .sceneTabs button small {
   color: rgb(255 255 255 / 38%);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.12em;
 }
 
@@ -346,7 +346,7 @@
 
 .sceneClock small {
   color: rgb(255 255 255 / 52%);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.18em;
 }
 
@@ -361,24 +361,24 @@
   bottom: 42px;
   left: 42px;
   max-width: 680px;
-  padding-left: 26px;
+  padding-top: 26px;
   position: absolute;
   z-index: 1;
 }
 
 .scenePanel::before {
   background: var(--brand-orange-bright);
-  bottom: 0;
+  height: 3px;
   content: "";
   left: 0;
   position: absolute;
   top: 0;
-  width: 3px;
+  width: 100%;
 }
 
 .scenePanel > p:first-child {
   color: var(--brand-orange-bright);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 0 0 18px;
@@ -387,7 +387,7 @@
 .scenePanel h3 {
   font-family: var(--font-display);
   font-size: clamp(36px, 4vw, 62px);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   line-height: 1.04;
   margin: 0 0 18px;
 }
@@ -411,7 +411,7 @@
 
 .scenePanel li {
   color: rgb(255 255 255 / 78%);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .scenePanel li::before {
@@ -438,7 +438,7 @@
 
 .evidence > header > p {
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 8px 0 0;
@@ -447,7 +447,7 @@
 .evidence > header h2 {
   font-family: var(--font-display);
   font-size: clamp(40px, 4.8vw, 74px);
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
   line-height: 1.04;
   margin: 0;
 }
@@ -456,45 +456,6 @@
   color: rgb(255 255 255 / 60%);
   font-size: 14px;
   line-height: 1.9;
-}
-
-.evidenceGrid {
-  background: rgb(255 255 255 / 14%);
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.evidenceGrid a {
-  background: var(--night);
-  min-height: 320px;
-  padding: 30px;
-  position: relative;
-}
-
-.evidenceGrid small {
-  color: rgb(255 255 255 / 40%);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-}
-
-.evidenceGrid h3 {
-  font-size: clamp(21px, 2vw, 28px);
-  margin: 58px 0 16px;
-}
-
-.evidenceGrid p {
-  color: rgb(255 255 255 / 58%);
-  font-size: 13px;
-  line-height: 1.85;
-  margin: 0 0 58px;
-}
-
-.evidenceGrid b {
-  bottom: 30px;
-  color: var(--brand-orange-bright);
-  font-size: 12px;
-  position: absolute;
 }
 
 .evidenceCta {
@@ -563,7 +524,7 @@
 }
 
 .diagramOrbit span {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   position: absolute;
 }
@@ -593,7 +554,7 @@
 }
 
 .diagramCore small {
-  font-size: 7px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   margin-top: 4px;
 }
@@ -601,7 +562,7 @@
 .planningDiagram > p {
   bottom: 26px;
   color: rgb(255 255 255 / 38%);
-  font-size: 9px;
+  font-size: 12px;
   left: 28px;
   letter-spacing: 0.12em;
   margin: 0;
@@ -625,7 +586,7 @@
 
 .stepList small {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   padding-top: 6px;
 }
@@ -644,13 +605,14 @@
 }
 
 .planningNotice {
-  border-left: 3px solid var(--brand-orange);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand-orange);
   color: var(--ink-soft);
   font-size: 12px;
   line-height: 1.8;
   margin: 68px 0 0 auto;
   max-width: 760px;
-  padding: 4px 0 4px 18px;
+  padding: 18px;
 }
 
 .faq {
@@ -699,7 +661,7 @@
 
 .faqList summary small {
   color: rgb(255 255 255 / 34%);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.12em;
 }
@@ -828,10 +790,6 @@
     grid-template-columns: 1fr;
   }
 
-  .evidenceGrid {
-    grid-template-columns: 1fr;
-  }
-
   .planningDiagram {
     margin: 0 auto;
     width: min(100%, 560px);
@@ -850,7 +808,7 @@
 
   .heroTitle {
     font-size: clamp(48px, 15vw, 72px);
-    line-height: 0.92;
+    line-height: 1.02;
   }
 
   .heroTitle strong {
@@ -883,7 +841,7 @@
   }
 
   .sceneTabs button small {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .sceneTabs button span {
@@ -951,6 +909,8 @@
     margin-right: 20px;
   }
 }
+
+@media(max-width:900px){.heroEyebrow,.heroActions a,.signalBoard>p,.signalBoard small,.signalBoard span,.sectionHeading>p,.planningHeading>p,.faq>header>p,.sceneTabs button small,.sceneClock small,.scenePanel>p:first-child,.scenePanel li,.evidence>header>p,.evidenceCta,.diagramOrbit span,.diagramCore small,.planningDiagram>p,.stepList small,.planningNotice,.faqList summary small{font-size:14px}}
 
 @media (prefers-reduced-motion: reduce) {
   .heroMedia,

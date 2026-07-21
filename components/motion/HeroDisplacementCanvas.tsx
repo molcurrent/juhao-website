@@ -16,6 +16,8 @@ type TextureRecord = {
   index: number;
 };
 
+type GLContext = WebGLRenderingContext | WebGL2RenderingContext;
+
 type ProgramLocations = {
   position: number;
   textureA: WebGLUniformLocation;
@@ -24,6 +26,8 @@ type ProgramLocations = {
   imageSizeB: WebGLUniformLocation;
   resolution: WebGLUniformLocation;
   progress: WebGLUniformLocation;
+  time: WebGLUniformLocation;
+  pointer: WebGLUniformLocation;
 };
 
 type PendingImage = {
@@ -31,22 +35,32 @@ type PendingImage = {
   cancel: () => void;
 };
 
-const MAX_DPR = 2;
+const MAX_DPR = 1.5;
+const MAX_BACKING_PIXELS = 4_000_000;
 const IMAGE_KEY_SEPARATOR = "\u001f";
 const LOAD_CANCELLED = Symbol("load-cancelled");
 
-const VERTEX_SHADER = `
-  attribute vec2 aPosition;
-  varying vec2 vUv;
+function vertexShaderSource(webGl2: boolean) {
+  return `${webGl2 ? "#version 300 es\n" : ""}
+  ${webGl2 ? "#define ATTRIBUTE in\n#define VARYING_OUT out" : "#define ATTRIBUTE attribute\n#define VARYING_OUT varying"}
+  precision highp float;
+  ATTRIBUTE vec2 aPosition;
+  VARYING_OUT vec2 vUv;
 
   void main() {
     vUv = aPosition * 0.5 + 0.5;
     gl_Position = vec4(aPosition, 0.0, 1.0);
   }
 `;
+}
 
-const FRAGMENT_SHADER = `
-  precision mediump float;
+function fragmentShaderSource(webGl2: boolean) {
+  return `${webGl2 ? "#version 300 es\n" : ""}
+  ${webGl2
+    ? "#define VARYING_IN in\n#define TEXTURE texture\n#define FRAG_COLOR outputColor"
+    : "#define VARYING_IN varying\n#define TEXTURE texture2D\n#define FRAG_COLOR gl_FragColor"}
+  precision highp float;
+  ${webGl2 ? "out vec4 outputColor;" : ""}
 
   uniform sampler2D uTextureA;
   uniform sampler2D uTextureB;
@@ -54,7 +68,9 @@ const FRAGMENT_SHADER = `
   uniform vec2 uImageSizeB;
   uniform vec2 uResolution;
   uniform float uProgress;
-  varying vec2 vUv;
+  uniform float uTime;
+  uniform vec2 uPointer;
+  VARYING_IN vec2 vUv;
 
   float hash21(vec2 point) {
     vec2 value = fract(point * vec2(123.34, 456.21));
@@ -71,6 +87,18 @@ const FRAGMENT_SHADER = `
     return mix(bottom, top, blend.y);
   }
 
+  float fbm(vec2 point) {
+    float value = 0.0;
+    float amplitude = 0.5;
+    mat2 rotation = mat2(0.8, -0.6, 0.6, 0.8);
+    for (int octave = 0; octave < 4; octave++) {
+      value += amplitude * valueNoise(point);
+      point = rotation * point * 2.03 + 9.7;
+      amplitude *= 0.5;
+    }
+    return value;
+  }
+
   vec2 coverUv(vec2 uv, vec2 imageSize, vec2 viewportSize) {
     float imageAspect = imageSize.x / max(imageSize.y, 1.0);
     float viewportAspect = viewportSize.x / max(viewportSize.y, 1.0);
@@ -83,18 +111,48 @@ const FRAGMENT_SHADER = `
   void main() {
     float phase = clamp(uProgress, 0.0, 1.0);
     float aspect = uResolution.x / max(uResolution.y, 1.0);
-    float grain = valueNoise(vUv * vec2(6.5 * aspect, 6.5) + vec2(0.0, phase * 1.7));
+    vec2 pointer = uPointer * vec2(aspect, 1.0);
+    vec2 plane = (vUv - 0.5) * vec2(aspect, 1.0);
+    float time = uTime * 0.16;
+    float field = fbm(plane * 2.35 + pointer * 0.12 + vec2(time * 0.16, -time * 0.11));
+    float grain = valueNoise(vUv * vec2(9.5 * aspect, 9.5) + vec2(time, phase * 2.1));
     float envelope = sin(phase * 3.14159265);
-    float displacement = (grain - 0.5) * 0.18 * envelope;
+    float edgePosition = mix(-0.16, 1.16, phase);
+    float edge = vUv.x + (field - 0.5) * 0.13;
+    float reveal = 1.0 - smoothstep(edgePosition - 0.11, edgePosition + 0.11, edge);
+    float beam = exp(-abs(edge - edgePosition) * 32.0) * envelope;
+    float displacement = (field - 0.5) * (0.035 + 0.12 * envelope);
+    vec2 pointerWarp = pointer * 0.008 * (1.0 - length(plane));
 
-    vec2 uvA = coverUv(vUv + vec2(0.0, displacement + phase * 0.08), uImageSizeA, uResolution);
-    vec2 uvB = coverUv(vUv + vec2(0.0, displacement - (1.0 - phase) * 0.08), uImageSizeB, uResolution);
-    vec4 colorA = texture2D(uTextureA, uvA);
-    vec4 colorB = texture2D(uTextureB, uvB);
+    vec2 uvA = coverUv(vUv + pointerWarp + vec2(displacement * 0.24, displacement + phase * 0.035), uImageSizeA, uResolution);
+    vec2 uvB = coverUv(vUv + pointerWarp - vec2(displacement * 0.24, displacement + (1.0 - phase) * 0.035), uImageSizeB, uResolution);
+    vec3 colorA = TEXTURE(uTextureA, uvA).rgb;
+    vec3 colorB = TEXTURE(uTextureB, uvB).rgb;
+    vec3 color = mix(colorA, colorB, reveal);
 
-    gl_FragColor = mix(colorA, colorB, phase);
+    vec2 chromaOffset = vec2(0.006 * beam, -0.0025 * beam);
+    float spectralRed = mix(TEXTURE(uTextureA, uvA + chromaOffset).r, TEXTURE(uTextureB, uvB + chromaOffset).r, reveal);
+    float spectralBlue = mix(TEXTURE(uTextureA, uvA - chromaOffset).b, TEXTURE(uTextureB, uvB - chromaOffset).b, reveal);
+    color.r = mix(color.r, spectralRed, beam);
+    color.b = mix(color.b, spectralBlue, beam * 0.7);
+
+    float radius = length(plane - pointer * 0.055);
+    float angle = atan(plane.y, plane.x);
+    float caustic = pow(0.5 + 0.5 * sin(angle * 4.0 - radius * 17.0 + time + field * 5.0), 12.0);
+    float orbit = exp(-abs(radius - (0.24 + 0.035 * sin(time * 0.7))) * 28.0);
+    float dust = smoothstep(0.82, 1.0, grain) * (0.35 + 0.65 * sin(time * 3.0 + grain * 14.0));
+    vec3 amber = vec3(1.0, 0.36, 0.07);
+    vec3 warm = vec3(1.0, 0.7, 0.38);
+    color += amber * (beam * 0.78 + orbit * caustic * 0.08);
+    color += warm * dust * 0.028;
+
+    float vignette = smoothstep(1.05, 0.2, length((vUv - 0.5) * vec2(0.78, 1.0)));
+    color *= mix(0.72, 1.04, vignette);
+    color = color / (color + vec3(0.18));
+    FRAG_COLOR = vec4(color, 1.0);
   }
 `;
+}
 
 function normalizeIndex(index: number, count: number) {
   if (!count) return -1;
@@ -103,7 +161,8 @@ function normalizeIndex(index: number, count: number) {
 }
 
 class DisplacementRenderer {
-  private gl: WebGLRenderingContext | null = null;
+  private gl: GLContext | null = null;
+  private webGl2 = false;
   private program: WebGLProgram | null = null;
   private buffer: WebGLBuffer | null = null;
   private locations: ProgramLocations | null = null;
@@ -114,13 +173,20 @@ class DisplacementRenderer {
   private progress = { value: 0 };
   private tween: number | null = null;
   private resizeObserver: ResizeObserver | null = null;
+  private intersectionObserver: IntersectionObserver | null = null;
   private raf = 0;
+  private ambientRaf = 0;
   private width = 1;
   private height = 1;
+  private isVisible = true;
+  private startedAt = performance.now();
+  private pointer = { x: 0, y: 0 };
+  private pointerTarget = { x: 0, y: 0 };
   private requestVersion = 0;
   private disposed = false;
   private contextLost = false;
   private pendingImages = new Set<PendingImage>();
+  private preloadedImages = new Map<number, HTMLImageElement>();
 
   constructor(
     private readonly canvas: HTMLCanvasElement,
@@ -135,10 +201,16 @@ class DisplacementRenderer {
     this.canvas.addEventListener("webglcontextlost", this.handleContextLost);
     this.canvas.addEventListener("webglcontextrestored", this.handleContextRestored);
     window.addEventListener("resize", this.handleResize, { passive: true });
+    window.addEventListener("pointermove", this.handlePointerMove, { passive: true });
+    document.addEventListener("visibilitychange", this.handleVisibilityChange);
 
     if (typeof ResizeObserver !== "undefined") {
       this.resizeObserver = new ResizeObserver(this.handleResize);
       this.resizeObserver.observe(this.canvas);
+    }
+    if (typeof IntersectionObserver !== "undefined") {
+      this.intersectionObserver = new IntersectionObserver(this.handleIntersection, { threshold: 0.01 });
+      this.intersectionObserver.observe(this.canvas);
     }
 
     if (!this.setupGpu()) {
@@ -166,7 +238,11 @@ class DisplacementRenderer {
     this.cancelPendingImages();
     this.resizeObserver?.disconnect();
     this.resizeObserver = null;
+    this.intersectionObserver?.disconnect();
+    this.intersectionObserver = null;
     window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("pointermove", this.handlePointerMove);
+    document.removeEventListener("visibilitychange", this.handleVisibilityChange);
     this.canvas.removeEventListener("webglcontextlost", this.handleContextLost);
     this.canvas.removeEventListener("webglcontextrestored", this.handleContextRestored);
     this.releaseGpuResources(!this.contextLost);
@@ -174,26 +250,29 @@ class DisplacementRenderer {
   }
 
   private setupGpu() {
-    let gl: WebGLRenderingContext | null = null;
+    let gl: GLContext | null = null;
     let vertexShader: WebGLShader | null = null;
     let fragmentShader: WebGLShader | null = null;
     let program: WebGLProgram | null = null;
     let buffer: WebGLBuffer | null = null;
 
     try {
-      gl = this.canvas.getContext("webgl", {
+      const contextAttributes: WebGLContextAttributes = {
         alpha: false,
         antialias: false,
         depth: false,
         stencil: false,
         premultipliedAlpha: false,
         preserveDrawingBuffer: false,
-        powerPreference: "default",
-      });
+        powerPreference: "high-performance",
+      };
+      const webGl2 = this.canvas.getContext("webgl2", contextAttributes);
+      gl = webGl2 ?? this.canvas.getContext("webgl", contextAttributes);
       if (!gl) return false;
+      this.webGl2 = Boolean(webGl2);
 
-      vertexShader = this.compileShader(gl, gl.VERTEX_SHADER, VERTEX_SHADER);
-      fragmentShader = this.compileShader(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
+      vertexShader = this.compileShader(gl, gl.VERTEX_SHADER, vertexShaderSource(this.webGl2));
+      fragmentShader = this.compileShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource(this.webGl2));
       program = gl.createProgram();
       if (!program) throw new Error("Unable to create WebGL program");
 
@@ -234,19 +313,20 @@ class DisplacementRenderer {
     }
   }
 
-  private compileShader(gl: WebGLRenderingContext, type: number, source: string) {
+  private compileShader(gl: GLContext, type: number, source: string) {
     const shader = gl.createShader(type);
     if (!shader) throw new Error("Unable to create WebGL shader");
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      const info = gl.getShaderInfoLog(shader) || "Unknown shader compilation error";
       gl.deleteShader(shader);
-      throw new Error("Unable to compile WebGL shader");
+      throw new Error(`Unable to compile WebGL shader: ${info}`);
     }
     return shader;
   }
 
-  private getLocations(gl: WebGLRenderingContext, program: WebGLProgram): ProgramLocations | null {
+  private getLocations(gl: GLContext, program: WebGLProgram): ProgramLocations | null {
     const position = gl.getAttribLocation(program, "aPosition");
     const textureA = gl.getUniformLocation(program, "uTextureA");
     const textureB = gl.getUniformLocation(program, "uTextureB");
@@ -254,6 +334,8 @@ class DisplacementRenderer {
     const imageSizeB = gl.getUniformLocation(program, "uImageSizeB");
     const resolution = gl.getUniformLocation(program, "uResolution");
     const progress = gl.getUniformLocation(program, "uProgress");
+    const time = gl.getUniformLocation(program, "uTime");
+    const pointer = gl.getUniformLocation(program, "uPointer");
 
     if (
       position < 0 ||
@@ -262,12 +344,14 @@ class DisplacementRenderer {
       !imageSizeA ||
       !imageSizeB ||
       !resolution ||
-      !progress
+      !progress ||
+      !time ||
+      !pointer
     ) {
       return null;
     }
 
-    return { position, textureA, textureB, imageSizeA, imageSizeB, resolution, progress };
+    return { position, textureA, textureB, imageSizeA, imageSizeB, resolution, progress, time, pointer };
   }
 
   private async loadInitialTexture() {
@@ -296,6 +380,8 @@ class DisplacementRenderer {
       this.progress.value = 0;
       this.draw();
       this.onReadyChange(true);
+      this.startAmbient();
+      this.preloadSources();
       return;
     }
   }
@@ -390,7 +476,8 @@ class DisplacementRenderer {
   }
 
   private async loadTexture(index: number) {
-    const image = await this.loadImage(this.sources[index]);
+    const image = this.preloadedImages.get(index) ?? await this.loadImage(this.sources[index]);
+    this.preloadedImages.set(index, image);
     if (!this.gl || this.contextLost || this.disposed) throw LOAD_CANCELLED;
 
     const gl = this.gl;
@@ -461,7 +548,7 @@ class DisplacementRenderer {
     });
   }
 
-  private draw = () => {
+  private draw = (timestamp = performance.now()) => {
     const gl = this.gl;
     const current = this.current;
     const next = this.next ?? current;
@@ -498,6 +585,8 @@ class DisplacementRenderer {
     gl.uniform2f(locations.imageSizeB, next.width, next.height);
     gl.uniform2f(locations.resolution, this.width, this.height);
     gl.uniform1f(locations.progress, this.next ? this.progress.value : 0);
+    gl.uniform1f(locations.time, Math.max(0, timestamp - this.startedAt) / 1000);
+    gl.uniform2f(locations.pointer, this.pointer.x, this.pointer.y);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   };
 
@@ -505,7 +594,7 @@ class DisplacementRenderer {
     if (this.raf || this.disposed || this.contextLost) return;
     this.raf = requestAnimationFrame(() => {
       this.raf = 0;
-      this.draw();
+      this.draw(performance.now());
     });
   };
 
@@ -514,7 +603,8 @@ class DisplacementRenderer {
     const bounds = this.canvas.getBoundingClientRect();
     const width = Math.max(1, bounds.width);
     const height = Math.max(1, bounds.height);
-    const dpr = Math.min(MAX_DPR, Math.max(1, window.devicePixelRatio || 1));
+    const pixelBudgetDpr = Math.sqrt(MAX_BACKING_PIXELS / Math.max(1, width * height));
+    const dpr = Math.max(0.65, Math.min(MAX_DPR, window.devicePixelRatio || 1, pixelBudgetDpr));
     const backingWidth = Math.max(1, Math.round(width * dpr));
     const backingHeight = Math.max(1, Math.round(height * dpr));
 
@@ -559,7 +649,68 @@ class DisplacementRenderer {
     this.tween = null;
     if (this.raf) cancelAnimationFrame(this.raf);
     this.raf = 0;
+    if (this.ambientRaf) cancelAnimationFrame(this.ambientRaf);
+    this.ambientRaf = 0;
     this.progress.value = 0;
+  }
+
+  private startAmbient = () => {
+    if (
+      this.ambientRaf ||
+      this.disposed ||
+      this.contextLost ||
+      !this.current ||
+      !this.isVisible ||
+      document.hidden
+    ) {
+      return;
+    }
+    const render = (timestamp: number) => {
+      if (this.disposed || this.contextLost || !this.isVisible || document.hidden) {
+        this.ambientRaf = 0;
+        return;
+      }
+      this.pointer.x += (this.pointerTarget.x - this.pointer.x) * 0.055;
+      this.pointer.y += (this.pointerTarget.y - this.pointer.y) * 0.055;
+      this.draw(timestamp);
+      this.ambientRaf = requestAnimationFrame(render);
+    };
+    this.ambientRaf = requestAnimationFrame(render);
+  };
+
+  private handlePointerMove = (event: PointerEvent) => {
+    this.pointerTarget.x = (event.clientX / Math.max(1, window.innerWidth)) * 2 - 1;
+    this.pointerTarget.y = 1 - (event.clientY / Math.max(1, window.innerHeight)) * 2;
+  };
+
+  private handleVisibilityChange = () => {
+    if (document.hidden) {
+      if (this.ambientRaf) cancelAnimationFrame(this.ambientRaf);
+      this.ambientRaf = 0;
+      return;
+    }
+    this.startAmbient();
+  };
+
+  private handleIntersection: IntersectionObserverCallback = (entries) => {
+    this.isVisible = entries[0]?.isIntersecting ?? true;
+    if (!this.isVisible) {
+      if (this.ambientRaf) cancelAnimationFrame(this.ambientRaf);
+      this.ambientRaf = 0;
+      return;
+    }
+    this.startAmbient();
+  };
+
+  private preloadSources() {
+    this.sources.forEach((source, index) => {
+      if (this.preloadedImages.has(index)) return;
+      void this.loadImage(source)
+        .then((image) => {
+          if (!this.disposed) this.preloadedImages.set(index, image);
+        })
+        .catch(() => undefined);
+    });
   }
 
   private cancelPendingImages() {
@@ -584,6 +735,7 @@ class DisplacementRenderer {
     this.buffer = null;
     this.program = null;
     this.locations = null;
+    this.preloadedImages.clear();
   }
 
   private enterFallback() {
@@ -604,15 +756,20 @@ export function HeroDisplacementCanvas({
   const sourceKey = images.filter(Boolean).join(IMAGE_KEY_SEPARATOR);
 
   useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const query = window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 1100px), (hover: none), (pointer: coarse)");
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean; addEventListener?: (type: "change", listener: () => void) => void; removeEventListener?: (type: "change", listener: () => void) => void } }).connection;
     const updatePreference = () => {
-      const allowed = !query.matches;
+      const allowed = !query.matches && connection?.saveData !== true;
       setMotionAllowed(allowed);
       if (!allowed) setReadySourceKey(null);
     };
     updatePreference();
     query.addEventListener("change", updatePreference);
-    return () => query.removeEventListener("change", updatePreference);
+    connection?.addEventListener?.("change", updatePreference);
+    return () => {
+      query.removeEventListener("change", updatePreference);
+      connection?.removeEventListener?.("change", updatePreference);
+    };
   }, []);
 
   useEffect(() => {

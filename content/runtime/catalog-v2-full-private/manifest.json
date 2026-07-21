@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "projection": "product_catalog_v2_full_private_runtime_index",
+  "snapshot_date": "2026-07-16",
+  "visibility": "private_noindex",
+  "publication_state": "private_runtime_not_public_release",
+  "robots_index": false,
+  "sitemap_included": false,
+  "formal_routes_activated": false,
+  "alias_activation": false,
+  "media_policy": "approved_batch_paths_only_unauthorized_suppressed",
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3",
+  "family_set_sha256": "535044ef0d59495a92a80a6ef6da541799a625bd6419fc7bab7531c51783223f",
+  "total_source_count": 1920,
+  "eligible_source_count": 1913,
+  "excluded_source_count": 7,
+  "source_disposition_sha256": "bbb9a3af7cd7c092f0a6bb39d8f5f8deaa2a00dde76555d8e0329edd3248a69c",
+  "source_count": 1913,
+  "family_count": 1208,
+  "route_ready_family_count": 22,
+  "route_pending_family_count": 1186,
+  "rich_detail_family_count": 120,
+  "summary_detail_family_count": 1088,
+  "shard_size": 100,
+  "shard_count": 13,
+  "emitted_primary_media_path_count": 22,
+  "shards": [
+    {
+      "file": "index-0001.json",
+      "family_count": 100,
+      "first_family_id": "family-00141a3f73aa",
+      "last_family_id": "family-189699becc27",
+      "bytes": 173046,
+      "sha256": "36bca02f79c5cef067334687d5ca732899bf7a99dbd28f38d5055f6fb983a9ba"
+    },
+    {
+      "file": "index-0002.json",
+      "family_count": 100,
+      "first_family_id": "family-18b6fa33af13",
+      "last_family_id": "family-2c9ebdd82562",
+      "bytes": 177543,
+      "sha256": "cabe211f0b0a5d450b06ac4f1644480c8b37792cc4865be2ef8950ae87f386ff"
+    },
+    {
+      "file": "index-0003.json",
+      "family_count": 100,
+      "first_family_id": "family-2cbede6ba513",
+      "last_family_id": "family-3ededc1b34d4",
+      "bytes": 178716,
+      "sha256": "84b5684cd2604ee25cea68513af50faedb5412066667b5bf0cade4915e69f4a4"
+    },
+    {
+      "file": "index-0004.json",
+      "family_count": 100,
+      "first_family_id": "family-3f3b26af8ba7",
+      "last_family_id": "family-521c86ac848f",
+      "bytes": 175227,
+      "sha256": "d6e7146bf8fccd03d70555a43dd59a6bd71d23063b66be7b51084705de0fa947"
+    },
+    {
+      "file": "index-0005.json",
+      "family_count": 100,
+      "first_family_id": "family-52ddf14cb3a1",
+      "last_family_id": "family-6745456b0d46",
+      "bytes": 175551,
+      "sha256": "718706b4dd1dec2494546a8ac3ba315ab100a9407824afa5d00c9e2be367462e"
+    },
+    {
+      "file": "index-0006.json",
+      "family_count": 100,
+      "first_family_id": "family-67650cd07c90",
+      "last_family_id": "family-7afd1f02c456",
+      "bytes": 173992,
+      "sha256": "5a6fea047634a72ed454cccaf2e10b449cb200f5fbc8d3cf31295168f2dce49c"
+    },
+    {
+      "file": "index-0007.json",
+      "family_count": 100,
+      "first_family_id": "family-7b81f632b312",
+      "last_family_id": "family-9162d51e9295",
+      "bytes": 178459,
+      "sha256": "989e1714d1db6e3197abc59ff8b702ae82524bc5b87ac91cd616cd73da34b5fe"
+    },
+    {
+      "file": "index-0008.json",
+      "family_count": 100,
+      "first_family_id": "family-91b5d42b6810",
+      "last_family_id": "family-a3b211b47019",
+      "bytes": 176830,
+      "sha256": "a1c0eb4293f30e1f8fe1fc9989abfe1dbabb7766326418dd642c120b114ab9ad"
+    },
+    {
+      "file": "index-0009.json",
+      "family_count": 100,
+      "first_family_id": "family-a3d872de3600",
+      "last_family_id": "family-b7f042e611ea",
+      "bytes": 172641,
+      "sha256": "723b7ec2c06eee91dd76fd1fa90e03e7e7c21f0a4c59f78a5ecab9e8adc7ac9e"
+    },
+    {
+      "file": "index-0010.json",
+      "family_count": 100,
+      "first_family_id": "family-b8270df77f31",
+      "last_family_id": "family-d0280ebd51c6",
+      "bytes": 180435,
+      "sha256": "14964db5c501239818e22f7a7ff2d8b4e21d23020be22b3200700f943f7084a0"
+    },
+    {
+      "file": "index-0011.json",
+      "family_count": 100,
+      "first_family_id": "family-d055b4642336",
+      "last_family_id": "family-e699db4307e5",
+      "bytes": 179182,
+      "sha256": "d9da28f4e1337a7231de15540c2f1bec632d76ee85b5895aabcb66415232828e"
+    },
+    {
+      "file": "index-0012.json",
+      "family_count": 100,
+      "first_family_id": "family-e6a1b9b53ab4",
+      "last_family_id": "family-fd2e671738e3",
+      "bytes": 180283,
+      "sha256": "75b6d1aee2d6cbdd6d7ac5c892689779f2ddda7f9279a93f2eae80f6680973e4"
+    },
+    {
+      "file": "index-0013.json",
+      "family_count": 8,
+      "first_family_id": "family-fd8953ddd20f",
+      "last_family_id": "family-ff80d23aff95",
+      "bytes": 15033,
+      "sha256": "8aa02b534c8584b89170ea149402ac796e3eb0b15c74642f6bc9f8070bda3c23"
+    }
+  ]
+}

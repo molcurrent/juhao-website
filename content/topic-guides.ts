@@ -13,19 +13,19 @@ export const topicGuides: Partial<Record<string, TopicGuide>> = {
     status: "私有预览 6 款来源字段已通过机器校验的产品；当前站点素材批次授权已登记，轨道产品、人工签核与完整光学参数仍待补齐。",
     media: [
       {
-        src: "media-6bd0173593eaefdeac16",
-        alt: "JH-S288 宽边款射灯企业商城产品资料图",
-        caption: "宽边款产品资料图｜来源：企业商城商品 12287",
+        src: "/images/jh-spotlight-wall.webp",
+        alt: "住宅墙面重点照明应用示意",
+        caption: "住宅墙面重点照明应用示意｜原创场景图，不作为具体型号或项目证据",
       },
       {
-        src: "media-6bd0173593eaefdeac16",
-        alt: "JH-S288 窄边款射灯企业商城产品资料图",
-        caption: "窄边款产品资料图｜来源：企业商城商品 12286",
+        src: "/images/jh-spotlight-dining.webp",
+        alt: "餐桌重点照明应用示意",
+        caption: "餐桌重点照明应用示意｜原创场景图，不作为具体型号或项目证据",
       },
       {
-        src: "media-6bd0173593eaefdeac16",
-        alt: "JH-S288 预埋款射灯企业商城产品资料图",
-        caption: "预埋款产品资料图｜来源：企业商城商品 12285",
+        src: "/images/jh-spotlight-retail.webp",
+        alt: "零售陈列重点照明应用示意",
+        caption: "零售陈列重点照明应用示意｜原创场景图，不作为具体型号或项目证据",
       },
     ],
     scenarios: [
@@ -105,10 +105,7 @@ export const topicGuides: Partial<Record<string, TopicGuide>> = {
   },
   "smart-home-devices": {
     status: "当前 0 款候选设备完成协议、供电、安装、兼容与售后资料审核；私有预览先展示选型方法，审核一款再发布一款。",
-    media: [
-      { src: "/images/juhao-home.webp", alt: "钜豪智能家庭空间照明场景", caption: "智能家庭场景示意｜产品型号与兼容范围待审核" },
-      { src: "/images/juhao-commercial.webp", alt: "灯光场景控制与空间联动示意", caption: "场景控制示意｜不代表已审核的具体产品能力" },
-    ],
+    media: [],
     scenarios: [
       { title: "照明场景控制", task: "先定义回家、会客、观影、阅读和夜间等真实任务。", checks: ["驱动与调光协议", "低亮稳定性", "断网后的实体控制"] },
       { title: "智能晾晒", task: "核对供电、安装结构、承重、控制和售后边界。", checks: ["安装尺寸", "电气与结构条件", "本地控制与维护"] },

@@ -1,0 +1,4299 @@
+{
+  "schema_version": 1,
+  "projection": "product_catalog_v2_family_staging",
+  "visibility": "private_governance_only",
+  "runtime_emission": false,
+  "media_policy": "metadata_only_no_media_urls",
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3",
+  "shard_number": 9,
+  "family_count": 100,
+  "families": [
+    {
+      "family_id": "family-a3d872de3600",
+      "title": "JH-Q58018 吸顶灯系列",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 5,
+      "source_keys": [
+        "mall_sql:11648",
+        "mall_sql:11649",
+        "mall_sql:11650",
+        "mall_sql:11651",
+        "mall_sql:11652"
+      ],
+      "representative_source_key": "mall_sql:11652",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-a3d872de3600"
+        ],
+        "active_approved_review_ids": [
+          "family-a3d872de3600"
+        ],
+        "applied_review_ids": [
+          "family-a3d872de3600"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a45658739ef8",
+      "title": "JH-JGTYD-11 景观庭院灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11591"
+      ],
+      "representative_source_key": "mall_sql:11591",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a46448663440",
+      "title": "JH-S101-8W  射灯Φ75",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10138"
+      ],
+      "representative_source_key": "mall_sql:10138",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-5d564978d6e9"
+        ],
+        "active_approved_review_ids": [
+          "candidate-5d564978d6e9"
+        ],
+        "applied_review_ids": [
+          "candidate-5d564978d6e9"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a500e0d96f0e",
+      "title": "JH-Q57510-B+5  繁花似锦     轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "壁灯",
+      "source_categories": [
+        "壁灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:9541"
+      ],
+      "representative_source_key": "mall_sql:9541",
+      "candidate_facet_keys": [
+        "areas",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "active_approved_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "applied_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a56bb218283c",
+      "title": "JH-D-6L8059-10+5别墅复式楼客厅餐厅书房卧室全铜玉石吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7376"
+      ],
+      "representative_source_key": "mall_sql:7376",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "active_approved_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "applied_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a57722d54d44",
+      "title": "宴会厅走廊和休息厅",
+      "category": "非标装饰灯",
+      "source_categories": [
+        "非标装饰灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:445"
+      ],
+      "representative_source_key": "mall_sql:445",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a67653876a01",
+      "title": "JH-Q58983 吸顶灯系列",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 2,
+      "source_keys": [
+        "mall_sql:9033",
+        "mall_sql:9034"
+      ],
+      "representative_source_key": "mall_sql:9034",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-a67653876a01"
+        ],
+        "active_approved_review_ids": [
+          "family-a67653876a01"
+        ],
+        "applied_review_ids": [
+          "family-a67653876a01"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a6ac0fb3b049",
+      "title": "JH31L188YB-7W  射灯",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:5992"
+      ],
+      "representative_source_key": "mall_sql:5992",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-5c69016223bf"
+        ],
+        "active_approved_review_ids": [
+          "candidate-5c69016223bf"
+        ],
+        "applied_review_ids": [
+          "candidate-5c69016223bf"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a6da7bf4a63c",
+      "title": "JH-X-6L1853-450方客厅餐厅书房卧室实木吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11858"
+      ],
+      "representative_source_key": "mall_sql:11858",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-eb069fde1308"
+        ],
+        "active_approved_review_ids": [
+          "candidate-eb069fde1308"
+        ],
+        "applied_review_ids": [
+          "candidate-eb069fde1308"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a6e0375ed40f",
+      "title": "JH--01 文旅景观灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11546"
+      ],
+      "representative_source_key": "mall_sql:11546",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a6e3939e512e",
+      "title": "JH-D-6L3968 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 3,
+      "source_keys": [
+        "mall_sql:11956",
+        "mall_sql:11957",
+        "mall_sql:11958"
+      ],
+      "representative_source_key": "mall_sql:11958",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-a6e3939e512e"
+        ],
+        "active_approved_review_ids": [
+          "family-a6e3939e512e"
+        ],
+        "applied_review_ids": [
+          "family-a6e3939e512e"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a732812d6c62",
+      "title": "JH-HB-04B  36W  黑板灯",
+      "category": "护眼灯",
+      "source_categories": [
+        "护眼灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10823"
+      ],
+      "representative_source_key": "mall_sql:10823",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a74c0192ea01",
+      "title": "JH-ZN-2.4G-智能语音控制器 智能产品 G系列",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8447"
+      ],
+      "representative_source_key": "mall_sql:8447",
+      "candidate_facet_keys": [
+        "materials",
+        "spaces",
+        "styles"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-ca737fad5d69"
+        ],
+        "active_approved_review_ids": [
+          "candidate-ca737fad5d69"
+        ],
+        "applied_review_ids": [
+          "candidate-ca737fad5d69"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a77f3342a036",
+      "title": "JH-S288-7W 窄边款 Φ55 射灯 天罡二号系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12250"
+      ],
+      "representative_source_key": "mall_sql:12250",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "applied_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a78776394fb3",
+      "title": "尚系列金色 单电视插座",
+      "category": "开关",
+      "source_categories": [
+        "开关"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:691"
+      ],
+      "representative_source_key": "mall_sql:691",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a7a40ec6b2a4",
+      "title": "JH-D-6L3965 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 5,
+      "source_keys": [
+        "mall_sql:11939",
+        "mall_sql:11940",
+        "mall_sql:11941",
+        "mall_sql:11942",
+        "mall_sql:11943"
+      ],
+      "representative_source_key": "mall_sql:11943",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-a7a40ec6b2a4"
+        ],
+        "active_approved_review_ids": [
+          "family-a7a40ec6b2a4"
+        ],
+        "applied_review_ids": [
+          "family-a7a40ec6b2a4"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a7efd9fcb0a6",
+      "title": "JH-D-6L8059-4+6+4中柱款别墅复式楼客厅餐厅书房卧室全铜玉石吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7378"
+      ],
+      "representative_source_key": "mall_sql:7378",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "active_approved_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "applied_review_ids": [
+          "candidate-98581d6068d2"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a818af156e4e",
+      "title": "JH-8-B-7131室内户外防水铝材壁灯",
+      "category": "壁灯",
+      "source_categories": [
+        "壁灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:1472"
+      ],
+      "representative_source_key": "mall_sql:1472",
+      "candidate_facet_keys": [
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a82b8c2bd23b",
+      "title": "JH-D-6L31010-500Y晶艺变频风扇灯客厅餐厅书房卧室休闲室麻将室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10854"
+      ],
+      "representative_source_key": "mall_sql:10854",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a82bfc7c1e04",
+      "title": "JH31L271TB-12W 椭圆 射灯",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8897"
+      ],
+      "representative_source_key": "mall_sql:8897",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-9bcd2517bb1d"
+        ],
+        "active_approved_review_ids": [
+          "candidate-9bcd2517bb1d"
+        ],
+        "applied_review_ids": [
+          "candidate-9bcd2517bb1d"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a8351ce02e03",
+      "title": "JH-CPDZX 户外照明系列",
+      "category": "户外照明",
+      "source_categories": [
+        "户外照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 3,
+      "source_keys": [
+        "mall_sql:11440",
+        "mall_sql:11449",
+        "mall_sql:11450"
+      ],
+      "representative_source_key": "mall_sql:11440",
+      "candidate_facet_keys": [
+        "finishes",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-abfe8d4f6ebe",
+          "family-a8351ce02e03"
+        ],
+        "active_approved_review_ids": [
+          "candidate-abfe8d4f6ebe",
+          "family-a8351ce02e03"
+        ],
+        "applied_review_ids": [
+          "candidate-abfe8d4f6ebe",
+          "family-a8351ce02e03"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a83d492af3b3",
+      "title": "JH-8L6828-1100*700现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11735"
+      ],
+      "representative_source_key": "mall_sql:11735",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-22bcdbfebd48"
+        ],
+        "active_approved_review_ids": [
+          "candidate-22bcdbfebd48"
+        ],
+        "applied_review_ids": [
+          "candidate-22bcdbfebd48"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a8ae71a0ee27",
+      "title": "JH-706D五合一浴霸",
+      "category": "浴霸",
+      "source_categories": [
+        "浴霸"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:587"
+      ],
+      "representative_source_key": "mall_sql:587",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a9230f3563e8",
+      "title": "JH-TYNLD-05  太阳能路灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11568"
+      ],
+      "representative_source_key": "mall_sql:11568",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a9891b9d18fa",
+      "title": "JH-S288-30W 宽边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12283"
+      ],
+      "representative_source_key": "mall_sql:12283",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "applied_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a99fb711e5b8",
+      "title": "12869烟灰+米灰现代简约铁艺玻璃单头吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10578"
+      ],
+      "representative_source_key": "mall_sql:10578",
+      "candidate_facet_keys": [
+        "areas",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-a9a312fe93ea",
+      "title": "酒店客房装饰灯",
+      "category": "非标装饰灯",
+      "source_categories": [
+        "非标装饰灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:468"
+      ],
+      "representative_source_key": "mall_sql:468",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-aaae05f5c52f",
+      "title": "JH-TYNLD-02  太阳能路灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11565"
+      ],
+      "representative_source_key": "mall_sql:11565",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-aad611795d55",
+      "title": "JH31L188SA-7W  射灯",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:5994"
+      ],
+      "representative_source_key": "mall_sql:5994",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-27976e47e680"
+        ],
+        "active_approved_review_ids": [
+          "candidate-27976e47e680"
+        ],
+        "applied_review_ids": [
+          "candidate-27976e47e680"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-aae7ef036a2b",
+      "title": "JH-TYNTYD-04  太阳能庭院灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11577"
+      ],
+      "representative_source_key": "mall_sql:11577",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ab50f46ee907",
+      "title": "JH-X-6L1839-560圆客厅餐厅书房卧室金丝檀木吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10285"
+      ],
+      "representative_source_key": "mall_sql:10285",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-096894c89b4e"
+        ],
+        "active_approved_review_ids": [
+          "candidate-096894c89b4e"
+        ],
+        "applied_review_ids": [
+          "candidate-096894c89b4e"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ab6547782c23",
+      "title": "JH-9-B-6009全铜室内户外防水壁灯",
+      "category": "壁灯",
+      "source_categories": [
+        "壁灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:287"
+      ],
+      "representative_source_key": "mall_sql:287",
+      "candidate_facet_keys": [
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ab70a3bdebd9",
+      "title": "JH-Q57510-B+6  繁花似锦     轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:9542"
+      ],
+      "representative_source_key": "mall_sql:9542",
+      "candidate_facet_keys": [
+        "areas",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-3121ef52ccbc"
+        ],
+        "active_approved_review_ids": [
+          "candidate-3121ef52ccbc"
+        ],
+        "applied_review_ids": [
+          "candidate-3121ef52ccbc"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ab807f9db3a7",
+      "title": "JH-9-D-9130-1餐厅卧室吧台书房铁艺吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:1806"
+      ],
+      "representative_source_key": "mall_sql:1806",
+      "candidate_facet_keys": [
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-abd2314a7019",
+      "title": "JH-M1010F  线条灯铝槽；装箱数量（100条/一件）（1条3米）",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7122"
+      ],
+      "representative_source_key": "mall_sql:7122",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "materials",
+        "spaces",
+        "styles"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-abdac41c4e9e",
+      "title": "JH-T006-2.5-4W   Φ75筒灯",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10246"
+      ],
+      "representative_source_key": "mall_sql:10246",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ac41d0b8470f",
+      "title": "JH-D-6L8063 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 5,
+      "source_keys": [
+        "mall_sql:6941",
+        "mall_sql:7152",
+        "mall_sql:7153",
+        "mall_sql:7154",
+        "mall_sql:7155"
+      ],
+      "representative_source_key": "mall_sql:7155",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-ac41d0b8470f"
+        ],
+        "active_approved_review_ids": [
+          "family-ac41d0b8470f"
+        ],
+        "applied_review_ids": [
+          "family-ac41d0b8470f"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ac73a301cd2f",
+      "title": "JH-D-6L3966 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 8,
+      "source_keys": [
+        "mall_sql:11944",
+        "mall_sql:11945",
+        "mall_sql:11946",
+        "mall_sql:11947",
+        "mall_sql:11948",
+        "mall_sql:11949",
+        "mall_sql:11950",
+        "mall_sql:11951"
+      ],
+      "representative_source_key": "mall_sql:11951",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-ac73a301cd2f"
+        ],
+        "active_approved_review_ids": [
+          "family-ac73a301cd2f"
+        ],
+        "applied_review_ids": [
+          "family-ac73a301cd2f"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ac99ef11e5c9",
+      "title": "JH-ZX-06壁灯",
+      "category": "户外照明",
+      "source_categories": [
+        "户外照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11438"
+      ],
+      "representative_source_key": "mall_sql:11438",
+      "candidate_facet_keys": [
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-accf2fe05650",
+      "title": "JH-JGTYD-17 景观庭院灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11597"
+      ],
+      "representative_source_key": "mall_sql:11597",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ace75139caf2",
+      "title": "JH-L65 超薄盒子机 智能晾衣机（奶油白）",
+      "category": "智能晾衣架",
+      "source_categories": [
+        "智能晾衣架"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11694"
+      ],
+      "representative_source_key": "mall_sql:11694",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-bb27855cbadd"
+        ],
+        "active_approved_review_ids": [
+          "candidate-bb27855cbadd"
+        ],
+        "applied_review_ids": [
+          "candidate-bb27855cbadd"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ad79670c118b",
+      "title": "JH-S903E-8W  白+白杯 Φ75 射灯",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11906"
+      ],
+      "representative_source_key": "mall_sql:11906",
+      "candidate_facet_keys": [
+        "dimensions",
+        "finishes",
+        "spaces",
+        "styles",
+        "types",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-a0686965cf56"
+        ],
+        "active_approved_review_ids": [
+          "candidate-a0686965cf56"
+        ],
+        "applied_review_ids": [
+          "candidate-a0686965cf56"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ad806d849313",
+      "title": "JH-S17612FM-12W  Φ75*75 射灯 星光系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11421"
+      ],
+      "representative_source_key": "mall_sql:11421",
+      "candidate_facet_keys": [
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-adfc4db2affe",
+      "title": "JH-S288-7W 预埋款 Φ55 射灯 天罡二号系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12255"
+      ],
+      "representative_source_key": "mall_sql:12255",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "applied_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ae171ca5a4bd",
+      "title": "JH-H-100W-24V（二代）",
+      "category": "灯带",
+      "source_categories": [
+        "灯带"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11803"
+      ],
+      "representative_source_key": "mall_sql:11803",
+      "candidate_facet_keys": [
+        "dimensions",
+        "spaces",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-ae640abced8a",
+      "title": "JH-8L6832-500A现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11796"
+      ],
+      "representative_source_key": "mall_sql:11796",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-40fb34231ed2"
+        ],
+        "active_approved_review_ids": [
+          "candidate-40fb34231ed2"
+        ],
+        "applied_review_ids": [
+          "candidate-40fb34231ed2"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-aecc99689b3e",
+      "title": "JH-Q57510-B+2  繁花似锦     轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "壁灯",
+      "source_categories": [
+        "壁灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:9539"
+      ],
+      "representative_source_key": "mall_sql:9539",
+      "candidate_facet_keys": [
+        "areas",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "active_approved_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "applied_review_ids": [
+          "candidate-1a80e7e9edae"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-aefe28b1d864",
+      "title": "JHT5R-90cm 支架",
+      "category": "灯管",
+      "source_categories": [
+        "灯管"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10037"
+      ],
+      "representative_source_key": "mall_sql:10037",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_colors",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-244e2011b6e0"
+        ],
+        "active_approved_review_ids": [
+          "candidate-244e2011b6e0"
+        ],
+        "applied_review_ids": [
+          "candidate-244e2011b6e0"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af04af1ffb67",
+      "title": "JH-ZN-2.4G-T202-4W 白+银  智能双色  筒灯 智能产品",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8458"
+      ],
+      "representative_source_key": "mall_sql:8458",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types",
+        "voltages",
+        "wattages"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af052b0d7b30",
+      "title": "JH-CPDZX-03 户外照明系列",
+      "category": "户外照明",
+      "source_categories": [
+        "户外照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 4,
+      "source_keys": [
+        "mall_sql:11501",
+        "mall_sql:11503",
+        "mall_sql:11504",
+        "mall_sql:11505"
+      ],
+      "representative_source_key": "mall_sql:11505",
+      "candidate_facet_keys": [
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-af052b0d7b30"
+        ],
+        "active_approved_review_ids": [
+          "family-af052b0d7b30"
+        ],
+        "applied_review_ids": [
+          "family-af052b0d7b30"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af0ff1b861ba",
+      "title": "JH-8L8708-550现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11742"
+      ],
+      "representative_source_key": "mall_sql:11742",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-a4e2d4cc4795"
+        ],
+        "active_approved_review_ids": [
+          "candidate-a4e2d4cc4795"
+        ],
+        "applied_review_ids": [
+          "candidate-a4e2d4cc4795"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af280e17c2e8",
+      "title": "JH-Q57500 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 5,
+      "source_keys": [
+        "mall_sql:8836",
+        "mall_sql:8837",
+        "mall_sql:8838",
+        "mall_sql:8839",
+        "mall_sql:8840"
+      ],
+      "representative_source_key": "mall_sql:8840",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-af280e17c2e8"
+        ],
+        "active_approved_review_ids": [
+          "family-af280e17c2e8"
+        ],
+        "applied_review_ids": [
+          "family-af280e17c2e8"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af4492e93f40",
+      "title": "JH-TYNLD-07  太阳能路灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11570"
+      ],
+      "representative_source_key": "mall_sql:11570",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af511e248bc6",
+      "title": "JHX01-250布纹",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:697"
+      ],
+      "representative_source_key": "mall_sql:697",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "active_approved_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "applied_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-af8634d94552",
+      "title": "JH-8L9756-500白现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11783"
+      ],
+      "representative_source_key": "mall_sql:11783",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-130633edfc50"
+        ],
+        "active_approved_review_ids": [
+          "candidate-130633edfc50"
+        ],
+        "applied_review_ids": [
+          "candidate-130633edfc50"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-afa4c46ae95c",
+      "title": "JH-X-6L31027Y 云朵书房卧室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11146"
+      ],
+      "representative_source_key": "mall_sql:11146",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-79ae87215b01"
+        ],
+        "active_approved_review_ids": [
+          "candidate-79ae87215b01"
+        ],
+        "applied_review_ids": [
+          "candidate-79ae87215b01"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-afaeb1e6a67e",
+      "title": "JH-Q50021-B+250*600 轻奢水晶壁灯  客厅//房间/别墅/会所",
+      "category": "壁灯",
+      "source_categories": [
+        "壁灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8549"
+      ],
+      "representative_source_key": "mall_sql:8549",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-afc53e62fe33",
+      "title": "JH-Q57511-6 金玉满堂    轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10092"
+      ],
+      "representative_source_key": "mall_sql:10092",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "applied_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b094aec45e08",
+      "title": "JH-JGTYD-14 景观庭院灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11594"
+      ],
+      "representative_source_key": "mall_sql:11594",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b0f7e6704573",
+      "title": "JH-8L6867-500B现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12176"
+      ],
+      "representative_source_key": "mall_sql:12176",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-b58f944b012c"
+        ],
+        "active_approved_review_ids": [
+          "candidate-b58f944b012c"
+        ],
+        "applied_review_ids": [
+          "candidate-b58f944b012c"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b0fd2be8c9ca",
+      "title": "JH-ZSD-01 照树灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11612"
+      ],
+      "representative_source_key": "mall_sql:11612",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b1164a806916",
+      "title": "JH-X-6L1858 吸顶灯系列",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 6,
+      "source_keys": [
+        "mall_sql:11984",
+        "mall_sql:11985",
+        "mall_sql:11986",
+        "mall_sql:11987",
+        "mall_sql:11988",
+        "mall_sql:11989"
+      ],
+      "representative_source_key": "mall_sql:11989",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b1164a806916"
+        ],
+        "active_approved_review_ids": [
+          "family-b1164a806916"
+        ],
+        "applied_review_ids": [
+          "family-b1164a806916"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b1b606073f8d",
+      "title": "JH-S288-20W 宽边款 Φ95 射灯 天罡二号系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12259"
+      ],
+      "representative_source_key": "mall_sql:12259",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "applied_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b1e1daed21aa",
+      "title": "JH-71036-300美式铁艺灯/房间/阳台/过道 /玄关",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:3906"
+      ],
+      "representative_source_key": "mall_sql:3906",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-20e70112d32c"
+        ],
+        "active_approved_review_ids": [
+          "candidate-20e70112d32c"
+        ],
+        "applied_review_ids": [
+          "candidate-20e70112d32c"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b1f278de037a",
+      "title": "JH-M1616F  3米  线条灯铝槽",
+      "category": "筒射灯",
+      "source_categories": [
+        "筒射灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7837"
+      ],
+      "representative_source_key": "mall_sql:7837",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "materials",
+        "spaces",
+        "styles"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b1ffd84da29a",
+      "title": "JH-D-8330YK白变频风扇灯 客厅餐厅书房卧室休闲室麻将室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10859"
+      ],
+      "representative_source_key": "mall_sql:10859",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b2e2d523fff3",
+      "title": "JH-X202-3  迷你格栅2代-星际系列（高光效弹簧款）",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11468"
+      ],
+      "representative_source_key": "mall_sql:11468",
+      "candidate_facet_keys": [
+        "finishes",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-558002f0508c"
+        ],
+        "active_approved_review_ids": [
+          "candidate-558002f0508c"
+        ],
+        "applied_review_ids": [
+          "candidate-558002f0508c"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b31735d3f77d",
+      "title": "P9 开关系列",
+      "category": "开关",
+      "source_categories": [
+        "开关"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 12,
+      "source_keys": [
+        "mall_sql:12354",
+        "mall_sql:12355",
+        "mall_sql:12356",
+        "mall_sql:12357",
+        "mall_sql:12358",
+        "mall_sql:12360",
+        "mall_sql:12361",
+        "mall_sql:12362",
+        "mall_sql:12363",
+        "mall_sql:12364",
+        "mall_sql:12365",
+        "mall_sql:8582"
+      ],
+      "representative_source_key": "mall_sql:8582",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b31735d3f77d"
+        ],
+        "active_approved_review_ids": [
+          "family-b31735d3f77d"
+        ],
+        "applied_review_ids": [
+          "family-b31735d3f77d"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b3354e7ac39c",
+      "title": "JH-8L8670-500三角现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10552"
+      ],
+      "representative_source_key": "mall_sql:10552",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-644bd1bd4126"
+        ],
+        "active_approved_review_ids": [
+          "candidate-644bd1bd4126"
+        ],
+        "applied_review_ids": [
+          "candidate-644bd1bd4126"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b3892363866c",
+      "title": "12813金色现代简约铝材亚克力单头吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:9720"
+      ],
+      "representative_source_key": "mall_sql:9720",
+      "candidate_facet_keys": [
+        "areas",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-fdbfa1db9130"
+        ],
+        "active_approved_review_ids": [
+          "candidate-fdbfa1db9130"
+        ],
+        "applied_review_ids": [
+          "candidate-fdbfa1db9130"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b39328446eb8",
+      "title": "JH-ZHLD-04 智慧景观灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11529"
+      ],
+      "representative_source_key": "mall_sql:11529",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b3b92033e48e",
+      "title": "JH-8L6851-550*550现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11921"
+      ],
+      "representative_source_key": "mall_sql:11921",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-ba8d7441728a"
+        ],
+        "active_approved_review_ids": [
+          "candidate-ba8d7441728a"
+        ],
+        "applied_review_ids": [
+          "candidate-ba8d7441728a"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b3f234370cdc",
+      "title": "JH-D-6L6646-8+4别墅复试客厅餐厅书房卧室全铜吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10186"
+      ],
+      "representative_source_key": "mall_sql:10186",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-ed2a559b6a8c"
+        ],
+        "active_approved_review_ids": [
+          "candidate-ed2a559b6a8c"
+        ],
+        "applied_review_ids": [
+          "candidate-ed2a559b6a8c"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b420b59d312e",
+      "title": "JH-66679 跨分类系列",
+      "category": "待复核",
+      "source_categories": [
+        "吊灯",
+        "吸顶灯"
+      ],
+      "category_state": "pending_owner_selection",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 11,
+      "source_keys": [
+        "mall_sql:4013",
+        "mall_sql:4024",
+        "mall_sql:4025",
+        "mall_sql:4026",
+        "mall_sql:4027",
+        "mall_sql:4028",
+        "mall_sql:4029",
+        "mall_sql:4030",
+        "mall_sql:4031",
+        "mall_sql:4032",
+        "mall_sql:4033"
+      ],
+      "representative_source_key": "mall_sql:4033",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b420b59d312e"
+        ],
+        "active_approved_review_ids": [
+          "family-b420b59d312e"
+        ],
+        "applied_review_ids": [
+          "family-b420b59d312e"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b42d5cd39ab2",
+      "title": "JH-D-6L6810-6墅复式楼客厅餐厅书房卧室铜合金吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11885"
+      ],
+      "representative_source_key": "mall_sql:11885",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "active_approved_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "applied_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b46a561accca",
+      "title": "JH-X-6L1849-520圆客厅餐厅书房卧室实木吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11155"
+      ],
+      "representative_source_key": "mall_sql:11155",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "applied_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b473c63f9959",
+      "title": "尚系列金色 一位双路开关",
+      "category": "开关",
+      "source_categories": [
+        "开关"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:279"
+      ],
+      "representative_source_key": "mall_sql:279",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b47bd6fbf822",
+      "title": "JH-77500-400黑美式铁艺灯/房间/阳台/过道 /玄关",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7773"
+      ],
+      "representative_source_key": "mall_sql:7773",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-ceb5d4369e92"
+        ],
+        "active_approved_review_ids": [
+          "candidate-ceb5d4369e92"
+        ],
+        "applied_review_ids": [
+          "candidate-ceb5d4369e92"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b4c152927421",
+      "title": "JHX01-250荷花",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:702"
+      ],
+      "representative_source_key": "mall_sql:702",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "active_approved_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "applied_review_ids": [
+          "candidate-1860095fde3e"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b4d6e6c32d8a",
+      "title": "JH-Q57511-10+5 金玉满堂    轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:10094"
+      ],
+      "representative_source_key": "mall_sql:10094",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "applied_review_ids": [
+          "candidate-8e736c885cf1"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b4fb65bf33b5",
+      "title": "V-120118 艺术灯",
+      "category": "艺术灯",
+      "source_categories": [
+        "艺术灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "local_supplement:补充-120118"
+      ],
+      "representative_source_key": "local_supplement:补充-120118",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": true,
+        "batch_id": "catalog-v2-private-sample-120"
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing",
+        "local_media_governance_only_not_runtime_authorized",
+        "primary_image_missing",
+        "supplement_attributes_incomplete",
+        "supplement_specs_incomplete"
+      ],
+      "local_media_evidence_source_count": 1,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b50b987caecd",
+      "title": "JH-D-6L8058-8客厅餐厅书房卧室全铜玉石吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:7374"
+      ],
+      "representative_source_key": "mall_sql:7374",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-cb21227e824f"
+        ],
+        "active_approved_review_ids": [
+          "candidate-cb21227e824f"
+        ],
+        "applied_review_ids": [
+          "candidate-cb21227e824f"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b54b40c333a9",
+      "title": "酒店自助餐厅和休闲厅",
+      "category": "非标装饰灯",
+      "source_categories": [
+        "非标装饰灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:501"
+      ],
+      "representative_source_key": "mall_sql:501",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b566beeca535",
+      "title": "尚系列金色 三位双路开关",
+      "category": "开关",
+      "source_categories": [
+        "开关"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:401"
+      ],
+      "representative_source_key": "mall_sql:401",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b57808a1ebd4",
+      "title": "JH-S288-8W 窄边款 Φ75 射灯 天罡二号系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12269"
+      ],
+      "representative_source_key": "mall_sql:12269",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "applied_review_ids": [
+          "candidate-8fd233dd2022"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b5de50efc0d7",
+      "title": "JH-X-6L1849-760圆客厅餐厅书房卧室实木吸顶灯",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11156"
+      ],
+      "representative_source_key": "mall_sql:11156",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "active_approved_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "applied_review_ids": [
+          "candidate-8eae0712bf17"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b6042d8eedc4",
+      "title": "JH-D-6L31081Y-42寸变频风扇灯客厅餐厅书房卧室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:12201"
+      ],
+      "representative_source_key": "mall_sql:12201",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b65ca5d6be42",
+      "title": "JH-XQD-01 洗墙灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11619"
+      ],
+      "representative_source_key": "mall_sql:11619",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b6915d2f0fbd",
+      "title": "JH-JGTYD-05 景观庭院灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11554"
+      ],
+      "representative_source_key": "mall_sql:11554",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b6a4f4fb319e",
+      "title": "JH31L333-12 18W 无边直射 格栅灯 七星系列",
+      "category": "商用照明",
+      "source_categories": [
+        "商用照明"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8923"
+      ],
+      "representative_source_key": "mall_sql:8923",
+      "candidate_facet_keys": [
+        "areas",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-e87bf618899c"
+        ],
+        "active_approved_review_ids": [
+          "candidate-e87bf618899c"
+        ],
+        "applied_review_ids": [
+          "candidate-e87bf618899c"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b6fea61f41a2",
+      "title": "JH-D-6L6810-5+15+10+5别墅复式楼客厅餐厅书房卧室铜合金吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:9118"
+      ],
+      "representative_source_key": "mall_sql:9118",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "active_approved_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "applied_review_ids": [
+          "candidate-d587766d5ddc"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b7084803383b",
+      "title": "XD58507 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 6,
+      "source_keys": [
+        "mall_sql:1054",
+        "mall_sql:1055",
+        "mall_sql:1056",
+        "mall_sql:1057",
+        "mall_sql:1058",
+        "mall_sql:1059"
+      ],
+      "representative_source_key": "mall_sql:1059",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b7084803383b"
+        ],
+        "active_approved_review_ids": [
+          "family-b7084803383b"
+        ],
+        "applied_review_ids": [
+          "family-b7084803383b"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b720601777e3",
+      "title": "JH-Q52001-14四层 轻奢水晶灯/客厅/餐厅/房间/会所",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:8009"
+      ],
+      "representative_source_key": "mall_sql:8009",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "candidate-f290e7e02d12"
+        ],
+        "active_approved_review_ids": [
+          "candidate-f290e7e02d12"
+        ],
+        "applied_review_ids": [
+          "candidate-f290e7e02d12"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b770f392d718",
+      "title": "JH-58615 吊灯系列",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 4,
+      "source_keys": [
+        "mall_sql:11754",
+        "mall_sql:11755",
+        "mall_sql:11756",
+        "mall_sql:11757"
+      ],
+      "representative_source_key": "mall_sql:11757",
+      "candidate_facet_keys": [
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b770f392d718"
+        ],
+        "active_approved_review_ids": [
+          "family-b770f392d718"
+        ],
+        "applied_review_ids": [
+          "family-b770f392d718"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b7764a728a47",
+      "title": "圆熙120113-6简约现代铁艺铝材木滚塑吊灯",
+      "category": "吊灯",
+      "source_categories": [
+        "吊灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 3,
+      "source_keys": [
+        "mall_sql:12385",
+        "mall_sql:12386",
+        "mall_sql:12387"
+      ],
+      "representative_source_key": "mall_sql:12387",
+      "candidate_facet_keys": [
+        "areas",
+        "finishes",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b7764a728a47"
+        ],
+        "active_approved_review_ids": [
+          "family-b7764a728a47"
+        ],
+        "applied_review_ids": [
+          "family-b7764a728a47"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b781c8f30b59",
+      "title": "JH-Q57503-Φ500 轻奢简约吸顶灯  客厅/餐厅/房间/会所",
+      "category": "吸顶灯",
+      "source_categories": [
+        "吸顶灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "auto_merged_shared_reference_image_set",
+      "grouping_evidence": "exact_complete_reference_image_set",
+      "member_count": 2,
+      "source_keys": [
+        "mall_sql:9355",
+        "mall_sql:9356"
+      ],
+      "representative_source_key": "mall_sql:9356",
+      "candidate_facet_keys": [
+        "areas",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "approved_and_applied",
+        "required_review_ids": [
+          "family-b781c8f30b59"
+        ],
+        "active_approved_review_ids": [
+          "family-b781c8f30b59"
+        ],
+        "applied_review_ids": [
+          "family-b781c8f30b59"
+        ],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b7881b78c11c",
+      "title": "JH-D-6L21017-42寸 灰 品尚 变频风扇灯客厅餐厅书房卧室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11907"
+      ],
+      "representative_source_key": "mall_sql:11907",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b798391e3be2",
+      "title": "JH-ZHG-02 综合杆",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11583"
+      ],
+      "representative_source_key": "mall_sql:11583",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b7cf84d3d1b4",
+      "title": "JH-D-6L31020Y 晚菘 42寸 客厅餐厅书房卧室",
+      "category": "风扇灯",
+      "source_categories": [
+        "风扇灯"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11141"
+      ],
+      "representative_source_key": "mall_sql:11141",
+      "candidate_facet_keys": [
+        "areas",
+        "dimensions",
+        "light_sources",
+        "materials",
+        "spaces",
+        "styles",
+        "types"
+      ],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    },
+    {
+      "family_id": "family-b7f042e611ea",
+      "title": "JH-DZLD-02 设计定制路灯",
+      "category": "户外景观",
+      "source_categories": [
+        "户外景观"
+      ],
+      "category_state": "source_category_unambiguous",
+      "grouping_status": "singleton_unreviewed",
+      "grouping_evidence": "no_strong_family_evidence",
+      "member_count": 1,
+      "source_keys": [
+        "mall_sql:11551"
+      ],
+      "representative_source_key": "mall_sql:11551",
+      "candidate_facet_keys": [],
+      "sample_membership": {
+        "in_active_private_sample": false,
+        "batch_id": null
+      },
+      "quality_gaps": [
+        "attributes_missing",
+        "detail_images_missing"
+      ],
+      "local_media_evidence_source_count": 0,
+      "manual_review": {
+        "state": "not_required",
+        "required_review_ids": [],
+        "active_approved_review_ids": [],
+        "applied_review_ids": [],
+        "pending_review_ids": []
+      }
+    }
+  ]
+}

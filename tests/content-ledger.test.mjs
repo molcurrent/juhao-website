@@ -64,8 +64,8 @@ test("gives every publication-ledger record the governance fields needed for rev
   assert.equal(result.metrics.index_eligible_routes, count((record) => record.index_eligible));
   assert.equal(result.metrics.indexable_routes, count((record) => record.indexable));
   assert.equal(result.metrics.published_routes, 81);
-  assert.equal(result.metrics.seo_candidates, 69);
-  assert.equal(result.metrics.searchable_routes, 68);
+  assert.equal(result.metrics.seo_candidates, 68);
+  assert.equal(result.metrics.searchable_routes, 67);
   assert.equal(result.metrics.index_eligible_routes, 0);
   assert.equal(result.metrics.indexable_routes, 0);
   assert.equal(new Set(ledger.map((record) => record.route)).size, ledger.length);

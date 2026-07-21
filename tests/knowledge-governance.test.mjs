@@ -83,8 +83,8 @@ test("adds only the approved smart and JH31L331 evidence candidates", () => {
 test("locks the private publication snapshot and keeps runtime governance safe", () => {
   assert.equal(ledger.length, 162);
   assert.equal(ledger.filter(({ publish_status }) => publish_status === "published").length, 81);
-  assert.equal(ledger.filter(({ searchable, publish_status }) => searchable && publish_status === "published").length, 68);
-  assert.equal(ledger.filter(({ seo_candidate }) => seo_candidate).length, 69);
+  assert.equal(ledger.filter(({ searchable, publish_status }) => searchable && publish_status === "published").length, 67);
+  assert.equal(ledger.filter(({ seo_candidate }) => seo_candidate).length, 68);
   assert.equal(ledger.filter(({ index_eligible }) => index_eligible).length, 0);
   const strictlyEligible = ledger.filter((record) =>
     record.publish_status === "published"

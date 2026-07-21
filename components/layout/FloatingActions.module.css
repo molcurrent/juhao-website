@@ -1,15 +1,25 @@
 .actions {
   position: fixed;
-  right: 24px;
-  bottom: 28px;
+  right: 12px;
+  bottom: 18px;
   z-index: var(--z-floating);
   display: grid;
   gap: 8px;
-  width: 58px;
+  width: 52px;
 }
 
 .consultation {
   position: relative;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--duration-fast) ease, transform var(--duration-ui) var(--ease-enter);
+}
+
+.consultationVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .consultation summary {
@@ -27,7 +37,7 @@
 
 .consultationMenu {
   position: absolute;
-  right: 66px;
+  right: 58px;
   bottom: 0;
   display: grid;
   width: 270px;
@@ -53,7 +63,7 @@
 
 .consultationMenu span {
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .08em;
 }
 
@@ -75,24 +85,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 58px;
-  padding: 13px 8px;
+  width: 52px;
+  padding: 8px;
   border: 1px solid #ffffff38;
   box-shadow: 0 16px 44px #0003;
   backdrop-filter: blur(14px);
 }
 
 .contact {
-  min-height: 126px;
+  min-height: 52px;
   color: var(--white);
   background: #0b0d0ce8;
 }
 
 .contact span {
-  writing-mode: vertical-rl;
-  font-size: 10px;
+  writing-mode: horizontal-tb;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: .08em;
 }
 
 .contact b,
@@ -106,7 +116,7 @@
 }
 
 .top {
-  height: 58px;
+  height: 52px;
   color: var(--ink);
   background: #fbf9f4e8;
   border-color: var(--line);
@@ -118,7 +128,7 @@
 }
 
 .top span {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: .12em;
 }
@@ -170,48 +180,14 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .actions {
-    right: 16px;
-    bottom: max(16px, env(safe-area-inset-bottom));
-    display: flex;
-    width: auto;
-  }
-
-  .contact,
-  .top {
-    width: 50px;
-    height: 50px;
-    min-height: 0;
-    padding: 8px;
-  }
-
-  .contact span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
-  .contact b,
-  .top b {
-    font-size: 18px;
-  }
-
-  .consultationMenu {
-    right: 0;
-    bottom: 58px;
-    width: min(310px, calc(100vw - 32px));
-  }
-
-  .top span {
-    font-size: 7px;
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .consultation,
   .contact,
   .contact b,
   .top {

@@ -21,31 +21,36 @@ export function NewsPage({
   const pageResult = initialPage;
   const articles = pageResult.items;
   const [featured, ...rest] = articles;
+  const heroImage = pageResult.page === 1 ? page.image : "/images/jh48-news-page2-hero.webp";
 
   return (
-    <main id="main-content" className={styles.page}>
-      <section className={styles.hero}>
+    <main id="main-content" className={styles.page} data-lightfield-page="news-archive" tabIndex={-1}>
+      <section className={styles.hero} data-header-tone="light" data-page-hero="split">
         <figure className={styles.heroMedia}>
-          <Image src={page.image} alt={page.imageAlt ?? "钜豪企业与项目动态主题原创公共空间场景"} width={1672} height={941} priority sizes="100vw" />
+          <Image src={heroImage} alt={page.imageAlt ?? "钜豪企业与项目动态主题原创公共空间场景"} width={1672} height={941} priority sizes="100vw" />
           <figcaption>钜豪照明原创资讯主题代表图</figcaption>
         </figure>
         <div className={styles.heroContent} data-reveal="fade">
-          <p className={styles.eyebrow}>{page.eyebrow}</p>
-          <h1>{page.title}</h1>
-          <p>{page.intro}</p>
+          <p className={styles.eyebrow} data-page-role="eyebrow">{page.eyebrow}</p>
+          <h1 data-page-role="display">{page.title}</h1>
+          <p data-page-role="lead">{page.intro}</p>
+          <div className={styles.heroMeta} aria-label="资讯归档概况" data-page-role="metadata">
+            <span><strong>{String(pageResult.total).padStart(2, "0")}</strong><small>条可追溯记录</small></span>
+            <span><strong>{String(pageResult.page).padStart(2, "0")}</strong><small>当前归档页</small></span>
+          </div>
         </div>
       </section>
 
-      <section className={styles.content} aria-labelledby="news-list-title">
+      <section className={styles.content} data-header-tone="dark" aria-labelledby="news-list-title">
         <header className={styles.sectionHead} data-reveal>
-          <span>INSIGHTS / 资讯</span>
+          <span>企业资料更新</span>
           <h2 id="news-list-title">理解光，也理解空间</h2>
         </header>
 
         <div className={styles.stateMessages} aria-live="polite" aria-atomic="true">
           {articles.length === 0 && (
             <div className={styles.emptyState} role="status">
-              <small>NEWSROOM / EMPTY</small>
+              <small>内容整理中</small>
               <strong>资讯内容正在整理</strong>
               <p>当前没有可在私有预览中展示的文章。</p>
             </div>
@@ -59,10 +64,11 @@ export function NewsPage({
         {featured && (
           <div className={styles.feed}>
             <Link className={styles.featured} href={featured.path} data-reveal>
-              <figure className={styles.featuredImage}>
-                <Image src={featured.image} alt={`${featured.title}主题场景代表图`} width={1672} height={941} sizes="(max-width: 800px) 100vw, 58vw" />
-                <figcaption>主题代表图 · 非文章证据图</figcaption>
-              </figure>
+              <div className={styles.featuredVisual} aria-hidden="true">
+                <small>FEATURED RECORD</small>
+                <strong>{String((pageResult.page - 1) * pageResult.pageSize + 1).padStart(2, "0")}</strong>
+                <span>JUHAO / NEWS ARCHIVE</span>
+              </div>
               <div className={styles.featuredCopy}>
                 <small>{featured.published ?? "持续更新"}</small>
                 <h2>{featured.title}</h2>

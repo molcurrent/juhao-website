@@ -23,6 +23,7 @@
 
 .heroMedia {
   will-change: transform, opacity;
+  view-transition-name: juhao-stage;
 }
 
 .heroMedia img {
@@ -50,7 +51,7 @@
   color: rgb(255 255 255 / 66%);
   display: flex;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 12px;
   gap: 10px;
   letter-spacing: 0.04em;
   margin-bottom: clamp(48px, 8vh, 88px);
@@ -61,10 +62,18 @@
   color: var(--white);
 }
 
+.breadcrumbs a {
+  align-items: center;
+  display: inline-flex;
+  min-height: 44px;
+  padding-inline: 10px;
+  margin-inline: -10px;
+}
+
 .eyebrow {
   align-items: center;
   display: flex;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   gap: 12px;
   letter-spacing: 0.23em;
@@ -80,9 +89,9 @@
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(58px, 7.8vw, 120px);
-  letter-spacing: -0.075em;
-  line-height: 0.94;
+  font-size: clamp(58px, 7.8vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 34px;
   max-width: 900px;
 }
@@ -97,7 +106,7 @@
 
 .heroIndex {
   bottom: 88px;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.24em;
   margin: 0;
   position: absolute;
@@ -125,8 +134,8 @@
   border-left: 1px solid rgb(255 255 255 / 14%);
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  min-height: 136px;
+  justify-content: center;
+  min-height: 104px;
   padding: 28px 24px;
   position: relative;
   transition: transform var(--duration-fast) var(--ease-enter), opacity var(--duration-fast) var(--ease-enter);
@@ -164,12 +173,6 @@
   transform: scaleX(1);
 }
 
-.sceneLink small {
-  color: rgb(255 255 255 / 52%);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-}
-
 .sceneLink span {
   font-size: clamp(15px, 1.35vw, 20px);
   font-weight: 700;
@@ -193,10 +196,17 @@
   padding-top: clamp(96px, 10vw, 150px);
 }
 
-.sectionHeading p,
+.sectionHeading p {
+  color: var(--text-accent-on-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0 0 24px;
+}
+
 .productsHeading > div > p {
-  color: var(--brand-orange);
-  font-size: 10px;
+  color: var(--text-accent-on-dark);
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 0 0 24px;
@@ -206,7 +216,7 @@
 .productsHeading h2 {
   font-family: var(--font-display);
   font-size: clamp(42px, 5vw, 76px);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   line-height: 1.05;
   margin: 0;
 }
@@ -215,6 +225,10 @@
   border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.highlightCard:first-child {
+  grid-column: 1 / -1;
 }
 
 .highlightCard {
@@ -232,16 +246,9 @@
   padding-left: clamp(20px, 3vw, 44px);
 }
 
-.highlightCard small,
-.detailNumber {
-  color: var(--brand-orange);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-}
-
 .highlightCard h3 {
   font-size: clamp(20px, 1.8vw, 26px);
-  margin: 58px 0 16px;
+  margin: 16px 0;
 }
 
 .highlightCard p,
@@ -267,12 +274,8 @@
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: clamp(40px, 8vw, 140px);
-  grid-template-columns: 110px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   padding: clamp(68px, 7vw, 106px) 0;
-}
-
-.detailNumber {
-  margin: 8px 0 0;
 }
 
 .solutionDetail > div {
@@ -282,7 +285,7 @@
 .solutionDetail h2 {
   font-family: var(--font-display);
   font-size: clamp(36px, 4.2vw, 64px);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.04em;
   line-height: 1.08;
   margin: 0 0 28px;
 }
@@ -324,7 +327,7 @@
 
 .faqHeading > p {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 0 0 24px;
@@ -333,7 +336,7 @@
 .faqHeading h2 {
   font-family: var(--font-display);
   font-size: clamp(38px, 4.4vw, 68px);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   line-height: 1.06;
   margin: 0;
   max-width: 480px;
@@ -352,7 +355,7 @@
   cursor: pointer;
   display: grid;
   gap: 22px;
-  grid-template-columns: 42px minmax(0, 1fr) 42px;
+  grid-template-columns: minmax(0, 1fr) 42px;
   list-style: none;
   padding: 30px 0;
 }
@@ -364,12 +367,6 @@
 .faqItem summary:focus-visible {
   outline: 3px solid var(--brand-orange-soft);
   outline-offset: 5px;
-}
-
-.faqItem summary small {
-  color: var(--brand-orange);
-  font-size: 9px;
-  letter-spacing: 0.15em;
 }
 
 .faqItem summary span {
@@ -421,7 +418,7 @@
   line-height: 1.9;
   margin: 0;
   max-width: 760px;
-  padding: 0 64px 34px;
+  padding: 0 64px 34px 0;
 }
 
 .products {
@@ -459,7 +456,12 @@
   border: 1px solid rgb(255 255 255 / 14%);
   display: grid;
   gap: 1px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.productCard:first-child,
+.productCard:nth-child(4) {
+  grid-column: span 2;
 }
 
 .productCard {
@@ -495,6 +497,53 @@
   width: 100%;
 }
 
+.topicResourceVisual {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  height: 100%;
+  padding: clamp(24px, 4vw, 54px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 22%, rgb(255 126 56 / 58%) 0 2%, transparent 22%),
+    conic-gradient(from 210deg at 78% 22%, transparent, rgb(224 87 23 / 34%), transparent 34%),
+    repeating-linear-gradient(90deg, transparent 0 12.4%, rgb(255 255 255 / 8%) 12.5% 12.7%),
+    #131511;
+}
+
+.topicResourceVisual::before {
+  position: absolute;
+  top: 22%;
+  right: 9%;
+  width: 38%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 154 96 / 52%);
+  border-radius: 50%;
+  box-shadow: 0 0 54px rgb(224 87 23 / 24%), inset 0 0 42px rgb(224 87 23 / 12%);
+  content: "";
+}
+
+.topicResourceVisual small,
+.topicResourceVisual span {
+  position: relative;
+  z-index: 1;
+  color: rgb(255 255 255 / 48%);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.topicResourceVisual strong {
+  position: relative;
+  z-index: 1;
+  width: min-content;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 62px);
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+
 .productCard:hover .productImage img {
   transform: scale(1.035);
 }
@@ -507,7 +556,7 @@
 
 .productCopy small {
   color: rgb(255 255 255 / 46%);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.13em;
 }
 
@@ -553,7 +602,7 @@
 }
 
 .consultationCta p {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   margin: 0 0 20px;
 }
@@ -561,7 +610,7 @@
 .consultationCta h2 {
   font-family: var(--font-display);
   font-size: clamp(34px, 5vw, 72px);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   line-height: 1.04;
   margin: 0;
 }
@@ -610,6 +659,11 @@
   .productGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .productCard:first-child,
+  .productCard:nth-child(4) {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 680px) {
@@ -647,6 +701,10 @@
     grid-template-columns: 1fr;
   }
 
+  .highlightCard:first-child {
+    grid-column: auto;
+  }
+
   .highlightCard,
   .highlightCard:nth-child(even) {
     border-right: 0;
@@ -665,7 +723,7 @@
 
   .faqItem summary {
     gap: 14px;
-    grid-template-columns: 32px minmax(0, 1fr) 36px;
+    grid-template-columns: minmax(0, 1fr) 36px;
     padding: 24px 0;
   }
 
@@ -700,6 +758,19 @@
     gap: 36px;
   }
 
+}
+
+@media (max-width: 680px) {
+  .breadcrumbs,
+  .eyebrow,
+  .sectionHeading p,
+  .productsHeading > div > p,
+  .faqHeading > p,
+  .productCopy small,
+  .productCopy p,
+  .consultationCta p {
+    font-size: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

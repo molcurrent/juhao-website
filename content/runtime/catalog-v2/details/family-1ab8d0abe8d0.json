@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-1ab8d0abe8d0",
+    "canonical_slug": "11699",
+    "canonical_source_key": "mall_sql:11699",
+    "canonical_source_id": "11699",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-686空调型取暖四合一浴霸",
+    "category": "浴霸",
+    "source_categories": [
+      "浴霸"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-1ab8d0abe8d0",
+    "model_label": "JH-686",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11699",
+      "display_id": "11699",
+      "title": "JH-686空调型取暖四合一浴霸",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11699",
+        "source_id": "11699",
+        "display_id": "11699",
+        "model_label": "JH-686",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11699",
+      "source_path": "商城系统/商品说明/JH-686空调型取暖四合一浴霸_11699.md",
+      "source_sha256": "e4f221e41bd5391d87143b2e790096d4cafbf6332ea33cb0082797a413dcb2b3"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 14,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-d02417f3ac85",
+      "source_key": "mall_sql:11699",
+      "display_id": "11699",
+      "label": "JH-686空调型取暖四合一浴霸",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

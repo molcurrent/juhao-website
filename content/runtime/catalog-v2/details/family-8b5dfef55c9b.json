@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-8b5dfef55c9b",
+    "canonical_slug": "1464",
+    "canonical_source_key": "mall_sql:1464",
+    "canonical_source_id": "1464",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-8-B-7010-L户外室内防水铝材壁灯",
+    "category": "壁灯",
+    "source_categories": [
+      "壁灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 2,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-8b5dfef55c9b",
+    "model_label": "JH-8-B-7010-S",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:1464",
+      "display_id": "1464",
+      "title": "JH-8-B-7010-S户外室内防水铝材壁灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:1463",
+        "source_id": "1463",
+        "display_id": "1463",
+        "model_label": "JH-8-B-7010-L",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:1464",
+        "source_id": "1464",
+        "display_id": "1464",
+        "model_label": "JH-8-B-7010-S",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "190*160*460CM"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "E27光源"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "磨砂/刻花玻璃",
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "dimensions": [
+        "190*160*460CM"
+      ],
+      "finishes": [
+        "黑刷金"
+      ],
+      "light_sources": [
+        "E27光源"
+      ],
+      "materials": [
+        "磨砂/刻花玻璃",
+        "铝材"
+      ],
+      "spaces": [
+        "阳台",
+        "楼梯/拐角",
+        "高层/复式/别墅",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "美式复古",
+        "欧式现代简约",
+        "后现代",
+        "工业风",
+        "新古典"
+      ],
+      "types": [
+        "壁灯",
+        "过道灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:1463",
+      "source_path": "商城系统/商品说明/JH-8-B-7010-L户外室内防水铝材壁灯_1463.md",
+      "source_sha256": "24074c07a089610b0994f11535990dae727e00f35e9a5ddf4aa2c9bc61772a14"
+    },
+    {
+      "source_key": "mall_sql:1464",
+      "source_path": "商城系统/商品说明/JH-8-B-7010-S户外室内防水铝材壁灯_1464.md",
+      "source_sha256": "134a7f9c91cd6dde62c6d1cecad60f601a1991c688721abfc3e8b5a6cd80bab7"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "磨砂/刻花玻璃,铝材",
+      "光源类型": "E27光源",
+      "尺寸": "190*160*460CM",
+      "颜色工艺": "黑刷金",
+      "空间": "阳台,楼梯/拐角,高层/复式/别墅,玄关/过道/廊道",
+      "类型": "壁灯,过道灯",
+      "风格": "美式复古,欧式现代简约,后现代,工业风,新古典",
+      "光源数量": "1"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 16,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-781f736bdeff",
+      "source_key": "mall_sql:1463",
+      "display_id": "1463",
+      "label": "JH-8-B-7010-L户外室内防水铝材壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "190*160*460CM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "黑刷金",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-8c57e1ba96d6",
+      "source_key": "mall_sql:1464",
+      "display_id": "1464",
+      "label": "JH-8-B-7010-S户外室内防水铝材壁灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "190*160*460CM",
+          "evidence": "source_attribute:尺寸"
+        },
+        "finish_color": {
+          "value": "黑刷金",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

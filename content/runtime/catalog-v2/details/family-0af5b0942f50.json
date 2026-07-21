@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-0af5b0942f50",
+    "canonical_slug": "452",
+    "canonical_source_key": "mall_sql:452",
+    "canonical_source_id": "452",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "西餐厅",
+    "category": "非标装饰灯",
+    "source_categories": [
+      "非标装饰灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-0af5b0942f50",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:452",
+      "display_id": "452",
+      "title": "西餐厅",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:452",
+        "source_id": "452",
+        "display_id": "452",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "detail_images_missing",
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:452",
+      "source_path": "商城系统/商品说明/西餐厅_452.md",
+      "source_sha256": "0e69decbf269e0c0a8e15d6eaf09331c700b20e492c34c7bc497bdfaaf533c1e"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 0,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-406ec35bca91",
+      "source_key": "mall_sql:452",
+      "display_id": "452",
+      "label": "西餐厅",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "detail_images_missing",
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

@@ -20,12 +20,8 @@ export type AccessibleCarouselProps = {
   children: ReactNode;
   ariaLabel?: string;
   className?: string;
-  index?: number;
-  defaultIndex?: number;
-  onIndexChange?: (index: number) => void;
   autoPlay?: boolean;
   autoPlayInterval?: number;
-  loop?: boolean;
 };
 
 type TouchPoint = { x: number; y: number };
@@ -51,31 +47,21 @@ function getVisibilitySnapshot() {
   return !document.hidden;
 }
 
-function normaliseIndex(index: number, slideCount: number, loop: boolean) {
+function normaliseIndex(index: number, slideCount: number) {
   if (slideCount < 1 || !Number.isFinite(index)) return 0;
-  const integer = Math.trunc(index);
-
-  if (loop) return ((integer % slideCount) + slideCount) % slideCount;
-  return Math.min(Math.max(integer, 0), slideCount - 1);
+  return ((Math.trunc(index) % slideCount) + slideCount) % slideCount;
 }
 
 export function AccessibleCarousel({
   children,
   ariaLabel = "内容轮播",
   className,
-  index,
-  defaultIndex = 0,
-  onIndexChange,
   autoPlay = false,
   autoPlayInterval = 5_000,
-  loop = true,
 }: AccessibleCarouselProps) {
   const slides = Children.toArray(children);
   const slideCount = slides.length;
-  const isControlled = index !== undefined;
-  const [internalIndex, setInternalIndex] = useState(() =>
-    normaliseIndex(defaultIndex, slideCount, loop),
-  );
+  const [internalIndex, setInternalIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focusWithin, setFocusWithin] = useState(false);
   const [touching, setTouching] = useState(false);
@@ -92,13 +78,8 @@ export function AccessibleCarousel({
     getVisibilitySnapshot,
     () => true,
   );
-  const selectedIndex = normaliseIndex(
-    isControlled ? index : internalIndex,
-    slideCount,
-    false,
-  );
-  const canGoPrevious = slideCount > 1 && (loop || selectedIndex > 0);
-  const canGoNext = slideCount > 1 && (loop || selectedIndex < slideCount - 1);
+  const selectedIndex = normaliseIndex(internalIndex, slideCount);
+  const canChangeSlide = slideCount > 1;
   const isPlaying =
     autoPlay &&
     !manuallyPaused &&
@@ -107,17 +88,16 @@ export function AccessibleCarousel({
     !focusWithin &&
     !touching &&
     pageVisible &&
-    canGoNext;
+    canChangeSlide;
 
   const goTo = useCallback(
     (nextIndex: number) => {
       if (slideCount < 1) return;
-      const next = normaliseIndex(nextIndex, slideCount, loop);
+      const next = normaliseIndex(nextIndex, slideCount);
       if (next === selectedIndex) return;
-      if (!isControlled) setInternalIndex(next);
-      onIndexChange?.(next);
+      setInternalIndex(next);
     },
-    [isControlled, loop, onIndexChange, selectedIndex, slideCount],
+    [selectedIndex, slideCount],
   );
 
   const goPrevious = useCallback(
@@ -287,7 +267,7 @@ export function AccessibleCarousel({
             type="button"
             aria-controls={viewportId}
             aria-label="上一张"
-            disabled={!canGoPrevious}
+            disabled={!canChangeSlide}
             onClick={goPrevious}
           >
             <span aria-hidden="true">←</span>
@@ -297,7 +277,7 @@ export function AccessibleCarousel({
             type="button"
             aria-controls={viewportId}
             aria-label="下一张"
-            disabled={!canGoNext}
+            disabled={!canChangeSlide}
             onClick={goNext}
           >
             <span aria-hidden="true">→</span>

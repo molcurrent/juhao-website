@@ -19,12 +19,37 @@ async function render(worker, path, accept = "text/html") {
   );
 }
 
+async function renderSecure(worker, path) {
+  return worker.fetch(
+    new Request(`https://juhao.com${path}`, { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+}
+
 function structuredData(html) {
   return [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
     .flatMap((match) => {
       const value = JSON.parse(match[1]);
       return Array.isArray(value) ? value : [value];
     });
+}
+
+function normalizeRenderedImageSource(value) {
+  const url = new URL(value.replaceAll("&amp;", "&"), "http://localhost");
+  return url.pathname === "/_vinext/image" ? (url.searchParams.get("url") ?? url.pathname) : url.pathname;
+}
+
+function mainVisualSources(html) {
+  const main = html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? "";
+  const sources = [...main.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)]
+    .map((match) => normalizeRenderedImageSource(match[1]));
+  for (const styleMatch of main.matchAll(/\bstyle="([^"]*)"/gi)) {
+    for (const pathMatch of styleMatch[1].matchAll(/\/images\/[A-Za-z0-9._-]+\.(?:webp|png|jpe?g)/gi)) {
+      sources.push(pathMatch[0]);
+    }
+  }
+  return sources;
 }
 
 class FakeD1Statement {
@@ -44,6 +69,11 @@ class FakeD1Statement {
       const before = this.database.rows.size;
       for (const [key, row] of this.database.rows) if (row.expires_at < this.values[0]) this.database.rows.delete(key);
       return { meta: { changes: before - this.database.rows.size } };
+    }
+    if (this.sql.startsWith("DELETE FROM consultation_rate_limits")) {
+      const before = this.database.rateLimits.size;
+      for (const [key, row] of this.database.rateLimits) if (row.expiresAt < this.values[0]) this.database.rateLimits.delete(key);
+      return { meta: { changes: before - this.database.rateLimits.size } };
     }
     if (this.sql.startsWith("INSERT INTO consultation_leads")) {
       const clientRequestId = this.values[1];
@@ -67,13 +97,22 @@ class FakeD1Statement {
   }
 
   async first() {
+    if (this.sql.startsWith("INSERT INTO consultation_rate_limits")) {
+      const [keyHash, windowStartedAt, expiresAt] = this.values;
+      const current = this.database.rateLimits.get(keyHash);
+      const next = !current || current.expiresAt <= windowStartedAt
+        ? { requestCount: 1, expiresAt }
+        : { requestCount: current.requestCount + 1, expiresAt: current.expiresAt };
+      this.database.rateLimits.set(keyHash, next);
+      return next;
+    }
     if (this.sql.startsWith("SELECT id, client_request_id")) {
       const row = this.database.rows.get(this.values[0]);
       return row ? { id: row.id, client_request_id: row.client_request_id, request_hash: row.request_hash, submitted_at: row.created_at } : null;
     }
     if (this.sql.startsWith("SELECT id, created_at AS submitted_at")) {
       const row = [...this.database.rows.values()].find((item) => item.id === this.values[0]);
-      return row ? { id: row.id, submitted_at: row.created_at } : null;
+      return row && row.expires_at >= this.values[1] ? { id: row.id, submitted_at: row.created_at } : null;
     }
     throw new Error(`Unexpected SQL: ${this.sql}`);
   }
@@ -120,6 +159,7 @@ class FakeD1Statement {
 class FakeD1 {
   constructor() {
     this.rows = new Map();
+    this.rateLimits = new Map();
   }
 
   prepare(sql) {
@@ -127,18 +167,55 @@ class FakeD1 {
   }
 }
 
-async function postContact(worker, database, payload, origin = "http://localhost", runtime = {}) {
+async function postContact(worker, database, payload, origin = "http://localhost", runtime = {}, requestHeaders = {}) {
   for (const key of Object.keys(globalThis.__cloudflareTestEnv)) delete globalThis.__cloudflareTestEnv[key];
   Object.assign(globalThis.__cloudflareTestEnv, { DB: database, ...runtime });
   return worker.fetch(
     new Request("http://localhost/api/contact", {
       method: "POST",
-      headers: { accept: "application/json", "content-type": "application/json", origin },
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        origin,
+        "CF-Connecting-IP": "203.0.113.10",
+        ...requestHeaders,
+      },
       body: JSON.stringify(payload),
     }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) }, DB: database, ...runtime },
     { waitUntil() {}, passThroughOnException() {} },
   );
+}
+
+const PUBLIC_CONTACT_RUNTIME = {
+  PUBLIC_INTAKE_READY: "true",
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: "turnstile-site-key",
+  TURNSTILE_SECRET_KEY: "turnstile-secret",
+  TURNSTILE_ALLOWED_HOSTNAMES: "localhost",
+  CONTACT_EDGE_RATE_LIMIT_VERIFIED: "true",
+  JUHAO_LEAD_RATE_LIMIT_SECRET: "test-rate-limit-secret-at-least-32-characters",
+  JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
+  JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
+  JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
+};
+
+function publicContactPayload(clientRequestId, turnstileToken = "turnstile-token") {
+  return {
+    direction: "home",
+    source: "home-hero",
+    scene: "home-health",
+    intent: "space-advice",
+    project: "三居室家庭照明规划",
+    stage: "planning",
+    need: "希望改善客餐厅不同活动下的照明层次",
+    contactName: "林女士",
+    contactChannel: "email",
+    contactValue: "lin@example.com",
+    consent: true,
+    privacyVersion: "2026-07-18",
+    clientRequestId,
+    turnstileToken,
+  };
 }
 
 async function runContactMaintenance(worker, database, runtime = {}, token = "maintenance-secret") {
@@ -177,6 +254,64 @@ test("server-renders published private-preview content", async () => {
     const documentTitle = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
     assert.doesNotMatch(documentTitle, /钜豪照明.*钜豪照明/, `${path} title repeats the brand`);
   }
+});
+
+test("does not repeat visual sources inside published main content", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/runtime/publication-ledger.json", import.meta.url), "utf8"));
+  const routes = [...new Set(ledger.filter((item) => item.publish_status === "published").map((item) => item.route))];
+  assert.equal(routes.length, 81);
+
+  for (const path of routes) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const sources = mainVisualSources(await response.text());
+    const seen = new Set();
+    const duplicates = [...new Set(sources.filter((source) => seen.has(source) || !seen.add(source)))];
+    assert.deepEqual(duplicates, [], `${path}: repeated visual sources ${duplicates.join(", ")}`);
+  }
+});
+
+test("does not reuse generic scene images across published main content", async () => {
+  const worker = await createWorker();
+  const ledger = JSON.parse(readFileSync(new URL("../content/runtime/publication-ledger.json", import.meta.url), "utf8"));
+  const routes = [...new Set(ledger.filter((item) => item.publish_status === "published").map((item) => item.route))];
+  const placements = new Map();
+
+  for (const path of routes) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const sources = new Set(mainVisualSources(await response.text()).filter((source) => source.startsWith("/images/")));
+    for (const source of sources) placements.set(source, [...(placements.get(source) ?? []), path]);
+  }
+
+  const repeated = [...placements].filter(([, paths]) => paths.length > 1);
+  assert.deepEqual(repeated, [], repeated.map(([source, paths]) => `${source}: ${paths.join(", ")}`).join("\n"));
+});
+
+test("adds the baseline security headers to worker responses", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/");
+  assert.match(response.headers.get("content-security-policy") ?? "", /default-src 'self'/);
+  assert.match(response.headers.get("content-security-policy") ?? "", /challenges\.cloudflare\.com/);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+  assert.equal(response.headers.get("permissions-policy"), "camera=(), microphone=(), geolocation=()");
+});
+
+test("uses a per-response script nonce instead of unsafe-inline on HTTPS", async () => {
+  const worker = await createWorker();
+  const response = await renderSecure(worker, "/");
+  const html = await response.text();
+  const policy = response.headers.get("content-security-policy") ?? "";
+  const nonce = policy.match(/'nonce-([^']+)'/)?.[1];
+  assert.ok(nonce);
+  assert.match(policy, /script-src[^;]*'strict-dynamic'/);
+  assert.doesNotMatch(policy, /script-src[^;]*'unsafe-inline'/);
+  const scriptTags = html.match(/<script\b[^>]*>/gi) ?? [];
+  assert.ok(scriptTags.length > 0);
+  for (const tag of scriptTags) assert.match(tag, new RegExp(`\\bnonce=["']${nonce}["']`));
 });
 
 test("falls back to same-origin images when local optimization bindings are unavailable", async () => {
@@ -224,6 +359,25 @@ test("covers the canonical visitor route contract", async () => {
     const html = await response.text();
     assert.match(html, new RegExp(heading), path);
     assert.match(html, /<link[^>]+rel="canonical"/i, path);
+  }
+});
+
+test("discloses the public consultation security data flow and cleanup boundary", async () => {
+  const worker = await createWorker();
+  const response = await render(worker, "/privacy");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  for (const text of [
+    "2026-07-18",
+    "Turnstile 单次令牌",
+    "访客网络地址",
+    "Cloudflare Siteverify",
+    "不作为本站回访线索字段保存",
+    "约 10 分钟",
+    "下一次每日维护",
+    "任务恢复后补清理",
+  ]) {
+    assert.match(html, new RegExp(text), text);
   }
 });
 
@@ -329,6 +483,12 @@ test("publishes private-preview product topics and stage-labelled project pages"
   const caseDetail = await render(worker, "/cases/jw-marriott-shenzhen-huafa-snow-world");
   const caseHtml = await caseDetail.text();
   for (const marker of ["方案范围", "产品方向清单", "完工资料状态", "最终产品型号清单：待项目组确认"]) assert.match(caseHtml, new RegExp(marker));
+  assert.match(caseHtml, /项目事实证据刻度/);
+  assert.match(caseHtml, /data-case-mode="spatial"/);
+  assert.match(caseHtml, /data-light-field="case"/);
+
+  const casesPage = await render(worker, "/cases");
+  assert.match(await casesPage.text(), /项目证据档案/);
 
   const sitemap = await render(worker, "/sitemap.xml", "application/xml");
   const xml = await sitemap.text();
@@ -355,6 +515,8 @@ test("renders source-labelled evidence galleries for all six project pages", asy
     assert.match(html, new RegExp(`企业知识库文章[\\s\\S]{0,40}${sourceId}`), slug);
     assert.match(html, /不作为[^<]{0,40}(?:夜景)?完工证明/, slug);
     assert.match(html, new RegExp(imageAlt), slug);
+    assert.match(html, /项目事实证据刻度/, slug);
+    assert.match(html, /data-light-field="case"/, slug);
   }
 
   const retiredConferenceCase = await render(worker, "/cases/china-smart-road-lighting-conference-2026");
@@ -394,6 +556,8 @@ test("renders conservative source evidence for the four audited project pages", 
     assert.match(html, /<picture[^>]+data-media-id="media-[a-f0-9]+"/i, path);
     assert.doesNotMatch(html, /juhao-oss|\.aliyuncs\.com/i, path);
     assert.doesNotMatch(html, /按空间拆解方案方向/, path);
+    assert.match(html, /data-case-mode="archive"/, path);
+    assert.match(html, /档案证据扫描/, path);
   }
 
   const yangzhou = await render(worker, "/cases/yangzhou-riverfront-lighting");
@@ -426,7 +590,8 @@ test("deepens three flagship topics without inventing missing product facts", as
       assert.match(html, /SOURCE FIELD COMPARISON/);
       assert.doesNotMatch(html, /VERIFIED COMPARISON/);
     }
-    assert.match(html, /语义化资料图片/);
+    if (path !== "/products/smart-home-devices") assert.match(html, /语义化资料图片/);
+    else assert.doesNotMatch(html, /语义化资料图片/);
     assert.match(html, /先按空间任务选/);
     assert.match(html, /关联应用与项目资料/);
     assert.doesNotMatch(html, /用知识内容理解选型|知识资料：/);
@@ -526,8 +691,31 @@ test("renders all private-preview product detail pages without Product schema", 
     assert.doesNotMatch(html, /"@type":"Product"/);
     assert.match(html, /source=product-detail/);
     assert.match(html, new RegExp(`sourceDetail=${product.source_id}`));
+    assert.match(html, /产品选型证据刻度/);
+    if (product.topic_slug === "spotlights") {
+      assert.match(html, /OPTICAL SPECIMEN \/ SOURCE IMAGE/);
+      assert.match(html, /视觉光场演示 · 不代表配光、照度或色温数据/);
+      assert.match(html, /data-light-field="product"/);
+    } else {
+      assert.doesNotMatch(html, /data-light-field="product"/);
+    }
     assert.doesNotMatch(html, /undefined-/i);
   }
+});
+
+test("separates embedded source models from their visual product descriptions", async () => {
+  const worker = await createWorker();
+  const overview = await render(worker, "/products");
+  const overviewHtml = (await overview.text()).replaceAll("<!-- -->", "");
+  assert.equal(overview.status, 200);
+  assert.match(overviewHtml, /120112-1000\*300L/);
+  assert.match(overviewHtml, /屿光 简约现代铝材亚克力吊灯/);
+
+  const detail = await render(worker, "/products/ceiling-lights/12380");
+  const detailHtml = (await detail.text()).replaceAll("<!-- -->", "");
+  assert.equal(detail.status, 200);
+  assert.match(detailHtml, /120112-500\+600\+800\+500\+600\+800/);
+  assert.match(detailHtml, /屿光 简约现代铝材亚克力吊灯/);
 });
 
 test("keeps visible Chinese breadcrumbs while private preview omits breadcrumb schema", async () => {
@@ -586,24 +774,50 @@ test("search covers ledger-searchable routes without inheriting sitemap state", 
 test("server-renders source-labelled resources and tracked consultation on solution pages", async () => {
   const worker = await createWorker();
   const routes = [
-    ["/solutions/residential", ["/products/ceiling-lights", "/products/ceiling-lights/12217", "/cases/jw-marriott-shenzhen-huafa-snow-world"]],
-    ["/solutions/hospitality", ["/products/spotlights", "/products/spotlights/12287", "/cases/jw-marriott-shenzhen-huafa-snow-world"]],
-    ["/solutions/commercial", ["/products/spotlights", "/products/spotlights/12286", "/cases/pullman-shangrao-guangfeng"]],
-    ["/solutions/public", ["/products/outdoor-lighting", "/products/outdoor-lighting/11001", "/cases/yangzhou-riverfront-lighting"]],
-    ["/solutions/industrial", ["/products/project-custom", "/products/project-custom/12265", "/cases/yangzhou-riverfront-lighting"]],
+    ["/solutions/residential", ["/products/ceiling-lights", "/products/ceiling-lights/12217"], ["产品专题", "产品资料"]],
+    ["/solutions/hospitality", ["/products/spotlights", "/products/spotlights/12287", "/cases/jw-marriott-shenzhen-huafa-snow-world"], ["产品专题", "产品资料", "项目资料"]],
+    ["/solutions/commercial", ["/products/spotlights", "/products/spotlights/12286", "/cases/xingtai-financial-center"], ["产品专题", "产品资料", "项目资料"]],
+    ["/solutions/public", ["/products/outdoor-lighting", "/products/outdoor-lighting/11001", "/cases/yangzhou-riverfront-lighting"], ["产品专题", "产品资料", "项目资料"]],
+    ["/solutions/industrial", ["/products/project-custom"], ["产品专题"]],
   ];
 
-  for (const [path, resourcePaths] of routes) {
+  for (const [path, resourcePaths, resourceKinds] of routes) {
     const response = await render(worker, path);
     const html = await response.text();
-    for (const kind of ["产品专题", "产品资料", "项目资料"]) {
+    for (const kind of resourceKinds) {
       assert.match(html, new RegExp(`data-resource-kind="${kind}"`), `${path}: ${kind}`);
     }
     for (const resourcePath of resourcePaths) assert.match(html, new RegExp(`href="${resourcePath}"`), `${path}: ${resourcePath}`);
     for (const removedRoute of REMOVED_PROFESSIONAL_ARTICLE_ROUTES) assert.doesNotMatch(html, new RegExp(removedRoute), `${path}: ${removedRoute}`);
     assert.match(html, /咨询本场景方案/, path);
+    assert.match(html, /场景决策证据刻度/, path);
+    assert.match(html, /空间光感演示台/, path);
+    assert.match(html, /仅用于空间光感演示/, path);
+    assert.match(html, /不代表照度、色温、配光或工程计算结果/, path);
+    assert.match(html, /data-light-field="space"/, path);
     assert.match(html, new RegExp(`source=solutions(?:&amp;|&)scene=project(?:&amp;|&)intent=project-brief(?:&amp;|&)sourceDetail=${path.split("/").at(-1)}`), path);
     assert.doesNotMatch(html, /线性照明组合|重点照明组合|高空间照明组合|产品数据通过可替换的数据层加载/, path);
+    if (path === "/solutions/residential" || path === "/solutions/industrial") {
+      assert.match(html, /匹配项目资料待补/, path);
+      assert.doesNotMatch(html, /data-resource-kind="项目资料"/, path);
+    }
+  }
+});
+
+test("renders CSS-first source trails on news and knowledge records without light-field canvas", async () => {
+  const worker = await createWorker();
+  const routes = [
+    ["/news/guangzhou-international-lighting-exhibition-2026", "资讯来源证据刻度", "news-record"],
+    ["/knowledge/232", "资料来源证据刻度", "knowledge-record"],
+  ];
+
+  for (const [path, marker, pageKind] of routes) {
+    const response = await render(worker, path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.match(html, new RegExp(marker), path);
+    assert.match(html, new RegExp(`data-lightfield-page="${pageKind}"`), path);
+    assert.doesNotMatch(html, /data-light-field=/, path);
   }
 });
 
@@ -668,6 +882,7 @@ test("server-presets and records consultation context", async () => {
   assert.match(html, /<input(?=[^>]*name="intent")(?=[^>]*value="space-advice")[^>]*>/i);
   assert.match(html, /<input(?=[^>]*name="direction")(?=[^>]*value="home")(?=[^>]*checked)[^>]*>/i);
   assert.match(html, /80㎡三居，准备改造客餐厅照明/);
+  assert.match(html, /光的任务书/);
 });
 
 test("renders search entry points in desktop and mobile navigation", async () => {
@@ -899,6 +1114,33 @@ test("redirects legacy NVC route families to JUHAO canonicals", async () => {
   }
 });
 
+test("redirects the three misclassified spotlight product routes", async () => {
+  const worker = await createWorker();
+  for (const sourceId of ["12265", "12266", "12267"]) {
+    const response = await render(worker, `/products/project-custom/${sourceId}`);
+    assert.equal(response.status, 308, sourceId);
+    assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, `/products/spotlights/${sourceId}`);
+  }
+});
+
+test("keeps the private catalog lab on localhost and denies public hosts", async () => {
+  const worker = await createWorker();
+  const local = await render(worker, "/catalog-lab");
+  assert.equal(local.status, 200);
+  assert.match(await local.text(), /noindex/i);
+
+  for (const path of ["/catalog-lab", "/catalog-lab/review"]) {
+    const remote = await renderSecure(worker, path);
+    assert.equal(remote.status, 404, path);
+    assert.match(
+      remote.headers.get("x-robots-tag") || "",
+      /noindex,\s*nofollow,\s*noarchive/i,
+      path,
+    );
+    assert.equal(remote.headers.get("cache-control"), "no-store", path);
+  }
+});
+
 test("returns 410 for confirmed spam URLs", async () => {
   const worker = await createWorker();
   for (const path of ["/static/news/9062.html", "/static/news/1689.html", "/static/news/1022.html", "/static/news/3649.html", "/static/news/5795.html", "/static/news/8058.html"]) {
@@ -938,6 +1180,25 @@ test("keeps consultation source and source detail separate", async () => {
   assert.match(html, /<input(?=[^>]*name="sourceDetail")(?=[^>]*value="12345")[^>]*>/i);
   assert.match(html, /<input(?=[^>]*name="scene")(?=[^>]*value="project")[^>]*>/i);
   assert.match(html, /<input(?=[^>]*name="intent")(?=[^>]*value="project-brief")[^>]*>/i);
+
+  const comparisonDetail = "compare-family-77b9971e550c-family-5c97ea3f5b5b";
+  const comparisonResponse = await render(
+    worker,
+    `/contact?source=products&sourceDetail=${comparisonDetail}&scene=project&intent=project-brief`,
+  );
+  assert.equal(comparisonResponse.status, 200);
+  const comparisonHtml = await comparisonResponse.text();
+  assert.match(
+    comparisonHtml,
+    /<input(?=[^>]*name="source")(?=[^>]*value="products")[^>]*>/i,
+  );
+  assert.match(
+    comparisonHtml,
+    new RegExp(
+      `<input(?=[^>]*name="sourceDetail")(?=[^>]*value="${comparisonDetail}")[^>]*>`,
+      "i",
+    ),
+  );
 });
 
 test("stores same-origin contact leads with validation and idempotency", async () => {
@@ -945,8 +1206,8 @@ test("stores same-origin contact leads with validation and idempotency", async (
   const database = new FakeD1();
   const payload = {
     direction: "project",
-    source: "product-detail",
-    sourceDetail: "12345",
+    source: "products",
+    sourceDetail: "compare-family-77b9971e550c-family-5c97ea3f5b5b",
     scene: "project",
     intent: "project-brief",
     project: "1200㎡商业空间，处于方案设计阶段",
@@ -956,7 +1217,7 @@ test("stores same-origin contact leads with validation and idempotency", async (
     contactChannel: "email",
     contactValue: "user@example.com",
     consent: true,
-    privacyVersion: "2026-07-13",
+    privacyVersion: "2026-07-18",
     clientRequestId: "550e8400-e29b-41d4-a716-446655440000",
   };
 
@@ -967,9 +1228,12 @@ test("stores same-origin contact leads with validation and idempotency", async (
   assert.equal(receipt.status, "received");
   assert.equal(database.rows.size, 1);
   const stored = database.rows.get(payload.clientRequestId);
-  assert.equal(stored.source, "product-detail");
-  assert.equal(stored.source_detail, "12345");
-  assert.equal(stored.privacy_version, "2026-07-13");
+  assert.equal(stored.source, "products");
+  assert.equal(
+    stored.source_detail,
+    "compare-family-77b9971e550c-family-5c97ea3f5b5b",
+  );
+  assert.equal(stored.privacy_version, "2026-07-18");
   assert.equal(stored.notification_status, "not_configured");
 
   const repeated = await postContact(worker, database, payload);
@@ -1021,7 +1285,7 @@ test("notifies the configured internal webhook after storing the lead", async ()
       contactChannel: "phone",
       contactValue: "138 0000 0000",
       consent: true,
-      privacyVersion: "2026-07-13",
+      privacyVersion: "2026-07-18",
       clientRequestId: "550e8400-e29b-41d4-a716-446655440004",
     }, "http://localhost", {
       JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
@@ -1057,7 +1321,7 @@ test("requires webhook HMAC configuration and gates only explicitly public intak
     contactChannel: "email",
     contactValue: "zhou@example.com",
     consent: true,
-    privacyVersion: "2026-07-13",
+    privacyVersion: "2026-07-18",
     clientRequestId: "550e8400-e29b-41d4-a716-446655440006",
   };
 
@@ -1074,13 +1338,13 @@ test("requires webhook HMAC configuration and gates only explicitly public intak
   });
   assert.equal(missingPublicConfiguration.status, 503);
 
-  const missingTurnstile = await postContact(worker, publicDatabase, { ...payload, clientRequestId: "550e8400-e29b-41d4-a716-446655440008" }, "http://localhost", {
-    PUBLIC_INTAKE_READY: "true",
-    TURNSTILE_SECRET_KEY: "turnstile-secret",
-    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
-    JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
-    JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
-  });
+  const missingTurnstile = await postContact(
+    worker,
+    publicDatabase,
+    { ...payload, clientRequestId: "550e8400-e29b-41d4-a716-446655440008" },
+    "http://localhost",
+    PUBLIC_CONTACT_RUNTIME,
+  );
   assert.equal(missingTurnstile.status, 403);
   assert.equal(publicDatabase.rows.size, 0);
 });
@@ -1088,34 +1352,15 @@ test("requires webhook HMAC configuration and gates only explicitly public intak
 test("verifies Turnstile only after the public intake gate is enabled", async () => {
   const worker = await createWorker();
   const database = new FakeD1();
-  const runtime = {
-    PUBLIC_INTAKE_READY: "true",
-    TURNSTILE_SECRET_KEY: "turnstile-secret",
-    JUHAO_LEAD_WEBHOOK_URL: "https://hooks.juhao.test/leads",
-    JUHAO_LEAD_WEBHOOK_SECRET: "webhook-secret",
-    JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret",
-  };
-  const payload = {
-    direction: "home",
-    source: "home-hero",
-    scene: "home-health",
-    intent: "space-advice",
-    project: "三居室家庭照明规划",
-    stage: "planning",
-    need: "希望改善客餐厅不同活动下的照明层次",
-    contactName: "林女士",
-    contactChannel: "email",
-    contactValue: "lin@example.com",
-    consent: true,
-    privacyVersion: "2026-07-13",
-    clientRequestId: "550e8400-e29b-41d4-a716-446655440010",
-    turnstileToken: "token-one",
-  };
+  const runtime = PUBLIC_CONTACT_RUNTIME;
+  const payload = publicContactPayload("550e8400-e29b-41d4-a716-446655440010", "token-one");
   const originalFetch = globalThis.fetch;
   const calls = [];
   globalThis.fetch = async (input) => {
     calls.push(input.toString());
-    if (input.toString().includes("/turnstile/v0/siteverify")) return Response.json({ success: true });
+    if (input.toString().includes("/turnstile/v0/siteverify")) {
+      return Response.json({ success: true, action: "juhao-contact", hostname: "localhost" });
+    }
     return new Response(null, { status: 204 });
   };
 
@@ -1129,6 +1374,153 @@ test("verifies Turnstile only after the public intake gate is enabled", async ()
     const repeated = await postContact(worker, database, { ...payload, turnstileToken: "token-two" }, "http://localhost", runtime);
     assert.equal(repeated.status, 200);
     assert.equal(database.rows.size, 1);
+
+    for (let attempt = 3; attempt <= 8; attempt += 1) {
+      const withinLimit = await postContact(worker, database, { ...payload, turnstileToken: `token-${attempt}` }, "http://localhost", runtime);
+      assert.equal(withinLimit.status, 200);
+    }
+    const limited = await postContact(worker, database, { ...payload, turnstileToken: "token-nine" }, "http://localhost", runtime);
+    assert.equal(limited.status, 429);
+    assert.match(limited.headers.get("retry-after") ?? "", /^\d+$/);
+    assert.equal((await limited.json()).error, "提交过于频繁，请稍后再试");
+
+    const firstRateLimitKey = [...database.rateLimits.keys()][0];
+    assert.match(firstRateLimitKey, /^[0-9a-f]{64}$/);
+    assert.doesNotMatch(firstRateLimitKey, /203\.0\.113\.10/);
+    const otherAddress = await postContact(
+      worker,
+      database,
+      { ...payload, turnstileToken: "token-other-address" },
+      "http://localhost",
+      runtime,
+      { "CF-Connecting-IP": "198.51.100.24" },
+    );
+    assert.equal(otherAddress.status, 200);
+    assert.equal(database.rateLimits.size, 2);
+
+    database.rateLimits.get(firstRateLimitKey).expiresAt = "2000-01-01T00:00:00.000Z";
+    const resetWindow = await postContact(
+      worker,
+      database,
+      { ...payload, turnstileToken: "token-reset-window" },
+      "http://localhost",
+      runtime,
+    );
+    assert.equal(resetWindow.status, 200);
+    assert.equal(database.rateLimits.get(firstRateLimitKey).requestCount, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("fails closed for missing client IP and distinguishes invalid from unavailable Turnstile", async () => {
+  const worker = await createWorker();
+  const database = new FakeD1();
+  const originalFetch = globalThis.fetch;
+  let verificationCalls = 0;
+
+  async function attempt(id, verification, runtime = PUBLIC_CONTACT_RUNTIME, requestHeaders = {}) {
+    globalThis.fetch = async (input) => {
+      if (!input.toString().includes("/turnstile/v0/siteverify")) return new Response(null, { status: 204 });
+      verificationCalls += 1;
+      if (verification instanceof Error) throw verification;
+      return verification instanceof Response ? verification : Response.json(verification);
+    };
+    return postContact(
+      worker,
+      database,
+      publicContactPayload(id),
+      "http://localhost",
+      runtime,
+      requestHeaders,
+    );
+  }
+
+  try {
+    const missingAddress = await attempt(
+      "550e8400-e29b-41d4-a716-446655440020",
+      { success: true, action: "juhao-contact", hostname: "localhost" },
+      PUBLIC_CONTACT_RUNTIME,
+      { "CF-Connecting-IP": "" },
+    );
+    assert.equal(missingAddress.status, 503);
+    assert.equal(verificationCalls, 0);
+
+    const invalidAddress = await attempt(
+      "550e8400-e29b-41d4-a716-446655440021",
+      { success: true, action: "juhao-contact", hostname: "localhost" },
+      PUBLIC_CONTACT_RUNTIME,
+      { "CF-Connecting-IP": "not-an-ip" },
+    );
+    assert.equal(invalidAddress.status, 503);
+    assert.equal(verificationCalls, 0);
+
+    const invalidToken = await attempt(
+      "550e8400-e29b-41d4-a716-446655440022",
+      { success: false, "error-codes": ["invalid-input-response"] },
+    );
+    assert.equal(invalidToken.status, 403);
+
+    const wrongAction = await attempt(
+      "550e8400-e29b-41d4-a716-446655440023",
+      { success: true, action: "another-form", hostname: "localhost" },
+    );
+    assert.equal(wrongAction.status, 403);
+
+    const wrongHostname = await attempt(
+      "550e8400-e29b-41d4-a716-446655440024",
+      { success: true, action: "juhao-contact", hostname: "example.com" },
+      { ...PUBLIC_CONTACT_RUNTIME, TURNSTILE_ALLOWED_HOSTNAMES: "localhost,example.com" },
+    );
+    assert.equal(wrongHostname.status, 403);
+
+    const internalError = await attempt(
+      "550e8400-e29b-41d4-a716-446655440025",
+      { success: false, "error-codes": ["internal-error"] },
+    );
+    assert.equal(internalError.status, 503);
+
+    const upstreamFailure = await attempt(
+      "550e8400-e29b-41d4-a716-446655440026",
+      new Response(null, { status: 503 }),
+    );
+    assert.equal(upstreamFailure.status, 503);
+
+    const upstreamRateLimit = await attempt(
+      "550e8400-e29b-41d4-a716-446655440029",
+      new Response(null, { status: 429 }),
+    );
+    assert.equal(upstreamRateLimit.status, 503);
+
+    const networkFailure = await attempt(
+      "550e8400-e29b-41d4-a716-446655440027",
+      new Error("network unavailable"),
+    );
+    assert.equal(networkFailure.status, 503);
+
+    const malformedHostnameConfiguration = await attempt(
+      "550e8400-e29b-41d4-a716-446655440028",
+      { success: true, action: "juhao-contact", hostname: "localhost" },
+      { ...PUBLIC_CONTACT_RUNTIME, TURNSTILE_ALLOWED_HOSTNAMES: "https://localhost" },
+    );
+    assert.equal(malformedHostnameConfiguration.status, 503);
+
+    const verificationCallsBeforeConfigurationGates = verificationCalls;
+    const shortRateLimitSecret = await attempt(
+      "550e8400-e29b-41d4-a716-446655440030",
+      { success: true, action: "juhao-contact", hostname: "localhost" },
+      { ...PUBLIC_CONTACT_RUNTIME, JUHAO_LEAD_RATE_LIMIT_SECRET: "too-short" },
+    );
+    assert.equal(shortRateLimitSecret.status, 503);
+    const unverifiedEdgeRateLimit = await attempt(
+      "550e8400-e29b-41d4-a716-446655440031",
+      { success: true, action: "juhao-contact", hostname: "localhost" },
+      { ...PUBLIC_CONTACT_RUNTIME, CONTACT_EDGE_RATE_LIMIT_VERIFIED: "false" },
+    );
+    assert.equal(unverifiedEdgeRateLimit.status, 503);
+    assert.equal(verificationCalls, verificationCallsBeforeConfigurationGates);
+    assert.equal(database.rateLimits.size, 0);
+    assert.equal(database.rows.size, 0);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -1158,7 +1550,7 @@ test("retries failed notifications, reaches dead letter, and purges without new 
       contactChannel: "phone",
       contactValue: "138 0000 0000",
       consent: true,
-      privacyVersion: "2026-07-13",
+      privacyVersion: "2026-07-18",
       clientRequestId: "550e8400-e29b-41d4-a716-446655440009",
     }, "http://localhost", runtime);
     assert.equal(created.status, 201);
@@ -1171,7 +1563,7 @@ test("retries failed notifications, reaches dead letter, and purges without new 
     globalThis.fetch = async () => new Response(null, { status: 204 });
     const retried = await runContactMaintenance(worker, database, runtime);
     assert.equal(retried.status, 200);
-    assert.deepEqual(await retried.json(), { purged: 0, attempted: 1, sent: 1, retry: 0, deadLetter: 0, notification: "processed" });
+    assert.deepEqual(await retried.json(), { purged: 0, rateLimitsPurged: 0, attempted: 1, sent: 1, retry: 0, deadLetter: 0, notification: "processed" });
     assert.equal(stored.notification_status, "sent");
     assert.equal(stored.notification_attempts, 2);
 
@@ -1189,7 +1581,9 @@ test("retries failed notifications, reaches dead letter, and purges without new 
     stored.expires_at = "2000-01-01T00:00:00.000Z";
     const purged = await runContactMaintenance(worker, database, { JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret" });
     assert.equal(purged.status, 200);
-    assert.equal((await purged.json()).purged, 1);
+    const purgedResult = await purged.json();
+    assert.equal(purgedResult.purged, 1);
+    assert.equal(purgedResult.rateLimitsPurged, 0);
     assert.equal(database.rows.size, 0);
 
     const unauthorized = await runContactMaintenance(worker, database, { JUHAO_LEAD_MAINTENANCE_SECRET: "maintenance-secret" }, "wrong-secret");
@@ -1214,7 +1608,7 @@ test("verifies a stored lead before rendering the noindex contact success receip
     contactChannel: "phone",
     contactValue: "138 0000 0000",
     consent: true,
-    privacyVersion: "2026-07-13",
+    privacyVersion: "2026-07-18",
     clientRequestId: "550e8400-e29b-41d4-a716-446655440005",
   });
   const receipt = await created.json();
@@ -1234,7 +1628,7 @@ test("verifies a stored lead before rendering the noindex contact success receip
 
 test("keeps unverified direct channels unavailable and exposes callback fields after preparation", () => {
   const source = readFileSync(new URL("../features/platform/ContactPage.tsx", import.meta.url), "utf8");
-  for (const marker of ["电话、邮件和企业微信入口尚未完成企业核验", "当前不可用", "待企业核验", "提交回访", "contactChannel", "contactValue", "privacyVersion", "clientRequestId", "website"]) {
+  for (const marker of ["电话、邮件和企业微信入口尚未完成企业核验", "当前不可用", "待企业核验", "提交回访", "contactChannel", "contactValue", "privacyVersion", "clientRequestId", "turnstileToken", "TurnstileWidget", "website"]) {
     assert.match(source, new RegExp(marker), marker);
   }
   assert.doesNotMatch(source, /一键拨打|新建邮件|400-0760-888|service@juhao\.com/);

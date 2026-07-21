@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-09c6ca467068",
+    "canonical_slug": "11290",
+    "canonical_source_key": "mall_sql:11290",
+    "canonical_source_id": "11290",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-8L8681-500*500现代简约全光谱客厅餐厅卧室书房铁艺亚克力吸顶灯",
+    "category": "吸顶灯",
+    "source_categories": [
+      "吸顶灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-09c6ca467068",
+    "model_label": "JH-8L8681-500*500",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11290",
+      "display_id": "11290",
+      "title": "JH-8L8681-500*500现代简约全光谱客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11290",
+        "source_id": "11290",
+        "display_id": "11290",
+        "model_label": "JH-8L8681-500*500",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "500*500*90"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "全光谱双色光源"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "亚克力",
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-15㎡"
+      ],
+      "dimensions": [
+        "500*500*90"
+      ],
+      "light_sources": [
+        "全光谱双色光源"
+      ],
+      "materials": [
+        "亚克力",
+        "铝材",
+        "铁艺"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "儿童房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "吸顶灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11290",
+      "source_path": "商城系统/商品说明/JH-8L8681-500500现代简约全光谱客厅餐厅卧室书房铁艺亚克力吸顶灯_11290.md",
+      "source_sha256": "61e2505c7cd587e8ce424edd365bff2b78c8e4d32ad07ea05d2ca7dd62ca48aa"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "亚克力,铝材,铁艺",
+      "光源类型": "全光谱双色光源",
+      "尺寸": "500*500*90",
+      "面积": "10㎡-15㎡",
+      "空间": "客厅,餐厅,卧室,书房,儿童房",
+      "类型": "吸顶灯",
+      "风格": "简约现代",
+      "光源数量": "变光168W"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 27,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-e3e9af30ab4b",
+      "source_key": "mall_sql:11290",
+      "display_id": "11290",
+      "label": "JH-8L8681-500*500现代简约全光谱客厅餐厅卧室书房铁艺亚克力吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "500*500*90",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

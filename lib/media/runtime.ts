@@ -21,12 +21,8 @@ export type RuntimeMedia = {
 const runtimeMedia = rawRuntimeMedia as RuntimeMedia[];
 const runtimeMediaById = new Map(runtimeMedia.map((media) => [media.media_id, media]));
 
-export function getRuntimeMedia(mediaId: string) {
-  return runtimeMediaById.get(mediaId);
-}
-
 export function requireRuntimeMedia(mediaId: string) {
-  const media = getRuntimeMedia(mediaId);
+  const media = runtimeMediaById.get(mediaId);
   if (!media) throw new Error(`Published media is not available locally: ${mediaId}`);
   return media;
 }
@@ -38,5 +34,3 @@ export function runtimeSrcSet(media: RuntimeMedia, format: RuntimeMediaFormat) {
     .map((variant) => `${variant.path} ${variant.width}w`)
     .join(", ");
 }
-
-export const runtimeMediaCount = runtimeMedia.length;

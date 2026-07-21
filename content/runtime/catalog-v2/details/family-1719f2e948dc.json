@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-1719f2e948dc",
+    "canonical_slug": "11531",
+    "canonical_source_key": "mall_sql:11531",
+    "canonical_source_id": "11531",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-YLD-02 景观中华灯",
+    "category": "户外景观",
+    "source_categories": [
+      "户外景观"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-1719f2e948dc",
+    "model_label": "JH-YLD-02",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11531",
+      "display_id": "11531",
+      "title": "JH-YLD-02 景观中华灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11531",
+        "source_id": "11531",
+        "display_id": "11531",
+        "model_label": "JH-YLD-02",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {
+      "types": [
+        "路灯"
+      ]
+    },
+    "quality_flags": []
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11531",
+      "source_path": "商城系统/商品说明/JH-YLD-02 景观中华灯_11531.md",
+      "source_sha256": "f03e6901a54a428d05437a4d080d8dc643c7582d900cd824dfba77c012a1d538"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "类型": "路灯"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 9,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 10,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-3aade0ba9a78",
+      "source_key": "mall_sql:11531",
+      "display_id": "11531",
+      "label": "JH-YLD-02 景观中华灯",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": []
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

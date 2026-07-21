@@ -16,35 +16,35 @@ const solutionScenes = [
     label: "全屋照明",
     english: "Residential",
     description: "从家庭成员、生活节奏与空间关系出发，组织舒适而清晰的光。",
-    image: "/images/juhao-home.webp",
+    image: "/images/jh48-solution-card-residential.webp",
   },
   {
     href: "/solutions/hospitality",
     label: "酒店照明",
     english: "Hospitality",
     description: "串联抵达、停留与休息，让旅居体验自然过渡。",
-    image: "/images/juhao-hero.webp",
+    image: "/images/jh48-solution-card-hospitality.webp",
   },
   {
     href: "/solutions/commercial",
     label: "商业照明",
     english: "Commercial",
     description: "兼顾空间识别、商品呈现与持续运营，让光参与品牌表达。",
-    image: "/images/juhao-commercial.webp",
+    image: "/images/jh48-solution-card-commercial.webp",
   },
   {
     href: "/solutions/public",
     label: "公共照明",
     english: "Public",
     description: "围绕安全、导向、长期运行与维护条件建立方案。",
-    image: "/images/juhao-public.webp",
+    image: "/images/jh48-solution-card-public.webp",
   },
   {
     href: "/solutions/industrial",
     label: "工业照明",
     english: "Industrial",
     description: "从作业任务、空间条件与维护效率出发规划可见度。",
-    image: "/images/juhao-industrial.webp",
+    image: "/images/jh48-solution-card-industrial.webp",
   },
 ] as const;
 
@@ -93,7 +93,6 @@ function RelatedLinks({
   return (
     <section className={styles.related} aria-labelledby={titleId}>
       <header data-reveal>
-        <p className={styles.kicker}>CONTINUE EXPLORING</p>
         <h2 id={titleId}>{title}</h2>
       </header>
       <div className={styles.relatedGrid}>
@@ -104,7 +103,6 @@ function RelatedLinks({
             data-reveal
             data-reveal-delay={String(index * 0.06)}
           >
-            <small>{String(index + 1).padStart(2, "0")}</small>
             <strong>{item.label}</strong>
             <p>{item.text}</p>
             <span aria-hidden="true">↗</span>
@@ -117,20 +115,20 @@ function RelatedLinks({
 
 export function SolutionsOverviewPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={styles.page}>
-      <section className={styles.overviewHero} aria-labelledby="solutions-overview-title">
+    <main id="main-content" className={styles.page} tabIndex={-1}>
+      <section className={styles.overviewHero} data-header-tone="dark" data-page-hero="split" aria-labelledby="solutions-overview-title">
         <div className={styles.overviewHeroCopy} data-reveal>
           <Breadcrumbs current={page.label} />
-          <p className={styles.kicker}>{page.eyebrow}</p>
-          <h1 id="solutions-overview-title">{page.title}</h1>
-          <p className={styles.heroIntro}>{page.intro}</p>
+          <p className={styles.kicker} data-page-role="eyebrow">{page.eyebrow}</p>
+          <h1 id="solutions-overview-title" data-page-role="display">{page.title}</h1>
+          <p className={styles.heroIntro} data-page-role="lead">{page.intro}</p>
           <Link className={styles.heroLink} href="#solution-scenes">
             浏览空间场景 <span aria-hidden="true">↓</span>
           </Link>
         </div>
         <figure className={styles.overviewHeroVisual} data-reveal="fade">
           <Image
-            src="/images/juhao-commercial.webp"
+            src="/images/jh-solutions.webp"
             alt="钜豪商业空间照明氛围"
             fill
             priority
@@ -144,10 +142,9 @@ export function SolutionsOverviewPage({ page }: PageProps) {
         </figure>
       </section>
 
-      <section className={styles.sceneSection} id="solution-scenes" aria-labelledby="solution-scenes-title">
+      <section className={styles.sceneSection} id="solution-scenes" data-header-tone="dark" aria-labelledby="solution-scenes-title">
         <header className={styles.sectionHeading} data-reveal>
           <div>
-            <p className={styles.kicker}>FIVE SPATIAL SCENES</p>
             <h2 id="solution-scenes-title">按真实场景进入方案</h2>
           </div>
           <p>{page.description}</p>
@@ -166,7 +163,7 @@ export function SolutionsOverviewPage({ page }: PageProps) {
               </div>
               <div className={styles.sceneShade} aria-hidden="true" />
               <div className={styles.sceneMeta}>
-                <small>{String(index + 1).padStart(2, "0")} / {scene.english}</small>
+                <small>{scene.english}</small>
                 <h3>{scene.label}</h3>
                 <p>{scene.description}</p>
                 <span aria-hidden="true">↗</span>
@@ -176,9 +173,9 @@ export function SolutionsOverviewPage({ page }: PageProps) {
         </nav>
       </section>
 
-      <section className={styles.methodSection} aria-labelledby="solution-method-title">
+      <section className={styles.methodSection} data-header-tone="light" aria-labelledby="solution-method-title">
         <header data-reveal>
-          <p className={styles.kicker}>HOW WE SHAPE LIGHT</p>
+          <p className={styles.kicker}>方案方法</p>
           <h2 id="solution-method-title">一套从使用出发的方案方法</h2>
           <p>{page.sections[0]?.text ?? page.description}</p>
         </header>
@@ -196,9 +193,8 @@ export function SolutionsOverviewPage({ page }: PageProps) {
         </ol>
       </section>
 
-      <section className={styles.solutionCallout} aria-labelledby="solution-callout-title">
+      <section className={styles.solutionCallout} data-header-tone="dark" aria-labelledby="solution-callout-title">
         <div data-reveal>
-          <p className={styles.kicker}>A CLEAR START</p>
           <h2 id="solution-callout-title">先把需求说清楚，<br />再让光给出答案。</h2>
         </div>
         <div data-reveal data-reveal-delay="0.08">
@@ -214,11 +210,11 @@ export function SolutionsOverviewPage({ page }: PageProps) {
 
 export function HealthyLightPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={`${styles.page} ${styles.healthyPage}`}>
+    <main id="main-content" className={`${styles.page} ${styles.healthyPage}`} tabIndex={-1}>
       <section className={styles.healthyHero} aria-labelledby="healthy-light-title">
         <div className={styles.healthyHeroMedia} aria-hidden="true">
           <Image
-            src="/images/juhao-home.webp"
+            src="/images/jh48-healthy-hero.webp"
             alt=""
             fill
             priority
@@ -241,9 +237,7 @@ export function HealthyLightPage({ page }: PageProps) {
       </section>
 
       <section className={styles.humanStatement} id="healthy-start" aria-labelledby="human-statement-title">
-        <div className={styles.statementIndex} aria-hidden="true">01</div>
         <div data-reveal>
-          <p className={styles.kicker}>PEOPLE BEFORE PARAMETERS</p>
           <h2 id="human-statement-title">先理解人的活动，<br />再讨论空间里的光。</h2>
         </div>
         <div className={styles.statementCopy} data-reveal data-reveal-delay="0.08">
@@ -254,16 +248,11 @@ export function HealthyLightPage({ page }: PageProps) {
 
       <section className={styles.dimensionSection} id="healthy-dimensions" aria-labelledby="healthy-dimensions-title">
         <header data-reveal>
-          <p className={styles.kicker}>FOUR DIMENSIONS</p>
           <h2 id="healthy-dimensions-title">把抽象的“健康”，<br />还原为可讨论的感受</h2>
         </header>
         <div className={styles.dimensionGrid}>
           {page.highlights.slice(0, 4).map((item, index) => (
             <article key={item.title} data-reveal data-reveal-delay={String(index * 0.07)}>
-              <div className={styles.dimensionTopline}>
-                <small>{String(index + 1).padStart(2, "0")}</small>
-                <span aria-hidden="true" />
-              </div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -272,18 +261,13 @@ export function HealthyLightPage({ page }: PageProps) {
       </section>
 
       <section className={styles.healthyNarrative} aria-labelledby="healthy-narrative-title">
-        <figure data-reveal="fade">
-          <Image
-            src="/images/juhao-hero.webp"
-            alt="具有明暗层次的钜豪家居照明空间"
-            fill
-            unoptimized
-            sizes="(max-width: 900px) 100vw, 48vw"
-          />
+        <figure className={styles.healthyDiagram} data-reveal="fade">
+          <div><small>01 / MORNING</small><strong>清晰启动</strong><span>自然光与基础光平衡</span></div>
+          <div><small>02 / FOCUS</small><strong>专注工作</strong><span>任务面与环境亮度协调</span></div>
+          <div><small>03 / NIGHT</small><strong>柔和收束</strong><span>减少直视与过强反差</span></div>
           <figcaption>让空间在不同活动之间，保留自然的亮暗过渡。</figcaption>
         </figure>
         <div data-reveal>
-          <p className={styles.kicker}>LIGHT THROUGH THE DAY</p>
           <h2 id="healthy-narrative-title">光环境不是一个固定场景</h2>
           <p>白天与夜晚、工作与休息，对亮度层次和控制方式的需要并不相同。合理的方案应允许空间随时间和活动调整，同时保留直观的手动控制。</p>
           <ul>
@@ -298,7 +282,7 @@ export function HealthyLightPage({ page }: PageProps) {
       <section className={styles.boundarySection} id="healthy-boundary" aria-labelledby="healthy-boundary-title">
         <div className={styles.boundaryLabel} data-reveal>
           <span aria-hidden="true" />
-          INFORMATION BOUNDARY
+          资料边界
         </div>
         <div className={styles.boundaryCopy} data-reveal data-reveal-delay="0.06">
           <h2 id="healthy-boundary-title">不把未经验证的指标，写成健康承诺。</h2>

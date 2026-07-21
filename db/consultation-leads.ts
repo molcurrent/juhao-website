@@ -34,16 +34,55 @@ type StoredLead = {
   submitted_at: string;
 };
 
-export async function findConsultationLeadById(db: D1Database, id: string) {
+export async function findConsultationLeadById(db: D1Database, id: string, now: string) {
   return db.prepare(`
     SELECT id, created_at AS submitted_at
     FROM consultation_leads
-    WHERE id = ?
-  `).bind(id).first<{ id: string; submitted_at: string }>();
+    WHERE id = ? AND expires_at >= ?
+  `).bind(id, now).first<{ id: string; submitted_at: string }>();
 }
 
 export async function purgeExpiredConsultationLeads(db: D1Database, now: string) {
   const result = await db.prepare("DELETE FROM consultation_leads WHERE expires_at < ?").bind(now).run();
+  return Number(result.meta.changes ?? 0);
+}
+
+export async function consumeConsultationRateLimit(
+  db: D1Database,
+  keyHash: string,
+  now: Date,
+  maximum: number,
+  windowMilliseconds: number,
+) {
+  const windowStartedAt = now.toISOString();
+  const expiresAt = new Date(now.getTime() + windowMilliseconds).toISOString();
+  const row = await db.prepare(`
+    INSERT INTO consultation_rate_limits (key_hash, window_started_at, request_count, expires_at)
+    VALUES (?, ?, 1, ?)
+    ON CONFLICT(key_hash) DO UPDATE SET
+      window_started_at = CASE
+        WHEN consultation_rate_limits.expires_at <= excluded.window_started_at THEN excluded.window_started_at
+        ELSE consultation_rate_limits.window_started_at
+      END,
+      request_count = CASE
+        WHEN consultation_rate_limits.expires_at <= excluded.window_started_at THEN 1
+        ELSE consultation_rate_limits.request_count + 1
+      END,
+      expires_at = CASE
+        WHEN consultation_rate_limits.expires_at <= excluded.window_started_at THEN excluded.expires_at
+        ELSE consultation_rate_limits.expires_at
+      END
+    RETURNING request_count AS requestCount, expires_at AS expiresAt
+  `).bind(keyHash, windowStartedAt, expiresAt).first<{ requestCount: number; expiresAt: string }>();
+  if (!row) throw new Error("咨询频率限制写入失败");
+  return {
+    allowed: Number(row.requestCount) <= maximum,
+    retryAfterSeconds: Math.max(1, Math.ceil((Date.parse(row.expiresAt) - now.getTime()) / 1_000)),
+  };
+}
+
+export async function purgeExpiredConsultationRateLimits(db: D1Database, now: string) {
+  const result = await db.prepare("DELETE FROM consultation_rate_limits WHERE expires_at < ?").bind(now).run();
   return Number(result.meta.changes ?? 0);
 }
 

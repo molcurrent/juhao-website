@@ -77,7 +77,7 @@ test("mirrors every normalized object and verifies source and derived bytes", as
 
 test("separates batch authorization from the 178-item page display gate", async () => {
   const rows = await json(inventoryPath);
-  assert.equal(rows.length, 463);
+  assert.equal(rows.length, 531);
   assert.equal(rows.some((row) => row.source_type === "knowledge_base_professional_article_review"), false);
   const remote = rows.filter((row) => /^https?:\/\//.test(row.asset_url));
   const selectedUrls = new Set(remote.filter((row) => row.publish_allowed).map((row) => row.asset_url));
@@ -126,7 +126,7 @@ test("runtime product, case, and topic data carries media IDs without OSS or abs
   assert.equal(Object.keys(assignments.cases).length, 6);
   assert.equal(Object.keys(assignments.routes).length, 37);
   assert.equal((catalogSource.match(/media-[a-f0-9]{20}/g) ?? []).length, 46);
-  assert.equal((topicSource.match(/media-[a-f0-9]{20}/g) ?? []).length, 6);
+  assert.equal((topicSource.match(/media-[a-f0-9]{20}/g) ?? []).length, 3);
   for (const value of [JSON.stringify(products), JSON.stringify(assignments), catalogSource, topicSource]) {
     assert.doesNotMatch(value, /https?:\/\/bocang|oss-cn-shenzhen|\/Users\//);
   }
@@ -146,7 +146,7 @@ test("local brand and representative assets match the recorded provenance hashes
     [...provenance.matchAll(/\|\s*`(public\/[^`]+)`\s*\|[^|]*\|\s*`([a-f0-9]{64})`\s*\|/g)]
       .map((match) => [match[1], match[2]]),
   );
-  assert.equal(approved.size, 10);
+  assert.equal(approved.size, 78);
   for (const [localPath, expectedHash] of approved) {
     const bytes = await readFile(new URL(`../${localPath}`, import.meta.url));
     assert.equal(digest(bytes), expectedHash, localPath);

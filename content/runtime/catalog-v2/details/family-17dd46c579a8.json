@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-17dd46c579a8",
+    "canonical_slug": "5995",
+    "canonical_source_key": "mall_sql:5995",
+    "canonical_source_id": "5995",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH31L188SA-9W  射灯",
+    "category": "筒射灯",
+    "source_categories": [
+      "筒射灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-17dd46c579a8",
+    "model_label": "JH31L188SA-9W",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:5995",
+      "display_id": "5995",
+      "title": "JH31L188SA-9W  射灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:5995",
+        "source_id": "5995",
+        "display_id": "5995",
+        "model_label": "JH31L188SA-9W",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "62*82"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "COB CREE"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "5㎡-10㎡"
+      ],
+      "dimensions": [
+        "62*82"
+      ],
+      "finishes": [
+        "哑白"
+      ],
+      "light_sources": [
+        "COB CREE"
+      ],
+      "materials": [
+        "铝材"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房"
+      ],
+      "styles": [
+        "家居筒射灯"
+      ],
+      "types": [
+        "筒射灯"
+      ],
+      "voltages": [
+        "220-240V"
+      ],
+      "wattages": [
+        "5W 7W 9W"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:5995",
+      "source_path": "商城系统/商品说明/JH31L188SA-9W  射灯_5995.md",
+      "source_sha256": "3a816a039a4c4ac2663fc711bdd950d5a1d1dd29bb6ba4502b56106aa124c419"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "铝材",
+      "光源类型": "COB CREE",
+      "尺寸": "62*82",
+      "面积": "5㎡-10㎡",
+      "颜色工艺": "哑白",
+      "空间": "客厅,餐厅,卧室,书房",
+      "类型": "筒射灯",
+      "风格": "家居筒射灯",
+      "电压(V)": "220-240V",
+      "功率(W)": "5W   7W  9W",
+      "灯具是否带光源": "带光源",
+      "装箱数量": "50只/件"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 22,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-809b3ea39b63",
+      "source_key": "mall_sql:5995",
+      "display_id": "5995",
+      "label": "JH31L188SA-9W  射灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "62*82",
+          "evidence": "source_attribute:尺寸"
+        },
+        "wattage": {
+          "value": "5W   7W  9W",
+          "evidence": "source_attribute:功率(W)"
+        },
+        "finish_color": {
+          "value": "哑白",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

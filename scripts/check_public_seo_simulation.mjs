@@ -19,10 +19,12 @@ export async function main() {
   const launchGate = publicLaunchGateFailures({
     indexingEnabled,
     hostApproved: canonicalHostApproved,
+    eligibleRoutes: audit.index_eligible_routes,
   });
-  if (launchGate.length !== 1 || !launchGate[0].includes("canonical host is not approved")) {
+  if (!canonicalHostApproved && !launchGate.some((failure) => failure.includes("canonical host is not approved"))) {
     failures.push("public launch must remain blocked while CANONICAL_HOST_APPROVED=false");
   }
+  if (canonicalHostApproved) failures.push(...launchGate);
 
   const report = {
     ...audit,

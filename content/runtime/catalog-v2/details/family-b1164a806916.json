@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-b1164a806916",
+    "canonical_slug": "11989",
+    "canonical_source_key": "mall_sql:11989",
+    "canonical_source_id": "11989",
+    "topic_slug": "new-chinese",
+    "planned_canonical_route": "/products/new-chinese/11989",
+    "route_plan_state": "existing_route_preserved",
+    "route_plan_evidence": "published_products_existing_route",
+    "title": "JH-X-6L1858 吸顶灯系列",
+    "category": "吸顶灯",
+    "source_categories": [
+      "吸顶灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 6,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-b1164a806916",
+    "model_label": "JH-X-6L1858-460",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11989",
+      "display_id": "11989",
+      "title": "JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯",
+      "primary_image": "/upload/goods/2026-03/69c89bbd9c0d2.jpg"
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11984",
+        "source_id": "11984",
+        "display_id": "11984",
+        "model_label": "JH-X-6L1858-1200",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11985",
+        "source_id": "11985",
+        "display_id": "11985",
+        "model_label": "JH-X-6L1858-1000",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11986",
+        "source_id": "11986",
+        "display_id": "11986",
+        "model_label": "JH-X-6L1858-530",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11987",
+        "source_id": "11987",
+        "display_id": "11987",
+        "model_label": "JH-X-6L1858-450",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11988",
+        "source_id": "11988",
+        "display_id": "11988",
+        "model_label": "JH-X-6L1858-520",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:11989",
+        "source_id": "11989",
+        "display_id": "11989",
+        "model_label": "JH-X-6L1858-460",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "dimensions",
+        "label": "尺寸",
+        "values": [
+          "1200*800*70mm",
+          "1000*700*70mm"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED*288W",
+          "LED*240W"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "木艺"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "10㎡-25㎡"
+      ],
+      "dimensions": [
+        "1200*800*70mm",
+        "1000*700*70mm",
+        "530*530*70mm",
+        "450*450*70mm",
+        "φ520*70mm",
+        "φ460*70mm"
+      ],
+      "light_sources": [
+        "LED*288W",
+        "LED*240W",
+        "LED*90W",
+        "LED*60W",
+        "LED*72W"
+      ],
+      "materials": [
+        "木艺"
+      ],
+      "spaces": [
+        "客厅",
+        "餐厅",
+        "卧室",
+        "书房",
+        "低户型",
+        "高层/复式/别墅",
+        "玄关/过道/廊道"
+      ],
+      "styles": [
+        "传统中式"
+      ],
+      "types": [
+        "吸顶灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11984",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-1200加长方客厅餐厅书房卧室金丝檀木吸顶灯_11984.md",
+      "source_sha256": "2b44f7957882fcdf8eddb7c9fdc9361e06c9db28ffffa846abb87008892d2bad"
+    },
+    {
+      "source_key": "mall_sql:11985",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-1000长方客厅餐厅书房卧室金丝檀木吸顶灯_11985.md",
+      "source_sha256": "33552bee492af68878c3465066025c265a7e0f1cb54c9127b53253a944c698c1"
+    },
+    {
+      "source_key": "mall_sql:11986",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-530方客厅餐厅书房卧室金丝檀木吸顶灯_11986.md",
+      "source_sha256": "5f08b96176e1cc0152ed3884baa5db84a8a840c0f9ffbcc8902d8840fade6570"
+    },
+    {
+      "source_key": "mall_sql:11987",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-450方客厅餐厅书房卧室金丝檀木吸顶灯_11987.md",
+      "source_sha256": "c8606790ce6040a6f52786d72d170c82da55b3d1e972ef39f786e1fa0c50ad40"
+    },
+    {
+      "source_key": "mall_sql:11988",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-520圆客厅餐厅书房卧室金丝檀木吸顶灯_11988.md",
+      "source_sha256": "69ad6355111d7da816b9f246c868ca45d06f0495bc8846063ad8130fc255f587"
+    },
+    {
+      "source_key": "mall_sql:11989",
+      "source_path": "商城系统/商品说明/JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯_11989.md",
+      "source_sha256": "929f23fa3ea933747d54bb43d642d1676f86ed3f64ad7713fda6db395c3871e9"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "木艺",
+      "光源类型": "LED*72W",
+      "尺寸": "φ460*70mm",
+      "面积": "10㎡-25㎡",
+      "空间": "客厅,餐厅,卧室,书房,低户型,高层/复式/别墅,玄关/过道/廊道",
+      "类型": "吸顶灯",
+      "风格": "传统中式"
+    },
+    "primary_image": "/upload/goods/2026-03/69c89bbd9c0d2.jpg",
+    "detail_images": [
+      "/upload/image/2026-03/69c88e55df73d.jpg",
+      "/upload/image/2026-03/69c88e567b915.jpg",
+      "/upload/image/2026-03/69c88e57018f2.jpg",
+      "/upload/image/2026-03/69c88e57d1c8f.jpg",
+      "/upload/image/2026-03/69c88e58a05a3.jpg"
+    ],
+    "detail_image_count": 48,
+    "emitted_detail_image_count": 5,
+    "suppressed_media_path_count": 7,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-88fadac97728",
+      "source_key": "mall_sql:11984",
+      "display_id": "11984",
+      "label": "JH-X-6L1858-1200加长方客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "1200*800*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-f25dd7c64ebc",
+      "source_key": "mall_sql:11985",
+      "display_id": "11985",
+      "label": "JH-X-6L1858-1000长方客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "1000*700*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-7fae7a8e9a40",
+      "source_key": "mall_sql:11986",
+      "display_id": "11986",
+      "label": "JH-X-6L1858-530方客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "530*530*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-4f7781fccb01",
+      "source_key": "mall_sql:11987",
+      "display_id": "11987",
+      "label": "JH-X-6L1858-450方客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "450*450*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-0ef7772f2175",
+      "source_key": "mall_sql:11988",
+      "display_id": "11988",
+      "label": "JH-X-6L1858-520圆客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "φ520*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-0c2a4a5d52d7",
+      "source_key": "mall_sql:11989",
+      "display_id": "11989",
+      "label": "JH-X-6L1858-460圆客厅餐厅书房卧室金丝檀木吸顶灯",
+      "dimensions": {
+        "dimensions": {
+          "value": "φ460*70mm",
+          "evidence": "source_attribute:尺寸"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

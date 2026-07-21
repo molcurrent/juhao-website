@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type BrandMarkProps = {
   alt?: string;
   className?: string;
@@ -19,11 +17,15 @@ export function BrandMark({
   const suffix = tone === "white" ? "-white" : "";
 
   return (
-    <Image
+    // The logo is an already optimized SVG; native loading avoids shipping the image runtime.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       alt={alt}
       className={className}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
       height={horizontal ? 46 : 125}
-      priority={priority}
+      loading={priority ? "eager" : "lazy"}
       src={`/brand/juhao-logo-${variant}${suffix}.svg`}
       width={horizontal ? 444 : 260}
     />

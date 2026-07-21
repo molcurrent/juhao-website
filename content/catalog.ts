@@ -3,16 +3,16 @@ import { topicGuideBySlug } from "@/content/topic-guides";
 import { requireRuntimeMedia } from "@/lib/media/runtime";
 
 export const productTopics = [
-  { slug: "spotlights", title: "射灯与轨道照明", count: 6, scene: "重点照明", description: "面向住宅、酒店与商业空间的重点照明，以光束角、配光、防眩和安装条件为选型起点。", image: "/images/juhao-commercial.webp" },
-  { slug: "ceiling-lights", title: "家居顶灯", count: 6, scene: "家庭基础照明", description: "覆盖客餐厅、卧室与辅助空间的基础照明，关注空间尺度、显色、清洁维护与控制方式。", image: "/images/juhao-home.webp" },
-  { slug: "new-chinese", title: "新中式", count: 3, scene: "风格照明", description: "将东方尺度、材质与空间秩序融入灯饰表达，适用于住宅、会所与酒店空间。", image: "/images/juhao-hero.webp" },
-  { slug: "art-lights", title: "艺术灯", count: 3, scene: "装饰照明", description: "以造型、材质与光影关系参与空间表达，产品资料将按型号和项目适配性逐步开放。", image: "/images/juhao-hero.webp" },
-  { slug: "crystal-chandeliers", title: "水晶吊灯", count: 3, scene: "酒店与宴会", description: "面向挑高大堂、宴会厅与高端住宅，重点核对尺寸、承重、安装与维护条件。", image: "/images/juhao-commercial.webp" },
-  { slug: "linear-lighting", title: "灯带与线性照明", count: 3, scene: "轮廓与氛围", description: "用于空间轮廓、间接照明与连续引导，选型同时考虑光效、色温、驱动与安装节点。", image: "/images/juhao-public.webp" },
-  { slug: "switches", title: "开关电工", count: 1, scene: "空间控制", description: "连接照明回路与日常使用，关注负载、接线、面板组合及与智能场景的协同。", image: "/images/juhao-industrial.webp" },
-  { slug: "outdoor-lighting", title: "户外照明", count: 3, scene: "建筑与景观", description: "服务建筑立面、道路与景观空间，需结合防护等级、配光、环境条件与维护方式选型。", image: "/images/juhao-public.webp" },
-  { slug: "project-custom", title: "工程定制", count: 3, scene: "非标与项目", description: "围绕项目空间、造型、结构、安装和交付条件开展定制沟通，不以标准商品页替代工程确认。", image: "/images/juhao-commercial.webp" },
-  { slug: "smart-home-devices", title: "家居智能设备", count: 0, scene: "场景联动", description: "候选设备尚未完成协议、兼容、部署与售后资料审核；本专题先提供场景和核对方法。", image: "/images/juhao-home.webp" },
+  { slug: "spotlights", title: "射灯与轨道照明", count: 9, scene: "重点照明", description: "面向住宅、酒店与商业空间的重点照明，以光束角、配光、防眩和安装条件为选型起点。", image: "/images/jh48-product-hero-spotlights.webp", cardImage: "/images/jh48-product-card-spotlights.webp" },
+  { slug: "ceiling-lights", title: "家居顶灯", count: 6, scene: "家庭基础照明", description: "覆盖客餐厅、卧室与辅助空间的基础照明，关注空间尺度、显色、清洁维护与控制方式。", image: "/images/jh48-product-hero-ceiling.webp", cardImage: "/images/jh48-product-card-ceiling.webp" },
+  { slug: "new-chinese", title: "新中式", count: 3, scene: "风格照明", description: "将东方尺度、材质与空间秩序融入灯饰表达，适用于住宅、会所与酒店空间。", image: "/images/jh48-product-hero-new-chinese.webp", cardImage: "/images/jh48-product-card-new-chinese.webp" },
+  { slug: "art-lights", title: "艺术灯", count: 3, scene: "装饰照明", description: "以造型、材质与光影关系参与空间表达，产品资料将按型号和项目适配性逐步开放。", image: "/images/jh48-product-hero-art.webp", cardImage: "/images/jh48-product-card-art.webp" },
+  { slug: "crystal-chandeliers", title: "水晶吊灯", count: 3, scene: "酒店与宴会", description: "面向挑高大堂、宴会厅与高端住宅，重点核对尺寸、承重、安装与维护条件。", image: "/images/jh48-product-hero-crystal.webp", cardImage: "/images/jh48-product-card-crystal.webp" },
+  { slug: "linear-lighting", title: "灯带与线性照明", count: 3, scene: "轮廓与氛围", description: "用于空间轮廓、间接照明与连续引导，选型同时考虑光效、色温、驱动与安装节点。", image: "/images/jh-promenade.webp", cardImage: "/images/jh48-product-card-linear.webp" },
+  { slug: "switches", title: "开关电工", count: 1, scene: "空间控制", description: "连接照明回路与日常使用，关注负载、接线、面板组合及与智能场景的协同。", image: "/images/jh48-product-hero-switches.webp", cardImage: "/images/jh48-product-card-switches.webp" },
+  { slug: "outdoor-lighting", title: "户外照明", count: 3, scene: "建筑与景观", description: "服务建筑立面、道路与景观空间，需结合防护等级、配光、环境条件与维护方式选型。", image: "/images/jh48-product-hero-outdoor.webp", cardImage: "/images/jh48-product-card-outdoor.webp" },
+  { slug: "project-custom", title: "工程定制", count: 0, scene: "非标与项目", description: "围绕项目空间、造型、结构、安装和交付条件开展定制沟通；标准射灯已归回射灯专题，本专题不以无关商品凑数。", image: "/images/jh48-product-hero-project-custom.webp", cardImage: "/images/jh48-product-card-project-custom.webp" },
+  { slug: "smart-home-devices", title: "家居智能设备", count: 0, scene: "场景联动", description: "候选设备尚未完成协议、兼容、部署与售后资料审核；本专题先提供场景和核对方法。", image: "/images/jh48-product-hero-smart-devices.webp", cardImage: "/images/jh48-product-card-smart-devices.webp" },
 ] as const;
 
 export type ProductTopic = (typeof productTopics)[number];

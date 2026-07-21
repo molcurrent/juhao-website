@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-0cbed20d7d08",
+    "canonical_slug": "464",
+    "canonical_source_key": "mall_sql:464",
+    "canonical_source_id": "464",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "酒店多功能厅和大堂厅装饰灯",
+    "category": "非标装饰灯",
+    "source_categories": [
+      "非标装饰灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-0cbed20d7d08",
+    "model_label": null,
+    "model_state": "pending_review",
+    "model_evidence": null,
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:464",
+      "display_id": "464",
+      "title": "酒店多功能厅和大堂厅装饰灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:464",
+        "source_id": "464",
+        "display_id": "464",
+        "model_label": null,
+        "model_state": "pending_review"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "detail_images_missing",
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:464",
+      "source_path": "商城系统/商品说明/酒店多功能厅和大堂厅装饰灯_464.md",
+      "source_sha256": "4501860f0e2e5c8a4439f057df5e82bc8bd140c4a427eeedba3d2419c5d0ebc8"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 0,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 1,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-c36d7d206839",
+      "source_key": "mall_sql:464",
+      "display_id": "464",
+      "label": "酒店多功能厅和大堂厅装饰灯",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "detail_images_missing",
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

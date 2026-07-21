@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-d13d7302cb66",
+    "canonical_slug": "V-120116",
+    "canonical_source_key": "local_supplement:补充-120116",
+    "canonical_source_id": "补充-120116",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "V-120116 艺术灯",
+    "category": "艺术灯",
+    "source_categories": [
+      "艺术灯"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-d13d7302cb66",
+    "model_label": "V-120116",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "local_supplement:补充-120116",
+      "display_id": "V-120116",
+      "title": "V-120116 艺术灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "local_supplement:补充-120116",
+        "source_id": "补充-120116",
+        "display_id": "V-120116",
+        "model_label": "V-120116",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "primary_image_missing",
+      "detail_images_missing",
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "local_supplement:补充-120116",
+      "source_path": "商城系统/商品说明/V-120116_艺术灯_本地补充.md",
+      "source_sha256": "48b15f6e5598cb5dfb9961291ef61d89c6818fb2ef76dbfd900f8fd90712b8d8"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 0,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 0,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-80ff436f5b67",
+      "source_key": "local_supplement:补充-120116",
+      "display_id": "V-120116",
+      "label": "V-120116 艺术灯",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "primary_image_missing",
+        "detail_images_missing",
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

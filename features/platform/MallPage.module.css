@@ -45,7 +45,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.19em;
 }
 
@@ -65,9 +65,9 @@
   max-width: 760px;
   margin: 30px 0;
   font-family: var(--font-display);
-  font-size: clamp(72px, 9.2vw, 142px);
-  line-height: 0.88;
-  letter-spacing: -0.085em;
+  font-size: clamp(72px, 9.2vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 .heroCopy > p {
@@ -111,7 +111,7 @@
   justify-content: space-between;
   gap: 20px;
   color: #9fa29c;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.17em;
 }
 
@@ -148,7 +148,7 @@
 .visualFlow span,
 .visualFlow small {
   color: #92958f;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.09em;
 }
 
@@ -172,7 +172,7 @@
   max-width: 280px;
   margin: 0;
   color: #8f928c;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
   letter-spacing: 0;
 }
@@ -194,7 +194,7 @@
 .confirmation > div:first-child > p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.22em;
 }
@@ -207,7 +207,7 @@
   font-family: var(--font-display);
   font-size: clamp(44px, 5.6vw, 84px);
   line-height: 1.02;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
 }
 
 .sectionHeading div > p {
@@ -219,9 +219,14 @@
 
 .capabilityGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 78px;
   border-top: 1px solid var(--line);
+}
+
+.capabilityCard:first-child,
+.capabilityCard:nth-child(4) {
+  grid-column: span 2;
 }
 
 .capabilityCard {
@@ -235,7 +240,7 @@
   justify-content: space-between;
   gap: 10px;
   color: var(--ink-soft);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -247,7 +252,7 @@
 }
 
 .capabilityCard h3 {
-  margin: 106px 0 18px;
+  margin: 24px 0 18px;
   font-size: 24px;
 }
 
@@ -296,7 +301,7 @@
 
 .workflowList li > span {
   color: var(--brand-orange-bright);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .workflowList h3 {
@@ -345,7 +350,7 @@
 
 .audienceList small {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.12em;
 }
 
@@ -429,6 +434,11 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .capabilityCard:first-child,
+  .capabilityCard:nth-child(4) {
+    grid-column: auto;
+  }
+
   .capabilityCard {
     border-bottom: 1px solid var(--line);
   }
@@ -476,6 +486,26 @@
 
   .audienceList p {
     grid-column: 2;
+  }
+
+  .page small,
+  .statusLine,
+  .heroLink,
+  .visualHeader,
+  .visualFooter,
+  .visualFlow span,
+  .visualFooter p,
+  .sectionHeading > p,
+  .workflowInner header > p,
+  .audienceIntro > p:first-child,
+  .confirmation > div:first-child > p,
+  .cardMeta,
+  .capabilityCard p,
+  .workflowList li > span,
+  .workflowList p,
+  .audienceList p,
+  .confirmation a {
+    font-size: 14px;
   }
 }
 

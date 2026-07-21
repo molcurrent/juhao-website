@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { SITE_URL } from "./_data/pages";
 import { FloatingActions } from "@/components/layout/FloatingActions";
+import { DeferredSiteEffects } from "@/components/motion/DeferredSiteEffects";
 import { routeOgMetadataImage } from "@/lib/media/route-og";
 import "./globals.css";
 
@@ -24,6 +26,7 @@ const organizationSchema = {
   ]
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><head><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="theme-color" content="#1e1916"/><link rel="icon" href="/favicon.png"/><link rel="shortcut icon" href="/favicon.png"/></head><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<FloatingActions/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  return <html lang="zh-CN"><head><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="theme-color" content="#1e1916"/><link rel="icon" href="/favicon.png"/><link rel="shortcut icon" href="/favicon.png"/></head><body><a className="skipLink" href="#main-content">跳到主要内容</a>{children}<FloatingActions/><DeferredSiteEffects/><script nonce={nonce} type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema).replace(/</g,"\\u003c")}} /></body></html>;
 }

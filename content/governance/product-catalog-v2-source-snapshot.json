@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-07-16",
+  "source_contract": {
+    "primary_key": "source_type + source_id",
+    "source_of_truth": "read_only",
+    "product_body_policy": "reference_source_notes_do_not_create_parallel_authoring_copy"
+  },
+  "sources": {
+    "mall_sql": {
+      "path": "/Users/mac/Documents/juhao数据库/juhao_mall_2026-07-16_02-41-53_mysql_data.sql",
+      "bytes": 205957766,
+      "modified_ns": 1784173684857532570,
+      "sha256": "420cf66785bc9b846b0d34069ca2f9c7a8b642a7e83e2507ebae69f0d8363e72"
+    },
+    "knowledge_base_product_notes": {
+      "path": "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明",
+      "all_markdown_files": 1947,
+      "product_records": 1920,
+      "non_product_index_files": 27,
+      "aggregate_sha256": "b066a0ee9ef8e3c74e272c172b1c4da7d683ce4dde4c782bd041aa1f1d9aac91"
+    },
+    "local_supplements": {
+      "count": 3,
+      "compound_keys": [
+        "local_supplement:补充-120116",
+        "local_supplement:补充-120118",
+        "local_supplement:补充-120122"
+      ]
+    },
+    "iot_boundary": {
+      "web_catalog_import": "excluded",
+      "product_note_count": 101,
+      "notes_aggregate_sha256": "7bb2244b7fa01ab0e5d9d98e2fd76e8603de1b58a19b35c6561f88fd90219d74",
+      "master_sql": {
+        "path": "/Users/mac/Documents/juhao数据库/bocang_2026-07-16_02-30-02_mysql_data.sql",
+        "bytes": 38690177897,
+        "modified_ns": 1784181938668067071,
+        "sha256": null,
+        "hash_status": "omitted_large_excluded_source"
+      },
+      "filtered_dictionary_sql": {
+        "path": "/Users/mac/Documents/juhao数据库/bocang_filtered_2026-07-16.sql",
+        "bytes": 224299,
+        "modified_ns": 1784182756242868192,
+        "sha256": "09218d7fb67fccdd6341f5a5bf466bc62afd270a5ce3fbe450ad7e13aaaa9ced"
+      },
+      "allowed_future_fields": [
+        "product_type",
+        "protocol",
+        "capability_name",
+        "deidentified_scene_template"
+      ],
+      "forbidden_fields": [
+        "user",
+        "address",
+        "order",
+        "payment",
+        "contact",
+        "device_instance",
+        "mqtt_log",
+        "system_log",
+        "verification_code",
+        "secret"
+      ]
+    }
+  },
+  "quality": {
+    "compound_key_duplicates": 0,
+    "missing_title": 0,
+    "missing_category": 0,
+    "missing_primary_image": 3,
+    "missing_detail_images": 106,
+    "missing_attributes": 297,
+    "undefined_spec_rows": 15593,
+    "volume_header_typo_notes": 1737,
+    "duplicate_title_groups": 4,
+    "shared_detail_fingerprint_groups": 185,
+    "shared_reference_image_set_groups": 185
+  },
+  "distributions": {
+    "categories": {
+      "吊灯": 607,
+      "吸顶灯": 475,
+      "开关": 120,
+      "商用照明": 116,
+      "户外景观": 109,
+      "壁灯": 103,
+      "风扇灯": 99,
+      "筒射灯": 98,
+      "户外照明": 34,
+      "非标装饰灯": 30,
+      "磁吸灯": 28,
+      "台灯": 26,
+      "护眼灯": 10,
+      "智能晾衣架": 10,
+      "LED灯泡": 7,
+      "模组": 5,
+      "浴霸": 5,
+      "室内护眼大路灯": 5,
+      "类别": 5,
+      "灯带": 5,
+      "灯管": 5,
+      "自营超市": 4,
+      "智能门锁": 3,
+      "落地灯": 3,
+      "艺术灯": 3,
+      "积分兑换": 3,
+      "集成": 2
+    },
+    "attribute_names": {
+      "空间": 1568,
+      "类型": 1525,
+      "材质": 1514,
+      "风格": 1457,
+      "面积": 1361,
+      "光源类型": 1090,
+      "尺寸": 961,
+      "颜色工艺": 447,
+      "光源数量": 350,
+      "装箱数量": 252,
+      "功率(W)": 98,
+      "电压(V)": 94,
+      "灯具是否带光源": 75,
+      "发光颜色": 12,
+      "灯头接口": 11
+    }
+  },
+  "web_catalog_boundary": {
+    "source_records": 1920,
+    "eligible_lighting_records": 1913,
+    "excluded_non_lighting_records": 7,
+    "exclusions": [
+      {
+        "source_key": "mall_sql:11702",
+        "title": "钜豪贵宾酒",
+        "category": "自营超市",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:11703",
+        "title": "钜豪龙年生肖酒",
+        "category": "自营超市",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:4014",
+        "title": "钜豪纸巾20盒/件",
+        "category": "自营超市",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:4019",
+        "title": "钜豪男女款通用双层冲锋衣（尺寸留言备注）",
+        "category": "积分兑换",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:4020",
+        "title": "钜豪手机扣10个/件",
+        "category": "积分兑换",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:4021",
+        "title": "钜豪汽车太阳挡",
+        "category": "积分兑换",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      },
+      {
+        "source_key": "mall_sql:5181",
+        "title": "钜豪消毒湿巾",
+        "category": "自营超市",
+        "disposition": "governance_only_excluded_from_web_catalog"
+      }
+    ]
+  },
+  "catalog_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "derived_family_model_sha256": "2b08f49f7b1ad65871c3aa4d8ff8e28888ff358757c13e9335cf0eadb367c17b",
+  "applied_family_model_sha256": "e8e9cf4d812a6c53205b0aab4c49263e3455b17485e4847eac530a5bc33538a5",
+  "decision_application_sha256": "a552ff1b46c61de27987a0b6089deed20c331b58110e3ef2e54b3aa6a08e38b3"
+}

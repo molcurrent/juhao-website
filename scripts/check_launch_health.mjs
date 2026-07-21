@@ -4,21 +4,125 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const runtimeLedger = JSON.parse(readFileSync(resolve(ROOT, "content/runtime/publication-ledger.json"), "utf8"));
+const publicCatalogRuntime = JSON.parse(readFileSync(resolve(ROOT, "content/runtime/catalog-v2-public/index.json"), "utf8"));
+const fullCatalogReadiness = JSON.parse(readFileSync(resolve(ROOT, "content/governance/product-catalog-v2-full-release-readiness.json"), "utf8"));
+const manualApprovalQueue = readFileSync(resolve(ROOT, "content/governance/manual-approval-queue.csv"), "utf8");
 const publishedRecords = runtimeLedger.filter((record) => record.publish_status === "published");
 const eligibleRecords = publishedRecords.filter((record) => record.index_eligible);
+
+function enabled(value) {
+  return ["1", "true"].includes((value || "false").toLowerCase());
+}
 
 const baseUrl = (process.env.BASE_URL || "https://juhao.com").replace(/\/$/, "");
 const mallBaseUrl = (process.env.MALL_BASE_URL || "https://mall.juhao.com").replace(/\/$/, "");
 const siteBypassToken = process.env.OAI_SITES_BYPASS_TOKEN || "";
 const checkMall = process.env.CHECK_MALL === "1";
-const publicIndexingEnabled = ["1", "true"].includes((process.env.PUBLIC_INDEXING_ENABLED || "false").toLowerCase());
-const canonicalHostApproved = ["1", "true"].includes((process.env.CANONICAL_HOST_APPROVED || "false").toLowerCase());
+const publicIndexingEnabled = enabled(process.env.PUBLIC_INDEXING_ENABLED);
+const canonicalHostApproved = enabled(process.env.CANONICAL_HOST_APPROVED);
+const publicIntakeReady = enabled(process.env.PUBLIC_INTAKE_READY);
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() || "";
+const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY?.trim() || "";
+const turnstileAllowedHostnames = (process.env.TURNSTILE_ALLOWED_HOSTNAMES || "")
+  .split(",")
+  .map((hostname) => hostname.trim())
+  .filter(Boolean);
+const contactEdgeRateLimitVerified = enabled(process.env.CONTACT_EDGE_RATE_LIMIT_VERIFIED);
+const webhookUrl = process.env.JUHAO_LEAD_WEBHOOK_URL?.trim() || "";
+const webhookSecret = process.env.JUHAO_LEAD_WEBHOOK_SECRET?.trim() || "";
+const maintenanceSecret = process.env.JUHAO_LEAD_MAINTENANCE_SECRET?.trim() || "";
+const rateLimitSecret = process.env.JUHAO_LEAD_RATE_LIMIT_SECRET?.trim() || "";
+const releaseGateOnly = process.argv.includes("--release-gate");
 const expectedRoutes = publishedRecords.map((record) => record.route);
-const expectedPublicSitemapRoutes = eligibleRecords.map((record) => record.canonical_slug).sort();
+const publicCatalogItems = Array.isArray(publicCatalogRuntime.items)
+  ? publicCatalogRuntime.items
+  : [];
+const activePublicCatalogItems = publicCatalogRuntime.publication_state === "active_public_indexable"
+  ? publicCatalogItems.filter((item) => typeof item?.canonical_path === "string")
+  : [];
+const expectedPublicSitemapRoutes = [
+  ...new Set([
+    ...eligibleRecords.map((record) => record.canonical_slug),
+    ...(publicIndexingEnabled
+      ? activePublicCatalogItems.map((item) => item.canonical_path)
+      : []),
+  ]),
+].sort();
 const spamPaths = ["/static/news/9062.html", "/static/news/1689.html", "/static/news/1022.html", "/static/news/3649.html", "/static/news/5795.html", "/static/news/8058.html"];
 const siteHeaders = siteBypassToken ? { "OAI-Sites-Authorization": `Bearer ${siteBypassToken}` } : {};
 
 export const EXPECTED_PUBLIC_SITEMAP_URLS = expectedPublicSitemapRoutes.length;
+
+export function validTurnstileAllowedHostnames(values) {
+  if (!Array.isArray(values) || values.length === 0) return false;
+  return values.every((value) => {
+    const hostname = typeof value === "string" ? value.trim().toLowerCase() : "";
+    if (!hostname || hostname.startsWith(".") || hostname.endsWith(".") || hostname.includes("..")) return false;
+    try {
+      const parsed = new URL(`https://${hostname}`);
+      return parsed.hostname === hostname
+        && !parsed.port
+        && parsed.pathname === "/"
+        && !parsed.search
+        && !parsed.hash
+        && !parsed.username
+        && !parsed.password;
+    } catch {
+      return false;
+    }
+  });
+}
+
+function csvFields(line) {
+  const fields = [];
+  let value = "";
+  let quoted = false;
+
+  for (let index = 0; index < line.length; index += 1) {
+    const character = line[index];
+    if (character === '"' && quoted && line[index + 1] === '"') {
+      value += '"';
+      index += 1;
+    } else if (character === '"') {
+      quoted = !quoted;
+    } else if (character === "," && !quoted) {
+      fields.push(value);
+      value = "";
+    } else {
+      value += character;
+    }
+  }
+  fields.push(value);
+  return fields;
+}
+
+export function manualApprovalSummary(csvText) {
+  const lines = csvText.replace(/^\uFEFF/, "").split(/\r?\n/).filter(Boolean);
+  const headers = csvFields(lines.shift() || "");
+  const rows = lines.map((line) => {
+    const fields = csvFields(line);
+    return Object.fromEntries(headers.map((header, index) => [header, fields[index] || ""]));
+  });
+  const completed = rows.filter((row) =>
+    ["approved", "已签核"].includes(row.status.trim().toLowerCase())
+      && row.decision.trim()
+      && row.reviewed_at.trim(),
+  ).length;
+  return { total: rows.length, completed, pending: rows.length - completed };
+}
+
+export const MANUAL_APPROVALS = manualApprovalSummary(manualApprovalQueue);
+
+export function fullCatalogReleaseFailures({
+  catalogReady = (
+    fullCatalogReadiness.public_release_eligible === true
+    && publicCatalogRuntime.publication_state === "active_public_indexable"
+  ),
+} = {}) {
+  return catalogReady
+    ? []
+    : ["public launch blocked: full product catalog release is not eligible"];
+}
 
 export function hasNoindexRobotsMeta(html) {
   return (html.match(/<meta\b[^>]*>/gi) || []).some((tag) => {
@@ -49,9 +153,43 @@ export function indexingPolicyFailures({ html, path, sitemapStatus, sitemapRoute
   return failures;
 }
 
-export function publicLaunchGateFailures({ indexingEnabled, hostApproved }) {
-  if (indexingEnabled && !hostApproved) return ["public launch blocked: canonical host is not approved"];
-  return [];
+export function publicLaunchGateFailures({
+  indexingEnabled = publicIndexingEnabled,
+  hostApproved = canonicalHostApproved,
+  eligibleRoutes = EXPECTED_PUBLIC_SITEMAP_URLS,
+  pendingManualApprovals = MANUAL_APPROVALS.pending,
+  intakeReady = publicIntakeReady,
+  siteKey = turnstileSiteKey,
+  secretKey = turnstileSecretKey,
+  allowedHostnames = turnstileAllowedHostnames,
+  edgeRateLimitVerified = contactEdgeRateLimitVerified,
+  leadWebhookUrl = webhookUrl,
+  leadWebhookSecret = webhookSecret,
+  leadMaintenanceSecret = maintenanceSecret,
+  leadRateLimitSecret = rateLimitSecret,
+} = {}) {
+  const failures = [];
+  if (!indexingEnabled) failures.push("public launch blocked: PUBLIC_INDEXING_ENABLED is not enabled");
+  if (!hostApproved) failures.push("public launch blocked: canonical host is not approved");
+  if (eligibleRoutes <= 0) failures.push("public launch blocked: no index-eligible routes");
+  if (pendingManualApprovals > 0) {
+    failures.push(`public launch blocked: ${pendingManualApprovals} manual approvals are pending`);
+  }
+  if (!intakeReady) failures.push("public launch blocked: PUBLIC_INTAKE_READY is not enabled");
+  if (!siteKey) failures.push("public launch blocked: NEXT_PUBLIC_TURNSTILE_SITE_KEY is missing");
+  if (!secretKey) failures.push("public launch blocked: TURNSTILE_SECRET_KEY is missing");
+  if (!validTurnstileAllowedHostnames(allowedHostnames)) {
+    failures.push("public launch blocked: TURNSTILE_ALLOWED_HOSTNAMES is missing or invalid");
+  }
+  if (!edgeRateLimitVerified) failures.push("public launch blocked: contact edge rate limiting is not verified");
+  if (!leadWebhookUrl) failures.push("public launch blocked: JUHAO_LEAD_WEBHOOK_URL is missing");
+  if (!leadWebhookSecret) failures.push("public launch blocked: JUHAO_LEAD_WEBHOOK_SECRET is missing");
+  if (!leadMaintenanceSecret) failures.push("public launch blocked: JUHAO_LEAD_MAINTENANCE_SECRET is missing");
+  if (!leadRateLimitSecret) failures.push("public launch blocked: JUHAO_LEAD_RATE_LIMIT_SECRET is missing");
+  else if (leadRateLimitSecret.length < 32) {
+    failures.push("public launch blocked: JUHAO_LEAD_RATE_LIMIT_SECRET must be at least 32 characters");
+  }
+  return failures;
 }
 
 function tagAttribute(html, selector, attribute) {
@@ -92,7 +230,47 @@ async function request(url, options, label, failures) {
 }
 
 export async function main() {
-  const failures = publicLaunchGateFailures({ indexingEnabled: publicIndexingEnabled, hostApproved: canonicalHostApproved });
+  const launchGateFailures = [
+    ...publicLaunchGateFailures(),
+    ...fullCatalogReleaseFailures(),
+  ];
+  if (releaseGateOnly) {
+    const report = {
+      mode: "release-gate",
+      ok: launchGateFailures.length === 0,
+      indexingEnabled: publicIndexingEnabled,
+      canonicalHostApproved,
+      eligibleRoutes: EXPECTED_PUBLIC_SITEMAP_URLS,
+      manualApprovals: MANUAL_APPROVALS,
+      fullCatalog: {
+        publicationState: publicCatalogRuntime.publication_state,
+        catalogItemCount: publicCatalogItems.length,
+        releaseEligible: fullCatalogReadiness.public_release_eligible === true,
+        catalogBlockers: fullCatalogReadiness.blockers ?? [],
+      },
+      publicIntakeReady,
+      intakeConfiguration: {
+        siteKey: Boolean(turnstileSiteKey),
+        secretKey: Boolean(turnstileSecretKey),
+        allowedHostnames: turnstileAllowedHostnames,
+        edgeRateLimitVerified: contactEdgeRateLimitVerified,
+        webhookUrl: Boolean(webhookUrl),
+        webhookSecret: Boolean(webhookSecret),
+        maintenanceSecret: Boolean(maintenanceSecret),
+        rateLimitSecret: Boolean(rateLimitSecret),
+      },
+      failures: launchGateFailures,
+    };
+    const output = JSON.stringify(report, null, 2);
+    if (report.ok) console.log(output);
+    else {
+      console.error(output);
+      process.exitCode = 1;
+    }
+    return report;
+  }
+
+  const failures = publicIndexingEnabled ? [...launchGateFailures] : [];
   const seenTitles = new Map();
   const seenDescriptions = new Map();
   const seenCanonicals = new Map();

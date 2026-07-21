@@ -76,17 +76,18 @@
 
 .pageButton > span {
   display: block;
-  width: 20px;
+  width: 34px;
   height: 2px;
   background: var(--carousel-line);
   transform-origin: left;
+  transform: scaleX(0.59);
   transition:
-    width var(--duration-fast, 180ms) ease,
+    transform var(--duration-fast, 180ms) ease,
     background-color var(--duration-fast, 180ms) ease;
 }
 
 .pageButton[aria-current="true"] > span {
-  width: 34px;
+  transform: scaleX(1);
   background: var(--carousel-accent);
 }
 
@@ -164,20 +165,26 @@
 
   .pageButton,
   .controlButton {
-    min-width: 42px;
-    min-height: 42px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .pageButton > span {
-    width: 14px;
+    width: 24px;
+    transform: scaleX(0.58);
   }
 
   .pageButton[aria-current="true"] > span {
-    width: 24px;
+    transform: scaleX(1);
   }
 
   .counter {
     display: inline-flex;
+    font-size: 14px;
+  }
+
+  .controlButton[aria-pressed] {
+    font-size: 14px;
   }
 }
 

@@ -1,31 +1,3 @@
-export type ProductCard = {
-  id: string;
-  name: string;
-  category: string;
-  summary: string;
-  image: string;
-  sceneIds: string[];
-};
-
-export type ServiceRegion = {
-  id: string;
-  name: string;
-  cities: string[];
-};
-
-export type ServiceLocation = {
-  id: string;
-  name: string;
-  city: string;
-  address: string;
-};
-
-export type PartnerRegion = {
-  id: string;
-  name: string;
-  status: "open" | "available-soon";
-};
-
 export type SearchResult = {
   path: string;
   title: string;
@@ -86,14 +58,3 @@ export type ContactReceipt = {
   status: "received";
   submittedAt: string;
 };
-
-export interface SiteApi {
-  getProducts(sceneId?: string): Promise<ProductCard[]>;
-  getRegions(): Promise<ServiceRegion[]>;
-  getLocations(city?: string): Promise<ServiceLocation[]>;
-  getPartnerRegions(): Promise<PartnerRegion[]>;
-  search(query: string): Promise<SearchResult[]>;
-  getNewsArticles(query?: Partial<NewsQuery>): Promise<NewsPageResult>;
-  getDownloads(): Promise<DownloadItem[]>;
-  submitContact(request: ContactRequest): Promise<ContactReceipt>;
-}

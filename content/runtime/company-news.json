@@ -26,8 +26,8 @@
     "publication_boundary": "未独立核验展位、客流、洽谈量或渠道效果。",
     "project_stage": null,
     "local_representative_media": {
-      "src": "/images/juhao-public.webp",
-      "alt": "原创公共空间照明场景栏目示意图，不作为光亚展现场、展位或参展成效证据",
+      "src": "/images/jh48-news-light-fair.webp",
+      "alt": "原创展陈光环境场景示意图，不作为光亚展现场、展位或参展成效证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -50,7 +50,7 @@
       },
       {
         "label": "提交渠道咨询",
-        "href": "/contact?source=news&scene=channel&intent=channel-cooperation&sourceDetail=guangzhou-international-lighting-exhibition-2026#consultation-form",
+        "href": "/contact?source=page&scene=channel&intent=partnership&sourceDetail=guangzhou-international-lighting-exhibition-2026#consultation-form",
         "text": "携带本篇来源标识进入咨询表单。"
       }
     ]
@@ -82,8 +82,8 @@
     "publication_boundary": "未独立核验参会规模、合作成果或新品市场表现。",
     "project_stage": null,
     "local_representative_media": {
-      "src": "/images/juhao-commercial.webp",
-      "alt": "原创精品零售空间重点照明栏目示意图，不作为经销商活动现场、参会规模或活动成效证据",
+      "src": "/images/jh48-news-dealer.webp",
+      "alt": "原创展厅交流空间场景示意图，不作为经销商活动现场、参会规模或活动成效证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -106,7 +106,7 @@
       },
       {
         "label": "提交渠道咨询",
-        "href": "/contact?source=news&scene=channel&intent=channel-cooperation&sourceDetail=dealer-conference-spring-2026#consultation-form",
+        "href": "/contact?source=page&scene=channel&intent=partnership&sourceDetail=dealer-conference-spring-2026#consultation-form",
         "text": "携带本篇来源标识进入咨询表单。"
       }
     ]
@@ -138,8 +138,8 @@
     "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。",
     "project_stage": null,
     "local_representative_media": {
-      "src": "/images/juhao-public.webp",
-      "alt": "原创公共空间照明场景栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
+      "src": "/images/jh48-news-brand-award.webp",
+      "alt": "原创照明档案展陈场景示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -162,7 +162,7 @@
       },
       {
         "label": "提交工程咨询",
-        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=lighting-industry-top10-source-record-2026#consultation-form",
+        "href": "/contact?source=page&scene=project&intent=project-brief&sourceDetail=lighting-industry-top10-source-record-2026#consultation-form",
         "text": "携带本篇来源标识进入工程咨询。"
       }
     ]
@@ -193,8 +193,8 @@
     "publication_boundary": "证书、主办方公告或其他原始材料仍需另行审核。",
     "project_stage": null,
     "local_representative_media": {
-      "src": "/images/juhao-home.webp",
-      "alt": "原创家庭空间照明栏目示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
+      "src": "/images/jh48-news-home-brand.webp",
+      "alt": "原创家居光环境场景示意图，不作为奖项证书、主办方公告或获奖事实的独立证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -217,7 +217,7 @@
       },
       {
         "label": "提交空间咨询",
-        "href": "/contact?source=news&scene=home-health&intent=space-advice&sourceDetail=home-lighting-brand-source-record-2025#consultation-form",
+        "href": "/contact?source=page&scene=home-health&intent=space-advice&sourceDetail=home-lighting-brand-source-record-2025#consultation-form",
         "text": "携带本篇来源标识进入空间咨询。"
       }
     ]
@@ -252,8 +252,8 @@
       "implementation": "后续实施待证"
     },
     "local_representative_media": {
-      "src": "/images/juhao-commercial.webp",
-      "alt": "原创精品零售空间重点照明栏目示意图，不作为宜昌首航国际大酒店中标、施工、供货、交付或完工证据",
+      "src": "/images/jh48-news-yichang-hotel.webp",
+      "alt": "原创滨水酒店场景示意图，不作为宜昌首航国际大酒店中标、施工、供货、交付或完工证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -276,7 +276,7 @@
       },
       {
         "label": "提交工程咨询",
-        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=yichang-shouhang-hotel-bid#consultation-form",
+        "href": "/contact?source=page&scene=project&intent=project-brief&sourceDetail=yichang-shouhang-hotel-bid#consultation-form",
         "text": "携带本篇来源标识进入工程咨询。"
       }
     ]
@@ -311,8 +311,8 @@
       "implementation": "后续实施待证"
     },
     "local_representative_media": {
-      "src": "/images/juhao-commercial.webp",
-      "alt": "原创精品零售空间重点照明栏目示意图，不作为昆明官渡温德姆酒店中标、施工、供货、交付或完工证据",
+      "src": "/images/jh48-news-kunming-hotel.webp",
+      "alt": "原创亚热带酒店场景示意图，不作为昆明官渡温德姆酒店中标、施工、供货、交付或完工证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -335,7 +335,7 @@
       },
       {
         "label": "提交工程咨询",
-        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=kunming-guandu-wyndham-hotel-bid#consultation-form",
+        "href": "/contact?source=page&scene=project&intent=project-brief&sourceDetail=kunming-guandu-wyndham-hotel-bid#consultation-form",
         "text": "携带本篇来源标识进入工程咨询。"
       }
     ]
@@ -370,8 +370,8 @@
       "implementation": "后续实施待证"
     },
     "local_representative_media": {
-      "src": "/images/juhao-commercial.webp",
-      "alt": "原创精品零售空间重点照明栏目示意图，不作为大连金州皇冠假日酒店中标、施工、供货、交付或完工证据",
+      "src": "/images/jh48-news-dalian-hotel.webp",
+      "alt": "原创滨海酒店场景示意图，不作为大连金州皇冠假日酒店中标、施工、供货、交付或完工证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -394,7 +394,7 @@
       },
       {
         "label": "提交工程咨询",
-        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=dalian-jinzhou-crowne-plaza-hotel-bid#consultation-form",
+        "href": "/contact?source=page&scene=project&intent=project-brief&sourceDetail=dalian-jinzhou-crowne-plaza-hotel-bid#consultation-form",
         "text": "携带本篇来源标识进入工程咨询。"
       }
     ]
@@ -429,8 +429,8 @@
       "implementation": "后续实施待证"
     },
     "local_representative_media": {
-      "src": "/images/juhao-commercial.webp",
-      "alt": "原创精品零售空间重点照明栏目示意图，不作为南雁荡山宾月花园度假酒店中标、施工、供货、交付或完工证据",
+      "src": "/images/jh48-news-nanyan-resort.webp",
+      "alt": "原创山地度假酒店场景示意图，不作为南雁荡山宾月花园度假酒店中标、施工、供货、交付或完工证据",
       "width": 1672,
       "height": 941,
       "role": "section_illustration",
@@ -453,7 +453,7 @@
       },
       {
         "label": "提交工程咨询",
-        "href": "/contact?source=news&scene=project&intent=project-brief&sourceDetail=nanyandangshan-binyue-resort-hotel-bid#consultation-form",
+        "href": "/contact?source=page&scene=project&intent=project-brief&sourceDetail=nanyandangshan-binyue-resort-hotel-bid#consultation-form",
         "text": "携带本篇来源标识进入工程咨询。"
       }
     ]

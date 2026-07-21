@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-f3350f14d9be",
+    "canonical_slug": "11621",
+    "canonical_source_key": "mall_sql:11621",
+    "canonical_source_id": "11621",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_topic_assignment",
+    "route_plan_evidence": "topic_taxonomy_requires_human_review",
+    "title": "JH-HLD-01 护栏灯",
+    "category": "户外景观",
+    "source_categories": [
+      "户外景观"
+    ],
+    "category_state": "source_category_unambiguous",
+    "member_count": 1,
+    "grouping_status": "singleton_unreviewed",
+    "review_state": "private_unreleased",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-f3350f14d9be",
+    "model_label": "JH-HLD-01",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:11621",
+      "display_id": "11621",
+      "title": "JH-HLD-01 护栏灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:11621",
+        "source_id": "11621",
+        "display_id": "11621",
+        "model_label": "JH-HLD-01",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [],
+    "facets": {},
+    "quality_flags": [
+      "attributes_missing"
+    ]
+  },
+  "grouping_evidence": "no_strong_family_evidence",
+  "source_references": [
+    {
+      "source_key": "mall_sql:11621",
+      "source_path": "商城系统/商品说明/JH-HLD-01 护栏灯_11621.md",
+      "source_sha256": "601b72f9f2b65fef574f88162cc437b9d154d2452044a276dfb1cd834b0f8294"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {},
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 12,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 2,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-441cfe89d723",
+      "source_key": "mall_sql:11621",
+      "display_id": "11621",
+      "label": "JH-HLD-01 护栏灯",
+      "dimensions": {},
+      "normalized_specs": [],
+      "quality_flags": [
+        "attributes_missing"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": false,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

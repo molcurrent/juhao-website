@@ -1,0 +1,3613 @@
+{
+  "schema_version": 1,
+  "ledger_id": "catalog-v2-family-decisions",
+  "source_snapshot_sha256": "f09a37f2f0e1261fc536efbba1edb42708b055032b717e405ebbd302154e7204",
+  "ownership": "human_reviewed_append_only",
+  "candidate_source": "product-family-review.csv",
+  "revision_policy": "append_a_new_decision_and_reference_supersedes_decision_id",
+  "allowed_statuses": [
+    "draft",
+    "approved"
+  ],
+  "allowed_actions": {
+    "confirm_auto_family": [
+      "confirm_family",
+      "split_family"
+    ],
+    "merge_candidate": [
+      "merge_candidate",
+      "keep_separate"
+    ],
+    "category_anomaly": [
+      "recategorize",
+      "exclude_with_disposition"
+    ]
+  },
+  "decisions": [
+    {
+      "decision_id": "decision-owner-c-010700a688f4",
+      "review_id": "candidate-010700a688f4",
+      "candidate_sha256": "85d304e6f71cd4f2266f05bd195547321a74b9bbb142118ad3d96d4f9f90c18d",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-06ecb753524d",
+      "review_id": "candidate-06ecb753524d",
+      "candidate_sha256": "edd893630a59bc514b8e9ae18af9b2fcedc5cecd9fe82255d92149f9a604b94f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-096894c89b4e",
+      "review_id": "candidate-096894c89b4e",
+      "candidate_sha256": "f80a702dff4870ac0c33fbf21387f2937d65befaeebee92c78b37bf5cfe06023",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-0b34f80bc46c",
+      "review_id": "candidate-0b34f80bc46c",
+      "candidate_sha256": "28fc060ffdfd691c77a6019f47cb4e0150d5adb95b07cfaf4a1c3041c6c2b0dc",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-0d588269706a",
+      "review_id": "candidate-0d588269706a",
+      "candidate_sha256": "83a53ce0e1e8a3e8292694a742d8f2387d637daddb5f1ed259c34af5e73b02f1",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-116c5f7d53fc",
+      "review_id": "candidate-116c5f7d53fc",
+      "candidate_sha256": "01bed4869b2d4a70ebeb7ff84a594a7f1b83dd1beedfac019e7a1fc2e4587146",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-12b7b3741149",
+      "review_id": "candidate-12b7b3741149",
+      "candidate_sha256": "16451bd20cbe6ff4021c885894564775f58ce4cf410b88396d500a8459534476",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-130633edfc50",
+      "review_id": "candidate-130633edfc50",
+      "candidate_sha256": "2a29d51806852f2515248d73eb6b2f0c30c98d1f8e366b02125b73dc58aab7ee",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-13277f594c81",
+      "review_id": "candidate-13277f594c81",
+      "candidate_sha256": "4f6aa18c79dfee0079a1cb0ba362394310897d7741cc9905fbd9e55782454eee",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-13c34077e946",
+      "review_id": "candidate-13c34077e946",
+      "candidate_sha256": "e2dc357f60d01bd39f6f28a2cdbc4254588ced148d0bd09a8d47918d0b863bb2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-177281330798",
+      "review_id": "candidate-177281330798",
+      "candidate_sha256": "f743e1f9e11bfbb8d6a3ae522fd8fe7067d164f7d702e22d47906a8c5118bd8f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1808c8306301",
+      "review_id": "candidate-1808c8306301",
+      "candidate_sha256": "bd285344e6ffbf9b6cfe67b1f02875fc32785897cf52ffe5e71ba69c739b0399",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1810729d29d3",
+      "review_id": "candidate-1810729d29d3",
+      "candidate_sha256": "c63db49d717aae5769bcc7d5f9ac002cef39907269909dd7c3d6f995602eb242",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1860095fde3e",
+      "review_id": "candidate-1860095fde3e",
+      "candidate_sha256": "e16bb49d4e052e5b05e12c3a56783bd1de305de4ecec243bfe85b187760ef3bb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1a80e7e9edae",
+      "review_id": "candidate-1a80e7e9edae",
+      "candidate_sha256": "515d40f0d18e3326a3a0cc7af36e9bc7e18575457f6a10031f637c98f5326cc4",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1da13516eadc",
+      "review_id": "candidate-1da13516eadc",
+      "candidate_sha256": "e8f7581551bb50fe546d632dd5f2e33e523da705df6e9b30ce8b748bc4051ef6",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-1e238881e972",
+      "review_id": "candidate-1e238881e972",
+      "candidate_sha256": "598e245111c5a6ac0aca5835445a8d35fcf74353bd5d329c3e01859afe3c4843",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-20e70112d32c",
+      "review_id": "candidate-20e70112d32c",
+      "candidate_sha256": "f4c2e3277415161e2acadf59b733d07f56e1d02a1d838112eb32516e18f93acb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-22bcdbfebd48",
+      "review_id": "candidate-22bcdbfebd48",
+      "candidate_sha256": "0fd08dc405fe648c0280bc99dd9816d5f3c8e117c1f774b5fb68d007c642c336",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-244e2011b6e0",
+      "review_id": "candidate-244e2011b6e0",
+      "candidate_sha256": "ce68e736217d598d91ff62abe1b18f89649cdebbaaf80e1d1716b726c84a884a",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-253b93886d5e",
+      "review_id": "candidate-253b93886d5e",
+      "candidate_sha256": "c9642338fd4dc48739d6a0f776be5f4b138fc81ed485fc1b83c8e1d2adaed144",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-25a2e97fa545",
+      "review_id": "candidate-25a2e97fa545",
+      "candidate_sha256": "ada28393b8f8a1048d356867de7f85cc4477252aebe96cbcd4950c67b7d82b71",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-262d23c034cc",
+      "review_id": "candidate-262d23c034cc",
+      "candidate_sha256": "7479488c45ba9d317b3fd6b28f33b9c57c1c64c354ebe943faadb649db3e0851",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2743d21fee0f",
+      "review_id": "candidate-2743d21fee0f",
+      "candidate_sha256": "b2d184f6d9481ffca4c74b62cea02a6cc621a4d9bfac372480d955c113473f4a",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-27741297243a",
+      "review_id": "candidate-27741297243a",
+      "candidate_sha256": "790a00943fbe950faee2a29bc3e136deb61e5b75d3221c64beef965a44d0d41e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-27976e47e680",
+      "review_id": "candidate-27976e47e680",
+      "candidate_sha256": "3b012b3799c804696226c6ac5d9ad42280aad181ddf600344632eb55995650df",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-283aeb1d479d",
+      "review_id": "candidate-283aeb1d479d",
+      "candidate_sha256": "ab555906a46d5e72a4b3f07124a1063d03baa341e86ba5cc7de941c7c71c5e2c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2888cc17be84",
+      "review_id": "candidate-2888cc17be84",
+      "candidate_sha256": "1784bfdeb6f5c01c04dcda898b760ebb16ec039f29bb0eb3ba45d2c2822f3f9e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-29705f1461b6",
+      "review_id": "candidate-29705f1461b6",
+      "candidate_sha256": "113c96bf04fcb0977730e9e743d2f126e9a1e01205586f6d23dfad346e427e83",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2a16f6c50b80",
+      "review_id": "candidate-2a16f6c50b80",
+      "candidate_sha256": "7ab4836a18aea90e528e81b897958bdeb94b44e04fb2518f8a15b9c1165ccdfc",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2c35acc304bb",
+      "review_id": "candidate-2c35acc304bb",
+      "candidate_sha256": "accac0719228d92f2e0b210c5cd89d435dffdd3b8fbf32740f2c020c8dd37deb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2caa7cc86168",
+      "review_id": "candidate-2caa7cc86168",
+      "candidate_sha256": "91ec6ef2ca9f7fa74b747dc55b34bbae942e9f1c1c76680e4f4aa2ab029de5c8",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-2d597f10c756",
+      "review_id": "candidate-2d597f10c756",
+      "candidate_sha256": "91d1e6d42811fef118a328f544cb32194564d4372277e2ce85e726cfffdc78c2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3121ef52ccbc",
+      "review_id": "candidate-3121ef52ccbc",
+      "candidate_sha256": "d40ad7f4a9d1689a855b51f7d00cd86b52fb58433c5df2239d1140c9974fc40f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-351b34dd1dbf",
+      "review_id": "candidate-351b34dd1dbf",
+      "candidate_sha256": "08c41e2c6535ed59c6553ad2abcfcc4c46439ba86707e54eac7480f1251c6908",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3919ff016463",
+      "review_id": "candidate-3919ff016463",
+      "candidate_sha256": "b9bdc76910a083a77214e8057b67eb3b19a5a83aa00a0052c321884368c33b2c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-39f0716add96",
+      "review_id": "candidate-39f0716add96",
+      "candidate_sha256": "8fade0740825ecbdc836bdf1ed33f4de2acbab90994f2e146cb844cce030cf52",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3c795ff5835b",
+      "review_id": "candidate-3c795ff5835b",
+      "candidate_sha256": "255c2baf684d17403061ec998ba25711265eb5a0586f8d4e4228f95ab90c71a2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3dd4f0dc99ea",
+      "review_id": "candidate-3dd4f0dc99ea",
+      "candidate_sha256": "79ae09db0fc497ed2c61c9c2accac1cd72fc581172e5cb81892a1b627cce61e9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3ddcdc2f90be",
+      "review_id": "candidate-3ddcdc2f90be",
+      "candidate_sha256": "6bfa17b76d6de2b405401af0a7db8f1dfbb7001c5091726486f2d3212eab7cc7",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-3f53d883352e",
+      "review_id": "candidate-3f53d883352e",
+      "candidate_sha256": "26c919b0bdc9e101cead5f5485354b33b708555ffb131fab0b6fb0caa6597f55",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-40fb34231ed2",
+      "review_id": "candidate-40fb34231ed2",
+      "candidate_sha256": "e0817b2b5382fc99dce8f36ed03eac0f349ae9b362ba4c89c891b69130babccb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-41b13730ceee",
+      "review_id": "candidate-41b13730ceee",
+      "candidate_sha256": "5b5a69f1a7bddb7e2c5111c829c66f50d051a3e8bb876f20ba2e3c391db97394",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-439984cdb189",
+      "review_id": "candidate-439984cdb189",
+      "candidate_sha256": "a4bc18295739b254d4fbcd31a5d68cc2892f53496e4809a96b7e1a112c6040e4",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-450c8267896d",
+      "review_id": "candidate-450c8267896d",
+      "candidate_sha256": "1a15932d311863ae0973f85a8408c82452b0d318965634db4dfd862c682f0c3b",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-47798a8554b7",
+      "review_id": "candidate-47798a8554b7",
+      "candidate_sha256": "97e819ea1fa6f12eab2d5bc520aa013fdc7a70f3066592192ce802b2aa626bad",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-47d1a09b88c7",
+      "review_id": "candidate-47d1a09b88c7",
+      "candidate_sha256": "74d82875cb892a0a4c1888b01835ba57b61fd683b9bd87ead1fb158214fa3821",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-48580ebf238d",
+      "review_id": "candidate-48580ebf238d",
+      "candidate_sha256": "a4855ab28d381a69536ab7c1621e48fdb4bd266da9c361e0aa8505bdaffc61be",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-4f788a19f585",
+      "review_id": "candidate-4f788a19f585",
+      "candidate_sha256": "cf9c804f78f478b1061bd634b6f003382c9f5bbb1a791578cfac003e4f35ecbe",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-5024b7ac5963",
+      "review_id": "candidate-5024b7ac5963",
+      "candidate_sha256": "cb9094b812d887d75f58d6153b65d3642584ffce19b2438f9533ebbc40320f7b",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-5256a14adbb3",
+      "review_id": "candidate-5256a14adbb3",
+      "candidate_sha256": "28e5e5276efefd81103c848c17228c97712a21534b3e30d477386407414814b2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-558002f0508c",
+      "review_id": "candidate-558002f0508c",
+      "candidate_sha256": "e38083d3691d12e3384fb24ba5ec794e544d96a900b7fb9467b250bc69b80ec2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-56790e1815f5",
+      "review_id": "candidate-56790e1815f5",
+      "candidate_sha256": "2a579fff91e0a8b69b11ae1fc85181d357577898abc714c7866b835a2fbb1dfe",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-5b5a82a15ebf",
+      "review_id": "candidate-5b5a82a15ebf",
+      "candidate_sha256": "27a977fe04b5e63b8c2ca68747dca70872793729b45f11eb23eb8dc54b77c129",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-5c69016223bf",
+      "review_id": "candidate-5c69016223bf",
+      "candidate_sha256": "d23302881911a854d275d50d57f6385195fc9966a58847f2214730d1dcf01619",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-5d564978d6e9",
+      "review_id": "candidate-5d564978d6e9",
+      "candidate_sha256": "6ff87f0a1d1d07cbea70bc689246436416649eaa669c3a1991589303d535b97f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-60b72a09031a",
+      "review_id": "candidate-60b72a09031a",
+      "candidate_sha256": "e01f9fdbeb5e80b97d56df657796855c3ce2b91ee20f5f18309e22ef35724eb9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-61bca42d6456",
+      "review_id": "candidate-61bca42d6456",
+      "candidate_sha256": "2b008dbf24c9dd872958afe2c998a3da80c87d67a3d7c7ebf384740ff5569835",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-644bd1bd4126",
+      "review_id": "candidate-644bd1bd4126",
+      "candidate_sha256": "53e5786d8f51e409fc99166655425b397c13f7144bd10e79357cc642111c2c04",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-66e91bb8cacb",
+      "review_id": "candidate-66e91bb8cacb",
+      "candidate_sha256": "b9f5d929e2ab219ef6c4f783be42174aa4f307a5acae330b725c7c9d87388250",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-689070109637",
+      "review_id": "candidate-689070109637",
+      "candidate_sha256": "7f8ca9cf44a868b60a565860dd270c2081e7ad2240400616df3ca7ef526ba63b",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-69f3694f0b7b",
+      "review_id": "candidate-69f3694f0b7b",
+      "candidate_sha256": "4142926a933cf1634ee36ce0fc87477747cb59c1c14a84e8bfc8ece1e560a5b9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-6e7941d371be",
+      "review_id": "candidate-6e7941d371be",
+      "candidate_sha256": "f6a21db65734be2fa258d2e2117e9605274524bb9bc13e86e658ac185a9dc578",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-72d2bcbd6677",
+      "review_id": "candidate-72d2bcbd6677",
+      "candidate_sha256": "6683a65ad9563f28bcbd9ea5fb58fd8510dca2cf4ca37e0cdda142d5a672c1d0",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-74d1732b08eb",
+      "review_id": "candidate-74d1732b08eb",
+      "candidate_sha256": "a361b5632cf63f91595806b327d2781ee5ac9645d999380cde984deccda156c9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-7579147486e1",
+      "review_id": "candidate-7579147486e1",
+      "candidate_sha256": "a947aaca70e0593a1cb86b9c528ed5b4b91a5bea592475457ebad7c3d55de321",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-777204425fef",
+      "review_id": "candidate-777204425fef",
+      "candidate_sha256": "78ae5324ff5a21de2c00c512042a408869d2913bc480c70eb8e5ec24b5323b03",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-79ae87215b01",
+      "review_id": "candidate-79ae87215b01",
+      "candidate_sha256": "81a824a4bf5750f9a59953ee794ef61d1dedfec7b07104fc4ca6c7ac459d7acb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-7c44f175ff5b",
+      "review_id": "candidate-7c44f175ff5b",
+      "candidate_sha256": "fce34ec5ddf037c81c4770088b15d409085c3c059fedf3138af8f994991ce20c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-83be01a50948",
+      "review_id": "candidate-83be01a50948",
+      "candidate_sha256": "4d02887c4bf4d56ab563d9cff87955f7e9ff00861f2130c53de1e7a11f2f5644",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-873dc22529ae",
+      "review_id": "candidate-873dc22529ae",
+      "candidate_sha256": "5b8574eec781954387ebfaba1949c7264df0958263a9f88d2a3f1281e06bb94f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-87c4735208be",
+      "review_id": "candidate-87c4735208be",
+      "candidate_sha256": "16e5df02d52fa43f5e3790b32e9a0235d7eafd8b596d927b6eb22c814195ae23",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-888829b263b4",
+      "review_id": "candidate-888829b263b4",
+      "candidate_sha256": "6d2e328b7931e5e54b56d128a0d0d04f5252069b68b2f4264d7850f89a484564",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8b22bf821404",
+      "review_id": "candidate-8b22bf821404",
+      "candidate_sha256": "96573786926da60fba8f12d1936fff2209b41b711c5d3155e36e184505a7a656",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8be21fa4f0d9",
+      "review_id": "candidate-8be21fa4f0d9",
+      "candidate_sha256": "4c751468fb1f08ea1b3484e152e10ee3bcf68fdc6046ebd8cbc0f9e5582ccb05",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8bf61d2f4633",
+      "review_id": "candidate-8bf61d2f4633",
+      "candidate_sha256": "92f0f3176fde070d0230ed03227b420cd2a02bf65752063e71cbdd31a95f881e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8e67087106e0",
+      "review_id": "candidate-8e67087106e0",
+      "candidate_sha256": "272d36ca3408e86c1ba7cbaceb10ac6d232c1635c4e53ed56d3da526a7f92b68",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8e736c885cf1",
+      "review_id": "candidate-8e736c885cf1",
+      "candidate_sha256": "01003908e7238264ce9c3ad5249bf6fe3b62da9881c0263233944e2eb0251d7c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8eae0712bf17",
+      "review_id": "candidate-8eae0712bf17",
+      "candidate_sha256": "613b94cbfa59927fd7c3253970562e239918542b908f37f31084627be64b79bd",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8fa4d92e9eea",
+      "review_id": "candidate-8fa4d92e9eea",
+      "candidate_sha256": "ca8616149196925a7086531b4f0ccc4ccda7ac94849e786e16d89cf8037cad6c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8fd233dd2022",
+      "review_id": "candidate-8fd233dd2022",
+      "candidate_sha256": "4fdc0687cc80a1e24e7f5ae0461348d6dbf49190edf360e04f759088aadbd1bb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-8fe64517923e",
+      "review_id": "candidate-8fe64517923e",
+      "candidate_sha256": "52d0c5406580498ac4a00e9cfaf3e759bf3c735ddbdaf9373896a1d6e6608e9d",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-96632997dbb2",
+      "review_id": "candidate-96632997dbb2",
+      "candidate_sha256": "9b640a2a73c6f023a6b3c2485d50e58d70f2f3e2561fc9f8135ae722d1f29f7c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-98581d6068d2",
+      "review_id": "candidate-98581d6068d2",
+      "candidate_sha256": "084e436dbebc00d4c57775ebd0266e2b8b43c361613a209d208787fcfefc1407",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-98bc0995d87b",
+      "review_id": "candidate-98bc0995d87b",
+      "candidate_sha256": "fa2c5d61d8b7c62b546e573ce100ecdd2c921747aba313d6697c3309fb407f5d",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-99caa3f60972",
+      "review_id": "candidate-99caa3f60972",
+      "candidate_sha256": "347bc643d603ee97590fe145b92735054b8c631388193c83748f02994a6c3305",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-99f80adeb7cd",
+      "review_id": "candidate-99f80adeb7cd",
+      "candidate_sha256": "432596762f328a92295a24b9a72da2b8cbb26ecc542425c3bc00851d3b53130e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9bb586dc8dbf",
+      "review_id": "candidate-9bb586dc8dbf",
+      "candidate_sha256": "1a7c1d8a1beb72b0a82d2fccdc912e2c8755539a01ff45c7999dfc91ffca36cb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9bcd2517bb1d",
+      "review_id": "candidate-9bcd2517bb1d",
+      "candidate_sha256": "e71626a40c8d481908451c90aec4cfb1ace91285df89c803a378dd8e6837c8f0",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9c35a9cb3378",
+      "review_id": "candidate-9c35a9cb3378",
+      "candidate_sha256": "a9dddb8b2d293c2afa3a84cfe88136d3d6306fadbc5253a1d8b23d6de5f1804e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9e7742996833",
+      "review_id": "candidate-9e7742996833",
+      "candidate_sha256": "97d6b3003aa28cca9642019e6625e1ad66a01e9a1a3ce67a8ac63e16b6bd7e39",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9f071edc7dec",
+      "review_id": "candidate-9f071edc7dec",
+      "candidate_sha256": "5de453937583d9210e362407ef2f56bd4e6a95e46d701e8565aa86a6f1f35f8f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-9f4e5b2b1e59",
+      "review_id": "candidate-9f4e5b2b1e59",
+      "candidate_sha256": "ad34bd1de24c17289ceb36e0b161fb705d66503d3c3b2daa586a8949caa53c19",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a0686965cf56",
+      "review_id": "candidate-a0686965cf56",
+      "candidate_sha256": "80eb1fff7046091cc690eadb5367e9b631687338c49fe64578aca97bf2edafbe",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a0a53ea31e3b",
+      "review_id": "candidate-a0a53ea31e3b",
+      "candidate_sha256": "148a736c1c259945955d5d109d4d076f43b5ff2ce59e51d9c502b6a053645385",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a34156e4a983",
+      "review_id": "candidate-a34156e4a983",
+      "candidate_sha256": "4b2e8aecdaeada8d9a3aa0bd232f8a2a756b9029eed11139e556412b25d5861c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a3b8b3eddff9",
+      "review_id": "candidate-a3b8b3eddff9",
+      "candidate_sha256": "92876eaf59d8866960ee20fd514ddaa80136e40005d6204936bea31ba6c13992",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a490e097e2bf",
+      "review_id": "candidate-a490e097e2bf",
+      "candidate_sha256": "75f09450bda25a878d5aef67b51d4b38fe096191f5104f754432b9d9ba7d066a",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a4e2d4cc4795",
+      "review_id": "candidate-a4e2d4cc4795",
+      "candidate_sha256": "bb0bbe0e4e7ab34e67ab9324dea83ca2c4b97b40f608c68c5824064a071a7c2d",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a50305bfc9e8",
+      "review_id": "candidate-a50305bfc9e8",
+      "candidate_sha256": "692a2e7b2107b553d83d328db485f04eb315626e62c5dc6b1bec28b75faa79f5",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a652fe1a2f02",
+      "review_id": "candidate-a652fe1a2f02",
+      "candidate_sha256": "22efc8151f99f2485b140fe856b6d7a8cea8e8c194e83d5e90e7e969d374ec0f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a6e948bc618b",
+      "review_id": "candidate-a6e948bc618b",
+      "candidate_sha256": "8de834649e0ce7543b1cb914e8b3c64bc7c4dc1023dc23466c535b397a6da9e1",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-a7107f8a0d6e",
+      "review_id": "candidate-a7107f8a0d6e",
+      "candidate_sha256": "bfd933f48880db438a5abef8fb5a3b95714bc2d3f977679bf6aac8f8c85160d0",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-aa75304cc2b3",
+      "review_id": "candidate-aa75304cc2b3",
+      "candidate_sha256": "c78c7127f0fdb09f84f4e39e9261d60859dc98e2963e431357c3f785a1d46763",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-abfe8d4f6ebe",
+      "review_id": "candidate-abfe8d4f6ebe",
+      "candidate_sha256": "64a3a7a6880308c47dfe784406625a36dbb480f0365fd3dc163a6a63699d1247",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-aec0c6c2554e",
+      "review_id": "candidate-aec0c6c2554e",
+      "candidate_sha256": "a0aa6c64f4de51f277b6eb5538c989365d873a50ba6452f6e90cf24ae4f97ccc",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-b09a3aaed4cb",
+      "review_id": "candidate-b09a3aaed4cb",
+      "candidate_sha256": "4d266591423b91a5bb618f3711b9d4da7b7ad138d53db71512d898bbb8cfca17",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-b58f944b012c",
+      "review_id": "candidate-b58f944b012c",
+      "candidate_sha256": "0e93554b5808f62dbcefaced6c4f8f6c2999fc26998bb1242337876016d4a6ea",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-b7d7835138d7",
+      "review_id": "candidate-b7d7835138d7",
+      "candidate_sha256": "f96a07ac5f4736640c985cd866d52cb9b0c2a9a8df23e8d24af6c5537b736c5f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ba8d7441728a",
+      "review_id": "candidate-ba8d7441728a",
+      "candidate_sha256": "9b1c6f9caed949574dc0a1af954946892eced193e1486c329e6e98f26a6d0cdb",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-bb27855cbadd",
+      "review_id": "candidate-bb27855cbadd",
+      "candidate_sha256": "c35f90a6bb6b09fa7535f98c93530fb2d012e38da4e1b7bfb7b925f77c435dc9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-bf6ef3a62535",
+      "review_id": "candidate-bf6ef3a62535",
+      "candidate_sha256": "f7142ef41e34a362f89fe50b619c0456d6dd6d7d243e576c3873078fbc746915",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c103169088d3",
+      "review_id": "candidate-c103169088d3",
+      "candidate_sha256": "01b76c5ffdddef73303a76184ec37c8acf08d5f54383d46a45ed94f41eec67f5",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c18d6e9afc93",
+      "review_id": "candidate-c18d6e9afc93",
+      "candidate_sha256": "569c016e3dcd80cbaa04021613dc77f7a57ea49e68acab973e87e79116db5000",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c1a1121973de",
+      "review_id": "candidate-c1a1121973de",
+      "candidate_sha256": "b67566f57b1f621dcbee24e30885a35e1c07216583cd76cc56ba7efa17301916",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c1eedba346c5",
+      "review_id": "candidate-c1eedba346c5",
+      "candidate_sha256": "b67501f8b042d8c71ebbcb7fcf913e68054798513a3cff5e9b13378c1c5164fd",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c1fec4327716",
+      "review_id": "candidate-c1fec4327716",
+      "candidate_sha256": "79898adf50b4035d1b48533e5dae966f24ede599dba767b1e6f7610e07c20d35",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c2e87a1daf51",
+      "review_id": "candidate-c2e87a1daf51",
+      "candidate_sha256": "5f68f1535f6f60b6d4c86ce70fa948c2213f2ed6237c1d4cf86142b0a3d45b68",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c40cc5c992fd",
+      "review_id": "candidate-c40cc5c992fd",
+      "candidate_sha256": "e62b5755423d91a36a4dc70784def110e65dbbe7cf301236b1797a1e852b01da",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c4fbd4d9deef",
+      "review_id": "candidate-c4fbd4d9deef",
+      "candidate_sha256": "567a6af14bee4349a5ae5c81bcc03fa5cdaf0cee790b8de283cc561569d6f1c2",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c95e4475088f",
+      "review_id": "candidate-c95e4475088f",
+      "candidate_sha256": "18b86765ed8646079efa4834df7988d2ca60b58526af0a2b53040b5dc05f2a4a",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c961079ed01b",
+      "review_id": "candidate-c961079ed01b",
+      "candidate_sha256": "ae67e422bde0f8fc0776e6f64e9f3a0d96de2b0f54ef4b968e5fd4a793e4e961",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-c9c3091707da",
+      "review_id": "candidate-c9c3091707da",
+      "candidate_sha256": "38b05fcaef31ef27b5b4a7dd632acf212c27b12042187e3948e277eedf6cce65",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ca3f817fadd5",
+      "review_id": "candidate-ca3f817fadd5",
+      "candidate_sha256": "1ced016aed53aeef9625c84aaebde3c4680f680fcb34d5d10ab09c2cca148c9b",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ca737fad5d69",
+      "review_id": "candidate-ca737fad5d69",
+      "candidate_sha256": "d20c1d0e150353c26ad4f781046998763d6f7c3f1f2942f40037eb6be18db9de",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cac93b91b9be",
+      "review_id": "candidate-cac93b91b9be",
+      "candidate_sha256": "d6958338a493277dc73d8c82dee54df1ba90d4b4fd874b90ea6583314a94f5aa",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cb153bbe20a0",
+      "review_id": "candidate-cb153bbe20a0",
+      "candidate_sha256": "f7eda1cc5b3af3f7d2d2507e3c003698ca4459ccd7913a03f3bfda9e692ab6fa",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cb21227e824f",
+      "review_id": "candidate-cb21227e824f",
+      "candidate_sha256": "e2d630008857edea0df6807a9b5209c0d8301fcfc43ee0f7a923dc4190106a35",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cbbfe1f68bcb",
+      "review_id": "candidate-cbbfe1f68bcb",
+      "candidate_sha256": "a89fc3c0f389c62134bb2c8ea36aeaa368ab10ebf3529d6267f5b19bd07d0ce5",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cc37f46c2e87",
+      "review_id": "candidate-cc37f46c2e87",
+      "candidate_sha256": "d1967c05d4207e96a8743b80409ebb6fb1ff89bbdeb5193969da40556ee2df48",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ceb5d4369e92",
+      "review_id": "candidate-ceb5d4369e92",
+      "candidate_sha256": "e783f961e334129e525fb0edc31a41ab7f67a3651ef0c8056b0f4762820cd782",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-cff19d018c05",
+      "review_id": "candidate-cff19d018c05",
+      "candidate_sha256": "0fc4ba44afc49573cbd828fa1b5d334023fee047ff10f05c7eae920631912804",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d10b3e33cedb",
+      "review_id": "candidate-d10b3e33cedb",
+      "candidate_sha256": "38ba8a0c714e778bac7c4724989a0d3053284bc5eb08888ff0f29e8fcc206e11",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d444e2271711",
+      "review_id": "candidate-d444e2271711",
+      "candidate_sha256": "11211ed3da010220e8de2497a99d280829ccc03f610b5483c109f8795285b846",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d582e08c89b7",
+      "review_id": "candidate-d582e08c89b7",
+      "candidate_sha256": "9e4f320789cb8cddcd404a5fa8b76f3a211bee6263b81a71242e39172039f801",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d587766d5ddc",
+      "review_id": "candidate-d587766d5ddc",
+      "candidate_sha256": "7db784db40a8c898217c8230d605a1ef46369719e78cbd88a80d7b86874fce46",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d5bddbb2f9fb",
+      "review_id": "candidate-d5bddbb2f9fb",
+      "candidate_sha256": "8de26dcbc02f07967d7545e3326fdefea9408e5a889ec50f44a4228bb2a8bb6c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-d5f6bed6d78c",
+      "review_id": "candidate-d5f6bed6d78c",
+      "candidate_sha256": "9daa094d3974b1619b12572eba4c8736913b8d09fba5fbb7cf7d81ec3eeddaa1",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-da0c35579ff9",
+      "review_id": "candidate-da0c35579ff9",
+      "candidate_sha256": "de4f110ed3739a19238819a5cda3142709adeb874e1d9ba94aeda813af071243",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-dbe40d5b2a77",
+      "review_id": "candidate-dbe40d5b2a77",
+      "candidate_sha256": "167a9390a2ad061135b52b438923e2586e19c8632cdc0acd1398c727087a7267",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-dc0526166169",
+      "review_id": "candidate-dc0526166169",
+      "candidate_sha256": "957990290d4ef8677336c81c95f0df9545e475b858dc3048bb4aa4428b21dad9",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-dcdbd97d1511",
+      "review_id": "candidate-dcdbd97d1511",
+      "candidate_sha256": "5df7e65ce4880c46c005e3370172db07b2a6b5bbc23d16df8710a4cf855aec0c",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-dd37d1a91c48",
+      "review_id": "candidate-dd37d1a91c48",
+      "candidate_sha256": "5ce46a620a6a6d6e1f51eabaac762ba45cdd1bac05e3eaa338a300128a888506",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-de8494d1a4d1",
+      "review_id": "candidate-de8494d1a4d1",
+      "candidate_sha256": "fe85a736cee70d9a4e6ae546cff664dc85e5b99040a6add0bd1cfc5e06e9ec69",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e07f87e3a846",
+      "review_id": "candidate-e07f87e3a846",
+      "candidate_sha256": "fead619219db802ad472131a66d8828792bbbb22a0bb44f3ba197991167008f4",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e409b0ba1d2f",
+      "review_id": "candidate-e409b0ba1d2f",
+      "candidate_sha256": "ba5edf67f97c7004293aebc74465f8c028911bd0124a50fc1694134854406958",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e44f1f20d25f",
+      "review_id": "candidate-e44f1f20d25f",
+      "candidate_sha256": "b7c472b645f622f919e56fa0b8c92ed646270a036b4e4a99e19f5fb5d2bc1904",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e5213137457f",
+      "review_id": "candidate-e5213137457f",
+      "candidate_sha256": "efd6df2f560583b341afba0be795f806f3a4b530645bb267dddbf1c5dcd54e00",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e69d8660acff",
+      "review_id": "candidate-e69d8660acff",
+      "candidate_sha256": "ab7cd66147fa90ee13e118d6e1528faac52bc1ab986236e8996fef717ff60b52",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e6f1532aa760",
+      "review_id": "candidate-e6f1532aa760",
+      "candidate_sha256": "eb949fb451253c8b28c30e5169e20414b138cb38114813002756b4a333a42fa7",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e7c9c117ab53",
+      "review_id": "candidate-e7c9c117ab53",
+      "candidate_sha256": "fb2b47f5603fd5173a32c33e4ae8582c91727f0eaab0f649222c3cc966c978c4",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e87bf618899c",
+      "review_id": "candidate-e87bf618899c",
+      "candidate_sha256": "afbd0087b85dea636390e39367b1e24931a2d111c2dad558bc52a0fa071a3a22",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-e9d9db624bcc",
+      "review_id": "candidate-e9d9db624bcc",
+      "candidate_sha256": "2bbd56b7237efe72f337727759201418ca34e9078f77c672f494aa01f986712e",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-eb069fde1308",
+      "review_id": "candidate-eb069fde1308",
+      "candidate_sha256": "f46d8d129e8c3b84a35a010627971ec25401086f6c22e3cd0d22ec279e7a0431",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-eb3d6b50e219",
+      "review_id": "candidate-eb3d6b50e219",
+      "candidate_sha256": "765b3adafcc029c0501d556e4937186272756607b8b610b986f9d886da6ee223",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-eb9160eee067",
+      "review_id": "candidate-eb9160eee067",
+      "candidate_sha256": "77e58ff6d70837606b854f67671b07b76a550ce301f2a35bd235446455fbe5ae",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ed2a559b6a8c",
+      "review_id": "candidate-ed2a559b6a8c",
+      "candidate_sha256": "79408bc767d3a2ecfe418556a0c1bac33ca3e91aaecea13aecc4c1147a9d263f",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-ee5482f8165c",
+      "review_id": "candidate-ee5482f8165c",
+      "candidate_sha256": "88ea31be0e7ce41f65206cf0b163bfdcff810a15001cfddfd2f628c1e03cdbdc",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-f0c702377346",
+      "review_id": "candidate-f0c702377346",
+      "candidate_sha256": "f5e338bef8d6fc5e4c626274d2e439c97c32452a1ce44dce613d837853cfeb8b",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-f290e7e02d12",
+      "review_id": "candidate-f290e7e02d12",
+      "candidate_sha256": "013b15f7de04957c7c7da24cf2f6d5c4e89449a25a85a799ac9fda1b45cf02b1",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-f3ae4a2a43ad",
+      "review_id": "candidate-f3ae4a2a43ad",
+      "candidate_sha256": "f1ec06ab2354d41a1cd907221b9e08e644698f15332fff193a5a0833ee32b525",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-f8bc6ea8f32c",
+      "review_id": "candidate-f8bc6ea8f32c",
+      "candidate_sha256": "bfdd5c4a65d86fb47fdcab343fd615b43fa54b1c3c7ec9f8c56c682664b63105",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-fa46689420c5",
+      "review_id": "candidate-fa46689420c5",
+      "candidate_sha256": "6621458c82c3307b5c198ad8c435ca7eff608a80fbbc8366627204651acf61b5",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-fa7c155de6c8",
+      "review_id": "candidate-fa7c155de6c8",
+      "candidate_sha256": "62dc44d7efcc436deb6fc59b76ba2b39e2d4d190bc5b837f0fbb4812e03e25a1",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-faa8dc8ed825",
+      "review_id": "candidate-faa8dc8ed825",
+      "candidate_sha256": "b6361732f4abd34d58d927ff25ab5eb2e0e61ad482eb7cb9c834b78a45734752",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-fc6467fd0160",
+      "review_id": "candidate-fc6467fd0160",
+      "candidate_sha256": "e3a14d3a0a59d1e6ea52714ef10eddaa144188cd9d8958a12c4587135c5fb7b3",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-fd2050d7be6f",
+      "review_id": "candidate-fd2050d7be6f",
+      "candidate_sha256": "2cb36f2b2f44d6f8f1066ace4bdea9b9ae03da03b75c8aa02d66bbd42bda671a",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-c-fdbfa1db9130",
+      "review_id": "candidate-fdbfa1db9130",
+      "candidate_sha256": "ad5f8d371c63eeae9f13c3777f3afaec73d6f3a216557c2c4bc4b81f6c559682",
+      "status": "approved",
+      "action": "keep_separate",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：仅型号签名相同而完整参考图不一致，保持独立产品族。"
+    },
+    {
+      "decision_id": "decision-owner-f-00141a3f73aa",
+      "review_id": "family-00141a3f73aa",
+      "candidate_sha256": "579efb53554e08044089185d3f9e32060c956f7729f23cea9b4ce4876305ad30",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-02d1f7fdd3e8",
+      "review_id": "family-02d1f7fdd3e8",
+      "candidate_sha256": "6e3753e6c0bbb127b8835c0cd60a258505e9e4f709ac7de7aa80f3592a140355",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-030e5ed8b479",
+      "review_id": "family-030e5ed8b479",
+      "candidate_sha256": "155bb0cb1584fe1f33184ea72ba11db6a4e40b2f109e83c8e37aa28ebe715c63",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-049c7fe69d65",
+      "review_id": "family-049c7fe69d65",
+      "candidate_sha256": "45bf3c6e2f2d2558535764ea7b2443b3fd0ae3a77ce4598b2b919392ab9f8a57",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-0568e126cf75",
+      "review_id": "family-0568e126cf75",
+      "candidate_sha256": "da3d71c6e04b4fb1d84f2e3c9b7dedcb582d7581b524ca94937be45eed8d773a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-06b15e3043de",
+      "review_id": "family-06b15e3043de",
+      "candidate_sha256": "b4dfb26d9ae51346305220a1bf386d7217847152adaf6f85f4d0a3e6796f95ad",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-06f63a597360",
+      "review_id": "family-06f63a597360",
+      "candidate_sha256": "72f79a98a8f48cba3d6a13598887fdd60a0c2e18aa12da08dd60ef0873740efe",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-082e0d9ae478",
+      "review_id": "family-082e0d9ae478",
+      "candidate_sha256": "c340f591e760c5d6555483bb1d62ca13eb54c453ff6ebca5fb99cd0aded6325c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-0e113c4abfc9",
+      "review_id": "family-0e113c4abfc9",
+      "candidate_sha256": "c5a8117a506896e7abb2feb9cd890496ae8b26463a57765eff2607a55d35468e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-0e9462935b87",
+      "review_id": "family-0e9462935b87",
+      "candidate_sha256": "3308495dc59526dfd9a6cedfd78e2116a7632860c1f921d9f66152a1bd268ca6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-0f67c1cbdb18",
+      "review_id": "family-0f67c1cbdb18",
+      "candidate_sha256": "40653f88832551473013f99cbfca2162c7eecf2d2023aeaa527b75e9c29caea2",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-0f8c04856a0b",
+      "review_id": "family-0f8c04856a0b",
+      "candidate_sha256": "0bbc9bcc3d7d9a7f2b7e1518affb6e79502682d6107fb5f63952e6aad13db4d7",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-12530a2dfe1d",
+      "review_id": "family-12530a2dfe1d",
+      "candidate_sha256": "26712afabf387e1b2997a93bf495407147a5a327e957814e4eab60797c099bd9",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-12a5a75eddd9",
+      "review_id": "family-12a5a75eddd9",
+      "candidate_sha256": "65876d846f318eb0e16e3fba8e832ad33dbd234cb7baefd3b697f68ae65d190d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-198737d6f196",
+      "review_id": "family-198737d6f196",
+      "candidate_sha256": "8a4987718e0679fce66f953aff4c167f553ab4a743e174daeb819f003e9a7c86",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-1d1a974245de",
+      "review_id": "family-1d1a974245de",
+      "candidate_sha256": "13e0c80a424d8722bd45210732f60f30e69e89c20b19f6d6cd129d118f2028f1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-1df6bd5b00c2",
+      "review_id": "family-1df6bd5b00c2",
+      "candidate_sha256": "7d55fab609d1303e194f6d82d06e9d85d93afb606e5a03c9fc76206dd9d58a27",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-1e9e2c552118",
+      "review_id": "family-1e9e2c552118",
+      "candidate_sha256": "3a85cad00df96d6867332e12a50b40ccbb2bab498df5f743b38702e6742c712a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2137f1f40ac4",
+      "review_id": "family-2137f1f40ac4",
+      "candidate_sha256": "b585036fca2e1c7438b798726a2348b9ed07178eb98ac4a7f0487b39105cdf2c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-21d71ff6f45b",
+      "review_id": "family-21d71ff6f45b",
+      "candidate_sha256": "29d37982a1cdbf03b6be4f955964b20eb365e7bb363a9c4ea80b9560c0689161",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-23daf1fa79e3",
+      "review_id": "family-23daf1fa79e3",
+      "candidate_sha256": "8a334037e2b0179af60e53c3e498dd6e67889b8896d2f489c1112e69edf1e2f5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-245ea8769927",
+      "review_id": "family-245ea8769927",
+      "candidate_sha256": "3fb98b3ad5f4e6230c97ea8d43931fc847c854f31a07703bd329e5c29c0c1d09",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-25ddbdfa9b08",
+      "review_id": "family-25ddbdfa9b08",
+      "candidate_sha256": "67f351705989c4dfa0053fcec438de11b85788a6429908a3f1010654483e7f74",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-26cb40005942",
+      "review_id": "family-26cb40005942",
+      "candidate_sha256": "331e9abc07878db6710d06bb87f0fc499ed92eccb972af1cf7895cc37c829394",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-26dcba766d31",
+      "review_id": "family-26dcba766d31",
+      "candidate_sha256": "0b6092794394c5c562bc205f9e7d137fb4ac503df3b56efec26b68d4e638f3d5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2701b1e3a125",
+      "review_id": "family-2701b1e3a125",
+      "candidate_sha256": "1c3f42cf4be57559608aa091ae45db9acc9af707932793d7fb22f69f0276529a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2727d82996be",
+      "review_id": "family-2727d82996be",
+      "candidate_sha256": "ef10c3efb19e05f1662b4c3faea0daa60a1715d717d7922502b6c2c067124810",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-27c2ee899fa8",
+      "review_id": "family-27c2ee899fa8",
+      "candidate_sha256": "9a0aaf67f3248ffaf79c12235d63f9debd31a735b03601d8e66eeb99d74399bb",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2854de3594bb",
+      "review_id": "family-2854de3594bb",
+      "candidate_sha256": "c237d8b3c3295e3aa76765bace1ecc4dbbd39d8c8fcad85e1441c6e19f6f6f79",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-28e0d5203342",
+      "review_id": "family-28e0d5203342",
+      "candidate_sha256": "6577337fae4ace5da8b5647963bcaf29b575490ed68af97f8a9c130189d36f2b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2a913710c571",
+      "review_id": "family-2a913710c571",
+      "candidate_sha256": "4c6159f2207cdd5c949963935dfd3a8d75df1cb15196baf852f312e1e1eb26d8",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2bd9c0dfab3d",
+      "review_id": "family-2bd9c0dfab3d",
+      "candidate_sha256": "24aab0d5c04fe8d9b6e9fdc8f85817514a2cfad379ceb8baea21fc3bb47e9f21",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2d5125a05fbc",
+      "review_id": "family-2d5125a05fbc",
+      "candidate_sha256": "f9cb5d0871415285b8f032bbb8cb95882c4ab68a412bd10c4a22839e8eb0746d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2d5f8845ac52",
+      "review_id": "family-2d5f8845ac52",
+      "candidate_sha256": "b6eda6595467a9e7caa3c95d1efb51df38cedb613a0bdf62c3ce6c29c99d8e01",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-2d61d1840a46",
+      "review_id": "family-2d61d1840a46",
+      "candidate_sha256": "cea83c2c52225f32d9af831b8d585619e50932dd874062b42bd08df64d0b5ee6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3042d6c6ea43",
+      "review_id": "family-3042d6c6ea43",
+      "candidate_sha256": "db3752ad1d71f455e7134adf49eb6c8dcf872f0a62b45018fa63e6d0911a07a9",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-30498dd52a51",
+      "review_id": "family-30498dd52a51",
+      "candidate_sha256": "435d35014ab2bd5447e5c5af3c6e57ae16238245bfbfa69978fc75b31ca01658",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-324ad8735061",
+      "review_id": "family-324ad8735061",
+      "candidate_sha256": "c9288f911bf54a4e25ee78da870b49a94cf6b5ae1ff43478a306deb87cd0b8d3",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-32b566246c59",
+      "review_id": "family-32b566246c59",
+      "candidate_sha256": "e160d47abba3cc73092d7e3a705549f77479872e9788904cb24649fa6432a3fa",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-32cd48f231ca",
+      "review_id": "family-32cd48f231ca",
+      "candidate_sha256": "0ae2795eb4ae13f31b238ca225d0ef6c3a2d18de655aade2424a622cfe8aef84",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3355b8346c45",
+      "review_id": "family-3355b8346c45",
+      "candidate_sha256": "a062cc0221cd46eb80f477501faa716c6b5129c96883ad7b78b6552d4570624d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-33ecfc3071ee",
+      "review_id": "family-33ecfc3071ee",
+      "candidate_sha256": "f24f83e76b03a736ec27049bf3586156ba0a4589772932dd77d029c19ea620fc",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-34e9b14ae6b8",
+      "review_id": "family-34e9b14ae6b8",
+      "candidate_sha256": "e9be2d4e524b3e6c5f4597f8c23d587eb64ee0335b2b30971dc42d1f8ed9a477",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-35d3e85b5f71",
+      "review_id": "family-35d3e85b5f71",
+      "candidate_sha256": "fe16d0faff9290ef24b2916815beb5d2fc4eca7adcd67cdffbbc92e6d8e2a77a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3a61404ac521",
+      "review_id": "family-3a61404ac521",
+      "candidate_sha256": "59d25ce4bffd49dde2a8eeb413a956aad271348a2e1e81f88ac4f47c86967a7d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3af9f6786625",
+      "review_id": "family-3af9f6786625",
+      "candidate_sha256": "16c5173aff6b6bebaa3d035375cbb3e837140e9862e5e26bb9ff8fe6710e05a2",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3d1c885c0a85",
+      "review_id": "family-3d1c885c0a85",
+      "candidate_sha256": "2298e981e5e54e70305128895fdb15e79e20a15fa830989ffa85cdd8a9b8f25f",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3e3d32f446fd",
+      "review_id": "family-3e3d32f446fd",
+      "candidate_sha256": "3e72be3fa025a5cbd14b222fa6d493535f48c44959f175e957cafd1485e3d8f8",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3e94550aa56d",
+      "review_id": "family-3e94550aa56d",
+      "candidate_sha256": "45a8d8506d111a5451541adca06ce59d7c4fc2293009409ca3879a982a079a10",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-3fbcdc71c0c6",
+      "review_id": "family-3fbcdc71c0c6",
+      "candidate_sha256": "14defb3b9c7864384ce454917484bda4ab44bc79e4972b30e0d2450d676fe528",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4017b24300ed",
+      "review_id": "family-4017b24300ed",
+      "candidate_sha256": "44965e909872f6be1ddefa0b804b929dad99f536d282aa1b06098e82608a265d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-405a5f3a678a",
+      "review_id": "family-405a5f3a678a",
+      "candidate_sha256": "4198e2a80e5e39c0049b2bd98a8a087c20f89bffc97c5014c954920e12583bc9",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-424dd24463d8",
+      "review_id": "family-424dd24463d8",
+      "candidate_sha256": "781acc7ef42e1dbf6f0de8966eb8385ee0eb7348d2cf45cd34a0dc927f369120",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-43cac4a1e393",
+      "review_id": "family-43cac4a1e393",
+      "candidate_sha256": "8a9cfa56a507ab54def88fd42e1204b4a6a808e008b3a0029219a11aa68fad56",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-49af3d8cf0d7",
+      "review_id": "family-49af3d8cf0d7",
+      "candidate_sha256": "43501fe1746816b5cf9b0168600f5eb663aa882a132144c18774e721e15d0aae",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4abdf863ed64",
+      "review_id": "family-4abdf863ed64",
+      "candidate_sha256": "8f93df8186ccb041eba10bbe42b9c2f07ac9a8fca30d28bf9b4ec2895b6843b5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4ca47eec39f6",
+      "review_id": "family-4ca47eec39f6",
+      "candidate_sha256": "68f4018a71bfe3d8e3d4202a1f92a3aa776a1cb17af77c32ed307c5d431b38f9",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4e9c16a8d808",
+      "review_id": "family-4e9c16a8d808",
+      "candidate_sha256": "fc505a5de00b169976b61b1e9b608038d49d0f3db62f0886488528bee5259915",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4ec5a52c1ab3",
+      "review_id": "family-4ec5a52c1ab3",
+      "candidate_sha256": "b77ff7652486afd973272022f3007fc8b0de109e486caa083f6eb2e95d32ba1d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4f687e643406",
+      "review_id": "family-4f687e643406",
+      "candidate_sha256": "7c82f359525207d452c9c6ea9c121451da9332c93990e7c781a12ea030dfdf3b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-4ff81a3932b5",
+      "review_id": "family-4ff81a3932b5",
+      "candidate_sha256": "fde92aba5c59dfdf3c584392f661c760fa16b234060f71fbdf850251155f6847",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-558f49cdd341",
+      "review_id": "family-558f49cdd341",
+      "candidate_sha256": "5882375612e88bf6e1781f19851ded57a42719a9f599a928e93378c23f4a29fa",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-559d77c8ac4e",
+      "review_id": "family-559d77c8ac4e",
+      "candidate_sha256": "22f6eda0e76ef83f6cafdf70acf4bf273e4588d54e1832aadc8528cedb0e7421",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-56e0121cc9b9",
+      "review_id": "family-56e0121cc9b9",
+      "candidate_sha256": "79acc4cc9052775d9a8ee22f99fed19f500af24b14ab4aa5f4e8f6493255f0bc",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-5a57c1542de7",
+      "review_id": "family-5a57c1542de7",
+      "candidate_sha256": "d23eb3ecc7361e9fe9045391d9411679fa90d73e5218bad462f73c1a89aed143",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-5ae1d7b4ce39",
+      "review_id": "family-5ae1d7b4ce39",
+      "candidate_sha256": "8f973b0a42f28e4bc6ed7269532b0c278101b093e2cc80f8f89a686dfe62ce56",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-5b1bf372cd36",
+      "review_id": "family-5b1bf372cd36",
+      "candidate_sha256": "f598d8f0bd33ba0c1f857b797df65f1e6c89a9953bcb7058fb6e8935fa037717",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-5c40ae6f9ff3",
+      "review_id": "family-5c40ae6f9ff3",
+      "candidate_sha256": "5aa4570f9141836d1b54e4b1f318bef7904948eca9c21cac581ff19db01e2d14",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-5ca0973d636a",
+      "review_id": "family-5ca0973d636a",
+      "candidate_sha256": "ddff54759dc99fbc29d87e052ec6bcf1bac91f18c3628dd55bcdc1bcf0d89d89",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-60e0bec5557e",
+      "review_id": "family-60e0bec5557e",
+      "candidate_sha256": "a85decd8eae48718c2050f7643113647ded55d7fe422d916a282fcad960cd756",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-615958cc19ba",
+      "review_id": "family-615958cc19ba",
+      "candidate_sha256": "fae5d77e98a295446b119739126b3c9f11eb143acb93b2c99403e91802a141aa",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-63262efeabc8",
+      "review_id": "family-63262efeabc8",
+      "candidate_sha256": "07aa35c1efe7fa75aa10043aff1235077abd1ead6a9be0c20f60be76dd62481b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-642445671798",
+      "review_id": "family-642445671798",
+      "candidate_sha256": "a597ce7a674fb94a75138a9aa5a46885ce834f42e83d00938213236bae78c819",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6464065e591d",
+      "review_id": "family-6464065e591d",
+      "candidate_sha256": "6a6d0d731e9a94b3e43318185877799e4f62268cd3c7c44b7c8ebc09ea9e2062",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-64dc4ea48a21",
+      "review_id": "family-64dc4ea48a21",
+      "candidate_sha256": "3b287b3f6aea8971a4d5f5edc3f2c55a7755c7a7d2b0cb6e095c480b76ad659f",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-65e8d9184b70",
+      "review_id": "family-65e8d9184b70",
+      "candidate_sha256": "1122b56773d0912524b6b7eadb832bb79ad833bafbc0c4964f50649886b40f5b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-69bcbb3cd821",
+      "review_id": "family-69bcbb3cd821",
+      "candidate_sha256": "b5fca7bdb5f1605dec35fa05132fa44521c3774107dea8b971638ab93aeec0ab",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6a319c3887e3",
+      "review_id": "family-6a319c3887e3",
+      "candidate_sha256": "e00be16dba8b0ac7115641480d52d9efd59460e9fc9dd7c1a7c74a0877e18fb6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6b3b6a5a2f69",
+      "review_id": "family-6b3b6a5a2f69",
+      "candidate_sha256": "b14bb11632d68c6d52be232dfc99365d418279c80ecbbe1f0ba4a9b3b9f5a9ed",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6b90e107ab8d",
+      "review_id": "family-6b90e107ab8d",
+      "candidate_sha256": "398755d0f6e444982d5ae381277108f0609f665d22a0a4f4cbb062587f7d1d41",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6c77f69fac26",
+      "review_id": "family-6c77f69fac26",
+      "candidate_sha256": "df68e351be2ec7e6f9a63a00ac441912f69ba0b71e7c8db55ef8439c88123cba",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6ce6071a6a7f",
+      "review_id": "family-6ce6071a6a7f",
+      "candidate_sha256": "5fa3552473fad9672788e5c3ed811e9308322e653db487368b8fd05b81258258",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6e5316dd17f0",
+      "review_id": "family-6e5316dd17f0",
+      "candidate_sha256": "c1fa912f83faa331a15e7ec5c2ef6649766cb8fe10b8f9d16ce5c8e8f95465f6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-6e95ab4888a6",
+      "review_id": "family-6e95ab4888a6",
+      "candidate_sha256": "9cd6b93ef0259810bc1d9e70f5bcf75f5edf51e6f46d4901caf657005feb5c0b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-71b10b309a08",
+      "review_id": "family-71b10b309a08",
+      "candidate_sha256": "967bfa21a2a59223318200acd65054b6456ad31ae603943c17e87ce47a6393e7",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-73482570dd11",
+      "review_id": "family-73482570dd11",
+      "candidate_sha256": "323c129082d32548762b3323a226dd896cabc108cffb45fa0f170eacbd60727d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-73da2da1d50c",
+      "review_id": "family-73da2da1d50c",
+      "candidate_sha256": "2992d3c0fbb47d00f92d9b515c9e4104e7767d948e4068f5861b872da9c3a422",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-73db1255e2ae",
+      "review_id": "family-73db1255e2ae",
+      "candidate_sha256": "41d4d8b2ccdcf6b928dbc33b5012f8462bebbab31162b4f43d1db1e8dcfcf193",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-742a251ffbd8",
+      "review_id": "family-742a251ffbd8",
+      "candidate_sha256": "e698cf2eea67dfc3d3dd5552de83c051e65ae06d65de9517d8a4eedabe4a162a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-7582112765aa",
+      "review_id": "family-7582112765aa",
+      "candidate_sha256": "9f5f1b0df5c93fe6f95b2e880e51ef715a419575a100cb2cc1cd4f79709ad8fd",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-76a48ec4846a",
+      "review_id": "family-76a48ec4846a",
+      "candidate_sha256": "9b628481d8f49bdd289f5041fbc132dedccec050541b6825e3089d3e8e4685e5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-76ceb4aa513c",
+      "review_id": "family-76ceb4aa513c",
+      "candidate_sha256": "eccc1e15adc50e009d4cd86bd194592e706b097cca684f07a0cea00294def33e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-7791c6e940c4",
+      "review_id": "family-7791c6e940c4",
+      "candidate_sha256": "6acb2467ba02ca0ebda8a757fc867a32eb46e4a7aed93ff05bd7f21c46b0e42e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-7ee7518076fb",
+      "review_id": "family-7ee7518076fb",
+      "candidate_sha256": "70c690ec008a5a92ada81218807c7991202b63b4ddb2d8c2a0ce6019b00afa29",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-7f26b5629cc2",
+      "review_id": "family-7f26b5629cc2",
+      "candidate_sha256": "0dd88fbb0d0f194b1cefcbb5591e86c7c3d2794a9f93769e3ea55570fa44c9f1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-8097b26e63d6",
+      "review_id": "family-8097b26e63d6",
+      "candidate_sha256": "62f0c94c4d8028cedef06a3d42508f5af2197e6c69469d9be4304b69f45d536c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-80d5a41b61a0",
+      "review_id": "family-80d5a41b61a0",
+      "candidate_sha256": "f04e63a4f62cb4551d1c8507e70abf18b6f93b2c495b6d364f90714feaef4661",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-815f55222963",
+      "review_id": "family-815f55222963",
+      "candidate_sha256": "3b064766947b635fbb6d7c445cb6ac84eb943332b6610194f770ea1c668250d1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-82cc7043152e",
+      "review_id": "family-82cc7043152e",
+      "candidate_sha256": "14d16f8fa6448c656beb6840eb36bb7ddd6214a829f93033ac6c304d27080ca7",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-83e08139af8c",
+      "review_id": "family-83e08139af8c",
+      "candidate_sha256": "6e63fa485be60f6f8710b8bedf1245dff3a97713a04449b3ad656fb13196a160",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-84db972ff72e",
+      "review_id": "family-84db972ff72e",
+      "candidate_sha256": "4925e6fa7bfff3a14ef8c5ccb2eb9a0b03adb65ae88ec9e9c56e7f95cd1992ab",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-854b417683d8",
+      "review_id": "family-854b417683d8",
+      "candidate_sha256": "3760438aed110b647a4f218d25068bd3dc44c8f63c5d0f94ed259050a4a05cf1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-867dbe009a2b",
+      "review_id": "family-867dbe009a2b",
+      "candidate_sha256": "a7bb7d3128fee095f3bea75420fa81ab252312b94f60e77db06ebd0c83b8b50f",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-8b5dfef55c9b",
+      "review_id": "family-8b5dfef55c9b",
+      "candidate_sha256": "55569295ef56f5219cab0eb40d8eb5819be6e785eb73f7f734c3a15c7418542b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-8c2961ce44dc",
+      "review_id": "family-8c2961ce44dc",
+      "candidate_sha256": "ab49d4dcb3504eba587bd4fb63833cb83dc08992d0990019f35300e5b186bead",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-8faf6661e6cd",
+      "review_id": "family-8faf6661e6cd",
+      "candidate_sha256": "dc8152caaebe8d222e14f0bbc80c6a13392f30c08de194d3becc4472417e04ed",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-91d441f42646",
+      "review_id": "family-91d441f42646",
+      "candidate_sha256": "d4fa451d98be8b548c033d5f0abfc5d9e94c0bd1962d6932a07c880b29849b9a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-92c3b8d2cbc4",
+      "review_id": "family-92c3b8d2cbc4",
+      "candidate_sha256": "661b4e149dc5757b8c37f783e67f301aef5aa47d35ba69cf61bf33894af34f61",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-967e3f79bc22",
+      "review_id": "family-967e3f79bc22",
+      "candidate_sha256": "bf928f4bbf825b07016fd59c4a2dc8d2392ccf15f854be37bad77b800a3a92f8",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-98a8d92c92eb",
+      "review_id": "family-98a8d92c92eb",
+      "candidate_sha256": "62acc8378e92afb3fec723b9d32d6cb5e9eece59ef343ffabbee053235a40ce8",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-9ba9f2a4d003",
+      "review_id": "family-9ba9f2a4d003",
+      "candidate_sha256": "279fd46f2b3804f6964edb3a685a85d4e2c0b2dc2ea02b5da7a32de96e7e11d1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-9c49235f9eb6",
+      "review_id": "family-9c49235f9eb6",
+      "candidate_sha256": "b4c95a015c018948ae8f70deebd8ed88a003d33c1eb37d440824627f336b48c7",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-9c5a4011c5e9",
+      "review_id": "family-9c5a4011c5e9",
+      "candidate_sha256": "b0c543e3ccd8063f734ef345198d0189fc67ef1af72d40956d179313e44ca463",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-9d89475662a6",
+      "review_id": "family-9d89475662a6",
+      "candidate_sha256": "c93861eee206590036ede226c392a99e0bde7fffb02b8c88fd9345978070a0b3",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a07813ab9f8b",
+      "review_id": "family-a07813ab9f8b",
+      "candidate_sha256": "81d66d7f408a1e61224f921558ee5788851f43bbb28937d2dbe676380d99705e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a0ae14a98de0",
+      "review_id": "family-a0ae14a98de0",
+      "candidate_sha256": "18458ba3ec9c935da5fadd534efd58cfb9a3c5821db3a0ba295e2eed20a20f8c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a0ffd8b6c7c9",
+      "review_id": "family-a0ffd8b6c7c9",
+      "candidate_sha256": "977c375932996b27b4c1e037dbffc6ddfec03903949404c65137b58e32df4453",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a207363bd0eb",
+      "review_id": "family-a207363bd0eb",
+      "candidate_sha256": "ee66bc77663096c6ed42a067425b717acdb6e647a78aa34abc2538f46ce050d5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a260ecd10089",
+      "review_id": "family-a260ecd10089",
+      "candidate_sha256": "c801dd079addca49a832b452890fd901847cf6cab03983c4d99e2fabcbe3b3f4",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a3595418e623",
+      "review_id": "family-a3595418e623",
+      "candidate_sha256": "aad3ab7ae170984a4000afe99a5e1c27a52dbfb7553803ed919da3661aa4918a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a3d872de3600",
+      "review_id": "family-a3d872de3600",
+      "candidate_sha256": "1af9261a0ee445cc84e2a8ccfa29daeecd91202ac6efeaf2404a629b2cfbd933",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a67653876a01",
+      "review_id": "family-a67653876a01",
+      "candidate_sha256": "01fcdee4867e6918aaf249a6bf86c5b9bec3a46c1162e9c5e3ef595c9c9d0be6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a6e3939e512e",
+      "review_id": "family-a6e3939e512e",
+      "candidate_sha256": "33283cfea9fafbe9d76af686fbe3e9ccba0fb492114508fece71ad91259a14be",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a7a40ec6b2a4",
+      "review_id": "family-a7a40ec6b2a4",
+      "candidate_sha256": "440f5c0620b716d83fe2e663520dd5de5c082057b616edd0856cfabe7ee8c2ff",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-a8351ce02e03",
+      "review_id": "family-a8351ce02e03",
+      "candidate_sha256": "497e8b9aad3c3941b1df3e946e90003830ec20b35463320eecc5caec6c2ff1fd",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ac41d0b8470f",
+      "review_id": "family-ac41d0b8470f",
+      "candidate_sha256": "fc2082e5d1b4f7fd24c160928afa4ff60713191fe91085017d0e541ea927075d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ac73a301cd2f",
+      "review_id": "family-ac73a301cd2f",
+      "candidate_sha256": "56913b9ccfcb597f45b7fd217c1198a8c0e67e37146a2ba899e9aaf696dc33e4",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-af052b0d7b30",
+      "review_id": "family-af052b0d7b30",
+      "candidate_sha256": "35a36a6917cc4c23957361ee0a4c76da8cc162e383283e2b9ddb26d3c1237743",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-af280e17c2e8",
+      "review_id": "family-af280e17c2e8",
+      "candidate_sha256": "306ce4a9e1f9cf5e85258601bedf935c9bc605d7aa75a1eb35047bd15d7e9526",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b1164a806916",
+      "review_id": "family-b1164a806916",
+      "candidate_sha256": "60f5d76c9248e62924442c97a9dd0fb69e694972345a509fe04bb0d71067931c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b31735d3f77d",
+      "review_id": "family-b31735d3f77d",
+      "candidate_sha256": "e6988916ec4ba605ffe2ffd2aa6ea4879bca4083ffee6cabc2c9d4483a667824",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b420b59d312e",
+      "review_id": "family-b420b59d312e",
+      "candidate_sha256": "1268169b5e9e195f4246500538eac0fc1434b9127b0f8b82877bf3292126bddb",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b7084803383b",
+      "review_id": "family-b7084803383b",
+      "candidate_sha256": "0e6286ef1b2cf3c401da4d40acb48b1eced4e0ed7c54ed56a9993c824569f45d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b770f392d718",
+      "review_id": "family-b770f392d718",
+      "candidate_sha256": "6a094cd5fc43cc37517d8c2e292c29b4e08c8dc7651085d18801f20bb00962a0",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b7764a728a47",
+      "review_id": "family-b7764a728a47",
+      "candidate_sha256": "f17ed6001134537b93fe85a314a9192032a86e781185c639fffc3ce4423f2c5a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b781c8f30b59",
+      "review_id": "family-b781c8f30b59",
+      "candidate_sha256": "393370d864fc4d6abd3bed7a1673618f72dde7b96ce6dc0340567deee1983eb4",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b8270df77f31",
+      "review_id": "family-b8270df77f31",
+      "candidate_sha256": "35debd9f75d8a44ee6e97e2ca4e1a0bf9e191f6694e5948a88ea492c39a06a30",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-b8b717d0d829",
+      "review_id": "family-b8b717d0d829",
+      "candidate_sha256": "2e5e51f1f7c7e01c96a93b39a8a113b565acee9901291705df784c8f58f41dda",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ba6c29f817c4",
+      "review_id": "family-ba6c29f817c4",
+      "candidate_sha256": "97fdc9a96b9d41b68b64c3dc0de7e1adf4543389fd1e9892220fe612f447a637",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-baa986167657",
+      "review_id": "family-baa986167657",
+      "candidate_sha256": "521749569b1803332f1fcad4cf7649271f719e72916685102622027daeb05668",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-bcba338406d6",
+      "review_id": "family-bcba338406d6",
+      "candidate_sha256": "876341825b6378c5d808c3f344734d2e55b8607873507d5f0b4a5062d1d40afe",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-bceb74966579",
+      "review_id": "family-bceb74966579",
+      "candidate_sha256": "05c255a133ec4d69d1081973dbdce2460fce010013ce748447fbf5eaa74364b0",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-bf237864b94c",
+      "review_id": "family-bf237864b94c",
+      "candidate_sha256": "84e803863ead6b5a6b3b8357c92b8d5686d560d44f65f91a8cb5b0fa9a26be03",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c04c2d13ab6f",
+      "review_id": "family-c04c2d13ab6f",
+      "candidate_sha256": "330427b851fdf909660b392f783c134be71c5a900e43b360416985fd7bcac061",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c1a9e4f31306",
+      "review_id": "family-c1a9e4f31306",
+      "candidate_sha256": "94b25c605fb44829658690e6cfcf9ede677363e5b4cab2b3dbbd26c36fb8f2e2",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c2dafed113bc",
+      "review_id": "family-c2dafed113bc",
+      "candidate_sha256": "5515cc411f9e9380b0164e902a904a5fa43f68655ffeccd690c1e2f2addd9888",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c403b5e0ff78",
+      "review_id": "family-c403b5e0ff78",
+      "candidate_sha256": "da910e682bcfafb206506033153650d02a6fb9daab62b4daa855c722d73733f6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c4f0602af05c",
+      "review_id": "family-c4f0602af05c",
+      "candidate_sha256": "7b9d935db2abfcf0ed6473102750d81dce1890bbcb1429c79e7a53a9b183acf8",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c56f726f72c7",
+      "review_id": "family-c56f726f72c7",
+      "candidate_sha256": "ff23989ef93c63f31bdff143a388854d673fdaab9bf011d374dbb0aa9de03d05",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c70907454c73",
+      "review_id": "family-c70907454c73",
+      "candidate_sha256": "ef7e1c62cf6b4f39fe457340b18988e95725b36fd04f207807ca773701eff772",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-c739effd09c6",
+      "review_id": "family-c739effd09c6",
+      "candidate_sha256": "6e9bce3b2437bad1a1cf0035c8560f3a2a3ee97e7253dc62026227d74988d679",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-cd5c810f5054",
+      "review_id": "family-cd5c810f5054",
+      "candidate_sha256": "4797e54351f4ed8bcfbe7af92a42564adbf46121677b7c82d3f34acb8fa8e826",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-cd690fbd7d78",
+      "review_id": "family-cd690fbd7d78",
+      "candidate_sha256": "dc92bd5f81f29f087c6e7ede13a15909f2da102f9b92effec2804aabd1860da6",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-cf7758006ff6",
+      "review_id": "family-cf7758006ff6",
+      "candidate_sha256": "65827bf24a4f57b6395119dd73ae7b2c59f62becdbb0b958085d3397dc57ec7e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d0280ebd51c6",
+      "review_id": "family-d0280ebd51c6",
+      "candidate_sha256": "464153b6383e82e90e8ef5754dd50bcf73aa4493402ecb483c65103d07acd470",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d15bdc76e432",
+      "review_id": "family-d15bdc76e432",
+      "candidate_sha256": "9380413cfea82f1502019794512ff45342086ad40408d85440080ad40dc5db25",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d175f06f16f4",
+      "review_id": "family-d175f06f16f4",
+      "candidate_sha256": "5ba4e8a16655aa6adb38795387e66cb99ab37cda1513561ecdfe8246379ffd0a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d2492822d838",
+      "review_id": "family-d2492822d838",
+      "candidate_sha256": "55694887d0ef27a63b20b78f46aa94e110c4ef171642b2950a400c29bb80d53c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d33db13cf146",
+      "review_id": "family-d33db13cf146",
+      "candidate_sha256": "69e8a542591fd22424a4b02b11287ddc99f93da73203297433886bfbc3392c54",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d3e8bf261487",
+      "review_id": "family-d3e8bf261487",
+      "candidate_sha256": "7a6b31ae86c62a5a127eefcc073f46c6c0f2f6f8b0e5a0cdb7cc2abc02ed4bc4",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d53b56d0f412",
+      "review_id": "family-d53b56d0f412",
+      "candidate_sha256": "c460a3f4d7c63ce38812e29f9979fb720a33f3fc557a4d1eebced4a0cef16e39",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-d5dd41bb77e9",
+      "review_id": "family-d5dd41bb77e9",
+      "candidate_sha256": "28b3a1284281e5eab2815aceeda2fa8807ac2d2f3d115f90a1427a13df13748c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-dbee27c74d36",
+      "review_id": "family-dbee27c74d36",
+      "candidate_sha256": "3f448e549a01705615681ecd366e01381afd6f79d483407556d4ad35c88fb02e",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-dde6afc769f8",
+      "review_id": "family-dde6afc769f8",
+      "candidate_sha256": "21e04e49abaf06096ae65ecff3b6e87ab63de59530d17550f8eb1d8a21fbd547",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-de12c7099708",
+      "review_id": "family-de12c7099708",
+      "candidate_sha256": "9c1c5125873b83d272959792ff457e9aac23779e13bd14b24aa8c977ceae6ba1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e01194e30b09",
+      "review_id": "family-e01194e30b09",
+      "candidate_sha256": "502bc9bb06c7bfc6a2d5b99de7e7c4eb3df5a4e1017d30e4b4cb45829f969bf0",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e18b9df62819",
+      "review_id": "family-e18b9df62819",
+      "candidate_sha256": "5cdd0b8de0a5e861b55185de980e20a3df15ba916b79f0ed3ba8be3e860a198c",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e57c2d60a24c",
+      "review_id": "family-e57c2d60a24c",
+      "candidate_sha256": "65ca5c0b7fda10add1a0f733b48e58a8c308d7d45f09433ded71ee7c30c1e845",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e64af3d44cfa",
+      "review_id": "family-e64af3d44cfa",
+      "candidate_sha256": "974282add8d2231f32894b45f3bc48adf508810695c98f6882268d4a5e956bab",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e699db4307e5",
+      "review_id": "family-e699db4307e5",
+      "candidate_sha256": "bc46d17acc4d336e6aee11b8a2e4ba47a69a71ae079fab7c5c1ee53c8504569d",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-e841a51a363f",
+      "review_id": "family-e841a51a363f",
+      "candidate_sha256": "45c4ebd43b9367a9cf46eeb4849a5119dced884d6fcacbb127fb21fa9b0f61c5",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ea384bf6c039",
+      "review_id": "family-ea384bf6c039",
+      "candidate_sha256": "8dcc81e4ded72f0e2fb580893b5b546cabed84c52af6a1164eccae8c951a8cc1",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ecb009d536f0",
+      "review_id": "family-ecb009d536f0",
+      "candidate_sha256": "073c8c4dd984779457e23b81113db67754a68dd3559e00dbbc96137b6a8bd235",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ecc3420bb4ed",
+      "review_id": "family-ecc3420bb4ed",
+      "candidate_sha256": "1970628c9487dcca1d5ef1048226d5f1c92139a0e7f090e978f037b60498d2ec",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-ece189d903fd",
+      "review_id": "family-ece189d903fd",
+      "candidate_sha256": "8d8c7085195004afe07e8e983a8e08853f5460c854e1781632a752d8ce7d92d9",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-edbf940cf003",
+      "review_id": "family-edbf940cf003",
+      "candidate_sha256": "7c7352dc55653ee56c715cadfca1e53c06ca5c77681e208021378e3add0456c7",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-eeac7adb665a",
+      "review_id": "family-eeac7adb665a",
+      "candidate_sha256": "431507393897b1e2093cc94a71c93e7a20d0381207e771407b20184444cf2710",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-f294d2abb5d4",
+      "review_id": "family-f294d2abb5d4",
+      "candidate_sha256": "4dd4d19a92b0c102e783ad996a41c8d9ca9326e1ee4a6c2951e3336d56cd86be",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-f353520a4805",
+      "review_id": "family-f353520a4805",
+      "candidate_sha256": "b853b632729c9a6b4f714885321bf578225736f26ecdcc1037694e263089555b",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-f4e34fe377f5",
+      "review_id": "family-f4e34fe377f5",
+      "candidate_sha256": "be1c3bad6b0de3076abe9d57c6cbad3cdd09dfa4ab7176af3d854101792a9192",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-f664a7f05a23",
+      "review_id": "family-f664a7f05a23",
+      "candidate_sha256": "2aa83d72c63547c27bcb99424abfd81d91fcb9c64a5698306a767b5c115b5a37",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-f991409a7b95",
+      "review_id": "family-f991409a7b95",
+      "candidate_sha256": "ca2406874ea83081b5acbaa7c59387f8b35992fc8294f00ff61edea05de2775a",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-fa8be86858e7",
+      "review_id": "family-fa8be86858e7",
+      "candidate_sha256": "8ec93901557ffd725fdd84843884bf660251a179dbee893c423e50d82f2e7c12",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-fd0d114a2c01",
+      "review_id": "family-fd0d114a2c01",
+      "candidate_sha256": "35ad68b9767b3cc92a0ad00b681ea85dfd4598aede8ea9c8cd647676b798a389",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-f-fd8953ddd20f",
+      "review_id": "family-fd8953ddd20f",
+      "candidate_sha256": "0851a287335c8955b495fcc6c3e74b7ef0a5ac18953723506a4ac42c7cd40783",
+      "status": "approved",
+      "action": "confirm_family",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：完整详情参考图集合完全一致，归为一款产品。"
+    },
+    {
+      "decision_id": "decision-owner-cat-mall-sql-11910",
+      "review_id": "category-mall-sql-11910",
+      "candidate_sha256": "628ac881c659d9e9c21ed9a8824f6e1050d732ae0a9f563fd8ef963b039e276f",
+      "status": "approved",
+      "action": "recategorize",
+      "target_category": "风扇灯",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：按商品标题及同源系列证据修正为目标分类。"
+    },
+    {
+      "decision_id": "decision-owner-cat-mall-sql-12206",
+      "review_id": "category-mall-sql-12206",
+      "candidate_sha256": "d0fd0307347f716323898ceb722e5331996916be68636f3177c6239991808c47",
+      "status": "approved",
+      "action": "recategorize",
+      "target_category": "风扇灯",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：按商品标题及同源系列证据修正为目标分类。"
+    },
+    {
+      "decision_id": "decision-owner-cat-mall-sql-7173",
+      "review_id": "category-mall-sql-7173",
+      "candidate_sha256": "ff919a74e30e34f7f3971f891b7ece9319461b2cf585d6c7481b4a2e50e0a6a4",
+      "status": "approved",
+      "action": "recategorize",
+      "target_category": "吊灯",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：按商品标题及同源系列证据修正为目标分类。"
+    },
+    {
+      "decision_id": "decision-owner-cat-mall-sql-8013",
+      "review_id": "category-mall-sql-8013",
+      "candidate_sha256": "095b7f7df78f32d4c2a4e561960a5e823b519b5c16306d83f25d1064c3e3c0f1",
+      "status": "approved",
+      "action": "recategorize",
+      "target_category": "吊灯",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：按商品标题及同源系列证据修正为目标分类。"
+    },
+    {
+      "decision_id": "decision-owner-cat-mall-sql-8725",
+      "review_id": "category-mall-sql-8725",
+      "candidate_sha256": "d50f35afa9756f9c1b3dbf83b76f6262751c86e5c991fa416d594b6a21d23565",
+      "status": "approved",
+      "action": "recategorize",
+      "target_category": "吊灯",
+      "reviewer": "site-owner",
+      "reviewed_at": "2026-07-21",
+      "rationale": "站点所有者确认：按商品标题及同源系列证据修正为目标分类。"
+    }
+  ]
+}

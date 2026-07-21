@@ -12,10 +12,10 @@
 .kicker {
   align-items: center;
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   gap: 12px;
-  letter-spacing: .22em;
+  letter-spacing: .08em;
   margin: 0;
   text-transform: uppercase;
 }
@@ -32,11 +32,19 @@
   color: inherit;
   display: flex;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 12px;
   gap: 10px;
   letter-spacing: .06em;
   margin-bottom: clamp(54px, 8vh, 92px);
   opacity: .68;
+}
+
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-inline: -7px;
+  padding-inline: 7px;
 }
 
 .breadcrumbs a {
@@ -100,7 +108,7 @@
 
 .localNav small {
   color: var(--brand-orange);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .14em;
 }
 
@@ -142,9 +150,9 @@
 
 .aboutHero h1 {
   font-family: var(--font-display);
-  font-size: clamp(62px, 7.6vw, 128px);
-  letter-spacing: -.075em;
-  line-height: .88;
+  font-size: clamp(62px, 7.6vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 34px;
   max-width: 770px;
 }
@@ -159,11 +167,11 @@
 
 .heroMark {
   align-items: flex-end;
-  border-left: 2px solid var(--brand-orange);
+  border-top: 2px solid var(--brand-orange);
   bottom: 42px;
   display: flex;
   flex-direction: column;
-  padding-left: 14px;
+  padding-top: 14px;
   position: absolute;
   right: 34px;
 }
@@ -175,7 +183,7 @@
 
 .heroMark b {
   color: #999e96;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: .18em;
 }
 
@@ -222,18 +230,10 @@
 .brandStatement {
   display: grid;
   gap: clamp(40px, 7vw, 120px);
-  grid-template-columns: 80px minmax(320px, 1.2fr) 1fr;
+  grid-template-columns: minmax(320px, 1.2fr) 1fr;
   margin: auto;
   max-width: var(--content-max);
   padding: 150px var(--page-gutter);
-}
-
-.sectionIndex {
-  color: var(--brand-orange);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .2em;
-  padding-top: 12px;
 }
 
 .brandStatement h2,
@@ -246,11 +246,11 @@
 .releaseRules h2,
 .careersClosing h2 {
   font-family: var(--font-display);
-  letter-spacing: -.055em;
+  letter-spacing: -0.04em;
 }
 
 .brandStatement h2 {
-  font-size: clamp(48px, 6.6vw, 104px);
+  font-size: clamp(48px, 6.6vw, 96px);
   line-height: 1.02;
   margin: 24px 0 0;
 }
@@ -290,7 +290,7 @@
 .capabilityGrid {
   border-top: 1px solid #ffffff26;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: auto;
   max-width: var(--content-max);
 }
@@ -304,6 +304,10 @@
   transition: background var(--duration-ui) var(--ease-enter), color var(--duration-ui) var(--ease-enter);
 }
 
+.capabilityGrid article:first-child {
+  grid-column: 1 / -1;
+}
+
 .capabilityGrid article:last-child {
   border-right: 0;
 }
@@ -315,12 +319,12 @@
 
 .capabilityGrid small {
   color: #898e86;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .capabilityGrid h3 {
   font-size: clamp(26px, 2.6vw, 40px);
-  margin: 110px 0 20px;
+  margin: 24px 0 20px;
 }
 
 .capabilityGrid p {
@@ -369,7 +373,7 @@
 .brandCarouselSection h2 {
   font-family: var(--font-display);
   font-size: clamp(46px, 5.4vw, 84px);
-  letter-spacing: -.06em;
+  letter-spacing: -0.04em;
   line-height: 1.04;
   margin: 24px 0 0;
 }
@@ -431,7 +435,7 @@
 .brandSlideVisual figcaption {
   bottom: 22px;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   left: 24px;
   letter-spacing: .18em;
@@ -461,7 +465,7 @@
 
 .brandSlideCopy small {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: .2em;
 }
@@ -469,7 +473,7 @@
 .brandSlideCopy h3 {
   font-family: var(--font-display);
   font-size: clamp(38px, 4.2vw, 64px);
-  letter-spacing: -.055em;
+  letter-spacing: -0.04em;
   line-height: 1.08;
   margin: 26px 0 24px;
 }
@@ -484,6 +488,7 @@
   align-items: center;
   border-top: 1px solid var(--line);
   display: flex;
+  min-height: 44px;
   font-size: 13px;
   font-weight: 800;
   justify-content: space-between;
@@ -522,6 +527,49 @@
   inset: 28px -28px -28px 28px;
   pointer-events: none;
   position: absolute;
+}
+
+.detailGraphic {
+  align-content: end;
+  aspect-ratio: 4 / 5;
+  background: #171917;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  min-height: 560px;
+  padding: clamp(34px, 5vw, 68px);
+  position: relative;
+}
+
+.detailGraphic::before {
+  background: linear-gradient(135deg, transparent 38%, rgb(232 88 15 / 18%) 38% 40%, transparent 40%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.detailGraphic small {
+  color: var(--brand-orange);
+  grid-column: 1 / -1;
+  letter-spacing: .16em;
+  margin-bottom: 56px;
+}
+
+.detailGraphic strong,
+.detailGraphic span {
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  padding: 20px 0;
+  position: relative;
+}
+
+.detailGraphic strong {
+  color: var(--brand-orange);
+  font-size: 13px;
+}
+
+.detailGraphic span {
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .aboutDetail h2 {
@@ -572,7 +620,11 @@
 .relatedGrid {
   border-top: 1px solid #ffffff2b;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.relatedGrid a:first-child {
+  grid-column: 1 / -1;
 }
 
 .relatedGrid a {
@@ -597,12 +649,12 @@
 
 .relatedGrid small {
   color: #8e928c;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .relatedGrid strong {
   font-size: 23px;
-  margin-top: 48px;
+  margin-top: 10px;
 }
 
 .relatedGrid p {
@@ -659,9 +711,9 @@
 
 .historyHero h1 {
   font-family: var(--font-display);
-  font-size: clamp(66px, 9vw, 144px);
-  letter-spacing: -.08em;
-  line-height: .92;
+  font-size: clamp(66px, 9vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 34px;
   max-width: 1000px;
 }
@@ -677,7 +729,7 @@
   align-items: center;
   border: 1px solid #ffffff4a;
   display: inline-flex;
-  font-size: 11px;
+  font-size: 12px;
   gap: 12px;
   letter-spacing: .08em;
   margin-top: 30px;
@@ -690,6 +742,43 @@
   border-radius: 50%;
   height: 7px;
   width: 7px;
+}
+
+.historyIndex {
+  position: absolute;
+  z-index: 1;
+  right: var(--page-gutter);
+  bottom: 100px;
+  width: min(31vw, 390px);
+  padding-top: 18px;
+  border-top: 1px solid #ffffff40;
+}
+
+.historyIndex p,
+.historyIndex small {
+  margin: 0;
+  color: #858a83;
+  font-size: 11px;
+  letter-spacing: .16em;
+}
+
+.historyIndex strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin: 24px 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.4vw, 52px);
+  font-weight: 500;
+}
+
+.historyIndex i {
+  flex: 1;
+  height: 1px;
+  overflow: hidden;
+  color: transparent;
+  background: linear-gradient(90deg, var(--brand-orange), #ffffff20);
 }
 
 .historyPage .localNav {
@@ -720,8 +809,8 @@
 }
 
 .timelineSection h2 {
-  font-size: clamp(54px, 7vw, 104px);
-  line-height: 1;
+  font-size: clamp(54px, 7vw, 96px);
+  line-height: 1.02;
   margin: 24px 0 26px;
 }
 
@@ -763,7 +852,7 @@
 
 .timelineWhen {
   color: var(--brand-orange-soft);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .1em;
   padding-top: 2px;
 }
@@ -776,7 +865,7 @@
 
 .timeline article small {
   color: #747972;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .14em;
 }
 
@@ -794,7 +883,7 @@
 
 .itemStatus {
   border: 1px solid #ffffff30;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .14em;
   padding: 8px 10px;
   position: absolute;
@@ -839,7 +928,8 @@
 
 .noIndexNote {
   background: #e9e4da;
-  border-left: 3px solid var(--brand-orange);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand-orange);
   font-size: 13px;
   padding: 18px 20px;
 }
@@ -857,18 +947,19 @@
 
 .honorsSection > header {
   display: grid;
-  grid-template-columns: .35fr .75fr .9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 45px;
   align-items: end;
 }
 
-.honorsSection h2 { margin: 0; font-size: clamp(45px, 5vw, 76px); letter-spacing: -.06em; }
+.honorsSection h2 { margin: 0; font-size: clamp(45px, 5vw, 76px); letter-spacing: -0.04em; }
 .honorsSection header > span { color: var(--ink-soft); font-size: 13px; line-height: 1.85; }
-.honorsSection > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 65px; border-top: 1px solid #c5c0b7; }
+.honorsSection > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 65px; border-top: 1px solid #c5c0b7; }
+.honorsSection article:first-child { grid-column: span 2; }
 .honorsSection article { min-height: 260px; padding: 25px 20px 30px 0; border-right: 1px solid #c5c0b7; }
 .honorsSection article small { color: var(--brand-orange); font-weight: 800; }
-.honorsSection article h3 { margin: 90px 0 18px; font-size: 19px; line-height: 1.45; }
-.honorsSection article p { color: var(--ink-soft); font-size: 10px; }
+.honorsSection article h3 { margin: 24px 0 18px; font-size: 19px; line-height: 1.45; }
+.honorsSection article p { color: var(--ink-soft); font-size: 12px; }
 
 /* Careers: warmer editorial framing, with explicit inactive state. */
 .careersHero {
@@ -902,9 +993,9 @@
 
 .careersHero h1 {
   font-family: var(--font-display);
-  font-size: clamp(64px, 7.4vw, 120px);
-  letter-spacing: -.075em;
-  line-height: .92;
+  font-size: clamp(64px, 7.4vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
   margin: 28px 0 32px;
 }
 
@@ -927,7 +1018,7 @@
 }
 
 .openingStatus small {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: .18em;
 }
@@ -973,7 +1064,11 @@
 .talentGrid {
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.talentGrid article:first-child {
+  grid-column: 1 / -1;
 }
 
 .talentGrid article {
@@ -989,13 +1084,13 @@
 
 .talentGrid article > span {
   color: var(--brand-orange);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .16em;
 }
 
 .talentGrid h3 {
   font-size: 28px;
-  margin: 120px 0 20px;
+  margin: 24px 0 20px;
 }
 
 .talentGrid p {
@@ -1052,7 +1147,7 @@
 .releaseRulesBody li span {
   color: var(--brand-orange-soft);
   display: inline-block;
-  font-size: 9px;
+  font-size: 12px;
   width: 58px;
 }
 
@@ -1100,6 +1195,7 @@
   .honorsSection { padding: 90px 24px; }
   .honorsSection > header { grid-template-columns: 1fr; align-items: start; }
   .honorsSection > div { grid-template-columns: 1fr 1fr; }
+  .honorsSection article:first-child { grid-column: 1 / -1; }
   .honorsSection article { min-height: 220px; }
 
   .aboutHero,
@@ -1154,10 +1250,6 @@
     padding: 90px 24px;
   }
 
-  .sectionIndex {
-    display: none;
-  }
-
   .brandStatement > p {
     font-size: 15px;
   }
@@ -1210,6 +1302,12 @@
     grid-template-columns: 1fr;
   }
 
+  .capabilityGrid article:first-child,
+  .talentGrid article:first-child,
+  .relatedGrid a:first-child {
+    grid-column: auto;
+  }
+
   .capabilityGrid article,
   .talentGrid article,
   .relatedGrid a {
@@ -1248,6 +1346,10 @@
 
   .historyHeroContent {
     padding: 105px 24px 80px;
+  }
+
+  .historyIndex {
+    display: none;
   }
 
   .historyImage::after {
@@ -1310,6 +1412,41 @@
   .careersClosing {
     grid-template-columns: 1fr;
     padding: 90px 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .kicker,
+  .breadcrumbs,
+  .heroMark b,
+  .aboutHeroVisual figcaption,
+  .localNav small,
+  .brandSlideVisual figcaption,
+  .brandSlideCopy small,
+  .brandSlideCopy a,
+  .verificationBadge,
+  .timeline article small,
+  .timelineWhen,
+  .itemStatus,
+  .honorsSection article p,
+  .honorsSection article small,
+  .honorsSection header > span,
+  .openingStatus small,
+  .openingStatus span,
+  .releaseRules li span,
+  .relatedGrid p,
+  .noIndexNote {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .honorsSection > div {
+    grid-template-columns: 1fr;
+  }
+
+  .honorsSection article:first-child {
+    grid-column: auto;
   }
 }
 

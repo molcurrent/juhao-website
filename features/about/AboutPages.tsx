@@ -14,6 +14,10 @@ const ownedImages = new Set([
   "/images/juhao-home.webp",
   "/images/juhao-industrial.webp",
   "/images/juhao-commercial.webp",
+  "/images/jh-brand.webp",
+  "/images/jh-partners.webp",
+  "/images/jh48-history-archive.webp",
+  "/images/jh48-careers-studio.webp",
 ]);
 
 const brandStories = [
@@ -21,8 +25,8 @@ const brandStories = [
     eyebrow: "HUMAN FIRST",
     title: "先理解人，再设计光",
     text: "从阅读、休息、交流与通行等真实活动出发，让亮度、层次与控制方式服务于人的感受。",
-    image: "/images/juhao-home.webp",
-    alt: "温暖有层次的钜豪家居照明空间",
+    image: "/images/jh48-about-story-human.webp",
+    alt: "以阅读舒适为中心的健康光场景示意",
     href: "/healthy-light",
     linkLabel: "了解健康光环境",
   },
@@ -30,8 +34,8 @@ const brandStories = [
     eyebrow: "SPACE IN CONTEXT",
     title: "让每一种空间，有自己的光",
     text: "住宅、酒店、商业与公共空间承担不同任务，方案需要回应尺度、材质、动线与使用节奏。",
-    image: "/images/juhao-commercial.webp",
-    alt: "强调材质和动线的钜豪商业照明空间",
+    image: "/images/jh48-about-story-context.webp",
+    alt: "光与材质关系的空间场景示意",
     href: "/solutions",
     linkLabel: "查看空间解决方案",
   },
@@ -39,8 +43,8 @@ const brandStories = [
     eyebrow: "BUILT TO LAST",
     title: "把长期使用，放进设计里",
     text: "从维护条件、控制分区到运行效率，在方案阶段就考虑安装之后的稳定使用与持续调整。",
-    image: "/images/juhao-industrial.webp",
-    alt: "面向长期运行的钜豪工业照明空间",
+    image: "/images/jh48-about-story-lasting.webp",
+    alt: "便于维护的长期照明空间场景示意",
     href: "/solutions/industrial",
     linkLabel: "了解工业照明",
   },
@@ -116,13 +120,11 @@ function RelatedLinks({ items }: { items: PageData["related"] }) {
   return (
     <section className={styles.related} aria-labelledby="about-related-title">
       <div data-reveal>
-        <p className={styles.kicker}>CONTINUE EXPLORING</p>
         <h2 id="about-related-title">继续了解钜豪</h2>
       </div>
       <div className={styles.relatedGrid}>
         {items.map((item, index) => (
           <Link href={item.href} key={item.href} data-reveal data-reveal-delay={String(index * 0.06)}>
-            <small>{String(index + 1).padStart(2, "0")}</small>
             <strong>{item.label}</strong>
             <p>{item.text}</p>
             <span aria-hidden="true">↗</span>
@@ -135,7 +137,7 @@ function RelatedLinks({ items }: { items: PageData["related"] }) {
 
 export function AboutPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={styles.featurePage}>
+    <main id="main-content" className={styles.featurePage} tabIndex={-1}>
       <section className={styles.aboutHero} aria-labelledby="about-title">
         <div className={styles.aboutHeroCopy} data-reveal>
           <Breadcrumbs current={page.label} />
@@ -149,7 +151,7 @@ export function AboutPage({ page }: PageProps) {
         </div>
         <figure className={styles.aboutHeroVisual} data-reveal="fade">
           <Image
-            src={safeImage(page, "/images/juhao-home.webp")}
+            src={safeImage(page, "/images/jh-brand.webp")}
             alt="钜豪家居照明空间"
             fill
             priority
@@ -163,9 +165,8 @@ export function AboutPage({ page }: PageProps) {
       <AboutNavigation active="about" />
 
       <section className={styles.brandStatement} aria-labelledby="brand-statement-title">
-        <div className={styles.sectionIndex} aria-hidden="true">01</div>
         <div data-reveal>
-          <p className={styles.kicker}>OUR POINT OF VIEW</p>
+          <p className={styles.kicker}>品牌观点</p>
           <h2 id="brand-statement-title">好房子，<em>光健康。</em></h2>
         </div>
         <p data-reveal data-reveal-delay="0.08">{page.sections[0]?.text ?? page.description}</p>
@@ -173,13 +174,11 @@ export function AboutPage({ page }: PageProps) {
 
       <section className={styles.capabilities} aria-labelledby="capabilities-title">
         <header data-reveal>
-          <p className={styles.kicker}>WHAT WE CARE ABOUT</p>
           <h2 id="capabilities-title">从一束光，抵达完整的人居体验</h2>
         </header>
         <div className={styles.capabilityGrid}>
           {page.highlights.map((item, index) => (
             <article key={item.title} data-reveal data-reveal-delay={String(index * 0.06)}>
-              <small>{String(index + 1).padStart(2, "0")}</small>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <i aria-hidden="true" />
@@ -191,7 +190,6 @@ export function AboutPage({ page }: PageProps) {
       <section className={styles.brandCarouselSection} aria-labelledby="brand-carousel-title">
         <header data-reveal>
           <div>
-            <p className={styles.kicker}>LIGHT IN REAL LIFE</p>
             <h2 id="brand-carousel-title">让品牌观点，进入真实场景</h2>
           </div>
           <p>用三组空间叙事说明钜豪如何理解人、空间与长期使用。可使用方向键、触摸滑动或下方按钮浏览。</p>
@@ -228,17 +226,14 @@ export function AboutPage({ page }: PageProps) {
 
       {page.sections.slice(1).map((section, index) => (
         <section className={styles.aboutDetail} key={section.title} aria-labelledby={`about-detail-${index}`}>
-          <div className={styles.detailImage} data-reveal="fade">
-            <Image
-              src="/images/juhao-commercial.webp"
-              alt="钜豪商业照明空间"
-              fill
-              unoptimized
-              sizes="(max-width: 900px) 100vw, 46vw"
-            />
+          <div className={styles.detailGraphic} data-reveal="fade" aria-label="内容核验与发布流程">
+            <small>CONTENT GOVERNANCE</small>
+            <strong>来源</strong><span>企业知识库与商城资料</span>
+            <strong>核验</strong><span>参数、阶段与授权边界</span>
+            <strong>发布</strong><span>审核一项，公开一项</span>
           </div>
           <div data-reveal>
-            <p className={styles.kicker}>HOW WE WORK</p>
+            <p className={styles.kicker}>实践方式</p>
             <h2 id={`about-detail-${index}`}>{section.title}</h2>
             <p>{section.text}</p>
             {section.points && (
@@ -257,7 +252,7 @@ export function AboutPage({ page }: PageProps) {
 
 export function HistoryPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={`${styles.featurePage} ${styles.historyPage}`}>
+    <main id="main-content" className={`${styles.featurePage} ${styles.historyPage}`} tabIndex={-1}>
       <section className={styles.historyHero} aria-labelledby="history-title">
         <div className={styles.historyImage} aria-hidden="true">
           <Image
@@ -276,8 +271,13 @@ export function HistoryPage({ page }: PageProps) {
           <p>{page.intro}</p>
           <div className={styles.verificationBadge} role="status">
             <span aria-hidden="true" />
-            企业知识库公司新闻来源已核对
+            {historyEvents.length} 个企业知识库来源节点已核对
           </div>
+        </div>
+        <div className={styles.historyIndex} aria-label={`档案时间范围 2020 至 2026，共 ${historyEvents.length} 个可追溯节点`}>
+          <p>ARCHIVE INDEX</p>
+          <strong><span>2020</span><i aria-hidden="true">—</i><span>2026</span></strong>
+          <small>{String(historyEvents.length).padStart(2, "0")} SOURCE-BACKED NODES</small>
         </div>
       </section>
 
@@ -285,7 +285,7 @@ export function HistoryPage({ page }: PageProps) {
 
       <section className={styles.timelineSection} aria-labelledby="timeline-title">
         <header data-reveal>
-          <p className={styles.kicker}>VERIFIED COMPANY ARCHIVE</p>
+          <p className={styles.kicker}>企业资料档案</p>
           <h2 id="timeline-title">公开发展节点</h2>
           <p>以下节点依据企业知识库公司新闻整理，不使用无法追溯的成立时间、规模或门店数字。</p>
         </header>
@@ -295,7 +295,7 @@ export function HistoryPage({ page }: PageProps) {
               <div className={styles.timelineRail} aria-hidden="true"><span /></div>
               <div className={styles.timelineWhen}>{item.year}</div>
               <article>
-                <small>ARCHIVE {String(index + 1).padStart(2, "0")}</small>
+                <small>档案 {String(index + 1).padStart(2, "0")}</small>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
                 <span className={styles.itemStatus}>{item.source}</span>
@@ -306,13 +306,13 @@ export function HistoryPage({ page }: PageProps) {
       </section>
 
       <section className={styles.honorsSection} aria-labelledby="honors-title">
-        <header><p className={styles.kicker}>BRAND HONORS</p><h2 id="honors-title">荣誉资料线索</h2><span>仅列出企业新闻已有记录的荣誉线索；证书原件、授予主体和图片公开授权仍需品牌负责人签核。</span></header>
+        <header><h2 id="honors-title">荣誉资料线索</h2><span>仅列出企业新闻已有记录的荣誉线索；证书原件、授予主体和图片公开授权仍需品牌负责人签核。</span></header>
         <div>{brandHonors.map((honor) => <article key={`${honor.year}-${honor.title}`}><small>{honor.year}</small><h3>{honor.title}</h3><p>{honor.source}</p></article>)}</div>
       </section>
 
       <section className={styles.archivePolicy} aria-labelledby="archive-policy-title">
         <div data-reveal>
-          <p className={styles.kicker}>PUBLISHING RULE</p>
+          <p className={styles.kicker}>发布原则</p>
           <h2 id="archive-policy-title">只记录可追溯的品牌节点</h2>
         </div>
         <div className={styles.archivePolicyCopy} data-reveal>
@@ -333,7 +333,7 @@ export function HistoryPage({ page }: PageProps) {
 
 export function CareersPage({ page }: PageProps) {
   return (
-    <main id="main-content" className={styles.featurePage} data-page-noindex={page.noindex || undefined}>
+    <main id="main-content" className={styles.featurePage} data-page-noindex={page.noindex || undefined} tabIndex={-1}>
       <section className={styles.careersHero} aria-labelledby="careers-title">
         <div className={styles.careersHeroMedia} data-reveal="fade">
           <Image
@@ -351,7 +351,7 @@ export function CareersPage({ page }: PageProps) {
           <h1 id="careers-title">{page.title}</h1>
           <p>{page.intro}</p>
           <div className={styles.openingStatus} role="status">
-            <small>OPEN POSITIONS</small>
+            <small>招聘状态</small>
             <strong>当前无已核验职位</strong>
             <span>申请入口将在企业确认职位信息后开放</span>
           </div>
@@ -362,14 +362,12 @@ export function CareersPage({ page }: PageProps) {
 
       <section className={styles.talentAreas} aria-labelledby="talent-title">
         <header data-reveal>
-          <p className={styles.kicker}>TALENT AREAS</p>
           <h2 id="talent-title">人才领域</h2>
           <p>这里展示长期关注的协作方向，不代表正在招聘的岗位。</p>
         </header>
         <div className={styles.talentGrid}>
           {page.highlights.map((item, index) => (
             <article key={item.title} data-reveal data-reveal-delay={String(index * 0.06)}>
-              <span aria-hidden="true">0{index + 1}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -379,7 +377,7 @@ export function CareersPage({ page }: PageProps) {
 
       <section className={styles.releaseRules} aria-labelledby="release-rules-title">
         <div data-reveal>
-          <p className={styles.kicker}>CLEAR BEFORE OPEN</p>
+          <p className={styles.kicker}>信息公开边界</p>
           <h2 id="release-rules-title">每一个入口开放前，信息必须完整</h2>
         </div>
         <div className={styles.releaseRulesBody} data-reveal>
@@ -400,7 +398,6 @@ export function CareersPage({ page }: PageProps) {
 
       <section className={styles.careersClosing} aria-labelledby="careers-closing-title">
         <div data-reveal>
-          <p className={styles.kicker}>ENTRY STATUS</p>
           <h2 id="careers-closing-title">宁可暂不发布，<br />也不让模糊信息成为承诺。</h2>
         </div>
         <Link href="/news" data-reveal>

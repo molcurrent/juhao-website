@@ -1,0 +1,679 @@
+{
+  "schema_version": 1,
+  "family": {
+    "family_id": "family-76a48ec4846a",
+    "canonical_slug": "12080",
+    "canonical_source_key": "mall_sql:12080",
+    "canonical_source_id": "12080",
+    "topic_slug": null,
+    "planned_canonical_route": null,
+    "route_plan_state": "pending_category_selection",
+    "route_plan_evidence": "same_complete_reference_image_set_category_requires_owner_selection",
+    "title": "VA5-120076 跨分类系列",
+    "category": "待复核",
+    "source_categories": [
+      "吊灯",
+      "吸顶灯"
+    ],
+    "category_state": "pending_owner_selection",
+    "member_count": 7,
+    "grouping_status": "auto_merged_shared_reference_image_set",
+    "review_state": "approved_and_applied",
+    "detail_state": "rich_private_preview",
+    "detail_ref": "/catalog-lab/family-76a48ec4846a",
+    "model_label": "V-120076-1200*180L",
+    "model_state": "source_title_model_prefix",
+    "model_evidence": "representative_source_title",
+    "series_label": null,
+    "series_state": "pending_review",
+    "representative": {
+      "source_key": "mall_sql:12080",
+      "display_id": "12080",
+      "title": "V-120076-1200*180L简约现代铝材亚克力铁艺吊灯",
+      "primary_image": null
+    },
+    "variant_refs": [
+      {
+        "source_key": "mall_sql:12074",
+        "source_id": "12074",
+        "display_id": "12074",
+        "model_label": "VA5-120076-1100x700",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12075",
+        "source_id": "12075",
+        "display_id": "12075",
+        "model_label": "VA5-120076-950*650",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12076",
+        "source_id": "12076",
+        "display_id": "12076",
+        "model_label": "VA5-120076-550*550",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12077",
+        "source_id": "12077",
+        "display_id": "12077",
+        "model_label": "VA5-120076-500",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12078",
+        "source_id": "12078",
+        "display_id": "12078",
+        "model_label": "VA5-120076-600",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12079",
+        "source_id": "12079",
+        "display_id": "12079",
+        "model_label": "VA5-120076-800",
+        "model_state": "source_title_model_prefix"
+      },
+      {
+        "source_key": "mall_sql:12080",
+        "source_id": "12080",
+        "display_id": "12080",
+        "model_label": "V-120076-1200*180L",
+        "model_state": "source_title_model_prefix"
+      }
+    ],
+    "card_specs": [
+      {
+        "key": "light_sources",
+        "label": "光源",
+        "values": [
+          "LED"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "materials",
+        "label": "材质",
+        "values": [
+          "亚克力",
+          "铝材"
+        ],
+        "evidence": "normalized_source_attributes"
+      },
+      {
+        "key": "areas",
+        "label": "适用面积",
+        "values": [
+          "15㎡-30㎡"
+        ],
+        "evidence": "normalized_source_attributes"
+      }
+    ],
+    "facets": {
+      "areas": [
+        "15㎡-30㎡"
+      ],
+      "finishes": [
+        "胡桃木色"
+      ],
+      "light_sources": [
+        "LED"
+      ],
+      "materials": [
+        "亚克力",
+        "铝材",
+        "铁艺"
+      ],
+      "spaces": [
+        "客厅",
+        "卧室",
+        "书房"
+      ],
+      "styles": [
+        "简约现代"
+      ],
+      "types": [
+        "吊灯",
+        "吸顶灯"
+      ]
+    },
+    "quality_flags": [
+      "undefined_spec_codes_normalized_to_null",
+      "volume_header_typo_normalized"
+    ]
+  },
+  "grouping_evidence": "exact_complete_reference_image_set",
+  "source_references": [
+    {
+      "source_key": "mall_sql:12074",
+      "source_path": "商城系统/商品说明/VA5-120076-1100x700简约现代铝材亚克力铁艺吸顶灯_12074.md",
+      "source_sha256": "dee8cd9f14c852d0da384759734a8b6046fe5e773e136c5a7d555bf7a0cc5c8d"
+    },
+    {
+      "source_key": "mall_sql:12075",
+      "source_path": "商城系统/商品说明/VA5-120076-950650简约现代铝材亚克力铁艺吸顶灯_12075.md",
+      "source_sha256": "1c70f9b99ac9f5f6912596e66154ee338fff747d5c72caec10bbb0f3f3dc71e0"
+    },
+    {
+      "source_key": "mall_sql:12076",
+      "source_path": "商城系统/商品说明/VA5-120076-550550简约现代铝材亚克力铁艺吸顶灯_12076.md",
+      "source_sha256": "e0174cf0084d367141b4d9656b373de4ef5eb1c621697045cc2ec3ed7eb5ddae"
+    },
+    {
+      "source_key": "mall_sql:12077",
+      "source_path": "商城系统/商品说明/VA5-120076-500简约现代铝材亚克力铁艺吸顶灯_12077.md",
+      "source_sha256": "10e0427ba2d69308b10fb69747f0ebbb13302ae0a02335b6d21fd42aa09c4c5c"
+    },
+    {
+      "source_key": "mall_sql:12078",
+      "source_path": "商城系统/商品说明/VA5-120076-600简约现代铝材亚克力铁艺吸顶灯_12078.md",
+      "source_sha256": "be95192aada8c7b24305995b8704ab453d6ad159d940da48738de26b5a5d81d2"
+    },
+    {
+      "source_key": "mall_sql:12079",
+      "source_path": "商城系统/商品说明/VA5-120076-800简约现代铝材亚克力铁艺吸顶灯_12079.md",
+      "source_sha256": "ea8000e8a6c8ff8f9ed76a17d6a7a6de0a0f016d9f03344d98d3c10a9fcd90b9"
+    },
+    {
+      "source_key": "mall_sql:12080",
+      "source_path": "商城系统/商品说明/V-120076-1200180L简约现代铝材亚克力铁艺吊灯_12080.md",
+      "source_sha256": "79525aec30825d87c76e0e9ef7da615d0e8d0a52345c12e6c9d9953251d378df"
+    }
+  ],
+  "representative_detail": {
+    "attributes": {
+      "材质": "亚克力,铝材,铁艺",
+      "光源类型": "LED",
+      "面积": "15㎡-30㎡",
+      "颜色工艺": "胡桃木色",
+      "空间": "客厅,卧室,书房",
+      "类型": "吊灯,吸顶灯",
+      "风格": "简约现代"
+    },
+    "primary_image": null,
+    "detail_images": [],
+    "detail_image_count": 19,
+    "emitted_detail_image_count": 0,
+    "suppressed_media_path_count": 13,
+    "media_policy": "approved_batch_paths_only_private_preview"
+  },
+  "variants": [
+    {
+      "variant_id": "variant-d3c996bb74e1",
+      "source_key": "mall_sql:12074",
+      "display_id": "12074",
+      "label": "VA5-120076-1100x700简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-2a79659225c8",
+      "source_key": "mall_sql:12075",
+      "display_id": "12075",
+      "label": "VA5-120076-950*650简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-dd79a30e4489",
+      "source_key": "mall_sql:12076",
+      "display_id": "12076",
+      "label": "VA5-120076-550*550简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-48a8e231e34c",
+      "source_key": "mall_sql:12077",
+      "display_id": "12077",
+      "label": "VA5-120076-500简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-14b699408cb4",
+      "source_key": "mall_sql:12078",
+      "display_id": "12078",
+      "label": "VA5-120076-600简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-c03bec0b2115",
+      "source_key": "mall_sql:12079",
+      "display_id": "12079",
+      "label": "VA5-120076-800简约现代铝材亚克力铁艺吸顶灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    },
+    {
+      "variant_id": "variant-bbbe2193ba1d",
+      "source_key": "mall_sql:12080",
+      "display_id": "12080",
+      "label": "V-120076-1200*180L简约现代铝材亚克力铁艺吊灯",
+      "dimensions": {
+        "finish_color": {
+          "value": "胡桃木色",
+          "evidence": "source_attribute:颜色工艺"
+        }
+      },
+      "normalized_specs": [
+        {
+          "source_spec_code": null,
+          "source_row": 1,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 2,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 3,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 4,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 5,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 6,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        },
+        {
+          "source_spec_code": null,
+          "source_row": 7,
+          "normalization": "undefined_spec_code_removed",
+          "weight": "0.00",
+          "volume": "0.00"
+        }
+      ],
+      "quality_flags": [
+        "undefined_spec_codes_normalized_to_null",
+        "volume_header_typo_normalized"
+      ]
+    }
+  ],
+  "editorial_policy": {
+    "source_of_truth": "frozen_source_reference",
+    "product_body_copy": "not_duplicated",
+    "commercial_fields": "omitted",
+    "manual_family_review_required": true,
+    "media_projection": "unauthorized_paths_suppressed_from_runtime"
+  }
+}

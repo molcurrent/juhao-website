@@ -1,5 +1,6 @@
 import { env } from "cloudflare:workers";
 import {
+  consumeConsultationRateLimit,
   insertConsultationLead,
   purgeExpiredConsultationLeads,
   updateConsultationNotification,
@@ -8,6 +9,7 @@ import {
 import type { ContactRequest } from "@/lib/api/types";
 import {
   CONSULTATION_PRIVACY_VERSION,
+  CONSULTATION_TURNSTILE_ACTION,
   consultationSourceValues,
   type ConsultationSource,
 } from "@/lib/consultation";
@@ -20,8 +22,10 @@ import {
 
 const MAX_BODY_BYTES = 16_384;
 const RETENTION_DAYS = 180;
+const RATE_LIMIT_MAXIMUM = 8;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1_000;
 const sources = new Set<ConsultationSource>(consultationSourceValues);
-const detailSources = new Set<ConsultationSource>(["page", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
+const detailSources = new Set<ConsultationSource>(["page", "products", "product-topic", "product-detail", "case-detail", "solutions", "partners"]);
 const stages = new Set<ContactRequest["stage"]>(["understanding", "planning", "delivery", "operation"]);
 const channels = new Set<ContactRequest["contactChannel"]>(["phone", "email", "wechat"]);
 
@@ -99,24 +103,90 @@ async function sha256(value: string) {
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
+async function hmacSha256(secret: string, value: string) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const digest = await crypto.subtle.sign("HMAC", key, encoder.encode(value));
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
 function publicIntakeReady() {
   return env.PUBLIC_INTAKE_READY?.trim().toLowerCase() === "true";
+}
+
+function contactEdgeRateLimitVerified() {
+  return env.CONTACT_EDGE_RATE_LIMIT_VERIFIED?.trim().toLowerCase() === "true";
+}
+
+function turnstileAllowedHostnames() {
+  const values = (env.TURNSTILE_ALLOWED_HOSTNAMES ?? "")
+    .split(",")
+    .map((hostname) => hostname.trim().toLowerCase())
+    .filter(Boolean);
+  if (values.length === 0) return null;
+  for (const hostname of values) {
+    if (hostname.startsWith(".") || hostname.endsWith(".") || hostname.includes("..")) return null;
+    try {
+      const parsed = new URL(`https://${hostname}`);
+      if (
+        parsed.hostname !== hostname
+        || parsed.port
+        || parsed.pathname !== "/"
+        || parsed.search
+        || parsed.hash
+        || parsed.username
+        || parsed.password
+      ) return null;
+    } catch {
+      return null;
+    }
+  }
+  return new Set(values);
+}
+
+function validClientAddress(value: string) {
+  if (!value || value.length > 45) return false;
+  if (/^\d{1,3}(?:\.\d{1,3}){3}$/.test(value)) {
+    return value.split(".").every((part) => Number(part) <= 255);
+  }
+  if (!value.includes(":") || !/^[0-9a-f:.]+$/i.test(value)) return false;
+  try {
+    new URL(`http://[${value}]`);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function publicIntakeConfigurationError() {
   if (!publicIntakeReady()) return null;
   if (!env.JUHAO_LEAD_WEBHOOK_URL?.trim() || !env.JUHAO_LEAD_WEBHOOK_SECRET?.trim()) return "内部通知尚未配置";
   if (!env.JUHAO_LEAD_MAINTENANCE_SECRET?.trim()) return "线索维护任务尚未配置";
+  if (!env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim()) return "安全校验公钥尚未配置";
   if (!env.TURNSTILE_SECRET_KEY?.trim()) return "安全校验尚未配置";
+  if (!turnstileAllowedHostnames()) return "安全校验允许域名配置不正确";
+  if (!contactEdgeRateLimitVerified()) return "边缘频率限制尚未核验";
+  if ((env.JUHAO_LEAD_RATE_LIMIT_SECRET?.trim().length ?? 0) < 32) return "提交频率限制密钥长度不足";
   return null;
 }
 
-async function verifyTurnstile(token: string | undefined, request: Request) {
+type TurnstileVerification = "valid" | "invalid" | "unavailable";
+
+async function verifyTurnstile(
+  token: string | undefined,
+  clientAddress: string,
+  requestHostname: string,
+): Promise<TurnstileVerification> {
   const secret = env.TURNSTILE_SECRET_KEY?.trim();
-  if (!secret || !token) return false;
-  const body = new URLSearchParams({ secret, response: token });
-  const remoteIp = request.headers.get("CF-Connecting-IP")?.trim();
-  if (remoteIp) body.set("remoteip", remoteIp);
+  if (!secret) return "unavailable";
+  if (!token) return "invalid";
+  const body = new URLSearchParams({ secret, response: token, remoteip: clientAddress });
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 4_000);
   try {
@@ -126,11 +196,29 @@ async function verifyTurnstile(token: string | undefined, request: Request) {
       body,
       signal: controller.signal,
     });
-    if (!response.ok) return false;
-    const result = await response.json() as { success?: unknown };
-    return result.success === true;
+    if (!response.ok) return response.status === 429 || response.status >= 500 ? "unavailable" : "invalid";
+    const result = await response.json() as {
+      success?: unknown;
+      action?: unknown;
+      hostname?: unknown;
+      "error-codes"?: unknown;
+    };
+    if (result.success !== true) {
+      const errorCodes = Array.isArray(result["error-codes"])
+        ? result["error-codes"].filter((code): code is string => typeof code === "string")
+        : [];
+      return errorCodes.includes("internal-error") ? "unavailable" : "invalid";
+    }
+    const hostname = typeof result.hostname === "string" ? result.hostname.trim().toLowerCase() : "";
+    const action = typeof result.action === "string" ? result.action : "";
+    const allowedHostnames = turnstileAllowedHostnames();
+    return action === CONSULTATION_TURNSTILE_ACTION
+      && hostname === requestHostname.toLowerCase()
+      && Boolean(allowedHostnames?.has(hostname))
+      ? "valid"
+      : "invalid";
   } catch {
-    return false;
+    return "unavailable";
   } finally {
     clearTimeout(timeout);
   }
@@ -179,13 +267,49 @@ export async function POST(request: Request) {
     return json({ error: "内部通知配置不完整，请稍后重试" }, 503);
   }
 
-  if (publicIntakeReady() && !await verifyTurnstile(payload.turnstileToken, request)) {
-    return json({ error: "安全校验未通过，请刷新后重试" }, 403);
-  }
-
   if (!env.DB) return json({ error: "咨询服务暂时不可用，请稍后重试" }, 503);
 
   const now = new Date();
+  if (publicIntakeReady()) {
+    const clientAddress = request.headers.get("CF-Connecting-IP")?.trim();
+    if (!clientAddress || !validClientAddress(clientAddress)) {
+      return json({ error: "咨询服务暂时不可用，请稍后重试" }, 503);
+    }
+    const turnstileVerification = await verifyTurnstile(payload.turnstileToken, clientAddress, requestUrl.hostname);
+    if (turnstileVerification === "unavailable") {
+      return json({ error: "安全校验服务暂时不可用，请稍后重试" }, 503);
+    }
+    if (turnstileVerification === "invalid") {
+      return json({ error: "安全校验未通过，请刷新后重试" }, 403);
+    }
+
+    const rateLimitKey = await hmacSha256(env.JUHAO_LEAD_RATE_LIMIT_SECRET!.trim(), clientAddress);
+    let rateLimit: Awaited<ReturnType<typeof consumeConsultationRateLimit>>;
+    try {
+      rateLimit = await consumeConsultationRateLimit(
+        env.DB,
+        rateLimitKey,
+        now,
+        RATE_LIMIT_MAXIMUM,
+        RATE_LIMIT_WINDOW_MS,
+      );
+    } catch {
+      return json({ error: "咨询服务暂时不可用，请稍后重试" }, 503);
+    }
+    if (!rateLimit.allowed) {
+      return Response.json(
+        { error: "提交过于频繁，请稍后再试" },
+        {
+          status: 429,
+          headers: {
+            "Cache-Control": "no-store",
+            "Retry-After": String(rateLimit.retryAfterSeconds),
+          },
+        },
+      );
+    }
+  }
+
   const submittedAt = now.toISOString();
   const expiresAt = new Date(now.getTime() + RETENTION_DAYS * 24 * 60 * 60 * 1_000).toISOString();
   const hashPayload = { ...payload };

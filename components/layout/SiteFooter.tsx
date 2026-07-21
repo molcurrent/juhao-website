@@ -50,6 +50,12 @@ const footerGroups = [
   },
 ] as const;
 
+type FooterGroup = (typeof footerGroups)[number];
+
+function FooterLinks({ group }: { group: FooterGroup }) {
+  return <nav className={styles.footerLinks} aria-label={group.label}>{group.links.map(([label, href]) => <Link href={href} key={href}>{label}<span aria-hidden="true">↗</span></Link>)}</nav>;
+}
+
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
@@ -64,10 +70,16 @@ export function SiteFooter() {
 
         <div className={styles.navigation}>
           {footerGroups.map((group) => (
-            <nav aria-label={group.label} key={group.title}>
-              <h2>{group.title}</h2>
-              {group.links.map(([label, href]) => <Link href={href} key={href}>{label}<span aria-hidden="true">↗</span></Link>)}
-            </nav>
+            <section className={styles.desktopGroup} key={`desktop-${group.title}`}>
+              <h2 className={styles.footerGroupTitle}>{group.title}</h2>
+              <FooterLinks group={group} />
+            </section>
+          ))}
+          {footerGroups.map((group) => (
+            <details className={styles.mobileGroup} key={`mobile-${group.title}`}>
+              <summary><span>{group.title}</span><b aria-hidden="true">＋</b></summary>
+              <FooterLinks group={group} />
+            </details>
           ))}
         </div>
       </div>
