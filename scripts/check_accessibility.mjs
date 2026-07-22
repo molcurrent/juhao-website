@@ -70,7 +70,7 @@ async function ensureServer() {
   }
   const child = spawn(
     "npm",
-    ["run", "dev", "--", "--host", "127.0.0.1", "--port", "4173"],
+    ["run", "dev", "--", "--hostname", "127.0.0.1", "--port", "4173"],
     { stdio: "inherit", detached: process.platform !== "win32" },
   );
   await waitForServer(child);
