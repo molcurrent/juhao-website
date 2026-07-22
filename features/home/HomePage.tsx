@@ -135,7 +135,7 @@ export function HomePage({ publishedProductCount }: { publishedProductCount: num
       </aside>
 
       <section className="intro section" id="about" data-header-tone="dark">
-        <div className="introLead" data-reveal><p className="eyebrow dark"><span /> 关于钜豪</p><h2>让健康好光<br/>成为美好生活的底色</h2></div>
+        <div className="introLead" data-reveal><p className="eyebrow"><span /> 关于钜豪</p><h2>让健康好光<br/>成为美好生活的底色</h2></div>
         <div className="introBody" data-reveal data-reveal-delay="0.08"><p>钜豪专注照明与智能家居，以人居体验为起点，连接产品、空间、服务与渠道。我们相信，真正好的光不只照亮物体，更关照人的情绪、节律与生活。</p><Link className="textLink" href="/about">了解品牌故事 <span>→</span></Link></div>
         <figure className="introMedia introGraphic" data-reveal="fade" aria-label="光、材质与生活节律的品牌视觉意象"><figcaption><span>LIGHT / MATERIAL / RHYTHM</span><strong>好光不只照亮空间，<br />也定义生活的节律。</strong></figcaption></figure>
         <div className="stats verifiedStats" data-reveal>
