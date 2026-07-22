@@ -17,8 +17,15 @@ const fullPrivateRuntimeDir = path.join(
   "runtime",
   "catalog-v2-full-private",
 );
-const sourceRoot =
-  "/Users/mac/Documents/juhao数据库/企业知识库/商城系统/商品说明";
+const catalogDataRoot =
+  process.env.JUHAO_DATA_ROOT ?? "/Users/mac/Documents/juhao数据库";
+const sourceRoot = path.join(
+  catalogDataRoot,
+  "企业知识库",
+  "商城系统",
+  "商品说明",
+);
+const externalSupplementSourcesAvailable = fs.existsSync(sourceRoot);
 
 const readText = (file) => fs.readFileSync(file, "utf8");
 const readJson = (file) => JSON.parse(readText(file));
@@ -522,11 +529,13 @@ test("three local supplements expose file evidence only and never enter runtime 
         sha256(evidence.note_relative_path),
       );
 
-      const localPath = path.join(sourceRoot, evidence.catalog_relative_path);
-      const stat = fs.statSync(localPath);
-      assert.equal(stat.isFile(), true);
-      assert.equal(stat.size, evidence.bytes);
-      assert.equal(sha256File(localPath), evidence.sha256);
+      if (externalSupplementSourcesAvailable) {
+        const localPath = path.join(sourceRoot, evidence.catalog_relative_path);
+        const stat = fs.statSync(localPath);
+        assert.equal(stat.isFile(), true);
+        assert.equal(stat.size, evidence.bytes);
+        assert.equal(sha256File(localPath), evidence.sha256);
+      }
       assert.equal(runtimeText.includes(evidence.catalog_relative_path), false);
       assert.equal(runtimeText.includes(evidence.note_relative_path), false);
     }
