@@ -1,7 +1,14 @@
 import type { ConsultationLeadRecord, ConsultationNotificationStatus } from "@/db/consultation-leads";
 
 const MAX_NOTIFICATION_ATTEMPTS = 5;
-const RETRY_DELAYS_MS = [5 * 60_000, 30 * 60_000, 2 * 60 * 60_000, 12 * 60 * 60_000] as const;
+export const CONSULTATION_NOTIFICATION_RETRY_DELAYS_MS = [5 * 60_000, 30 * 60_000, 2 * 60 * 60_000, 12 * 60 * 60_000] as const;
+
+export function routingTeamForDirection(direction: string) {
+  if (direction === "home" || direction === "designer") return "design_consulting";
+  if (direction === "project") return "project_delivery";
+  if (direction === "channel") return "channel_development";
+  return "manual_review";
+}
 
 export type LeadNotificationConfig = {
   webhookUrl: string | null;
@@ -37,6 +44,7 @@ export async function notifyInternalLead(lead: ConsultationLeadRecord, config: L
     direction: lead.direction,
     source: lead.source,
     sourceDetail: lead.sourceDetail,
+    routingTeam: routingTeamForDirection(lead.direction),
     scene: lead.scene,
     intent: lead.intent,
     project: lead.project,
@@ -68,7 +76,7 @@ export async function notifyInternalLead(lead: ConsultationLeadRecord, config: L
 export function failedNotificationUpdate(attemptsAfterUpdate: number, attemptedAt: Date) {
   const exhausted = attemptsAfterUpdate >= MAX_NOTIFICATION_ATTEMPTS;
   const status: ConsultationNotificationStatus = exhausted ? "dead_letter" : "retry";
-  const retryDelay = RETRY_DELAYS_MS[Math.min(Math.max(attemptsAfterUpdate - 1, 0), RETRY_DELAYS_MS.length - 1)];
+  const retryDelay = CONSULTATION_NOTIFICATION_RETRY_DELAYS_MS[Math.min(Math.max(attemptsAfterUpdate - 1, 0), CONSULTATION_NOTIFICATION_RETRY_DELAYS_MS.length - 1)];
   return {
     status: status as "retry" | "dead_letter",
     nextAttemptAt: exhausted ? null : new Date(attemptedAt.getTime() + retryDelay).toISOString(),

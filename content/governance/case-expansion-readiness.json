@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-07-22",
+  "source_system": "企业知识库/商城系统",
+  "target_total": 10,
+  "current_preview_records": 6,
+  "publish_eligible": false,
+  "summary": "现有来源不能支持住宅 3、酒店 2、商业 2、公共 2、工业 1 的十案例结构；不得用产品场景、酒店附属空间或未授权图片补齐数量。",
+  "category_readiness": [
+    {
+      "category": "residential",
+      "target": 3,
+      "current": 0,
+      "gap": 3,
+      "candidate_source_ids": [],
+      "status": "source_required"
+    },
+    {
+      "category": "hospitality",
+      "target": 2,
+      "current": 4,
+      "gap": -2,
+      "candidate_source_ids": ["217", "221"],
+      "status": "overrepresented_candidates_private_only"
+    },
+    {
+      "category": "commercial",
+      "target": 2,
+      "current": 1,
+      "gap": 1,
+      "candidate_source_ids": [],
+      "status": "source_required"
+    },
+    {
+      "category": "public",
+      "target": 2,
+      "current": 1,
+      "gap": 1,
+      "candidate_source_ids": ["158", "204"],
+      "status": "private_review_media_rights_required"
+    },
+    {
+      "category": "industrial",
+      "target": 1,
+      "current": 0,
+      "gap": 1,
+      "candidate_source_ids": [],
+      "status": "source_required"
+    }
+  ],
+  "private_review_candidates": [
+    {
+      "source_id": "217",
+      "category": "hospitality",
+      "project": "南雁荡山宾月花园度假酒店",
+      "evidence": "20 张正文图及具名空间；仅确认中标与将实施口径",
+      "media_status": "素材批次已覆盖，记录级公开签核仍缺失"
+    },
+    {
+      "source_id": "221",
+      "category": "hospitality",
+      "project": "宜昌首航国际大酒店",
+      "evidence": "22 张正文图及 7 个具名空间；仅确认中标与将提供口径",
+      "media_status": "素材批次已覆盖，记录级公开签核仍缺失"
+    },
+    {
+      "source_id": "158",
+      "category": "public",
+      "project": "拉萨—林芝线高铁站项目",
+      "evidence": "16 张正文图及 4 个具名站点；没有独立竣工、交付或验收证明",
+      "media_status": "来源图片尚未进入批准素材批次"
+    },
+    {
+      "source_id": "204",
+      "category": "public",
+      "project": "珠海香山会议中心",
+      "evidence": "8 张正文图及 4 个具名空间；仅确认中标口径",
+      "media_status": "来源图片尚未进入批准素材批次"
+    }
+  ],
+  "required_project_package": [
+    "项目正式名称、城市与空间类型",
+    "钜豪实际服务范围与合同阶段",
+    "图片权属、图片类型与官网公开授权",
+    "最终产品清单与控制范围",
+    "交付或验收材料；没有时必须继续标注为项目记录"
+  ]
+}

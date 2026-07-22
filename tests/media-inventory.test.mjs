@@ -77,7 +77,25 @@ test("mirrors every normalized object and verifies source and derived bytes", as
 
 test("separates batch authorization from the 178-item page display gate", async () => {
   const rows = await json(inventoryPath);
-  assert.equal(rows.length, 531);
+  const privatePreviewAssets = rows.filter((row) => row.role === "private_preview_product_visual");
+  assert.equal(rows.length, 537);
+  assert.deepEqual(
+    privatePreviewAssets.map((row) => row.local_path).sort(),
+    [
+      "public/en-assets/aurora-orbit.webp",
+      "public/en-assets/aurora-ring.webp",
+      "public/en-assets/halo-line.webp",
+      "public/en-assets/halo-sculpture.webp",
+      "public/en-assets/lumen-arc.webp",
+      "public/en-assets/lumen-detail.webp",
+    ],
+  );
+  assert.ok(privatePreviewAssets.every((row) => (
+    row.source_type === "local_public_asset"
+    && row.rights_status === "needs_review"
+    && row.publish_allowed === false
+    && row.indexable === false
+  )));
   assert.equal(rows.some((row) => row.source_type === "knowledge_base_professional_article_review"), false);
   const remote = rows.filter((row) => /^https?:\/\//.test(row.asset_url));
   const selectedUrls = new Set(remote.filter((row) => row.publish_allowed).map((row) => row.asset_url));

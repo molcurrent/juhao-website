@@ -85,7 +85,7 @@ test("ships the D1 retry columns and authenticated maintenance route", () => {
   assert.match(retentionIndexMigration, /consultation_leads_expires_at_idx/);
   assert.match(maintenance, /JUHAO_LEAD_MAINTENANCE_SECRET/);
   assert.match(maintenance, /runConsultationMaintenance/);
-  assert.match(maintenanceService, /listRetryableConsultationLeads/);
+  assert.match(maintenanceService, /claimConsultationNotification/);
   assert.match(maintenanceService, /purgeExpiredConsultationLeads/);
   assert.match(maintenanceService, /purgeExpiredConsultationRateLimits/);
   assert.match(contactRoute, /consumeConsultationRateLimit/);

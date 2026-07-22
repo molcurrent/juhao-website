@@ -240,8 +240,38 @@ const worker = {
 
     return secure(await handler.fetch(appRequest, env, ctx));
   },
-  scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(runConsultationMaintenance(env).then(() => undefined));
+  scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext) {
+    const scheduledAt = new Date(controller.scheduledTime).toISOString();
+    ctx.waitUntil(runConsultationMaintenance(env).then((result) => {
+      const summary = {
+        event: "consultation_maintenance",
+        scheduledAt,
+        cron: controller.cron,
+        notification: result.notification,
+        counts: {
+          purged: result.purged,
+          rateLimitsPurged: result.rateLimitsPurged,
+          analyticsPurged: result.analyticsPurged,
+          attempted: result.attempted,
+          sent: result.sent,
+          retry: result.retry,
+          deadLetter: result.deadLetter,
+          stale: result.stale,
+        },
+      };
+      if (result.deadLetter > 0) {
+        console.error(JSON.stringify({ ...summary, outcome: "dead_letter_detected" }));
+      } else {
+        console.log(JSON.stringify({ ...summary, outcome: "completed" }));
+      }
+    }).catch(() => {
+      console.error(JSON.stringify({
+        event: "consultation_maintenance",
+        outcome: "failed",
+        scheduledAt,
+        cron: controller.cron,
+      }));
+    }));
   },
 };
 

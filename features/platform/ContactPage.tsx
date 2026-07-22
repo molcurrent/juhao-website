@@ -1,10 +1,11 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useCallback, useId, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { PageData } from "@/app/_data/pages";
+import { recordAnalyticsEvent } from "@/lib/analytics/client";
 import { EvidenceScale, type EvidenceScaleItem } from "@/components/experience/EvidenceScale";
 import { submitContact } from "@/lib/api/contact";
 import type { ContactRequest } from "@/lib/api/types";
@@ -75,6 +76,14 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
       : consultationContextForDirection(direction, initialContext?.source ?? "direct", initialContext?.sourceDetail)
     : initialContext;
 
+  useEffect(() => {
+    recordAnalyticsEvent({
+      name: "consultation_form_view",
+      source: activeContext?.source ?? "direct",
+      ...(direction ? { direction } : {}),
+    });
+  }, [activeContext?.source, direction]);
+
   function fieldId(field: ContactField) {
     return `${resultId}-${field}`;
   }
@@ -142,7 +151,13 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
       return;
     }
 
+    if (!direction) return;
     setFieldErrors({});
+    recordAnalyticsEvent({
+      name: "consultation_form_started",
+      source: activeContext?.source ?? "direct",
+      direction,
+    });
     setResult({
       tone: "ready",
       title: "咨询信息已基本准备好",
@@ -196,6 +211,11 @@ export function ContactPage({ page, initialContext = null }: ContactPageProps) {
         clientRequestId: requestId,
         ...(turnstileToken ? { turnstileToken } : {}),
         website,
+      });
+      recordAnalyticsEvent({
+        name: "consultation_submit_success",
+        source: activeContext?.source ?? "direct",
+        direction,
       });
       router.push(`/contact/success?lead=${encodeURIComponent(nextReceipt.id)}`);
     } catch (error) {

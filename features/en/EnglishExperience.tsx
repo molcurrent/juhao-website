@@ -73,7 +73,7 @@ export function EnglishExperience({ slug = [] }: { slug?: string[] }) {
     </main>
     <footer className={styles.footer}>
       <div><img src="/brand/juhao-logo-horizontal-white.svg" alt="JUHAO" /><p>Lighting for considered spaces.</p></div>
-      <div className={styles.footerLinks}><Link href="/en/products">Collections</Link><Link href="/en/resources">Lighting notes</Link><Link href="/en/contact">Contact</Link><a href="/" lang="zh-CN">中文站</a></div>
+      <div className={styles.footerLinks}><Link href="/en/products">Collections</Link><Link href="/en/resources">Lighting notes</Link><Link href="/en/contact">Contact</Link><Link href="/" lang="zh-CN">中文站</Link></div>
       <p className={styles.footerFine}>Private English preview · Content uses approved lighting knowledge and locally supplied visual collections. © JUHAO</p>
     </footer>
   </div>;

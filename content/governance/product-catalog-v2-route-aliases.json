@@ -2,26 +2,32 @@
   {
     "family_id": "family-77b9971e550c",
     "source_key": "mall_sql:9238",
-    "legacy_route": "/products/linear-lighting/9238",
-    "planned_canonical_route": "/products/linear-lighting/9238",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/linear-lighting/9238",
+    "legacy_route": "/products/ceiling-lights/9238",
+    "planned_canonical_route": "/products/ceiling-lights/9238",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-5c97ea3f5b5b",
     "source_key": "mall_sql:9237",
-    "legacy_route": "/products/linear-lighting/9237",
-    "planned_canonical_route": "/products/linear-lighting/9237",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/linear-lighting/9237",
+    "legacy_route": "/products/ceiling-lights/9237",
+    "planned_canonical_route": "/products/ceiling-lights/9237",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-7f75dcce796c",
     "source_key": "mall_sql:9236",
-    "legacy_route": "/products/linear-lighting/9236",
-    "planned_canonical_route": "/products/linear-lighting/9236",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/linear-lighting/9236",
+    "legacy_route": "/products/ceiling-lights/9236",
+    "planned_canonical_route": "/products/ceiling-lights/9236",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-972959f4c328",
@@ -202,49 +208,61 @@
   {
     "family_id": "family-a3d872de3600",
     "source_key": "mall_sql:11652",
-    "legacy_route": "/products/crystal-chandeliers/11652",
-    "planned_canonical_route": "/products/crystal-chandeliers/11652",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/crystal-chandeliers/11652",
+    "legacy_route": "/products/ceiling-lights/11652",
+    "planned_canonical_route": "/products/ceiling-lights/11652",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-a3d872de3600",
     "source_key": "mall_sql:11651",
-    "legacy_route": "/products/crystal-chandeliers/11651",
-    "planned_canonical_route": "/products/crystal-chandeliers/11652",
-    "route_action": "redirect_to_family_canonical",
-    "route_state": "reserved_alias_not_activated"
+    "historical_route": "/products/crystal-chandeliers/11651",
+    "legacy_route": "/products/ceiling-lights/11651",
+    "planned_canonical_route": "/products/ceiling-lights/11651",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-a3d872de3600",
     "source_key": "mall_sql:11650",
-    "legacy_route": "/products/crystal-chandeliers/11650",
-    "planned_canonical_route": "/products/crystal-chandeliers/11652",
-    "route_action": "redirect_to_family_canonical",
-    "route_state": "reserved_alias_not_activated"
+    "historical_route": "/products/crystal-chandeliers/11650",
+    "legacy_route": "/products/ceiling-lights/11650",
+    "planned_canonical_route": "/products/ceiling-lights/11650",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-0f78e49f6810",
     "source_key": "mall_sql:11001",
-    "legacy_route": "/products/outdoor-lighting/11001",
-    "planned_canonical_route": "/products/outdoor-lighting/11001",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/outdoor-lighting/11001",
+    "legacy_route": "/products/table-floor-lights/11001",
+    "planned_canonical_route": "/products/table-floor-lights/11001",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-5ae1d7b4ce39",
     "source_key": "mall_sql:8948",
-    "legacy_route": "/products/outdoor-lighting/8948",
-    "planned_canonical_route": "/products/outdoor-lighting/8948",
-    "route_action": "preserve_canonical",
-    "route_state": "reserved_canonical_not_activated"
+    "historical_route": "/products/outdoor-lighting/8948",
+    "legacy_route": "/products/table-floor-lights/8948",
+    "planned_canonical_route": "/products/table-floor-lights/8948",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   },
   {
     "family_id": "family-5ae1d7b4ce39",
     "source_key": "mall_sql:8947",
-    "legacy_route": "/products/outdoor-lighting/8947",
-    "planned_canonical_route": "/products/outdoor-lighting/8948",
-    "route_action": "redirect_to_family_canonical",
-    "route_state": "reserved_alias_not_activated"
+    "historical_route": "/products/outdoor-lighting/8947",
+    "legacy_route": "/products/table-floor-lights/8947",
+    "planned_canonical_route": "/products/table-floor-lights/8947",
+    "taxonomy_override": true,
+    "route_action": "taxonomy_override",
+    "route_state": "private_preview_applied"
   }
 ]

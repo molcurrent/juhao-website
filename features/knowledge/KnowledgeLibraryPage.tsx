@@ -8,6 +8,7 @@ import {
   knowledgeLibrary,
   type KnowledgeArticle,
 } from "@/content/knowledge-library";
+import { seoEditorialQueue } from "@/content/seo-editorial-queue";
 import { consultationHref } from "@/lib/consultation";
 
 import styles from "./KnowledgeLibraryPage.module.css";
@@ -118,6 +119,11 @@ export function KnowledgeLibraryPage({ page, view }: { page: PageData; view: Kno
             </Link>
           ))}
         </nav>
+      </section>
+
+      <section className={styles.editorialQueue} aria-labelledby="knowledge-editorial-queue-title">
+        <header><p>仅编辑选题</p><h2 id="knowledge-editorial-queue-title">三条内容线，只排选题，不冒充已发布文章</h2><span>未写正文、未创建路由的主题保持 noindex，以下内容与上方原创编辑队列相互独立。</span></header>
+        <div>{seoEditorialQueue.lanes.map((lane) => <article key={lane.id}><h3>{lane.label}</h3><p>{lane.description}</p><ol>{lane.topics.map((topic) => <li key={topic.id}><strong>{topic.working_title}</strong><span>未写正文 · 未创建路由</span></li>)}</ol></article>)}</div>
       </section>
 
       <div className={styles.archive}>

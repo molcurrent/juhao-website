@@ -1,0 +1,111 @@
+.page {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  padding: clamp(110px, 13vw, 180px) max(24px, 8vw);
+  overflow: hidden;
+  color: #f7f3ef;
+  background:
+    linear-gradient(115deg, #0c0b0a 0 58%, #25140d 100%);
+}
+
+.glow {
+  position: absolute;
+  top: 20%;
+  right: -12vw;
+  width: min(62vw, 780px);
+  aspect-ratio: 1;
+  border: 1px solid #ffffff1f;
+  border-radius: 50%;
+  box-shadow: 0 0 150px #e7571730, inset 0 0 120px #e757171c;
+}
+
+.page section {
+  z-index: 1;
+  align-self: center;
+  width: min(760px, 100%);
+}
+
+.page small {
+  color: #ed6a2a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.page section > p {
+  margin: 44px 0 0;
+  color: #c8c0b9;
+  font-size: 14px;
+}
+
+.page h1 {
+  margin: 18px 0 0;
+  font-size: clamp(58px, 9vw, 126px);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.page section > span {
+  display: block;
+  max-width: 610px;
+  margin-top: 38px;
+  color: #c8c0b9;
+  line-height: 1.85;
+}
+
+.page section > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 44px;
+}
+
+.page button,
+.page a {
+  display: inline-flex;
+  gap: 36px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 0 18px;
+  border: 1px solid #ffffff4d;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.page button {
+  color: #150d09;
+  background: #ed6a2a;
+  border-color: #ed6a2a;
+}
+
+.page button:hover,
+.page button:focus-visible,
+.page a:hover,
+.page a:focus-visible {
+  color: #150d09;
+  background: #fff;
+  border-color: #fff;
+}
+
+@media (max-width: 560px) {
+  .page section > div,
+  .page button,
+  .page a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

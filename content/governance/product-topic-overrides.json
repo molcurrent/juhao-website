@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-07-22",
+  "policy": "Source category and product attributes take precedence over noisy legacy topic-index membership. Historical URLs remain permanent redirects and are never reused for a different product.",
+  "overrides": [
+    {
+      "source_id": "9236",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-8L6619-1100720现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_9236.md",
+      "legacy_topic": "灯带",
+      "legacy_topic_slug": "linear-lighting",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类为吸顶灯，且来源部门索引归属家居顶灯事业部。"
+    },
+    {
+      "source_id": "9237",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-8L6619-500500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_9237.md",
+      "legacy_topic": "灯带",
+      "legacy_topic_slug": "linear-lighting",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类为吸顶灯，且来源部门索引归属家居顶灯事业部。"
+    },
+    {
+      "source_id": "9238",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-8L6619-500现代简约客厅餐厅卧室书房铁艺亚克力吸顶灯_9238.md",
+      "legacy_topic": "灯带",
+      "legacy_topic_slug": "linear-lighting",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类为吸顶灯，且来源部门索引归属家居顶灯事业部。"
+    },
+    {
+      "source_id": "11650",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-Q58018-750圆客厅餐厅卧室轻奢吸顶灯_11650.md",
+      "legacy_topic": "水晶吊灯",
+      "legacy_topic_slug": "crystal-chandeliers",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类和标题均明确为吸顶灯；水晶吊灯专题成员关系不足以覆盖源分类。"
+    },
+    {
+      "source_id": "11651",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-Q58018-600圆客厅餐厅卧室轻奢吸顶灯_11651.md",
+      "legacy_topic": "水晶吊灯",
+      "legacy_topic_slug": "crystal-chandeliers",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类和标题均明确为吸顶灯；水晶吊灯专题成员关系不足以覆盖源分类。"
+    },
+    {
+      "source_id": "11652",
+      "source_category": "吸顶灯",
+      "source_locator": "商城系统/商品说明/JH-Q58018-500圆客厅餐厅卧室轻奢吸顶灯_11652.md",
+      "legacy_topic": "水晶吊灯",
+      "legacy_topic_slug": "crystal-chandeliers",
+      "canonical_topic": "家居顶灯",
+      "canonical_topic_slug": "ceiling-lights",
+      "reason": "源分类和标题均明确为吸顶灯；水晶吊灯专题成员关系不足以覆盖源分类。"
+    },
+    {
+      "source_id": "11001",
+      "source_category": "室内护眼大路灯",
+      "source_locator": "商城系统/商品说明/JH-9240-100A5_11001.md",
+      "legacy_topic": "户外照明",
+      "legacy_topic_slug": "outdoor-lighting",
+      "canonical_topic": "台灯与落地灯",
+      "canonical_topic_slug": "table-floor-lights",
+      "reason": "源分类为室内护眼大路灯，类型字段为护眼灯、落地灯，不是建筑或景观户外照明。"
+    },
+    {
+      "source_id": "8947",
+      "source_category": "台灯",
+      "source_locator": "商城系统/商品说明/JH-T-051铜体户外露营床头台灯小夜灯_8947.md",
+      "legacy_topic": "户外照明",
+      "legacy_topic_slug": "outdoor-lighting",
+      "canonical_topic": "台灯与落地灯",
+      "canonical_topic_slug": "table-floor-lights",
+      "reason": "源分类为台灯；标题中的户外露营是使用场景，不能升级为建筑景观户外照明分类。"
+    },
+    {
+      "source_id": "8948",
+      "source_category": "台灯",
+      "source_locator": "商城系统/商品说明/JH-T-052铜体户外露营床头台灯小夜灯_8948.md",
+      "legacy_topic": "户外照明",
+      "legacy_topic_slug": "outdoor-lighting",
+      "canonical_topic": "台灯与落地灯",
+      "canonical_topic_slug": "table-floor-lights",
+      "reason": "源分类为台灯；标题中的户外露营是使用场景，不能升级为建筑景观户外照明分类。"
+    }
+  ]
+}

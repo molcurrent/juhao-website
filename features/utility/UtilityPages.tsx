@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { PageData } from "@/app/_data/pages";
+import { AnalyticsLink } from "@/components/analytics/AnalyticsEvents";
 import type { DownloadItem } from "@/lib/api/types";
 import { CONSULTATION_PRIVACY_VERSION, consultationHref } from "@/lib/consultation";
 import styles from "./UtilityPages.module.css";
@@ -63,7 +64,7 @@ export function DownloadsPage({ page, downloads = [] }: { page: PageData; downlo
                 <div><dt>更新时间</dt><dd>{item.updatedAt}</dd></div>
               </dl>
             </div>
-            <a href={item.href} aria-label={`下载${item.title}`}>下载文件 <span aria-hidden="true">↓</span></a>
+            <AnalyticsLink href={item.href} aria-label={`下载${item.title}`} analyticsEvent={{ name: "download_requested", contentId: item.id }}>下载文件 <span aria-hidden="true">↓</span></AnalyticsLink>
           </div>
         </article>)}
       </div>}

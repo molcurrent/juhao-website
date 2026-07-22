@@ -66,9 +66,9 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/crystal-chandeliers/11650",
-        "/products/crystal-chandeliers/11651",
-        "/products/crystal-chandeliers/11652"
+        "/products/ceiling-lights/11650",
+        "/products/ceiling-lights/11651",
+        "/products/ceiling-lights/11652"
       ],
       "legacy_alias_count": 3,
       "release_ready": false,
@@ -122,8 +122,8 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/outdoor-lighting/8947",
-        "/products/outdoor-lighting/8948"
+        "/products/table-floor-lights/8947",
+        "/products/table-floor-lights/8948"
       ],
       "legacy_alias_count": 2,
       "release_ready": false,
@@ -232,7 +232,7 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/linear-lighting/9237"
+        "/products/ceiling-lights/9237"
       ],
       "legacy_alias_count": 1,
       "release_ready": false,
@@ -286,7 +286,7 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/linear-lighting/9238"
+        "/products/ceiling-lights/9238"
       ],
       "legacy_alias_count": 1,
       "release_ready": false,
@@ -340,7 +340,7 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/linear-lighting/9236"
+        "/products/ceiling-lights/9236"
       ],
       "legacy_alias_count": 1,
       "release_ready": false,
@@ -1156,7 +1156,7 @@
         "family_id_stability_requires_actions": {}
       },
       "legacy_aliases": [
-        "/products/outdoor-lighting/11001"
+        "/products/table-floor-lights/11001"
       ],
       "legacy_alias_count": 1,
       "release_ready": false,

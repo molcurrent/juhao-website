@@ -65,6 +65,9 @@ class FakeD1Statement {
   }
 
   async run() {
+    if (this.sql.startsWith("DELETE FROM analytics_daily_counts")) {
+      return { meta: { changes: 0 } };
+    }
     if (this.sql.startsWith("DELETE FROM consultation_leads")) {
       const expired = [...this.database.rows]
         .filter(([, row]) => row.expires_at < this.values[0])
@@ -88,6 +91,21 @@ class FakeD1Statement {
       this.database.rows.set(clientRequestId, Object.fromEntries(columns.map((column, index) => [column, this.values[index]])));
       return { meta: { changes: 1 } };
     }
+    if (this.sql.startsWith("UPDATE consultation_leads") && this.sql.includes("notification_attempts = ?")) {
+      const [status, error, nextAttemptAt, id, attempts, lastAttemptAt, claimedNextAttemptAt] = this.values;
+      const row = [...this.database.rows.values()].find((item) => item.id === id);
+      if (!row
+        || row.notification_status !== "retry"
+        || row.notification_attempts !== attempts
+        || row.notification_last_attempt_at !== lastAttemptAt
+        || row.notification_next_attempt_at !== claimedNextAttemptAt) {
+        return { meta: { changes: 0 } };
+      }
+      row.notification_status = status;
+      row.notification_last_error = error;
+      row.notification_next_attempt_at = nextAttemptAt;
+      return { meta: { changes: 1 } };
+    }
     if (this.sql.startsWith("UPDATE consultation_leads")) {
       const row = [...this.database.rows.values()].find((item) => item.id === this.values[4]);
       if (row) {
@@ -103,6 +121,54 @@ class FakeD1Statement {
   }
 
   async first() {
+    if (this.sql.startsWith("UPDATE consultation_leads")) {
+      const [attemptedAt, nextAttemptAt] = this.values;
+      const hasExplicitId = this.sql.includes("WHERE id = ?");
+      const id = hasExplicitId ? this.values[2] : undefined;
+      const now = hasExplicitId ? this.values[3] : this.values[2];
+      const row = id
+        ? [...this.database.rows.values()].find((item) => item.id === id)
+        : [...this.database.rows.values()]
+          .filter((item) => ["pending", "retry"].includes(item.notification_status)
+            && (!item.notification_next_attempt_at || item.notification_next_attempt_at <= now)
+            && item.notification_attempts <= 5)
+          .sort((left, right) => left.created_at.localeCompare(right.created_at))[0];
+      if (!row
+        || !["pending", "retry"].includes(row.notification_status)
+        || (row.notification_next_attempt_at && row.notification_next_attempt_at > now)
+        || row.notification_attempts > 5) return null;
+      row.notification_status = "retry";
+      if (row.notification_attempts < 5) row.notification_attempts += 1;
+      row.notification_last_error = null;
+      row.notification_last_attempt_at = attemptedAt;
+      row.notification_next_attempt_at = nextAttemptAt;
+      return {
+        id: row.id,
+        clientRequestId: row.client_request_id,
+        requestHash: row.request_hash,
+        direction: row.direction,
+        source: row.source,
+        sourceDetail: row.source_detail,
+        scene: row.scene,
+        intent: row.intent,
+        project: row.project,
+        stage: row.stage,
+        need: row.need,
+        contactName: row.contact_name,
+        contactChannel: row.contact_channel,
+        contactValue: row.contact_value,
+        privacyVersion: row.privacy_version,
+        consentAt: row.consent_at,
+        status: row.status,
+        notificationStatus: row.notification_status,
+        notificationAttempts: row.notification_attempts,
+        notificationLastError: row.notification_last_error,
+        notificationLastAttemptAt: row.notification_last_attempt_at,
+        notificationNextAttemptAt: row.notification_next_attempt_at,
+        createdAt: row.created_at,
+        expiresAt: row.expires_at,
+      };
+    }
     if (this.sql.startsWith("INSERT INTO consultation_rate_limits")) {
       const [keyHash, windowStartedAt, expiresAt] = this.values;
       const current = this.database.rateLimits.get(keyHash);
@@ -1575,7 +1641,17 @@ test("retries failed notifications, reaches dead letter, and purges without new 
     globalThis.fetch = async () => new Response(null, { status: 204 });
     const retried = await runContactMaintenance(worker, database, runtime);
     assert.equal(retried.status, 200);
-    assert.deepEqual(await retried.json(), { purged: 0, rateLimitsPurged: 0, attempted: 1, sent: 1, retry: 0, deadLetter: 0, notification: "processed" });
+    assert.deepEqual(await retried.json(), {
+      purged: 0,
+      rateLimitsPurged: 0,
+      analyticsPurged: 0,
+      attempted: 1,
+      sent: 1,
+      retry: 0,
+      deadLetter: 0,
+      stale: 0,
+      notification: "processed",
+    });
     assert.equal(stored.notification_status, "sent");
     assert.equal(stored.notification_attempts, 2);
 

@@ -26,6 +26,7 @@ export type ConsultationLeadRecord = {
 };
 
 export type ConsultationNotificationStatus = "pending" | "sent" | "retry" | "dead_letter" | "not_configured";
+export const CONSULTATION_NOTIFICATION_LEASE_MS = 5 * 60_000;
 
 type StoredLead = {
   id: string;
@@ -197,6 +198,12 @@ type RetryableLeadRow = {
   expiresAt: string;
 };
 
+export type ConsultationNotificationClaim = RetryableLeadRow & {
+  notificationStatus: "retry";
+  notificationLastAttemptAt: string;
+  notificationNextAttemptAt: string;
+};
+
 export async function listRetryableConsultationLeads(db: D1Database, now: string, limit = 25) {
   const result = await db.prepare(`
     SELECT
@@ -231,4 +238,98 @@ export async function listRetryableConsultationLeads(db: D1Database, now: string
     LIMIT ?
   `).bind(now, limit).all<RetryableLeadRow>();
   return result.results;
+}
+
+export async function claimConsultationNotification(
+  db: D1Database,
+  now: Date,
+  id?: string,
+) {
+  const attemptedAt = now.toISOString();
+  const leaseExpiresAt = new Date(now.getTime() + CONSULTATION_NOTIFICATION_LEASE_MS).toISOString();
+  const target = id
+    ? "id = ?"
+    : `id = (
+      SELECT id FROM consultation_leads
+      WHERE notification_status IN ('pending', 'retry')
+        AND (notification_next_attempt_at IS NULL OR notification_next_attempt_at <= ?)
+        AND notification_attempts <= 5
+      ORDER BY created_at ASC
+      LIMIT 1
+    )`;
+  return db.prepare(`
+    UPDATE consultation_leads
+    SET notification_status = 'retry',
+        notification_attempts = CASE
+          WHEN notification_attempts < 5 THEN notification_attempts + 1
+          ELSE notification_attempts
+        END,
+        notification_last_error = NULL,
+        notification_last_attempt_at = ?,
+        notification_next_attempt_at = ?
+    WHERE ${target}
+      AND notification_status IN ('pending', 'retry')
+      AND (notification_next_attempt_at IS NULL OR notification_next_attempt_at <= ?)
+      AND notification_attempts <= 5
+    RETURNING
+      id,
+      client_request_id AS clientRequestId,
+      request_hash AS requestHash,
+      direction,
+      source,
+      source_detail AS sourceDetail,
+      scene,
+      intent,
+      project,
+      stage,
+      need,
+      contact_name AS contactName,
+      contact_channel AS contactChannel,
+      contact_value AS contactValue,
+      privacy_version AS privacyVersion,
+      consent_at AS consentAt,
+      status,
+      notification_status AS notificationStatus,
+      notification_attempts AS notificationAttempts,
+      notification_last_error AS notificationLastError,
+      notification_last_attempt_at AS notificationLastAttemptAt,
+      notification_next_attempt_at AS notificationNextAttemptAt,
+      created_at AS createdAt,
+      expires_at AS expiresAt
+  `).bind(
+    attemptedAt,
+    leaseExpiresAt,
+    ...(id ? [id, attemptedAt] : [attemptedAt, attemptedAt]),
+  ).first<ConsultationNotificationClaim>();
+}
+
+export async function completeConsultationNotification(
+  db: D1Database,
+  claim: ConsultationNotificationClaim,
+  update: {
+    status: Exclude<ConsultationNotificationStatus, "pending" | "not_configured">;
+    error: string | null;
+    nextAttemptAt: string | null;
+  },
+) {
+  const result = await db.prepare(`
+    UPDATE consultation_leads
+    SET notification_status = ?,
+        notification_last_error = ?,
+        notification_next_attempt_at = ?
+    WHERE id = ?
+      AND notification_status = 'retry'
+      AND notification_attempts = ?
+      AND notification_last_attempt_at = ?
+      AND notification_next_attempt_at = ?
+  `).bind(
+    update.status,
+    update.error,
+    update.nextAttemptAt,
+    claim.id,
+    claim.notificationAttempts,
+    claim.notificationLastAttemptAt,
+    claim.notificationNextAttemptAt,
+  ).run();
+  return Number(result.meta.changes ?? 0) > 0;
 }

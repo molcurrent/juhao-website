@@ -238,6 +238,11 @@
 .productCardModel{color:var(--text-accent-on-light);font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.35;overflow-wrap:anywhere}
 .productCardName{display:block;overflow-wrap:anywhere}
 
+.filterCoverage{display:grid;gap:30px;padding:84px 7vw;background:var(--vi-silver-soft);color:var(--ink)}
+.filterCoverage header{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:18px 8vw;align-items:end}.filterCoverage header p{margin:0;color:var(--brand-orange);font-size:11px;font-weight:800;letter-spacing:.12em}.filterCoverage header h2{margin:0;font-size:clamp(30px,4vw,56px);letter-spacing:-.04em}.filterCoverage header span{color:var(--text-muted-on-light);font-size:14px;line-height:1.7}
+.filterCoverage>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line)}.filterCoverage article{display:grid;gap:10px;padding:22px;background:var(--paper-raised)}.filterCoverage article strong{font-size:16px}.filterCoverage article span{color:var(--brand-orange);font-size:26px;font-weight:800}.filterCoverage article small{color:var(--text-muted-on-light);font-size:12px;line-height:1.6}
+.filterCoverage footer{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.filterCoverage button,.filterCoverage footer a{min-height:46px;padding:0 18px;border:1px solid var(--line);font:inherit}.filterCoverage button{color:var(--text-muted-on-light);background:transparent;cursor:not-allowed}.filterCoverage footer a{display:inline-flex;align-items:center;color:var(--ink);background:var(--brand-orange-bright);border-color:var(--brand-orange-bright)}
+
 @media(max-width:900px){
   .productEvidence{padding:16px}
   .productEvidence>a{grid-template-columns:64px minmax(0,1fr) auto;min-height:88px}
@@ -245,4 +250,5 @@
   .productEvidence header small,.productEvidence>a small{font-size:13px}
   .productEvidence header strong,.productEvidence>a strong{font-size:15px}
   .productCardModel{font-size:13px}
+  .filterCoverage{padding:64px 24px}.filterCoverage header{grid-template-columns:1fr}.filterCoverage>div{grid-template-columns:1fr}
 }
