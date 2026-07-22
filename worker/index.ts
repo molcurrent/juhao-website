@@ -53,6 +53,23 @@ function isLocalDevelopmentRequest(url: URL) {
   return url.protocol === "http:" && isLocalCatalogPreview(url);
 }
 
+function englishSubdomainPath(url: URL) {
+  if (url.hostname.toLowerCase() !== "en.juhao.com") return null;
+  const path = url.pathname;
+  if (
+    path === "/en" ||
+    path.startsWith("/en/") ||
+    path.startsWith("/_vinext/") ||
+    path.startsWith("/@id/") ||
+    path.startsWith("/node_modules/") ||
+    path.startsWith("/brand/") ||
+    path.startsWith("/en-assets/") ||
+    path.startsWith("/api/") ||
+    /\.[a-z0-9]{1,8}$/i.test(path)
+  ) return null;
+  return path === "/" ? "/en" : `/en${path}`;
+}
+
 function contentSecurityPolicy({ nonce, secureRequest, hmrHost }: { nonce?: string; secureRequest: boolean; hmrHost?: string }) {
   const scriptSources = secureRequest
     ? ["'self'", ...(nonce ? [`'nonce-${nonce}'`, "'strict-dynamic'"] : []), "https://challenges.cloudflare.com"]
@@ -129,13 +146,16 @@ function robotsBody(publicIndexing: boolean) {
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    const englishPath = englishSubdomainPath(url);
     const secureRequest = url.protocol === "https:";
     const nonce = secureRequest ? crypto.randomUUID().replaceAll("-", "") : undefined;
     const policy = securityPolicyForRequest(request, nonce);
     const publicIndexing = indexingEnabled(env);
     const secure = (response: Response, responsePolicy = policy) =>
       withSecurityHeaders(request, response, responsePolicy, !publicIndexing);
-    let appRequest = request;
+    let appRequest = englishPath
+      ? new Request(new URL(englishPath, request.url), request)
+      : request;
     if (nonce) {
       const headers = new Headers(request.headers);
       headers.set("Content-Security-Policy", policy);
@@ -220,8 +240,38 @@ const worker = {
 
     return secure(await handler.fetch(appRequest, env, ctx));
   },
-  scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(runConsultationMaintenance(env).then(() => undefined));
+  scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext) {
+    const scheduledAt = new Date(controller.scheduledTime).toISOString();
+    ctx.waitUntil(runConsultationMaintenance(env).then((result) => {
+      const summary = {
+        event: "consultation_maintenance",
+        scheduledAt,
+        cron: controller.cron,
+        notification: result.notification,
+        counts: {
+          purged: result.purged,
+          rateLimitsPurged: result.rateLimitsPurged,
+          analyticsPurged: result.analyticsPurged,
+          attempted: result.attempted,
+          sent: result.sent,
+          retry: result.retry,
+          deadLetter: result.deadLetter,
+          stale: result.stale,
+        },
+      };
+      if (result.deadLetter > 0) {
+        console.error(JSON.stringify({ ...summary, outcome: "dead_letter_detected" }));
+      } else {
+        console.log(JSON.stringify({ ...summary, outcome: "completed" }));
+      }
+    }).catch(() => {
+      console.error(JSON.stringify({
+        event: "consultation_maintenance",
+        outcome: "failed",
+        scheduledAt,
+        cron: controller.cron,
+      }));
+    }));
   },
 };
 

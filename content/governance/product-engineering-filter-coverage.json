@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-07-22",
+  "scope": {
+    "source": "content/runtime/published-products.json",
+    "product_count": 31,
+    "route_state": "private_preview",
+    "index_state": "noindex"
+  },
+  "policy": {
+    "source_fields_only": true,
+    "title_inference_forbidden": true,
+    "composite_field_inference_forbidden": true,
+    "filter_enabled_rule": "coverage_count equals product_count and normalization_approved is true"
+  },
+  "dimensions": [
+    {
+      "key": "power",
+      "label": "功率",
+      "source_parameter_names": ["功率", "额定功率"],
+      "coverage_count": 0,
+      "missing_count": 31,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "source_field_absent"
+    },
+    {
+      "key": "cct",
+      "label": "色温",
+      "source_parameter_names": ["色温"],
+      "coverage_count": 0,
+      "missing_count": 31,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "source_field_absent"
+    },
+    {
+      "key": "cri",
+      "label": "显色指数",
+      "source_parameter_names": ["显色指数", "显指"],
+      "coverage_count": 0,
+      "missing_count": 31,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "source_field_absent"
+    },
+    {
+      "key": "beam-angle",
+      "label": "光束角",
+      "source_parameter_names": ["光束角"],
+      "coverage_count": 0,
+      "missing_count": 31,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "source_field_absent"
+    },
+    {
+      "key": "dimensions",
+      "label": "尺寸",
+      "source_parameter_names": ["尺寸"],
+      "coverage_count": 22,
+      "missing_count": 9,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "partial_and_unstandardized"
+    },
+    {
+      "key": "installation",
+      "label": "安装方式",
+      "source_parameter_names": ["安装方式"],
+      "coverage_count": 0,
+      "missing_count": 31,
+      "normalization_approved": false,
+      "filter_state": "disabled",
+      "reason_code": "source_field_absent"
+    }
+  ],
+  "decision": "all_engineering_filters_disabled",
+  "fallback": {
+    "label": "进入型号确认咨询",
+    "source": "products",
+    "source_detail": "model-confirmation"
+  }
+}

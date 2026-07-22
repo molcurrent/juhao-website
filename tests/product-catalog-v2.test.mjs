@@ -160,8 +160,12 @@ test("all existing product URLs have a reserved family migration mapping", () =>
   const redirected = routeAliases.filter(
     (item) => item.route_action === "redirect_to_family_canonical",
   );
-  assert.equal(preserved.length, 22);
-  assert.equal(redirected.length, 9);
+  const taxonomyOverrides = routeAliases.filter(
+    (item) => item.route_action === "taxonomy_override",
+  );
+  assert.equal(preserved.length, 16);
+  assert.equal(redirected.length, 6);
+  assert.equal(taxonomyOverrides.length, 9);
   assert.ok(
     preserved.every(
       (item) =>
@@ -174,6 +178,15 @@ test("all existing product URLs have a reserved family migration mapping", () =>
       (item) =>
         item.route_state === "reserved_alias_not_activated" &&
         item.legacy_route !== item.planned_canonical_route,
+    ),
+  );
+  assert.ok(
+    taxonomyOverrides.every(
+      (item) =>
+        item.taxonomy_override === true &&
+        item.historical_route &&
+        item.route_state === "private_preview_applied" &&
+        item.legacy_route === item.planned_canonical_route,
     ),
   );
 });
@@ -512,8 +525,8 @@ test("private pilot tiers and alias mapping remain advisory only", () => {
   assert.equal(activeAliasPreview.worker_imported, false);
   assert.equal(activeAliasPreview.sitemap_included, false);
   assert.equal(activeAliasPreview.alias_count, 31);
-  assert.equal(activeAliasPreview.canonical_preservation_count, 22);
-  assert.equal(activeAliasPreview.redirect_count, 9);
+  assert.equal(activeAliasPreview.canonical_preservation_count, 16);
+  assert.equal(activeAliasPreview.redirect_count, 15);
   assert.ok(
     activeAliasPreview.aliases.every(
       (alias) =>

@@ -1129,11 +1129,36 @@ def current_route_aliases(
     member_to_family: dict[str, str],
 ) -> list[dict]:
     family_by_id = {family["family_id"]: family for family in families}
+    override_path = root / "content" / "governance" / "product-topic-overrides.json"
+    override_payload = json.loads(override_path.read_text(encoding="utf-8"))
+    topic_overrides = {
+        f"mall_sql:{item['source_id']}": item
+        for item in override_payload.get("overrides", [])
+    }
     aliases = []
     for item in published_product_routes(root):
         compound_key = item["source_key"]
         family_id = member_to_family.get(compound_key)
         family = family_by_id.get(family_id) if family_id else None
+        topic_override = topic_overrides.get(compound_key)
+        if topic_override:
+            canonical_route = (
+                f"/products/{topic_override['canonical_topic_slug']}/"
+                f"{topic_override['source_id']}"
+            )
+            aliases.append(
+                {
+                    "family_id": family_id,
+                    "source_key": compound_key,
+                    "historical_route": item["legacy_route"],
+                    "legacy_route": canonical_route,
+                    "planned_canonical_route": canonical_route,
+                    "taxonomy_override": True,
+                    "route_action": "taxonomy_override",
+                    "route_state": "private_preview_applied",
+                }
+            )
+            continue
         planned_route = (
             family["planned_canonical_route"]
             if family
@@ -1196,7 +1221,8 @@ def build_active_alias_preview(
                 "route_action": alias["route_action"],
                 "would_redirect_status": (
                     308
-                    if alias["route_action"] == "redirect_to_family_canonical"
+                    if alias["route_action"]
+                    in {"redirect_to_family_canonical", "taxonomy_override"}
                     else None
                 ),
                 "activation": False,
@@ -1217,7 +1243,8 @@ def build_active_alias_preview(
             for item in aliases
         ),
         "redirect_count": sum(
-            item["route_action"] == "redirect_to_family_canonical"
+            item["route_action"]
+            in {"redirect_to_family_canonical", "taxonomy_override"}
             for item in aliases
         ),
         "aliases": aliases,

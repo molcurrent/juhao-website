@@ -1,9 +1,10 @@
 import {
-  listRetryableConsultationLeads,
+  claimConsultationNotification,
+  completeConsultationNotification,
   purgeExpiredConsultationLeads,
   purgeExpiredConsultationRateLimits,
-  updateConsultationNotification,
 } from "@/db/consultation-leads";
+import { purgeExpiredAnalyticsDailyCounts } from "@/db/analytics";
 import {
   failedNotificationUpdate,
   leadNotificationConfig,
@@ -38,39 +39,46 @@ export async function runConsultationMaintenance(runtime: MaintenanceEnv) {
   const nowIso = now.toISOString();
   const purged = await purgeInBatches(purgeExpiredConsultationLeads, runtime.DB, nowIso);
   const rateLimitsPurged = await purgeInBatches(purgeExpiredConsultationRateLimits, runtime.DB, nowIso);
+  const analyticsPurged = await purgeInBatches(purgeExpiredAnalyticsDailyCounts, runtime.DB, nowIso);
   const config = leadNotificationConfig(runtime);
   if (!config.webhookUrl) {
-    return { purged, rateLimitsPurged, attempted: 0, sent: 0, retry: 0, deadLetter: 0, notification: "not_configured" as const };
+    return { purged, rateLimitsPurged, analyticsPurged, attempted: 0, sent: 0, retry: 0, deadLetter: 0, stale: 0, notification: "not_configured" as const };
   }
   validateLeadNotificationConfig(config);
 
-  const leads = await listRetryableConsultationLeads(runtime.DB, nowIso);
   let sent = 0;
   let retry = 0;
   let deadLetter = 0;
-  for (const lead of leads) {
+  let stale = 0;
+  let attempted = 0;
+  for (let index = 0; index < 25; index += 1) {
     const attemptedAt = new Date();
+    const lead = await claimConsultationNotification(runtime.DB, attemptedAt);
+    if (!lead) break;
+    attempted += 1;
     try {
       await notifyInternalLead(lead, config);
-      await updateConsultationNotification(runtime.DB, lead.id, {
+      if (await completeConsultationNotification(runtime.DB, lead, {
         status: "sent",
         error: null,
-        attemptedAt: attemptedAt.toISOString(),
         nextAttemptAt: null,
-      });
-      sent += 1;
+      })) sent += 1;
+      else stale += 1;
     } catch (error) {
       const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
-      const failure = failedNotificationUpdate(lead.notificationAttempts + 1, attemptedAt);
-      await updateConsultationNotification(runtime.DB, lead.id, {
+      const failure = failedNotificationUpdate(lead.notificationAttempts, attemptedAt);
+      const completed = await completeConsultationNotification(runtime.DB, lead, {
         status: failure.status,
         error: detail,
-        attemptedAt: attemptedAt.toISOString(),
         nextAttemptAt: failure.nextAttemptAt,
       });
+      if (!completed) {
+        stale += 1;
+        continue;
+      }
       if (failure.status === "dead_letter") deadLetter += 1;
       else retry += 1;
     }
   }
-  return { purged, rateLimitsPurged, attempted: leads.length, sent, retry, deadLetter, notification: "processed" as const };
+  return { purged, rateLimitsPurged, analyticsPurged, attempted, sent, retry, deadLetter, stale, notification: "processed" as const };
 }

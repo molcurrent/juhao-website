@@ -32,6 +32,12 @@ const webhookUrl = process.env.JUHAO_LEAD_WEBHOOK_URL?.trim() || "";
 const webhookSecret = process.env.JUHAO_LEAD_WEBHOOK_SECRET?.trim() || "";
 const maintenanceSecret = process.env.JUHAO_LEAD_MAINTENANCE_SECRET?.trim() || "";
 const rateLimitSecret = process.env.JUHAO_LEAD_RATE_LIMIT_SECRET?.trim() || "";
+const analyticsClientEnabled = enabled(process.env.NEXT_PUBLIC_PRIVACY_ANALYTICS_ENABLED);
+const analyticsWriteEnabled = enabled(process.env.PRIVACY_ANALYTICS_WRITE_ENABLED);
+const analyticsD1MigrationVerified = enabled(process.env.ANALYTICS_D1_MIGRATION_VERIFIED);
+const analyticsClientBuildVerified = enabled(process.env.ANALYTICS_CLIENT_BUILD_VERIFIED);
+const analyticsEdgeRateLimitVerified = enabled(process.env.ANALYTICS_EDGE_RATE_LIMIT_VERIFIED);
+const analyticsPrivacyApproved = enabled(process.env.ANALYTICS_PRIVACY_APPROVED);
 const releaseGateOnly = process.argv.includes("--release-gate");
 const expectedRoutes = publishedRecords.map((record) => record.route);
 const publicCatalogItems = Array.isArray(publicCatalogRuntime.items)
@@ -153,6 +159,25 @@ export function indexingPolicyFailures({ html, path, sitemapStatus, sitemapRoute
   return failures;
 }
 
+export function analyticsActivationFailures({
+  clientEnabled = analyticsClientEnabled,
+  writeEnabled = analyticsWriteEnabled,
+  clientBuildVerified = analyticsClientBuildVerified,
+  d1MigrationVerified = analyticsD1MigrationVerified,
+  edgeRateLimitVerified = analyticsEdgeRateLimitVerified,
+  privacyApproved = analyticsPrivacyApproved,
+} = {}) {
+  if (!clientEnabled && !writeEnabled) return [];
+  const failures = [];
+  if (!clientEnabled) failures.push("public launch blocked: analytics browser collection is not enabled");
+  if (!writeEnabled) failures.push("public launch blocked: analytics server writes are not enabled");
+  if (!clientBuildVerified) failures.push("public launch blocked: analytics client build is not verified");
+  if (!d1MigrationVerified) failures.push("public launch blocked: analytics D1 migrations are not verified");
+  if (!edgeRateLimitVerified) failures.push("public launch blocked: analytics edge rate limiting is not verified");
+  if (!privacyApproved) failures.push("public launch blocked: analytics privacy disclosure is not approved");
+  return failures;
+}
+
 export function publicLaunchGateFailures({
   indexingEnabled = publicIndexingEnabled,
   hostApproved = canonicalHostApproved,
@@ -189,6 +214,7 @@ export function publicLaunchGateFailures({
   else if (leadRateLimitSecret.length < 32) {
     failures.push("public launch blocked: JUHAO_LEAD_RATE_LIMIT_SECRET must be at least 32 characters");
   }
+  failures.push(...analyticsActivationFailures());
   return failures;
 }
 

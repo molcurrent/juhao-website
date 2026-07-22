@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { PageData } from "@/app/_data/pages";
+import { AnalyticsView, CaseDepthAnalytics } from "@/components/analytics/AnalyticsEvents";
 import { EvidenceScale, type EvidenceScaleItem } from "@/components/experience/EvidenceScale";
 import { LightFieldCanvas } from "@/components/experience/LightFieldCanvas";
 import { SemanticPicture } from "@/components/media/SemanticPicture";
 import { caseStudies, productTopics, type CaseStudy, type ProductTopic } from "@/content/catalog";
+import { buildEngineeringFilterCoverage } from "@/content/product-filter-coverage";
 import { productTitleParts, products, productsByTopic, type ProductRecord } from "@/content/products";
 import { topicGuideBySlug, type TopicGuide } from "@/content/topic-guides";
 import { consultationHref } from "@/lib/consultation";
@@ -46,9 +48,15 @@ function ProductCenterHero({ page }: { page: PageData }) {
 }
 
 export function ProductsPage({ page }: { page: PageData }) {
+  const filterCoverage = buildEngineeringFilterCoverage(products);
   return <main id="main-content" className={styles.page} tabIndex={-1}>
     <ProductCenterHero page={page} />
     <section className={styles.intro} data-header-tone="dark"><p>产品内容中心</p><div><h2>从空间出发<br/>找到合适的光</h2><span>当前私有预览开放 {products.length} 款产品详情，覆盖 10 个产品专题。页面只呈现企业知识库与商城中可核对的字段；具体适用性仍需结合安装条件和项目资料确认。</span></div></section>
+    <section className={styles.filterCoverage} data-filter-contract="SOURCE FIELD COVERAGE" aria-labelledby="product-filter-coverage-title">
+      <header><p>工程字段覆盖</p><h2 id="product-filter-coverage-title">先确认资料，再开放筛选</h2><span>不从标题、图片或复合字段推断功率、色温、显色、配光、尺寸或安装方式。</span></header>
+      <div>{filterCoverage.map((item) => <article key={item.key}><strong>{item.label}</strong><span>{item.coveredProducts}/{item.totalProducts}</span><small>{item.gapMessage}</small></article>)}</div>
+      <footer><button type="button" disabled>资料不足，暂不可筛选</button><Link href={consultationHref("project", "products", "model-confirmation")}>带型号进入人工确认 →</Link></footer>
+    </section>
     <section className={styles.topicGrid} data-header-tone="dark" aria-label="产品专题">
       {productTopics.map((topic, index) => <TopicCard topic={topic} index={index} key={topic.slug} />)}
     </section>
@@ -155,6 +163,8 @@ export function CaseDetailPage({ study }: { study: CaseStudy }) {
     { code: "05", title: "下一步", value: "带当前项目进入咨询", status: "action", href: consultationLink },
   ];
   return <main id="main-content" className={styles.page} data-case-mode={hasSpaceBreakdown ? "spatial" : "archive"} data-lightfield-page="case" tabIndex={-1}>
+    <AnalyticsView event={{ name: "case_detail_view", contentId: study.sourceId }} />
+    <CaseDepthAnalytics contentId={study.sourceId} />
     <section className={styles.caseDetailHero} data-header-tone="light" data-page-hero="image">
       <SemanticPicture className={styles.caseHeroMedia} imageClassName={styles.caseHeroImage} mediaId={study.image} alt={`${study.title}企业来源资料`} sizes="100vw" priority style={{ viewTransitionName: `case-${study.sourceId}` }} />
       <LightFieldCanvas className={styles.caseLightField} variant="case" />

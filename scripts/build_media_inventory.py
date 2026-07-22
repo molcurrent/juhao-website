@@ -134,6 +134,12 @@ PUBLIC_DEFAULTS = {
     "images/jh48-home-scene-commercial.webp": ("/", "solution_scene", "首页商业照明方案场景示意"),
     "images/jh48-home-scene-public.webp": ("/", "solution_scene", "首页公共照明方案场景示意"),
     "images/jh48-home-scene-industrial.webp": ("/", "solution_scene", "首页工业照明方案场景示意"),
+    "en-assets/aurora-ring.webp": ("/en/products/aurora-ring", "private_preview_product_visual", "Aurora Ring private English preview visual"),
+    "en-assets/aurora-orbit.webp": ("/en/products/aurora-orbit", "private_preview_product_visual", "Aurora Orbit private English preview visual"),
+    "en-assets/lumen-arc.webp": ("/en/products/lumen-arc", "private_preview_product_visual", "Lumen Arc private English preview visual"),
+    "en-assets/lumen-detail.webp": ("/en/products/lumen-detail", "private_preview_product_visual", "Lumen Detail private English preview visual"),
+    "en-assets/halo-sculpture.webp": ("/en/products/halo-sculpture", "private_preview_product_visual", "Halo Sculpture private English preview visual"),
+    "en-assets/halo-line.webp": ("/en/products/halo-line", "private_preview_product_visual", "Halo Line private English preview visual"),
 }
 
 MIRRORS_BY_URL: dict[str, dict[str, Any]] = {}

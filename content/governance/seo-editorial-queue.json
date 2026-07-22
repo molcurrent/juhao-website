@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-22",
+  "scope": "/knowledge",
+  "publication_state": "editorial_queue_noindex",
+  "indexable": false,
+  "routes_created": false,
+  "summary": "本清单只记录钜豪原创内容的编辑选题，不包含文章正文，不创建公开文章路由，也不代表已经发布。",
+  "required_gates": [
+    "technical_source_review",
+    "brand_signoff",
+    "legal_signoff"
+  ],
+  "removed_professional_articles": {
+    "route_count": 33,
+    "policy": "must_not_restore",
+    "fixture": "tests/fixtures/removed-professional-article-routes.mjs"
+  },
+  "lanes": [
+    {
+      "id": "light-environment-knowledge",
+      "label": "光环境知识",
+      "description": "从人的活动、空间任务与可核技术资料出发建立原创知识选题。",
+      "topics": [
+        {
+          "id": "living-room-lighting-design",
+          "target_keyword": "客厅灯光设计",
+          "working_title": "客厅灯光设计：从家庭活动建立照明任务清单",
+          "source_requirements": [
+            "照度、眩光与色温的权威技术来源",
+            "经授权的住宅空间图示或原创示意图"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        },
+        {
+          "id": "no-main-light",
+          "target_keyword": "无主灯设计",
+          "working_title": "无主灯设计：布局、眩光与维护的前置核对",
+          "source_requirements": [
+            "无主灯相关光学与电气技术来源",
+            "可复核的布局、安装与维护边界"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        },
+        {
+          "id": "color-temperature-4000k-3000k",
+          "target_keyword": "4000K 和 3000K 如何选择",
+          "working_title": "4000K 和 3000K 如何选择：按空间任务比较色温的编辑选题",
+          "source_requirements": [
+            "色温与视觉感受的权威技术来源",
+            "避免把偏好表述为普适结论的审校说明"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        }
+      ]
+    },
+    {
+      "id": "project-cases",
+      "label": "项目案例",
+      "description": "只有在项目身份、服务范围、图片权属与交付阶段均可核对后，才进入案例写作。",
+      "topics": [
+        {
+          "id": "hotel-lighting-design",
+          "target_keyword": "酒店照明设计",
+          "working_title": "酒店照明设计：从真实项目证据拆解空间旅程",
+          "source_requirements": [
+            "具名项目的合同阶段与钜豪服务范围",
+            "图片官网使用授权、产品清单与交付或验收材料"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        },
+        {
+          "id": "office-lighting",
+          "target_keyword": "办公照明标准",
+          "working_title": "办公照明标准：以项目范围与交付证据复盘空间任务",
+          "source_requirements": [
+            "具名办公项目与可公开的服务范围",
+            "照明指标、现场图片权属与交付阶段证据"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        }
+      ]
+    },
+    {
+      "id": "product-technology",
+      "label": "产品技术",
+      "description": "围绕已核验参数、兼容条件与安装边界组织产品技术选题。",
+      "topics": [
+        {
+          "id": "anti-glare-spotlight",
+          "target_keyword": "防眩射灯",
+          "working_title": "防眩射灯：光学参数与安装条件核验",
+          "source_requirements": [
+            "经产品负责人确认的光学与结构参数",
+            "可追溯的检测资料、安装条件与适用边界"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        },
+        {
+          "id": "smart-lighting",
+          "target_keyword": "智能照明方案",
+          "working_title": "智能照明方案：协议、供电与场景控制的选型边界",
+          "source_requirements": [
+            "经审核的协议、供电、兼容与安装资料",
+            "售后边界与真实场景测试记录"
+          ],
+          "state": "brief_only",
+          "body_status": "not_written",
+          "route": null,
+          "indexable": false,
+          "required_signoffs": ["technical_source_review", "brand_signoff", "legal_signoff"]
+        }
+      ]
+    }
+  ]
+}

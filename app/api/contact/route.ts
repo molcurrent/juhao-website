@@ -1,8 +1,9 @@
 import { env, waitUntil } from "cloudflare:workers";
 import {
+  claimConsultationNotification,
+  completeConsultationNotification,
   consumeConsultationRateLimit,
   insertConsultationLead,
-  updateConsultationNotification,
   type ConsultationLeadRecord,
 } from "@/db/consultation-leads";
 import type { ContactRequest } from "@/lib/api/types";
@@ -18,6 +19,7 @@ import {
   notifyInternalLead,
   validateLeadNotificationConfig,
 } from "@/lib/server/lead-notifications";
+import { recordAnalyticsAggregate } from "@/lib/server/analytics";
 
 const MAX_BODY_BYTES = 16_384;
 const RETENTION_DAYS = 180;
@@ -233,21 +235,21 @@ async function deliverInitialNotification(
   notificationConfig: ReturnType<typeof leadNotificationConfig>,
 ) {
   const attemptedAt = new Date();
+  const claim = await claimConsultationNotification(database, attemptedAt, lead.id);
+  if (!claim) return;
   try {
-    await notifyInternalLead(lead, notificationConfig);
-    await updateConsultationNotification(database, lead.id, {
+    await notifyInternalLead(claim, notificationConfig);
+    await completeConsultationNotification(database, claim, {
       status: "sent",
       error: null,
-      attemptedAt: attemptedAt.toISOString(),
       nextAttemptAt: null,
     });
   } catch (error) {
     const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
-    const failure = failedNotificationUpdate(1, attemptedAt);
-    await updateConsultationNotification(database, lead.id, {
+    const failure = failedNotificationUpdate(claim.notificationAttempts, attemptedAt);
+    await completeConsultationNotification(database, claim, {
       status: failure.status,
       error: detail,
-      attemptedAt: attemptedAt.toISOString(),
       nextAttemptAt: failure.nextAttemptAt,
     });
   }
@@ -373,6 +375,16 @@ export async function POST(request: Request) {
     if (!created) {
       if (stored.request_hash !== requestHash) return json({ error: "该提交标识已被使用，请重新提交" }, 409);
       return json({ id: stored.id, status: "received", submittedAt: stored.submitted_at }, 200);
+    }
+
+    try {
+      await recordAnalyticsAggregate(env, {
+        name: "consultation_lead_created",
+        source: payload.source,
+        direction: payload.direction,
+      });
+    } catch {
+      // 分析聚合不能影响已经成功写入的咨询线索。
     }
 
     if (webhookConfigured) {

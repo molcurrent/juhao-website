@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE_URL } from "@/app/_data/pages";
+import { AnalyticsLink, AnalyticsView } from "@/components/analytics/AnalyticsEvents";
 import { EvidenceScale, type EvidenceScaleItem } from "@/components/experience/EvidenceScale";
 import { LightFieldCanvas } from "@/components/experience/LightFieldCanvas";
 import { SemanticPicture } from "@/components/media/SemanticPicture";
@@ -43,6 +44,7 @@ export function ProductDetailPage({ product, nonce }: { product: ProductRecord; 
   ];
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.title, sku: product.source_id, mpn: product.model, model: product.model, category: product.topic, image: product.gallery_media_ids.map((mediaId) => `${SITE_URL}${requireRuntimeMedia(mediaId).fallback}`), brand: { "@type": "Brand", name: "钜豪照明 JUHAO" }, url: `${SITE_URL}${product.seo_slug}`, description: `${product.topic}产品，查看结构化参数、安装提示和相关方案。` };
   return <main id="main-content" className={styles.page} data-lightfield-page="product" tabIndex={-1}>
+    <AnalyticsView event={{ name: "product_detail_view", contentId: product.source_id }} />
     <section className={`${styles.hero} ${opticalSpecimen ? styles.specimenHero : ""}`} data-header-tone="light" data-page-hero="split">
       <figure className={styles.visual}>
         <SemanticPicture className={styles.productMedia} mediaId={product.primary_media_id} alt={`${title.accessibleName} 产品资料图`} sizes="(max-width: 900px) 100vw, 55vw" priority style={{ viewTransitionName: `product-${product.source_id}` }} />
@@ -70,7 +72,7 @@ export function ProductDetailPage({ product, nonce }: { product: ProductRecord; 
           <div><span>资料核验状态</span><strong data-status={product.review_status === "needs_review" ? "warning" : "success"}>{reviewLabel}</strong></div>
           <p>{product.fact_status}。正式选型前，请确认最终参数、安装条件与供货信息。</p>
         </aside>
-        <div className={styles.actions}><Link href={consultationLink}>获取本型号确认 →</Link><a href="#product-specification">查看完整参数 ↓</a></div>
+        <div className={styles.actions}><AnalyticsLink href={consultationLink} analyticsEvent={{ name: "product_consultation_click", contentId: product.source_id }}>获取本型号确认 →</AnalyticsLink><a href="#product-specification">查看完整参数 ↓</a></div>
         <details className={styles.auditDetails}>
           <summary>查看资料边界与来源</summary>
           <dl aria-label="产品资料边界与来源">
