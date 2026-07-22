@@ -7,6 +7,7 @@ import { runConsultationMaintenance } from "../lib/server/consultation-maintenan
 interface Env {
   ASSETS?: Fetcher;
   DB?: D1Database;
+  PUBLIC_INDEXING_ENABLED?: string;
   JUHAO_LEAD_WEBHOOK_URL?: string;
   JUHAO_LEAD_WEBHOOK_SECRET?: string;
   IMAGES?: {
@@ -87,7 +88,12 @@ function securityPolicyForRequest(request: Request, nonce?: string) {
   });
 }
 
-function withSecurityHeaders(request: Request, response: Response, policy = securityPolicyForRequest(request)) {
+function withSecurityHeaders(
+  request: Request,
+  response: Response,
+  policy = securityPolicyForRequest(request),
+  forceNoindex = false,
+) {
   const secured = new Response(response.body, response);
   const secureRequest = new URL(request.url).protocol === "https:";
   secured.headers.set("Content-Security-Policy", policy);
@@ -95,10 +101,23 @@ function withSecurityHeaders(request: Request, response: Response, policy = secu
   secured.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   secured.headers.set("X-Content-Type-Options", "nosniff");
   secured.headers.set("X-Frame-Options", "DENY");
+  if (forceNoindex) {
+    secured.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+  }
   if (secureRequest) {
-    secured.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    secured.headers.set("Strict-Transport-Security", "max-age=86400");
   }
   return secured;
+}
+
+function indexingEnabled(env: Env) {
+  return ["1", "true"].includes(env.PUBLIC_INDEXING_ENABLED?.trim().toLowerCase() ?? "false");
+}
+
+function robotsBody(publicIndexing: boolean) {
+  return publicIndexing
+    ? "User-agent: *\nAllow: /\n\nSitemap: https://juhao.com/sitemap.xml\nHost: https://juhao.com\n"
+    : "User-agent: *\nDisallow: /\n";
 }
 
 // Image security config. SVG sources with .svg extension auto-skip the
@@ -113,6 +132,9 @@ const worker = {
     const secureRequest = url.protocol === "https:";
     const nonce = secureRequest ? crypto.randomUUID().replaceAll("-", "") : undefined;
     const policy = securityPolicyForRequest(request, nonce);
+    const publicIndexing = indexingEnabled(env);
+    const secure = (response: Response, responsePolicy = policy) =>
+      withSecurityHeaders(request, response, responsePolicy, !publicIndexing);
     let appRequest = request;
     if (nonce) {
       const headers = new Headers(request.headers);
@@ -129,13 +151,21 @@ const worker = {
       "/static/news/8058.html",
     ]);
 
+    if (url.pathname === "/robots.txt") {
+      return secure(new Response(robotsBody(publicIndexing), {
+        headers: {
+          "cache-control": "public, max-age=300",
+          "content-type": "text/plain; charset=utf-8",
+        },
+      }));
+    }
+
     if (
       (url.pathname === "/catalog-lab" ||
         url.pathname.startsWith("/catalog-lab/")) &&
       !isLocalCatalogPreview(url)
     ) {
-      return withSecurityHeaders(
-        request,
+      return secure(
         new Response("Not Found", {
           status: 404,
           headers: {
@@ -148,21 +178,21 @@ const worker = {
     }
 
     if (confirmedSpamPaths.has(url.pathname)) {
-      return withSecurityHeaders(request, new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" } }));
+      return secure(new Response("Gone", { status: 410, headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" } }));
     }
 
     const correctedProductRoute = correctedProductRoutes.get(url.pathname);
     if (correctedProductRoute) {
-      return withSecurityHeaders(request, Response.redirect(new URL(correctedProductRoute, request.url), 308));
+      return secure(Response.redirect(new URL(correctedProductRoute, request.url), 308));
     }
 
     const legacyNews = legacyNewsByPath.get(url.pathname);
     if (legacyNews?.action === "redirect") {
-      return withSecurityHeaders(request, Response.redirect(new URL(legacyNews.destination, request.url), 308));
+      return secure(Response.redirect(new URL(legacyNews.destination, request.url), 308));
     }
     if (legacyNews) {
       const status = legacyNews.action === "gone" ? 410 : 404;
-      return withSecurityHeaders(request, new Response(status === 410 ? "Gone" : "Not Found", {
+      return secure(new Response(status === 410 ? "Gone" : "Not Found", {
         status,
         headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" },
       }));
@@ -174,12 +204,12 @@ const worker = {
       if (!assets || !images) {
         const source = url.searchParams.get("url");
         if (source?.startsWith("/") && !source.startsWith("//") && !source.includes("\\")) {
-          return withSecurityHeaders(request, Response.redirect(new URL(source, request.url), 307));
+          return secure(Response.redirect(new URL(source, request.url), 307));
         }
-        return withSecurityHeaders(request, new Response("Image optimization is unavailable", { status: 503 }));
+        return secure(new Response("Image optimization is unavailable", { status: 503 }));
       }
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
-      return withSecurityHeaders(request, await handleImageOptimization(request, {
+      return secure(await handleImageOptimization(request, {
         fetchAsset: (path) => assets.fetch(new Request(new URL(path, request.url))),
         transformImage: async (body, { width, format, quality }) => {
           const result = await images.input(body).transform(width > 0 ? { width } : {}).output({ format, quality });
@@ -188,7 +218,7 @@ const worker = {
       }, allowedWidths));
     }
 
-    return withSecurityHeaders(request, await handler.fetch(appRequest, env, ctx), policy);
+    return secure(await handler.fetch(appRequest, env, ctx));
   },
   scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext) {
     ctx.waitUntil(runConsultationMaintenance(env).then(() => undefined));

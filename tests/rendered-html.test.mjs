@@ -66,14 +66,20 @@ class FakeD1Statement {
 
   async run() {
     if (this.sql.startsWith("DELETE FROM consultation_leads")) {
-      const before = this.database.rows.size;
-      for (const [key, row] of this.database.rows) if (row.expires_at < this.values[0]) this.database.rows.delete(key);
-      return { meta: { changes: before - this.database.rows.size } };
+      const expired = [...this.database.rows]
+        .filter(([, row]) => row.expires_at < this.values[0])
+        .sort(([, left], [, right]) => left.expires_at.localeCompare(right.expires_at))
+        .slice(0, this.values[1]);
+      for (const [key] of expired) this.database.rows.delete(key);
+      return { meta: { changes: expired.length } };
     }
     if (this.sql.startsWith("DELETE FROM consultation_rate_limits")) {
-      const before = this.database.rateLimits.size;
-      for (const [key, row] of this.database.rateLimits) if (row.expiresAt < this.values[0]) this.database.rateLimits.delete(key);
-      return { meta: { changes: before - this.database.rateLimits.size } };
+      const expired = [...this.database.rateLimits]
+        .filter(([, row]) => row.expiresAt < this.values[0])
+        .sort(([, left], [, right]) => left.expiresAt.localeCompare(right.expiresAt))
+        .slice(0, this.values[1]);
+      for (const [key] of expired) this.database.rateLimits.delete(key);
+      return { meta: { changes: expired.length } };
     }
     if (this.sql.startsWith("INSERT INTO consultation_leads")) {
       const clientRequestId = this.values[1];
@@ -170,7 +176,9 @@ class FakeD1 {
 async function postContact(worker, database, payload, origin = "http://localhost", runtime = {}, requestHeaders = {}) {
   for (const key of Object.keys(globalThis.__cloudflareTestEnv)) delete globalThis.__cloudflareTestEnv[key];
   Object.assign(globalThis.__cloudflareTestEnv, { DB: database, ...runtime });
-  return worker.fetch(
+  const backgroundTasks = [];
+  globalThis.__cloudflareWaitUntil = (promise) => backgroundTasks.push(promise);
+  const response = await worker.fetch(
     new Request("http://localhost/api/contact", {
       method: "POST",
       headers: {
@@ -185,6 +193,8 @@ async function postContact(worker, database, payload, origin = "http://localhost
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) }, DB: database, ...runtime },
     { waitUntil() {}, passThroughOnException() {} },
   );
+  await Promise.all(backgroundTasks);
+  return response;
 }
 
 const PUBLIC_CONTACT_RUNTIME = {
@@ -1160,7 +1170,9 @@ test("serves discovery files and a branded 404", async () => {
 
   const robots = await render(worker, "/robots.txt", "text/plain");
   assert.equal(robots.status, 200);
-  assert.match(await robots.text(), /Sitemap: https:\/\/juhao\.com\/sitemap\.xml/i);
+  const robotsText = await robots.text();
+  assert.match(robotsText, /Disallow:\s*\//i);
+  assert.doesNotMatch(robotsText, /Sitemap:/i);
 
   const missing = await render(worker, "/page-that-does-not-exist");
   assert.equal(missing.status, 404);

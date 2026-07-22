@@ -27,6 +27,7 @@ export const consultationLeads = sqliteTable("consultation_leads", {
   expiresAt: text("expires_at").notNull(),
 }, (table) => [
   index("consultation_leads_created_at_idx").on(table.createdAt),
+  index("consultation_leads_expires_at_idx").on(table.expiresAt),
   index("consultation_leads_notification_status_idx").on(table.notificationStatus),
   index("consultation_leads_notification_retry_idx").on(table.notificationStatus, table.notificationNextAttemptAt),
 ]);

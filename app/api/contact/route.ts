@@ -1,8 +1,7 @@
-import { env } from "cloudflare:workers";
+import { env, waitUntil } from "cloudflare:workers";
 import {
   consumeConsultationRateLimit,
   insertConsultationLead,
-  purgeExpiredConsultationLeads,
   updateConsultationNotification,
   type ConsultationLeadRecord,
 } from "@/db/consultation-leads";
@@ -228,6 +227,32 @@ function json(data: unknown, status: number) {
   return Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
 }
 
+async function deliverInitialNotification(
+  database: D1Database,
+  lead: ConsultationLeadRecord,
+  notificationConfig: ReturnType<typeof leadNotificationConfig>,
+) {
+  const attemptedAt = new Date();
+  try {
+    await notifyInternalLead(lead, notificationConfig);
+    await updateConsultationNotification(database, lead.id, {
+      status: "sent",
+      error: null,
+      attemptedAt: attemptedAt.toISOString(),
+      nextAttemptAt: null,
+    });
+  } catch (error) {
+    const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
+    const failure = failedNotificationUpdate(1, attemptedAt);
+    await updateConsultationNotification(database, lead.id, {
+      status: failure.status,
+      error: detail,
+      attemptedAt: attemptedAt.toISOString(),
+      nextAttemptAt: failure.nextAttemptAt,
+    });
+  }
+}
+
 export async function POST(request: Request) {
   const requestUrl = new URL(request.url);
   if (request.headers.get("origin") !== requestUrl.origin) return json({ error: "请求来源不正确" }, 403);
@@ -344,7 +369,6 @@ export async function POST(request: Request) {
   };
 
   try {
-    await purgeExpiredConsultationLeads(env.DB, submittedAt);
     const { created, stored } = await insertConsultationLead(env.DB, lead);
     if (!created) {
       if (stored.request_hash !== requestHash) return json({ error: "该提交标识已被使用，请重新提交" }, 409);
@@ -352,25 +376,7 @@ export async function POST(request: Request) {
     }
 
     if (webhookConfigured) {
-      const attemptedAt = new Date();
-      try {
-        await notifyInternalLead(lead, notificationConfig);
-        await updateConsultationNotification(env.DB, lead.id, {
-          status: "sent",
-          error: null,
-          attemptedAt: attemptedAt.toISOString(),
-          nextAttemptAt: null,
-        });
-      } catch (error) {
-        const detail = error instanceof Error ? error.message.slice(0, 120) : "webhook_failed";
-        const failure = failedNotificationUpdate(1, attemptedAt);
-        await updateConsultationNotification(env.DB, lead.id, {
-          status: failure.status,
-          error: detail,
-          attemptedAt: attemptedAt.toISOString(),
-          nextAttemptAt: failure.nextAttemptAt,
-        });
-      }
+      waitUntil(deliverInitialNotification(env.DB, lead, notificationConfig));
     }
 
     return json({ id: lead.id, status: "received", submittedAt }, 201);

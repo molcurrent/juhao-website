@@ -42,8 +42,16 @@ export async function findConsultationLeadById(db: D1Database, id: string, now: 
   `).bind(id, now).first<{ id: string; submitted_at: string }>();
 }
 
-export async function purgeExpiredConsultationLeads(db: D1Database, now: string) {
-  const result = await db.prepare("DELETE FROM consultation_leads WHERE expires_at < ?").bind(now).run();
+export async function purgeExpiredConsultationLeads(db: D1Database, now: string, limit = 100) {
+  const result = await db.prepare(`
+    DELETE FROM consultation_leads
+    WHERE id IN (
+      SELECT id FROM consultation_leads
+      WHERE expires_at < ?
+      ORDER BY expires_at ASC
+      LIMIT ?
+    )
+  `).bind(now, limit).run();
   return Number(result.meta.changes ?? 0);
 }
 
@@ -81,8 +89,16 @@ export async function consumeConsultationRateLimit(
   };
 }
 
-export async function purgeExpiredConsultationRateLimits(db: D1Database, now: string) {
-  const result = await db.prepare("DELETE FROM consultation_rate_limits WHERE expires_at < ?").bind(now).run();
+export async function purgeExpiredConsultationRateLimits(db: D1Database, now: string, limit = 100) {
+  const result = await db.prepare(`
+    DELETE FROM consultation_rate_limits
+    WHERE key_hash IN (
+      SELECT key_hash FROM consultation_rate_limits
+      WHERE expires_at < ?
+      ORDER BY expires_at ASC
+      LIMIT ?
+    )
+  `).bind(now, limit).run();
   return Number(result.meta.changes ?? 0);
 }
 

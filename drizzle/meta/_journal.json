@@ -22,6 +22,13 @@
       "when": 1784357373265,
       "tag": "0002_cultured_mother_askani",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1784628734290,
+      "tag": "0003_magical_clea",
+      "breakpoints": true
     }
   ]
 }

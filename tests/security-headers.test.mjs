@@ -26,4 +26,21 @@ test("permits HMR only on the HTTP loopback preview while keeping production CSP
   assert.doesNotMatch(productionCsp, /connect-src[^;]*ws:/);
   assert.doesNotMatch(productionCsp, /worker-src 'self' blob:/);
   assert.match(productionCsp, /worker-src 'self'(?:;|$)/);
+  assert.equal(production.headers.get("x-robots-tag"), "noindex, nofollow, noarchive");
+  assert.equal(production.headers.get("strict-transport-security"), "max-age=86400");
+  assert.doesNotMatch(production.headers.get("strict-transport-security") ?? "", /includeSubDomains/i);
+});
+
+test("keeps private discovery closed and only opens it behind the explicit runtime flag", async () => {
+  const worker = await createWorker();
+  const privateRobots = await worker.fetch(new Request("https://example.com/robots.txt"), env, ctx);
+  assert.match(await privateRobots.text(), /Disallow:\s*\//i);
+  assert.doesNotMatch(await (await worker.fetch(new Request("https://example.com/robots.txt"), env, ctx)).text(), /Sitemap:/i);
+
+  const publicEnv = { ...env, PUBLIC_INDEXING_ENABLED: "true" };
+  const publicRobots = await worker.fetch(new Request("https://example.com/robots.txt"), publicEnv, ctx);
+  const publicRobotsText = await publicRobots.text();
+  assert.match(publicRobotsText, /Allow:\s*\//i);
+  assert.match(publicRobotsText, /Sitemap: https:\/\/juhao\.com\/sitemap\.xml/i);
+  assert.equal(publicRobots.headers.get("x-robots-tag"), null);
 });

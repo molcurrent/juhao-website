@@ -15,12 +15,29 @@ type MaintenanceEnv = Pick<Cloudflare.Env, "JUHAO_LEAD_WEBHOOK_URL" | "JUHAO_LEA
   DB?: D1Database;
 };
 
+const PURGE_BATCH_SIZE = 100;
+const MAX_PURGE_BATCHES = 10;
+
+async function purgeInBatches(
+  purge: (db: D1Database, now: string, limit: number) => Promise<number>,
+  database: D1Database,
+  now: string,
+) {
+  let total = 0;
+  for (let batch = 0; batch < MAX_PURGE_BATCHES; batch += 1) {
+    const removed = await purge(database, now, PURGE_BATCH_SIZE);
+    total += removed;
+    if (removed < PURGE_BATCH_SIZE) break;
+  }
+  return total;
+}
+
 export async function runConsultationMaintenance(runtime: MaintenanceEnv) {
   if (!runtime.DB) throw new Error("consultation_database_unavailable");
   const now = new Date();
   const nowIso = now.toISOString();
-  const purged = await purgeExpiredConsultationLeads(runtime.DB, nowIso);
-  const rateLimitsPurged = await purgeExpiredConsultationRateLimits(runtime.DB, nowIso);
+  const purged = await purgeInBatches(purgeExpiredConsultationLeads, runtime.DB, nowIso);
+  const rateLimitsPurged = await purgeInBatches(purgeExpiredConsultationRateLimits, runtime.DB, nowIso);
   const config = leadNotificationConfig(runtime);
   if (!config.webhookUrl) {
     return { purged, rateLimitsPurged, attempted: 0, sent: 0, retry: 0, deadLetter: 0, notification: "not_configured" as const };

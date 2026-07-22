@@ -71,7 +71,7 @@ async function ensureServer() {
   const child = spawn(
     "npm",
     ["run", "dev", "--", "--host", "127.0.0.1", "--port", "4173"],
-    { stdio: "inherit" },
+    { stdio: "inherit", detached: process.platform !== "win32" },
   );
   await waitForServer(child);
   return child;
@@ -96,6 +96,19 @@ function formatViolation(route, violation) {
   return `${route} · ${violation.impact} · ${violation.id}\n${targets}`;
 }
 
+function stopServer(child) {
+  if (!child || child.exitCode !== null) return;
+  if (process.platform === "win32") {
+    child.kill("SIGTERM");
+    return;
+  }
+  try {
+    process.kill(-child.pid, "SIGTERM");
+  } catch {
+    child.kill("SIGTERM");
+  }
+}
+
 let server;
 let browser;
 
@@ -109,8 +122,14 @@ try {
   });
   const page = await context.newPage();
   const failures = [];
+  let activeRoute = "";
+  page.on("console", (message) => {
+    if (message.type() === "error") failures.push(`${activeRoute} · console · ${message.text()}`);
+  });
+  page.on("pageerror", (error) => failures.push(`${activeRoute} · pageerror · ${error.message}`));
 
   for (const route of routes) {
+    activeRoute = route;
     const response = await page.goto(`${baseUrl}${route}`, {
       waitUntil: "domcontentloaded",
     });
@@ -126,14 +145,35 @@ try {
     failures.push(...blocking.map((violation) => formatViolation(route, violation)));
   }
 
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of ["/", "/products", "/contact", crossCategoryCatalogRoute].filter(Boolean)) {
+    activeRoute = `${route} (390px)`;
+    const response = await page.goto(`${baseUrl}${route}`, { waitUntil: "domcontentloaded" });
+    if (!response || response.status() >= 400) {
+      failures.push(`${activeRoute} · HTTP ${response?.status() ?? "无响应"}`);
+      continue;
+    }
+    await page.waitForTimeout(250);
+    const metrics = await page.evaluate(() => ({
+      h1Count: document.querySelectorAll("main h1").length,
+      maxScrollX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      brokenImages: [...document.querySelectorAll("main img")].filter(
+        (image) => image.complete && image.naturalWidth === 0,
+      ).length,
+    }));
+    if (metrics.h1Count !== 1) failures.push(`${activeRoute} · H1 数量为 ${metrics.h1Count}`);
+    if (metrics.maxScrollX > 1) failures.push(`${activeRoute} · 横向溢出 ${metrics.maxScrollX}px`);
+    if (metrics.brokenImages > 0) failures.push(`${activeRoute} · 破图 ${metrics.brokenImages} 张`);
+  }
+
   await context.close();
   if (failures.length > 0) {
     console.error(`Axe 回归失败：\n${failures.join("\n")}`);
     process.exitCode = 1;
   } else {
-    console.log(`Axe 回归通过：${routes.length} 个模板路由的严重和关键问题为 0。`);
+    console.log(`浏览器回归通过：${routes.length} 个模板路由无严重 Axe、控制台或渲染问题，移动端抽样通过。`);
   }
 } finally {
   await browser?.close();
-  server?.kill("SIGTERM");
+  stopServer(server);
 }

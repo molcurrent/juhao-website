@@ -1,6 +1,7 @@
 declare namespace Cloudflare {
   interface Env {
     DB?: D1Database;
+    PUBLIC_INDEXING_ENABLED?: string;
     PUBLIC_INTAKE_READY?: string;
     NEXT_PUBLIC_TURNSTILE_SITE_KEY?: string;
     TURNSTILE_SECRET_KEY?: string;

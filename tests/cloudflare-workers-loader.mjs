@@ -9,7 +9,12 @@ export async function load(url, context, nextLoad) {
   if (url === TEST_URL) {
     return {
       format: "module",
-      source: "export const env = globalThis.__cloudflareTestEnv;",
+      source: `
+        export const env = globalThis.__cloudflareTestEnv;
+        export function waitUntil(promise) {
+          globalThis.__cloudflareWaitUntil?.(promise);
+        }
+      `,
       shortCircuit: true,
     };
   }

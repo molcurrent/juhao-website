@@ -1,0 +1,1 @@
+CREATE INDEX `consultation_leads_expires_at_idx` ON `consultation_leads` (`expires_at`);

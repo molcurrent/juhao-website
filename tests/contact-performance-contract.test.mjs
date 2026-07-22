@@ -70,6 +70,7 @@ test("removes forced loading and global GSAP while retaining route-specific moti
 test("ships the D1 retry columns and authenticated maintenance route", () => {
   const migration = read("../drizzle/0001_magenta_black_crow.sql");
   const rateLimitMigration = read("../drizzle/0002_cultured_mother_askani.sql");
+  const retentionIndexMigration = read("../drizzle/0003_magical_clea.sql");
   const maintenance = read("../app/api/contact/maintenance/route.ts");
   const maintenanceService = read("../lib/server/consultation-maintenance.ts");
   const contactRoute = read("../app/api/contact/route.ts");
@@ -81,12 +82,15 @@ test("ships the D1 retry columns and authenticated maintenance route", () => {
   assert.match(migration, /consultation_leads_notification_retry_idx/);
   assert.match(rateLimitMigration, /CREATE TABLE `consultation_rate_limits`/);
   assert.match(rateLimitMigration, /consultation_rate_limits_expires_at_idx/);
+  assert.match(retentionIndexMigration, /consultation_leads_expires_at_idx/);
   assert.match(maintenance, /JUHAO_LEAD_MAINTENANCE_SECRET/);
   assert.match(maintenance, /runConsultationMaintenance/);
   assert.match(maintenanceService, /listRetryableConsultationLeads/);
   assert.match(maintenanceService, /purgeExpiredConsultationLeads/);
   assert.match(maintenanceService, /purgeExpiredConsultationRateLimits/);
   assert.match(contactRoute, /consumeConsultationRateLimit/);
+  assert.match(contactRoute, /waitUntil\(deliverInitialNotification/);
+  assert.doesNotMatch(contactRoute, /purgeExpiredConsultationLeads/);
   assert.match(contactRoute, /NEXT_PUBLIC_TURNSTILE_SITE_KEY/);
   assert.match(contactRoute, /JUHAO_LEAD_RATE_LIMIT_SECRET/);
   assert.match(contactRoute, /status:\s*429/);
