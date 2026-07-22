@@ -7,6 +7,14 @@ import { spawnSync } from "node:child_process";
 import test from "node:test";
 
 const root = process.cwd();
+const catalogDataRoot = process.env.JUHAO_DATA_ROOT ?? "/Users/mac/Documents/juhao数据库";
+const externalCatalogSourcesAvailable = [
+  path.join(catalogDataRoot, "企业知识库", "商城系统", "商品说明"),
+  path.join(catalogDataRoot, "企业知识库", "物联网系统", "产品配置"),
+  path.join(catalogDataRoot, "juhao_mall_2026-07-16_02-41-53_mysql_data.sql"),
+  path.join(catalogDataRoot, "bocang_2026-07-16_02-30-02_mysql_data.sql"),
+  path.join(catalogDataRoot, "bocang_filtered_2026-07-16.sql"),
+].every((pathname) => fs.existsSync(pathname));
 const familyId = "family-a3d872de3600";
 const decisionId = "decision-owner-f-a3d872de3600";
 const memberKeys = [
@@ -83,7 +91,7 @@ function readStagedFamilies(tempRoot) {
 
 test(
   "approved family confirmation is regenerated only inside an isolated content copy",
-  { timeout: 120_000 },
+  { timeout: 120_000, skip: !externalCatalogSourcesAvailable },
   () => {
     const realBefore = {
       decision: sha256File(realDecisionLedger),
@@ -245,7 +253,7 @@ test(
 
 test(
   "a signed active full batch uses the media-suppressed public projection",
-  { timeout: 180_000 },
+  { timeout: 180_000, skip: !externalCatalogSourcesAvailable },
   () => {
     const tempRoot = fs.mkdtempSync(
       path.join(os.tmpdir(), "catalog-full-release-isolation-"),

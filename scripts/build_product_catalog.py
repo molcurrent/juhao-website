@@ -985,6 +985,7 @@ def main() -> None:
         print(
             json.dumps(
                 {
+                    "source_mode": report.get("source_mode", "external_sources"),
                     "source_products": report["families"]["source_products"],
                     "derived_families": report["families"]["derived_families"],
                     "sample": report["sample"]["actual"],

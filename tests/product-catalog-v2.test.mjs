@@ -10,6 +10,14 @@ import { consultationHref } from "../lib/consultation.ts";
 const root = process.cwd();
 const governance = path.join(root, "content", "governance");
 const runtime = path.join(root, "content", "runtime", "catalog-v2");
+const catalogDataRoot = process.env.JUHAO_DATA_ROOT ?? "/Users/mac/Documents/juhao数据库";
+const externalCatalogSourcesAvailable = [
+  path.join(catalogDataRoot, "企业知识库", "商城系统", "商品说明"),
+  path.join(catalogDataRoot, "企业知识库", "物联网系统", "产品配置"),
+  path.join(catalogDataRoot, "juhao_mall_2026-07-16_02-41-53_mysql_data.sql"),
+  path.join(catalogDataRoot, "bocang_2026-07-16_02-30-02_mysql_data.sql"),
+  path.join(catalogDataRoot, "bocang_filtered_2026-07-16.sql"),
+].every((pathname) => fs.existsSync(pathname));
 
 const readJson = (file) =>
   JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
@@ -218,7 +226,9 @@ test("catalog v2 governance artifacts are present", () => {
   }
 });
 
-test("catalog generation is deterministic, cleans stale shards, and preserves human ledgers", () => {
+test("catalog generation is deterministic, cleans stale shards, and preserves human ledgers", {
+  skip: !externalCatalogSourcesAvailable,
+}, () => {
   const tempRoot = fs.mkdtempSync(path.join(tmpdir(), "juhao-catalog-v2-"));
   const tempContent = path.join(tempRoot, "content");
   fs.cpSync(path.join(root, "content"), tempContent, { recursive: true });
@@ -299,6 +309,25 @@ test("catalog generation is deterministic, cleans stale shards, and preserves hu
   } finally {
     fs.rmSync(tempRoot, { recursive: true, force: true });
   }
+});
+
+test("catalog check validates the committed snapshot without private external sources", () => {
+  const result = spawnSync(
+    "python3",
+    ["scripts/build_product_catalog.py", "--catalog-v2", "--check"],
+    {
+      cwd: root,
+      encoding: "utf8",
+      env: { ...process.env, JUHAO_DATA_ROOT: path.join(tmpdir(), "juhao-missing-sources") },
+    },
+  );
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+  const report = JSON.parse(result.stdout);
+  assert.equal(report.source_mode, "committed_snapshot");
+  assert.equal(report.source_products, 1920);
+  assert.equal(report.derived_families, 1208);
+  assert.equal(report.sample, 120);
+  assert.ok(Object.values(report.acceptance).every(Boolean));
 });
 
 test("private sample and release batch describe the exact same family set", () => {

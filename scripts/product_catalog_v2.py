@@ -4,6 +4,7 @@ import csv
 import hashlib
 import io
 import json
+import os
 import re
 from collections import Counter, defaultdict
 from datetime import date
@@ -12,7 +13,7 @@ from urllib.parse import urlsplit
 
 
 SNAPSHOT_DATE = "2026-07-16"
-DATA_ROOT = Path("/Users/mac/Documents/juhao数据库")
+DATA_ROOT = Path(os.environ.get("JUHAO_DATA_ROOT", "/Users/mac/Documents/juhao数据库"))
 KB_ROOT = DATA_ROOT / "企业知识库"
 PRODUCT_DIR = KB_ROOT / "商城系统" / "商品说明"
 IOT_PRODUCT_DIR = KB_ROOT / "物联网系统" / "产品配置"
@@ -97,6 +98,16 @@ REVIEW_ALLOWED_DISPOSITIONS = {
     "non_lighting_governance_only",
     "out_of_scope_product_hold",
 }
+
+
+def external_catalog_sources_available() -> bool:
+    return (
+        PRODUCT_DIR.is_dir()
+        and IOT_PRODUCT_DIR.is_dir()
+        and MALL_SQL.is_file()
+        and IOT_SQL.is_file()
+        and IOT_FILTERED_SQL.is_file()
+    )
 
 
 def sha256_file(path: Path) -> str:
@@ -5190,7 +5201,55 @@ def build_catalog_v2_outputs(root: Path) -> tuple[dict[Path, str], dict]:
     return outputs, quality_report
 
 
+def validate_committed_catalog_v2(root: Path) -> dict:
+    governance = root / "content" / "governance"
+    runtime = root / "content" / "runtime" / "catalog-v2"
+    quality_path = governance / "product-catalog-v2-quality-report.json"
+    manifest_path = runtime / "manifest.json"
+    index_path = runtime / "index.json"
+    staging_manifest_path = (
+        governance / "product-catalog-v2-family-staging" / "manifest.json"
+    )
+    required = [quality_path, manifest_path, index_path, staging_manifest_path]
+    missing = [str(path.relative_to(root)) for path in required if not path.is_file()]
+    if missing:
+        raise RuntimeError("committed catalog v2 artifacts are missing: " + ", ".join(missing))
+
+    report = json.loads(quality_path.read_text(encoding="utf-8"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    staging = json.loads(staging_manifest_path.read_text(encoding="utf-8"))
+    failures = []
+    if not report.get("acceptance") or not all(report["acceptance"].values()):
+        failures.append("quality report acceptance is incomplete")
+    if len(index.get("items", [])) != report["sample"]["actual"]:
+        failures.append("runtime index sample count does not match quality report")
+    if manifest.get("sample_family_count") != report["sample"]["actual"]:
+        failures.append("runtime manifest sample count does not match quality report")
+    if manifest.get("derived_family_count") != report["families"]["derived_families"]:
+        failures.append("runtime manifest family count does not match quality report")
+    if staging.get("family_count") != report["families"]["derived_families"]:
+        failures.append("staging manifest family count does not match quality report")
+    if staging.get("source_snapshot_sha256") != report["governance"]["source_snapshot_sha256"]:
+        failures.append("staging source snapshot does not match quality report")
+    detail_files = list((runtime / "details").glob("*.json"))
+    if len(detail_files) != report["runtime"]["detail_file_count"]:
+        failures.append("runtime detail count does not match quality report")
+    if index_path.stat().st_size != report["runtime"]["index_bytes"]:
+        failures.append("runtime index bytes do not match quality report")
+    for shard in staging.get("shards", []):
+        shard_path = staging_manifest_path.parent / shard["file"]
+        if not shard_path.is_file() or sha256_file(shard_path) != shard["sha256"]:
+            failures.append(f"staging shard integrity failed: {shard['file']}")
+    if failures:
+        raise RuntimeError("committed catalog v2 validation failed: " + "; ".join(failures))
+    report["source_mode"] = "committed_snapshot"
+    return report
+
+
 def build_catalog_v2(root: Path, check: bool = False) -> dict:
+    if check and not external_catalog_sources_available():
+        return validate_committed_catalog_v2(root)
     outputs, report = build_catalog_v2_outputs(root)
     details_dir = root / "content" / "runtime" / "catalog-v2" / "details"
     governance_staging_dir = (
